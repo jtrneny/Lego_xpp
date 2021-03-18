@@ -1,0 +1,1 @@
+update maj set maj.nopructps = majobd.nopruct from majobd where majobd.cobdpoh='12/09' and maj.ntypmaj=majobd.ntypmaj and maj.ninvcis=majobd.ninvcis

@@ -1,0 +1,3 @@
+update prikuhhd set ctypdoklad='FIN_PRUHTU',ctyppohybu='PRIUHRTUZ',ctask='FIN',cZkratMenU='CZK',cZkratMeny='CZK',cZkratMenZ='CZK',nKurZahMen=1, nMnozPrep=1 
+                           ;
+update prikuhit set ctypdoklad='FIN_PRUHTU',ctyppohybu='PRIUHRTUZ',ctask='FIN',cZkratMenU='CZK',cZkratMeny='CZK',cZkratMenZ='CZK',nKurZahMen=1, nMnozPrep=1,cTextPol=cNazev,nPriUhrPri=nPriUhrCel,nUhrCelFaZ=nUhrCelFak

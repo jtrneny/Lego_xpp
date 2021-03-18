@@ -1,0 +1,42 @@
+*
+# DEFINE   CisML       1
+# DEFINE   RokML       2
+# DEFINE   TypML       3
+# DEFINE   DrMZD       4
+# DEFINE   OsCIS       5
+# DEFINE   MzdMJ       6
+# DEFINE   KsCEL       7
+# DEFINE   KsHOT       8
+# DEFINE   KsVAD       9
+# DEFINE   NhPL       10
+# DEFINE   NmPL       11
+# DEFINE   KcPL       12
+# DEFINE   NhSK       13
+# DEFINE   NmSK       14
+# DEFINE   KcSK       15
+# DEFINE   DatSK      16
+# DEFINE   TydPL      17
+# DEFINE   CisKUS     18
+# DEFINE   SazPRAC    19
+# DEFINE   NAZPOL1    20
+
+# DEFINE   KodPRIPL   21
+# DEFINE   KdyML      22
+# DEFINE   KdoML      23
+# DEFINE   KdyMZDY    24
+# DEFINE   KdoMZDY    25
+# DEFINE   StavLIST   26
+# DEFINE   KcPRIPL    27
+
+
+   aCFG := GetCFG( 'cKarOdvML')
+ 6  - ListIT->nMzdaZaKus  GetLIST[ MzdMJ]:PreBlock := {|| aCFG[ 1] }
+ 7  - ListIT->nKusyCelk   GetLIST[ KsCEL]:PreBlock := {|| aCFG[ 2] }
+ 8  - ListIT->nKusyHotov  GetLIST[ KsHOT]:PreBlock := {|| aCFG[ 3] }
+ 9  - ListIt->nKusyVadne  GetLIST[ KsVAD]:PreBlock := {|| aCFG[ 4] }
+13  - ListIT->nNhNaOpeSk  GetLIST[ NhSK]:PreBlock  := {|| aCFG[ 5] .AND. lMLVykazat }
+14  - ListIT->nNmNaOpeSk  GetLIST[ NmSK]:PreBlock  := {|| aCFG[ 6] .AND. lMLVykazat }
+19  - ListIT->nTarSazHod  GetLIST[ SazPRAC]:PreBlock := {|| ( nCfgSAZ == 3) }
+20  - ListIT->cNazPol1    GetLIST[ NAZPOL1]:PreBlock := {|| ( nCfgSTR == 3) }
+   nStart := IF( nDrMZD == 0, DrMZD, OsCIS )
+*/

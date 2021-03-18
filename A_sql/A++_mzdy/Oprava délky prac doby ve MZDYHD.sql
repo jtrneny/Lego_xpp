@@ -1,0 +1,1 @@
+update mzdyhd set cdelkprdob='8.00h/d=>5d=40.00h' where nrok=2013 and cdelkprdob='  '

@@ -1,0 +1,1637 @@
+(function() {
+  var indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+  $(document).ready(function() {
+    var buffer, createDangerRegFormMessage, createFormAlert, filter, helpers, id_klient, id_licence, id_subjekt, kdpcr, kdpcr_start, lastAddedLiveFunc, registrace, validDate;
+    try {
+      id_klient = $("#portaly_js").attr("id_klient");
+      id_klient = parseInt(+id_klient);
+    } catch (error) {
+      id_klient = 0;
+    }
+    try {
+      id_subjekt = $("#portaly_js").attr("id_subjekt");
+      id_subjekt = parseInt(+id_subjekt);
+    } catch (error) {
+      id_subjekt = 0;
+    }
+    try {
+      kdpcr = $("#portaly_js").attr("kdpcr");
+      kdpcr = parseInt(+kdpcr);
+    } catch (error) {
+      kdpcr = 0;
+    }
+    try {
+      id_licence = $("#portaly_js").attr("id_licence");
+      if (id_licence === void 0) {
+        id_licence = -1;
+      } else {
+        id_licence = parseInt(+id_licence);
+      }
+    } catch (error) {
+      id_licence = -1;
+    }
+    try {
+      kdpcr_start = $("#portaly_js").attr("kdpcr_start");
+    } catch (error) {
+      kdpcr_start = "";
+    }
+    try {
+      registrace = $("#portaly_js").attr("registrace");
+    } catch (error) {
+      registrace = "";
+    }
+    $('[data-toggle="tooltip"]').tooltip;
+    $('#registration').on('shown.bs.modal', function() {
+      $('#registration-email').focus();
+    });
+    $('#loginForm').on('shown.bs.modal', function() {
+      $('#email').focus();
+    });
+    $('.odpovedi_select').on('change', function(e) {
+      var id;
+      e.preventDefault();
+      id = $(this).val();
+      $('.odpovedi').hide();
+      $('#odpoved_' + id).removeClass('hide');
+      $('.odpovedi_select').val(id);
+      $('#odpoved_' + id).show();
+    });
+    $(".events_setup ul > li > span").click(function(e) {
+      e.preventDefault();
+      $(this).next().next().next().toggle("fast");
+      if ($(this).hasClass("glyphicon glyphicon-minus")) {
+        $(this).removeClass("glyphicon glyphicon-minus");
+        $(this).addClass("glyphicon glyphicon-plus");
+      } else if ($(this).hasClass("glyphicon glyphicon-plus")) {
+        $(this).removeClass("glyphicon glyphicon-plus");
+        $(this).addClass("glyphicon glyphicon-minus");
+      }
+    });
+    $('#button_kdp_specialni_nabidka').click(function(e) {
+      e.preventDefault();
+      $('#kdp_specialni_nabidka').modal('show');
+    });
+    if (registrace === "klienta" && id_klient < 1) {
+      $('#registration').modal('show');
+    }
+    if (registrace === "mojeoao" && id_klient < 1) {
+      $('#regForm').modal('hide');
+      $('#div_testovaci').hide();
+      $('#div_doregistrace').removeClass("hidden");
+      $('#doregistrace-info').removeClass("hidden");
+      $('#regform-submit').prop('disabled', true);
+      $('#regform-submit').html("Doregistrovat");
+      $('#RegistraceLabel').html("Doregistrace licence MojeOaO (max. 7 dotazů/rok zdarma).");
+      $('#myModalLabel2').html("Zpřístupnění obsahu portálu s možností zadat až 7 vlastních dotazů.");
+      $('#testovaci').prop('checked', false);
+      $('#registration').modal('show');
+    }
+    filter = [];
+    $(".events_setup ul > li > input").change(function(e) {
+      var data, json, selected;
+      if (this.checked) {
+        $(this).next().next().show("fast");
+        $("li input[type=\"checkbox\"]", $(this).next().next()).prop("checked", true);
+      } else {
+        $(this).next().next().show("fast");
+        $("li input[type=\"checkbox\"]", $(this).next().next()).prop("checked", false);
+      }
+      $(this).next().next().show("fast");
+      selected = [];
+      $(".events_setup input:checked").each(function() {
+        return selected.push(+$(this).val().split(",")[0]);
+      });
+      data = new Object();
+      data.typy_udalosti = selected;
+      json = JSON.stringify(data);
+      $.ajax({
+        url: "/set_events_setup/",
+        contentType: "application/json",
+        data: json,
+        method: "POST",
+        dataType: "json",
+        success: function(result) {}
+      });
+    });
+    helpers = new AspiHelpers;
+    createDangerRegFormMessage = function(result) {
+      $('#regFormDanger').show();
+      $.each(result, function(key, value) {
+        if (key === 'password') {
+          key = 'Chybné pole Heslo:';
+        }
+        if (key === 'email') {
+          key = 'Chybné pole Email:';
+        }
+        if (key === 'person_name') {
+          key = 'Chybné pole Jméno:';
+        }
+        if (key === 'person_surname') {
+          key = 'Chybné pole Přijmení:';
+        }
+        $('#regFormDanger').append('<p class="error-item">' + key + ' ' + value + '</p>');
+      });
+    };
+    createFormAlert = function(divid, result, namemap) {
+      var obsah;
+      $(divid + "Alert").show();
+      obsah = "";
+      $.each(result, function(key, value) {
+        return obsah += '<p><b>' + $(divid + 'Form label[for="' + key + '"]').text() + '</b> -> ' + value + '</p>';
+      });
+      $(divid + "Alert").append('<div class="alert alert-danger">' + obsah + '</div>');
+    };
+    validDate = function(text) {
+      var date;
+      var comp, d, date, m, y;
+      date = Date.parse(text);
+      if (isNaN(date)) {
+        return false;
+      }
+      comp = text.split('-');
+      if (comp.length !== 3) {
+        return false;
+      }
+      m = parseInt(comp[1], 10);
+      d = parseInt(comp[2], 10);
+      y = parseInt(comp[0], 10);
+      date = new Date(y, m - 1, d);
+      return date.getFullYear() === y && date.getMonth() + 1 === m && date.getDate() === d;
+    };
+    lastAddedLiveFunc = function() {
+      var data, json, n;
+      $('div#lastPostsLoader').show();
+      $('div#lastPostsLoader').html('<img src="/img/preloader_scroll.gif"/>');
+      data = new Object;
+      n = $('ul#quickMessages-fe-list li').size();
+      data.offset = n;
+      json = JSON.stringify(data);
+      $.ajax({
+        url: '/bleskove/get_list',
+        contentType: 'application/json',
+        data: json,
+        method: 'POST',
+        dataType: 'json',
+        success: function(result) {
+          var html, list;
+          $('div#lastPostsLoader').hide('');
+          if (result.status === 'OK' && result.bleskove_seznam.length > 0) {
+            list = result.bleskove_seznam;
+            html = '';
+            $.each(list, function(index, value) {
+              html = html + '<li id=\'quickMessageButton\'><a href=' + value.id_bleskova + '>' + value.nazev + '</a></li>';
+            });
+            if (html !== '') {
+              $('#quickMessages-fe-list').append(html);
+              $('#quickMessages-admin-list').append(html);
+            }
+          }
+        }
+      });
+    };
+    moment.locale('en', {
+      months: ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec']
+    });
+    $('#btnAddNewCalendarEvent').click(function() {
+      $('#calendarEventTitle').html('Nová událost');
+      $('#calendarEvent > div.modal-dialog.modal-lg > div > div.modal-body > div > ul').hide();
+      $('#eventsCreate > h3').hide();
+      $('#eventsOverview').removeClass('active');
+      $('#eventsCreate').addClass('active');
+      $('#calendarEvent').modal('toggle');
+    });
+    $('#avatarUploadButton').click(function(e) {
+      var avatar, formdata;
+      e.preventDefault();
+      if ($('#avatarFile').val() === '') {
+        return;
+      } else {
+        avatar = document.getElementById('avatarFile').files[0];
+        formdata = new FormData;
+        formdata.append('filedata', avatar);
+        $.ajax({
+          url: '/upload_avatar/',
+          type: 'POST',
+          processData: false,
+          cache: false,
+          async: false,
+          contentType: false,
+          data: formdata,
+          success: function(result) {
+            var html;
+            if (result.status === 'OK') {
+              html = '<div class=\'alert alert-success\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Avatar úspěšně nahrán.</p></div>';
+              $('#avatarFormMsgAlertBoxSuccess').html(html);
+              $('#avatarProfileImg').load(function() {
+                var html;
+                $(this).hide();
+                $(this).fadeIn('slow');
+              }).attr('src', $('#avatarProfileImg').attr('src') + '?' + (new Date).getTime());
+            } else {
+              html = '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Avatarata se nepodařilo nahrát></div>';
+              $('#avatarFormMsgAlertBoxDanger').html(html);
+            }
+          }
+        });
+      }
+    });
+    $('.btn-categories, .btn-years, .btn-areas').click(function() {
+      var id;
+      $('#categories,#years, #areas').hide();
+      id = '#' + $(this).val();
+      $(id).show();
+      $('#oao-subcategories-content').hide();
+    });
+    $('.editorial_event_type').change(function(e) {
+      if ($(this).attr('checked')) {
+        $('.editorialEventsDate').show();
+        $('#datum_do_editorial_fullday').hide();
+      } else {
+        $('.editorialEventsDate').hide();
+        $('#datum_do_editorial_fullday').show();
+      }
+    });
+    $('#datum_do_editorial_fullday').on('change', function(e) {
+      var date;
+      date = e.target.value.split('.');
+      console.log(date);
+      $('#datum_od_editorial').val(date[0] + '/' + date[1] + '/' + date[2]);
+      $('#datum_do_editorial').val(date[0] + '/' + date[1] + '/' + date[2]);
+      $('#cas_od_editorial').val('00:00');
+      $('#cas_do_editorial').val('00:00');
+    });
+    $('#print_OAO_BL').click(function(e) {
+      var is_chrome, mojeUrl, mywindow, textCitace;
+      mojeUrl = window.location.href;
+      textCitace = "In: Portál DAUC.cz [online].\nISSN 2533-4484";
+      mywindow = window.open('', '', 'location=1,resizable=yes,height=600,width=800');
+      is_chrome = Boolean(mywindow.chrome);
+      mywindow.document.write('<html><head>');
+      mywindow.document.write('<link rel="stylesheet" href="/css/dauc_print.css" type="text/css" media="print"/>');
+      mywindow.document.write('</head><body><header><table><th><td style="text-align: left; width: 40%; font-size: 9px">DAUČ | Wolters Kluwer ČR</td><td style="text-align: right; width: 60%; font-size: 9px">');
+      mywindow.document.write(mojeUrl);
+      mywindow.document.write('</td></th></table></header>');
+      mywindow.document.write('<div class="logo_claim" align="left"><img src="/img/dauc_logo_black_claim.png" width="116" /></div><hr />');
+      mywindow.document.write($('#obsahoveZneni').html());
+      mywindow.document.write('<hr /><footer><table><th><td style="text-align: left; width: 50%">&#169; Wolters Kluwer ČR, a. s., 2017</td><td style="text-align: right; width: 50%">www.dauc.cz</td></th></table><div style="text-align: right"><img src="/img/logo-wkcr.jpg" width="180" /></div></footer><h5>');
+      mywindow.document.write(textCitace);
+      mywindow.document.write('</h5></body></html>');
+      if (is_chrome) {
+        setTimeout(function() {
+          mywindow.document.close();
+          mywindow.focus();
+          mywindow.print();
+          return mywindow.close();
+        }, 600);
+      } else {
+        mywindow.document.close();
+        mywindow.focus();
+        mywindow.print();
+        mywindow.close();
+      }
+      true;
+      return;
+    });
+    $('.contentFilter').click(function(e) {
+      var id;
+      $('.contentFilter').removeClass('active');
+      e.preventDefault();
+      id = $(this).attr('id');
+      $(this).addClass('active');
+      $('.parent-id-' + id).toggle('slow');
+    });
+    $('.btn-my-zone').click(function(e) {
+      var breadcrumbHtml, divID, json, title;
+      e.preventDefault();
+      $('.btn-my-zone').removeClass('btn-my-zone-active');
+      $(this).addClass('btn-my-zone-active');
+      title = e.target.dataset.value;
+      divID = e.target.dataset.divid;
+      $('#my-zone-content').children().each(function(inex, el) {
+        $(el).hide();
+      });
+      breadcrumbHtml = '<li><a href="#">Moje zóna</a> </li> <li> <a href="#">' + title + '</a> </li>';
+      $('#my-zone-breadcrumb').html(breadcrumbHtml);
+      $('#' + divID).show();
+      if (divID === 'subject-list') {
+        json = '{}';
+        $.ajax({
+          url: '/seznam_subjektu/',
+          contentType: 'application/json',
+          data: json,
+          method: 'POST',
+          dataType: 'json',
+          success: function(result) {
+            var json;
+            var html;
+            var html;
+            $('.subject-list-table').html('');
+            if (result.status === 'OK') {
+              if (result.subjekty.length === 0) {
+                html = '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Nemáte přiřazen žádný subjekt</p></div>';
+                $('.subject-list-table').html(html);
+              } else {
+                $('#subjectListTable').html('');
+                html = '<thead><tr><th>IČ</th><th>Název</th><th>Ověřen</th><th>Aktivní</th></tr></thead><tbody>';
+                $.each(result.subjekty, function(index, item) {
+                  var aktivni, overen;
+                  overen = item.overen === 1 ? 'ano' : 'ne';
+                  aktivni = item.aktivni === 1 ? 'ano' : 'ne';
+                  console.log(item);
+                  html = html + '<tr data-subject-id=' + item.id_subjekt + '><td>' + item.ic + '</td><td>' + item.subjekt + '</td><td>' + overen + '</td><td>' + aktivni + '</td><td><button value=\'' + item.id_subjekt + '\' id=\'addToSubjectBtn\' class=\'btn btn-sm btn-success mgr-right10\'>Vybrat</button><button value=\'' + item.id_subjekt + '\' id=\'manageSubjectBtn\' class=\'btn btn-sm btn-info\'>Spravovat</button></td></tr>';
+                });
+                html = html + '</tbody>';
+                $('#subjectListTable').append(html);
+                $('#addToSubjectBtn').click(function(e) {
+                  var data, value;
+                  e.preventDefault();
+                  value = e.target.value;
+                  data = new Object;
+                  data.id_subjekt = value;
+                  json = JSON.stringify(data);
+                  $.ajax({
+                    url: '/nastav_subjekt/',
+                    contentType: 'application/json',
+                    data: json,
+                    method: 'POST',
+                    dataType: 'json',
+                    success: function(result) {
+                      if (result.status === 'OK') {
+                        location.reload();
+                      }
+                    }
+                  });
+                });
+                $('#manageSubjectBtn').click(function() {
+                  var self;
+                  self = this;
+                  $('#addToSubjectBtn').hide();
+                  $.each($('#subjectListTable tr'), function(index, item) {
+                    if ($(item).data('subject-id') === $(self).val()) {
+                      $.each($(item).children(), function(index, child) {
+                        var html;
+                        var value;
+                        if (index < 4) {
+                          value = $(child).html();
+                          html = '<input type=\'text\' class=\'col-xs-8\' name=\'value1\' value=\'' + value + '\'></input>';
+                          $(child).html(html);
+                        }
+                      });
+                    }
+                  });
+                  $(this).html('Uložit').addClass('btn-danger').removeClass('btn-info').attr('id', 'test').off();
+                  $(this).click(function() {
+                    alert('Zde je nutne provolat server API a ulozit hodnoty z inputu');
+                  });
+                });
+              }
+            } else {
+              console.log("hledej_me");
+            }
+          }
+        });
+      } else if (divID === 'subject-clients-list') {
+        json = '{}';
+        $.ajax({
+          url: '/seznam_klientu_subjektu/',
+          contentType: 'application/json',
+          data: json,
+          method: 'POST',
+          dataType: 'json',
+          success: function(result) {
+            var html;
+            console.log(result);
+            $('.subject-list-table').html('');
+            if (result.status === 'OK') {
+              if (result.klienti.length === 0) {
+                html = '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Nemáte přiřazen žádný subjekt</p></div>';
+                $('.subject-list-table').html(html);
+              }
+            } else {
+              console.log("hledej_me");
+            }
+          }
+        });
+      }
+    });
+    $('#registration-type1, #registration-type2, #registration-type3').click(function(e) {
+      $('#new-subject-subform').hide();
+      $('#new-subject-subform2').hide();
+      if (e.target.value !== 'later') {
+        if (e.target.value === 'existing') {
+          $('#new-subject-subform2').fadeIn('slow');
+        } else {
+          $('#new-subject-subform').fadeIn('slow');
+        }
+      }
+    });
+    $('#detail-doc-options-btn').click(function() {
+      $('#detail-doc-options').toggle('slow');
+    });
+    $('#searchOnlyInDocDetailText').change(function() {
+      if ($(this).prop('checked')) {
+        $('#searchDocDetailSubmitBtn').on('click', function(e) {
+          var value;
+          e.preventDefault();
+          $('.search-wrapper').css('position', 'fixed');
+          value = $('#detailDocSeachInput').val();
+          console.log(window.find(value, false));
+          window.find(value, false);
+        });
+      } else {
+        $('#searchDocDetailSubmitBtn').unbind('click');
+      }
+    });
+    $(function() {
+      $('#bookmarkme').click(function() {
+        if (window.sidebar && window.sidebar.addPanel) {
+          window.sidebar.addPanel(document.title, window.location.href, '');
+        } else if (window.external && 'AddFavorite' in window.external) {
+          window.external.AddFavorite(location.href, document.title);
+        } else if (window.opera && window.print) {
+          this.title = document.title;
+          return true;
+        } else {
+          alert('Prosím stiskněte klávesovou zkratku ' + (navigator.userAgent.toLowerCase().indexOf('mac') !== -1 ? 'Command/Cmd' : 'CTRL') + ' + D pro uložení do oblíbených.');
+        }
+      });
+    });
+    $('.detail-document-content > ul li span').click(function() {
+      if ($(this).hasClass('glyphicon-plus')) {
+        $(this).removeClass('glyphicon glyphicon-plus').addClass('glyphicon glyphicon-minus');
+      } else {
+        if ($(this).hasClass('glyphicon-minus')) {
+          $(this).removeClass('glyphicon glyphicon-minus').addClass('glyphicon glyphicon-plus');
+        }
+      }
+      $(this).next().next().next().toggle();
+    });
+    $('.uo_tree > ul li span').click(function() {
+      if ($(this).hasClass('glyphicon-plus-sign')) {
+        $(this).removeClass('glyphicon glyphicon-plus-sign').addClass('glyphicon glyphicon-minus-sign');
+      } else {
+        if ($(this).hasClass('glyphicon-minus-sign')) {
+          $(this).removeClass('glyphicon glyphicon-minus-sign').addClass('glyphicon glyphicon-plus-sign');
+        }
+      }
+      $(this).next().next().toggle();
+    });
+    $('#editorialEventsType').change(function(e) {
+      var type;
+      e.preventDefault();
+      type = $(this).val();
+      showCategoriesById(type);
+    });
+    $('#editorialEvents').on('shown.bs.modal', function() {
+      var data, json;
+      $('#editorialEventName').focus();
+      $.ajax({
+        url: '/get_ciselnik_kategorie/',
+        contentType: 'application/json',
+        method: 'GET',
+        success: function(result) {
+          var data;
+          data = result.userdata;
+          $('#jstree_demo_div').jstree({
+            'core': {
+              'data': data,
+              'multiple': false,
+              onselect: function(n, t) {
+                t.toggle_branch(n);
+              },
+              'plugins': ['wholerow', 'checkbox'],
+              'themes': {
+                'icons': false
+              }
+            }
+          });
+        }
+      });
+      data = new Object;
+      data.kal_udalosti_seznam_limit = 1000000;
+      json = JSON.stringify(data);
+      $.ajax({
+        url: '/kalendar/get_list/',
+        contentType: 'application/json',
+        data: json,
+        method: 'POST',
+        dataType: 'json',
+        success: function(result) {
+          var html;
+          if (result.status === 'OK') {
+            html = '<table class=\'table table-striped\'><thead><tr><th>Datum od</th><th>Datum do</th><th>Nazev</th><th>Typ</th><th>Kategorie</th></tr></thead><tbody>';
+            $.each(result.kal_udalosti_seznam, function(index, item) {
+              html = html + '<tr><td>' + item.datum_od + '</td><td>' + item.datum_do + '</td><td>' + item.nazev + '</td><td>' + item.typ + '</td><td>' + item.kategorie + '</td><td></td>';
+            });
+            html = html + '</tbody></table>';
+            console.log($('#eventsOverview2Table'));
+            console.log($('#demo_grid1'));
+          }
+        }
+      });
+      $('.jstree-container-ul').addClass('form-control');
+      $('.jstree-container-ul').css({
+        'height': '500px'
+      });
+    });
+    $('#jstree_demo_div').on('changed.jstree', function(e, data) {
+      $('#editorialEventsCategory').attr('value', data.selected[0]);
+    });
+    buffer = [];
+    $('.detail-document-content ul > li > input[type=\'checkbox\']').change(function(e) {
+      var selector, selectorIndex, showChildList;
+      selector = $(this).attr('name').substring(2);
+      $('paragraf').hide();
+      $('cast').hide();
+      $('hlava').hide();
+      $('priloha').hide();
+      if ($(this).next().next().is('ul')) {
+        showChildList = true;
+        $(this).next().next().find(':checkbox').prop('checked', e.target.checked);
+      } else {
+        showChildList = true;
+      }
+      selectorIndex = $.inArray(selector, buffer);
+      if (selectorIndex === -1) {
+        buffer.push(selector);
+      } else {
+        buffer.splice(selectorIndex, 1);
+      }
+      $.each(buffer, function(index, selector) {
+        $('#' + selector).show();
+        $('#' + selector).children().children().show();
+        $('#' + selector).parent().show();
+        $('#' + selector).parent().parent().show();
+      });
+      if (showChildList) {
+        if (e.target.checked) {
+          $('#' + selector).children().show();
+          $.each($('#' + selector).children(), function(index, item) {
+            buffer.push($(item).attr('id'));
+          });
+        } else {
+          $('#' + selector).children().hide();
+          $.each($('#' + selector).children(), function(index, item) {
+            var selectorIndex;
+            selectorIndex = $.inArray($(item).attr('id'), buffer);
+            buffer.splice(selectorIndex, 1);
+          });
+        }
+      }
+      if (buffer.length === 0) {
+        $('paragraf').show();
+        $('cast').show();
+        $('hlava').show();
+        $('priloha').show();
+      }
+      console.log(selector);
+      console.log(buffer);
+      $('html, body').animate({
+        scrollTop: $('#' + selector).offset().top - 95
+      }, 25);
+    });
+    $('#document-groups-btn').click(function() {
+      $(this).text(function(i, text) {
+        if (text === 'Zobrazit oblasti pusobnosti') {
+          'Skrýt oblasti pusobnosti';
+        } else {
+          'Zobrazit oblasti pusobnosti';
+        }
+      });
+      $('.document-groups').toggle('slow');
+    });
+    $('#popis').keyup(function() {
+      $('#popis-size').text($(this).val().length);
+      if ($(this).val().length > 299) {
+        $('#popis-size').css('color', 'red');
+        $('#popis').attr('maxlength', 300);
+        $('#popis-size').append('<p>Překročil jste povolený limit znaků pro popis.</p>');
+      } else {
+        $('#popis-size').css('color', 'green');
+      }
+    });
+    $('#alert').change(function() {
+      $('#calEventRepeat').toggle('slow');
+    });
+    $('.event_type').change(function(e) {
+      if ($(this).val() === 'true') {
+        $('#allDayEventFalse').hide();
+        $('#allDayEventTrue').show();
+      } else {
+        $('#allDayEventFalse').show();
+        $('#allDayEventTrue').hide();
+      }
+    });
+    $('#datum_all_day').change(function() {
+      var allDay;
+      allDay = $('#datum_all_day').val().split('.');
+      $('#datum_od, #datum_do').val(allDay[0] + '/' + allDay[1] + '/' + allDay[2]);
+    });
+    $('#regform-submit').click(function(e) {
+      var dauc_newsletter, doregistrace, email, formData, json, password, password_again, person_name, person_surname, phone, souhlas, testovaci, titul_pred, titul_za;
+      e.preventDefault();
+      email = $('#reg_email').val();
+      password = $('#password').val();
+      password_again = $('#password_again').val();
+      person_name = $('#person_name').val();
+      person_surname = $('#person_surname').val();
+      titul_pred = $('#titul_pred').val();
+      titul_za = $('#titul_za').val();
+      phone = $('#phone').val();
+      doregistrace = $('#doregistrace').val();
+      testovaci = $('#testovaci').is(':checked');
+      souhlas = $('#souhlas').is(':checked');
+      dauc_newsletter = $('#dauc_newsletter').is(':checked');
+      if (!souhlas) {
+        createDangerRegFormMessage({
+          ' ': 'Vyberte souhlas se zpracováním osobních údajů.'
+        });
+        return;
+      }
+      if (password_again !== password) {
+        createDangerRegFormMessage({
+          ' ': 'Hesla se neshodují.'
+        });
+        return;
+      }
+      formData = new Object;
+      formData.email = email;
+      formData.password = password;
+      formData.person_name = person_name;
+      formData.person_surname = person_surname;
+      formData.titul_pred = titul_pred;
+      formData.titul_za = titul_za;
+      formData.phone = phone;
+      formData.doregistrace = doregistrace;
+      formData.testovaci = testovaci;
+      formData.souhlas = souhlas;
+      formData.dauc_newsletter = dauc_newsletter;
+      json = JSON.stringify(formData);
+      $.ajax({
+        url: '/registration/',
+        contentType: 'application/json',
+        data: json,
+        method: 'POST',
+        dataType: 'json',
+        success: function(result) {
+          if (result.status === 'OK') {
+            $('#regFormDanger').empty('.error-item');
+            $('#regFormDanger').hide();
+            $('#registration').modal('hide');
+            window.location.href = '/';
+          } else {
+            $('#regFormDanger').empty('.error-item');
+            createDangerRegFormMessage(result.errors);
+          }
+        }
+      });
+    });
+    $('#doregistrace').on('focusout', function() {
+      var cifa;
+      cifa = parseInt($(this).val());
+      if ((cifa >= 1000000000 && cifa < 4000000000) || (cifa >= 5000000000 && cifa < 6000000000) || (cifa >= 8000000000 && cifa < 9999999999)) {
+        $('#regform-submit').prop('disabled', false);
+        $(this).removeClass('form-control-faktura-wrong');
+      } else {
+        $(this).val("");
+        $(this).attr('placeholder', "Zadané číslo faktury není správné.");
+        $('#regform-submit').prop('disabled', true);
+        $(this).addClass('form-control-faktura-wrong');
+      }
+    });
+    $('.accordion_paragraf, .accordion_hierarchie, .accordion_comment').accordion({
+      heightStyle: 'content',
+      active: false,
+      collapsible: true,
+      beforeActivate: function(event, ui) {
+        var data, json;
+        data = new Object;
+        data.id_ko = ui.newHeader.data('id');
+        json = JSON.stringify(data);
+        $.ajax({
+          url: '/dokument/get_ko',
+          contentType: 'application/json',
+          data: json,
+          method: 'POST',
+          dataType: 'json',
+          success: function(result) {
+            console.log(result);
+            if (result.status === 'OK') {
+              ui.newPanel[0].innerHTML = result.komentar + result.paragraf;
+            } else {
+
+            }
+          }
+        });
+      }
+    });
+    $('#calendarEvent').on('hidden.bs.modal', function() {
+      $('.accordion').accordion('destroy');
+    });
+    $('.detailDocView').click(function(e) {
+      var idDivToShow;
+      idDivToShow = '#' + e.target.value;
+      $('#paragrafoveZneni').hide();
+      $('#hierarchieZneni').hide();
+      $('#obsahoveZneni').hide();
+      $(idDivToShow).show();
+    });
+    $('#advenced-search-button').click(function(e) {
+      e.preventDefault();
+      $('#advenced-search').toggle();
+      $('#advenced-search .tab-content a[href="#all"]').tab('show');
+    });
+    $('#sendUrlViaEmail').click(function(e) {
+      e.preventDefault();
+      $('#sendUrlViaEmailModal').modal('show');
+      $('#urlToSend').val(window.location.href);
+      $('#sendUrlViaEmailFormBody').val('Napište vlastní zprávu: \n\n' + window.location.href);
+    });
+    $('#newQuestionBtn').click(function() {
+      if (id_klient > 0) {
+        $.ajax({
+          url: '/oao/pocet_otazek/',
+          type: 'POST',
+          contentType: 'application/json',
+          dataType: 'json',
+          error: function(jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+          },
+          success: function(data, status, response) {
+            var new_well;
+            if (data.lic_neomezena) {
+              $('#newQuestionForm').toggle('fast');
+            } else if (data.lic_omezena && data.pocet_otazek < 7) {
+              new_well = '<div id="well_div" class="alert alert-info alert-dismissible" role="alert">';
+              new_well += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+              new_well += '<p id="well_text"> V rámci Vaší licence můžete zadat max. 7 dotazů/rok. V současnosti Vám zbývá zadat ';
+              new_well += 7 - data.pocet_otazek;
+              new_well += ' dotazů.</p>';
+              new_well += '</div>';
+              $('#well_box').html(new_well);
+              $('#newQuestionForm').toggle('fast');
+            } else if (data.lic_omezena && data.pocet_otazek >= 7) {
+              new_well = '<div id="well_div" class="alert alert-warning alert-dismissible" role="alert">';
+              new_well += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+              new_well += '<p id="well_text">V rámci Vaší licence jste mohli zadat max. 7 dotazů/rok. Váš limit byl vyčerpán. Můžete využít služby předplatného Otázky a odpovědi, podrobnější informace v sekci Předplatné nebo na emailu <a href="mailto:redakce@dauc.cz">redakce@dauc.cz</a>.</p>';
+              new_well += '</div>';
+              $('#well_box').html(new_well);
+            } else if (data.lic_test) {
+              new_well = '<div id="well_div" class="alert alert-danger alert-dismissible" role="alert">';
+              new_well += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+              new_well += '<p id="well_text">Testovací licence neopravňuje k zadávání dotazů do poradny. Využijte služby předplatného Otázky a odpovědi, podrobnější informace naleznete v sekci Předplatné nebo nás neváhejte kontaktovat na emailu <a href="mailto:redakce@dauc.cz">redakce@dauc.cz</a>.</p>';
+              new_well += '</div>';
+              $('#well_box').html(new_well);
+            } else {
+              new_well = '<div id="well_div" class="alert alert-danger alert-dismissible" role="alert">';
+              new_well += '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+              new_well += '<p id="well_text">Vaše licence neopravňuje k zadávání dotazů do poradny. Využijte služby předplatného Otázky a odpovědi, podrobnější informace naleznete v sekci Předplatné nebo nás neváhejte kontaktovat na emailu <a href="mailto:redakce@dauc.cz">redakce@dauc.cz</a>.</p>';
+              new_well += '</div>';
+              $('#well_box').html(new_well);
+            }
+          }
+        });
+      } else {
+        $("#loginForm").modal("show");
+      }
+    });
+    $(function() {
+      var noactive, ref, sortType;
+      noactive = ['kancelar', 'oaoautor', 'predplatne', 'legislativa'];
+      if (location.pathname === '/') {
+        $('#home').addClass('active');
+      } else {
+        if (ref = location.pathname.split('/')[1], indexOf.call(noactive, ref) < 0) {
+          $('.nav li a[href^="/' + location.pathname.split('/')[1] + '"]').parent().addClass('active');
+        }
+      }
+      if (location.pathname.split('/')[1] === 'diskuze') {
+        if (location.pathname.split('/')[3]) {
+          sortType = location.pathname.split('/')[3];
+          $('ul#discussion-list-tabs li > a').each(function(index, item) {
+            if ($(item).data('type') === location.pathname.split('/')[3]) {
+              $(item).parent().addClass('active');
+            } else {
+              $(item).parent().removeClass('active');
+            }
+          });
+        } else {
+          $('ul#discussion-list-tabs li:first').addClass('active');
+        }
+        $('.nav-tabs li > a').click(function() {
+          var type;
+          $(this).addClass('active');
+          type = $(this).data('type');
+          console.log(location.pathname.split('/')[2]);
+          window.location.href = '/diskuze' + location.pathname.split('/')[2] + '/' + type;
+        });
+      }
+      if (location.pathname.split('/')[1] === 'diskuze' && location.pathname.split('/')[2] === '') {
+        $('#discussion-list-tabs-overview').show();
+      }
+    });
+    $(document).on('focusin', function(e) {
+      if ($(e.target).closest('.mce-window').length) {
+        e.stopImmediatePropagation();
+      }
+    });
+    $('#go-to-quick-messages').click(function() {
+      $('#quickMessages').modal('hide');
+      window.location.href = '/#bleskove-zpravy';
+    });
+    $('#btn-kdp_oauth').click(function() {
+      window.location.href = '/kdp_login';
+    });
+    $('#btn-forgotten_passwd').click(function() {
+      $('#loginForm').modal('hide');
+      $('#forgotten-passwd-modal').modal('show');
+      $('#resetPasswdFormMsgAlertBoxDanger').html('');
+      $('#forgotten-password').click(function(e) {
+        var form;
+        e.preventDefault();
+        form = new AspiForm($('#forgotten-password-form'));
+        form.getFormData();
+        form.send(function(result) {
+          if (result.status === 'OK') {
+            window.location.reload();
+          } else {
+            $('#resetPasswdFormMsgAlertBoxDanger').html('<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Účet s tímto heslem neexistuje.</div>');
+          }
+        });
+      });
+    });
+    $('#btn-registration, #lay_registration').click(function() {
+      $('#regForm').modal('hide');
+      $('#div_testovaci').show();
+      $('#div_doregistrace').addClass("hidden");
+      $('#doregistrace-info').addClass("hidden");
+      $('#doregistrace').val("");
+      $('#regform-submit').prop('disabled', false);
+      $('#regform-submit').html("Registrovat");
+      $('#RegistraceLabel').html("Registrace uživatele na portál DAUC.cz");
+      $('#myModalLabel2').html("Zpřístupnění obsahu portálu bez možnosti zadávat vlastní dotazy.");
+      $('#testovaci').prop('checked', true);
+      $('#registration').modal('show');
+    });
+    $('#btn-reactiv_account').click(function() {
+      $('#loginForm').modal('hide');
+      $('#reactiv-account-modal').modal('show');
+      $('#reactiv-account').click(function(e) {
+        var form;
+        e.preventDefault();
+        form = new AspiForm($('#reactiv-account-form'));
+        form.getFormData();
+        form.send(function(result) {
+          if (result.status === 'OK') {
+            $('#reactiv-account-modal').modal('hide');
+            $('#zadost_o_reaktivaci_uctu_modal').modal('show');
+          } else {
+            $('#reactiv-account-modal').modal('hide');
+            $('#zadost_o_reaktivaci_uctu_chyba_modal').modal('show');
+          }
+        });
+      });
+    });
+    $('#btn-reactiv_oao').click(function() {
+      $('#regForm').modal('hide');
+      $('#div_testovaci').hide();
+      $('#div_doregistrace').removeClass("hidden");
+      $('#doregistrace-info').removeClass("hidden");
+      $('#regform-submit').prop('disabled', true);
+      $('#regform-submit').html("Doregistrovat");
+      $('#RegistraceLabel').html("Doregistrace licence MojeOaO (max. 7 dotazů/rok zdarma).");
+      $('#myModalLabel2').html("Zpřístupnění obsahu portálu s možností zadat až 7 vlastních dotazů.");
+      $('#testovaci').prop('checked', false);
+      $('#registration').modal('show');
+    });
+    $('#btn-doregistrace_oao, #btn-prodlouzeni_oao').click(function() {
+      $('#licenceMOForm').modal('show');
+      $('#licenceMOFormSubmit').prop('disabled', true);
+      $('#faktura_mo').focus();
+    });
+    $('#faktura_mo').on('keyup', function() {
+      var cifa;
+      cifa = parseInt($(this).val());
+      if ((cifa >= 1000000000 && cifa < 4000000000) || (cifa >= 5000000000 && cifa < 6000000000) || (cifa >= 8000000000 && cifa <= 9999999999)) {
+        $('#licenceMOFormSubmit').removeClass('red-button');
+        $('#licenceMOFormSubmit').removeClass('green-button');
+        $('#licenceMOFormSubmit').addClass('green-button');
+        $('#licenceMOFormSubmit').prop('disabled', false);
+        $(this).removeClass('form-control-faktura-wrong');
+        $('#licenceMOFormSubmit').prop('title', '');
+      } else {
+        $('#licenceMOFormSubmit').removeClass('red-button');
+        $('#licenceMOFormSubmit').removeClass('green-button');
+        $('#licenceMOFormSubmit').addClass('red-button');
+        $('#licenceMOFormSubmit').prop('disabled', true);
+        $(this).addClass('form-control-faktura-wrong');
+        $('#licenceMOFormSubmit').prop('title', 'číslo faktury není vyplněno nebo je zadáno špatně');
+      }
+    });
+    $('#licenceMOFormSubmit').click(function(e) {
+      var faktura_mo, formData, json;
+      e.preventDefault();
+      faktura_mo = $('#faktura_mo').val();
+      formData = new Object;
+      formData.faktura_mo = faktura_mo;
+      json = JSON.stringify(formData);
+      $.ajax({
+        url: '/doregistrace_mo/',
+        contentType: 'application/json',
+        data: json,
+        method: 'POST',
+        dataType: 'json',
+        success: function(result) {
+          if (result.status === 'OK') {
+            window.location.href = '/';
+          } else {
+            console.log(result.status);
+          }
+        }
+      });
+    });
+    $('#date_from, #date_to, #vydano, #datum_all_day, #datum_all_day_editorial').datepicker({
+      orientation: 'auto left',
+      firstDay: 1,
+      closeText: 'Zavřít',
+      changeMonth: true,
+      autoSize: true,
+      language: 'cs',
+      monthNamesShort: ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'],
+      changeYear: true,
+      dateFormat: 'dd.mm.yy',
+      dayNames: ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'],
+      dayNamesMin: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
+      onSelect: function(dateText, DatePicker) {
+        $(this).attr('value', helpers.getIsoDateFormat(dateText, '.'));
+        $(this).change();
+      }
+    });
+    $('#datum_do').datetimepicker({
+      lang: 'cs',
+      dayOfWeekStart: 1,
+      todayButton: true,
+      format: 'DD.MM.YYYY H:mm',
+      formatTime: 'H:mm',
+      validateOnBlur: false,
+      defaultTime: '00:00',
+      timepicker: true,
+      onChangeDateTime: function(dateTime) {
+        var d, day, hours, minutes, month, year;
+        d = new Date(dateTime);
+        year = dateTime.getFullYear();
+        month = dateTime.getMonth() + 1;
+        day = dateTime.getDate();
+        hours = dateTime.getHours();
+        minutes = dateTime.getMinutes();
+        $('#datum_do').val(day + '/' + month + '/' + year);
+        $('#cas_do').val(hours + ':00');
+      }
+    });
+    $('#datum_od').datetimepicker({
+      lang: 'cs',
+      dayOfWeekStart: 1,
+      todayButton: true,
+      format: 'DD.MM.YYYY H:mm',
+      formatDate: 'd.m.Y',
+      formatTime: 'H:mm',
+      validateOnBlur: false,
+      defaultTime: '00:00',
+      timepicker: true,
+      minDate: 0,
+      onChangeDateTime: function(dateTime) {
+        var d, day, hours, minutes, month, year;
+        d = new Date(dateTime);
+        year = d.getFullYear();
+        month = d.getMonth() + 1;
+        day = d.getDate();
+        hours = d.getHours();
+        minutes = d.getMinutes();
+        $('#datum_od').val(day + '/' + month + '/' + year);
+        $('#cas_od').val(hours + ':00');
+      }
+    });
+    $('#datum_od_editorial').datetimepicker({
+      lang: 'cs',
+      dayOfWeekStart: 1,
+      todayButton: true,
+      format: 'DD.MM.YYYY H:mm',
+      formatTime: 'H:mm',
+      validateOnBlur: false,
+      defaultTime: '00:00',
+      timepicker: true,
+      formatDate: 'd.m.Y',
+      onChangeDateTime: function(dateTime) {
+        var d, day, hours, minutes, month, year;
+        d = new Date(dateTime);
+        year = dateTime.getFullYear();
+        month = dateTime.getMonth() + 1;
+        day = dateTime.getDate();
+        hours = dateTime.getHours();
+        minutes = dateTime.getMinutes();
+        $('#datum_od_editorial').val(day + '/' + month + '/' + year);
+        $('#cas_od_editorial').val(hours + ':00');
+      }
+    });
+    $('#datum_do_editorial').datetimepicker({
+      lang: 'cs',
+      dayOfWeekStart: 1,
+      todayButton: true,
+      formatDate: 'd.m.Y',
+      minDate: 0,
+      validateOnBlur: false,
+      onChangeDateTime: function(dateTime) {
+        var d, day, hours, minutes, month, year;
+        d = new Date(dateTime);
+        year = d.getFullYear();
+        month = d.getMonth() + 1;
+        day = d.getDate();
+        hours = d.getHours();
+        minutes = d.getMinutes();
+        $('#datum_do_editorial').val(day + '/' + month + '/' + year);
+        $('#cas_do_editorial').val(hours + ':00');
+      }
+    });
+    $('#calUserEventSubmit').click(function(e) {
+      var form;
+      e.preventDefault();
+      form = new AspiForm($('#calUserEventForm'));
+      form.getFormData();
+      form.send(function(result) {
+        var html;
+        console.log(result);
+        if (result.status === 'OK') {
+          window.location.reload();
+        } else {
+          html = '';
+          $('html, body').animate({
+            scrollTop: 0
+          }, 'slow');
+          $.each(result.errors, function(key, value) {
+            key = key.charAt(0).toUpperCase() + key.slice(1);
+            key = key.replace('_', ' ');
+            html = html + '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button>Chybné pole ' + key + ': ' + value + '</div>';
+          });
+          $('#calEventMsgAlertBoxDanger').html(html);
+          $('#calEventMsgAlertBoxDanger').show();
+          return false;
+        }
+      });
+    });
+    $('#publish-quick-msg, #save-quick-msg').click(function(e) {
+      var form, vydano;
+      e.preventDefault();
+      $('#qucikMsgAlertBoxDanger').hide();
+      vydano = helpers.getIsoDateFormat($('#vydano').val(), '.');
+      if (!validDate(vydano)) {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 'slow');
+        $('#qucikMsgAlertBoxDanger').html('Chybné pole vydáno: nesprávný formát data.');
+        $('#qucikMsgAlertBoxDanger').show();
+        return false;
+      } else {
+        form = new AspiForm($('#save-quick-msg-form'), {
+          'name': 'obsah',
+          'value': tinymce.editors['quickMessages-textearea'].getContent()
+        });
+        form.getFormData();
+        if ($(this).attr('id') === 'save-quick-msg') {
+          form.setValueByKey('stav', 7);
+        }
+        form.send(function(result) {
+          var html;
+          if (result.status === 'OK') {
+
+          } else {
+            html = '';
+            $('html, body').animate({
+              scrollTop: 0
+            }, 'slow');
+            $.each(result.errors, function(key, value) {
+              key = key.charAt(0).toUpperCase() + key.slice(1);
+              html = html + '<p>Chybné pole ' + key + ': ' + value + '</p>';
+            });
+            $('#qucikMsgAlertBoxDanger').html(html);
+            $('#qucikMsgAlertBoxDanger').show();
+            return false;
+          }
+        });
+      }
+    });
+    $('#documentDetailTabs').tabs();
+    $('#menuFilemanButton').click(function() {
+      var html;
+      html = '<iframe src="/fileman/?integration=custom&amp;type=files&amp;txtFieldId=txtSelectedFile&amp;conf=input" style="width:100%;height:700px;z-index:9999" frameborder="0"></iframe>';
+      $('#filemanModalWindow').html(html);
+    });
+    $(' #quickMessageButton-fe ').click(function(e) {
+      var items;
+      items = $('ul#quickMessages-fe-list').children();
+      items.each(function(i, value) {
+        value.className = 'default';
+      });
+    });
+    $(' #quickMessageButton ').click(function(e) {
+      var data, items, json;
+      items = $('ul#quickMessages-admin-list').children();
+      items.each(function(i, value) {
+        value.className = 'default';
+      });
+      $(e.target).parent()[0].className = 'active';
+      e.preventDefault();
+      $(' .tinyText ').hide();
+      $(' #qucikMsgAlertBox').hide();
+      data = new Object;
+      data.id_bleskova = $(e.target).data('id');
+      data.limit = 100;
+      json = JSON.stringify(data);
+      $.ajax({
+        url: '/bleskove/get',
+        contentType: 'application/json',
+        data: json,
+        method: 'POST',
+        dataType: 'json',
+        success: function(result) {
+          var deleteButton, editButton;
+          deleteButton = '<span><button data-id=' + data.id_bleskova + ' class="btn btn-sm btn-danger glyphicon glyphicon-remove" id="deleteQuickMsg" aria-hidden="true"></button><span><span></span>';
+          editButton = '<span><button data-id=' + data.id_bleskova + ' class="btn btn-sm btn-primary glyphicon glyphicon-pencil" id="editQuickMsg" aria-hidden="true"></button></span>';
+          $(' .quick-msg-content').html('<div class="mrg-bottom10 mgr-right10">' + deleteButton + editButton + '</div>' + '<div style="word-wrap: break-word;" class="well"><em>' + result.popis + '</em></div><div id="quick-msg-content-inner">' + result.obsah + '</div>');
+          $(' .quick-msg-content').show();
+          $('#deleteQuickMsg').click(function(e) {
+            var json;
+            var data;
+            e.preventDefault();
+            data = new Object;
+            data.id_bleskova = $('#deleteQuickMsg').data('id');
+            if (confirm('Opravdu chcete smazat bleskovou zprávu #' + data.id_bleskova)) {
+              json = JSON.stringify(data);
+              $.ajax({
+                url: '/bleskove/delete',
+                contentType: 'application/json',
+                data: json,
+                method: 'POST',
+                dataType: 'json',
+                success: function(result) {
+                  var idRemoved, menuItemToRemove;
+                  idRemoved = $('#deleteQuickMsg').data('id');
+                  menuItemToRemove = $('ul#quickMessages-admin-list').find('[data-id=\'' + idRemoved + '\']');
+                  menuItemToRemove.parent().hide();
+                  if (result.status === 'OK') {
+                    $(' .quick-msg-content').html('');
+                    $(' .quick-msg-content').hide();
+                    $(' #qucikMsgAlertBox').show();
+                  }
+                }
+              });
+            }
+          });
+          $('#editQuickMsg').click(function(e) {
+            var json;
+            var data;
+            e.preventDefault();
+            $(' .quick-msg-content').hide();
+            $(' .tinyText ').show();
+            $('#id_bleskova').remove();
+            $('<input>').attr({
+              type: 'hidden',
+              id: 'id_bleskova',
+              name: 'id_bleskova',
+              value: $('#editQuickMsg').data('id')
+            }).appendTo('#save-quick-msg-form');
+            data = new Object;
+            data.id_bleskova = $('#editQuickMsg').data('id');
+            json = JSON.stringify(data);
+            $.ajax({
+              url: '/bleskove/get',
+              contentType: 'application/json',
+              data: json,
+              method: 'POST',
+              dataType: 'json',
+              success: function(result) {
+                var autorIndex, kategorieHtml, oblastiHtml;
+                if (result.status === 'OK') {
+                  oblastiHtml = '';
+                  kategorieHtml = '';
+                  if (result.oblasti !== null) {
+                    $.each(result.oblasti, function(index, oblastId) {
+                      $.each(result.ciselnik_oblasti, function(index, oblast) {
+                        if (oblast.id === oblastId) {
+                          oblastiHtml = oblastiHtml + '<li class="search-choice"><span>' + oblast.label + '</span><a class="search-choice-close" data-option-array-index="' + oblast.id + '"></a></li>';
+                        }
+                      });
+                    });
+                    $.each(result.kategorie, function(index, kategorieId) {
+                      $.each(result.ciselnik_kategorii, function(index, kategorie) {
+                        if (kategorie.id === kategorieId) {
+                          kategorieHtml = kategorieHtml + '<li class="search-choice"><span>' + kategorie.label + '</span><a class="search-choice-close" data-option-array-index="' + kategorie.id + '"></a></li>';
+                        }
+                      });
+                    });
+                  }
+                  $('#url').val(result.url);
+                  $('#kategorie').val(result.kategorie);
+                  $('#nazev').val(result.nazev);
+                  $('#popis').val(result.popis);
+                  $('#klicova_slova').val(result.klicova_slova);
+                  $('#vydano').val(result.vydano);
+                  $('#vydano').attr('value', helpers.getIsoDateFormat(result.vydano, '.'));
+                  autorIndex = $('#autor option[value=\'' + result.autor + '\']').index();
+                  $(' #pristupnost').children()[result.licence_index].setAttribute('selected', 'selected');
+                  $(' #autor').children()[autorIndex].setAttribute('selected', 'selected');
+                  $('#txtSelectedFile').val(result.miniatura);
+                  $($('.chosen-choices')[0]).append(oblastiHtml);
+                  $($('.chosen-choices')[1]).append(kategorieHtml);
+                  tinymce.editors['quickMessages-textearea'].setContent(result.obsah);
+                }
+              }
+            });
+          });
+        }
+      });
+    });
+    $(' #newQuickMsgButton ').click(function(e) {
+      e.preventDefault();
+      $('#save-quick-msg-form').trigger('reset');
+      tinymce.activeEditor.setContent('');
+      $(' .quick-msg-content').hide();
+      $(' .tinyText ').show();
+    });
+    $('#quickMessages-sidebar-fe').scroll(function() {
+      var docheight, scrolltrigger, winheight, wintop;
+      wintop = $(window).scrollTop();
+      docheight = $(document).height();
+      winheight = $(window).height();
+      scrolltrigger = 0.95;
+      if (wintop / (docheight - winheight) > scrolltrigger) {
+        lastAddedLiveFunc();
+      }
+    });
+    $('#quickMessages-sidebar-admin').scroll(function() {
+      var docheight, scrolltrigger, winheight, wintop;
+      wintop = $(window).scrollTop();
+      docheight = $(document).height();
+      winheight = $(window).height();
+      scrolltrigger = 0.95;
+      if (wintop / (docheight - winheight) > scrolltrigger) {
+        lastAddedLiveFunc();
+      }
+    });
+    $('#addNewDiscussionAnswer').click(function() {
+      if (id_klient > 0) {
+        $('#addNewDiscussionAnswer').hide('slow');
+        $('#discussionAnswerForm').toggle('slow');
+      } else {
+        $('#loginForm').modal('show');
+      }
+    });
+    $('.discussion-btn-hide').on('click', function(e) {
+      var data, hideItem, id, json;
+      id = $(e.target).parent().parent().attr('id');
+      hideItem = confirm('Opravdu chcete skrýt příspěvěk #' + id + ' ?');
+      if (hideItem) {
+        data = new Object;
+        data.stav = 7;
+        data.id_diszaznam = id;
+        json = JSON.stringify(data);
+        $.ajax({
+          url: '/diskuze/zmen_zaznam/',
+          contentType: 'application/json',
+          data: json,
+          method: 'POST',
+          dataType: 'json',
+          success: function(result) {
+            window.location.reload();
+          }
+        });
+      }
+    });
+    $('.discussion-btn-remove').on('click', function(e) {
+      var data, deleteItem, id, json;
+      id = $(e.target).parent().parent().attr('id');
+      deleteItem = confirm('Opravdu chcete smazat příspěvěk #' + id + ' ?');
+      if (deleteItem) {
+        data = new Object;
+        data.stav = 0;
+        data.id_diszaznam = id;
+        json = JSON.stringify(data);
+        $.ajax({
+          url: '/diskuze/zmen_zaznam/',
+          contentType: 'application/json',
+          data: json,
+          method: 'POST',
+          dataType: 'json',
+          success: function(result) {
+            window.location.reload();
+          }
+        });
+      }
+    });
+    $('.discussion-btn-show').on('click', function(e) {
+      var data, id, json, showItem;
+      id = $(e.target).parent().parent().attr('id');
+      showItem = confirm('Opravdu chcete zobrazit příspěvěk #' + id + ' ?');
+      if (showItem) {
+        data = new Object;
+        data.stav = 9;
+        data.id_diszaznam = id;
+        json = JSON.stringify(data);
+        $.ajax({
+          url: '/diskuze/zmen_zaznam/',
+          contentType: 'application/json',
+          data: json,
+          method: 'POST',
+          dataType: 'json',
+          success: function(result) {
+            window.location.reload();
+          }
+        });
+      }
+    });
+    $('.discussion-btn-comment').on('click', function(e) {
+      var reakce;
+      e.preventDefault();
+      try {
+        id_klient = $("#portaly_js").attr("id_klient");
+        id_klient = +id_klient;
+      } catch (error) {
+        id_klient = 0;
+      }
+      reakce = $(e.target).parent().parent().attr('id');
+      if (id_klient > 0) {
+        $('#discussionModalAddComment').modal('show');
+        $('#discussion-react-to').val(reakce);
+      } else {
+        $('#loginForm').modal('show');
+      }
+    });
+    $('#newDiscussionButton').click(function() {
+      try {
+        id_klient = $("#portaly_js").attr("id_klient");
+        id_klient = +id_klient;
+      } catch (error) {
+        id_klient = 0;
+      }
+      if (id_klient > 0) {
+        $(this).hide();
+        $('#newDiscussionThreadForm').show('slow');
+        $('#newDiscussionThreadFormBack').hide();
+      } else {
+        $('#loginForm').modal('show');
+      }
+    });
+    $('#newDiscussionThreadFormHide').click(function(e) {
+      e.preventDefault();
+      $('#newDiscussionButton').show();
+      $('#newDiscussionThreadForm').hide();
+      $('#newDiscussionThreadMsgAlertBoxDanger').hide();
+      $('#newDiscussionThreadFormBack').show();
+    });
+    $('.handleFormSubmitButton').click(function(e) {
+      var data, divid, form, formid, html, processForm;
+      e.preventDefault();
+      form = $(e.target).closest('form');
+      switch (form.attr('id')) {
+        case 'newDiscussionThreadForm':
+          processForm = new AspiForm(form, {
+            'name': 'poznamka',
+            'value': tinymce.activeEditor.getContent()
+          });
+          processForm.getFormData();
+          console.log(processForm);
+          processForm.send(function(result) {
+            var html;
+            console.log(result);
+            if (result.status === 'OK') {
+              window.location.reload();
+            } else {
+              html = '';
+              $('html, body').animate({
+                scrollTop: 0
+              }, 'slow');
+              $.each(result.errors, function(key, value) {
+                $();
+                key = key.charAt(0).toUpperCase() + key.slice(1);
+                key = key.replace('_', ' ');
+                html = html + '<p>Chybné pole ' + key + ': ' + value + '</p>';
+              });
+              $('#newDiscussionThreadMsgAlertBoxDanger').html(html);
+              $('#newDiscussionThreadMsgAlertBoxDanger').show();
+            }
+          });
+          break;
+        case 'discussionAnswerForm':
+        case 'discussionReactionForm':
+          processForm = new AspiForm(form, {
+            'name': 'obsah',
+            'value': tinymce.activeEditor.getContent()
+          });
+          processForm.getFormData();
+          processForm.send(function(result) {
+            var html;
+            console.log(result);
+            if (result.status === 'OK') {
+              window.location.reload();
+            } else {
+              html = '';
+              $('html, body').animate({
+                scrollTop: 0
+              }, 'slow');
+              $.each(result.errors, function(key, value) {
+                $();
+                key = key.charAt(0).toUpperCase() + key.slice(1);
+                key = key.replace('_', ' ');
+                html = html + '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Chybné pole ' + key + ': ' + value + '</p></div>';
+              });
+              $('#newDiscussionThreadMsgAlertBoxDanger').html(html);
+              $('#newDiscussionThreadMsgAlertBoxDanger').show();
+            }
+          });
+          break;
+        case 'editorialEventsForm':
+          processForm = new AspiForm(form, {
+            'name': 'obsah',
+            'value': tinymce.activeEditor.getContent()
+          });
+          processForm.getFormData();
+          processForm.send(function(result) {
+            var html;
+            console.log(result);
+            if (result.status === 'OK') {
+              window.location.reload();
+            } else {
+              html = '';
+              $('html, body').animate({
+                scrollTop: 0
+              }, 'slow');
+              $.each(result.errors, function(key, value) {
+                key = key.charAt(0).toUpperCase() + key.slice(1);
+                key = key.replace('_', ' ');
+                html = html + '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Chybné pole ' + key + ': ' + value + '</p></div>';
+              });
+              $('#editorialEventsFormMsgAlertBoxDanger').html(html);
+            }
+          });
+          break;
+        case 'addToSubjectForm':
+          processForm = new AspiForm(form);
+          processForm.getFormData();
+          processForm.send(function(result) {
+            var html;
+            if (result.status === 'OK') {
+              $('#addToSubjectFormMsgAlertBoxSuccess').show();
+              $('#addToSubjectFormMsgAlertBoxSuccess').hide();
+              html = '';
+              $('html, body').animate({
+                scrollTop: 0
+              }, 'slow');
+              html = html + '<div class=\'alert alert-success\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Žádost o přiřazení vytvořena, počkejte na schválení žádosti.</p></div>';
+              $('#addToSubjectFormMsgAlertBoxSuccess').html(html);
+              $('#addToSubjectFormMsgAlertBoxSuccess').show();
+            } else {
+              $('#addToSubjectFormMsgAlertBoxSuccess').hide();
+              html = '';
+              $('html, body').animate({
+                scrollTop: 0
+              }, 'slow');
+              $.each(result.errors, function(key, value) {
+                $();
+                key = key.charAt(0).toUpperCase() + key.slice(1);
+                key = key.replace('_', ' ');
+                if (key === 'Ico') {
+                  key = 'IČ';
+                }
+                html = html + '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Chybné pole ' + key + ': ' + value + '</p></div>';
+              });
+              $('#addToSubjectFormMsgAlertBoxDanger').html(html);
+              $('#addToSubjectFormMsgAlertBoxDanger').show();
+            }
+          });
+          break;
+        case 'changePasswdForm':
+          processForm = new AspiForm(form);
+          data = processForm.getFormData();
+          if (data.newpassword !== data.newpassword_again) {
+            html = '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Hesla se neshodují</p></div>';
+            $('#changePasswdFormMsgAlertBoxDanger').html(html);
+          } else {
+            $('#changePasswdFormMsgAlertBoxDanger').html('');
+            processForm.send(function(result) {
+              var data;
+              if (result.status === 'OK') {
+                $('#changePasswdFormMsgAlertBoxSuccess').html('<div class=\'alert alert-success\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Vaše heslo bylo úspěšně změněno.</div>');
+                document.getElementById('changePasswdForm').reset();
+              }
+            });
+          }
+          break;
+        case 'sendUrlViaEmailForm':
+          processForm = new AspiForm(form);
+          data = processForm.getFormData();
+          data.body = data.body[1];
+          if (data.komu.indexOf('@') === -1) {
+            html = '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Nevalidní email.</div>';
+            $('#sendUrlViaEmailFormMsgAlertBoxSuccess').html(html);
+            return;
+          }
+          processForm.send(function(result) {
+            if (result.status === 'OK') {
+              $('#sendUrlViaEmailModal').modal('hide');
+              $('#sendUrlViaEmailFormMsgAlertBoxSuccess').modal('show');
+            } else {
+              $('#sendUrlViaEmailModal').modal('hide');
+              $('#sendUrlViaEmailFormMsgAlertBoxError').modal('show');
+            }
+          });
+          break;
+        case 'makeSubjectForm':
+          $('body').prelodr('in', 'Ověřuji zadaná data ...');
+          processForm = new AspiForm(form);
+          data = processForm.getFormData();
+          formid = form.attr('id');
+          divid = formid.substring(0, formid.length - 4);
+          $('#' + divid + 'Alert').html('');
+          processForm.send(function(result) {
+            var data;
+            if (result.status === 'OK') {
+              $('#' + divid + 'Alert').html('<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><p>Subjekt byl úspěšně vložen.</div>');
+              document.getElementById(formid).reset();
+            } else if (result.status === 'WRONG') {
+              createFormAlert('#' + divid, result.errors, '');
+            } else {
+              $('#' + divid + 'Alert').html('<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><p>Založení subjektu se nepodařilo.</p></div>');
+            }
+          });
+          $('body').prelodr('out', function(done) {
+            return setTimeout((function() {
+              done();
+            }), 1200);
+          });
+          return;
+        default:
+          console.log('No submit action matched');
+      }
+    });
+    return $('#regform-submit-xxxxxxxxx').click(function(e) {
+      var dauc_newsletter, doregistrace, email, formData, json, password, password_again, person_name, person_surname, phone, souhlas, testovaci, titul_pred, titul_za;
+      e.preventDefault();
+      email = $('#reg_email').val();
+      password = $('#password').val();
+      password_again = $('#password_again').val();
+      person_name = $('#person_name').val();
+      person_surname = $('#person_surname').val();
+      titul_pred = $('#titul_pred').val();
+      titul_za = $('#titul_za').val();
+      phone = $('#phone').val();
+      doregistrace = $('#doregistrace').val();
+      testovaci = $('#testovaci').is(':checked');
+      souhlas = $('#souhlas').is(':checked');
+      dauc_newsletter = $('#dauc_newsletter').is(':checked');
+      if (!souhlas) {
+        createDangerRegFormMessage({
+          ' ': 'Vyberte souhlas se zpracováním osobních údajů.'
+        });
+        return;
+      }
+      if (password_again !== password) {
+        createDangerRegFormMessage({
+          ' ': 'Hesla se neshodují.'
+        });
+        return;
+      }
+      formData = new Object;
+      formData.email = email;
+      formData.password = password;
+      formData.person_name = person_name;
+      formData.person_surname = person_surname;
+      formData.titul_pred = titul_pred;
+      formData.titul_za = titul_za;
+      formData.phone = phone;
+      formData.doregistrace = doregistrace;
+      formData.testovaci = testovaci;
+      formData.souhlas = souhlas;
+      formData.dauc_newsletter = dauc_newsletter;
+      json = JSON.stringify(formData);
+      $.ajax({
+        url: '/registration/',
+        contentType: 'application/json',
+        data: json,
+        method: 'POST',
+        dataType: 'json',
+        success: function(result) {
+          if (result.status === 'OK') {
+            $('#regFormDanger').empty('.error-item');
+            $('#regFormDanger').hide();
+            $('#registration').modal('hide');
+            window.location.href = '/';
+          } else {
+            $('#regFormDanger').empty('.error-item');
+            createDangerRegFormMessage(result.errors);
+          }
+        }
+      });
+    });
+  });
+
+}).call(this);

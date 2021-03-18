@@ -1,0 +1,5 @@
+EXECUTE PROCEDURE sp_ModifyTableProperty( 
+‘MSPRC_MO’,
+‘TABLE_PRIMARY_KEY’,
+‘nrokobd’,
+‘VALIDATE_WRITE_FAIL’)

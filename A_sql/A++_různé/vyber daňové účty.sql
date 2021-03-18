@@ -1,0 +1,1 @@
+select * from c_uctosn where substring(cucet,6,1)='9' and (substring(cucet,1,1)='5' or substring(cucet,1,1)='6') and ldanuct = true

@@ -1,0 +1,9 @@
+Pár postøehù z personalistiky
+
+- pokud se zadá v kartì v entru nad vnoøenou èinností napø. rodinní pøíslušníci, dùchody ... INSERT tak se vyprázdní údaje v základní kartì - urèitì v hlavièce
+- pokud zadám INSERT a již existuje PV tak by se nemìlo dát editovat osobní èíslo pracovníka a poø pracovního vztahu by se mìlo zvednout o 1 a nemìlo
+  by se editovat
+- nezkontroluje již zadané jméno v personalistice - na INSERT mùžu zadat pøíjmení a jméno, které již v personalistice existuje. Tento problém je, ale jen
+  u pracovníkù které novì pøidám. Nové osoby zadávám pøes personalistiku.
+
+

@@ -1,0 +1,11 @@
+*.zip
+*.exe
+*.obj
+*.dll
+*.lib
+**/Asystem++_JSU/
+**/Asystem++_MPR/
+**/Asystem++_VER/
+**/Asystem++_SKL/
+**/Asystem++_SETUP/
+DRG_miss_JS/

@@ -1,0 +1,16 @@
+[Filtrs]
+   CTYPFILTRS=USER:uživatelský
+  DEFAULTOPR=USER
+[Forms]
+  CTYPFORMS=USER:uživatelský
+  DEFAULTOPR=USER
+[Komunik]
+  CID=USER:uživatelský
+  DEFAULTOPR=USER
+[Dokument]
+  CID=USER:uživatelský
+  DEFAULTOPR=USER
+[UsersTsk]
+  CID=USER:uživatelský
+  DEFAULTOPR=USER
+

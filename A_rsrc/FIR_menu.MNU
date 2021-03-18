@@ -1,0 +1,28 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Firmy) ICON1(500)
+
+TYPE(Menu) LEVEL(1) CAPTION(Adresáø firem)
+  TYPE(Dialog) LEVEL(2) CAPTION(Adresáø firem ...)       DATA(FIR_FIRMY_SCR)  
+
+TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+  TYPE(Dialog) LEVEL(2) CAPTION(Druh vlastnictví ...)    DATA(C_DRVLST)
+  TYPE(Dialog) LEVEL(2) CAPTION(Èíselník oblastí ...)    DATA(C_OBLAST)
+  TYPE(Dialog) LEVEL(2) CAPTION(Právní formy     ...)    DATA(C_PRAVFO)
+  TYPE(Dialog) LEVEL(2) CAPTION(Státy            ...)    DATA(C_STATY)
+
+TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Dialog) LEVEL(2) CAPTION(DO 10) DATA(PRG010)
+  TYPE(Dialog) LEVEL(2) CAPTION(DO 11) DATA(PRG011)
+  TYPE(Dialog) LEVEL(2) CAPTION(DO 12) DATA(PRG012)
+
+TYPE(Menu) LEVEL(1) CAPTION(Sestavy)
+  TYPE(Report) LEVEL(2) CAPTION(Report 1) DATA(REP001)
+  TYPE(Report) LEVEL(2) CAPTION(Report 2) DATA(REP002)

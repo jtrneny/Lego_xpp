@@ -1,0 +1,1466 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(ATRIBOP) DESC(Atributy typ˘ operacÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypOper)   DESC(Typ operace)                        CAPTION(TypOperace)  FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cAtribOper) DESC(Atribut operace)                    CAPTION(AtributOp)   FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka)  DESC(Pozn·mka k vazbÏ)                   CAPTION(Pozn·mka)    FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(Kdo zmÏnil)                         CAPTION()            FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                        CAPTION()            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)               CAPTION(Dat.vzniku)  FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)                CAPTION(Dat.zmÏny)   FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)                CAPTION()            FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                         CAPTION(ID)          FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(ATRIBOP1)   FNAME(ATRIBOP) CAPTION(TypOperace +AtributOp ) KEY(UPPER(cTypOper) +UPPER(cAtribOper) )
+  TYPE(INDEX) NAME(ATRIBOP2)   FNAME(ATRIBOP) CAPTION(AtributOp )             KEY(UPPER(cAtribOper))
+  TYPE(INDEX) NAME(ID)         FNAME(ATRIBOP) CAPTION(ID)                     KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_ALGREZ) DESC(Algoitmy rozpouötÏnÌ reûiÌ) TASK(VYR)  DISTRIB(C_ALGREZ1)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nAlgRezie)   DESC(Algoitmus rozpouötÏnÌ reûiÌ)        CAPTION(Algoritmus)      FTYPE(n) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(cPopisAlg)   DESC(Popis algoitmu rozpouötÏnÌ reûiÌ)   CAPTION(Popis algoritmu) FTYPE(c) FLEN(60) DEC(0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zp˘sob distribuce)                  CAPTION(TypDistrib)      FTYPE(n) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku z·znamu)               CAPTION(Dat.vzniku)      FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmÏny z·znamu)                CAPTION(Dat.zmÏny)       FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC(Archiv zmÏn z·znamu)                CAPTION()                FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC(ID z·znamu)                         CAPTION(ID)              FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_ALGREZ1)  FNAME(C_ALGREZ) CAPTION(Algoritmus )      KEY( nAlgRezie )
+  TYPE(INDEX) NAME(C_ALGREZ2)  FNAME(C_ALGREZ) CAPTION(Popis algoritmu ) KEY( UPPER(cPopisAlg) )
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_ALGREZ) CAPTION(DistribRec)       KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_ALGREZ) CAPTION(ID)               KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nAlgRezie:Algoritmus:1,cPopisAlg:Popis algoritmu:60:C) ORDER(1) RETURN(nAlgRezie)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_ATRIB) DESC(»ÌselnÌk atribut˘) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cAtribOper) DESC(Atribut operace)      CAPTION(Atribut)                 FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cPopisAtr)  DESC(Popis atributu)       CAPTION(Popis atributu operace)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(MJ)                   CAPTION(MJ)                      FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cKodAtr)    DESC(KÛd atributu)         CAPTION(KÛd atributu)            FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(Kdo zmÏnil)           CAPTION()                        FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)          CAPTION()                        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu) CAPTION(Dat.vzniku)              FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)  CAPTION(Dat.zmÏny)               FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)  CAPTION()                        FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)           CAPTION(ID)                      FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_ATRIB1)   FNAME(C_ATRIB) CAPTION(AtribOper ) KEY(UPPER(cAtribOper))
+  TYPE(INDEX) NAME(C_ATRIB2)   FNAME(C_ATRIB) CAPTION(PopisAtrib) KEY(UPPER(cPopisAtr))
+  TYPE(INDEX) NAME(ID)         FNAME(C_ATRIB) CAPTION(ID)         KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_KOEF) DESC(Koeficienty p¯epoËtu MJ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cPopisKoef) DESC(Popis koeficientu)         CAPTION(Popis koeficientu) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nKoefPrep)  DESC(Koeficient p¯epoËtu MJ)    CAPTION(Koef.p¯ep.MJ)      FTYPE(N) FLEN(12) DEC(6)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)      CAPTION(Dat.vzniku)        FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)       CAPTION(Dat.zmÏny)         FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)       CAPTION()                  FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                CAPTION(ID)                FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KOEF1)      FNAME(C_KOEF) CAPTION(Popis koeficientu ) KEY(UPPER(cPopisKoef))
+  TYPE(INDEX) NAME(KOEF2)      FNAME(C_KOEF) CAPTION(Koeficient)         KEY(nKoefPrep)
+  TYPE(INDEX) NAME(ID)         FNAME(C_KOEF) CAPTION(ID)                 KEY(sID) UNIQUE INSORT(N)
+
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nKoefPrep:Koef. p¯ep. MJ:12,cPopisKoef:Popis koeficient:30:C) ORDER(2) RETURN(nKoefPrep)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(C_MAJ) DESC(»ÌselnÌk majetku) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nInvCis)    DESC(Inv.ËÌs. ( HIM))       CAPTION(Inv.Ë.HIM)        FTYPE(n) FLEN( 15) DEC( 0) 
+  TYPE(FIELD) NAME(nInvCisDIM) DESC(Inv.ËÌs. ( DIM))       CAPTION(Inv.Ë.DIM)        FTYPE(n) FLEN(  6) DEC( 0) 
+  TYPE(FIELD) NAME(cDruhMaj)   DESC(Druh (I,D))            CAPTION(Druh maj.)        FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X)
+  TYPE(FIELD) NAME(cTypMAJ)    DESC(Typ maj. (S,P,N))      CAPTION(Typ maj.)         FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X) VALUES( :- neza¯azen -,S:Stroj,P:P¯Ìpravek,N:N·stroj,M:MÏ¯idlo)
+  TYPE(FIELD) NAME(cNazevMAJ)  DESC(N·zev majetku)         CAPTION(N·zev majetku)    FTYPE(c) FLEN(30) DEC( 0) PICTURE(&30X)
+  TYPE(FIELD) NAME(nZivotNh)   DESC(éivotnost v NH)        CAPTION(éivotnost)        FTYPE(n) FLEN(14) DEC( 3)
+  TYPE(FIELD) NAME(cPouzMAJ)   DESC(PouûitÌ)               CAPTION(PouûitÌ majetku)  FTYPE(c) FLEN(25) DEC( 0) PICTURE(&25X)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(MJ)                    CAPTION(MJ)               FTYPE(c) FLEN( 3) DEC( 0) PICTURE(&3X) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(mPopisMAJ)  DESC(Popis majetku)         CAPTION(Popis majetku)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mNavodPouz) DESC(Text n·vodu pouûitÌ)   CAPTION(N·vod na pouûitÌ) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cZapis)     DESC(Kdo po¯Ìdil)           CAPTION()                 FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)        CAPTION()                 FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(Kdo zmÏnil)            CAPTION()                 FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)           CAPTION()                 FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCelek)     DESC(Celek)                 CAPTION(Celek)            FTYPE(c) FLEN(15) DEC( 0) PICTURE(&15X)
+  TYPE(FIELD) NAME(cVykres)    DESC(V˝kres)                CAPTION(V˝kres)           FTYPE(c) FLEN(20) DEC( 0) PICTURE(&20X)
+  TYPE(FIELD) NAME(cUmisteni)  DESC(UmÌstÏnÌ)              CAPTION(UmÌstÏnÌ)         FTYPE(c) FLEN(25) DEC( 0) PICTURE(&25X)
+  TYPE(FIELD) NAME(nTypMaj)    DESC(Typ majetku)           CAPTION(Typ maj.)         FTYPE(n) FLEN( 3) DEC( 0) PICTURE(@N 999)
+  TYPE(FIELD) NAME(cVyrCisIm)  DESC(V˝robnÌ ËÌslo majetku) CAPTION(V˝r.ËÌslo majetku)FTYPE(c) FLEN(25) DEC( 0) PICTURE(&25X)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)  CAPTION(Dat.vzniku)       FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)   CAPTION(Dat.zmÏny)        FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)   CAPTION()                 FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)            CAPTION(ID)               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_MAJ1)     FNAME(C_MAJ) CAPTION(Druh maj. + Inv.ËÌslo IM )  KEY(UPPER(cDruhMaj) +STRZERO(nInvCis, 15) )
+  TYPE(INDEX) NAME(C_MAJ2)     FNAME(C_MAJ) CAPTION(Druh maj. + Inv.ËÌslo Dim ) KEY(UPPER(cDruhMaj) +STRZERO(nInvCisDIM,6) )
+  TYPE(INDEX) NAME(C_MAJ3)     FNAME(C_MAJ) CAPTION(Druh maj. + N·zev maj. )    KEY(UPPER(cDruhMaj) +UPPER(cNazevMAJ) )
+  TYPE(INDEX) NAME(C_MAJ4)     FNAME(C_MAJ) CAPTION(Inv.ËÌslo IM ) KEY( nInvCis)
+  TYPE(INDEX) NAME(C_MAJ5)     FNAME(C_MAJ) CAPTION(Inv.ËÌs Dim )  KEY( nInvCisDIM)
+  TYPE(INDEX) NAME(C_MAJ6)     FNAME(C_MAJ) CAPTION(N·zev maj. )   KEY( UPPER(cNazevMAJ) )
+  TYPE(INDEX) NAME(ID)         FNAME(C_MAJ) CAPTION(ID)            KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(C_PRACOV) DESC(»ÌselnÌk pracoviöù) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)     CAPTION(PracoviötÏ)        FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(cNazPol4)   DESC(⁄ËetnÌ pracoviötÏ)       CAPTION(Prac.˙ËetnÌ)       FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(cNAZPOL4) RELATETYPE(2)
+  TYPE(FIELD) NAME(cStred)     DESC(V˝robnÌ st¯edisko)       CAPTION(V˝r.st¯edisko)     FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(c_Stred) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazevPrac) DESC(N·zev pracoviötÏ)        CAPTION(N·zev pracoviötÏ)  FTYPE(c) FLEN(30) DEC( 0) PICTURE(&30X)
+  TYPE(FIELD) NAME(nViceStroj) DESC(VÌcestrojov· obsluha)    CAPTION(VÌcestroj.obs.)    FTYPE(n) FLEN( 5) DEC( 2) PICTURE(@N 99.99)
+  TYPE(FIELD) NAME(nKoefViOb)  DESC(Koef.vÌcestr. obsluhy)   CAPTION(Koef.vÌcest.obs.)  FTYPE(n) FLEN( 6) DEC( 3) PICTURE(@N 99.999)
+  TYPE(FIELD) NAME(nViceObslu) DESC(VÌceobsluha)             CAPTION(VÌceobsluha)       FTYPE(n) FLEN( 5) DEC( 2) PICTURE(@N 99.99)
+  TYPE(FIELD) NAME(nKoefViSt)  DESC(Koef.vÌceobsluû. stroje) CAPTION(Koef.vÌceobs.str.) FTYPE(n) FLEN( 6) DEC( 3) PICTURE(@N 99.999)
+  TYPE(FIELD) NAME(nKoefSmCas) DESC(Koef.smÏnov. Ëasu)       CAPTION(Koef.sm.Ëasu)      FTYPE(n) FLEN( 6) DEC( 3) PICTURE(@N 99.999)
+  TYPE(FIELD) NAME(nDruhMzdy)  DESC(Druh mzdy)               CAPTION(Druh mzdy)         FTYPE(n) FLEN( 4) DEC( 0) PICTURE(@N 9999) RELATETO(DruhyMzd) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPocPrac)   DESC(PoËet prac.)             CAPTION(PoËet prac.)       FTYPE(n) FLEN( 3) DEC( 0) PICTURE(@N 999)
+  TYPE(FIELD) NAME(cTypProfes) DESC(Typ profese)             CAPTION(Typ profese)       FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X)
+  TYPE(FIELD) NAME(lVykNorma)  DESC(V˝konov· norma)          CAPTION(Vykon.norma)       FTYPE(l) FLEN( 1) DEC( 0) VALUES(T:ANO,F:NE)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Profese na pracoviöti)   CAPTION(Profese)           FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(c_PracZa) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTypPracov) DESC(Typ pracoviötÏ)          CAPTION(Typ prac.)         FTYPE(c) FLEN( 6) DEC( 0) PICTURE(&6X)
+  TYPE(FIELD) NAME(nTranMnoz)  DESC(TransportnÌ mnoûstvÌ)    CAPTION(Transp.mn.)        FTYPE(n) FLEN(10) DEC( 3) PICTURE(@N 999,999.999)
+  TYPE(FIELD) NAME(cTypKalend) DESC(Typ pracov. kalend·¯e)   CAPTION(Typ prac.kal.)     FTYPE(c) FLEN(10) DEC( 0) PICTURE(&10X)
+  TYPE(FIELD) NAME(mPopisPrac) DESC(Popis pracoviötÏ)        CAPTION(Popis pracoviötÏ)  FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cZapis)     DESC(Kdo po¯Ìdil)             CAPTION()                  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)          CAPTION()                  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(Kdo zmÏnil)              CAPTION()                  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)             CAPTION()                  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nSazbaStro) DESC(Sazba stroje)            CAPTION(Sazba stroje)      FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nPoradi)    DESC(Po¯adÌ)                  CAPTION(Po¯.)              FTYPE(n) FLEN( 2) DEC( 0) PICTURE(@N 99)
+  TYPE(FIELD) NAME(cOznPracN)  DESC(Ozn. n·sled. pracoviötÏ) CAPTION(Pracov.n·sl.)      FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(nKoefPrep)  DESC(Koeficient p¯epoËtu NH)  CAPTION(Koef.p¯ep.)        FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)    CAPTION(Dat.vzniku)        FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)     CAPTION(Dat.zmÏny)         FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)     CAPTION()                  FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)              CAPTION(ID)                FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRAC1)    FNAME(C_PRACOV) CAPTION(PracoviötÏ + N·zev prac. )             KEY(UPPER(cOznPrac) +UPPER(cNazevPrac) )
+  TYPE(INDEX) NAME(C_PRAC2)    FNAME(C_PRACOV) CAPTION(N·zev prac. + PracoviötÏ )             KEY(UPPER(cNazevPrac) +UPPER(cOznPrac) )
+  TYPE(INDEX) NAME(C_PRAC3)    FNAME(C_PRACOV) CAPTION(PracoviötÏ + V˝r.st¯ed. + N·zev prac.) KEY(UPPER(cOznPrac) +UPPER(cStred) +UPPER(cNazevPrac) )
+  TYPE(INDEX) NAME(C_PRAC4)    FNAME(C_PRACOV) CAPTION(Pracov.n·sl. )                         KEY(UPPER(cOznPracN))
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRACOV) CAPTION(ID)                                    KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cOznPrac:PracoviötÏ:8,cNazevPrac:N·zev pracoviötÏ:30) ORDER(1) RETURN(cOznPrac)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(C_SKUPOL) DESC(Skup. vyr·bÏn˝ch poloûek) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cSkuPol)    DESC(Skupina)                 CAPTION(Skupina)         FTYPE(c) FLEN(12) DEC( 0)
+  TYPE(FIELD) NAME(cNazSkuPol) DESC(N·zev skupiny)           CAPTION(N·zev skupiny)   FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrg)    DESC(KÛd pro program)         CAPTION(KÛd pro program) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)    CAPTION(Dat.vzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)     CAPTION(Dat.zmÏny)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)     CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)              CAPTION(ID)              FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(SKUPOL1)    FNAME(C_SKUPOL) CAPTION(SkupinaPol) KEY(UPPER(cSkuPol))
+  TYPE(INDEX) NAME(SKUPOL2)    FNAME(C_SKUPOL) CAPTION(N·zevSkPol) KEY(UPPER(cNazSkuPol))
+  TYPE(INDEX) NAME(ID)         FNAME(C_SKUPOL) CAPTION(ID)         KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_STRED) DESC(St¯ediska) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cStred)     DESC(St¯edisko)                          CAPTION(St¯edisko)       FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cNazStr)    DESC(N·zev st¯ediska)                    CAPTION(N·zev st¯ediska) FTYPE(C) FLEN(20) DEC(0)
+  TYPE(FIELD) NAME(cTypStr)    DESC(Typ st¯ediska)                      CAPTION(Typ st¯ediska)   FTYPE(C) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cNazPol1)   DESC(N·kladovÈ st¯edisko)                CAPTION(N·kl.st¯ed.)     FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cSubje)     DESC(Subjekt)                            CAPTION(Subjekt)         FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)               CAPTION(Dat.vzniku)      FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)                CAPTION(Dat.zmÏny)       FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)                CAPTION()                FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                         CAPTION(ID)              FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(STRED1)     FNAME(C_STRED) CAPTION(St¯edisko)       KEY(UPPER(cStred))
+  TYPE(INDEX) NAME(STRED2)     FNAME(C_STRED) CAPTION(N·zev st¯ediska) KEY(UPPER(cNazStr))
+  TYPE(INDEX) NAME(ID)         FNAME(C_STRED) CAPTION(ID)              KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cStred:St¯edisko:8,cNazStr:N·zev st¯ediska:20,cTypStr:Typ st¯ediska:10) ORDER(1) RETURN(cStred)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(C_TARIF) DESC(»ÌselnÌk hodinov˝ch sazeb) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTarifStup) DESC(TarifnÌ stupnice)      CAPTION(TarifnÌ st.)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTarifTrid) DESC(TarifnÌ t¯Ìda (sazba)) CAPTION(TarifnÌ t¯.)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nHodinSaz)  DESC(Hodinov· sazba)        CAPTION(Hodinov· sazba)  FTYPE(n) FLEN( 8) DEC( 3)
+  TYPE(FIELD) NAME(nHodinNav)  DESC(Nav˝öenÌ hodin.sazeb)  CAPTION(Nav˝ö.hod.sazeb) FTYPE(n) FLEN( 8) DEC( 3)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)  CAPTION(Dat.vzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)   CAPTION(Dat.zmÏny)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)   CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)            CAPTION(ID)              FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_TARIF1)   FNAME(C_TARIF) CAPTION(TarifnÌ st. + TarifnÌ t¯. ) KEY(UPPER(cTarifStup) +UPPER(cTarifTrid) )
+  TYPE(INDEX) NAME(ID)         FNAME(C_TARIF) CAPTION(ID)                         KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPMAT) DESC(Typy materi·lu-nakupovan˝ch poloûek) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypMat)    DESC(Typ)                    CAPTION(Typ)                  FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazTypMat) DESC(Popis typu poloûky)     CAPTION(N·zev typu materi·lu) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrg)    DESC(KÛd pro program)        CAPTION(KÛd pro program)      FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)   CAPTION(Dat.vzniku)           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)    CAPTION(Dat.zmÏny)            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)    CAPTION()                     FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)             CAPTION(ID)                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TYPMAT1)    FNAME(C_TYPMAT) CAPTION(TypMater  ) KEY(UPPER(cTypMat))
+  TYPE(INDEX) NAME(TYPMAT2)    FNAME(C_TYPMAT) CAPTION(N·zTypMat ) KEY(UPPER(cNazTypMat))
+  TYPE(INDEX) NAME(ID)         FNAME(C_TYPMAT) CAPTION(ID)         KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypMat:Typ:3:C,cNazTypMat:N·zev typu mat.:30:C) ORDER(1) RETURN(cTypMat)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(C_TYPOP) DESC(Typy operacÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypOper)   DESC(Typ operace)             CAPTION(Typ operace)        FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cPopisOper) DESC(Popis typu operace)      CAPTION(Popis typu operace) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cKodOper)   DESC(KÛd typu operace)        CAPTION(KÛd typu)           FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)    CAPTION(Dat.vzniku oper.)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)     CAPTION(Dat.zmÏny)          FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)     CAPTION()                   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)              CAPTION(ID)                 FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TYPOPER1)   FNAME(C_TYPOP) CAPTION(TypOperace) KEY(UPPER(cTypOper))
+  TYPE(INDEX) NAME(ID)         FNAME(C_TYPOP) CAPTION(ID)         KEY(sID) INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypOper:Typ operace:3,cPopisOper:Popis typu:30) ORDER(1) RETURN(cTypOper)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPPOL) DESC(Typy vyr·bÏn˝ch poloûek) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypPol)    DESC(Typ vyr·bÏnÈ poloûky)         CAPTION(Typ pol.)        FTYPE(C) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazTypPol) DESC(N·zev typu poloûky)           CAPTION(N·zev typu)      FTYPE(C) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrg)    DESC(KÛd pro program)              CAPTION(KÛd pro program) FTYPE(C) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(lFinal)     DESC(Fin·lnÌ-vrcholov˝ v˝robek)    CAPTION(Fin·l)           FTYPE(L) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)         CAPTION(Dat.vzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)          CAPTION(Dat.zmÏny)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)          CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                   CAPTION(ID)              FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TYPPOL1)    FNAME(C_TYPPOL) CAPTION(Typ poloûky) KEY(UPPER(cTypPol))
+  TYPE(INDEX) NAME(TYPPOL2)    FNAME(C_TYPPOL) CAPTION(N·zev typu)  KEY(UPPER(cNazTypPol))
+  TYPE(INDEX) NAME(ID)         FNAME(C_TYPPOL) CAPTION(ID)          KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypPol:Typ poloûky:3,cNazTypPol:N·zev typu poloû:20) ORDER(1) RETURN(cTypPol)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPVYKR) DESC(Typy v˝kres˘) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypVyk)     DESC(Typ v˝kresu)                       CAPTION(Typ v˝kresu)  FTYPE(c) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cTypVykNaz)  DESC(N·zev typu v˝kresu)                CAPTION(N·zev typu)   FTYPE(c) FLEN(20) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku z·znamu)              CAPTION(Dat.vzniku)   FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmÏny z·znamu)               CAPTION(Dat.zmÏny)    FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC(Archiv zmÏn z·znamu)               CAPTION()             FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC(ID z·znamu)                        CAPTION(ID)           FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TYPVYKR1)   FNAME(C_TYPVYKR) CAPTION(Typ v˝kresu )        KEY(UPPER(cTypVyk) )
+  TYPE(INDEX) NAME(TYPVYKR2)   FNAME(C_TYPVYKR) CAPTION(N·zev typu v˝kresu)  KEY(UPPER(cTypVykNaz))
+  TYPE(INDEX) NAME(ID)         FNAME(C_TYPVYKR) CAPTION(ID)                  KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypVyk:typV˝kr:2,cTypVykNaz:N·zev typuV˝kresu:20) ORDER(1) RETURN(cTypVyk)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(FIXNAKL) DESC(FixnÌ n·klady) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cNazPol1)   DESC(N·kladovÈ st¯edisko)            CAPTION(N·kl.st¯edisko) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(cNazPol1) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazPol2)   DESC(⁄ËetnÌ v˝robek)                 CAPTION(⁄Ëet.v˝robek)   FTYPE(c) FLEN( 8) DEC( 0) RELATETO(cNazPol2) RELATETYPE(2)
+  TYPE(FIELD) NAME(nRokVyp)    DESC(Rok pro v˝poËty)                CAPTION(Rok)            FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nObdMes)    DESC(ObdobÌ (nap¯. mÏsÌc))           CAPTION(ObdobÌ)         FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nOdbytReVy) DESC(Odbytov· reûie  vypoËten· v %)  CAPTION(Odb.reû.vyp.)   FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nOdbytReNa) DESC(Odbytov· reûie  nastaven· v %)  CAPTION(Odb.reû.nast.)  FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nZasobReVy) DESC(Z·sobovacÌ reûie vypoËten· v %) CAPTION(Z·s.reû.vyp.)   FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nZasobReNa) DESC(Z·sobovacÌ reûie nastaven· v %) CAPTION(Z·s.reû.nast.)  FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nVyrobReVy) DESC(V˝robnÌ reûie vypoËten· v %)    CAPTION(V˝r.reû.vyp.)   FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nVyrobReNa) DESC(V˝robnÌ reûie nastaven· v %)    CAPTION(V˝r.reû.nast.)  FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nSpravReVy) DESC(Spr·vnÌ reûie vypoËten· v %)    CAPTION(Spr.reû.vyp.)   FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nSpravReNa) DESC(Spr·vnÌ reûie nastaven· v %)    CAPTION(Spr.reû.nast)   FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(cZapis)     DESC(Po¯Ìdil)                        CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)                 CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(ZmÏnil)                         CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                    CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)           CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)            CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)            CAPTION()               FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                     CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIXNAK1)    FNAME(FIXNAKL) CAPTION(Rok + N·kl.st¯edisko + ObdobÌ + ⁄Ë.v˝robek ) KEY(STRZERO(nRokVyp,4) +UPPER(cNazPol1) +STRZERO(nObdMes,2) +UPPER(cNazPol2) )
+  TYPE(INDEX) NAME(FIXNAK2)    FNAME(FIXNAKL) CAPTION(N·kl.st¯edisko )                             KEY(UPPER(cNazPol1))
+  TYPE(INDEX) NAME(FIXNAK3)    FNAME(FIXNAKL) CAPTION(N·kl.st¯edisko + Rok + ObdobÌ )              KEY(UPPER(cNazPol1) +STRZERO(nRokVyp,4) +STRZERO(nObdMes,2) )
+  TYPE(INDEX) NAME(ID)         FNAME(FIXNAKL) CAPTION(ID)                                          KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(HODATRIB) DESC(Hodnoty atribut˘ operacÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)          CAPTION(Typov· operace)    FTYPE(c) FLEN(10) DEC( 0) PICTURE(&10X)
+  TYPE(FIELD) NAME(cAtribOper) DESC(Atribut operace)         CAPTION(Atribut)           FTYPE(c) FLEN( 4) DEC( 0) PICTURE(&4X)
+  TYPE(FIELD) NAME(cHodnAtrC)  DESC(Hodnota atributu znak.)  CAPTION(Hodnota atr.znak.) FTYPE(c) FLEN(15) DEC( 0) PICTURE(&15X)
+  TYPE(FIELD) NAME(nHodnAtrN)  DESC(Hodnota atributu numer.) CAPTION(Hodnota atr.num.)  FTYPE(n) FLEN(15) DEC( 4) PICTURE(@N 9,999,999,999.9999)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka k hodnotÏ atr.) CAPTION(Pozn·mka)          FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cZapis)     DESC(Kdo po¯Ìdil)             CAPTION()                  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)          CAPTION()                  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(Kdo zmÏnil)              CAPTION()                  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)             CAPTION()                  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)    CAPTION(Dat.vzniku)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)     CAPTION(Dat.zmÏny)         FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)     CAPTION()                  FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)              CAPTION(ID)                FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(HODATR1)    FNAME(HODATRIB) CAPTION(Typov·Oper +AtributOpe ) KEY(UPPER(cOznOper) +UPPER(cAtribOper) )
+  TYPE(INDEX) NAME(ID)         FNAME(HODATRIB) CAPTION(ID)                      KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(IKUSOV) DESC(InverznÌ kusovnÌk) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)     CAPTION(Poloûka)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)        CAPTION(Zak·zka)      FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cVysPol)    DESC(Poloûka vyööÌ)        CAPTION(VyööÌ pol.)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNizPol)    DESC(Poloûka niûöÌ)        CAPTION(NiûöÌ pol.)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nNizVar)    DESC(Varianta pol.niûöÌ)   CAPTION(NiûöÌ var.)   FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Sklad. poloûka)       CAPTION(Skl.poloûka)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice v rozpisce)    CAPTION(Pozice)       FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVarPoz)    DESC(Varianta pozice)      CAPTION(Var.poz.)     FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCiMno)     DESC(»istÈ mnoûstvÌ)       CAPTION(Mn.ËistÈ)     FTYPE(n) FLEN(13) DEC( 6)
+  TYPE(FIELD) NAME(nSpMno)     DESC(Spot¯ebnÌ mnoû.)      CAPTION(Mn.spot¯ebnÌ) FTYPE(n) FLEN(13) DEC( 6)
+  TYPE(FIELD) NAME(cStav)      DESC(Znak stavu)           CAPTION(Stav)         FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cTypPol)    DESC(Typ poloûky)          CAPTION(Typ pol.)     FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu) CAPTION(Dat.vzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)  CAPTION(Dat.zmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)  CAPTION()             FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)           CAPTION(ID)           FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(IKUSOV1)    FNAME(IKUSOV) CAPTION(»ÌsZak·zky +VyööÌPoloû +Pozice +PoziceVar ) KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nPozice,3) +STRZERO(nVarPoz,3) )
+  TYPE(INDEX) NAME(IKUSOV2)    FNAME(IKUSOV) CAPTION(»ÌsZak·zky +NiûöÌPoloû +NiûöÌVaria ) KEY(UPPER(cCisZakaz) +UPPER(cNizPol) +STRZERO(nNizVar,3) )
+  TYPE(INDEX) NAME(IKUSOV3)    FNAME(IKUSOV) CAPTION(SklPoloûka) KEY(UPPER(cSklPol))
+  TYPE(INDEX) NAME(IKUSOV4)    FNAME(IKUSOV) CAPTION(»ÌsZak·zky +VyööÌPoloû +PoziceVar ) KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVarPoz,3) )
+  TYPE(INDEX) NAME(ID)         FNAME(IKUSOV) CAPTION(ID)                                 KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(KALKMZD) DESC(Kalkulace p¯Ìm˝ch mezd) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)     CAPTION(Vyr·bÏn· poloûka) FTYPE(c) FLEN(15) DEC( 0) RELATETO(VyrPOL) RELATETYPE(2)
+  TYPE(FIELD) NAME(nVarCis)    DESC(Varianta poloûky)     CAPTION(Var.pol.)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)  CAPTION(PracoviötÏ)       FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTypOper)   DESC(Typ operace)          CAPTION(Typ operace)      FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)       CAPTION(Typov· operace)   FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(NH v p¯ÌpravÏ)        CAPTION(NH p¯Ìpr.Ëas)     FTYPE(n) FLEN(11) DEC( 3)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(NH v kusovÈm)         CAPTION(NH kusov.Ëas)     FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nPriprKc)   DESC(KË v p¯ÌpravÏ)        CAPTION(K» p¯Ìprava)      FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(nKusovKc)   DESC(KË v kusovÈm)         CAPTION(K» kusovÈ)        FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu) CAPTION(Dat.vzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)  CAPTION(Dat.zmÏny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)  CAPTION()                 FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)           CAPTION(ID)               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KALKMZD1)   FNAME(KALKMZD) CAPTION(PracoviötÏ) KEY(UPPER(cOznPrac))
+  TYPE(INDEX) NAME(KALKMZD2)   FNAME(KALKMZD) CAPTION(Vyr·bÏn· poloûka +Typov· operace ) KEY(UPPER(cVyrPol) +UPPER(cOznOper) )
+  TYPE(INDEX) NAME(ID)         FNAME(KALKMZD) CAPTION(ID)         KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(KALKUL) DESC(Kalkulace poloûky) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)                  CAPTION(»Ìslo zak·zky)       FTYPE(C) FLEN(30) DEC(0) RELATETO(VyrZAK) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTypPol)    DESC(Typ poloûky)                    CAPTION(Typ poloûky)         FTYPE(C) FLEN( 3) DEC(0) PICTURE(&3X) RELATETO(C_TYPPOL) RELATETYPE(2)
+  TYPE(FIELD) NAME(cVyrpol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr·bÏn· poloûka)    FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(Varianta poloûky)               CAPTION(Varianta)            FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cTypKalk)   DESC(Typ kalkulace)                  CAPTION(Typ kalkulace)       FTYPE(C) FLEN( 3) DEC(0) VALUES(STD:StandartnÌ,NED:NedokonËen· v˝roba,VYR:V˝robnÌ kalkulace,DAV:D·vkov· kalkulace)
+  TYPE(FIELD) NAME(cVypKalk)   DESC(Zp˘sob v˝poËtu kalkulace)       CAPTION(V˝poËet kalk.)       FTYPE(C) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cZkratMENY) DESC(Zkratka mÏny)                   CAPTION(Zkratka mÏny)        FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_MENY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nTypRezie)  DESC(Typ reûie)                      CAPTION(Typ reûie)           FTYPE(N) FLEN( 1) DEC(0) VALUES(1:VypoËten·,2:Nastaven·)
+  TYPE(FIELD) NAME(dDatAktual) DESC(Datum aktualizace)              CAPTION(Dat. aktualizace)    FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nRokVyp)    DESC(Rok pro v˝poËty reûiÌ)          CAPTION(Rok v˝poËtu)         FTYPE(N) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(nObdMes)    DESC(ObdobÌ (mÏsÌc) reûiÌ)           CAPTION(ObdobÌ)              FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nPorKalDen) DESC(Po¯adÌ kalkulace v danÈm dni)   CAPTION(Po¯adÌ kalkulace)    FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nMnozDavky) DESC(MnoûstvÌ v d·vce)               CAPTION(Mn. v d·vce)         FTYPE(N) FLEN(11) DEC(2) PICTURE(@N 99,999,999.99)
+  TYPE(FIELD) NAME(cDruhCeny)  DESC(Druh ceny materi·lu)            CAPTION(Druh ceny mat.)      FTYPE(C) FLEN( 2) DEC(0) VALUES(1:Skladov· cena,2:PoslednÌ n·kupnÌ,3:N·kupnÌ cenÌkov·,4:ObjednacÌ hl.dod.)
+  TYPE(FIELD) NAME(nCenMatZMP) DESC(P¯Ìm˝ mat./MJ v zahr.mÏnÏ-pl·n) CAPTION(P¯Ìm˝ materi·l)      FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMatZMS) DESC(P¯Ìm˝ mat./MJ v zahr.mÏnÏ-skut) CAPTION(P¯Ìm˝ mat./MJ v zahr.mÏnÏ-skut) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMatMjP) DESC(P¯Ìm˝ mat./MJ v z·kl.mÏnÏ-pl·n) CAPTION(P¯Ìm˝ mat./MJ v z·kl.mÏnÏ-pl·n) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMatMjS) DESC(P¯Ìm˝ mat./MJ v z·kl.mÏnÏ-skut) CAPTION(P¯Ìm˝ mat./MJ v z·kl.mÏnÏ-skut) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMzdVdP) DESC(P¯ÌmÈ mzdy VD/MJ pl·n)          CAPTION(P¯ÌmÈ mzdy VD/MJ pl·n)          FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMzdVdS) DESC(P¯ÌmÈ mzdy VD/MJ skut.)         CAPTION(P¯ÌmÈ mzdy VD/MJ skut.)         FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenOstatP) DESC(Ost.p¯ÌmÈ n·kl. ke mzd·m (pl.)) CAPTION(Ost.p¯ÌmÈ n·kl. ke mzd·m (pl.)) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 99,999,999.9999)
+  TYPE(FIELD) NAME(nCenOstatS) DESC(Ost.p¯ÌmÈ n·kl. ke mzd·m (sk.)) CAPTION(Ost.p¯ÌmÈ n·kl. ke mzd·m (sk.)) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 99,999,999.9999)
+  TYPE(FIELD) NAME(nCenSluzbP) DESC(Kooperace pl·n)                 CAPTION(Kooperace pl·n)      FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenSluzbS) DESC(Kooperace skut.)                CAPTION(Kooperace skut.)     FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenEnergP) DESC(Energie pl·n)                   CAPTION(Energie pl·n)        FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenEnergS) DESC(Energie skut)                   CAPTION(Energie skut)        FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMajetP) DESC(Spot¯eba maj. pl·n)             CAPTION(Spot¯eba maj. pl·n)  FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenMajetS) DESC(Spot¯eba maj. skut.)            CAPTION(Spot¯eba maj. skut.) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nRezOdbytP) DESC(Odbyt.reûie pl·n)               CAPTION(Odbyt.reûie pl·n)    FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nRezOdbytS) DESC(Odbyt.reûie skut.)              CAPTION(Odbyt.reûie skut.)   FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nAlgOdbyt)  DESC(Odb.reûie algor.)               CAPTION(Odb.reûie algor.)    FTYPE(N) FLEN( 1) DEC(0) RELATETO(C_AlgREZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(nRezVyrobP) DESC(V˝rob.reûie pl·n)               CAPTION(V˝rob.reûie pl·n)    FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nRezVyrobS) DESC(V˝rob.reûie skut.)              CAPTION(V˝rob.reûie skut.)   FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nAlgVyrob)  DESC(V˝rob.reûie algor.)             CAPTION(V˝rob.reûie algor.)  FTYPE(N) FLEN( 1) DEC(0) RELATETO(C_AlgREZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(nRezZasobP) DESC(Z·sob.reûie pl·n)               CAPTION(Z·sob.reûie pl·n)    FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.99)
+  TYPE(FIELD) NAME(nRezZasobS) DESC(Z·sob.reûie skut.)              CAPTION(Z·sob.reûie skut.)   FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.99)
+  TYPE(FIELD) NAME(nAlgZasob)  DESC(Z·sob.reûie algor.)             CAPTION(Z·sob.reûie algor.)  FTYPE(N) FLEN( 1) DEC(0) RELATETO(C_AlgREZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(nRezSpravP) DESC(Spr·v.reûie pl·n)               CAPTION(Spr·v.reûie pl·n)    FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nRezSpravS) DESC(Spr·v.reûie skut.)              CAPTION(Spr·v.reûie skut.)   FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nAlgSprav)  DESC(Spr·v.reûie algor.)             CAPTION(Spr·v.reûie algor.)  FTYPE(N) FLEN( 1) DEC(0) RELATETO(C_AlgREZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCenKalkP)  DESC(Kalk.cena/MJ pl·n)              CAPTION(Kalk.cena/MJ pl·n)   FTYPE(N) FLEN(13) DEC(4) PICTURE(@N 99,999,999.9999)
+  TYPE(FIELD) NAME(nCenKalkS)  DESC(Kalk.cena/MJ skut.)             CAPTION(Kalk.cena/MJ skut.)  FTYPE(N) FLEN(13) DEC(4) PICTURE(@N 99,999,999.9999)
+  TYPE(FIELD) NAME(nZiskProcP) DESC(Zisk(%) pl·novan˝)              CAPTION(Zisk(%) pl·novan˝)   FTYPE(N) FLEN( 6) DEC(2) PICTURE(@N 999.99)
+  TYPE(FIELD) NAME(nZiskP)     DESC(Zisk pl·novan˝)                 CAPTION(Zisk pl·novan˝)      FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nZiskS)     DESC(Zisk skuteËn˝)                  CAPTION(Zisk skuteËn˝)       FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenProdP)  DESC(ProdejnÌ cena pl·n)             CAPTION(ProdejnÌ cena pl·n)  FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(nCenProdS)  DESC(ProdejnÌ cena skut.)            CAPTION(ProdejnÌ cena skut.) FTYPE(N) FLEN(12) DEC(4) PICTURE(@N 9,999,999.9999)
+  TYPE(FIELD) NAME(cZapis)     DESC(Po¯Ìdil)                        CAPTION(Po¯Ìdil)             FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)                 CAPTION(Datum po¯ÌzenÌ)      FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZmena)     DESC(ZmÏnil)                         CAPTION(ZmÏnil)              FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                    CAPTION(Datum zmÏny)         FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cNazPOL1)   DESC(St¯edisko)                      CAPTION(St¯edisko)           FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nPriprCAS)  DESC(P¯Ìpravn˝ Ëas)                  CAPTION(P¯Ìpravn˝ Ëas)       FTYPE(N) FLEN(11) DEC(4) PICTURE(@N 999,999.9999)
+  TYPE(FIELD) NAME(nKusovCAS)  DESC(Kusov˝ Ëas)                     CAPTION(Kusov˝ Ëas)          FTYPE(N) FLEN(13) DEC(4) PICTURE(@N 99,999,999.9999)
+  TYPE(FIELD) NAME(nStavKalk)  DESC(Stav kalkulace)                 CAPTION(Stav kalk.)          FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(»Ìslo firmy objednavatele)      CAPTION(»Ìslo firmy)         FTYPE(N) FLEN( 5) DEC(0) RELATETO(FIRMY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazFirmy)  DESC(N·zev firmy objednavatele )     CAPTION(N·zev firmy)         FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)           CAPTION(Dat.vzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)            CAPTION(Dat.zmÏny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)            CAPTION()                    FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                     CAPTION(ID)                  FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KALKUL1)    FNAME(KALKUL) CAPTION(Zak·zka+Vyr.poloûka+Varianta+Rok v˝poËtu+ObdobÌ+Dat.aktual.+Po¯.) KEY(Upper(cCisZakaz) +Upper(cVyrpol) +Strzero(nVarCis,3) +Strzero(nRokVyp,4) +Strzero(nObdMes,2) +if(empty(dDatAktual) ,'        ' , DTOS(dDatAktual)) +Strzero(nPorKalDen,2))
+  TYPE(INDEX) NAME(KALKUL2)    FNAME(KALKUL) CAPTION(Zak·zka +Vyr.poloûka +Varianta +Typ kalkulace) KEY(UPPER(cCisZakaz) +UPPER(cVyrpol) +STRZERO(nVarCis,3) +UPPER(cTypKalk))
+  TYPE(INDEX) NAME(KALKUL3)    FNAME(KALKUL) CAPTION(Zak·zka +Typ kalkulace ) KEY(UPPER(cCisZakaz) +UPPER(cTypKalk) )
+  TYPE(INDEX) NAME(KALKUL4)    FNAME(KALKUL) CAPTION(Zak·zka +Vyr.poloûka +Varianta + Stav +Rok v˝poËtu +ObdobÌ +Dat.aktual. +Po¯adÌ) KEY(Upper(cCisZakaz) +Upper(cVyrpol) +Strzero(nVarCis,3)+Strzero(nStavKalk,2) +Strzero(nRokVyp,4) +Strzero(nObdMes,2) +if(empty(dDatAktual) ,'        ' , DTOS(dDatAktual)) +Strzero(nPorKalDen,2))
+  TYPE(INDEX) NAME(KALKUL5)    FNAME(KALKUL) CAPTION(Vyr.poloûka +Varianta +Typ kalkulace) KEY( UPPER(cVyrpol) +STRZERO(nVarCis,3) +UPPER(cTypKalk))
+  TYPE(INDEX) NAME(KALKUL6)    FNAME(KALKUL) CAPTION(Dat.aktual. +Po¯adÌ) KEY( if(empty(dDatAktual) ,'        ' , DTOS(dDatAktual)) +Strzero(nPorKalDen,2))
+  TYPE(INDEX) NAME(KALKUL7)    FNAME(KALKUL) CAPTION(»Ìs.firmy )          KEY(nCisFirmy)
+  TYPE(INDEX) NAME(KALKUL8)    FNAME(KALKUL) CAPTION(N·zev firmy )        KEY(UPPER(cNazFirmy))
+  TYPE(INDEX) NAME(KALKUL9)    FNAME(KALKUL) CAPTION(Zak·zka +Vyr.poloûka +Varianta + Stav) KEY(Upper(cCisZakaz) +Upper(cVyrpol) +Strzero(nVarCis,3)+Strzero(nStavKalk,2))
+  TYPE(INDEX) NAME(KALKUL10)   FNAME(KALKUL) CAPTION(Zak·zka+Vyr.poloûka+Varianta+Rok v˝poËtu+Po¯.) KEY(Upper(cCisZakaz) +Upper(cVyrpol) +Strzero(nVarCis,3) +Strzero(nRokVyp,4) +Strzero(nPorKalDen,2))
+  TYPE(INDEX) NAME(ID)         FNAME(KALKUL) CAPTION(ID)                  KEY(sID) UNIQUE INSORT(N)
+* RELATION DEFINE PVPITEM ******************************************
+  TYPE(RELATION) TO(VYRPOL)   KEY(ccisZakaz +cvyrPol +nVarCis)   TAG( 1) ;
+                 TO(CENZBOZ)  KEY(ccissklad +csklPol)            TAG(12) 
+
+  TYPE(RELATION) TO(VYRPOL)   KEY(ccisZakaz +cvyrPol +nVarCis)       TAG(1) ;
+                 TO(PVPKUMUL) KEY(ccissklad +csklPol + nrokvyp + nobdmes)  TAG(2) 
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(KUSOV) DESC(KusovnÌky) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cSubje)     DESC(Subjekt)              CAPTION(Subjekt)    FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)        CAPTION(»ÌsZak·zky) FTYPE(C) FLEN(30) DEC(0)
+  TYPE(FIELD) NAME(cVysPol)    DESC(Poloûka vyööÌ)        CAPTION(VyööÌPoloû) FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cNizPol)    DESC(Poloûka niûöÌ)        CAPTION(NiûöÌPoloû) FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(nNizVar)    DESC(Varianta pol.niûöÌ)   CAPTION(NiûöÌVaria) FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Sklad. poloûka)       CAPTION(SklPoloûka) FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice v rozpisce)    CAPTION(Pozice)     FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nVarPoz)    DESC(Varianta pozice)      CAPTION(PoziceVar)  FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(dPlaOd)     DESC(Platnost od)          CAPTION(PlatnostOD) FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dPlaDo)     DESC(Platnost do)          CAPTION(PlatnostDO) FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nCiMno)     DESC(»istÈ mnoûstvÌ)                           FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nCiMnoVyk)  DESC(»istÈ mn. z v˝kresu)                      FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nSpMno)     DESC(Spot¯ebnÌ mnoû.)                          FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(Zkratka MJ)           CAPTION(MJ)         FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_Jednot) RELATETYPE(2)
+  TYPE(FIELD) NAME(cMjTpv)     DESC(MJ Tpv)               CAPTION(MJ Tpv)     FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cMjSpo)     DESC(MJ spot¯ebnÌ)         CAPTION(MJ spo)     FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cKodPoz)    DESC(KÛd pozice)                               FTYPE(C) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)                            FTYPE(N) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon v operaci)                           FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)                         FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nRozmA)     DESC(RozmÏr A)                                 FTYPE(N) FLEN(12) DEC(4)
+  TYPE(FIELD) NAME(nRozmB)     DESC(RozmÏr B)                                 FTYPE(N) FLEN(12) DEC(4)
+  TYPE(FIELD) NAME(nKusRoz)    DESC(Kusy dan˝ch rozmÏr˘)                      FTYPE(N) FLEN( 7) DEC(3)
+  TYPE(FIELD) NAME(nKusPod)    DESC(Kusy podÌlu)                              FTYPE(N) FLEN( 5) DEC(0)
+  TYPE(FIELD) NAME(nNavysPRC)  DESC(% nav˝öenÌ)                               FTYPE(N) FLEN( 5) DEC(2)
+  TYPE(FIELD) NAME(cStav)      DESC(Znak stavu)                               FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Dat.po¯ÌzenÌ vztahu)                      FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZapis)     DESC(Z·znam po¯Ìdil)                           FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaT)    DESC(Dat.aktual. technologie)                  FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZmenaT)    DESC(Podpis technologa)                        FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaK)    DESC(Dat.zmÏny konstrukce)                     FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZmenaK)    DESC(Podpis konstruktÈra)                      FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cCislObINT) DESC(»Ìslo obj. internÌ)   CAPTION(»ÌsObjInt)  FTYPE(C) FLEN(30) DEC(0)
+  TYPE(FIELD) NAME(nCislPolOb) DESC(Poloûka obj.)         CAPTION(PolObjInt)  FTYPE(N) FLEN( 5) DEC(0)
+  TYPE(FIELD) NAME(cText1)     DESC(Pozn·mka 1)                               FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cText2)     DESC(Pozn·mka 2)                               FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(nMnZadVAvp) DESC(Mn.zadanÈ do v˝r. akt.u vyööÌ)            FTYPE(N) FLEN( 9) DEC(2)
+  TYPE(FIELD) NAME(mKusov)     DESC(Popis vazby)                              FTYPE(M) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(nPridUp)    DESC(P¯Ìdavek na upnutÌ)                       FTYPE(N) FLEN(11) DEC(6)
+  TYPE(FIELD) NAME(nVahaMJ)    DESC(V·ha za MJ)           CAPTION(V·ha za MJ) FTYPE(N) FLEN(10) DEC(5)
+  TYPE(FIELD) NAME(nSpMnSklHR) DESC(Hrub· hmotnost)                           FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nSpMnSklCI) DESC(»ist· hmotnost)                           FTYPE(N) FLEN(13) DEC(6)
+*  TYPE(FIELD) NAME(nHrHm)      DESC(Hrub· hmotnost)                           FTYPE(N) FLEN( 9) DEC(4)
+*  TYPE(FIELD) NAME(nCiHm)      DESC(»ist· hmotnost)                           FTYPE(N) FLEN( 9) DEC(4)
+  TYPE(FIELD) NAME(cIndexPoz)  DESC(Index pozice)         CAPTION(IndexPoz)   FTYPE(C) FLEN(15) DEC(0)
+* pro Hydrap
+  TYPE(FIELD) NAME(cSklOdp_1)  DESC(»Ìs.skladu odpadu 1)  CAPTION(Sklad_1)    FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cPolOdp_1)  DESC(Skl.poloûka odpadu 1) CAPTION(Pol.odp_1)  FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cNazOdp_1)  DESC(N·zev skl.poloûky 1)  CAPTION(N·z.pol_1)  FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(nProcOdp_1) DESC(% odpadu 1)           CAPTION(% odp_1)    FTYPE(N) FLEN( 5) DEC(2)
+  TYPE(FIELD) NAME(nMnozOdp_1) DESC(MnoûstvÌ odpadu 1)    CAPTION(Mnoû.odp_1) FTYPE(N) FLEN(11) DEC(6)
+  TYPE(FIELD) NAME(cSklOdp_2)  DESC(»Ìs.skladu odpadu 2)  CAPTION(Sklad_2)    FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cPolOdp_2)  DESC(Skl.poloûka odpadu 2) CAPTION(Pol.odp_2)  FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cNazOdp_2)  DESC(N·zev skl.poloûky 2)  CAPTION(N·z.pol_2)  FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(nProcOdp_2) DESC(% odpadu 2)           CAPTION(% odp_2)    FTYPE(N) FLEN( 5) DEC(2)
+  TYPE(FIELD) NAME(nMnozOdp_2) DESC(MnoûstvÌ odpadu 2)    CAPTION(Mnoû.odp_2) FTYPE(N) FLEN(11) DEC(6)
+  TYPE(FIELD) NAME(nCenMAT_MJ) DESC(Cena/MJ pro nab.vyst.) CAPTION(CenaMJ nab.vys.) FTYPE(N) FLEN(13) DEC(4)
+* ElektoSvit
+  TYPE(FIELD) NAME(nMnozZadan) DESC(MnoûstvÌ zadanÈ do v˝roby)      CAPTION(vyzZak.nmnozZadan)     FTYPE(N) FLEN( 9) DEC(2)
+  TYPE(FIELD) NAME(nvyrST)     DESC(V˝r_stupeÚ)                     CAPTION(V˝r_stupen)            FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nSpMnoNas)  DESC(Spot¯.mnoûstvÌ pron·sobenÈ)     CAPTION(Spot¯.mn.pron·sob.)    FTYPE(N) FLEN(16) DEC(6)
+*
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu) CAPTION(Dat.vzniku) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)  CAPTION(Dat.zmÏny)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)  CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)           CAPTION(ID)         FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KUSOV1)  FNAME(KUSOV) CAPTION(»ÌsZak·zky +VyööÌPoloû +Pozice +PoziceVar )           KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nPozice,3) +STRZERO(nVarPoz,3) )
+  TYPE(INDEX) NAME(KUSOV2)  FNAME(KUSOV) CAPTION(»ÌsZak·zky +NiûöÌPoloû +NiûöÌVaria )                  KEY(UPPER(cCisZakaz) +UPPER(cNizPol) +STRZERO(nNizVar,3) )
+  TYPE(INDEX) NAME(KUSOV3)  FNAME(KUSOV) CAPTION(SklPoloûka)                                           KEY(UPPER(cSklPol))
+  TYPE(INDEX) NAME(KUSOV4)  FNAME(KUSOV) CAPTION(»ÌsZak·zky +VyööÌPoloû +PoziceVar )                   KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVarPoz,3) )
+  TYPE(INDEX) NAME(KUSOV5)  FNAME(KUSOV) CAPTION(»ÌsObjInt +PolObjInt )                                KEY(UPPER(cCislObINT) +STRZERO(nCislPolOb,5) )
+  TYPE(INDEX) NAME(KUSOV6)  FNAME(KUSOV) CAPTION(NiûöÌPoloû +VyööÌPoloû +»ÌsZak·zky )                  KEY(UPPER(cNizPol) +UPPER(cVysPol) +UPPER(cCisZakaz) )
+  TYPE(INDEX) NAME(KUSOV7)  FNAME(KUSOV) CAPTION(SklPoloûka +VyööÌPoloû +»ÌsZak·zky )                  KEY(UPPER(cSklPol) +UPPER(cVysPol) +UPPER(cCisZakaz) )
+  TYPE(INDEX) NAME(KUSOV8)  FNAME(KUSOV) CAPTION(»ÌsZak·zky +VyööÌPoloû +PoziceVar +».oper +Pozice)    KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVarPoz,3) +STRZERO(nCisOper,4) +STRZERO(nPozice,3))
+  TYPE(INDEX) NAME(KUSOV9)  FNAME(KUSOV) CAPTION(»ÌsZak·zky +VyööÌPoloû +».oper+⁄kon oper. +Var.oper.) KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3))
+  TYPE(INDEX) NAME(KUSOV10) FNAME(KUSOV) CAPTION(»ÌsZak·zky)                                           KEY(cCisZakaz)
+  TYPE(INDEX) NAME(KUSOV11) FNAME(KUSOV) CAPTION(SklPoloûka)                                           KEY(cSklPol)
+  TYPE(INDEX) NAME(KUSOV12) FNAME(KUSOV) CAPTION(VyööÌPoloû)                                           KEY(cVysPol)
+  TYPE(INDEX) NAME(KUSOV13) FNAME(KUSOV) CAPTION(Pozice)                                               KEY(nPozice)
+  TYPE(INDEX) NAME(KUSOV14) FNAME(KUSOV) CAPTION(PoziceVar )                                           KEY(nVarPoz)
+  TYPE(INDEX) NAME(KUSOV15) FNAME(KUSOV) CAPTION(NiûöÌPoloû)                                           KEY(cNizPol)
+  TYPE(INDEX) NAME(KUSOV16) FNAME(KUSOV) CAPTION(»Ìs.operace)                                          KEY(nCisOper)
+  TYPE(INDEX) NAME(KUSOV17) FNAME(KUSOV) CAPTION(Var.operace)                                          KEY(nVarOper)
+  TYPE(INDEX) NAME(ID)      FNAME(KUSOV) CAPTION(ID)                                                   KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(KUSTREE) DESC(KusovnÌky - strom) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTreeText)  DESC(Struktura v kusovnÌku)          CAPTION(Struktura)             FTYPE(C) FLEN(70) DEC(0)
+  TYPE(FIELD) NAME(cTypPol)    DESC(Typ poloûky)                    CAPTION(Typ pol.)              FTYPE(C) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìs. zak·zky)                   CAPTION(Zak·zka)               FTYPE(C) FLEN(30) DEC(0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr·bÏn· poloûka)      FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(V˝r. varianta)                  CAPTION(Varianta)              FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cVarPop)    DESC(Popis varianty)                 CAPTION(Popis varianty)        FTYPE(C) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Skl.poloûka)                    CAPTION(Skl. poloûka)          FTYPE(C) FLEN(15) DEC(0) RELATETO(CenZBOZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(lNakPol)    DESC(Nakupovan· poloûka)             CAPTION(Nakupovan· poloûka)    FTYPE(L) FLEN( 1) DEC(0) VALUES(T:Skladov·,F:Vyr·bÏn·)
+  TYPE(FIELD) NAME(cNazev)     DESC(N·zev v˝r. poloûky)             CAPTION(N·zev v˝r. poloûky)    FTYPE(C) FLEN(30) DEC(0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(Zkratka MJ)                     CAPTION(MJ)                    FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_Jednot) RELATETYPE(2)
+  TYPE(FIELD) NAME(cMjTpv)     DESC(MJ Tpv)                         CAPTION(MJ Tpv)                FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cMjSpo)     DESC(MJ spot¯ebnÌ)                   CAPTION(MJ spo)                FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cVysPol)    DESC(Poloûka vyööÌ)                  CAPTION(VyööÌ poloûka)         FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(nVysVar)    DESC(Varianta pol.vyööÌ)             CAPTION(Var.vyööÌ)             FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cVysVarPop) DESC(Popis var. vyööÌ)               CAPTION(Popis var.vyööÌ)       FTYPE(C) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(cNazevVys)  DESC(N·zev pol. vyööÌ)               CAPTION(N·zev pol.vyööÌ)       FTYPE(C) FLEN(30) DEC(0)
+  TYPE(FIELD) NAME(nVyrSt)     DESC(V˝r.stupeÚ)                     CAPTION(V˝r.st.)               FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice)                         CAPTION(Pozice)                FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nVarPoz)    DESC(Varianta pozice)                CAPTION(Var.poz.)              FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cSubje)     DESC(Subjekt)                        CAPTION(Subjekt)               FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cStav)      DESC(Stav)                           CAPTION(Stav)                  FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(cTreeKey)   DESC(KlÌË)                           CAPTION(KlÌË stromu)           FTYPE(C) FLEN(25) DEC(0)
+  TYPE(FIELD) NAME(lRozpad)    DESC(Indikace kontr.rozpadu)         CAPTION(Rozpad)                FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(nErrKod)    DESC(KÛd chyby)                      CAPTION(KÛd chyby)             FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cErrTxt)    DESC(Popis chyby p¯i kontr. rozpadu) CAPTION(Popis chyby)           FTYPE(C) FLEN(40) DEC(0)
+  TYPE(FIELD) NAME(nSpMno)     DESC(Spot¯.mnoûstvÌ z kusovnÌku)     CAPTION(Spot¯.mn.z kus.)       FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nSpMnoNas)  DESC(Spot¯.mnoûstvÌ pron·sobenÈ)     CAPTION(Spot¯.mn.pron·sob.)    FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(nCiMno)     DESC(»istÈ mnoûstvÌ z kusovnÌku)     CAPTION(»istÈ mn.z kus.)       FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nCiMnoNas)  DESC(»istÈ mnoûstvÌ pron·sobenÈ)     CAPTION(»istÈ mn.pron·sob.)    FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(cZkratMENY) DESC(Zkratka mÏny)                   CAPTION(MÏna)                  FTYPE(C) FLEN( 3) DEC(0)RELATETO(C_Meny) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCenaCelk)  DESC(Cena celkem skladov·)           CAPTION(Cena celk.skl.)        FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nCenaCelk2) DESC(Cena celkem posl.n·kupnÌ)       CAPTION(Cena celk.pn)          FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nCenaCelk3) DESC(Cena celkem n·kupnÌ cenÌkov·)   CAPTION(Cena celk.nc)          FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nCenaCelk4) DESC(Cena celkem prodejnÌ bez danÏ)  CAPTION(Cena celk.pbd)         FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nCenaCelk5) DESC(Cena pro nabÌdky vystavenÈ)     CAPTION(Cena celk.nav)         FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nCenaCelk6) DESC(Cena celk. posl.n·k.(n·k.cen.)) CAPTION()                      FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(cTypMat)    DESC(Typ materi·lu)                  CAPTION(Typ mat.)              FTYPE(C) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(P¯Ìpravn˝ Ëas v Nh)             CAPTION(P¯Ìpr.Ëas v Nh)        FTYPE(N) FLEN( 9) DEC(3)
+  TYPE(FIELD) NAME(nPriprKc)   DESC(P¯Ìpravn˝ Ëas v KË)             CAPTION(P¯Ìpr.Ëas v KË)        FTYPE(N) FLEN( 8) DEC(2)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(Kusov˝ Ëas v Nh)                CAPTION(Kus.Ëas v Nh)          FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nKusovKc)   DESC(Kusov˝ Ëas v KË)                CAPTION(Kus.Ëas v KË)          FTYPE(N) FLEN(12) DEC(4)
+  TYPE(FIELD) NAME(lZapustit)  DESC(Zapustit do v˝roby)             CAPTION(Zapustit)              FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(nKusyPas)   DESC(Ks/p·s)                         CAPTION(Ks/p·s)                FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nStrizPL)   DESC(»Ìslo st¯iûnÈho pl·nu)          CAPTION(».st¯iû. pl·nu)        FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nMnZadVA)   DESC(Mn.zad·no do v˝roby akt.)       CAPTION(Mn.do v˝r.)            FTYPE(N) FLEN(14) DEC(4)
+  TYPE(FIELD) NAME(nMnZadVAvp) DESC(Mn.zad·no do v˝r. akt. u vyööÌ) CAPTION(Mn.do v˝r. u vyööÌ)    FTYPE(N) FLEN(14) DEC(4)
+  TYPE(FIELD) NAME(cStred)     DESC(St¯edisko)                      CAPTION(St¯edisko)             FTYPE(C) FLEN( 8) DEC(0) RELATETO(C_Stred) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTypStr)    DESC(Typ st¯ediska)                  CAPTION(Typ st¯ed.)            FTYPE(C) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)                  CAPTION(».oper.)               FTYPE(N) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon v operaci)                 CAPTION(⁄kon)                  FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)               CAPTION(Var.oper.)             FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nKoefPREP)  DESC(Koeficient p¯epoËtu MJ)         CAPTION(Koef.p¯ep. MJ)         FTYPE(N) FLEN(12) DEC(6)
+  TYPE(FIELD) NAME(cCisSklad)  DESC(»Ìslo skladu)                   CAPTION(Sklad)                 FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nEkDav)     DESC(Ek.d·vka)                       CAPTION(Ek.d·vka)              FTYPE(N) FLEN( 8) DEC(2)
+  TYPE(FIELD) NAME(nUcetSkup)  DESC(⁄Ë.sk.)                         CAPTION(⁄Ë.sk.)                FTYPE(N) FLEN( 3) DEC(0) RELATETO(C_UctSkp) RELATETYPE(2)
+  TYPE(FIELD) NAME(lZapusteno) DESC(ZapuötÏno)                      CAPTION(ZapuötÏno)             FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(cFinPol)    DESC(Fin·lnÌ poloûka)                CAPTION(Fin·lnÌ poloûka)       FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cNazevFin)  DESC(N·zev fin·lnÌ poloûky)          CAPTION(N·zev fin·lnÌ poloûky) FTYPE(C) FLEN(30) DEC(0)
+  TYPE(FIELD) NAME(nZboziKAT)  DESC(Kateg. zboûÌ)                   CAPTION(Kat.zb.)               FTYPE(N) FLEN( 4) DEC(0) RELATETO(C_KatZbo) RELATETYPE(2)
+  TYPE(FIELD) NAME(nVyrRezie)  DESC(V˝robnÌ reûie)                  CAPTION(V˝r. reûie)            FTYPE(N) FLEN(10) DEC(2)
+  TYPE(FIELD) NAME(cKodPoz)    DESC(KÛd pozice)                     CAPTION(KÛd poz.)              FTYPE(C) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nVaha)      DESC(V·ha)                           CAPTION(V·ha)                  FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(nPlocha)    DESC(Plocha)                         CAPTION(Plocha)                FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(nVahaFIN)   DESC(V·ha fin·lu)                    CAPTION(V·ha fin·lu)           FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(nPlochaFIN) DESC(Plocha fin·lu)                  CAPTION(Plocha fin·lu)         FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(nKusROZ)    DESC(Kusy rozmÏru)                   CAPTION(Kusy rozmÏru)          FTYPE(N) FLEN( 7) DEC(3)
+  TYPE(FIELD) NAME(cText1)     DESC(Pozn·mka 1)                     CAPTION(Text 1)                FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cText2)     DESC(Pozn·mka 2)                     CAPTION(Text 2)                FTYPE(C) FLEN(50) DEC(0)
+* Hydrap
+  TYPE(FIELD) NAME(nSpMnSklHR) DESC(Hrub· hmotnost-spot¯.mn.skladovÈ hrubÈ)                        FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nSpMnSklCI) DESC(»ist· hmotnost-spot¯.mn.skladovÈ ËistÈ)                        FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nCenMAT_MJ) DESC(Cena/MJ pro nabÌdky vyst.)      CAPTION(CenaMJ nab.vys.)       FTYPE(N) FLEN(13) DEC(4)
+*
+* ElektoSvit
+*
+  TYPE(FIELD) NAME(nspMno_p)   DESC(Spot¯Mn z kusovnÌku - parent)    CAPTION()                     FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nspMnoN_p)  DESC(Spot¯Mn pron·sobenÈ - parent)    CAPTION()                     FTYPE(N) FLEN(16) DEC(6)
+  TYPE(FIELD) NAME(nciMno_p)   DESC(»istÈMn z kusovnÌku - parent)    CAPTION()                     FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nciMnoN_p)  DESC(»istÈMn pron·sobenÈ - parent)    CAPTION()                     FTYPE(N) FLEN(16) DEC(6)
+*
+  TYPE(FIELD) NAME(nspMno_J)   DESC(Spot¯Mn z kusov.nspMno - na_1)   CAPTION()                     FTYPE(N) FLEN(13) DEC(6)
+  TYPE(FIELD) NAME(nciMno_J)   DESC(»istÈMn z kusov.nciMno - ma_1)   CAPTION()                     FTYPE(N) FLEN(13) DEC(6)
+*
+  TYPE(FIELD) NAME(nMnozZadan) DESC(MnoûstvÌ zadanÈ do v˝roby)      CAPTION(vyzZak.nmnozZadan)     FTYPE(N) FLEN( 9) DEC(2)
+  TYPE(FIELD) NAME(NMNOZDZBO)  DESC(MnoûstvÌ k dispozici)           CAPTION(cenZboz.mnKdisp)       FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(NROZD_NAS)  DESC(RozdÌl DISP -spNAS)             CAPTION(DISP -spNAS)           FTYPE(N) FLEN(13) DEC(4)
+  TYPE(FIELD) NAME(nVYRPOL)    DESC(SId - vyrPol u vyrPoloûky)      CAPTION()                      FTYPE(n) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(nKUSOV)     DESC(SId - kusov)                    CAPTION()                      FTYPE(n) FLEN(10) DEC(0)
+*
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)           CAPTION(Dat.vzniku)            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)            CAPTION(Dat.zmÏny)             FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)            CAPTION()                      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                     CAPTION(ID)                    FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TREE1) FNAME(KUSTREE) CAPTION(KlÌËStromu )                     KEY(cTreeKey )
+  TYPE(INDEX) NAME(TREE2) FNAME(KUSTREE) CAPTION(NakPoloûka +SklPoloûka )         KEY(if (lNakPol, '1', '0') +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(TREE3) FNAME(KUSTREE) CAPTION(»ÌsZak·zky +VyööÌPol +VyööÌVar ) KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVysVar,3) )
+  TYPE(INDEX) NAME(TREE4) FNAME(KUSTREE) CAPTION(KlÌËStromu +N·zV˝rPol )          KEY(cTreeKey +UPPER(cNazev) )
+  TYPE(INDEX) NAME(TREE5) FNAME(KUSTREE) CAPTION(KlÌËStromu +SklPoloûka )         KEY(cTreeKey +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(TREE6) FNAME(KUSTREE) CAPTION(VyrPoloûka +SklPoloûka )         KEY(UPPER(cVyrPol) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(TREE7) FNAME(KUSTREE) CAPTION(SklPoloûka +KlÌËStromu )         KEY( UPPER(cSklPol) + cTreeKey )
+  TYPE(INDEX) NAME(KUSOV) FNAME(KUSTREE) CAPTION(KUSOV)                           KEY(nKUSOV)
+  TYPE(INDEX) NAME(ID)    FNAME(KUSTREE) CAPTION(ID)                              KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(MAJOPER) DESC(Majetek u operacÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr·bÏn· poloûka) FTYPE(c) FLEN(15) DEC( 0) PICTURE(&15X)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)                  CAPTION(».operace)        FTYPE(n) FLEN( 4) DEC( 0) PICTURE(@N 9999)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon operace)                   CAPTION(⁄kon)             FTYPE(n) FLEN( 2) DEC( 0) PICTURE( 99)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)               CAPTION(Var.op.)          FTYPE(n) FLEN( 3) DEC( 0) PICTURE(@N 999)
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)                 CAPTION(Typov· operace)   FTYPE(c) FLEN(10) DEC( 0) PICTURE(&10X)
+  TYPE(FIELD) NAME(nInvCis)    DESC(Inv. ËÌslo)                     CAPTION(Inv. ËÌslo)       FTYPE(n) FLEN(15) DEC( 0) PICTURE(@N 999999999999999)
+  TYPE(FIELD) NAME(cDruhMaj)   DESC(Druh majetku)                   CAPTION(Druh maj.)        FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X) VALUES(I:InvestiËnÌ majetek,D:Drobn˝ inv. majetek)
+  TYPE(FIELD) NAME(nMnozMAJ)   DESC(Mnoû.majetku k operaci)         CAPTION(Mn.maj. k op.)    FTYPE(n) FLEN( 7) DEC( 3) PICTURE(@N 999.999)
+  TYPE(FIELD) NAME(nCasNorMAJ) DESC(»asov· norma pouûitÌ)           CAPTION(»as. norma )      FTYPE(n) FLEN(10) DEC( 3) PICTURE(@N 999,999.999)
+  TYPE(FIELD) NAME(cKodCasMAJ) DESC(KÛd pro Ëasovou normu)          CAPTION(KÛd »N)           FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X) VALUES(A:KÛd A, :- nezad·n -)
+  TYPE(FIELD) NAME(cKodKoeCas) DESC(KÛd pro n·sobenÌ ËasovÈ normy)  CAPTION(KÛd n·s.»N)       FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X) VALUES(A:KÛd A, :- nezad·n -)
+  TYPE(FIELD) NAME(cKodKoeMno) DESC(KÛd pro n·sobenÌ mnoû. majetku) CAPTION(KÛd n·s.maj.)     FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)           CAPTION(Dat.vzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)            CAPTION(Dat.zmÏny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)            CAPTION()                 FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                     CAPTION(ID)               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(MAJOPER1)   FNAME(MAJOPER) CAPTION(Typov· operace +Inv. ËÌslo +Druh majetku ) KEY(UPPER(cOznOper) +STRZERO(nInvCis,15) +UPPER(cDruhMaj) )
+  TYPE(INDEX) NAME(MAJOPER2)   FNAME(MAJOPER) CAPTION(Vyr.poloûka +».operace +⁄kon + Var.op. +Inv. ËÌslo +Druh majetku ) KEY(UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) +STRZERO(nInvCis,15) +UPPER(cDruhMaj) )
+  TYPE(INDEX) NAME(ID)         FNAME(MAJOPER) CAPTION(ID)               KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(NAKPOL) DESC(NakupovanÈ poloûky) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisSklad)  DESC(»Ìslo skladu)               CAPTION(Sklad)               FTYPE(C) FLEN( 8) DEC(0) PICTURE(&8X) RELATETO(C_SKLADY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cSklpol)    DESC(Skl. poloûka nakupovan·)    CAPTION(Skadov· poloûka)     FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cNazTpv)    DESC(N·zev zboûÌ (pro TPV))      CAPTION(N·zev zboûÌ pro TPV) FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cDinor)     DESC(Norma DIN)                  CAPTION(Norma DIN)           FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cCsnro)     DESC(»SNR rozmÏrov·)             CAPTION(»SNR rozmÏrov·)      FTYPE(C) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cZkratJedn) DESC(MJ Sklady)                  CAPTION(MJ skl.)             FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cMjTpv)     DESC(MJ Tpv)                     CAPTION(MJ Tpv)              FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cMjSpo)     DESC(MJ spot¯ebnÌ)               CAPTION(MJ spo)              FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(nKoefPrep)  DESC(Koeficient p¯epoËtu MJ)     CAPTION(Koef. p¯epoËtu MJ)   FTYPE(N) FLEN(12) DEC(6) RELATETO(C_KOEF) RELATETYPE(2) RELATEORD(2)
+  TYPE(FIELD) NAME(nVahaMJ)    DESC(V·ha za MJ)                 CAPTION(V·ha za MJ)          FTYPE(N) FLEN(10) DEC(5)
+  TYPE(FIELD) NAME(cTypMat)    DESC(Typ materi·lu)              CAPTION(Typ materi·lu)       FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_TYPMAT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cKodTpv)    DESC(KÛd Tpv)                    CAPTION(KÛd TPV)             FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cKodRezSkl) DESC(KÛd rezervace ve Skladech)  CAPTION(KÛd rezervace)       FTYPE(C) FLEN( 2) DEC(0) VALUES(A:Rezervovat,N:Nerezervovat)
+  TYPE(FIELD) NAME(cZapis)     DESC(Kdo po¯Ìdil)                CAPTION(Kdo po¯Ìdil)         FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)             CAPTION(Datum po¯ÌzenÌ)      FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZmena)     DESC(Kdo zmÏnil)                 CAPTION(Kdo zmÏnil)          FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                CAPTION(Datum zmÏny)         FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cRozmer1)   DESC(RozmÏr 1)                   CAPTION(RozmÏr 1)            FTYPE(c) FLEN(20) DEC(0)
+  TYPE(FIELD) NAME(nKoefNater) DESC(Koeficient plochy nateru)   CAPTION(Koef. plochy n·tÏru) FTYPE(N) FLEN(7) DEC(3)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)       CAPTION(Dat.vzniku)          FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)        CAPTION(Dat.zmÏny)           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)        CAPTION()                    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                 CAPTION(ID)                  FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(NAKPOL1)    FNAME(NAKPOL) CAPTION(Skladov· poloûka)    KEY(UPPER(cSklpol))
+  TYPE(INDEX) NAME(NAKPOL2)    FNAME(NAKPOL) CAPTION(N·zev zboûÌ)         KEY(UPPER(cNazTpv))
+  TYPE(INDEX) NAME(NAKPOL3)    FNAME(NAKPOL) CAPTION(Sklad +Skl. poloûka) KEY(UPPER(cCisSklad) +UPPER(cSklpol))
+  TYPE(INDEX) NAME(ID)         FNAME(NAKPOL) CAPTION(ID)                  KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cSklPol:Skl. poloûka:15,cNazTpv:N·zev zboûÌ TPV:30,cCisSklad:Sklad:8) ORDER(1) RETURN(cSklPol)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OPERACE) DESC(Katalog typov˝ch operacÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)             CAPTION(Typov· operace) FTYPE(c) FLEN(10) DEC( 0) PICTURE(&10X)
+  TYPE(FIELD) NAME(cTypOper)   DESC(Typ oper.)                  CAPTION(Typ oper.)      FTYPE(c) FLEN( 3) DEC( 0) PICTURE(&3X)  RELATETO(C_TYPOP) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazOper)   DESC(N·zev operace)              CAPTION(N·zev operace)  FTYPE(c) FLEN(30) DEC( 0) PICTURE(&30X)
+  TYPE(FIELD) NAME(cNazPol6)   DESC(⁄ËetnÌ operace)             CAPTION(⁄Ëet.oper.)     FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)  RELATETO(cNAZPOL6) RELATETYPE(2)
+  TYPE(FIELD) NAME(cStred)     DESC(V˝robnÌ st¯edisko)          CAPTION(V˝r.st¯ed.)     FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)  RELATETO(C_STRED)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)        CAPTION(PracoviötÏ)     FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)  RELATETO(C_PRACOV) RELATETYPE(2)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Profese)                    CAPTION(Profese)        FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)  RELATETO(C_PracZa) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDruhMzdy)  DESC(Druh mzdy)                  CAPTION(Druh mzdy)      FTYPE(n) FLEN( 4) DEC( 0) PICTURE(@N 9999) RELATETO(DruhyMzd) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTarifStup) DESC(TarifnÌ stupnice)           CAPTION(Tarif.stup.)    FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(C_TarStu) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTarifTrid) DESC(TarifnÌ t¯Ìda-sazba)        CAPTION(Tarif.t¯Ìda)    FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(C_TarTri) RELATETYPE(2)
+  TYPE(FIELD) NAME(cKvalNorm)  DESC(Kvalita urËenÌ normy)       CAPTION(Kval.normy)     FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(Kusov˝ Ëas normominuty)     CAPTION(Kusov˝ Ëas )    FTYPE(n) FLEN(13) DEC( 4) PICTURE(@N 99,999,999.9999)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(P¯Ìpr.Ëas d·vky normominuty)CAPTION(P¯Ìpravn˝ Ëas)  FTYPE(n) FLEN(10) DEC( 2) PICTURE(@N 9,999,999.99)
+  TYPE(FIELD) NAME(nKoefSmCas) DESC(Koef.smÏnovÈho Ëasu)        CAPTION(Koef.sm.Ë.)     FTYPE(n) FLEN( 6) DEC( 3) PICTURE(@N 99.999)
+  TYPE(FIELD) NAME(nKoefViSt)  DESC(Koef.vÌcestroj. obsluhy)    CAPTION(Koef.obsluhy )  FTYPE(n) FLEN( 6) DEC( 3) PICTURE(@N 99.999)
+  TYPE(FIELD) NAME(nKoefViOb)  DESC(Koef.vÌceobsl. stroje)      CAPTION(Koef.stroje)    FTYPE(n) FLEN( 6) DEC( 3) PICTURE(@N 99.999)
+  TYPE(FIELD) NAME(mTextOper)  DESC(Popis typovÈ operace)       CAPTION(Popis operace ) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cZapis)     DESC(Po¯Ìdil)                    CAPTION(Zaloûil KDO)    FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)             CAPTION(Zaloûil DNE)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(ZmÏnil)                     CAPTION(ZmÏna KDO)      FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                CAPTION(ZmÏna DNE)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lVykazML)   DESC(Vykazovat ML)               CAPTION(ML)             FTYPE(L) FLEN( 1) DEC( 0) VALUES(T:ANO,F:NE)
+  TYPE(FIELD) NAME(nRozOper)   DESC(RozliöenÌ typovÈ operace)   CAPTION(Rozl.)          FTYPE(n) FLEN( 1) DEC( 0) VALUES(0: -Bez rozliöenÌ-,1:pro NabÌdky vystavenÈ)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)       CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)        CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)        CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                 CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OPER1)      FNAME(OPERACE) CAPTION(Typov·Oper)                   KEY(UPPER(cOznOper))
+  TYPE(INDEX) NAME(OPER2)      FNAME(OPERACE) CAPTION(Tarif.stupnice +Tarif.t¯Ìda ) KEY(UPPER(cTarifStup) +UPPER(cTarifTrid) )
+  TYPE(INDEX) NAME(ID)         FNAME(OPERACE) CAPTION(ID)                           KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cOznOper:Typov· operace:10,cNazOper:N·zev operace:30,cTypOper:Typ operace:3) ORDER(1) RETURN(cOznOper)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OPERTREE) DESC(KusovnÌk s operacemi) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTreeText)  DESC(Struktura v kusovnÌku)          CAPTION(Struktura)        FTYPE(c) FLEN(70) DEC( 0)
+  TYPE(FIELD) NAME(cTypPol)    DESC(Typ poloûky)                    CAPTION(Typ.pol.)         FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìs. zak·zky)                   CAPTION(Zak·zka)          FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cFinVyr)    DESC(Fin·lnÌ poloûka)                CAPTION(Fin·lnÌ poloûka)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nFinVar)    DESC(Var. fin·lu)                    CAPTION(Var.fin.)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr. poloûka)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(V˝robnÌ varianta)               CAPTION(Varianta)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cVarPop)    DESC(Popis varianty)                 CAPTION(Popis varianty)   FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Skl.poloûka nejbliû.niû.vazba)  CAPTION(Skl. poloûka)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazZbo)    DESC(N·zev skl.poloûky nejbl. niû.)  CAPTION(N·zez skl.pol.)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(N·zev vyr. poloûky)             CAPTION(N·zev v˝r.pol.)   FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(MJ)                             CAPTION(MJ)               FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cVysPol)    DESC(Poloûka vyööÌ)                  CAPTION(VyööÌ pol.)       FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVysVar)    DESC(Varianta pol.vyööÌ)             CAPTION(VyööÌ var.)       FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cVysVarPop) DESC(Popis var. vyööÌ)               CAPTION(Popis var.vyö.)   FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cNazevVys)  DESC(N·zev pol. vyööÌ)               CAPTION(N·zev pol.vyööÌ)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cNizPol)    DESC(Poloûka niûöÌ)                  CAPTION(NiûöÌ pol.)       FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nNizVar)    DESC(Varianta pol.niûöÌ)             CAPTION(NiûöÌ var.)       FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazevNiz)  DESC(N·zev pol. niûöÌ)               CAPTION(N·zev pol.niûöÌ)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nSpMnoNaNi) DESC(Sp.mn.pron·ob. u niûöÌ pol.)    CAPTION(Sp.mn.n·sob.n.)   FTYPE(n) FLEN(16) DEC( 6)
+  TYPE(FIELD) NAME(nVyrSt)     DESC(V˝r.stupeÚ)                     CAPTION(V˝r.st.)          FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice)                         CAPTION(Pozice)           FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVarPoz)    DESC(Varianta pozice)                CAPTION(Var.poz.)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cTreeKey)   DESC(KlÌË)                           CAPTION(KlÌË stromu)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nSpMno)     DESC(Spot¯.mnoûstvÌ z kusovnÌku)     CAPTION(Sp.mn.z kusov.)   FTYPE(n) FLEN(13) DEC( 6)
+  TYPE(FIELD) NAME(nSpMnoNas)  DESC(Spot¯.mnoûstvÌ pron·sobenÈ)     CAPTION(Sp.mn.pron·sob.)  FTYPE(n) FLEN(16) DEC( 6)
+  TYPE(FIELD) NAME(nCiMno)     DESC(»istÈ mnoûstvÌ z kusovnÌku)     CAPTION(»istÈ mn.z kus.)  FTYPE(n) FLEN(13) DEC( 6)
+  TYPE(FIELD) NAME(nCiMnoNas)  DESC(»istÈ mnoûstvÌ pron·sobenÈ)     CAPTION(»istÈ mn.pron·s.) FTYPE(n) FLEN(16) DEC( 6)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)                  CAPTION(».operace)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon operace)                   CAPTION(⁄kon)             FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)               CAPTION(Var.op.)          FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)                 CAPTION(Typov· oper.)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(Kusov˝ Ëas)                     CAPTION(Kusov˝ Ëas)       FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCelkKusCa) DESC(Celkov˝ kusov˝ Ë.)              CAPTION(Celk.kus.Ëas)     FTYPE(n) FLEN(14) DEC( 4)
+  TYPE(FIELD) NAME(nKcNaOper)  DESC(KË / operaci)                   CAPTION(K»/oper)          FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(nKcNaKoop)  DESC(KË/kooperaci)                   CAPTION(K»/kooper.)       FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(cNazOper)   DESC(N·zev operace)                  CAPTION(N·zev operace)    FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cStred)     DESC(V˝robnÌ st¯edisko)              CAPTION(V˝r.st¯ed.)       FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)            CAPTION(Ozn.pracov.)      FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cText1)     DESC(Text 1)                         CAPTION(Text 1)           FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(cText2)     DESC(Text 2)                         CAPTION(Text 2)           FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(cText3)     DESC(Text 3)                         CAPTION(Text 3)           FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(lNakPol)    DESC(Nakupovan· poloûka)             CAPTION(Nak.pol.)         FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nTranMnoz)  DESC(TransportnÌ mnoûstvÌ)           CAPTION(Transp.mn.)       FTYPE(n) FLEN(10) DEC( 3)
+  TYPE(FIELD) NAME(mTextOper)  DESC(Popis typovÈ operace)           CAPTION(Popis typ.oper.)  FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(P¯Ìpravn˝ Ëas)                  CAPTION(P¯Ìpr. Ëas)       FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nKoefKusCa) DESC(Koef.n·sob. kusov.Ëasu)         CAPTION(Koef.n·s.kus.Ë.)  FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nSpMnoZak)  DESC(Spot¯ebnÌ mnoû. na zak·zku)     CAPTION(Sp.mn. na zak.)   FTYPE(n) FLEN(16) DEC( 6)
+  TYPE(FIELD) NAME(nMnSkJeZak) DESC(Sp.mn.na zak·z. ve skladovÈ MJ) CAPTION(Sp.mn. na zak.MJ) FTYPE(n) FLEN(16) DEC( 6)
+  TYPE(FIELD) NAME(nPocRadku)  DESC(PoËet ¯·dk˘)                    CAPTION(ÿ·dky)            FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cPlus)      DESC()                               CAPTION()                 FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nNhCELK)    DESC(Nh Celkem)                      CAPTION(Nh celkem)        FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(nKcCELK)    DESC(KË Celkem)                      CAPTION(KË celkem)        FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(cVyssiPol)  DESC(Poloûka vyööÌ)                  CAPTION(Poloûka vyööÌ)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVyssiVar)  DESC(Varianta pol.vyööÌ)             CAPTION(Var.vyö.)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)           CAPTION(Dat.vzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)            CAPTION(Dat.zmÏny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)            CAPTION()                 FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                     CAPTION(ID)               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OPTREE1) FNAME(OPERTREE) CAPTION(KlÌËStromu +VyrPoloûka ) KEY(cTreeKey +UPPER(cVyrPol) )
+  TYPE(INDEX) NAME(OPTREE2) FNAME(OPERTREE) CAPTION(N·zSklPolo +SklPoloûka ) KEY(UPPER(cNazZbo) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(OPTREE3) FNAME(OPERTREE) CAPTION(»ÌsZak·zky +VyööÌPol +VyööÌVar ) KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVysVar,3) )
+  TYPE(INDEX) NAME(OPTREE4) FNAME(OPERTREE) CAPTION(KlÌËStromu +N·zV˝rPol ) KEY(cTreeKey +UPPER(cNazev) )
+  TYPE(INDEX) NAME(OPTREE5) FNAME(OPERTREE) CAPTION(VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp ) KEY(UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(ID)      FNAME(OPERTREE) CAPTION(ID)  KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(POLOP_02) DESC(PolOper pro zapuötÏnÌ 5) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)               CAPTION(Zak·zka)        FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakazI) DESC(Poloûka v˝r. zak·zky)        CAPTION(Poloûka zak·zky)FTYPE(C) FLEN(36) DEC( 0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)            CAPTION(Vyr.poloûka)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)               CAPTION(».oper.)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon operace)                CAPTION(⁄kon oper.)     FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)            CAPTION(Var.oper.)      FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)              CAPTION(Typov· op.)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(Kusov˝ Ëas)                  CAPTION(Kusov˝ Ëas)     FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nKoefKusCa) DESC(Koef.n·sob. kusovÈho Ë.)     CAPTION(Koef.kus.Ë.)    FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nCelkKusCa) DESC(Celkov˝ kusov˝ Ë.)           CAPTION(Kus.Ëas celkem) FTYPE(n) FLEN(14) DEC( 4)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(P¯Ìpr.Ëas d·vky normominuty) CAPTION(P¯Ìpr. Ëas)     FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nKoefMnoSt) DESC(Koef.n·sob. mnoû.stroj˘)     CAPTION(Koef.mn.stroj˘) FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nKoefMnoPr) DESC(Koef.n·sob. mnoû.p¯Ìpravk˘)  CAPTION(Koef.mn.p¯Ìpr.) FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nKoefMnoNa) DESC(Koef.n·sob. mnoû.n·stroj˘)   CAPTION(Koef.mn.n·str.) FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nKcNaOper)  DESC(KË / operaci)                CAPTION(KË/operaci)     FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(cZapis)     DESC(Po¯Ìdil)                     CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)              CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(ZmÏnil)                      CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                 CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nRokVytvor) DESC(Rok vytvo¯enÌ mzd.lÌstku)    CAPTION(Rok ML)         FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPorCisLis) DESC(»Ìslo mzd.lÌstku)            CAPTION(»Ìslo ML)       FTYPE(n) FLEN(12) DEC( 0)
+  TYPE(FIELD) NAME(nZapusteno) DESC(ZapuötÏnÌ)                   CAPTION()               FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cText1)     DESC(Text 1)                      CAPTION()               FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(cText2)     DESC(Text 2)                      CAPTION()               FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(cText3)     DESC(Text 3)                      CAPTION()               FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(lTranMnoz)  DESC(ZapoËÌtat transp.mn.)        CAPTION()               FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(mPolOper)   DESC(Popis poloûky operace)       CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cStred)     DESC(St¯.-dÌlna)                  CAPTION(St¯edisko)      FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(PracoviötÏ)                  CAPTION(PracoviötÏ)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Prac.za¯azenÌ)               CAPTION(Prac.za¯.)      FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nDruhMzdy)  DESC(Druh mzdy)                   CAPTION(Dr.mzdy)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cTarifStup) DESC(Tar.stupnice)                CAPTION(Tar.stup.)      FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTarifTrid) DESC(Tar.t¯Ìda)                   CAPTION(Tar.t¯Ìda)      FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(N·zev vyr.pol.)              CAPTION(N·zev vyr.pol.) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nMnZadVA)   DESC(Mn.zad·no do v˝roby AKT.)    CAPTION()               FTYPE(N) FLEN(14) DEC( 4)
+  TYPE(FIELD) NAME(nMnZadVK)   DESC(Mn.zad·no do v˝roby KUM.)    CAPTION()               FTYPE(n) FLEN(14) DEC( 4)
+  TYPE(FIELD) NAME(nRecPolOp)  DESC(Z·znam POLOPER)              CAPTION()               FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPocCeZapZ) DESC(PoËet zapuö.)                CAPTION(PoËet zap.)     FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)        CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)         CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)         CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                  CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(POL02_1) FNAME(POLOP_02) CAPTION(St¯edisko +PracoviötÏ +Vyr.poloûka +».operace ) KEY(UPPER(cStred) +UPPER(cOznPrac) +UPPER(cVyrPol) +STRZERO(nCisOper,4) )
+  TYPE(INDEX) NAME(POL02_2) FNAME(POLOP_02) CAPTION(Zak·zka +Vyr.poloûka +».operace +⁄kon oper. +Varianta op. ) KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(ID)         FNAME(POLOP_02) CAPTION(ID)    KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(POLOPER) DESC(Operace u vyr·b. poloûek) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)               CAPTION(Zak·zka)        FTYPE(c) FLEN(30) DEC( 0) PICTURE(&30X)
+  TYPE(FIELD) NAME(cCisZakazI) DESC(Poloûka v˝r. zak·zky)        CAPTION(Poloûka zak·zky)FTYPE(C) FLEN(36) DEC(0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)            CAPTION(Vyr. poloûka)   FTYPE(c) FLEN(15) DEC( 0) PICTURE(&15X)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)               CAPTION(».operace)      FTYPE(n) FLEN( 4) DEC( 0) PICTURE(@N 9999)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon operace)                CAPTION(⁄kon)           FTYPE(n) FLEN( 2) DEC( 0) PICTURE( 99)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)            CAPTION(Var.op.)        FTYPE(n) FLEN( 3) DEC( 0) PICTURE(@N 999)
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)              CAPTION(Typov· oper.)   FTYPE(c) FLEN(10) DEC( 0) PICTURE(&10X) RELATETO(OPERACE) RELATETYPE(2)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(Kusov˝ Ëas)                  CAPTION(Kusov˝ Ëas)     FTYPE(n) FLEN(13) DEC( 4) PICTURE(@N 99 999 999.9999)
+  TYPE(FIELD) NAME(nKoefKusCa) DESC(Koef.n·sob. kusovÈho Ë.)     CAPTION(Koef.kus.Ë.)    FTYPE(n) FLEN(10) DEC( 4) PICTURE(@N 99 999.9999)
+  TYPE(FIELD) NAME(nCelkKusCa) DESC(Celkov˝ kusov˝ Ëas)          CAPTION(Kus.Ëas celkem) FTYPE(n) FLEN(14) DEC( 4) PICTURE(@N 999 999 999.9999)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(P¯Ìpr.Ëas d·vky normominuty) CAPTION(P¯Ìpravn˝ Ëas)  FTYPE(n) FLEN(10) DEC( 2) PICTURE(@N 9 999 999.99)
+  TYPE(FIELD) NAME(nKoefMnoSt) DESC(Koef.n·sob. mnoû.stroj˘)     CAPTION(Koef.mn.stroj˘) FTYPE(n) FLEN(10) DEC( 4) PICTURE(@N 99 999.9999)
+  TYPE(FIELD) NAME(nKoefMnoPr) DESC(Koef.n·sob. mnoû.p¯Ìpravk˘)  CAPTION(Koef.mn.p¯Ìpr.) FTYPE(n) FLEN(10) DEC( 4) PICTURE(@N 99 999.9999)
+  TYPE(FIELD) NAME(nKoefMnoNa) DESC(Koef.n·sob. mnoû.n·stroj˘)   CAPTION(Koef.mn.n·str.) FTYPE(n) FLEN(10) DEC( 4) PICTURE(@N 99 999.9999)
+  TYPE(FIELD) NAME(nProcRezie) DESC(Procento reûie)              CAPTION(% reûie)        FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nKcNaOper)  DESC(KË / operaci)                CAPTION(K»/operaci)     FTYPE(n) FLEN(13) DEC( 3) PICTURE(@N 999 999 999.999)
+  TYPE(FIELD) NAME(cZapis)     DESC(Po¯Ìdil)                     CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)              CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(ZmÏnil)                      CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                 CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nRokVytvor) DESC(Rok vytvo¯enÌ mzd.lÌstku)    CAPTION(Rok ML)         FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPorCisLis) DESC(»Ìslo mzd.lÌstku)            CAPTION(»Ìslo ML)       FTYPE(n) FLEN(12) DEC( 0) PICTURE(@N 999999999999)
+  TYPE(FIELD) NAME(nZapusteno) DESC(ZapuötÏnÌ)                   CAPTION(ZapuötÏnÌ)      FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cText1)     DESC(Text 1)                      CAPTION()               FTYPE(c) FLEN(40) DEC( 0) PICTURE(&40X)
+  TYPE(FIELD) NAME(cText2)     DESC(Text 2)                      CAPTION()               FTYPE(c) FLEN(40) DEC( 0) PICTURE(&40X)
+  TYPE(FIELD) NAME(cText3)     DESC(Text 3)                      CAPTION()               FTYPE(c) FLEN(40) DEC( 0) PICTURE(&40X)
+  TYPE(FIELD) NAME(lTranMnoz)  DESC(ZapoËÌtat transp.mn.)        CAPTION()               FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(mPolOper)   DESC(Popis poloûky operace)       CAPTION(Popis operace)  FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPocCeZapZ) DESC(PoËet zapuötÏnÌ)             CAPTION(PoËet zap.)     FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMnZadVK)   DESC(Mn.zadanÈ do v˝roby KUM.)    CAPTION()               FTYPE(n) FLEN(14) DEC( 4) PICTURE(@N 999 999 999.9999)
+  TYPE(FIELD) NAME(cOznPracN)  DESC(N·sledujÌcÌ pracoviötÏ)      CAPTION(N·sl.prac)      FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(C_PRACOV) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice)                      CAPTION(Pozice)         FTYPE(n) FLEN( 3) DEC( 0) PICTURE(@N 999)
+  TYPE(FIELD) NAME(cVyrobCisl) DESC(V˝robnÌ ËÌslo)               CAPTION(V˝robnÌ ËÌslo)  FTYPE(C) FLEN(40) DEC( 0)
+*  pro nabÌdky (Hydrap) - VYR_PolOPER_CRD_1.frm
+  TYPE(FIELD) NAME(nHodinSaz)  DESC(Hodinov· sazba)              CAPTION(Hodinov· sazba) FTYPE(n) FLEN( 8) DEC( 3)
+  TYPE(FIELD) NAME(nCyklCas)   DESC(Cyklov˝ Ëas)                 CAPTION(Cyklov˝ Ëas)    FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nNormaKsSt) DESC(Norma kus˘ na stroj)         CAPTION(Ks/stroj)       FTYPE(n) FLEN(13) DEC( 6)
+*  TYPE(FIELD) NAME(nStroju)    DESC(Pocet stroj˘)                CAPTION(Stroj˘)         FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nKcDilec)   DESC(Mzda za jeden dÌlec)         CAPTION(K»/dÌlec)       FTYPE(n) FLEN(13) DEC( 6)
+*
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)        CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)         CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)         CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                  CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(POLOPER1)  FNAME(POLOPER) CAPTION(»ÌsZak·zky +VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp )       KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPER2)  FNAME(POLOPER) CAPTION(Typov·Oper +VyrPoloûka )                                         KEY(UPPER(cOznOper) +UPPER(cVyrPol) )
+  TYPE(INDEX) NAME(POLOPER3)  FNAME(POLOPER) CAPTION(»ÌsMzdLÌst)                                                      KEY(nPorCisLis)
+  TYPE(INDEX) NAME(POLOPER4)  FNAME(POLOPER) CAPTION(ZapuötÏnÌ)                                                       KEY(nZapusteno)
+  TYPE(INDEX) NAME(POLOPER5)  FNAME(POLOPER) CAPTION(RokVytvo¯e +»ÌsMzdLÌst )                                         KEY(STRZERO(nRokVytvor,4) +STRZERO(nPorCisLis,12) )
+  TYPE(INDEX) NAME(POLOPER6)  FNAME(POLOPER) CAPTION(VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp )                   KEY(UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPER7)  FNAME(POLOPER) CAPTION(»ÌsZak·zky +VyrPoloûka +VariantaOp +»ÌsOperace +⁄konOper )       KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nVarOper,3) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) )
+  TYPE(INDEX) NAME(POLOPER8)  FNAME(POLOPER) CAPTION(Pol.zak·zky +Vyr.poloûka +»Ìs.operace +⁄konOper +VariantaOp )    KEY(UPPER(cCisZakazI) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPER9)  FNAME(POLOPER) CAPTION(Pol.zak·zky +»ÌsMzdLÌst )                                        KEY(UPPER(cCisZakazI) +STRZERO(nPorCisLis,12) )
+  TYPE(INDEX) NAME(POLOPER10) FNAME(POLOPER) CAPTION(VyrPoloûka )                                                     KEY(cVyrPol)
+  TYPE(INDEX) NAME(POLOPER11) FNAME(POLOPER) CAPTION(»ÌsZak·zky )                                                     KEY(cCisZakaz)
+  TYPE(INDEX) NAME(POLOPER12) FNAME(POLOPER) CAPTION(Pol.zak·zky)                                                     KEY(cCisZakazI)
+  TYPE(INDEX) NAME(POLOPER13) FNAME(POLOPER) CAPTION(»Ìs.operace)                                                     KEY(nCisOper)
+  TYPE(INDEX) NAME(POLOPER14) FNAME(POLOPER) CAPTION(VariantaOp )                                                     KEY(nVarOper)
+  TYPE(INDEX) NAME(ID)        FNAME(POLOPER) CAPTION(ID)                                                              KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(POLOPERZ) DESC(Operace u zak·zkov˝ch poloûek) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)                 CAPTION(Zak·zka)        FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakazI) DESC(Poloûka v˝r. zak·zky)          CAPTION(Poloûka zak·zky)FTYPE(C) FLEN(36) DEC(0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)              CAPTION(Vyr.poloûka)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nCisOper)   DESC(»Ìslo operace)                 CAPTION(».oper.)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nUkonOper)  DESC(⁄kon operace)                  CAPTION(⁄kon)           FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nVarOper)   DESC(Varianta operace)              CAPTION(Var.op.)        FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)                CAPTION(Typov· op.)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(Kusov˝ Ëas)                    CAPTION(Kusov˝ Ëas)     FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nKoefKusCa) DESC(Koef.n·sob. kusovÈho Ë.)       CAPTION(Koef.kus.Ë.)    FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nCelkKusCa) DESC(Celkov˝ kusov˝ Ë.)             CAPTION(Kus.Ëas CELK.)  FTYPE(n) FLEN(14) DEC( 4)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(P¯Ìpr.Ëas d·vky normominuty)   CAPTION(P¯Ìpr. Ëas)     FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nKoefMnoSt) DESC(Koef.n·sob. mnoû.stroj˘)       CAPTION(Koef.mn.stroj˘) FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nKoefMnoPr) DESC(Koef.n·sob. mnoû.p¯Ìpravk˘)    CAPTION(Koef.mn.p¯Ìpr.) FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nKoefMnoNa) DESC(Koef.n·sob. mnoû.n·stroj˘)     CAPTION(Koef.mn.n·str.) FTYPE(n) FLEN(10) DEC( 4)
+  TYPE(FIELD) NAME(nKcNaOper)  DESC(KË / operaci)                  CAPTION(K»/operaci)     FTYPE(n) FLEN(13) DEC( 3)
+  TYPE(FIELD) NAME(cZapis)     DESC(Po¯Ìdil)                       CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Datum po¯ÌzenÌ)                CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZmena)     DESC(ZmÏnil)                        CAPTION()               FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmena)     DESC(Datum zmÏny)                   CAPTION()               FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nRokVytvor) DESC(Rok vytvo¯enÌ mzd.lÌstku)      CAPTION(Rok ML)         FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPorCisLis) DESC(»Ìslo mzd.lÌstku)              CAPTION(»Ìslo ML)       FTYPE(n) FLEN(12) DEC( 0)
+  TYPE(FIELD) NAME(nZapusteno) DESC(ZapuötÏnÌ)                     CAPTION()               FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cText1)     DESC(Text 1)                        CAPTION(Text 1)         FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(cText2)     DESC(Text 2)                        CAPTION(Text 2)         FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(cText3)     DESC(Text 3)                        CAPTION(Text 3)         FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(lTranMnoz)  DESC(ZapoËÌtat transp.mn.)          CAPTION()               FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(mPolOper)   DESC(Popis poloûky operace)         CAPTION(Popis )         FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPocCeZapZ) DESC(PoËet zapuötÏnÌ)               CAPTION(PoËet zap.)     FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMnZadVK)   DESC(Mn.zadanÈ do v˝roby KUM.)      CAPTION(Mn.do v˝r.)     FTYPE(n) FLEN(14) DEC( 4)
+  TYPE(FIELD) NAME(cOznPracN)  DESC(N·sledujÌcÌ pracoviötÏ)        CAPTION(N·sl.pracov.)   FTYPE(C) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice)                        CAPTION(Pozice)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)           CAPTION(PracoviötÏ)     FTYPE(C) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cIdVazby)   DESC(Identifikace vazby)            CAPTION(Vazba)          FTYPE(c) FLEN(12) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)          CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)           CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)           CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                    CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(POLOPZ_1) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp ) KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPZ_2) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + PoËet zap.) KEY(UPPER(cCisZakaz) +STRZERO(nPocCeZapZ,2) )
+  TYPE(INDEX) NAME(POLOPZ_3) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + RokML + »Ìslo ML + Pozice ) KEY(UPPER(cCisZakaz) +STRZERO(nRokVytvor,4) +STRZERO(nPorCisLis,12) +STRZERO(nPozice,3) )
+  TYPE(INDEX) NAME(POLOPZ_4) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + PoËet zap. + Vyr.poloûka + PracoviötÏ) KEY(UPPER(cCisZakaz) +STRZERO(nPocCeZapZ,2) +UPPER(cVyrPol) +UPPER(cOznPrac) )
+  TYPE(INDEX) NAME(POLOPZ_5) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + PoËet zap. + Vyr.poloûka + Pozice + ».oper.) KEY(UPPER(cCisZakaz) +STRZERO(nPocCeZapZ,2) +UPPER(cVyrPol) +STRZERO(nPozice,3) +STRZERO(nCisOper,4) )
+  TYPE(INDEX) NAME(POLOPZ_6) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + PoËet zap. + »Ìslo ML + N·sl.pracov. + Vyr.poloûka + Pozice + ».oper ) KEY(UPPER(cCisZakaz) +STRZERO(nPocCeZapZ,2) +STRZERO(nPorCisLis,12)+UPPER(cOznPracN)+UPPER(cVyrPol) +STRZERO(nPozice,3) +STRZERO(nCisOper,4) )
+  TYPE(INDEX) NAME(POLOPZ_7) FNAME(POLOPERZ) CAPTION(»ÌsZak·zky + PoËet zap. + Rok ML + »Ìslo ML + PracoviËtÏ + N·sl.pracov. ) KEY(UPPER(cCisZakaz) +STRZERO(nPocCeZapZ,2)+STRZERO(nRokVytvor,4) +STRZERO(nPorCisLis,12)+UPPER(cOznPrac)+UPPER(cOznPracN) )
+  TYPE(INDEX) NAME(ID)       FNAME(POLOPERZ) CAPTION(ID)  KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION ***************************************************NEW
+*
+TYPE(FILE) NAME(PRACVAZ) DESC(Vazby pracoviöù)  TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cIdVazby)   DESC(Identifikace vazby)            CAPTION(Vazba)        FTYPE(c) FLEN(12) DEC( 0) PICTURE(&12X)
+  TYPE(FIELD) NAME(nPoradi)    DESC(Po¯adÌ vazby ve dni)           CAPTION(Po¯.ve dni)   FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)                 CAPTION(Zak·zka)      FTYPE(c) FLEN(30) DEC( 0) PICTURE(&15X)
+  TYPE(FIELD) NAME(nPocCeZapZ) DESC(PoËet zapuötÏnÌ)               CAPTION(PoËet zap.)   FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nRokVytvor) DESC(Rok vytvo¯enÌ mzd.lÌstku)      CAPTION(Rok ML)       FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPorCisLis) DESC(»Ìslo mzd.lÌstku)              CAPTION(»Ìslo ML)     FTYPE(n) FLEN(12) DEC( 0)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)           CAPTION(PracoviötÏ)   FTYPE(C) FLEN( 8) DEC( 0) RELATETO(C_PRACOV) RELATETYPE(2)
+  TYPE(FIELD) NAME(cOznPracN)  DESC(N·sledujÌcÌ pracoviötÏ)        CAPTION(N·sl.pracov.) FTYPE(C) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nSumNhPlan) DESC(Normohodiny pl·novanÈ)         CAPTION(NH-pl·n)      FTYPE(n) FLEN(14) DEC( 4) PICTURE(@N 999 999 999.9999)
+  TYPE(FIELD) NAME(nSumNhSkut) DESC(Normohodiny vyk·zanÈ)          CAPTION(NH-skut.)     FTYPE(n) FLEN(14) DEC( 4) PICTURE(@N 999 999 999.9999)
+  TYPE(FIELD) NAME(dDatPlan)   DESC(Datum zapl·nov·nÌ vazby)       CAPTION(Dat.pl·n.)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatVykaz)  DESC(Datum vyk·z·nÌ vazby)          CAPTION(Dat.vyk·z·nÌ) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lVykazano)  DESC(Vazba vyk·z·na)                CAPTION(Vyk·z·no)     FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lVykZPlan)  DESC(Vazba vyk·z·na v pl·nov·nÌ)    CAPTION(Vyk.v PL)     FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cPlanovano) DESC(Vazba zapl·nov·na)             CAPTION(Pl·nov·no)    FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKcNaOper)  DESC(Suma KË/operaci)               CAPTION(K»/operaci)   FTYPE(n) FLEN(14) DEC( 3) PICTURE(@N 9 999 999 999.999)
+  TYPE(FIELD) NAME(cPopVazby)  DESC(Popis vazby)                   CAPTION(Popis vazby)  FTYPE(c) FLEN(50) DEC( 0) PICTURE(&50X)
+  TYPE(FIELD) NAME(mPopVazby)  DESC(Popis vazby)                   CAPTION(Popis vazby)  FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(lVSCHM)     DESC(Vazba s chybn˝m materi·lem)    CAPTION(Vschm)        FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dDatVSCHM)  DESC(Datum vazby s chybn˝m mater.)  CAPTION(Dat.Vschm)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)          CAPTION(Dat.vzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)           CAPTION(Dat.zmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)           CAPTION()             FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                    CAPTION(ID)           FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRVAZ_1) FNAME(PRACVAZ) CAPTION(PracoviötÏ + Dat.pl·n + Po¯.ve dni ) KEY(UPPER(cOznPrac) + if(empty(dDatPlan) ,'        ' , DTOS(dDatPlan)) + STRZERO( nPoradi, 3) ) FOR(EMPTY(cPlanovano))
+  TYPE(INDEX) NAME(PRVAZ_2) FNAME(PRACVAZ) CAPTION(»Ìslo vazby )                        KEY(UPPER(cIdVazby))
+  TYPE(INDEX) NAME(ID)      FNAME(PRACVAZ) CAPTION(ID)                                  KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PPOPER) DESC(PracovnÌ post. u operacÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cOznOper)   DESC(Typov· operace)       CAPTION(Typov· operace) FTYPE(c) FLEN(10) DEC( 0) PICTURE(&10X)
+  TYPE(FIELD) NAME(cOznPrPo)   DESC(PracovnÌ postup)      CAPTION(Prac. postup)   FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(PracPost) RELATETYPE(2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu) CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)  CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)  CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)           CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PPOPER1)    FNAME(PPOPER) CAPTION(Typov·Oper +PracPostup ) KEY(UPPER(cOznOper) +UPPER(cOznPrPo) )
+  TYPE(INDEX) NAME(PPOPER2)    FNAME(PPOPER) CAPTION(PracPostup)              KEY(UPPER(cOznPrPo))
+  TYPE(INDEX) NAME(ID)         FNAME(PPOPER) CAPTION(ID)                      KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PRACPOST) DESC(Seznam pracov. postup˘) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cOznPrPo)   DESC(PracovnÌ postup)          CAPTION(Prac.postup)           FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X)
+  TYPE(FIELD) NAME(cTypPrPo)   DESC(Typ pracovnÌho postupu)   CAPTION(Typ)                   FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X)
+  TYPE(FIELD) NAME(cStred)     DESC(V˝robnÌ st¯edisko)        CAPTION(V˝r.st¯ed.)            FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(C_STRED) RELATETYPE(2)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(PracoviötÏ)               CAPTION(PracoviötÏ)            FTYPE(c) FLEN( 8) DEC( 0) PICTURE(&8X) RELATETO(C_PRACOV) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazPrPo)   DESC(N·zev pracovnÌho postupu) CAPTION(N·zev prac. postupu)   FTYPE(c) FLEN(30) DEC( 0) PICTURE(&30X)
+  TYPE(FIELD) NAME(mTextPrPo)  DESC(Text pracovnÌho postupu)  CAPTION(Text postupu)          FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cStavPrPo)  DESC(Stav schv·lenÌ)           CAPTION(Stav)                  FTYPE(c) FLEN( 2) DEC( 0) PICTURE(&2X)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)     CAPTION(Dat.vzniku)            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)      CAPTION(Dat.zmÏny)             FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)      CAPTION()                      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)               CAPTION(ID)                    FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRACPO1) FNAME(PRACPOST) CAPTION(PracPostup) KEY(UPPER(cOznPrPo))
+  TYPE(INDEX) NAME(PRACPO2) FNAME(PRACPOST) CAPTION(N·zPracPos) KEY(UPPER(cNazPrPo))
+  TYPE(INDEX) NAME(PRACPO3) FNAME(PRACPOST) CAPTION(V˝robSt¯ed +PracPostup ) KEY(UPPER(cStred) +UPPER(cOznPrPo) )
+  TYPE(INDEX) NAME(PRACPO4) FNAME(PRACPOST) CAPTION(PracoviötÏ +PracPostup ) KEY(UPPER(cOznPrac) +UPPER(cOznPrPo) )
+  TYPE(INDEX) NAME(ID)      FNAME(PRACPOST) CAPTION(ID) KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cOznPrPo:Prac. postup,cNazPrPo:N·zev postupu,cTypPrPo:Typ postupu) ORDER(1) RETURN(cOznPrPo)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PRMAT) DESC(P¯Ìm˝ materi·l) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)            CAPTION(»Ìslo zak·zky)    FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cVyrpol)    DESC(Vyr·bÏn· poloûka)         CAPTION(Vyr·bÏn· poloûka) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(Varianta poloûky)         CAPTION(Varianta)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dDatAktual) DESC(Datum aktualizace)        CAPTION(Dat.aktualizace)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nPorKalDen) DESC(Po¯adÌ kalk. v danÈm dni) CAPTION(Po¯.)             FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Skladov· poloûka)         CAPTION(Skl. poloûka)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nSpMnoMJ)   DESC(Spot¯ebnÌ mnoûstvÌ/MJ)    CAPTION(Spot¯eb.mn./MJ)   FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(Zkratka mÏrnÈ jednotky)   CAPTION(MJ)               FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCenKalkMJ) DESC(KalkulaËnÌ cena za MJ)    CAPTION(Kalk. cena/MJ)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)     CAPTION(Dat.vzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)      CAPTION(Dat.zmÏny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)      CAPTION()                 FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)               CAPTION(ID)               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRMAT_1) FNAME(PRMAT) CAPTION(»ÌsZak·zky +Vyr·bPoloû +VarianPolo +DatumAktua +Po¯adKalku +SkladPoloû ) KEY(UPPER(cCisZakaz) +UPPER(cVyrpol) +STRZERO(nVarCis,3) +if(empty(dDatAktual) ,'        ' , DTOS(dDatAktual)) +STRZERO(nPorKalDen,2) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(ID)      FNAME(PRMAT) CAPTION(ID)  KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PRMZDY) DESC(P¯ÌmÈ mzdy) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)                CAPTION(»Ìslo zak·zky)    FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cVyrpol)    DESC(Vyr·bÏn· poloûka)             CAPTION(Vyr·bÏn· poloûka) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(Varianta poloûky)             CAPTION(Varianta)         FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dDatAktual) DESC(Datum aktualizace)            CAPTION(Dat.aktualizace)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nPorKalDen) DESC(Po¯adÌ kalkulace v danÈm dni) CAPTION(Po¯.)             FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cVyrPolKal) DESC(Vyr.poloûka kalkulovan·)      CAPTION(Vyr.pol.kalkul.)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cOznOper)   DESC(OznaËenÌ typovÈ operace)      CAPTION(Typov· operace)   FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPriprCas)  DESC(NH v p¯ÌpravÏ)                CAPTION(NH v p¯ÌpravÏ)    FTYPE(n) FLEN( 9) DEC( 3)
+  TYPE(FIELD) NAME(nKusovCas)  DESC(NH v kusovÈm)                 CAPTION(NH v kusovÈm)     FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nPriprKc)   DESC(KË v p¯ÌpravÏ)                CAPTION(KË v p¯ÌpravÏ)    FTYPE(n) FLEN( 8) DEC( 2)
+  TYPE(FIELD) NAME(nKusovKc)   DESC(KË v kusovÈm)                 CAPTION(KË v kusovÈm)     FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)         CAPTION(Dat.vzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)          CAPTION(Dat.zmÏny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)          CAPTION()                 FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                   CAPTION(ID)               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRMZDY1) FNAME(PRMZDY) CAPTION(»ÌsZak·zky +Vyr·bPoloû +VarianPolo +DatumAktua +Po¯adKalku +VyrPolKalk ) KEY(UPPER(cCisZakaz) +UPPER(cVyrpol) +STRZERO(nVarCis,3) +if(empty(dDatAktual) ,'        ' , DTOS(dDatAktual)) +STRZERO(nPorKalDen,2) +UPPER(cVyrPolKal) )
+  TYPE(INDEX) NAME(ID)      FNAME(PRMZDY) CAPTION(ID)   KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VYKRESY) DESC(V˝kresy) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cSubje)     DESC(Subjekt)                 CAPTION(Subjekt)        FTYPE(c) FLEN(  2) DEC( 0)
+  TYPE(FIELD) NAME(nPorVyk)    DESC(Po¯. ËÌslo v˝kresu)      CAPTION(Po¯.Ë.v˝kr.)    FTYPE(n) FLEN(  8) DEC( 0)
+  TYPE(FIELD) NAME(cCisVyk)    DESC(EvidenËnÌ ËÌslo v˝kresu) CAPTION(Evid.Ë.v˝kresu) FTYPE(c) FLEN( 26) DEC( 0)
+  TYPE(FIELD) NAME(cModVyk)    DESC(Modifikace)              CAPTION(Modif.v˝k.)     FTYPE(c) FLEN(  3) DEC( 0)
+  TYPE(FIELD) NAME(cNazVyk)    DESC(N·zev v˝kresu)           CAPTION(N·zev v˝kresu)  FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cTypVyk)    DESC(Typ v˝kresu)             CAPTION(Typ v˝k.)       FTYPE(c) FLEN(  2) DEC( 0) RELATETO(C_TYPVYKR) RELATETYPE(2)
+  TYPE(FIELD) NAME(cAutor)     DESC(Autor konstruktÈr)       CAPTION(KonstruktÈr)    FTYPE(c) FLEN( 20) DEC( 0)
+  TYPE(FIELD) NAME(cStred)     DESC(VlastnÌcÌ st¯edisko)     CAPTION(St¯.vl.)        FTYPE(c) FLEN(  8) DEC( 0) RELATETO(C_STRED)   RELATETYPE(2)
+  TYPE(FIELD) NAME(lVyhISO)    DESC(Vyhovuje ISO 9001)       CAPTION(ISO 9001)       FTYPE(l) FLEN(  1) DEC( 0)
+  TYPE(FIELD) NAME(cVypujKdo)  DESC(Vyp˘jËil)                CAPTION(Vyp˘jËil)       FTYPE(c) FLEN(  8) DEC( 0)
+  TYPE(FIELD) NAME(dVypujDat)  DESC(Datum vyp˘jËky)          CAPTION(Dat.vyp˘jËky)   FTYPE(d) FLEN(  8) DEC( 0)
+  TYPE(FIELD) NAME(mPopisVyk)  DESC(Popis v˝kresu)           CAPTION(Popis v˝kresu)  FTYPE(M) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)    CAPTION(Dat.vzniku)     FTYPE(d) FLEN(  8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)     CAPTION(Dat.zmÏny)      FTYPE(d) FLEN(  8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)     CAPTION()               FTYPE(m) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)              CAPTION(ID)             FTYPE(s) FLEN(  0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VYKRES1)    FNAME(VYKRESY) CAPTION(».v˝kr.a modifi)  KEY(UPPER(cCisVyk)+UPPER(cModVyk))
+  TYPE(INDEX) NAME(VYKRES2)    FNAME(VYKRESY) CAPTION(Po¯.ËÌs.v˝kresu)  KEY(nPorVyk)
+  TYPE(INDEX) NAME(VYKRES3)    FNAME(VYKRESY) CAPTION(Evid.Ë.v˝kresu)   KEY(UPPER(cCisVyk))
+  TYPE(INDEX) NAME(VYKRES4)    FNAME(VYKRESY) CAPTION(Evid.Ë.v˝kresu)   KEY(cCisVyk)
+  TYPE(INDEX) NAME(ID)         FNAME(VYKRESY) CAPTION(ID)               KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(VYKR_SET) DESC(V˝kresy - p¯ednastavenÌ) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cUser)      DESC(Zkratka uûivatele)       CAPTION(Uûivatel)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPorVyk)    DESC(Po¯. ËÌslo v˝kresu)      CAPTION(Po¯.Ë.v˝kr.)    FTYPE(n) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCisVyk)    DESC(EvidenËnÌ ËÌslo v˝kresu) CAPTION(Evid.Ë.v˝kresu) FTYPE(c) FLEN(26) DEC( 0)
+  TYPE(FIELD) NAME(cModVyk)    DESC(Modifikace)              CAPTION(Modif.v˝k.)     FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazVyk)    DESC(N·zev v˝kresu)           CAPTION(N·zev v˝kresu)  FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cTypVyk)    DESC(Typ v˝kresu)             CAPTION(Typ v˝k.)       FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cAutor)     DESC(Autor konstruktÈr)       CAPTION(KonstruktÈr)    FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cStred)     DESC(VlastnÌcÌ st¯edisko)     CAPTION(St¯.vl.)        FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lVyhISO)    DESC(Vyhovuje ISO 9001)       CAPTION(ISO 9001)       FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cVypujKdo)  DESC(Vyp˘jËil)                CAPTION(Vyp˘jËil)       FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVypujDat)  DESC(Datum vyp˘jËky)          CAPTION(Dat.vyp˘jËky)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPopisVyk)  DESC(Popis v˝kresu)           CAPTION(Popis v˝kresu)  FTYPE(M) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)    CAPTION(Dat.vzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)     CAPTION(Dat.zmÏny)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)     CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)              CAPTION(ID)             FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VYKR_SET1)  FNAME(VYKR_SET) CAPTION(Uûivatel)    KEY(UPPER(cUser))
+  TYPE(INDEX) NAME(ID)         FNAME(VYKR_SET) CAPTION(ID)          KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(VYRPOL) DESC(Vyr·bÏnÈ poloûky) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(ctask)      DESC(⁄loha systÈmu-zkratka)          CAPTION(Zkrat⁄lohy) FTYPE(c) FLEN( 3) DEC(0) RELATETO(C_TASK) RELATETYPE(2)
+  TYPE(FIELD) NAME(cSubje)     DESC(Subjekt)                        CAPTION(Subjekt)                  FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nZakazVP)   DESC(Zak·zkov· vyr.poloûka)          CAPTION(Zak.VP)                   FTYPE(n) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìslo zak·zky)                  CAPTION(»Ìslo zak·zky)            FTYPE(C) FLEN(30) DEC(0) PICTURE(&30X) RELATETO(VYRZAK) RELATETYPE(2)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr. poloûka)             FTYPE(C) FLEN(15) DEC(0)PICTURE(&15X)
+  TYPE(FIELD) NAME(nVarCis)    DESC(VariantnÌ ËÌslo)                CAPTION(Varianta)                 FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cVarPop)    DESC(Popis varianty)                 CAPTION(Popis varianty)           FTYPE(C) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(cCisSklad)  DESC(»Ìslo skladu)                   CAPTION(»Ìslo skladu)             FTYPE(C) FLEN( 8) DEC(0) PICTURE(&8X) RELATETO(C_SKLADY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cSklPol)    DESC(ObchodnÌ ozn.)                  CAPTION(Skl. poloûka)             FTYPE(C) FLEN(15) DEC(0) PICTURE(&15X) RELATETO(NAKPOL)   RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazPol2)   DESC(⁄ËetnÌ v˝robek)                 CAPTION(⁄ËetnÌ v˝robek)           FTYPE(C) FLEN( 8) DEC(0) PICTURE(&8X) RELATETO(CNAZPOL2) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTypPol)    DESC(Typ poloûky)                    CAPTION(Typ poloûky)              FTYPE(C) FLEN( 3) DEC(0) PICTURE(&3X) RELATETO(C_TYPPOL) RELATETYPE(2)
+  TYPE(FIELD) NAME(cSkuPol)    DESC(Skupina poloûek)                CAPTION(Skupina poloûek)          FTYPE(C) FLEN(12) DEC(0)
+  TYPE(FIELD) NAME(cNazev)     DESC(N·zev poloûky)                  CAPTION(N·zev poloûky)            FTYPE(C) FLEN(50) DEC(0) PICTURE(&50X)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(MÏrn· jednotka)                 CAPTION(MJ)                       FTYPE(C) FLEN( 3) DEC(0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cStrVyr)    DESC(V˝robnÌ st¯.)                   CAPTION(V˝robnÌ st¯.)             FTYPE(C) FLEN( 8) DEC(0) RELATETO(C_STRED)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cStrOdv)    DESC(Odv·dÏcÌ st¯.)                  CAPTION(Odv·dÏcÌ st¯.)            FTYPE(C) FLEN( 8) DEC(0) PICTURE(&8X)
+  TYPE(FIELD) NAME(cCisVyk)    DESC(»Ìslo v˝kresu)                  CAPTION(»Ìslo v˝kresu)            FTYPE(C) FLEN(26) DEC(0) PICTURE(&26X)
+* RELATETO(VYKRESY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nEkDav)     DESC(EkonomickÈ mnoû. d·vky)         CAPTION(Ekon. d·vka)              FTYPE(N) FLEN( 8) DEC(2) PICTURE(@N 99,999.99)
+  TYPE(FIELD) NAME(nCisHm)     DESC(»ist· hmotnost (kg))            CAPTION(»ist· hmotnost (kg))      FTYPE(N) FLEN(10) DEC(3)
+  TYPE(FIELD) NAME(cStav)      DESC(Stav)                           CAPTION(Stav)                     FTYPE(C) FLEN( 1) DEC(0) VALUES(A:Ano,N:Ne)
+  TYPE(FIELD) NAME(cStavRV)    DESC(Stav ÿV)                        CAPTION(Stav ÿV)                  FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(nKusyPas)   DESC(Ks/p·s)                         CAPTION(Ks/p·s)                   FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nStrizPl)   DESC(».st¯iû. pl·nu)                 CAPTION(».st¯iû. pl·nu)           FTYPE(N) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(nMnZadVA)   DESC(Mn.zad·no do v˝roby AKT.)       CAPTION(Mn.zad·no do v˝roby AKT.) FTYPE(N) FLEN(14) DEC(4)
+  TYPE(FIELD) NAME(nMnZadVK)   DESC(Mn.zad·no do v˝roby KUM.)       CAPTION(Mn.zad·no do v˝roby KUM.) FTYPE(N) FLEN(14) DEC(4)
+  TYPE(FIELD) NAME(cVysPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr·bÏn· poloûka)         FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cNizPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(Vyr·bÏn· poloûka)         FTYPE(C) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(mPopisVP)   DESC(Popis poloûky)                  CAPTION(Popis poloûky)            FTYPE(M) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cZmenaK)    DESC(Podpis konstruktÈra)            CAPTION(Podpis konstruktÈra)      FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaK)    DESC(Dat. zmÏny konstrukce)          CAPTION(Dat. zmÏny konstrukce)    FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZmenaT)    DESC(Podpis technologa)              CAPTION(Podpis technologa)        FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaT)    DESC(Dat.aktual. technologie)        CAPTION(Dat.aktual. technologie)  FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cZapis)     DESC(Z·znam po¯Ìdil)                 CAPTION(Z·znam po¯Ìdil)           FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZapis)     DESC(Dat.po¯ÌzenÌ)                   CAPTION(Dat.po¯ÌzenÌ)             FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nStavKalk)  DESC(Stav kalkulace)                 CAPTION(Stav kalk.)               FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(lExistKUS)  DESC(Existuje kusovnÌk poloûky)      CAPTION(KusovnÌk)                 FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(lExistOPE)  DESC(ExistujÌ operace k poloûce)     CAPTION(Operace)                  FTYPE(L) FLEN( 1) DEC(0)
+* vazba na NabVysHD(->nDoklad)
+  TYPE(FIELD) NAME(nCisNabVys) DESC(»Ìslo nabÌdky vystavenÈ)        CAPTION(».nab.vyst.)              FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(nIntCount)  DESC(Po¯adÌ poloûky nabÌdky vyst.)   CAPTION(Pol.nab.)                 FTYPE(N) FLEN( 5) DEC(0)
+*
+  TYPE(FIELD) NAME(cNazVyk)    DESC(N·zev v˝kresu)                  CAPTION(N·zev v˝kresu)            FTYPE(c) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(nis_Root)   DESC(Ko¯enov· poloûka KUSOV)         CAPTION(Ko¯_KUSOV)                FTYPE(N) FLEN(  1) DEC(0)
+  TYPE(FIELD) NAME(nvyrST)     DESC(V˝r_stupeÚ)                     CAPTION(V˝r_stupen)               FTYPE(N) FLEN( 2) DEC(0)
+
+  TYPE(FIELD) NAME(nmnPROhlvy) DESC(Produkce hlavnÌho v˝robku)      CAPTION(Mn_PROhlvy)               FTYPE(N) FLEN( 14) DEC(4)
+  TYPE(FIELD) NAME(nmnSKLpri)  DESC(Mn_p¯evzato do sklP¯Ìjemky)     CAPTION(Mn_SKLpri)                FTYPE(N) FLEN( 14) DEC(4)
+
+  TYPE(FIELD) NAME(nmnVYDzmon) DESC(V˝dej z mont·ûe meziSklad)      CAPTION(Mn_VYDzmon)               FTYPE(N) FLEN( 14) DEC(4)
+  TYPE(FIELD) NAME(nmnSKLvyd)  DESC(Mn_p¯evzato do sklV˝dejky)      CAPTION(Mn_SKLvyd)                FTYPE(N) FLEN( 14) DEC(4)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku z·znamu)          CAPTION(Dat.vzniku)               FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmÏny z·znamu)           CAPTION(Dat.zmÏny)                FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC(Archiv zmÏn z·znamu)           CAPTION()                         FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC(ID z·znamu)                    CAPTION(ID)                       FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VYRPOL1)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Vyr.poloûka + Varianta )              KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nVarCis,3) )
+  TYPE(INDEX) NAME(VYRPOL2)  FNAME(VYRPOL) CAPTION(N·zev vyr. poloûky)                                 KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(VYRPOL3)  FNAME(VYRPOL) CAPTION(»Ìs.v˝kresu)                                        KEY(UPPER(cCisVyk))
+  TYPE(INDEX) NAME(VYRPOL4)  FNAME(VYRPOL) CAPTION(Vyr.poloûka + Varianta )                            KEY(UPPER(cVyrPol) +STRZERO(nVarCis,3) )
+  TYPE(INDEX) NAME(VYRPOL5)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Skl.poloûka )                         KEY(UPPER(cCisZakaz) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(VYRPOL6)  FNAME(VYRPOL) CAPTION(Skl.poloûka + Vyr.poloûka + Varianta + Zak·zka )    KEY(UPPER(cSklPol) +UPPER(cVyrPol) +STRZERO(nVarCis,3) +UPPER(cCisZakaz) )
+  TYPE(INDEX) NAME(VYRPOL7)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Vyr.poloûka vyööÌ)                    KEY(UPPER(cCisZakaz) +UPPER(cVysPol))
+  TYPE(INDEX) NAME(VYRPOL8)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Vyr.poloûka niûöÌ)                    KEY(UPPER(cCisZakaz) +UPPER(cNizPol))
+  TYPE(INDEX) NAME(VYRPOL9)  FNAME(VYRPOL) CAPTION(Sklad + Skl.poloûka)                                KEY(UPPER(cCisSklad) +UPPER(cSklPol))
+  TYPE(INDEX) NAME(VYRPOL10) FNAME(VYRPOL) CAPTION(»Ìs.nabÌdky vyst. + Poloûka nab.)                   KEY(STRZERO(nCisNabVys,10) +STRZERO(nIntCount,5) )
+  TYPE(INDEX) NAME(VYRPOL11) FNAME(VYRPOL) CAPTION(Vyr.poloûka + Varianta + »Ìs.zak·zky)               KEY(UPPER(cVyrPol) +STRZERO(nVarCis,3) +UPPER(cCisZakaz))
+  TYPE(INDEX) NAME(VYRPOL12) FNAME(VYRPOL) CAPTION(Skl.poloûka + Vyr.poloûka + Varianta + »Ìs.zak·zky) KEY(UPPER(cSklPol) +UPPER(cVyrPol) +STRZERO(nVarCis,3) +UPPER(cCisZakaz))
+  TYPE(INDEX) NAME(VYRPOL13) FNAME(VYRPOL) CAPTION(Vyr.poloûka)                                        KEY(cVyrPol)
+  TYPE(INDEX) NAME(VYRPOL14) FNAME(VYRPOL) CAPTION(Varianta)                                           KEY(nVarCis)
+  TYPE(INDEX) NAME(VYRPOL15) FNAME(VYRPOL) CAPTION(»Ìs.zak·zky)                                        KEY(cCisZakaz)
+  TYPE(INDEX) NAME(VYRPOL16) FNAME(VYRPOL) CAPTION(Sklad)                                              KEY(cCisSklad)
+  TYPE(INDEX) NAME(VYRPOL17) FNAME(VYRPOL) CAPTION(Skl.poloûka)                                        KEY(cSklPol)
+  TYPE(INDEX) NAME(VYRPOL18) FNAME(VYRPOL) CAPTION(Vyr.poloûka vyööÌ)                                  KEY(cVysPol)
+  TYPE(INDEX) NAME(VYRPOL19) FNAME(VYRPOL) CAPTION(Vyr.poloûka niûöÌ)                                  KEY(cNizPol)
+  TYPE(INDEX) NAME(VYRPOL20) FNAME(VYRPOL) CAPTION(v˝r_Stupen)                                         KEY(nvyrST)
+  TYPE(INDEX) NAME(ID)       FNAME(VYRPOL) CAPTION(ID)                                                 KEY(sID) UNIQUE INSORT(N)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cVyrPol:Vyr. poloûka,cNazev:N·zev poloûky,nVarCis:Varianta,cCisZakaz:»Ìslo zak·zky) ORDER(1) RETURN(cVyrPol)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(VYRPOLDT) DESC(Vyr·bÏnÈ poloûky - DETAIL) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cSubje)     DESC(Subjekt)                        CAPTION()           FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(»Ìs. zak·zky)                   CAPTION(»ÌsZak·zky) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyr·bÏn· poloûka)               CAPTION(VyrPoloûka) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(VariantnÌ ËÌslo)                CAPTION(Varianta)   FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nIndZm)     DESC(Index zmÏny)                    CAPTION()           FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nTvaCi)     DESC(TvarovÈ ËÌslo)                  CAPTION()           FTYPE(n) FLEN( 7) DEC( 0)
+  TYPE(FIELD) NAME(cVykOdb)    DESC(V˝kres odbÏratele)              CAPTION()           FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cCisKus)    DESC(»Ìslo kusovnÌku)                CAPTION()           FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cCisTep)    DESC(»Ìslo techn.postupu)            CAPTION()           FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cTypSKP)    DESC(SKP)                            CAPTION()           FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cJakost)    DESC(JakostnÌ norma)                 CAPTION()           FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPruDo)     DESC(Pr˘bÏûn· doba v˝roby v t˝dnech) CAPTION()           FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cTypVyr)    DESC(Typov· ¯ada v˝robku)            CAPTION()           FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nRozmA)     DESC(RozmÏr A)                       CAPTION()           FTYPE(n) FLEN(10) DEC( 3)
+  TYPE(FIELD) NAME(nRozmB)     DESC(RozmÏr B)                       CAPTION()           FTYPE(n) FLEN(10) DEC( 3)
+  TYPE(FIELD) NAME(nRozmC)     DESC(RozmÏr C)                       CAPTION()           FTYPE(n) FLEN(10) DEC( 3)
+  TYPE(FIELD) NAME(cProve)     DESC(ProvedenÌ)                      CAPTION()           FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cToler)     DESC(Tolerance)                      CAPTION()           FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nProcNesh)  DESC(% neshodnÈ v˝roby)              CAPTION()           FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(cInZmen)    DESC(Index zmÏny)                    CAPTION()           FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dPladOD)    DESC(ZaË·tek platnosti)              CAPTION()           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dPladDO)    DESC(Konec platnosti)                CAPTION()           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cStredPrvO) DESC(S¯edisko 1.operace)             CAPTION()           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nPrumDav)   DESC(Pr˘m.v˝r. d·vka)                CAPTION()           FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCelPocOp)  DESC(Celk.poËet operacÌ)             CAPTION()           FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cPriznak)   DESC(P¯Ìznak rozprac.)               CAPTION()           FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nRozprac)   DESC(KÛd rozpracovanosti)            CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku z·znamu)           CAPTION(Dat.vzniku) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny z·znamu)            CAPTION(Dat.zmÏny)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC(Archiv zmÏn z·znamu)            CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC(ID z·znamu)                     CAPTION(ID)         FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VYRDT1)     FNAME(VYRPOLDT) CAPTION(»ÌsZak·zky +VyrPoloûka +Varianta ) KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nVarCis,3) )
+  TYPE(INDEX) NAME(ID)         FNAME(VYRPOLDT) CAPTION(ID)                                KEY(sID) UNIQUE INSORT(N)
+
+*
+* FILE DEFINITION ***************************************************
+*
+TYPE(FILE) NAME(VP_set) DESC(Vyr·bÏnÈ poloûky - p¯ednastavenÌ) LIKE(VYRPOL) TASK(VYR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cUser)      DESC(Zkratka uûivatele)              CAPTION(Uûivatel)                 FTYPE(C) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(LAKTIVNI)   DESC(Skl.poloûka je aktivnÌ)         CAPTION(AktivnÌ)                  FTYPE(L) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VP_SET_1)  FNAME(VP_SET) CAPTION(»Ìs.zak·zky + Vyr.poloûka + Varianta ) KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nVarCis,3) )
+  TYPE(INDEX) NAME(VP_SET_2)  FNAME(VP_SET) CAPTION(Uûivatel )                             KEY(UPPER(cUser) )
+  TYPE(INDEX) NAME(VP_SET_3)  FNAME(VP_SET) CAPTION(Uûivatel+AktivnÌ)                      KEY(UPPER(cUser) + if(lAktivni, '1','0'))
+  TYPE(INDEX) NAME(ID)        FNAME(VP_SET) CAPTION(ID)                                    KEY(sID) UNIQUE INSORT(N)
+                
+
+* TMP
+* FILE DEFINITION odkl·n·me editaËnÌ karty a SEL dialogy***********************
+*
+TYPE(FILE) NAME(kusovWe)    DESC(KusovnÌky (we) )             LIKE(KUSOV)    NOCHECK() TASK(VYR)
+
+* SEL dialogy
+TYPE(FILE) NAME(polOper_se) DESC(Operace u vyr·bPoloûek (sel) ) LIKE(POLOPER) NOCHECK() TASK(VYR)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(POLOPER1)  FNAME(POLOPER) CAPTION(»ÌsZak·zky +VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp )       KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPER2)  FNAME(POLOPER) CAPTION(Typov·Oper +VyrPoloûka )                                         KEY(UPPER(cOznOper) +UPPER(cVyrPol) )
+  TYPE(INDEX) NAME(POLOPER3)  FNAME(POLOPER) CAPTION(»ÌsMzdLÌst)                                                      KEY(nPorCisLis)
+  TYPE(INDEX) NAME(POLOPER4)  FNAME(POLOPER) CAPTION(ZapuötÏnÌ)                                                       KEY(nZapusteno)
+  TYPE(INDEX) NAME(POLOPER5)  FNAME(POLOPER) CAPTION(RokVytvo¯e +»ÌsMzdLÌst )                                         KEY(STRZERO(nRokVytvor,4) +STRZERO(nPorCisLis,12) )
+  TYPE(INDEX) NAME(POLOPER6)  FNAME(POLOPER) CAPTION(VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp )                   KEY(UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPER7)  FNAME(POLOPER) CAPTION(»ÌsZak·zky +VyrPoloûka +VariantaOp +»ÌsOperace +⁄konOper )       KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nVarOper,3) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) )
+  TYPE(INDEX) NAME(POLOPER8)  FNAME(POLOPER) CAPTION(Pol.zak·zky +Vyr.poloûka +»Ìs.operace +⁄konOper +VariantaOp )    KEY(UPPER(cCisZakazI) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+  TYPE(INDEX) NAME(POLOPER9)  FNAME(POLOPER) CAPTION(Pol.zak·zky +»ÌsMzdLÌst )                                        KEY(UPPER(cCisZakazI) +STRZERO(nPorCisLis,12) )
+  TYPE(INDEX) NAME(POLOPER10) FNAME(POLOPER) CAPTION(VyrPoloûka )                                                     KEY(cVyrPol)
+  TYPE(INDEX) NAME(POLOPER11) FNAME(POLOPER) CAPTION(»ÌsZak·zky )                                                     KEY(cCisZakaz)
+  TYPE(INDEX) NAME(POLOPER12) FNAME(POLOPER) CAPTION(Pol.zak·zky)                                                     KEY(cCisZakazI)
+  TYPE(INDEX) NAME(POLOPER13) FNAME(POLOPER) CAPTION(»Ìs.operace)                                                     KEY(nCisOper)
+  TYPE(INDEX) NAME(POLOPER14) FNAME(POLOPER) CAPTION(VariantaOp )                                                     KEY(nVarOper)
+  TYPE(INDEX) NAME(ID)        FNAME(POLOPER) CAPTION(ID)                                                              KEY(sID) UNIQUE INSORT(N)
+
+
+
+TYPE(FILE) NAME(vyrPol_se)  DESC(Vyr·bÏnÈ poloûky (sel) )     LIKE(VYRPOL)   NOCHECK() TASK(VYR)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VYRPOL1)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Vyr.poloûka + Varianta )              KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nVarCis,3) )
+  TYPE(INDEX) NAME(VYRPOL2)  FNAME(VYRPOL) CAPTION(N·zev vyr. poloûky)                                 KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(VYRPOL3)  FNAME(VYRPOL) CAPTION(»Ìs.v˝kresu)                                        KEY(UPPER(cCisVyk))
+  TYPE(INDEX) NAME(VYRPOL4)  FNAME(VYRPOL) CAPTION(Vyr.poloûka + Varianta )                            KEY(UPPER(cVyrPol) +STRZERO(nVarCis,3) )
+  TYPE(INDEX) NAME(VYRPOL5)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Skl.poloûka )                         KEY(UPPER(cCisZakaz) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(VYRPOL6)  FNAME(VYRPOL) CAPTION(Skl.poloûka + Vyr.poloûka + Varianta + Zak·zka )    KEY(UPPER(cSklPol) +UPPER(cVyrPol) +STRZERO(nVarCis,3) +UPPER(cCisZakaz) )
+  TYPE(INDEX) NAME(VYRPOL7)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Vyr.poloûka vyööÌ)                    KEY(UPPER(cCisZakaz) +UPPER(cVysPol))
+  TYPE(INDEX) NAME(VYRPOL8)  FNAME(VYRPOL) CAPTION(»Ìs.zak·zky + Vyr.poloûka niûöÌ)                    KEY(UPPER(cCisZakaz) +UPPER(cNizPol))
+  TYPE(INDEX) NAME(VYRPOL9)  FNAME(VYRPOL) CAPTION(Sklad + Skl.poloûka)                                KEY(UPPER(cCisSklad) +UPPER(cSklPol))
+  TYPE(INDEX) NAME(VYRPOL10) FNAME(VYRPOL) CAPTION(»Ìs.nabÌdky vyst. + Poloûka nab.)                   KEY(STRZERO(nCisNabVys,10) +STRZERO(nIntCount,5) )
+  TYPE(INDEX) NAME(VYRPOL11) FNAME(VYRPOL) CAPTION(Vyr.poloûka + Varianta + »Ìs.zak·zky)               KEY(UPPER(cVyrPol) +STRZERO(nVarCis,3) +UPPER(cCisZakaz))
+  TYPE(INDEX) NAME(VYRPOL12) FNAME(VYRPOL) CAPTION(Skl.poloûka + Vyr.poloûka + Varianta + »Ìs.zak·zky) KEY(UPPER(cSklPol) +UPPER(cVyrPol) +STRZERO(nVarCis,3) +UPPER(cCisZakaz))
+  TYPE(INDEX) NAME(VYRPOL13) FNAME(VYRPOL) CAPTION(Vyr.poloûka)                                        KEY(cVyrPol)
+  TYPE(INDEX) NAME(VYRPOL14) FNAME(VYRPOL) CAPTION(Varianta)                                           KEY(nVarCis)
+  TYPE(INDEX) NAME(VYRPOL15) FNAME(VYRPOL) CAPTION(»Ìs.zak·zky)                                        KEY(cCisZakaz)
+  TYPE(INDEX) NAME(VYRPOL16) FNAME(VYRPOL) CAPTION(Sklad)                                              KEY(cCisSklad)
+  TYPE(INDEX) NAME(VYRPOL17) FNAME(VYRPOL) CAPTION(Skl.poloûka)                                        KEY(cSklPol)
+  TYPE(INDEX) NAME(VYRPOL18) FNAME(VYRPOL) CAPTION(Vyr.poloûka vyööÌ)                                  KEY(cVysPol)
+  TYPE(INDEX) NAME(VYRPOL19) FNAME(VYRPOL) CAPTION(Vyr.poloûka niûöÌ)                                  KEY(cNizPol)
+  TYPE(INDEX) NAME(ID)       FNAME(VYRPOL) CAPTION(ID)                                                 KEY(sID) UNIQUE INSORT(N)
+
+
+
+
+* TMP
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VYRPOLw)   DESC(Vyr·bÏnÈ poloûky (w) )         LIKE(VYRPOL)   NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(VYRPOLDTw) DESC(Vyr·bÏnÈ poloûky - DETAIL (w)) LIKE(VYRPOLDT) NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(VYKRESYw) DESC(V˝kresy (w)) LIKE(VYKRESY) NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(NAKPOLw)   DESC(SkladovÈ poloûky (w) )         LIKE(NAKPOL)   NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(KUSOVw)    DESC(KusovnÌky (w) )                LIKE(KUSOV)    NOCHECK() TASK(VYR)
+
+
+*
+TYPE(FILE) NAME(KUSOVi)    DESC(KusovnÌky - pro import (w))    LIKE(KUSOV)  NOCHECK() TASK(VYR)
+  TYPE(FIELD) NAME(cKeyImp)     DESC(ImportnÌ - cizÌ klÌË)       CAPTION(ImpKlÌË)       FTYPE(c) FLEN( 25) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KUSOVi1) FNAME(KUSOVi) CAPTION(»ÌsZak·zky +VyööÌPoloû +Pozice +PoziceVar )           KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nPozice,3) +STRZERO(nVarPoz,3) )
+  TYPE(INDEX) NAME(KUSOVi2) FNAME(KUSOVi) CAPTION(»ÌsZak·zky +NiûöÌPoloû +NiûöÌVaria )                  KEY(UPPER(cCisZakaz) +UPPER(cNizPol) +STRZERO(nNizVar,3) )
+  TYPE(INDEX) NAME(KUSOVi3) FNAME(KUSOVi) CAPTION(SklPoloûka)                                           KEY(UPPER(cSklPol))
+  TYPE(INDEX) NAME(KUSOVi4) FNAME(KUSOVi) CAPTION(»ÌsZak·zky +VyööÌPoloû +PoziceVar )                   KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVarPoz,3) )
+  TYPE(INDEX) NAME(KUSOVi5) FNAME(KUSOVi) CAPTION(»ÌsObjInt +PolObjInt )                                KEY(UPPER(cCislObINT) +STRZERO(nCislPolOb,5) )
+  TYPE(INDEX) NAME(KUSOVi6) FNAME(KUSOVi) CAPTION(NiûöÌPoloû +VyööÌPoloû +»ÌsZak·zky )                  KEY(UPPER(cNizPol) +UPPER(cVysPol) +UPPER(cCisZakaz) )
+  TYPE(INDEX) NAME(KUSOVi7) FNAME(KUSOVi) CAPTION(SklPoloûka +VyööÌPoloû +»ÌsZak·zky )                  KEY(UPPER(cSklPol) +UPPER(cVysPol) +UPPER(cCisZakaz) )
+  TYPE(INDEX) NAME(KUSOVi8) FNAME(KUSOVi) CAPTION(»ÌsZak·zky +VyööÌPoloû +PoziceVar +».oper +Pozice)    KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nVarPoz,3) +STRZERO(nCisOper,4) +STRZERO(nPozice,3))
+  TYPE(INDEX) NAME(KUSOVi9) FNAME(KUSOVi) CAPTION(»ÌsZak·zky +VyööÌPoloû +».oper+⁄kon oper. +Var.oper.) KEY(UPPER(cCisZakaz) +UPPER(cVysPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3))
+
+
+
+*
+TYPE(FILE) NAME(POLOPERw)   DESC(Operace u vyr·b. poloûek (w))  LIKE(POLOPER)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(POLOPER_w1)   DESC(Operace u vyr·b. poloûek (w))  LIKE(POLOPER)  NOCHECK() TASK(VYR)
+  TYPE(FIELD) NAME(cStred)     DESC(V˝robnÌ st¯edisko)          CAPTION(V˝r.st¯ed.)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cOznPrac)   DESC(OznaËenÌ pracoviötÏ)        CAPTION(PracoviötÏ)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTarifTrid) DESC(TarifnÌ t¯Ìda-sazba)        CAPTION(Tarif.t¯Ìda)    FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nVykon_cmp) DESC(V˝kon)                      CAPTION(V˝kon)          FTYPE(n) FLEN(11) DEC( 2)
+*
+TYPE(FILE) NAME(POLOPER_w2) DESC(Operace u vyr·b. poloûek (w))  LIKE(POLOPER)  NOCHECK() TASK(VYR)
+* INDEX DEFINITION **************************************************
+   TYPE(INDEX) NAME(POLOPw2_1) FNAME(POLOPER_w2) CAPTION(»ÌsZak·zky +VyrPoloûka +»ÌsOperace +⁄konOper +VariantaOp ) KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nCisOper,4) +STRZERO(nUkonOper,2) +STRZERO(nVarOper,3) )
+*
+TYPE(FILE) NAME(OPERACEw)  DESC(Katalog typov˝ch operacÌ (w))  LIKE(OPERACE)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(HODATRIBw)  DESC(Hodnoty atribut˘ operacÌ (w))  LIKE(HODATRIB)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(PPOPERw)  DESC(PracovnÌ post. u operacÌ (w))  LIKE(PPOPER)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(C_PRACOVw) DESC(»ÌselnÌk pracoviöù (w)) LIKE(C_PRACOV)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(FIXNAKLw) DESC(FixnÌ n·klady (w)) LIKE(FIXNAKL)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(KALKULw)   DESC(Kalkulace poloûky      (w)) LIKE(KALKUL) NOCHECK() TASK(VYR)
+TYPE(FILE) NAME(KALKUL_oW) DESC(Kalkulace poloûky_info (w)) LIKE(KALKUL) NOCHECK() TASK(VYR)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KALKUL9)    FNAME(KALKUL) CAPTION(Zak·zka +Vyr.poloûka +Varianta + Stav) KEY(Upper(cCisZakaz) +Upper(cVyrpol) +Strzero(nVarCis,3)+Strzero(nStavKalk,2))
+*
+*
+*
+TYPE(FILE) NAME(PRMATw)  DESC(P¯Ìm˝ materi·l (w)) LIKE(PRMAT)  NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(PRMZDYw) DESC(P¯ÌmÈ mzdy (w))     LIKE(PRMZDY) NOCHECK() TASK(VYR)
+*
+TYPE(FILE) NAME(PRACVAZwp)  DESC(Vazby pracoviöù - na pracoviötÏ (w))  LIKE(PRACVAZ)  NOCHECK() TASK(VYR)
+  TYPE(FIELD) NAME(_nrecor) DESC(»Ìslo z·znamu) CAPTION(»Ìslo z·znamu) FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRVAZwp_1) FNAME(PRACVAZwp) CAPTION(PracoviötÏ + Dat.pl·n )  KEY(UPPER(cOznPrac) + if(empty(dDatPlan) ,'        ' , DTOS(dDatPlan)) ) FOR(EMPTY(cPlanovano))
+  TYPE(INDEX) NAME(PRVAZwp_2) FNAME(PRACVAZwp) CAPTION(»Ìslo vazby )            KEY(UPPER(cIdVazby))
+  TYPE(INDEX) NAME(PRVAZwp_3) FNAME(PRACVAZwp) CAPTION(»ÌsZak·zky + PoËet zap.) KEY(UPPER(cCisZakaz) +STRZERO(nPocCeZapZ,2) )
+
+*
+TYPE(FILE) NAME(PRACVAZwd)  DESC(Vazby pracoviöù - na den (w))  LIKE(PRACVAZ)  NOCHECK() TASK(VYR)
+  TYPE(FIELD) NAME(_nrecor)    DESC(»Ìslo z·znamu)        CAPTION(»Ìslo z·znamu) FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRVAZwd_1) FNAME(PRACVAZwd) CAPTION(PracoviötÏ + Dat.pl·n ) KEY(UPPER(cOznPrac) + if(empty(dDatPlan) ,'        ' , DTOS(dDatPlan)) ) FOR(!EMPTY(cPlanovano))
+*

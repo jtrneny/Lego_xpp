@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pvpoj xmlns="http://schemas.cssz.cz/POJ/PVPOJ2013">
+<prehled typPrehledu="N" verze="2013.0" corrIDStorna="">
+<okres>
+<kodOSSZ>781</kodOSSZ>
+<nazevOSSZ>Uherské Hradiště</nazevOSSZ>
+</okres>
+<obdobi>
+<mesic>01</mesic>
+<rok>2013</rok>
+</obdobi>
+<zamestnavatel>
+<vs>111111111</vs>
+<IC>111111111</IC>
+<nazev>Test</nazev>
+<adresa>
+<ulice>Mlýnská</ulice>
+<cisloDomu>1228</cisloDomu>
+<obec>Uherské Hradiště</obec>
+<PSC>68601</PSC>
+<stat>CZ</stat>
+</adresa>
+<sazba>1</sazba>
+</zamestnavatel>
+<pojistne>
+<uhrnVymerovacichZakladuPbezDS>100000</uhrnVymerovacichZakladuPbezDS>
+<uhrnPojistnehoPbezDS>10000</uhrnPojistnehoPbezDS>
+<uhrnVymerovacichZakladuPsDS>100000</uhrnVymerovacichZakladuPsDS>
+<uhrnPojistnehoPsDS>1000</uhrnPojistnehoPsDS>
+<uhrnVymerovacichZakladu>0</uhrnVymerovacichZakladu>
+<uhrnPojistneho>0</uhrnPojistneho>
+<pojistneCelkem>11000</pojistneCelkem>
+</pojistne>
+<nahradyMzdy>
+<uhrnZuctovanychNahrad>0</uhrnZuctovanychNahrad>
+<polovinaZuctovanychNahrad>0</polovinaZuctovanychNahrad>
+</nahradyMzdy>
+<rozdilPojistneNahrady>11000</rozdilPojistneNahrady>
+<platebniUdaje>
+<bankaCisloUctu>212121212/0100</bankaCisloUctu>
+</platebniUdaje>
+<pracovnik>
+<jmeno>Josef</jmeno>
+<prijmeni>Trněný</prijmeni>
+<telefon>777785780</telefon>
+<datumVyplneni>2013-06-17</datumVyplneni>
+</pracovnik>
+<poznamka></poznamka>
+</prehled>
+</pvpoj>

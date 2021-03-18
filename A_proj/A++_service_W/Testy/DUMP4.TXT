@@ -1,0 +1,308 @@
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457592.030393
+"
+"njd_Current  --->   2457592.030393
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->13.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457593.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->13.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457582.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:46
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457582.000012
+"
+"njd_Current  --->   2457592.030393
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->14.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457594.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->14.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457583.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:47
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457583.000012
+"
+"njd_Current  --->   2457592.030405
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->15.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457595.030393
+"
+"2.pøiøazení
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:47
+"
+"paTask.dtskBegin  --->15.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457584.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457584.000012
+"
+"njd_Current  --->   2457592.030417
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->16.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457596.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->16.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457585.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457585.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:48
+"
+"njd_Current  --->   2457592.030417
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->17.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457597.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->17.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457586.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:50
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457586.000012
+"
+"njd_Current  --->   2457592.030440
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->18.07.2016
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:51
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457598.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->18.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457587.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457587.000012
+"
+"njd_Current  --->   2457592.030463
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->19.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457599.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->19.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457588.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457588.000012
+"
+"njd_Current  --->   2457592.030521
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->20.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457600.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->20.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457589.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:43:58
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457589.000012
+"
+"njd_Current  --->   2457592.030532
+"
+"Konec úlohy DIST000066 ----> 11:43:59
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->21.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457601.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->21.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457590.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:44:00
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457590.000012
+"
+"njd_Current  --->   2457592.030556
+"
+"Konec úlohy DIST000066 ----> 11:44:01
+"
+"Konec úlohy DIST000066 ----> 11:44:01
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->22.07.2016
+"
+"Zaèátek úlohy DIST000066 ----> 11:44:02
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457602.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->22.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457591.000012
+"
+"Konec úlohy DIST000066 ----> 11:44:03
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457591.000012
+"
+"njd_Current  --->   2457592.030591
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->23.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457603.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->23.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457592.000012
+"
+"Konec úlohy DIST000066 ----> 11:44:03
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"Zaèátek úlohy DIST000066 ----> 11:44:03
+"
+"paTask.njd_tskBegin  --->   2457592.000012
+"
+"njd_Current  --->   2457592.030591
+"
+"1.pøiøazení
+"
+"paTask.dtskBegin  --->24.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457604.030393
+"
+"2.pøiøazení
+"
+"paTask.dtskBegin  --->24.07.2016
+"
+"paTask.ctskBegin  --->11:43:46
+"
+"paTask.njd_tskBegin  --->   2457593.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:44:06
+"
+"Konec úlohy DIST000066 ----> 11:44:06
+"
+"Konec úlohy DIST000066 ----> 11:44:12
+"
+"Konec úlohy DIST000066 ----> 11:44:14
+"
+"Konec úlohy DIST000066 ----> 11:44:16
+"
+"Konec úlohy DIST000066 ----> 11:44:17
+"
+"Konec úlohy DIST000066 ----> 11:44:18
+"

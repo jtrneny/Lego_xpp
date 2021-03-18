@@ -1,0 +1,1 @@
+update C_typpoh set craddph114 = craddph091 where craddph091 <> '     '

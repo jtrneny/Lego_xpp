@@ -1,0 +1,502 @@
+#include 'UcUDef_.Ch'
+#include '..\..\Systems\System.P\Alert_.Ch'
+
+Request StrZero
+
+Static lNetWare
+Static nRokTMP
+Static nObdTMP
+
+Function UctoUZAV()
+	Local cColor := SetColor( 'W+/B, N/W+,,, w+/b' )
+//  Local cColor := 'N/W,W+/B'
+	Local cScr := SaveScreen()
+	Local GetList := {}
+	Local cScope
+	LOCAL nRecCount, nCount, bOKtest
+	LOCAL lROPO := .F., lVN89 := .F., nX
+//	LOCAL cTMP      := fHomAdr() + '\Tmp\'
+	LOCAL cUcetKUMu := "Dat\UcetKumU"
+	LOCAL cUcetKUM  := "Dat\UcetKum"
+	LOCAL cUcetPOL  := "Dat\UcetPol"
+	LOCAL cUcetSALd := "Dat\UcetSalD"
+	LOCAL cUcetSALk := "Dat\UcetSalK"
+	LOCAL xKey
+	LOCAL nKcMDsum, nKcDALsum
+	LOCAL cUCET_1, cNAZP_21
+	LOCAL aOutDEF1  := { { "cObdobi",  "c",  5, 0 }, { "nRok",      "n",  4, 0 }, ;
+	                     { "nObdobi",  "n",  2, 0 }, { "cUcetMD",   "c",  6, 0 }, ;
+	                     { "L",        "c",  1, 0 }, { "cUcetDAL",  "c",  6, 0 }, ;
+	                     { "P",        "c",  1, 0 },                              ;
+	                     { "nKcMDksR", "n", 13, 2 }, { "nkcDALksR", "n", 13, 2 }, ;
+	                     { "nKcMDpsR", "n", 13, 2 }, { "nkcDALpsR", "n", 13, 2 }, ;
+	                     { "lGENER",   "l",  1, 0 }}
+
+	LOCAL aOutDEF2  := { { "cObdobi",  "c",  5, 0 }, { "nRok",      "n",  4, 0 }, ;
+	                     { "nObdobi",  "n",  2, 0 }, { "cUcetMD",   "c",  6, 0 }, ;
+	                     { "cZavorL",  "c",  1, 0 }, { "cUcetDAL",  "c",  6, 0 }, ;
+	                     { "cZavorP",  "c",  1, 0 },                              ;
+	                     { "nKcMDksR", "n", 13, 2 }, { "nkcDALksR", "n", 13, 2 }, ;
+	                     { "nKcMDpsR", "n", 13, 2 }, { "nkcDALpsR", "n", 13, 2 }, ;
+	                     { "lGENER",   "l",  1, 0 },                              ;
+											 { "cNazPol1", "c",  8, 0 }, { "cNazPol2",  "c",  8, 0 }, ;
+											 { "cNazPol3", "c",  8, 0 }, { "cNazPol4",  "c",  8, 0 }, ;
+											 { "cNazPol5", "c",  8, 0 }, { "cNazPol6",  "c",  8, 0 }}
+
+  dbUseArea( .t., "SIXCDX", ( cUcetKUMu),, if( .T. .or. .F., lNetWare, NIL ), .f. )
+  dbUseArea( .t., "SIXCDX", ( cUcetKUM),, if( .T. .or. .F., lNetWare, NIL ), .f. )
+  dbUseArea( .t., "SIXCDX", ( cUcetPOL),, if( .T. .or. .F., lNetWare, NIL ), .f. )
+	COPY STRUCTURE TO "Tmp\UcZnedVy"
+
+	nRokTMP := 2004
+	nObdTMP := 12
+
+	@ 10,12 Say "Uzav°ranÏ rok    :" Get nRokTMP
+	@ 11,12 Say "Uzav°ranÇ obdob° :" Get nObdTMP
+
+	ReadModal(GetList)
+
+	xKey := StrZero( nRokTMP, 4) + StrZero( nObdTMP, 2)
+	UcetKumU ->( SET_sSCOPE( 2, xKEY))
+	UcetKum ->( SET_sSCOPE( 1, xKEY))
+
+	IF Box_YesNo( "Vytvo˝it podklady pro £üetn° uz†vÿrku za rok" +Str( nRokTMP)+" ?") = 2
+		Return( NIL)
+	ENDIF
+
+	IF Box_YesNo( "Bude prov†dÿna bÿßn† £üetn° uz†vÿrku bez ROPO ?") = 2
+		bOKtest := {|| ( cUCET_1 == "0" .OR. cUCET_1 == "1" .OR. cUCET_1 == "2"          ;
+				              .OR. cUCET_1 == "3" .OR. cUCET_1 == "4" .OR. cUCET_1 == "7"    ;
+											 .OR. cUCET_1 == "9")                                          ;
+										 .AND. ( cUCET_1 <> "999")                                       ;
+					            .AND. ( UcetKumU ->nKcMDksR <> UcetKumU ->nKcDALksR) }
+	ELSE
+		bOKtest := {|| ( cUCET_1 == "0" .OR. cUCET_1 == "1" .OR. cUCET_1 == "2"        ;
+				              .OR. cUCET_1 == "3" .OR. cUCET_1 == "4" .OR. cUCET_1 == "7")   ;
+					           .AND. ( UcetKumU ->nKcMDksR <> UcetKumU ->nKcDALksR) }
+
+	ENDIF
+
+
+  Box_Make( '< Okamßik pros°m ... >',;
+               'Prob°h† p˝°prava pomocnÏch üinnost° pro uüetn° uz†vÿrku ...',;
+                'w+/g, gr+/n*')
+
+	dbCreate( "Tmp\UcZOtevr", aOutDEF1 )
+  dbUseArea( .t., "SIXCDX", ( "Tmp\UcZOtevr"),, if( .T. .or. .F., .F., NIL ), .f. )
+
+
+	nRecCount := 0
+  UcetKumU ->( dbEval( {|| nRecCount++ }))
+
+	Box_Make()
+
+	nCount := 1
+  Box_Thermo( 1, nCount, nRecCount, '< Okamßik pros°m ... >' ,;
+	      		    "Prob°h† otev˝en° £üetn°ch knih - 14/" +Str( nRokTMP)+" !")
+
+	UcetKumU ->( dbGoTop())
+	nKcMDsum  := 0
+	nKcDALsum := 0
+
+	DO WHILE !UcetKumU ->( Eof())
+
+		cUCET_1 := SubStr( UcetKumU ->cUcetMD, 1, 1)
+		IF  Eval( bOKtest)
+
+//			  ( cUCET_1 == "0" .OR. cUCET_1 == "1" .OR. cUCET_1 == "2"        ;
+//				.OR. cUCET_1 == "3" .OR. cUCET_1 == "4" .OR. cUCET_1 == "7")   ;
+//					.AND. ( UcetKumU ->nKcMDksR <> UcetKumU ->nKcDALksR)
+
+			UcZOtevr ->( dbAppend())
+
+			xKEY := "14/" +SubStr( AllTrim( Str( nRokTMP)), 3, 2)
+			UcZOtevr ->cObdobi   := xKEY
+			UcZOtevr ->nRok      := nRokTMP
+			UcZOtevr ->nObdobi   := 14
+
+		  UcZOtevr ->cUcetMD   := UcetKumU ->cUcetMD
+		  UcZOtevr ->L         := "("
+		  UcZOtevr ->cUcetDAL  := "701000"
+		  UcZOtevr ->P         := ")"
+
+	    UcZOtevr ->nKcMDksR  := UcetKumU ->nKcMDksR
+	    UcZOtevr ->nKcDALksR := UcetKumU ->nKcDALksR
+	    UcZOtevr ->nKcMDpsR  := UcetKumU ->nKcMDksR
+	    UcZOtevr ->nKcDALpsR := UcetKumU ->nKcDALksR
+
+	    nKcMDsum  += UcetKumU ->nKcMDksR
+	    nKcDALsum += UcetKumU ->nKcDALksR
+
+		ENDIF
+
+    Box_Thermo( 0, nCount, nRecCount)
+    ( UcetKumU ->( dbSkip()), nCount++ )
+	ENDDO
+
+	UcZOtevr ->( dbAppend())
+
+	xKEY := "14/" +SubStr( AllTrim( Str( nRokTMP)), 3, 2)
+	UcZOtevr ->cObdobi   := xKEY
+	UcZOtevr ->nRok      := nRokTMP
+	UcZOtevr ->nObdobi   := 14
+  UcZOtevr ->cUcetMD   := "431000"
+  UcZOtevr ->L         := "("
+  UcZOtevr ->cUcetDAL  := "701000"
+  UcZOtevr ->P         := ")"
+  UcZOtevr ->nKcDALksR := nKcMDsum - nKcDALsum
+  UcZOtevr ->nKcDALpsR := nKcMDsum - nKcDALsum
+  UcZOtevr ->lGENER    := .T.
+
+  Box_Thermo( -1)
+
+
+	dbCreate( "Tmp\UcZPocSt", aOutDEF1 )
+  dbUseArea( .t., "SIXCDX", ( "Tmp\UcZPocSt"),, if( .T. .or. .F., .F., NIL ), .f. )
+
+	nRecCount := UcZOtevr ->( LastRec())
+
+	nCount := 1
+  Box_Thermo( 1, nCount, nRecCount, '< Okamßik pros°m ... >' ,;
+	      		    "Prob°h† vytvo˝en° poü†teün°ch stavÖ pro 01/" +Str( nRokTMP+1)+"!")
+	UcZOtevr ->( dbGoTop())
+
+	DO WHILE !UcZOtevr ->( Eof())
+	  MH_CopyFLD( 'UcZOtevr', 'UcZPocSt', .T.)
+    xKEY := "01/" +SubStr( AllTrim( Str( nRokTMP+1)), 3, 2)
+		UcZPocSt ->cObdobi   := xKEY
+		UcZPocSt ->nRok      := nRokTMP +1
+		UcZPocSt ->nObdobi   := 1
+
+		UcZPocSt ->cUcetMD   := IF( UcZPocSt ->cUcetMD == "121200"              ;
+		                              ,"121100", UcZPocSt ->cUcetMD)
+		UcZPocSt ->cUcetDAL  := IF( UcZPocSt ->cUcetDAL == "121200"             ;
+		                              ,"121100", UcZPocSt ->cUcetDAL)
+
+	  UcZPocSt ->nKcMDksR  := 0
+		UcZPocSt ->nKcDALksR := 0
+
+    Box_Thermo( 0, nCount, nRecCount)
+    ( UcZOtevr ->( dbSkip()), nCount++ )
+	ENDDO
+  Box_Thermo( -1)
+
+
+	dbCreate( "Tmp\UcZUzavr", aOutDEF1 )
+  dbUseArea( .t., "SIXCDX", ( "Tmp\UcZUzavr"),, if( .T. .or. .F., .F., NIL ), .f. )
+
+	nCount := 1
+  Box_Thermo( 1, nCount, nRecCount, '< Okamßik pros°m ... >' ,;
+	      		    'Prob°h† uzav˝en° £üetn°ch knih za 13/03 !')
+	UcZOtevr ->( dbGoTop())
+
+	DO WHILE !UcZOtevr ->( Eof())
+		UcZUzavr ->( dbAppend())
+
+	  xKEY := "13/" +SubStr( AllTrim( Str( nRokTMP)), 3, 2)
+		UcZUzavr ->cObdobi   := xKEY
+		UcZUzavr ->nRok      := nRokTMP
+		UcZUzavr ->nObdobi   := 13
+		UcZUzavr ->cUcetMD   := IF( UcZOtevr ->lGENER, "710000", UcZOtevr ->cUcetMD)
+	  UcZUzavr ->L         := "("
+		UcZUzavr ->cUcetDAL  := "702000"
+	  UcZUzavr ->P         := ")"
+
+	  UcZUzavr ->nKcMDksR  := UcZOtevr ->nKcMDksR *(-1)
+	  UcZUzavr ->nKcDALksR := UcZOtevr ->nKcDALksR *(-1)
+
+     Box_Thermo( 0, nCount, nRecCount)
+    ( UcZOtevr ->( dbSkip()), nCount++ )
+	ENDDO
+  Box_Thermo( -1)
+
+
+	dbCreate( "Tmp\UcZPreuc", aOutDEF1 )
+  dbUseArea( .t., "SIXCDX", ( "Tmp\UcZPreuc"),, if( .T. .or. .F., .F., NIL ), .f. )
+
+	IF Box_YesNo( "VnitropodnikovÇ za£ütov†n° bez 8 a 9 (jen 5 a 6) ?") = 2
+		bOKtest := {|| ( cUCET_1 == "5" .OR. cUCET_1 == "6"                      ;
+		                   .OR. cUCET_1 == "8" .OR. cUCET_1 == "9")              ;
+										 .AND. ( cUCET_1 <> "999")                               ;
+					            .AND. ( UcetKumU ->nKcMDksR <> UcetKumU ->nKcDALksR) }
+	ELSE
+		bOKtest := {|| ( cUCET_1 == "5" .OR. cUCET_1 == "6" )                    ;
+					.AND. ( UcetKumU ->nKcMDksR <> UcetKumU ->nKcDALksR) }
+
+	ENDIF
+
+	nCount := 1
+  Box_Thermo( 1, nCount, nRecCount, '< Okamßik pros°m ... >' ,;
+	      		    'Prob°h† p˝e£ütov†n° n†kladÖ a vÏnosÖ !')
+
+	UcetKumU ->( dbGoTop())
+	nKcMDsum  := 0
+	nKcDALsum := 0
+
+	DO WHILE !UcetKumU ->( Eof())
+
+		cUCET_1 := SubStr( UcetKumU ->cUcetMD, 1, 1)
+		IF Eval( bOKtest)
+
+//			  ( cUCET_1 == "5" .OR. cUCET_1 == "6" )                       ;
+//					.AND. ( UcetKumU ->nKcMDksR <> UcetKumU ->nKcDALksR)
+
+			UcZPreuc ->( dbAppend())
+
+	    xKEY := "13/" +SubStr( AllTrim( Str( nRokTMP)), 3, 2)
+			UcZPreuc ->cObdobi  := xKEY
+			UcZPreuc ->nRok     := nRokTMP
+			UcZPreuc ->nObdobi  := 13
+
+		  UcZPreuc ->cUcetMD  := UcetKumU ->cUcetMD
+		  UcZPreuc ->L        := "("
+		  UcZPreuc ->P        := ")"
+
+	    UcZPreuc ->nKcMDksR  := UcetKumU ->nKcMDksR  *(-1)
+	    UcZPreuc ->nKcDALksR := UcetKumU ->nKcDALksR *(-1)
+	    UcZPreuc ->nKcMDpsR  := UcetKumU ->nKcMDksR  *(-1)
+	    UcZPreuc ->nKcDALpsR := UcetKumU ->nKcDALksR *(-1)
+
+	    nKcMDsum  += UcetKumU ->nKcMDksR
+	    nKcDALsum += UcetKumU ->nKcDALksR
+
+		ENDIF
+
+    Box_Thermo( 0, nCount, nRecCount)
+    ( UcetKumU ->( dbSkip()), nCount++ )
+	ENDDO
+
+	UcZPreuc ->( dbAppend())
+
+  xKEY := "13/" +SubStr( AllTrim( Str( nRokTMP)), 3, 2)
+	UcZPreuc ->cObdobi   := xKEY
+	UcZPreuc ->nRok      := nRokTMP
+	UcZPreuc ->nObdobi   := 13
+  UcZPreuc ->cUcetMD   := "710000"
+  UcZPreuc ->L         := "("
+  UcZPreuc ->P         := ")"
+  UcZPreuc ->nKcDALksR := ( nKcMDsum - nKcDALsum) *(-1)
+  UcZPreuc ->nKcDALpsR := ( nKcMDsum - nKcDALsum) *(-1)
+  UcZPreuc ->lGENER    := .T.
+
+  Box_Thermo( -1)
+
+
+  Box_Make( '< Okamßik pros°m ... >',;
+               'Prob°h† p˝°prava pomocnÏch üinnost° pro uüetn° uz†vÿrku ...',;
+                'w+/g, gr+/n*')
+
+//	dbCreate( "Tmp\UcZNedVy", aOutDEF2 )
+  dbUseArea( .t., "SIXCDX", ( "Tmp\UcZnedVy"),, if( .T. .or. .F., .F., NIL ), .f. )
+
+	nRecCount := 0
+  UcetKum ->( dbEval( {|| nRecCount++ }))
+	Box_Make()
+
+	nCount := 1
+  Box_Thermo( 1, nCount, nRecCount, '< Okamßik pros°m ... >' ,;
+	      		    'Prob°h† p˝e£ütov†n° nedokonüenÇ vÏroby !')
+
+	UcetKum ->( dbGoTop())
+	nX := 0
+
+	DO WHILE !UcetKum ->( Eof())
+
+		nX++
+		cUCET_1  := SubStr( UcetKum ->cUcetMD, 1, 1)
+		cNAZP_21 := SubStr( UcetKum ->cNazPol2, 1, 1)
+
+		IF ( cUCET_1 == "5" .OR. cUCET_1 == "6")                                ;
+				.AND. ( cNAZP_21 == "4" .OR. cNAZP_21 == "5" .OR. cNAZP_21 == "6")  ;
+					.AND. ( UcetKum ->nKcMDksR <> UcetKum ->nKcDALksR)
+
+			MH_CopyFLD( 'UcetKum', 'UcZnedVy', .T.)
+
+      xKEY := "01/" +SubStr( AllTrim( Str( nRokTMP+1)), 3, 2)
+			UcZnedVy ->cObdobi   := xKEY
+			UcZnedVy ->nRok      := nRokTMP +1
+			UcZnedVy ->nObdobi   := 1
+			UcZnedVy ->cDenik    := "X"
+			UcZnedVy ->nDoklad   := (nRokTMP +1) * 100
+			UcZnedVy ->nOrdItem  := nX
+			UcZnedVy ->nOrdUcto  := 1
+
+			UcZnedVy ->cTyp_R    := "MD"
+			UcZnedVy ->dDatPoriz := Date()
+			UcZnedVy ->cUloha    := "U"
+			UcZnedVy ->cText     := "Poü.stav NV 2004"
+
+			UcZnedVy ->cUcetMD   := IF( UcetKum ->cUcetMD  == "611200"             ;
+			                             , "611101", UcetKum ->cUcetMD )
+
+//			UcZnedVy ->cUcetDAL  := IF( UcetKum ->cUcetDAL == "611200"             ;
+//			                             , "611101", UcetKum ->cUcetDAL )
+
+			UcZnedVy ->nKcMD     := UcetKum ->nKcMDksR
+	    UcZnedVy ->nKcDAL    := UcetKum ->nKcDALksR
+
+			IF Val( UcZnedVy ->cNazPol2) >= 400 .AND. Val( UcZnedVy ->cNazPol2) <= 600
+			  UcZnedVy ->cNazPol2 := AllTrim( Str( Val( UcZnedVy ->cNazPol2) - 300))
+			ENDIF
+
+	    MH_CopyFLD( 'UcetKum', 'UcZnedVy', .T.)
+
+      xKEY := "01/" +SubStr( AllTrim( Str( nRokTMP+1)), 3, 2)
+			UcZnedVy ->cObdobi   := xKEY
+			UcZnedVy ->nRok      := nRokTMP + 1
+			UcZnedVy ->nObdobi   := 1
+			UcZnedVy ->cDenik    := "X"
+			UcZnedVy ->nDoklad   := (nRokTMP +1) * 100
+			UcZnedVy ->nOrdItem  := nX
+			UcZnedVy ->nOrdUcto  := 2
+
+			UcZnedVy ->cTyp_R    := "DAL"
+			UcZnedVy ->dDatPoriz := Date()
+			UcZnedVy ->cUloha    := "U"
+			UcZnedVy ->cText     := "Poü.stav NV 2004"
+
+
+			UcZnedVy ->cUcetMD   := IF( UcetKum ->cUcetMD  == "611200"             ;
+			                             , "611101", UcetKum ->cUcetMD )
+
+//			UcZnedVy ->cUcetDAL  := IF( UcetKum ->cUcetDAL == "611200"             ;
+//			                             , "611101", UcetKum ->cUcetDAL )
+
+	    UcZnedVy ->nKcMD     := UcetKum ->nKcMDksR  *(-1)
+	    UcZnedVy ->nKcDAL    := UcetKum ->nKcDALksR *(-1)
+
+			UcZnedVy ->cNazPol2  := ""
+			UcZnedVy ->cNazPol3  := ""
+			UcZnedVy ->cNazPol4  := ""
+			UcZnedVy ->cNazPol5  := ""
+			UcZnedVy ->cNazPol6  := ""
+
+		ENDIF
+
+    Box_Thermo( 0, nCount, nRecCount)
+    ( UcetKum ->( dbSkip()), nCount++ )
+	ENDDO
+
+  Box_Thermo( -1)
+
+
+  Box_Make( '< Okamßik pros°m ... >',;
+               'Prob°h† p˝°prava pro uz†vÿrku saldokonta ...',;
+                'w+/g, gr+/n*')
+
+//	dbCreate( "Tmp\UcZNedVy", aOutDEF2 )
+  dbUseArea( .t., "SIXCDX", ( cUcetSALd),, if( .T. .or. .F., lNetWare, NIL ), .f. )
+	COPY TO "Tmp\TmpSalD"
+  dbUseArea( .t., "SIXCDX", ( "Tmp\TmpSalD"),, if( .T. .or. .F., .F., NIL ), .f. )
+
+  dbUseArea( .t., "SIXCDX", ( cUcetSALk),, if( .T. .or. .F., lNetWare, NIL ), .f. )
+	COPY TO "Tmp\TmpSalK" FOR UCETSALk ->nRok == nRokTMP .AND. UCETSALk ->nObdobi == nObdTMP .AND. !Deleted()
+  dbUseArea( .t., "SIXCDX", ( "Tmp\TmpSalK"),, if( .T. .or. .F., .F., NIL ), .f. )
+	Index On TmpSalK ->cUcetMd +TmpSalK ->cSymbol To "Tmp\TmpSalK"
+
+	nRecCount := 0
+  TmpSalD ->( dbEval( {|| nRecCount++ }))
+	Box_Make()
+
+	nCount := 1
+  Box_Thermo( 1, nCount, nRecCount, '< Okamßik pros°m ... >' ,;
+	      		    'Prob°h† roün° uz†vÿrka saldokonta !')
+
+	TmpSalD ->( dbSetRelation( 'TmpSalK'  , ;
+                   { || TmpSalD ->cUcetMd +TmpSalD ->cSymbol } , ;
+                       'TmpSalD ->cUcetMd +TmpSalD ->cSymbol' ) )
+  TmpSalD ->( dbSkip( 0))
+
+	TmpSalD ->( dbGoTop())
+
+	DO WHILE !TmpSalD ->( Eof())
+
+		IF TmpSalK ->lIsClose
+			 TmpSalD ->lZparovano := .T.
+			 TmpSalD ->( dbDelete())
+		ENDIF
+
+    Box_Thermo( 0, nCount, nRecCount)
+    ( TmpSalD ->( dbSkip()), nCount++ )
+	ENDDO
+
+	TmpSalK ->( dbGoTop())
+
+	DO WHILE !TmpSalK ->( Eof())
+		IF( TmpSalK ->lIsClose, TmpSalK ->( dbDelete()), NIL)
+    TmpSalK ->( dbSkip())
+	ENDDO
+
+	TmpSalD ->( __dbPack())
+	TmpSalK ->( __dbPack())
+
+  Box_Thermo( -1)
+
+	dbCloseAll()
+
+	BOX_Wait( "Vytvo˝en° uz†vÿrky £spÿÁnÿ probÿhlo... " )
+
+RETURN( NIL)
+
+
+//ƒƒƒƒƒƒƒƒƒƒƒƒKOPIE POLOZEK DB -> DBƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+Function MH_CopyFld( cDBFrom, cDBTo, lDBApp, lDoubleNET)
+	Local  nOrdNO, nRecNO, nKeyNO := 0, nRecCR, nPos, nKey
+	Local  nKeyNEWS, nKeyLAST
+	Local  cI, cScreen
+	Local  lSETDEL
+	Local  xVAL
+	Local  aX, aC, aFrom := ( cDBFrom) ->( dbStruct())
+
+	Default lDBApp To .F., lDoubleNET To .F.
+	If( lDBApp, ( cDBTo) ->( dbAppend()), Nil )
+
+	aEval( aFrom, { |X,M| ;
+			 ( xVal := ( cDBFrom) ->( FieldGet( M))                        , ;
+	       nPos := ( cDBTo  ) ->( FieldPos( X[ DBS_NAME]))             , ;
+				 If( nPos <> 0, ( cDBTo) ->( FieldPut( nPos, xVal)), Nil ) ) } )
+//	( cDBTo) ->( dbCommit())
+
+	If lDoubleNET
+		lSETDEL := Set( _SET_DELETED, .T.)
+		( cDBTo) ->( dbCommit())
+
+		nRecCR := Cards ->( RecNo())
+		  Cards_RES( 'Doub_DOK.Sc1')
+			nPos := aScan( Cards ->AXDEF_INS, { |X| X[ 1] == Upper( cDBTo) } )
+			aX   := Cards ->AXDEF_INS[ nPos]
+			aC   := Cards ->axCARDS
+			cI   := aX[ 1] +' ->' +aX[ 2]
+
+		  nKeyNEWS  := DBGetVal( cI)
+		  nRecNO    := ( cDBTo) ->( RecNo())
+
+		  nOrdNO    := ( cDBTo) ->( OrdSetFocus( aX[ 3]))
+			             ( cDBTo) ->(  dbGoBottom())
+		  nKeyLAST  := DBGetVal( cI)
+
+			( cDBTo) ->( Set_Scope( nKeyNEWS)     , ;
+			             dbEval( { || nKeyNO++ } ), ;
+		               Clr_Scope(), OrdSetFocus( nOrdNO), dbGoTo( nRecNO) )
+
+		If( nKeyNO > 1 )
+			( cDBFrom) ->( DBPutVal( cDBFrom +'->' +aX[2], nKEYLAST +1))
+			( cDBTo  ) ->( DBPutVal( cI                  , nKeyLAST +1))
+			cScreen := SaveScreen()
+			Cards_RES( 'Doub_DOK.Sc1', .T.)
+				@ aC[ 1].Row, aC[ 1].Col Say aX[ 4]               Color 'N/W'
+				@ aC[ 2].Row, aC[ 2].Col Say Str( nKeyNEWS   , 6) Color 'N/W'
+				@ aC[ 3].Row, aC[ 3].Col Say Str( nKeyLAST +1, 6) Color 'W+/W'
+
+				( ( cDBTo) ->( dbCommit()), nPos := 0  )
+	      Do While ( nKey := InKey( .1)) == 0
+		      DispOutAT( aC[ 1].Row, aC[ 1].Col      ,aX[ 4], 'N/W' )
+	        DispOutAt( aC[ 1].Row, aC[ 1].Col +nPos, SubStr( aX[ 4], nPos +1, 1), 'W+/W' )
+          If( ( ++nPos > Len( aX[ 4])), nPos := 0, Nil )
+	      EndDo
+				RestScreen( ,,,, cScreen)
+		EndIf
+		( Cards ->( dbGoTo( nRecCR)), Set( _SET_DELETED, lSETDEL) )
+	EndIf
+Return( Nil)
+

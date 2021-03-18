@@ -1,0 +1,25 @@
+Table Information
+FILTRS.DBF
+
+Type: Fox Pro
+Records Number: 332
+Fields Number: 14
+Header Size: 482
+Record Length: 176
+
+#  Field Name Field Type Field Size 
+-- ---------- ---------- ---------- 
+1  CTYPFILTRS Character  4          
+2  NCISFILTRS Float      6:0        
+3  CFLTNAME   Character  50         
+4  CIDFILTERS Character  10         
+5  CUSER      Character  10         
+6  CTASK      Character  3          
+7  CMAINFILE  Character  10         
+8  MFILTERS   Memo       10         
+9  MDATA      Memo       10         
+10 DVZNIKZAZN Date       8          
+11 DZMENAZAZN Date       8          
+12 MPOZNAMKA  Memo       10         
+13 CUNIQIDREC Character  26         
+14 MUSERZMENR Memo       10         

@@ -1,0 +1,130 @@
+class skl_objVyshd_sel from drgUsrClass
+EXPORTED:
+
+  * objvyshd
+  inline access assign method stav_objvyshd() var stav_objvyshd
+    local retVal := 0
+
+    do case
+    case(objvyshd->nmnozobdod = 0                    )  ;  retVal := 302
+    case(objvyshd->nmnozpldod = 0                    )  ;  retVal :=   0
+    case(objvyshd->nmnozpldod >= objvyshd->nmnozobdod)  ;  retVal := 302
+    case(objvyshd->nmnozpldod <  objvyshd->nmnozobdod)  ;  retVal := 303
+    endcase
+    return retVal
+
+
+  *
+  ** body class
+  inline method eventHandled(nEvent, mp1, mp2, oXbp)
+    LOCAL dc := ::drgDialog:dialogCtrl
+
+    DO CASE
+    CASE nEvent = drgEVENT_EXIT
+      PostAppEvent(xbeP_Close, drgEVENT_EXIT,,::drgDialog:dialog)
+    CASE nEvent = drgEVENT_EDIT
+      PostAppEvent(xbeP_Close, drgEVENT_SELECT,,::drgDialog:dialog)
+
+    CASE nEvent = drgEVENT_APPEND
+    CASE nEvent = drgEVENT_FORMDRAWN
+       Return .T.
+    CASE nEvent = xbeP_Keyboard
+      DO CASE
+      CASE mp1 = xbeK_ESC
+        PostAppEvent(xbeP_Close,,,::drgDialog:dialog)
+      OTHERWISE
+        RETURN .F.
+      ENDCASE
+
+    OTHERWISE
+      RETURN .F.
+    ENDCASE
+  return .t.
+
+   inline method init(parent)
+     ::drgUsrClass:init(parent)
+
+     drgDBMS:open('objVyshd')
+   return self
+
+
+   inline method drgDialogInit(drgDialog)
+*    drgDialog:dialog:drawingArea:bitmap  := 1016
+*    drgDialog:dialog:drawingArea:options := XBP_IMAGE_SCALED
+   return self
+
+   inline method destroy()
+     ::drgUsrClass:destroy()
+*    c_typPoh->( ads_clearAof())
+   return self
+
+ENDCLASS
+
+
+CLASS ODB_OBJHEAD_SEL FROM drgUsrClass
+
+EXPORTED:
+  METHOD  Init
+  METHOD  EventHandled
+  METHOD  ItemMarked
+  METHOD  RecordSelected
+  METHOD  RecordEdit
+ENDCLASS
+
+*
+********************************************************************************
+METHOD ODB_OBJHEAD_SEL:init(parent)
+  ::drgUsrClass:init(parent)
+  drgDBMS:open('OBJITEM')
+  drgDBMS:open('OBJHEAD')
+  ::itemMarked()
+RETURN self
+
+*
+********************************************************************************
+METHOD ODB_OBJHEAD_SEL:eventHandled(nEvent, mp1, mp2, oXbp)
+  LOCAL dc := ::drgDialog:dialogCtrl
+
+  DO CASE
+  CASE nEvent = drgEVENT_EXIT  .or. nEvent = drgEVENT_EDIT
+    ::recordSelected()
+
+  CASE nEvent = drgEVENT_APPEND
+*    ::recordEdit()
+
+  CASE nEvent = drgEVENT_FORMDRAWN
+     Return .T.
+
+  CASE nEvent = xbeP_Keyboard
+    DO CASE
+    CASE mp1 = xbeK_ESC
+      PostAppEvent(xbeP_Close,,,::drgDialog:dialog)
+    OTHERWISE
+      RETURN .F.
+    ENDCASE
+
+  OTHERWISE
+    RETURN .F.
+  ENDCASE
+
+RETURN .T.
+
+*
+********************************************************************************
+METHOD ODB_OBJHEAD_SEL:ItemMarked()
+  LOCAL cScope := StrZero( ObjHEAD->nCisFirmy, 5) + Upper( ObjHead->cCislObInt)
+
+  ObjItem ->( dbSetScope(SCOPE_BOTH, cScope), dbGOTOP())
+RETURN SELF
+
+*
+********************************************************************************
+METHOD ODB_OBJHEAD_SEL:RecordSelected()
+  PostAppEvent(xbeP_Close, drgEVENT_EXIT,,::drgDialog:dialog)
+RETURN SELF
+
+*
+********************************************************************************
+METHOD ODB_OBJHEAD_SEL:RecordEdit()
+*  DRGDIALOG FORM 'SKL_CENZBOZ_SCR' PARENT ::drgDialog DESTROY
+RETURN self

@@ -1,0 +1,118 @@
+open System;
+open System.Data;
+open System.Diagnostics;
+open Advantage.Data.Provider;
+
+
+let mainName = "main name #";
+let subName  = "sub name #";
+
+// INSERT
+let cmdTextScriptInsert = "
+    DECLARE @MainId INTEGER;
+    DECLARE @SubId  INTEGER;
+
+    @MainId = (SELECT MAX(Id)+1 FROM MainTable);
+    @SubId  = (SELECT MAX(Id)+1 FROM SubTable );
+
+    INSERT INTO MainTable (Id, Name, Value) VALUES (@MainId, :MainName, :MainValue);
+    INSERT INTO SubTable (Id, Name, MainId, Value) VALUES (@SubId, :SubName, @MainId, :SubValue);
+
+    SELECT @MainId, @SubId FROM system.iota;";
+let cmdTextProcedureInsert = "CreateItems";
+
+// UPDATE
+let cmdTextScriptUpdate = "
+    DECLARE @MainId INTEGER;
+
+    @MainId = (SELECT TOP 1 Id  FROM MainTable WHERE Name = :MainName);
+
+    UPDATE MainTable SET Value = :MainValue WHERE Id     = @MainId;
+    UPDATE SubTable  SET Value = :SubValue  WHERE MainId = @MainId;";
+let cmdTextProcedureUpdate = "UpdateItems";
+
+// SELECT
+let cmdTextScriptSelect = "
+    SELECT m.Value * s.Value FROM MainTable m INNER JOIN SubTable s ON m.Id = s.MainId WHERE m.Name = :MainName;";
+let cmdTextProcedureSelect = "SelectItems";
+
+// DELETE
+let cmdTextScriptDelete = "
+    DECLARE @MainId INTEGER; 
+
+    @MainId = (SELECT TOP 1 Id FROM MainTable WHERE Name = :MainName);
+
+    DELETE FROM SubTable  WHERE MainId = @MainId;
+    DELETE FROM MainTable WHERE Id     = @MainId;";
+let cmdTextProcedureDelete = "DeleteItems";
+
+
+
+
+let cnnStr = @"data source=D:\DB\test.add; ServerType=local; user id=adssys; password=***;";
+let cnn = new AdsConnection(cnnStr);
+
+try
+    cnn.Open();
+
+    let cmd = cnn.CreateCommand();
+
+    let parametrize ix prms =
+        cmd.Parameters.Clear();
+
+        let addParam = function
+            | "MainName"  -> cmd.Parameters.Add(":MainName" , mainName + ix.ToString()) |> ignore;
+            | "SubName"   -> cmd.Parameters.Add(":SubName"  , subName + ix.ToString() ) |> ignore;
+            | "MainValue" -> cmd.Parameters.Add(":MainValue", ix * 3                  ) |> ignore;
+            | "SubValue"  -> cmd.Parameters.Add(":SubValue" , ix * 7                  ) |> ignore;
+            | _ -> ()
+
+        prms |> List.iter addParam;
+
+
+    let runTest testData = 
+
+        let (cmdType, cmdName, cmdText, cmdParams) = testData;
+
+        let toPrefix cmdType cmdName =
+            let prefix = match cmdType with
+                | CommandType.StoredProcedure -> "Procedure-"
+                | CommandType.Text            -> "Script   -"
+                | _                           -> "Unknown  -"
+            in prefix + cmdName;
+
+        let stopWatch = new Stopwatch();
+
+        let runStep ix prms =
+            parametrize ix prms;
+            stopWatch.Start();
+            cmd.ExecuteNonQuery() |> ignore;
+            stopWatch.Stop();
+
+        cmd.CommandText <- cmdText;
+        cmd.CommandType <- cmdType;
+
+        let startId = 1500;
+        let count = 10;
+
+        for id in startId .. startId+count do
+            runStep id cmdParams;
+
+        let elapsed = stopWatch.Elapsed;
+        Console.WriteLine("Test '{0}' - total: {1}; per call: {2}ms", toPrefix cmdType cmdName, elapsed, Convert.ToInt32(elapsed.TotalMilliseconds)/count);
+
+
+    let lst = [
+        (CommandType.Text,            "Insert", cmdTextScriptInsert,    ["MainName"; "SubName"; "MainValue"; "SubValue"]);
+        (CommandType.Text,            "Update", cmdTextScriptUpdate,    ["MainName"; "MainValue"; "SubValue"]);
+        (CommandType.Text,            "Select", cmdTextScriptSelect,    ["MainName"]);
+        (CommandType.Text,            "Delete", cmdTextScriptDelete,    ["MainName"])
+        (CommandType.StoredProcedure, "Insert", cmdTextProcedureInsert, ["MainName"; "SubName"; "MainValue"; "SubValue"]);
+        (CommandType.StoredProcedure, "Update", cmdTextProcedureUpdate, ["MainName"; "MainValue"; "SubValue"]);
+        (CommandType.StoredProcedure, "Select", cmdTextProcedureSelect, ["MainName"]);
+        (CommandType.StoredProcedure, "Delete", cmdTextProcedureDelete, ["MainName"])];
+
+    lst |> List.iter runTest;
+
+finally
+    cnn.Close();

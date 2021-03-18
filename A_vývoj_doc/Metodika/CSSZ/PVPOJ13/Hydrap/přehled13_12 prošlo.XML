@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<pvpoj xmlns="http://schemas.cssz.cz/POJ/PVPOJ2013">
+   <prehled typPrehledu="N" verze="2013.0">
+   <okres>
+   <kodOSSZ>775</kodOSSZ>
+   <nazevOSSZ>Zlín</nazevOSSZ>
+   </okres>
+   <obdobi>
+   <mesic>12</mesic>
+   <rok>2013</rok>
+   </obdobi>
+   <zamestnavatel>
+   <vs>7750110707</vs>
+   <IC>46347232</IC>
+   <nazev>HYDRAP, spol. s r.o.</nazev>
+   <adresa>
+   <ulice>Návesní</ulice>
+   <cisloDomu>1</cisloDomu>
+   <obec>Zlín</obec>
+   <PSC>76001</PSC>
+   <stat>CZ</stat>
+   </adresa>
+   <sazba>1</sazba>
+   </zamestnavatel>
+   <pojistne>
+   <uhrnVymerovacichZakladuPbezDS>1399157</uhrnVymerovacichZakladuPbezDS>
+   <uhrnPojistnehoPbezDS>90978</uhrnPojistnehoPbezDS>
+   <uhrnVymerovacichZakladuPsDS>0</uhrnVymerovacichZakladuPsDS>
+   <uhrnPojistnehoPsDS>0</uhrnPojistnehoPsDS>
+   <uhrnVymerovacichZakladu>1399157</uhrnVymerovacichZakladu>
+   <uhrnPojistneho>349790</uhrnPojistneho>
+   <pojistneCelkem>440768</pojistneCelkem>
+   </pojistne>
+   <nahradyMzdy>
+   <uhrnZuctovanychNahrad>0</uhrnZuctovanychNahrad>
+   <polovinaZuctovanychNahrad>0</polovinaZuctovanychNahrad>
+   </nahradyMzdy>
+   <rozdilPojistneNahrady>440768</rozdilPojistneNahrady>
+   <platebniUdaje>
+   <bankaCisloUctu>1306241-661/0100</bankaCisloUctu>
+   </platebniUdaje>
+   <pracovnik>
+   <jmeno>Pavla</jmeno>
+   <prijmeni>Zetková</prijmeni>
+   <telefon>577 145 556</telefon>
+   <datumVyplneni>2014-01-09</datumVyplneni>
+   </pracovnik>
+   <poznamka></poznamka>
+   </prehled>
+</pvpoj>

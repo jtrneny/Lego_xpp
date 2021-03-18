@@ -1,0 +1,2 @@
+update pvphead set czahrmena = 'CZK', nkurzahmen=1, nmnozprep = 1, ncendokzm = ncenadokl, nnutnevnzm = nnutnevn where czahrmena=''  ;
+//update pvphead set ncendokzm = ncenadokl, nnutnevnzm = nnutnevn where czahrmena=''  ;

@@ -1,0 +1,69 @@
+***************************************************************************
+*
+*   SKL_MENU.mnu
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Sklady) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+    TYPE(Menu)   LEVEL(2) CAPTION(Stav zásob)
+      TYPE(Dialog) LEVEL(3) CAPTION(Skladové karty...)   DATA(SKL_CenZboz_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Prodejní ceny...)    DATA(SKL_CENZBOZ2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výrobní èísla...)    DATA(SKL_VyrCis_CRD)
+      TYPE(Dialog) LEVEL(3) CAPTION(Stavy za období...)  DATA(SKL_STAVYobd_SCR )
+      TYPE(Dialog) LEVEL(3) CAPTION(Inventury...)        DATA(SKL_CENZBIN_SCR)
+    TYPE(Menu)   LEVEL(2) CAPTION(Pohyby)
+      TYPE(Dialog)   LEVEL(3) CAPTION(Dle dokladù...)         DATA(SKL_POHYBY_SCR)
+      TYPE(Dialog)   LEVEL(3) CAPTION(Dle položek dokladù...) DATA(SKL_POHYBY2_SCR)
+    TYPE(Menu)   LEVEL(2) CAPTION(Likvidace)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle položek dokladù...)    DATA(SKL_LIKVPOL_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Za doklad po položkách...) DATA(SKL_LIKVDOKL1_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Za doklad celkem...)       DATA(SKL_LIKVDOKL2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle úèetních pøedpisù...)  DATA(SKL_LIKVUCT_SCR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Rezervace...)                DATA(SKL_REZERVACE_SCR)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník druhù pohybù)         DATA(C_DRPOHY)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník názvù zboží )         DATA(C_NAZZBO)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník kategorií zboží )     DATA(C_KATZBO)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník úèetních skl. skupin) DATA(C_UCTSKP)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník míst uložení)         DATA(C_ULOZMI)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typù èárového kódu)   DATA(C_CARKOD)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typù karet)           DATA(C_TYPKAR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník koeficientù množství) DATA(C_KOEFMN)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION( Parametry úlohy) DATA(ODB_OBJHEAD_SEL)
+    TYPE(Dialog) LEVEL(2) CAPTION( Export dat)      DATA(ODB_OBJITEM_SEL)
+    TYPE(Dialog) LEVEL(2) CAPTION( Import dat)      DATA()
+    TYPE(Dialog) LEVEL(2) CAPTION( Období)          DATA(UCT_UCETSYS)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION( Konfigurace ...) DATA(SKL_VYRCIS_PVP)
+
+
+*TYPE(Menu) LEVEL(0) CAPTION(Èíselníky)
+*  TYPE(Menu)   LEVEL(1) CAPTION(Podnikové)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník mìrných jednotek)        DATA(C_JEDNOT)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník mìn)                     DATA(C_MENY)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typù SKP)                DATA(C_TYPSKP)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník skladù)                  DATA(C_SKLADY)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník DPH)                     DATA(C_DPH)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník PSÈ)                     DATA(C_PSC)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník kódù zaokrouhlení)       DATA(C_ZAOKR)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník zboží celního sazebníku) DATA(C_CELSAZ)
+
+*  TYPE(Menu)   LEVEL(1) CAPTION(Nákladové)
+*    TYPE(Dialog) LEVEL(2) CAPTION(Nákladová struktura)  DATA(C_NAKLST)
+*    TYPE(Dialog) LEVEL(2) CAPTION( - 1 Støedisko)       DATA(C_NAZPOL1)
+*    TYPE(Dialog) LEVEL(2) CAPTION( - 2 Výrobek)         DATA(C_NAZPOL2)
+*    TYPE(Dialog) LEVEL(2) CAPTION( - 3 Zakázka)         DATA(C_NAZPOL3)
+*    TYPE(Dialog) LEVEL(2) CAPTION( - 4 Výrobní místo)   DATA(C_NAZPOL4)
+*    TYPE(Dialog) LEVEL(2) CAPTION( - 5 Stroj)           DATA(C_NAZPOL5)
+*    TYPE(Dialog) LEVEL(2) CAPTION( - 6 Výrobní operace) DATA(C_NAZPOL6)
+
+
+*TYPE(Menu) LEVEL(0) CAPTION(Servis)
+*  TYPE(Dialog) LEVEL(1) CAPTION( Servis A_Systém) DATA(odb_ObjHEAD_sel)
+
+*TYPE(Menu) LEVEL(0) CAPTION(Konfigurace)
+*  TYPE(Dialog) LEVEL(1) CAPTION( Konfigurace A_Systém ...) DATA()

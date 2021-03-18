@@ -1,0 +1,319 @@
+    0004   platby za zboí(kromì plat.pod sym.10X,80X) 
+    0006   platby za zboí(kromì plat.pod sym.10X,80X) 
+    0008   platby za zboí(kromì plat.pod sym.10X,80X) 
+    0009   platby za zboí(kromì plat.pod sym.10X,80X) 
+    0024   platby za dodávky investièní povahy 
+    0026   platby za dodávky investièní povahy 
+    0028   platby za dodávky investièní povahy 
+    0029   platby za dodávky investièní povahy 
+    0034   prostøedky na mzdy 
+    0036   prostøedky na mzdy 
+    0038   prostøedky na mzdy 
+    0039   prostøedky na mzdy 
+    0054   penále.,popl.z prodl.a jiné maj.sankce 
+    0056   penále.,popl.z prodl.a jiné maj.sankce 
+    0058   penále.,popl.z prodl.a jiné maj.sankce 
+    0059   penále.,popl.z prodl.a jiné maj.sankce 
+    0064   pøevody prostø.na mzdy a ostat.osob.nákl. 
+    0066   pøevody prostø.na mzdy a ostat.osob.nákl. 
+    0068   pøevody prostø.na mzdy a ostat.osob.nákl. 
+    0079   trby za prodané zboí a poskyt.stravování 
+    0102   platby za zemìdìlské vırobky 
+    0104   platby za zemìdìlské vırobky 
+    0106   platby za zemìdìlské vırobky 
+    0108   platby za zemìdìlské vırobky 
+    0109   platby za zemìdìlské vırobky 
+    0114   odvody pøíspìvkovıch organizací 
+    0116   odvody pøíspìvkovıch organizací 
+    0117   odvody pøíspìvkovıch organizací 
+    0118   odvody pøíspìvkovıch organizací 
+    0119   odvody pøíspìvkovıch organizací 
+    0134   sráky z mezd 
+    0136   sráky z mezd 
+    0137   sráky z mezd 
+    0138   sráky z mezd 
+    0139   sráky z mezd 
+    0149   sráka danì z úrokù (B) 
+    0154   hospodáøsko operativní vıdaje 
+    0156   hospodáøsko operativní vıdaje 
+    0158   hospodáøsko operativní vıdaje 
+    0159   hospodáøsko operativní vıdaje 
+    0164   splátky úvìrù a pùjèek (O) 
+    0168   splátky úvìrù a pùjèek (O) 
+    0169   splátky úvìrù a pùjèek (O) 
+    0179   trby za poskytnuté sluby 
+    0254   platby v Kè urèené k úhradám do zahranièí 
+    0258   platby v Kè urèené k úhradám do zahranièí 
+    0279   vklady na úèty zemìdìlskıch drustev 
+    0302   plat. za sluby(kromì plateb pod sym.40X)(O) 
+    0304   plat. za sluby(kromì plateb pod sym.40X)(O) 
+    0306   plat. za sluby(kromì plateb pod sym.40X)(O) 
+    0308   plat. za sluby(kromì plateb pod sym.40X)(O) 
+    0309   platby za sluby(kromì plateb pod sym.40X)(O 
+    0354   platby urèené k vıplat.v hotov.prostø.pošt 
+    0358   platby urèené k vıplat.v hotov.prostø.pošt 
+    0379   ostatní pøíjmy (O) 
+    0402   platby za pøepravné 
+    0404   platby za pøepravné 
+    0406   platby za pøepravné 
+    0408   platby za pøepravné 
+    0409   platby za pøepravné 
+    0414   odvody vedlejších hospodáøství 
+    0416   odvody vedlejších hospodáøství 
+    0417   odvody vedlejších hospodáøství 
+    0418   odvody vedlejších hospodáøství 
+    0419   odvody vedlejších hospodáøství 
+    0459   hotovostní vıplaty z úètù zemìd.drustev 
+    0479   vrácené mzdy 
+    0554   finanèní platby ostatní (O) 
+    0556   finanèní platby ostatní (O) 
+    0558   finanèní platby ostatní (O) 
+    0559   finanèní platby ostatní (O) 
+    0579   vrácené hotovosti na nákup 
+    0854   pøechodnì poskytnuté pùjèky 
+    0856   pøechodnì poskytnuté pùjèky 
+    0858   pøechodnì poskytnuté pùjèky 
+    0859   pøechodnì poskytnuté pùjèky 
+    0934   dávky sociál.zabezpeè.(dùchody,podpory,NP) 
+    0936   dávky sociál.zabezpeè.(dùchody,podpory,NP) 
+    0938   dávky sociál.zabezpeè.(dùchody,podpory,NP) 
+    0939   dávky sociál.zabezpeè.(dùchody,podpory,NP) 
+    0959   dotace poštám(B) 
+    0964   ostatní pøevody 
+    0966   ostatní pøevody 
+    0968   ostatní pøevody 
+    1144   bì.plat.daní,popl.,odv.a cel.vè.zál.a spl. 
+    1146   bì.plat.daní,popl.,odv.a cel.vè.zál.a spl. 
+    1147   bì.plat.daní,popl.,odv.a cel.vè.zál.a spl. 
+    1148   bì.plat.daní,popl.,odv.a cel.vè.zál.a spl. 
+    1149   bì.plat.daní,popl.,odv.a cel.vè.zál.a spl. 
+    1314   místní poplatky 
+    1316   místní poplatky 
+    1317   místní poplatky 
+    1318   místní poplatky 
+    1319   místní poplatky 
+    1379   vklady obyvatel(vè.depoz.a vkl.certifik.)(BS 
+    1514   pøevody prostøedkù na úèel.invest.vıstavbu 
+    1516   pøevody prostøedkù na úèel.invest.vıstavbu 
+    1517   pøevody prostøedkù na úèel.invest.vıstavbu 
+    1518   pøevody prostøedkù na úèel.invest.vıstavbu 
+    1519   pøevody prostøedkù na úèel.invest.vıstavbu 
+    1559   vıplaty z vkladù obyvatelstva(BS) 
+    1754   zvlášt.pøíspìvky zúèt. na invest.úèty SBD 
+    1756   zvlášt.pøíspìvky zúèt. na invest.úèty SBD 
+    1758   zvlášt.pøíspìvky zúèt. na invest.úèty SBD 
+    1759   zvlášt.pøíspìvky zúètované na invest.úèty SB 
+    1814   pøevody prostøedkù na ostat.(neinvest.)úèely 
+    1816   pøevody prostøedkù na ostat.(neinvest.)úèely 
+    1817   pøevody prostøedkù na ostat.(neinvest.)úèely 
+    1818   pøevody prostøedkù na ostat.(neinvest.)úèely 
+    1819   pøevody prostøedkù na ostat.(neinvest.)úèely 
+    1959   dotace bankám(BS) 
+    1979   odvody pošt(B) 
+    2054   nákup cennıch papírù(akcie,obligace,smìnky) 
+    2056   nákup cennıch papírù(akcie.obligace,smìnky) 
+    2058   nákup cennıch papírù(akcie,obligace,smìnky) 
+    2059   nákup cennıch papírù(akcie,obligace,smìnky) 
+    2099   nákup cennıch papírù(B) 
+    2144   platby domìrkù 
+    2146   platby domìrkù 
+    2147   platby domìrkù 
+    2148   platby domìrkù 
+    2149   platby domìrkù 
+    2514   pøíjmy z èinnosti lékárenské sluby 
+    2516   pøíjmy z èinnosti lékárenské sluby 
+    2517   pøíjmy z èinnosti lékárenské sluby 
+    2518   pøíjmy z èinnosti lékárenské sluby 
+    2519   pøíjmy z èinnosti lékárenské sluby 
+    2554   úhrady pojistnıch plnìní pojišovnami 
+    2556   úhrady pojistnıch plnìní pojišovnami 
+    2558   úhrady pojistnıch plnìní pojišovnami 
+    2559   úhrady pojistnıch plnìní pojišovnami 
+    2614   pøíjmy od obyvatelstva 
+    2616   pøíjmy od obyvatelstva 
+    2617   pøíjmy od obyvatelstva 
+    2618   pøíjmy od obyvatelstva 
+    2619   pøíjmy od obyvatelstva 
+    2699   devizové operace nákup(B) 
+    2714   pøíjmy od organizací 
+    2716   pøíjmy od organizací 
+    2717   pøíjmy od organizací 
+    2718   pøíjmy od organizací 
+    2719   pøíjmy od organizací 
+    2979   odvody bank(BS) 
+    3014   pøíjmy z vedlejší hospodáøské èinnosti škol 
+    3016   pøíjmy z vedlejší hospodáøské èinnosti škol 
+    3017   pøíjmy z vedlejší hospodáøské èinnosti škol 
+    3018   pøíjmy z vedlejší hospodáøské èinnosti škol 
+    3019   pøíjmy z vedlejší hospodáøské èinnosti škol 
+    3054   prodej cennıch papírù 
+    3056   prodej cennıch papírù 
+    3058   prodej cennıch papírù 
+    3059   prodej cennıch papírù 
+    3099   prodej cennıch papírù(B) 
+    3144   platby pøíslušenst.danì a cla(exek.nákl.) 
+    3146   platby pøíslušenst.danì a cla(exek.nákl.) 
+    3147   platby pøíslušenst.danì a cla(exek.nákl.) 
+    3148   platby pøíslušenst.danì a cla(exek.nákl.) 
+    3149   platby pøíslušenst.danì a cla(exek.nákl.) 
+    3214   pøíjmy z prodeje bytù do osob.vlast.obèanù 
+    3216   pøíjmy z prodeje bytù do osob.vlast.obèanù 
+    3217   pøíjmy z prodeje bytù do osob.vlast.obèanù 
+    3218   pøíjmy z prodeje bytù do osob.vlast.obèanù 
+    3219   pøíjmy z prodeje bytù do osob.vlast.obèanù 
+    3514   lázeòskı poplatek 
+    3516   lázeòskı poplatek 
+    3517   lázeòskı poplatek 
+    3518   lázeòskı poplatek 
+    3519   lázeòskı poplatek 
+    3552   platby pøipoj. penzijním fondùm od zamìstn. 
+    3554   platby pojistného pojišovnám 
+    3556   platby pojistného pojišovnám 
+    3558   platby pojistného pojišovnám 
+    3559   platby pojistného pojišovnám 
+    3614   pokuty ukládané a vybírané obcí a okr.úøady 
+    3616   pokuty ukládané a vybírané obcí a okr.úøady 
+    3617   pokuty ukládané a vybírané obcí a okr.úøady 
+    3618   pokuty ukládané a vybírané obcí a okr.úøady 
+    3619   pokuty ukládané a vybírané obcí a okr.úøady 
+    3699   devizové operace prodej(B) 
+    3714   sankèní poplatky 
+    3716   sankèní poplatky 
+    3717   sankèní poplatky 
+    3719   sankèní poplatky 
+    4054   proplacení vınosù z cennıch papírù 
+    4056   proplacení vınosù z cennıch papírù 
+    4058   proplacení vınosù z cennıch papírù 
+    4059   proplacení vınosù z cennıch papírù 
+    4099   proplacení vınosù z cennıch papírù(B) 
+    4144   vratky ve prospìch úètù daò.subj. 
+    4146   vratky ve prospìch úètù daò.subj. 
+    4147   vratky ve prospìch úètù daò.subj. 
+    4148   vratky ve prospìch úètù daò.subj. 
+    4149   vratky ve prospìch úètù daò.subj. 
+    4214   pøíjmy plynoucí z prodeje nemovitého majetku 
+    4216   pøíjmy plynoucí z prodeje nemovitého majetku 
+    4217   pøíjmy plynoucí z prodeje nemovitého majetku 
+    4218   pøíjmy plynoucí z prodeje nemovitého majetku 
+    4219   pøíjmy plynoucí z prodeje nemovitého majetku 
+    4314   ostatní a nahodilé pøíjmy 
+    4316   ostatní a nahodilé pøíjmy 
+    4317   ostatní a nahodilé pøíjmy 
+    4318   ostatní a nahodilé pøíjmy 
+    4319   ostatní a nahodilé pøíjmy 
+    4514   pøíspìvky vedlejším hospodáøstvím 
+    4516   pøíspìvky vedlejším hospodáøstvím 
+    4517   pøíspìvky vedlejším hospodáøstvím 
+    4518   pøíspìvky vedlejším hospodáøstvím 
+    4519   pøíspìvky vedlejším hospodáøstvím 
+    4614   pøíspìvky pøíspìvkovım organizacím na provoz 
+    4616   pøíspìvky pøíspìvkovım organizacím na provoz 
+    4617   pøíspìvky pøíspìvkovım organizacím na provoz 
+    4618   pøíspìvky pøíspìvkovım organizacím na provoz 
+    4619   pøíspìvky pøíspìvkovım organizacím na provoz 
+    4714   pøíspìvky obèanskım sdruením 
+    4716   pøíspìvky obèanskım sdruením 
+    4717   pøíspìvky obèanskım sdruením 
+    4718   pøíspìvky obèanskım sdruením 
+    4719   pøíspìvky obèanskım sdruením 
+    4814   dotace církvím a náboenskım spoleènostem 
+    4816   dotace církvím a náboenskım spoleènostem 
+    4817   dotace církvím a náboenskım spoleènostem 
+    4818   dotace církvím a náboenskım spoleènostem 
+    4819   dotace církvím a náboenskım spoleènostem 
+    4914   pøíspìvky a dary mezinárodním organizacím 
+    4916   pøíspìvky a dary mezinárodním organizacím 
+    4917   pøíspìvky a dary mezinárodním organizacím 
+    4918   pøíspìvky a dary mezinárodním organizacím 
+    4919   pøíspìvky a dary mezinárodním organizacím 
+    5014   dotace pøíspìv.a ostat.organ.na investice 
+    5016   dotace pøíspìv.a ostat.organ.na investice 
+    5017   dotace pøíspìv.a ostat.organ.na investice 
+    5018   dotace pøíspìv.a ostat.organ.na investice 
+    5019   dotace pøíspìv.a ostat.organ.na investice 
+    5144   pøevody prostø.mezi úèty správcù daní 
+    5146   pøevody prostø.mezi úèty správcù daní 
+    5147   pøevody prostø.mezi úèty správcù daní 
+    5148   pøevody prostø.mezi úèty správcù daní 
+    5149   pøevody prostø.mezi úèty správcù daní 
+    5314   ostatní pøíspìvky 
+    5316   ostatní pøíspìvky 
+    5317   ostatní pøíspìvky 
+    5318   ostatní pøíspìvky 
+    5319   ostatní pøíspìvky 
+    5514   dotace provozní 
+    5516   dotace provozní 
+    5517   dotace provozní 
+    5518   dotace provozní 
+    5519   dotace provozní 
+    5614   dotace na investice 
+    5616   dotace na investice 
+    5617   dotace na investice 
+    5618   dotace na investice 
+    5619   dotace na investice 
+    6144   silnièní daò placená celnímu orgánu 
+    6146   silnièní daò placená celnímu orgánu 
+    6147   silnièní daò placená celnímu orgánu 
+    6148   silnièní daò placená celnímu orgánu 
+    6149   silnièní daò placená celnímu orgánu 
+    6414   ostatní úèelové dotace ze státního rozpoètu 
+    6416   ostatní úèelové dotace ze státního rozpoètu 
+    6417   ostatní úèelové dotace ze státního rozpoètu 
+    6418   ostatní úèelové dotace ze státního rozpoètu 
+    6419   ostatní úèelové dotace ze státního rozpoètu 
+    7114   dotace na investièní vıstavbu ze stát.fondù 
+    7116   dotace na investièní vıstavbu ze stát.fondù 
+    7117   dotace na investièní vıstavbu ze stát.fondù 
+    7118   dotace na investièní vıstavbu ze stát.fondù 
+    7119   dotace na investièní vıstavbu ze stát.fondù 
+    7144   poplatky placené celnímu orgánu 
+    7146   poplatky placené celnímu orgánu 
+    7147   poplatky placené celnímu orgánu 
+    7148   poplatky placené celnímu orgánu 
+    7149   poplatky placené celnímu orgánu 
+    7214   dotace okresním úøadùm a obcím 
+    7216   dotace okresním úøadùm a obcím 
+    7217   dotace okresním úøadùm a obcím 
+    7218   dotace okresním úøadùm a obcím 
+    7219   dotace okresním úøadùm a obcím 
+    7514   vztahy státního rozpoètu k bance 
+    7516   vztahy státního rozpoètu k bance 
+    7517   vztahy státního rozpoètu k bance 
+    7518   vztahy státního rozpoètu k bance 
+    7519   vztahy státního rozpoètu k bance 
+    7614   dávky sociálního zabezpeèení 
+    7616   dávky sociálního zabezpeèení 
+    7617   dávky sociálního zabezpeèení 
+    7618   dávky sociálního zabezpeèení 
+    7619   dávky sociálního zabezpeèení 
+    7714   státní sociální podpora 
+    7716   státní sociální podpora 
+    7717   státní sociální podpora 
+    7718   státní sociální podpora 
+    7719   státní sociální podpora 
+    8144   ostatní platby daní,poplatkù a odvodù 
+    8146   ostatní platby daní,poplatkù a odvodù 
+    8147   ostatní platby daní,poplatkù a odvodù 
+    8148   ostatní platby daní,poplatkù a odvodù 
+    8149   ostatní platby daní,poplatkù a odvodù 
+    9114   finanèní zúètování 
+    9116   finanèní zúètování 
+    9117   finanèní zúètování 
+    9118   finanèní zúètování 
+    9119   finanèní zúètování 
+    9144   zrušené dávky placené celnímu orgánu 
+    9146   zrušené dávky placené celnímu orgánu 
+    9147   zrušené dávky placené celnímu orgánu 
+    9148   zrušené dávky placené celnímu orgánu 
+    9149   zrušené dávky placené celnímu orgánu 
+    9617   vratky pøísp. na èl.podíly v drus.stab.BV 
+    9814   mimoøádné odvody v prùbìhu roku 
+    9816   mimoøádné odvody v prùbìhu roku 
+    9817   mimoøádné odvody v prùbìhu roku 
+    9818   mimoøádné odvody v prùbìhu roku 
+    9819   mimoøádné odvody v prùbìhu roku 
+    9914   úèelové prostø.ze SR poskyt.z vlád.rozp.rez. 
+    9916   úèelové prostø.ze SR poskyt.z vlád.rozp.rez. 
+    9917   úèelové prostø.ze SR poskyt.z vlád.rozp.rez. 
+    9918   úèelové prostø.ze SR poskyt.z vlád.rozp.rez. 
+    9919   úèelové prostø.ze SR poskyt.z vlád.rozp.rez.

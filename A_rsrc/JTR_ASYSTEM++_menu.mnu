@@ -1,0 +1,319 @@
+***************************************************************************
+*
+*   Copyright: Miss Software, s.r.o.
+*              2005, All rights reserved.
+*
+*    Contents: Main application menu tree
+*
+*
+***************************************************************************
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Kancel·¯) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracov·nÌ)
+    TYPE(Dialog) LEVEL(2) CAPTION(Kalend·¯)                     DATA(PRG00)
+    TYPE(Dialog) LEVEL(2) CAPTION(⁄koly )                       DATA(KAN_ukoly_SCR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Dokumenty)                    DATA(KAN_dokument_SCR)
+    TYPE(Dialog) LEVEL(2) CAPTION(SpojenÌ)                      DATA(KAN_spojeni_SCR)    
+    TYPE(Report) LEVEL(2) CAPTION(V˝pisy sestav)                DATA(SYS_TISKFORM_CRD,KAN_kancelar_LST)
+  TYPE(Menu) LEVEL(1) CAPTION(»ÌselnÌky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy dokument˘)               DATA(C_TypDKM)
+    TYPE(Dialog) LEVEL(2) CAPTION(Zkratky dokument˘)            DATA(C_Dokume)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy spojenÌ)                 DATA(C_TYPSPO)
+    TYPE(Dialog) LEVEL(2) CAPTION(SpojenÌ)                      DATA(C_SPOJEN)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy ˙kol˘)                   DATA(C_TYPUKL)
+    TYPE(Dialog) LEVEL(2) CAPTION(⁄koly)                        DATA(C_UKOLY)
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace KANCEL¡ÿ)         DATA(SYS_CONFIG_SCR_KAN)
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Doch·zka) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracov·nÌ)
+  TYPE(Menu) LEVEL(1) CAPTION(»ÌselnÌky)
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace DOCH¡ZKA) DATA(SYS_CONFIG_SCR_DOH)
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Mzdy) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracov·nÌ)
+    TYPE(Menu) LEVEL(2) CAPTION(KmenovÈ mzdovÈ ˙daje)
+      TYPE(Dialog) LEVEL(3) CAPTION(MzdovÈ ˙daje)                 DATA(MZD_kmenove_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(TrvalÈ sr·ûky)                DATA(Sell)
+      TYPE(Menu)   LEVEL(3) CAPTION(DoplÚujÌcÌ Ëinnosti nad MS)
+        TYPE(Dialog) LEVEL(4) CAPTION(Vy¯azenÌ z evidence v MS) DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(Nulov·nÌ podÌl˘ v MS)     DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(V˝pisy sestav)            DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Po¯ÌzenÌ doklad˘ o mzdÏ)
+      TYPE(Menu) LEVEL(3) CAPTION(MzdovÈ doklady)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘)        DATA(MZD_DoklPra_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle doklad˘)           DATA(MZD_DoklPra2_SCR)
+
+      TYPE(Menu) LEVEL(3) CAPTION(NemocenskÈ d·vky)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘ za rok) DATA(MZD_DoklNem_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘)        DATA(MZD_DoklNem2_SCR)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Sr·ûky ze mzdy)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘)        DATA(MZD_SrazkDokl_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle doklad˘)           DATA(MZD_SrazkDokl2_SCR)
+
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)           DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(»istÈ mzdy)
+      TYPE(Menu) LEVEL(3) CAPTION(VypoËtenÈ ËistÈ mzdy)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘)        DATA(MZD_cistmzd_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle poloûek mzdy)      DATA(MZD_cistmzd2_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle mzdy celkem)       DATA(MZD_cistmzd3_SCR)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Sr·ûky ze mzdy)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘)        DATA(MZD_cistmzs_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle poloûek sr·ûek)    DATA(MZD_cistmzs2_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(V˝pisy sestav)         DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(SumarizovanÈ ËistÈ mzdy)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle pracovnÌk˘ za rok) DATA(MZD_cistmzk_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Za podnik celkem)      DATA(MZD_cistmzk2_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(V˝pisy sestav)         DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(P¯Ìkazy k ˙hradÏ)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle p¯Ìkazu k ˙hradÏ)     DATA(MZD_fakpripr_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(Dle poloûek doklad˘)      DATA(MZD_fakpripr2_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(St·lÈ platby - nastavenÌ) DATA(MZD_trvalzav_SCR)
+        TYPE(Dialog) LEVEL(4) CAPTION(NastavenÌ ˙Ëtu)           DATA(MZD_c_bankuc_SCR)
+
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - ËistÈ mzdy)           DATA(SYS_TISKFORM_CRD,MZD_CISTEMZDY_LST)
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - nemocensk·)           DATA(SYS_TISKFORM_CRD,MZD_NEMOCMZDY_LST)
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - sr·ûky)               DATA(SYS_TISKFORM_CRD,MZD_SRAZKYMZDY_LST)
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - odvody do fond˘)      DATA(SYS_TISKFORM_CRD,MZD_ODVODYDOFONDU_LST)
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - rozbory)              DATA(SYS_TISKFORM_CRD,MZD_ROZBORYCISMZDY_LST)
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - potvrzenÌ)            DATA(SYS_TISKFORM_CRD,MZD_POTVRZCISMZDY_LST)
+      TYPE(Report) LEVEL(3) CAPTION(V˝stupy - v˝kazy)               DATA(SYS_TISKFORM_CRD,MZD_VYKAZCISMZDY_LST)
+
+    TYPE(Menu) LEVEL(2) CAPTION(MzdovÈ listy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘) DATA(MZD_mzdlisty_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)  DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(EvidenËnÌ listy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)  DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Vy˙Ëtov·nÌ danÏ ze z·vislÈ Ëinnosti)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘) DATA(MZD_vyucdan_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)  DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Pr˘mÏry PP a NP)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘) DATA(MZD_prumery_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)  DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Za˙Ëtov·nÌ mezd)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle za˙Ëtovan˝ch vÏt)           DATA(MZD_zauctmz_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(⁄ËetnÌ p¯edpisy)                DATA(MZD_uctpredp_CRD)
+      TYPE(Dialog) LEVEL(3) CAPTION(⁄ËetnÌ osnova)                  DATA(Sell)
+        TYPE(Dialog) LEVEL(3) CAPTION(VnitropodnikovÈ ˙Ëty a sazby) DATA(MZD_uctvnmzd_SCR)
+        TYPE(Dialog) LEVEL(3) CAPTION(VnitropodnikovÈ sazby stroj˘) DATA(MZD_uctsastr_SCR)
+        TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)                DATA(Sell)
+
+  TYPE(Menu) LEVEL(1) CAPTION(»ÌselnÌky)
+    TYPE(Dialog) LEVEL(2) CAPTION(V˝platnÌ mÌsta)                DATA(C_vyplmi)
+    TYPE(Dialog) LEVEL(2) CAPTION(TarifnÌ stupnice)              DATA(C_tarstu)
+    TYPE(Dialog) LEVEL(2) CAPTION(TarifnÌ t¯Ìda)                 DATA(C_tartri)
+    TYPE(Dialog) LEVEL(2) CAPTION(TarifnÌ sazby)                 DATA(C_tarify)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy druh˘ mezd)               DATA(C_typdmz)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy mzdov˝ch sr·ûek)          DATA(C_srazky)
+    TYPE(Dialog) LEVEL(2) CAPTION(ZdravotnÌ pojiöùovny)          DATA(C_zdrpoj)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy danÌ pro mzdy)            DATA(C_typdan)
+    TYPE(Dialog) LEVEL(2) CAPTION(OdpoËitatelnÈ poloûky)         DATA(C_odpoc)
+    TYPE(Dialog) LEVEL(2) CAPTION(Sv·tky a volnÈ dny)            DATA(C_svatky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typ trvalÈ platby)             DATA(C_typtrp)
+    TYPE(Dialog) LEVEL(2) CAPTION(PojiöùovacÌ ˙stavy)            DATA(C_pojust)
+    TYPE(Dialog) LEVEL(2) CAPTION(V˝platnÌ prouûky)              DATA(C_nazrvp)
+    TYPE(Dialog) LEVEL(2) CAPTION(NaplnÏnÌ v˝platnÌch prouûk˘)   DATA(C_polrvp)
+    TYPE(Dialog) LEVEL(2) CAPTION(SloûenÌ mezd)                  DATA(C_napdmz)
+    TYPE(Dialog) LEVEL(2) CAPTION(N·zvy ¯·dk˘ mzdovÈho listu)    DATA(C_nazrml)
+    TYPE(Dialog) LEVEL(2) CAPTION(N·poËet v˝kaz˘ a potvrzenÌ)    DATA(C_vykazm)
+    TYPE(Dialog) LEVEL(2) CAPTION(N·zvy ¯·dk˘ v˝kaz˘ a potvzenÌ) DATA(C_vykrad)
+    TYPE(Dialog) LEVEL(2) CAPTION(Maska po¯ÌzenÌ)                DATA(C_mzdpol)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION(ObdobÌ)                   DATA(UCT_UCETSYS)
+    TYPE(Dialog) LEVEL(2) CAPTION(Uz·vÏrka ˙ËetnÌho obdobÌ) DATA(PRG002)
+    TYPE(Menu) LEVEL(2) CAPTION(Export dat)
+      TYPE(Menu) LEVEL(3) CAPTION(Export dat na satelit)
+        TYPE(Dialog) LEVEL(4) CAPTION(Z·kladnÌ kmenovÈ ˙daje)        DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(Vöechny kmenovÈ ˙daje a opisy) DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Export p¯Ìkazy k ˙hradÏ)
+        TYPE(Dialog) LEVEL(4) CAPTION(»esk· spo¯itelna a.s.)  DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Export - kontrolnÌ opisy)
+        TYPE(Dialog) LEVEL(4) CAPTION(Opis dat pro »S)  DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Export - vnitropodnikovÈ banky)
+        TYPE(Dialog) LEVEL(4) CAPTION(Vnitro spo¯itelna (dbf tvar) ) DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(Vnitrobanka Derby)             DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(Vnitrobanka Ogamo)             DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Export - statistika)
+        TYPE(Dialog) LEVEL(4) CAPTION(Srovn·nÌ ceny pr·ce ISCP)        DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(InformaËnÌ systÈm o platech ISP) DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Export - penzijnÌ pojiötÏnÌ)
+        TYPE(Dialog) LEVEL(4) CAPTION(»esk· pojiöùovna)         DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(Vojensk˝ otev¯en˝ penzijnÌ fond) DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(»eskomoravsk˝ penzijnÌ fond)     DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(ABN-AMRO penzijnÌ fond)   DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(KB penzijnÌ fond)         DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(PenzijnÌ fond »S)         DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(ING penzijnÌ fond)        DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(Credit Suise Life)        DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Export - kapit·lovÈ pojiötÏnÌ)
+        TYPE(Dialog) LEVEL(4) CAPTION(»esk· pojiöùovna) DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Import dat)
+      TYPE(Menu) LEVEL(3) CAPTION(Import dat ze satelitu)
+        TYPE(Dialog) LEVEL(4) CAPTION(Jen kmenov˝ soubor)         DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(KmenovÈ a pohybovÈ soubory) DATA(Sell)
+        TYPE(Dialog) LEVEL(4) CAPTION(P˘vodnÌ verze mezd)         DATA(Sell)
+
+      TYPE(Menu) LEVEL(3) CAPTION(Import dat z termin·lu)
+        TYPE(Dialog) LEVEL(4) CAPTION(Z termin·lu INTAGRAL)  DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(KontrolnÌ p¯epoËty)
+      TYPE(Dialog) LEVEL(3) CAPTION(RoËnÌ n·poËty za pracovnÌka) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Mzda pracovnÌka za obdobÌ)   DATA(Sell)
+
+    TYPE(Dialog) LEVEL(2) CAPTION(⁄prava dat mezi verzemi) DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(KalkulaËka)              DATA(Sell)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Druhy mezd DMZ)           DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(MzdovÈ tarify hromadnÈ)   DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(NastavenÌ modulu)         DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(Parametry pro zpracov·nÌ) DATA(mzd_prumery_crd)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace MZDY)         DATA(SYS_CONFIG_SCR_MZD)
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Osoby) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracov·nÌ)
+    TYPE(Dialog) LEVEL(2) CAPTION(Adres·¯ osob ...)             DATA(OSB_OSOBY_SCR)
+    TYPE(Report) LEVEL(2) CAPTION(V˝pisy sestav)                DATA(SYS_TISKFORM_CRD,OSB_OSOBY_LST)
+  TYPE(Menu) LEVEL(1) CAPTION(»ÌselnÌky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Tituly p¯ed jmÈnem)           DATA(C_TitPr)
+    TYPE(Dialog) LEVEL(2) CAPTION(Tituly za jmÈnem)             DATA(C_TitZa)
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace OSOBY)            DATA(SYS_CONFIG_SCR_OSB)
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Personalistika) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracov·nÌ)
+    TYPE(Menu) LEVEL(2) CAPTION(KmenovÈ ˙daje o pracovnÌcÌch)
+      TYPE(Dialog) LEVEL(3) CAPTION(OsobnÌ ˙daje o zamÏstnanci)        DATA(PER_kmenmsos_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(MzdovÈ ˙daje o zamÏstnanci)        DATA(PER_kmenmsmo_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(RodinnÌ p¯ÌsluönÌci zamÏstnance)   DATA(PER_kmenmsrp_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)                     DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(VzdÏl·nÌ, ökolenÌ a kursy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dosaûen· vzdÏl·nÌ)      DATA(PER_vzdelani_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(äkolenÌ a kursy)        DATA(PER_skoleni_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)          DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(LÈka¯skÈ prohlÌdky)
+      TYPE(Dialog) LEVEL(3) CAPTION(LÈka¯skÈ prohlÌdky)  DATA(PER_lekprohl_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)       DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(Pl·n ökolenÌ, vzdÏl·v·nÌ a lÈka¯sk˝ch prohlÌdek)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘)          DATA(PER_persitem_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle poloûek pl·nu)       DATA(PER_persitem2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle obdobÌ)              DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle kalend·¯nÌch dn˘)    DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)           DATA()
+
+    TYPE(MEnu) LEVEL(2) CAPTION(UskuteËnÏnÌ ökolenÌ, vzdÏl·v·nÌ a lÈka¯sk˝ch prohlÌdek)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘)         DATA(PER_persitus_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle poloûek pl·nu)      DATA(PER_persitus2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle obdobÌ)             DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle kalend·¯nÌch dn˘)   DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)          DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(äkolenÌ, vzdÏl·nÌ a lÈka¯skÈ prohlÌdky)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovnÌk˘)         DATA(PER_persitvs_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle poloûek pl·nu)      DATA(PER_persitvs2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle obdobÌ)             DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle kalend·¯nÌch dn˘)   DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(V˝pisy sestav)          DATA()
+
+  TYPE(Menu) LEVEL(1) CAPTION(»ÌselnÌky)
+    TYPE(Dialog) LEVEL(2) CAPTION(PracovnÌ vztah)              DATA(C_PRACVZ)
+    TYPE(Dialog) LEVEL(2) CAPTION(UkonËenÌ pracovnÌho vztahu)  DATA(C_UKONPV)
+    TYPE(Dialog) LEVEL(2) CAPTION(ZamÏstnaneck˝ vztah)         DATA(C_ZAMEVZ)
+    TYPE(Dialog) LEVEL(2) CAPTION(MimopracovnÌ vztah)          DATA(C_MIMPRV)
+    TYPE(Dialog) LEVEL(2) CAPTION(PracovnÌ za¯azenÌ)           DATA(C_PRACZA)
+    TYPE(Dialog) LEVEL(2) CAPTION(Funkce pracovnÌka)           DATA(C_FUNCPR)
+    TYPE(Dialog) LEVEL(2) CAPTION(D˘chody)                     DATA(C_DUCHOD)
+    TYPE(Dialog) LEVEL(2) CAPTION(Klasifikace zamÏstnanÌ)      DATA(C_KLAZAM)
+    TYPE(Dialog) LEVEL(2) CAPTION(Rodinn˝ vztah)               DATA(C_RODSTA)
+    TYPE(Dialog) LEVEL(2) CAPTION(St·tnÌ p¯Ìsluönost)          DATA(C_STATPR)
+    TYPE(Dialog) LEVEL(2) CAPTION(N·rodnost)                   DATA(C_NAROD)
+    TYPE(Dialog) LEVEL(2) CAPTION(VzdÏl·nÌ)                    DATA(C_VZDEL)
+    TYPE(Dialog) LEVEL(2) CAPTION(VzdÏl·nÌ - ukonËenÌ)         DATA(C_VZDELUK)
+    TYPE(Dialog) LEVEL(2) CAPTION(äkolenÌ)                     DATA(C_SKOLEN)
+    TYPE(Dialog) LEVEL(2) CAPTION(äkolenÌ - ukonËenÌ)          DATA(C_SKOLUK)
+    TYPE(Dialog) LEVEL(2) CAPTION(äkolitelÈ)                   DATA(C_SKOLIT)
+    TYPE(Dialog) LEVEL(2) CAPTION(LÈka¯skÈ prohlÌdky)          DATA(C_LEKPRO)
+    TYPE(Dialog) LEVEL(2) CAPTION(LÈka¯i)                      DATA(C_LEKARI)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION(NastavenÌ modulu)  DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(KalkulaËka)        DATA(Sell)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace PERSONALISTIKA)  DATA(SYS_CONFIG_SCR_PER)
+
+
+TYPE(Dialog) LEVEL(0) CAPTION(--------------------------) DATA()
+
+
+TYPE(Menu) LEVEL(0) CAPTION(»ÌselnÌky)
+  TYPE(Menu)   LEVEL(1) CAPTION(PodnikovÈ)
+    TYPE(Dialog) LEVEL(2) CAPTION(»ÌselnÌk DPH)                DATA(C_DPH)
+    TYPE(Dialog) LEVEL(2) CAPTION(»ÌselnÌk PS»)                DATA(C_PSC)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy pohyb˘)                 DATA(C_TYPPOH)
+    TYPE(Dialog) LEVEL(2) CAPTION(KÛdy zaokrouhlenÌ)           DATA(C_ZAOKR)
+    TYPE(Dialog) LEVEL(2) CAPTION(MÏrnÈ jednotky)              DATA(C_JEDNOT)
+    TYPE(Dialog) LEVEL(2) CAPTION(MÏny)                        DATA(C_MENY)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy SKP)                    DATA(C_TYPSKP)
+    TYPE(Dialog) LEVEL(2) CAPTION(VnitropodnikovÈ ˙Ëty)        DATA()
+    TYPE(Dialog) LEVEL(2) CAPTION(Vazba firma - st¯edisko)     DATA()
+    TYPE(Dialog) LEVEL(2) CAPTION(Vazba firma - stroj)         DATA()
+    TYPE(Dialog) LEVEL(2) CAPTION(ZamÏstnanci)                 DATA(C_ZAMEST)
+    TYPE(Dialog) LEVEL(2) CAPTION(ZboûÌ celnÌho sazebnÌku)     DATA(C_CELSAZ)
+
+  TYPE(Menu)   LEVEL(1) CAPTION(N·kladovÈ)
+    TYPE(Dialog) LEVEL(2) CAPTION(N·kladov· struktura)  DATA(C_NAKLST)
+    TYPE(Dialog) LEVEL(2) CAPTION( - 1 St¯edisko)       DATA(C_NAZPOL1)
+    TYPE(Dialog) LEVEL(2) CAPTION( - 2 V˝robek)         DATA(C_NAZPOL2)
+    TYPE(Dialog) LEVEL(2) CAPTION( - 3 Zak·zka)         DATA(C_NAZPOL3)
+    TYPE(Dialog) LEVEL(2) CAPTION( - 4 V˝robnÌ mÌsto)   DATA(C_NAZPOL4)
+    TYPE(Dialog) LEVEL(2) CAPTION( - 5 Stroj)           DATA(C_NAZPOL5)
+    TYPE(Dialog) LEVEL(2) CAPTION( - 3 V˝robnÌ operace) DATA(C_NAZPOL6)
+
+  TYPE(Menu)   LEVEL(1) CAPTION(SystÈmovÈ)
+    TYPE(Dialog) LEVEL(2) CAPTION(⁄lohy)                DATA(C_TASK)
+    TYPE(Dialog) LEVEL(2) CAPTION(Typy doklad˘)         DATA(C_TYPDOK)
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Servis)
+  TYPE(Dialog) LEVEL(1) CAPTION(TiskovÈ v˝stupy)        DATA(SYS_forms_IN)
+  TYPE(Dialog) LEVEL(1) CAPTION(UûivatelskÈ filtry)     DATA(SYS_filtrs_IN)
+  TYPE(Dialog) LEVEL(1) CAPTION(Evidence p¯ipomÌnek)    DATA()
+
+
+TYPE(Menu) LEVEL(0) CAPTION(Konfigurace)
+  TYPE(Dialog) LEVEL(1) CAPTION(UûivatelÈ systÈmu)             DATA(SYS_USERS_SCR)
+  TYPE(Dialog) LEVEL(1) CAPTION(Konfigurace ASYSTEM++)         DATA(SYS_CONFIG_CRD)
+  TYPE(Dialog) LEVEL(1) CAPTION(Doklady v systÈmu)             DATA(SYS_doklady_SCR)
+  TYPE(Dialog) LEVEL(1) CAPTION(Spr·va licenËnÌho souboru)     DATA(SYS_licence_SCR)

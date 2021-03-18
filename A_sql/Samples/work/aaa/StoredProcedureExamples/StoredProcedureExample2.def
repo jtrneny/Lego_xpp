@@ -1,0 +1,8 @@
+LIBRARY       Example2StoredProc
+DESCRIPTION   'An example DLL that contains stored procedures for use with the Advantage Database Server'
+
+EXPORTS
+   Shutdown                     @1
+   Startup                      @2
+   Example2StoredProc           @3
+

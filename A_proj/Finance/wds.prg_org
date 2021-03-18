@@ -1,0 +1,511 @@
+#include "common.ch"
+#include "drg.ch"
+#include "appevent.ch"
+#include "gra.ch"
+#include "CLASS.CH"
+#include "dmlb.ch"
+#include "xbp.ch"
+#include "font.ch"
+#include "dbstruct.ch"
+#include "Drgres.ch"
+
+#include "ads.ch"
+#include "adsdbe.ch"
+*
+// #include "Asystem++.ch"
+#include "..\Asystem++\Asystem++.ch"
+
+
+/*
+  wds_cenzboz, wds_dodlstit, wds_objitem, wds_vyrzak
+
+struktura souètového pole
+  { RecNo, nnozDok, nmnoz_fakv, nmnoz_dlv, nmnoz_vyrz }
+*/
+
+
+
+CLASS WDS
+  exported:
+  var     wds_key, wds_nseconds
+  var     wds_cenzboz,  wds_dodlstit,  wds_objitem,  wds_vyrzak
+  var     bwds_cenzboz, bwds_dodlstit, bwds_objitem, bwds_vyrzak
+  *
+  var      wds_mnozZdok
+  var     cwds_popUp
+  var     awds_filter
+
+  method  wds_connect, wsd_watch_mnoz, wds_watch_time
+  method  wds_postDelete, wds_postSave, wds_disconnect
+
+
+   * virtuální sloupce BRO pro CLASS FIN_fakturovat_z_SEL
+  inline access assign method wds_cenzboz_kDis() var wds_cenzboz_kDis
+    local pa := ::wds_cenzboz, recNo := cenzboz->(recNo()), nin, nval := 0
+
+    if( nin := ascan( pa, {|x| x[1] = recNo} )) <> 0
+      nval := pa[ nin, 2]
+    endif
+    return cenzboz->nmnozDzbo -nval
+
+  inline access assign method wsd_dodlstit_kDis() var wsd_dodlstit_kDis
+    local pa := ::wds_dodlstit, recNo := dodlstit->(recNo()), nin, nval := 0
+
+    if( nin := ascan( pa, {|x| x[1] = recNo} )) <> 0
+      nval := pa[ nin, ::nwds_posSum]
+    endif
+    return eval( ::bwds_dodlstit ) -nval
+
+  inline access assign method wsd_objitem_kDis() var wsd_objitem_kDis
+    local pa := ::wds_objitem, recNo := objitem->(recNo()), nin, nval := 0
+
+    if( nin := ascan( pa, {|x| x[1] = recNo} )) <> 0
+      nval := pa[ nin, ::nwds_posSum]
+    endif
+    return eval( ::bwds_objitem ) -nval
+
+  inline access assign method wsd_vyrzakit_kDis() var wsd_vyrzakit_kDis
+    local pa := ::wds_vyrzak, recNo := vyrzakit->(recNo()), nin, nval := 0
+
+    if( nin := ascan( pa, {|x| x[1] = recNo} )) <> 0
+      nval := pa[ nin, ::nwds_posSum]
+    endif
+    return eval( ::bwds_vyrzak ) -nval
+
+
+hidden:
+  var     dm, hd_file, it_file
+  var     afile_m                 // hlavièky souborù které kontroluje WDS
+  var     afile_iv                // vstupní soubory do poožek dokladù
+  var     nwds_posSum             // pozice pro souètové hodnoty nmnoz_
+
+  var     alock_hd, alock_it
+
+  var     cisSklad , sklPol
+  var     cisloDl  , countdl
+  var     cislObInt, cislPolob
+  var     cisZakazi
+
+ENDCLASS
+
+
+*
+** wds - pøipojíme uživatele
+method  wds:wds_connect(parent)
+  local  bSaveErrorBlock
+  local  d_ext, i_ext, m_ext
+  local  cext := ''           // extenze pro nmnoz_ + FAKV - DLV  -  EXPV
+  *
+  ** nìco si nabereme z parenta a to nemusím pøehazovat až sem
+  ::dm            := parent:dm
+  ::hd_file       := lower( parent:hd_file )
+  ::it_file       := lower( parent:it_file )
+
+  ::afile_m       := {'fakvyshdw', 'dodlsthdw', 'explsthdw' }
+  ::afile_iv      := { 'cenzboz' , 'dodlstit' , 'objitem', 'vyrzakit' }
+
+  ::awds_filter   := { '', ;
+                       'nstav_? = 0 .or. nstav_? = 1' , ;
+                       'nstav_? = 2'                  , ;
+                       'nstav_? = 1'                    }
+
+  do case
+  case( ::it_file = 'fakvysitw' )
+    ::cwds_popUp  := 'Kompletní seznam ,Nevyfakturované, Vyfakturované, Èásteènì fakturované'
+    ::nwds_posSum := 3
+    cext          := 'FAKV'
+
+  case( ::it_file = 'dodlstitw' )
+    ::cwds_popUp  := 'Kompletní seznam ,Nedodané       , Dodané       , Èásteène dodané'
+    ::nwds_posSum := 4
+    cext          := 'DLV'
+
+  case( ::it_file = 'explstitw' )
+    ::cwds_popUp  := 'Kompletní seznam ,Nevyexpedované , Vyexpedované , Èásteène expedované'
+    ::nwds_posSum := 5
+    cext          := 'EXLV'
+  endCase
+
+  ::awds_filter   := { '', ;
+                       ' (nstav_' +cext +' = 0 .or. nstav_' +cext +' = 1)' , ;
+                       ' (nstav_' +cext +' = 2)'                           , ;
+                       ' (nstav_' +cext +' = 1)'                             }
+  ::alock_it      := {}
+
+  * cenzboz
+  ::cisSklad      := parent:cisSklad
+  ::sklPol        := parent:sklPol
+
+  *dodlstit
+  ::cisloDl       := parent:cisloDl
+  ::countdl       := parent:countdl
+
+  * objitem
+  ::cislObInt     := parent:cislObInt
+  ::cislPolob     := parent:cislPolob
+
+  * vyrzakit
+  ::cisZakazi     := parent:cisZakazi
+  *
+  **
+  ::wds_key       := upper(::hd_file) +upper(usrName) +allTrim(str(GetCurrentProcessID())) +allTrim(str(threadID()))
+
+  ::wds_cenzboz   := {}
+  ::bwds_cenzboz  := COMPILE( 'cenzboz->nmnozDzbo' )
+
+  ::wds_dodlstit  := {}
+  ::bwds_dodlstit := COMPILE( 'dodlstit->nfaktMnoz  -dodlstit->nmnoz_' +cext )
+
+  ::wds_objitem   := {}
+  ::bwds_objitem  := COMPILE( 'objitem->nmnozObOdb  -objitem->nmnoz_'  +cext )
+
+  ::wds_vyrzak    := {}
+  ::bwds_vyrzak   := COMPILE( 'vyrzakit->nmnozPlano -vyrzakit->nmnoz_' +cext )
+
+
+  d_ext := DbeInfo( COMPONENT_DATA , DBE_EXTENSION       )
+  i_ext := DbeInfo( COMPONENT_ORDER, ADSDBE_INDEX_EXT    )
+  m_ext := DbeInfo( COMPONENT_DATA , ADSDBE_MEMOFILE_EXT )
+
+  bSaveErrorBlock := ErrorBlock( {|e| Break(e)} )
+
+  begin sequence
+    *
+    ** pokud wds otevøu exclusive - jsem tam sám
+    *
+    drgDBMS:open('wds'   ,.t.)
+    drgDBMS:open('wds_hd',.t.)
+    drgDBMS:open('wds_it',.t.)
+
+    wds   ->(dbeval( {|| if(wds   ->(sx_rlock()), wds   ->(dbdelete()), nil) } ))
+    wds_hd->(dbeval( {|| if(wds_hd->(sx_rlock()), wds_hd->(dbdelete()), nil) } ))
+    wds_it->(dbeval( {|| if(wds_it->(sx_rlock()), wds_it->(dbdelete()), nil) } ))
+
+    wds   ->(dbCloseArea())
+    wds_hd->(dbCloseArea())
+    wds_it->(dbCloseArea())
+
+  recover using oError
+  end sequence
+
+  ErrorBlock(bSaveErrorBlock)
+
+  drgDBMS:open('wds'   )
+  drgDBMS:open('wds_hd')
+  drgDBMS:open('wds_it')
+
+  *
+  ** vazba pro Dl s automatickým vyskladnìním
+  if(select('typdokl') = 0, drgDBMS:open('typdokl'), nil)
+
+  if wds->(eof())
+    wds->(dbappend())
+    *
+    wds->nusers   := 1
+    wds->nseconds := seconds()
+  else
+    wds->(sx_rlock())
+    wds->nusers := wds->nusers +1
+  endif
+
+  if .not.  wds_hd->(dbseek(::wds_key))
+    wds_hd->(dbappend())
+
+    wds_hd->wds_key := ::wds_key
+    wds_hd->(dbcommit())
+  endif
+
+  wds_it->(dbsetScope(SCOPE_BOTH, ::wds_key))
+  if .not. wds_it->(eof())
+    wds_it->(dbgotop())
+    wds_it->(dbeval( {|| if(wds_it->(sx_rlock()), wds_it->(dbdelete()), nil) } ))
+    wds_it->(dbunlock())
+  endif
+  wds_it->(dbclearScope())
+
+  wds->(dbunlock(),dbcommit())
+
+  ::wds_nseconds := 0
+  ::wds_watch_time()
+
+  ::wds_nseconds := wds->nseconds
+return self
+
+
+* wds zkontrolujeme množství
+method wds:wsd_watch_mnoz(lnewRec, intCount)
+  local  ok := .t., lwatch_mnoz := .f.
+  local  cky, pky  := upper((::hd_file)->culoha) +upper((::hd_file)->ctypdoklad)
+  *
+  local  cfile_iv  := allTrim(::dm:get(::it_file + '->cfile_iv' ))
+  local  nrecs_iv  := ::dm:get(::it_file + '->nrecs_iv' )
+  local  faktMnoz  := ::dm:get(::it_file + '->nfaktMnoz')
+  *
+  local  faktm_org := 0, mnozZdok, lnew_wds_it := .f., mnozReODB
+
+  * kontrola !!! pøed !!! ukádání záznamu na množství
+  * metody na pro_fakdol správnì nastaví vazby na fakturaèní soubory      !!!!
+  * pokud je ok zmodifikuje wds_it + wds->nseconds ten vyvolá kontrolní pøepoèet
+
+  if ascan(::afile_iv,cfile_iv) = 0 .and. ::hd_file $ ::afile_m
+    return .t.
+
+  else
+    ::wds_mnozZdok := 0
+               cky := padr(::wds_key,40)       + ;
+                      padr(upper(cfile_iv),10) + ;
+                      strZero(nrecs_iv,10)     + ;
+                      strZero(intCount,5)
+
+    if lnewRec
+      * nová položka dokladu
+      faktm_org := 0
+    else
+      if (::it_file)->nfaktm_org = 0
+        * opravuje novou položku dokladu
+        faktm_org := (::it_file)->nfaktMnoz
+      else
+        * opravuje položku uloženou v originálu
+        faktm_org := (::it_file)->nfaktm_org
+      endif
+    endif
+
+
+    do case
+    case( cfile_iv = 'cenzboz' )
+      *
+      ** zmìna vazby pro DL s automatickým vyskladnìním
+      if lower( ::hd_file ) = 'dodlsthdw'
+        typdokl ->(dbseek( pky,,'TYPDOKL02'))
+        lwatch_mnoz := .not. empty(typdokl->mmacro)
+      else
+        pky += upper((::hd_file)->ctyppohybu)
+        c_typpoh ->(dbseek(pky,,'C_TYPPOH05'))
+        lwatch_mnoz := .not. empty(c_typpoh->csubpohyb)
+      endif
+
+      if cenzboz->cpolcen = 'C' .and. lwatch_mnoz
+        if cenzboz->ctypSklCen = 'PRU'
+          ok := (::wds_cenzboz_kDis  +faktm_org >= faktMnoz)
+        else
+          return .t.
+        endif
+      else
+        return .t.
+      endif
+
+    case( cfile_iv = 'dodlstit')
+      mnozZdok := ::wsd_dodlstit_kDis +faktm_org
+            ok := (mnozZdok >= faktMnoz)
+
+    case( cfile_iv = 'objitem' )
+      mnozZdok  := ::wsd_objitem_kDis +faktm_org
+      mnozReODB := objitem->nmnozReODB
+
+      if upper(cenzboz->cpolcen) = 'C'
+
+        * možnost fakturovat do sklDip monžství
+        if cenzboz->nnadmnozZd = 1
+          ok := (::wds_cenzboz_kDis +faktm_org >= faktMnoz)
+        else
+          ok := (mnozZdok >= faktMnoz .and. (::wds_cenzboz_kDis +mnozReODB +faktm_org) >= faktMnoz)
+        endif
+      else
+        ok := (mnozZdok >= faktMnoz)
+      endif
+
+    case( cfile_iv = 'vyrzakit')
+      mnozZdok := ::wsd_vyrzakit_kDis +faktm_org
+            ok := (mnozZdok >= faktMnoz)
+    endcase
+
+    * ok zapíšem nebo pøepíšeme wds_it
+    if ok
+      if cfile_iv <> 'cenzboz'
+        ::wds_mnozZdok := min(mnozZdok,faktMnoz)
+        faktMnoz       := ::wds_mnozZdok
+      endif
+
+      lnew_wds_it := .f.
+
+      if .not. wds_it->(dbseek(cky,,'WDS_IT_2'))
+        wds_it->(dbappend())
+
+        lnew_wds_it := .t.
+        aadd(::alock_it, wds_it->(recNo()))
+
+        wds_it->wds_key   := wds_hd->wds_key
+        wds_it->cfile_iv  := cfile_iv
+        wds_it->nrecs_iv  := nrecs_iv
+        wds_it->cfile_ov  := ::it_file
+        wds_it->nintCount := intCount
+        *
+        wds_it->(dbcommit())
+      endif
+
+      wds_it->(sx_rLock(::alock_it))
+      wds_it->nval := faktMnoz
+
+      * fakturuje z objitem s vazbou na cenzboz
+      if cfile_iv = 'objitem' .and. upper(cenzboz->cpolcen) = 'C'
+        cfile_iv := 'cenzboz'
+        nrecs_iv := cenzboz->(recNo())
+
+        cky := padr(::wds_key,40) +padr(upper(cfile_iv),10) +strZero(nrecs_iv,10)
+
+        lnew_wds_it := .f.
+
+        if .not. wds_it->(dbseek(cky,,'WDS_IT_2'))
+          wds_it->(dbappend())
+
+          lnew_wds_it := .t.
+          aadd(::alock_it, wds_it->(recNo()))
+
+          wds_it->wds_key   := wds_hd->wds_key
+          wds_it->cfile_iv  := cfile_iv
+          wds_it->nrecs_iv  := nrecs_iv
+          wds_it->cfile_ov  := ::it_file
+          wds_it->nintCount := intCount
+        endif
+
+        wds_it->(sx_rLock(::alock_it))
+        wds_it->nval := faktMnoz
+      endif
+
+      *
+      wds_it->(dbcommit())
+
+      if wds->(sx_rlock())
+        wds->nseconds := seconds()
+
+        wds->(dbunlock(), dbcommit())
+      endif
+    endif
+  endif
+return ok
+
+
+* wds - zkontrolujeme zmìnu wds->nseconds
+method wds:wds_watch_time()
+  local  cfile_iv, nrecs_iv, cfile_ov
+
+  wds->(dbskip(0))
+
+  if ::wds_nseconds <> wds->nseconds
+    wds_it->(dbgotop())
+    *
+    ::wds_cenzboz  := {}
+    ::wds_dodlstit := {}
+    ::wds_objitem  := {}
+    ::wds_vyrzak   := {}
+
+    do while .not. wds_it->(eof())
+      cfile_iv := allTrim(wds_it->cfile_iv)
+      nrecs_iv := wds_it->nrecs_iv
+      cfile_ov := allTrim(wds_it->cfile_ov)
+
+      if cfile_ov = ::it_file
+
+        do case
+        case( cfile_iv = 'cenzboz' )  ;  pa := ::wds_cenzboz
+        case( cfile_iv = 'dodlstit')  ;  pa := ::wds_dodlstit
+        case( cfile_iv = 'objitem' )  ;  pa := ::wds_objitem
+        case( cfile_iv = 'vyrzakit')  ;  pa := ::wds_vyrzak
+        endcase
+
+        if (npos := ascan(pa, {|x| x[1] = nrecs_iv})) = 0
+          //                                 FAKV  DLV  EXPV
+          aadd( pa, { nrecs_iv, wds_it->nval,   0,   0,    0 })
+          if( ::nwds_posSum <> 0, atail( pa )[ ::nwds_posSum ] := wds_it->nval, nil )
+        else
+                                  pa[npos,             2] += wds_it->nval
+          if( ::nwds_posSum <> 0, pa[npos, ::nwds_posSum] += wds_it->nval, nil )
+        endif
+      endif
+
+      wds_it->(dbskip())
+    enddo
+  endif
+return self
+
+
+* wds -  ruší novou položku, mùžeme uvolnit množství
+method wds:wds_postDelete()
+  local cky
+  *
+  local  faktMnoz := (::it_file)->nfaktMnoz, pa := ::alock_it, npos
+
+  if (::it_file)->_delrec = '9' .and. (::it_file)->_nrecor = 0
+    cky := padr(::wds_key,40)               + ;
+           upper((::it_file)->cfile_iv)     + ;
+           strZero((::it_file)->nrecs_iv,10)+ ;
+           strZero((::it_file)->nintCount,5)
+
+    if wds_it->(dbseek(cky,,'WDS_IT_2'))
+
+      wds_it->nval := max( wds_it->nval -faktMnoz, 0)
+      if wds_it->nval = 0
+        if( npos := ascan(pa, wds_it->(recNo()))) <> 0
+          aRemove(pa, npos)
+        endif
+        wds_it->(dbdelete())
+      endif
+    endif
+    *
+    wds_it->(dbcommit())
+
+    if wds->(sx_rlock())
+       wds->nseconds := seconds()
+       wds->(dbunlock(), dbcommit())
+    endif
+  endif
+return
+
+
+* wds - po uložení dokladu vyprázdníme wds_it pokud pokraèuje v kruhu
+method wds:wds_postSave()
+
+  if wds_hd->(dbseek(::wds_key))
+    wds_it->(dbsetScope(SCOPE_BOTH, ::wds_key), dbgoTop() )
+
+    if .not. wds_it->(eof())
+       wds_it->(dbgotop())
+       wds_it->(dbeval( {|| if(wds_it->(sx_rlock()), wds_it->(dbdelete()), nil) } ))
+       wds_it->(dbunlock())
+     endif
+     wds_it->(dbclearScope())
+  endif
+
+  wds_it->(dbcommit())
+
+  if wds->(sx_rlock())
+    wds->nseconds := seconds()
+    wds->(dbunlock(), dbcommit())
+  endif
+return self
+
+
+* wds - odpojíme uživatele
+method wds:wds_disconnect()
+
+  if wds->(sx_rlock())
+    wds->nusers   := max(wds->nusers -1, 0)
+    wds->nseconds := seconds()
+
+    if wds_hd->(dbseek(::wds_key))
+      if( wds_hd->(sx_rLock()), wds_hd->(dbDelete()), nil )
+    endif
+
+    wds_it->(dbsetScope(SCOPE_BOTH, ::wds_key))
+    if .not. wds_it->(eof())
+      wds_it->(dbgotop())
+      wds_it->(dbeval( {|| if(wds_it->(sx_rlock()), wds_it->(dbdelete()), nil) } ))
+      wds_it->(dbunlock())
+    endif
+    wds_it->(dbclearScope())
+
+  endif
+
+  wds->(dbunlock(),dbcommit())
+   wds_hd->(dbunlock())
+return self

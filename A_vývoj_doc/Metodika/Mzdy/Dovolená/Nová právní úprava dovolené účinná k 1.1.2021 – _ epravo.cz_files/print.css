@@ -1,0 +1,79 @@
+#right,
+#footer,
+.top-menu,
+#main-submenu,
+.banner,
+.articles-related,
+.article .social,
+.article-thumbnail,
+.article-disclaimer,
+.article-footer-misc,
+#search-container,
+#skyscraper-l,
+#skyscraper-r,
+#main-banner,
+#sendMail,
+.se-webform,
+.back-to-top {
+	display: none !important;
+}
+
+#layout a[href*="bbelements.com"],
+iframe[src*="affilbox.cz"] {
+	display: none !important;
+}
+
+body {
+	background: #fff !important;
+}
+
+@media (max-width: 1000px) {
+	body {
+		background: #fff !important;
+	}
+}
+
+a[href]:after {
+	content: none !important;
+}
+
+.article.article-detail, .page-content {
+	font-size: 12px !important;
+}
+
+#header {
+	margin: 0 !important;
+	border-radius: 0 !important;
+}
+
+.header-first {
+	margin-bottom: 0 !important;
+}
+
+#page {
+	padding-top: 10px !important;
+}
+
+#left {
+	width: 100% !important;
+	padding-bottom: 0 !important;
+}
+
+.wrap {
+	width: 100% !important;
+	max-width: none !important;
+}
+
+.article {
+	margin-bottom: 10px !important;
+}
+
+.article h1 {
+	font-size: 19px !important;
+	line-height: 24px !important;
+	margin: 5px 0 15px !important;
+}
+
+.article .article-footer, .video-footer {
+	padding-bottom: 0 !important;
+}

@@ -1,0 +1,1 @@
+    update c_dokume SET cuniqidrec = '110401'+'c_dokume'+ REPEAT( '0', 10-LENGTH(Ltrim(CAST((SELECT test FROM __new) as SQL_CHAR)))) WHERE test = (SELECT test FROM __new);

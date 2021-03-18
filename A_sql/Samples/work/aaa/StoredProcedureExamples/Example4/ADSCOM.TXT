@@ -1,0 +1,395 @@
+     0.649   WIN32     32-bit Windows comm dll
+     1.627   WSCOMM32  Winsock 32-bit dll
+     1.970   ____axCommInit____
+     4.241   ____axCommInit____SUCCESS
+     6.675   ____axConnect60____
+     7.035   	pucServerName : BRETTD
+     7.253   Connection Type : 2	Hex: 0x00000002
+     7.470   	!usFoundViaWS
+     7.694   ____WSFindAdvantage____
+     7.917   ____OpenAndBindSocket____
+   169.858   ____OpenAndBindSocket____SUCCESS
+   170.274   OpenAndBindSocket SUCCEEDED
+   170.619   ____GetRemoteAddress____
+   266.156   ____MailSlotDiscoveryThread____
+   267.415   About to call WriteFile on the mailslot
+   268.179   WriteFile on mailslot SUCCEEDED
+   316.367   ____MulticastDiscoveryThread____
+   325.241   	sendto (Multicast) SUCCEEDED
+   325.707   	recvfrom (Multicast) FAILED
+   326.228   	ReadFile Succeeded
+   328.580   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+   329.280   ____IPX is ACTIVE___
+   329.658   ____DetermineWhichAddress____found IPX addr
+   330.047   ____MailSlotDiscoveryThread_____SUCCESS
+   426.305   ____SAPDiscoveryThread____
+   427.219   	sendto (SAP) SUCCEEDED
+   427.615   SAPDiscoveryThread____CANCELED
+   477.174   	recvfrom (Multicast) SUCCEEDED
+   483.375   Discovery thread WINNER is MailSlot
+   483.763   ____GetRemoteAddress____SUCCESS
+   483.992   	GetRemoteAddress FAILED or ucFoundAdsAddr : 0	Hex: 0x00000000
+   484.380   	sa_family : 6	Hex: 0x00000006
+   484.632   	usIsInternet : 0	Hex: 0x00000000
+   484.851   ____OpenAndBindSocket____
+   485.403   ____OpenAndBindSocket____SUCCESS
+   485.674   AdjustReceiveTimeout : 2000	Hex: 0x000007D0
+   486.101   ____ConnectWithNLM____
+   486.383   ____axSystemReq____ : 20	Hex: 0x00000014
+   486.654   Send packet from axSystemReq
+   486.986   Change state to Waiting for reply
+   488.997   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+   489.635   ____IPX is ACTIVE___
+   490.007   ____DetermineWhichAddress____found IPX addr
+   490.359   ____MulticastDiscoveryThread_____SUCCESS
+   549.238   WSRecvPacket returned : 0	Hex: 0x00000000
+   550.190   	usReplyType : 0	Hex: 0x00000000
+   550.583   Valid checksum
+   550.815   Valid sequence number
+   551.043   LOGIN_ACK_TYPE
+   551.307   	UserID : 1	Hex: 0x00000001
+   551.543   	before conversion aucSemFileName : 
+   551.982   	after pucSemFileName : 
+   552.254   ____ConnectWithNLM____END : 0	Hex: 0x00000000
+   552.528   	ConnectWithNLM SUCCEEDED
+   552.756   AdjustReceiveTimeout : 360	Hex: 0x00000168
+   553.017   NegotiatePacketSize
+   555.119   ____axConnect60____END : 0	Hex: 0x00000000
+  1009.172   ____axSystemReq____ : 120	Hex: 0x00000078
+  1009.653   Send packet from axSystemReq
+  1009.986   Change state to Waiting for reply
+  1010.438   WSRecvPacket returned : 0	Hex: 0x00000000
+  1010.723   	usReplyType : 0	Hex: 0x00000000
+  1010.958   Valid checksum
+  1011.215   Valid sequence number
+  1011.442   DISCONN_ACK_TYPE 
+  1019.372   ____axConnect60____
+  1019.757   	pucServerName : BRETTD
+  1020.010   Connection Type : 2	Hex: 0x00000002
+  1020.244   	!usFoundViaWS
+  1020.470   ____WSFindAdvantage____
+  1020.698   ____OpenAndBindSocket____
+  1021.288   ____OpenAndBindSocket____SUCCESS
+  1021.575   OpenAndBindSocket SUCCEEDED
+  1021.868   ____GetRemoteAddress____
+  1067.423   ____MailSlotDiscoveryThread____
+  1068.531   About to call WriteFile on the mailslot
+  1069.086   WriteFile on mailslot SUCCEEDED
+  1117.425   ____MulticastDiscoveryThread____
+  1118.618   	sendto (Multicast) SUCCEEDED
+  1118.997   	recvfrom (Multicast) FAILED
+  1119.672   	ReadFile Succeeded
+  1167.438   ____SAPDiscoveryThread____
+  1168.368   	sendto (SAP) SUCCEEDED
+  1168.801   	recvfrom (SAP) Succeeded
+  1169.057   	SAP returned valid nearest server
+  1169.309   ____SAPDiscoveryThread_____SUCCESS
+  1217.248   Discovery thread WINNER is IPX SAP
+  1217.688   ____GetRemoteAddress____SUCCESS
+  1218.063   Checking Bindery On Machine with IPX Address: 2f-dd-bf-76,00,00,00,00,00,01
+  1218.318   ____SendNCPRequest____
+  1218.648   recv succeeded, but had bad data -- is it a SAP_NEAREST_SERVICE_RESPONSE
+  1219.582   	recv SAP returned valid nearest server
+  1219.949   recv succeeded, but had bad data -- is it a SAP_NEAREST_SERVICE_RESPONSE
+  1220.195   	recv SAP returned valid nearest server
+  1221.790   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  1222.505   ____IPX is ACTIVE___
+  1222.886   ____DetermineWhichAddress____found IPX addr
+  1223.245   ____MailSlotDiscoveryThread_____SUCCESS
+  1267.346   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1267.788   	SendNCPRequest to find ads server in bindery : ADS_BRETTD
+  1268.047   ____SendNCPRequest____
+  1276.390   	recvfrom (Multicast) SUCCEEDED
+  1277.107   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1277.435   	second SendNCPRequest to find ads server in bindery : ADS_BRETTD_NT
+  1277.672   ____SendNCPRequest____
+  1284.454   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  1285.091   ____IPX is ACTIVE___
+  1285.485   ____DetermineWhichAddress____found IPX addr
+  1285.866   ____MulticastDiscoveryThread_____SUCCESS
+  1327.446   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1327.904   SendNCPRequest 2 got a successful completion code
+  1328.165   ____SendNCPRequest____
+  1337.167   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1337.506   SendNCPRequest 3 got successful completion code
+  1337.756   	Advantage address was found
+  1338.002   ____SendNCPRequest____
+  1347.173   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1347.505   ____SendNCPRequest____
+  1357.238   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1357.612   ____SendNCPRequest____
+  1367.277   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  1367.781   ____WSFindAdvantage____SUCCEEDED
+  1368.063   	sa_family : 6	Hex: 0x00000006
+  1368.313   	usIsInternet : 0	Hex: 0x00000000
+  1368.557   ____OpenAndBindSocket____
+  1369.136   ____OpenAndBindSocket____SUCCESS
+  1369.446   AdjustReceiveTimeout : 2000	Hex: 0x000007D0
+  1369.887   	PR_CONNECT_DATA->aucFileName : \\brettd\d\StoredProcExample.ADD
+  1370.160   	PR_CONNECT_DATA->aucUserName : ADSSYS
+  1370.576   ____ConnectWithNLM____
+  1370.832   ____axSystemReq____ : 20	Hex: 0x00000014
+  1371.117   Send packet from axSystemReq
+  1371.476   Change state to Waiting for reply
+  1677.218   WSRecvPacket returned : 0	Hex: 0x00000000
+  1677.776   	usReplyType : 0	Hex: 0x00000000
+  1678.053   Valid checksum
+  1678.299   Valid sequence number
+  1678.535   LOGIN_ACK_TYPE
+  1678.844   	UserID : 1	Hex: 0x00000001
+  1679.093   	before conversion aucSemFileName : 
+  1679.333   	after pucSemFileName : 
+  1679.568   ____ConnectWithNLM____END : 0	Hex: 0x00000000
+  1679.811   	ConnectWithNLM SUCCEEDED
+  1680.057   AdjustReceiveTimeout : 1866	Hex: 0x0000074A
+  1691.230   NegotiatePacketSize
+  1693.686   ____axConnect60____END : 0	Hex: 0x00000000
+  1704.350   ____axSystemReq____ : 120	Hex: 0x00000078
+  1704.880   Send packet from axSystemReq
+  1705.244   Change state to Waiting for reply
+  1705.736   WSRecvPacket returned : 0	Hex: 0x00000000
+  1706.038   	usReplyType : 0	Hex: 0x00000000
+  1706.306   Valid checksum
+  1706.581   Valid sequence number
+  1706.824   DISCONN_ACK_TYPE 
+  1710.436   ____axConnect60____
+  1710.845   	pucServerName : BRETTD
+  1711.096   Connection Type : 2	Hex: 0x00000002
+  1711.347   	!usFoundViaWS
+  1711.586   ____WSFindAdvantage____
+  1711.829   ____OpenAndBindSocket____
+  1712.441   ____OpenAndBindSocket____SUCCESS
+  1712.739   OpenAndBindSocket SUCCEEDED
+  1713.048   ____GetRemoteAddress____
+  1768.562   ____MailSlotDiscoveryThread____
+  1769.764   About to call WriteFile on the mailslot
+  1770.338   WriteFile on mailslot SUCCEEDED
+  1818.593   ____MulticastDiscoveryThread____
+  1819.846   	sendto (Multicast) SUCCEEDED
+  1820.233   	recvfrom (Multicast) FAILED
+  1820.918   	ReadFile Succeeded
+  1869.439   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  1870.156   ____IPX is ACTIVE___
+  1870.553   ____DetermineWhichAddress____found IPX addr
+  1871.569   ____MailSlotDiscoveryThread_____SUCCESS
+  1918.601   ____SAPDiscoveryThread____
+  1919.552   	sendto (SAP) SUCCEEDED
+  1919.951   SAPDiscoveryThread____CANCELED
+  1968.726   Discovery thread WINNER is MailSlot
+  1969.188   ____GetRemoteAddress____SUCCESS
+  1969.441   	GetRemoteAddress FAILED or ucFoundAdsAddr : 0	Hex: 0x00000000
+  1969.782   	sa_family : 6	Hex: 0x00000006
+  1970.055   	usIsInternet : 0	Hex: 0x00000000
+  1970.298   ____OpenAndBindSocket____
+  1970.922   ____OpenAndBindSocket____SUCCESS
+  1971.226   AdjustReceiveTimeout : 2000	Hex: 0x000007D0
+  1971.656   	PR_CONNECT_DATA->aucFileName : \\brettd\d\StoredProcExample.ADD
+  1971.926   	PR_CONNECT_DATA->aucUserName : ADSSYS
+  1972.272   ____ConnectWithNLM____
+  1972.515   ____axSystemReq____ : 20	Hex: 0x00000014
+  1972.791   Send packet from axSystemReq
+  1973.152   Change state to Waiting for reply
+  1973.584   	recvfrom (Multicast) SUCCEEDED
+  1978.365   WSRecvPacket returned : 0	Hex: 0x00000000
+  1978.792   	usReplyType : 0	Hex: 0x00000000
+  1979.033   Valid checksum
+  1979.255   Valid sequence number
+  1979.474   LOGIN_ACK_TYPE
+  1979.737   	UserID : 1	Hex: 0x00000001
+  1979.966   	before conversion aucSemFileName : 
+  1980.190   	after pucSemFileName : 
+  1980.428   ____ConnectWithNLM____END : 0	Hex: 0x00000000
+  1980.656   	ConnectWithNLM SUCCEEDED
+  1980.877   AdjustReceiveTimeout : 100	Hex: 0x00000064
+  1982.669   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  1983.276   ____IPX is ACTIVE___
+  1983.650   ____DetermineWhichAddress____found IPX addr
+  1984.015   ____MulticastDiscoveryThread_____SUCCESS
+  2028.558   NegotiatePacketSize
+  2030.933   ____axConnect60____END : 0	Hex: 0x00000000
+  2416.683   ____axSystemReq____ : 120	Hex: 0x00000078
+  2417.226   Send packet from axSystemReq
+  2417.576   Change state to Waiting for reply
+  2419.291   WSRecvPacket returned : 0	Hex: 0x00000000
+  2419.687   	usReplyType : 0	Hex: 0x00000000
+  2419.958   Valid checksum
+  2420.199   Valid sequence number
+  2420.440   DISCONN_ACK_TYPE 
+  2431.180   ____axConnect60____
+  2431.575   	pucServerName : BRETTD
+  2431.823   Connection Type : 2	Hex: 0x00000002
+  2432.069   	!usFoundViaWS
+  2432.308   ____WSFindAdvantage____
+  2432.545   ____OpenAndBindSocket____
+  2433.135   ____OpenAndBindSocket____SUCCESS
+  2433.427   OpenAndBindSocket SUCCEEDED
+  2433.731   ____GetRemoteAddress____
+  2489.728   ____MailSlotDiscoveryThread____
+  2519.814   About to call WriteFile on the mailslot
+  2520.527   WriteFile on mailslot SUCCEEDED
+  2569.704   ____MulticastDiscoveryThread____
+  2570.977   	sendto (Multicast) SUCCEEDED
+  2571.365   	recvfrom (Multicast) FAILED
+  2619.636   ____SAPDiscoveryThread____
+  2620.605   	sendto (SAP) SUCCEEDED
+  2621.049   	recvfrom (SAP) Succeeded
+  2621.313   	SAP returned valid nearest server
+  2621.562   ____SAPDiscoveryThread_____SUCCESS
+  2669.406   Discovery thread WINNER is IPX SAP
+  2669.887   ____GetRemoteAddress____SUCCESS
+  2670.239   Checking Bindery On Machine with IPX Address: 2f-dd-bf-76,00,00,00,00,00,01
+  2670.501   ____SendNCPRequest____
+  2670.846   recv succeeded, but had bad data -- is it a SAP_NEAREST_SERVICE_RESPONSE
+  2671.153   	recv SAP returned valid nearest server
+  2671.425   recv succeeded, but had bad data -- is it a SAP_NEAREST_SERVICE_RESPONSE
+  2671.670   	recv SAP returned valid nearest server
+  2671.977   	ReadFile Succeeded
+  2672.715   	recvfrom (Multicast) SUCCEEDED
+  2674.894   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  2675.520   ____IPX is ACTIVE___
+  2675.872   ____DetermineWhichAddress____found IPX addr
+  2676.217   ____MailSlotDiscoveryThread_____SUCCESS
+  2720.585   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  2721.226   ____IPX is ACTIVE___
+  2721.604   ____DetermineWhichAddress____found IPX addr
+  2721.981   ____MulticastDiscoveryThread_____SUCCESS
+  2769.507   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2769.983   	SendNCPRequest to find ads server in bindery : ADS_BRETTD
+  2770.875   ____SendNCPRequest____
+  2779.276   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2779.685   	second SendNCPRequest to find ads server in bindery : ADS_BRETTD_NT
+  2779.942   ____SendNCPRequest____
+  2789.246   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2789.581   SendNCPRequest 2 got a successful completion code
+  2789.837   ____SendNCPRequest____
+  2799.300   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2799.691   SendNCPRequest 3 got successful completion code
+  2799.942   	Advantage address was found
+  2800.186   ____SendNCPRequest____
+  2809.345   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2809.689   ____SendNCPRequest____
+  2819.324   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2819.683   ____SendNCPRequest____
+  2829.412   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  2829.919   ____WSFindAdvantage____SUCCEEDED
+  2830.194   	sa_family : 6	Hex: 0x00000006
+  2830.441   	usIsInternet : 0	Hex: 0x00000000
+  2830.686   ____OpenAndBindSocket____
+  2831.273   ____OpenAndBindSocket____SUCCESS
+  2831.574   AdjustReceiveTimeout : 2000	Hex: 0x000007D0
+  2832.023   	PR_CONNECT_DATA->aucFileName : \\brettd\d\StoredProcExample.ADD
+  2832.295   	PR_CONNECT_DATA->aucUserName : 
+  2832.638   ____ConnectWithNLM____
+  2832.878   ____axSystemReq____ : 20	Hex: 0x00000014
+  2833.194   Send packet from axSystemReq
+  2833.554   Change state to Waiting for reply
+  2837.371   WSRecvPacket returned : 0	Hex: 0x00000000
+  2837.847   	usReplyType : 0	Hex: 0x00000000
+  2838.105   Valid checksum
+  2838.359   Valid sequence number
+  2838.597   LOGIN_ACK_TYPE
+  2838.878   	UserID : 1	Hex: 0x00000001
+  2839.125   	before conversion aucSemFileName : 
+  2839.439   	after pucSemFileName : 
+  2839.679   ____ConnectWithNLM____END : 0	Hex: 0x00000000
+  2839.920   	ConnectWithNLM SUCCEEDED
+  2840.159   AdjustReceiveTimeout : 100	Hex: 0x00000064
+  2841.888   NegotiatePacketSize
+  2844.300   ____axConnect60____END : 0	Hex: 0x00000000
+  7814.649   ____axConnect60____
+  7815.096   	pucServerName : BRETTD
+  7815.351   Connection Type : 2	Hex: 0x00000002
+  7815.604   	!usFoundViaWS
+  7815.858   ____WSFindAdvantage____
+  7816.096   ____OpenAndBindSocket____
+  7816.763   ____OpenAndBindSocket____SUCCESS
+  7817.071   OpenAndBindSocket SUCCEEDED
+  7817.378   ____GetRemoteAddress____
+  8317.813   ____MailSlotDiscoveryThread____
+  8318.964   About to call WriteFile on the mailslot
+  8319.613   WriteFile on mailslot SUCCEEDED
+  8367.859   ____MulticastDiscoveryThread____
+  8369.102   	sendto (Multicast) SUCCEEDED
+  8369.496   	recvfrom (Multicast) FAILED
+  8417.886   ____SAPDiscoveryThread____
+  8418.828   	sendto (SAP) SUCCEEDED
+  8419.268   	recvfrom (SAP) Succeeded
+  8419.534   	SAP returned valid nearest server
+  8419.783   ____SAPDiscoveryThread_____SUCCESS
+  8467.924   Discovery thread WINNER is IPX SAP
+  8468.397   ____GetRemoteAddress____SUCCESS
+  8468.750   Checking Bindery On Machine with IPX Address: 2f-dd-bf-76,00,00,00,00,00,01
+  8469.012   ____SendNCPRequest____
+  8469.354   recv succeeded, but had bad data -- is it a SAP_NEAREST_SERVICE_RESPONSE
+  8469.663   	recv SAP returned valid nearest server
+  8469.931   recv succeeded, but had bad data -- is it a SAP_NEAREST_SERVICE_RESPONSE
+  8470.176   	recv SAP returned valid nearest server
+  8470.478   	ReadFile Succeeded
+  8472.682   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  8473.438   ____IPX is ACTIVE___
+  8473.875   ____DetermineWhichAddress____found IPX addr
+  8474.233   ____MailSlotDiscoveryThread_____SUCCESS
+  8517.891   	recvfrom (Multicast) SUCCEEDED
+  8520.406   ____DetermineWhichAddress____ ucDefaultIsIPX =  : 1	Hex: 0x00000001
+  8521.105   ____IPX is ACTIVE___
+  8521.488   ____DetermineWhichAddress____found IPX addr
+  8521.855   ____MulticastDiscoveryThread_____SUCCESS
+  8567.802   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8568.274   	SendNCPRequest to find ads server in bindery : ADS_BRETTD
+  8568.529   ____SendNCPRequest____
+  8577.579   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8578.549   	second SendNCPRequest to find ads server in bindery : ADS_BRETTD_NT
+  8578.845   ____SendNCPRequest____
+  8587.587   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8587.932   SendNCPRequest 2 got a successful completion code
+  8588.183   ____SendNCPRequest____
+  8597.605   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8597.939   SendNCPRequest 3 got successful completion code
+  8598.187   	Advantage address was found
+  8598.428   ____SendNCPRequest____
+  8607.611   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8607.934   ____SendNCPRequest____
+  8617.688   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8618.047   ____SendNCPRequest____
+  8627.713   ____SendNCPRequest____ : 0	Hex: 0x00000000
+  8628.218   ____WSFindAdvantage____SUCCEEDED
+  8628.488   	sa_family : 6	Hex: 0x00000006
+  8628.736   	usIsInternet : 0	Hex: 0x00000000
+  8628.982   ____OpenAndBindSocket____
+  8629.589   ____OpenAndBindSocket____SUCCESS
+  8629.895   AdjustReceiveTimeout : 2000	Hex: 0x000007D0
+  8630.346   	PR_CONNECT_DATA->aucFileName : \\brettd\d\StoredProcExample.ADD
+  8630.615   	PR_CONNECT_DATA->aucUserName : 
+  8630.956   ____ConnectWithNLM____
+  8631.193   ____axSystemReq____ : 20	Hex: 0x00000014
+  8631.469   Send packet from axSystemReq
+  8631.826   Change state to Waiting for reply
+  8632.948   WSRecvPacket returned : 0	Hex: 0x00000000
+  8633.296   	usReplyType : 0	Hex: 0x00000000
+  8633.560   Valid checksum
+  8633.796   Valid sequence number
+  8634.028   LOGIN_ACK_TYPE
+  8634.300   	UserID : 5	Hex: 0x00000005
+  8634.544   	before conversion aucSemFileName : 
+  8634.782   	after pucSemFileName : 
+  8635.011   ____ConnectWithNLM____END : 0	Hex: 0x00000000
+  8635.249   	ConnectWithNLM SUCCEEDED
+  8635.486   AdjustReceiveTimeout : 100	Hex: 0x00000064
+  8640.808   NegotiatePacketSize
+  8643.276   ____axConnect60____END : 0	Hex: 0x00000000
+  8853.165   ____axSystemReq____ : 120	Hex: 0x00000078
+  8853.689   Send packet from axSystemReq
+  8854.031   Change state to Waiting for reply
+  8854.527   WSRecvPacket returned : 0	Hex: 0x00000000
+  8854.828   	usReplyType : 0	Hex: 0x00000000
+  8855.076   Valid checksum
+  8855.314   Valid sequence number
+  8855.549   DISCONN_ACK_TYPE 
+  8859.332   ____axSystemReq____ : 120	Hex: 0x00000078
+  8859.810   Send packet from axSystemReq
+  8860.140   Change state to Waiting for reply
+  8860.590   WSRecvPacket returned : 0	Hex: 0x00000000
+  8860.884   	usReplyType : 0	Hex: 0x00000000
+  8861.133   Valid checksum
+  8861.369   Valid sequence number
+  8861.604   DISCONN_ACK_TYPE 

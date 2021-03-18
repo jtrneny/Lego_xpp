@@ -1,0 +1,55 @@
+   TYPE(TEXT) CAPTION(Server pro odchozí poštu SMTP vyžaduje ovìøení)          CPOS(  1,12.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lovoseucet) FPOS(  21,12.2) FLEN( 26) FONT(2)  REF(LYESNO) 
+
+   TYPE(TEXT) CAPTION(Použít stejná nastavení jako pro server pøíchozí pošty)          CPOS(  1,13.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lsnpseucet) FPOS(  21,13.2) FLEN( 26) FONT(2)  REF(LYESNO)
+
+   TYPE(TEXT) CAPTION(Pøihlašovat se jako)          CPOS(  1,14.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lproseucet) FPOS(  21,14.2) FLEN( 26) FONT(2) REF(LYESNO) 
+
+   TYPE(TEXT) CAPTION(Uživatelské jméno)      CPOS(  1,15.2) CLEN( 20) FONT(1)
+    TYPE(GET)      NAME(userseuc->cusroeucet)   FPOS(  21,15.2) FLEN( 26) FONT(2)
+
+   TYPE(TEXT) CAPTION(Uživatelské heslo)      CPOS(  1,16.2) CLEN( 20) FONT(1)
+    TYPE(GET)      NAME(userseuc->cpswoeucet)   FPOS(  21,16.2) FLEN( 26) FONT(2)
+
+   TYPE(TEXT) CAPTION(Zapamatovat heslo)      CPOS(  1,17.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lsvpoeucet)  FPOS(  21,17.2) FLEN( 26) FONT(2) REF(LYESNO) 
+
+   TYPE(TEXT) CAPTION(Požadovat zebezpeèené ovìøování hesla)      CPOS(  1,18.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lpzoheucet)  FPOS(  21,18.2) FLEN( 26) FONT(2) REF(LYESNO)    
+
+   TYPE(TEXT) CAPTION(Pøed odesláním pošty se pøihlásit k serveru pøíchozí pošty )   CPOS(  1,19.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lpoppeucet)  FPOS(  21,19.2) FLEN( 26) FONT(2) REF(LYESNO)    
+
+   TYPE(TEXT) CAPTION(Server pøíchozí pošty POP3 )      CPOS(  1,20.2) CLEN( 20) FONT(1)
+    TYPE(GET)      NAME(userseuc->nptppeucet)  FPOS(  21,20.2) FLEN( 26) FONT(2) 
+
+   TYPE(TEXT) CAPTION(Tento server požaduje šifrované pøipojení SSL )      CPOS(  1,21.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lsslpeucet)  FPOS(  21,21.2) FLEN( 26) FONT(2)  REF(LYESNO) 
+
+   TYPE(TEXT) CAPTION(Server pro odchozí poštu SMTP )      CPOS(  1,22.2) CLEN( 20) FONT(1)
+    TYPE(GET)      NAME(userseuc->nptopeucet)  FPOS(  21,22.2) FLEN( 26) FONT(2) 
+
+   TYPE(TEXT) CAPTION(Použít tento typ šifrovaného pøipojení )      CPOS(  1,23.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX) NAME(userseuc->ctsioeucet)  FPOS(  21,23.2) FLEN( 26) FONT(2) VALUES(   :Žádné       ,;
+                                                                                        SSL:Sklady      ,;
+                                                                                        TSL:TSL         ,;
+                                                                                        AUT:Automatické );
+
+   TYPE(TEXT) CAPTION(Èasový limit serveru )    CPOS(  1,24.2) CLEN( 20) FONT(1)
+    TYPE(GET)      NAME(userseuc->ncasleucet)     FPOS(  21,24.2) FLEN( 26) FONT(2) 
+
+   TYPE(TEXT) CAPTION(Zachovat na serveru kopie správ )    CPOS(  1,25.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lkopseucet) FPOS(  21,25.2) FLEN( 26) FONT(2)  REF(LYESNO) 
+
+   TYPE(TEXT) CAPTION(Odebrat ze serveru po )    CPOS(  1,26.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)      NAME(userseuc->lodeseucet) FPOS(  21,26.2) FLEN( 26) FONT(2)  REF(LYESNO) 
+
+   TYPE(TEXT) CAPTION(dny )    CPOS(  1,26.2) CLEN( 20) FONT(1)
+    TYPE(GET)      NAME(userseuc->nodpoeucet)  FPOS(  21,26.2) FLEN( 26) FONT(2)
+
+   TYPE(TEXT) CAPTION(Odebrat ze serveru po odstranìní z Odstranìné pošty )    CPOS(  1,27.2) CLEN( 20) FONT(1)
+    TYPE(COMBOBOX)   NAME(userseuc->losopeucet) FPOS(  21,27.2) FLEN( 26) FONT(2)  REF(LYESNO) 
+
+*    TYPE(End)

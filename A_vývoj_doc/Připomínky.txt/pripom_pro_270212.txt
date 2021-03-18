@@ -1,0 +1,21 @@
+Ke generování aktuálních prodejních cen
+  - povolit zrušení zaevidovaného ceníku (CTRL_DEL na øídícím souboru)
+  - pøednastavit sklad - konfiguraèní parametr v prodeji 
+  - refreš nad prvním browse po vygenerování prodejních cen
+  - pøed spuštìšním generováíní dát dotaz na spuštìní ANO/NE
+  - po výbìru firmy nebo skladu se nerefrešne text názvu firmy nebo skladu. Zajímavé,
+    že po pøevzetí firmy se tam objeví ale po odchodu z údaje èíslo firmy se ztratí.
+  - povolit volání celého mechanismu na stranì firem. Pokud na stranì firem
+    neexistuje záznam v tabulce AKTPROCH tak ho automaticky založit. 
+    Po otevøení SCR musí minimálnì existovat tento záznam. Na této úrovní dát 
+    možnost založit záznam jen vždy s pøíslušnou firmou.
+
+Ještì mám pár návrhù k aktualizaci ceníkù
+  - asi by bylo pro uživatele pøíjemné kdyby jsmne dokázali druhý (levý spodní brow) 
+    rozdìlit na tøi záložky nebo tlaèítko a to Skladové položky, Kategorie, Všechno. Získalo by to 
+    na vìtší pøehlednosti pøi práci s položkama hodnot.  
+  - povolit zavolání mechanismu Aktualizace ceníkù na úrovni firem. Filtrovat 
+    tabulku PROCENIT vždy jen na aktuální firmu. Pøi zakládání ceníku vždy pøednastavit
+    èíslo firmy
+
+

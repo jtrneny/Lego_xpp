@@ -1,0 +1,608 @@
+﻿1;1;1;Velké domácí spotřebiče;Velká chladicí zařízení;;1;1;1;Zařízení pro tepelnou výměnu;Chladničky;Chladničky, kombinace chladničky a mrazničky
+1;1;1;Velké domácí spotřebiče;Velká chladicí zařízení;;1;1;2;Zařízení pro tepelnou výměnu;Chladničky;Zařízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavřeném okruhu)
+1;2;1;Velké domácí spotřebiče;Chladničky, kombinace chladničky a mrazničky;nad 40kg;1;1;1;Zařízení pro tepelnou výměnu;Chladničky;Chladničky, kombinace chladničky a mrazničky
+1;2;1;Velké domácí spotřebiče;Chladničky, kombinace chladničky a mrazničky;nad 40kg;1;1;2;Zařízení pro tepelnou výměnu;Chladničky;Zařízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavřeném okruhu)
+1;2;2;Velké domácí spotřebiče;Chladničky, kombinace chladničky a mrazničky;do 40 kg ;1;1;1;Zařízení pro tepelnou výměnu;Chladničky;Chladničky, kombinace chladničky a mrazničky
+1;2;2;Velké domácí spotřebiče;Chladničky, kombinace chladničky a mrazničky;do 40 kg ;1;1;2;Zařízení pro tepelnou výměnu;Chladničky;Zařízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavřeném okruhu)
+1;3;1;Velké domácí spotřebiče;Mrazničky;nad 40kg;1;2;1;Zařízení pro tepelnou výměnu;Mrazničky;Mrazničky
+1;3;2;Velké domácí spotřebiče;Mrazničky;do 40 kg ;1;2;1;Zařízení pro tepelnou výměnu;Mrazničky;Mrazničky
+1;4;1;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;s chladícími medii;1;1;2;Zařízení pro tepelnou výměnu;Chladničky;Zařízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavřeném okruhu)
+1;4;1;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;s chladicími médii;1;8;1;Zařízení pro tepelnou výměnu;Ostatní zařízení pro tepelnou výměnu v jiné podskupině neuvedená;"Ostatní zařízení pro tepelnou výměnu v jiné podskupině neuvedená 
+do 10 kg (s chladicími médii)"
+1;4;1;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;s chladicími médii;1;8;2;Zařízení pro tepelnou výměnu;Ostatní zařízení pro tepelnou výměnu v jiné podskupině neuvedená;"Ostatní zařízení pro tepelnou výměnu v jiné podskupině neuvedená 
+od 10 kg do 50 kg (s chladicími médii)"
+1;4;1;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;s chladicími médii;1;8;3;Zařízení pro tepelnou výměnu;Ostatní zařízení pro tepelnou výměnu v jiné podskupině neuvedená;"Ostatní zařízení pro tepelnou výměnu v jiné podskupině neuvedená 
+od 50 kg do 100 kg (s chladicími médii)"
+1;4;2;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;4;2;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;11;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 25 kg do 50 kg"
+1;4;2;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;12;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 50 kg do 100 kg"
+1;4;2;Velké domácí spotřebiče;Ostatní velká zařízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;13;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+nad 100 kg"
+1;5;1;Velké domácí spotřebiče;Pračky;nad 30 kg;4;1;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Pračky;Pračky nad 30 kg
+1;5;2;Velké domácí spotřebiče;Pračky;do 30 kg;4;1;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Pračky;Pračky do 30 kg
+1;6;1;Velké domácí spotřebiče;Sušičky;    ;4;2;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Sušičky;Sušičky s tepelným čerpadlem
+1;6;1;Velké domácí spotřebiče;Sušičky;;4;2;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Sušičky;Sušičky bez tepelného čerpadla
+1;7;1;Velké domácí spotřebiče;Myčky nádobí;;4;3;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Myčky nádobí;Myčky nádobí
+1;8;1;Velké domácí spotřebiče;Pečící zařízení;nad 10 kg;4;4;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Vařiče a pečící trouby;Vařiče a pečící trouby, velká zařízení používaná k vaření a jinému zpracování potravin do 25 kg
+1;8;1;Velké domácí spotřebiče;Pečící zařízení;nad 10 kg;4;4;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Vařiče a pečící trouby;Vařiče a pečící trouby, velká zařízení používaná k vaření a jinému zpracování potravin nad 25 kg
+1;8;2;Velké domácí spotřebiče;Pečící zařízení;do 10 kg;4;4;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Vařiče a pečící trouby;Vařiče a pečící trouby, velká zařízení používaná k vaření a jinému zpracování potravin do 25 kg
+1;9;1;Velké domácí spotřebiče;Elektrické sporáky;    ;4;5;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Elektrické sporáky;Elektrické sporáky
+1;10;1;Velké domácí spotřebiče;Elektrické plotny;    ;4;6;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Elektrické varné desky;Elektrické varné desky
+1;11;1;Velké domácí spotřebiče;Mikrovlnné trouby;;5;5;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Mikrovlnné trouby;Mikrovlnné trouby
+1;12;1;Velké domácí spotřebiče;Ostatní velká zařízení používaná k vaření a jinému zpracování potravin;nad 10 kg;4;4;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Vařiče a pečící trouby;Vařiče a pečící trouby, velká zařízení používaná k vaření a jinému zpracování potravin do 25 kg
+1;12;1;Velké domácí spotřebiče;Ostatní velká zařízení používaná k vaření a jinému zpracování potravin;nad 10 kg;4;4;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Vařiče a pečící trouby;Vařiče a pečící trouby, velká zařízení používaná k vaření a jinému zpracování potravin nad 25 kg
+1;12;2;Velké domácí spotřebiče;Ostatní velká zařízení používaná k vaření a jinému zpracování potravin;do 10 kg;4;4;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Vařiče a pečící trouby;Vařiče a pečící trouby, velká zařízení používaná k vaření a jinému zpracování potravin do 25 kg
+1;13;1;Velké domácí spotřebiče;Elektrická topidla;nad 30 Kg;4;18;11;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 25 kg do 50 kg"
+1;13;2;Velké domácí spotřebiče;Elektrická topidla;10-30Kg;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;13;3;Velké domácí spotřebiče;Elektrická topidla;do 10 kg;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;14;1;Velké domácí spotřebiče;Elektrické radiátory;nad 30 Kg;1;7;2;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu od 10 kg do 50 kg
+1;14;1;Velké domácí spotřebiče;Elektrické radiátory;nad 30 Kg;1;7;3;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu nad 50 kg
+1;14;2;Velké domácí spotřebiče;Elektrické radiátory;10-30Kg;1;7;2;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu od 10 kg do 50 kg
+1;14;3;Velké domácí spotřebiče;Elektrické radiátory;do 10 kg;1;7;1;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu do 10 kg
+1;15;1;Velké domácí spotřebiče;Ostatní velká zařízení pro vytápění místností, lůžek a sedacího nábytku;nad 30 Kg;4;18;11;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 25 kg do 50 kg"
+1;15;1;Velké domácí spotřebiče;Ostatní velká zařízení pro vytápění místností, lůžek a sedacího nábytku;nad 30 Kg;4;18;12;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 50 kg do 100 kg"
+1;15;1;Velké domácí spotřebiče;Ostatní velká zařízení pro vytápění místností, lůžek a sedacího nábytku;nad 30 Kg;4;18;13;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+nad 100 kg"
+1;15;2;Velké domácí spotřebiče;Ostatní velká zařízení pro vytápění místností, lůžek a sedacího nábytku;10-30Kg;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;15;3;Velké domácí spotřebiče;Ostatní velká zařízení pro vytápění místností, lůžek a sedacího nábytku;do 10 kg;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;16;1;Velké domácí spotřebiče;Elektrické ventilátory velké;nad 10 kg;4;18;8;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Ventilační a odsávací velké domácí spotřebiče do 25 kg
+1;16;1;Velké domácí spotřebiče;Elektrické ventilátory velké;nad 10 kg;4;18;9;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Ventilační a odsávací velké domácí spotřebiče nad 25 kg
+1;17;1;Velké domácí spotřebiče;Klimatizační zařízení;s chladícími medii;1;4;1;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky do 50 kg (s chladicími médii)
+1;17;1;Velké domácí spotřebiče;Klimatizační zařízení;s chladícími medii;1;4;2;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky od 50 kg do 100 kg (s chladicími médii)
+1;17;1;Velké domácí spotřebiče;Klimatizační zařízení;s chladícími medii;1;4;3;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky od 100 kg do 200 kg (s chladicími médii)
+1;17;1;Velké domácí spotřebiče;Klimatizační zařízení;s chladícími medii;1;4;4;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky nad 200 kg (s chladicími médii)
+1;17;1;Velké domácí spotřebiče;Klimatizační zařízení;s chladícími medii;1;4;5;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - vnitřní jednotky do 35 kg (s chladicími médii)
+1;17;1;Velké domácí spotřebiče;Klimatizační zařízení;s chladícími medii;1;4;6;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - vnitřní jednotky nad 35 kg (s chladicími médii), klimatizace mobilní (s chladicími médii)
+1;17;2;Velké domácí spotřebiče;Klimatizační zařízení;bez chladících medií;4;2;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Sušičky;Sušičky s tepelným čerpadlem
+1;17;2;Velké domácí spotřebiče;Klimatizační zařízení;bez chladících medií;4;2;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Sušičky;Sušičky bez tepelného čerpadla
+1;17;2;Velké domácí spotřebiče;Klimatizační zařízení;bez chladících medií;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;18;1;Velké domácí spotřebiče;Ostatní ventilační, odsávací a klimatizační zařízení;nad 10 kg;1;5;2;Zařízení pro tepelnou výměnu;Odvlhčovací zařízení;Odvlhčovací zařízení nad 10 kg (s chladicími médii)
+1;18;2;Velké domácí spotřebiče;Ostatní ventilační, odsávací a klimatizační zařízení;odsavače par;4;18;8;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Ventilační a odsávací velké domácí spotřebiče do 25 kg
+1;18;2;Velké domácí spotřebiče;Ostatní ventilační, odsávací a klimatizační zařízení;odsavače par;4;18;9;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Ventilační a odsávací velké domácí spotřebiče nad 25 kg
+1;18;3;Velké domácí spotřebiče;Ostatní ventilační, odsávací a klimatizační zařízení;do 10 kg;1;5;1;Zařízení pro tepelnou výměnu;Odvlhčovací zařízení;Odvlhčovací zařízení do 10 kg (s chladicími médii)
+1;19;1;Velké domácí spotřebiče;Ostatní velké domácí spotřebiče v jiné podskupině neuvedené;nad 30 Kg;1;3;1;Zařízení pro tepelnou výměnu;Zařízení automaticky poskytující chlazené výrobky;Zařízení automaticky poskytující chlazené výrobky
+1;19;1;Velké domácí spotřebiče;Ostatní velké domácí spotřebiče v jiné podskupině neuvedené;nad 30 Kg;4;18;11;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 25 kg do 50 kg"
+1;19;1;Velké domácí spotřebiče;Ostatní velké domácí spotřebiče v jiné podskupině neuvedené;nad 30 Kg;4;18;12;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 50 kg do 100 kg"
+1;19;1;Velké domácí spotřebiče;Ostatní velké domácí spotřebiče v jiné podskupině neuvedené;nad 30 Kg;4;18;13;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+nad 100 kg"
+1;19;2;Velké domácí spotřebiče;Ostatní velké domácí spotřebiče v jiné podskupině neuvedené;10-30Kg;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+1;19;3;Velké domácí spotřebiče;Ostatní velké domácí spotřebiče v jiné podskupině neuvedené;do 10 kg;4;18;10;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+do 25 kg"
+2;1;1;Malé domácí spotřebiče; Vysavače;nad 2 kg;5;1;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Vysavače;Vysavače nad 2 kg
+2;1;2;Malé domácí spotřebiče; Vysavače;do 2 kg;5;1;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Vysavače;Vysavače do 2 kg
+2;2;1;Malé domácí spotřebiče;Čistící stroje na koberce;;5;2;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Stroje na čištění koberců;Stroje na čištění koberců
+2;3;1;Malé domácí spotřebiče;Ostatní zařízení pro čištění;nad 10 kg;5;2;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Stroje na čištění koberců;Stroje na čištění koberců
+2;3;2;Malé domácí spotřebiče;Ostatní zařízení pro čištění;do 10 kg;5;2;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Stroje na čištění koberců;Stroje na čištění koberců
+2;4;1;Malé domácí spotřebiče;Zařízení používaná k šití, pletení, tkaní a jinému zpracování textilu;;4;10;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení používaná k pletení a tkaní;Zařízení používaná k šití, pletení, tkaní a jinému zpracování textilu, jejichž kterýkoli vnější rozměr přesahuje 50 cm
+2;4;1;Malé domácí spotřebiče;Zařízení používaná k šití, pletení, tkaní a jinému zpracování textilu;;5;3;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Šicí stroje;"Šicí stroje používané v domácnostech, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm"
+2;5;1;Malé domácí spotřebiče; Žehličky a jiné spotřebiče používané k žehlení, mandlování a další péči o oděvy;;5;7;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Žehličky;Žehličky a jiné spotřebiče používané k žehlení, mandlování a další péči o oděvy
+2;6;1;Malé domácí spotřebiče;Topinkovače;;5;8;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Opékače topinek;Topinkovače, opékače topinek a další zařízení na přípravu nápojů a jídel, jejichž žádný vnější rozměr nepřesahuje 50 cm
+2;7;1;Malé domácí spotřebiče;Fritovací hrnce;;5;8;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Opékače topinek;Topinkovače, opékače topinek a další zařízení na přípravu nápojů a jídel, jejichž žádný vnější rozměr nepřesahuje 50 cm
+2;8;1;Malé domácí spotřebiče;Mlýnky, kávovary a zařízení pro otevírání nebo uzavírání nádob nebo obalů;;5;8;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Opékače topinek;Topinkovače, opékače topinek a další zařízení na přípravu nápojů a jídel, jejichž žádný vnější rozměr nepřesahuje 50 cm
+2;9;1;Malé domácí spotřebiče;Elektrické nože;    ;5;9;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické nože;Elektrické nože
+2;10;1;Malé domácí spotřebiče;Spotřebiče pro stříhání vlasů, sušení vlasů, čištění zubů, holení, masáže nebo jinou péči o tělo;;5;12;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické holicí strojky;Elektrické holicí strojky
+2;10;1;Malé domácí spotřebiče;Spotřebiče pro stříhání vlasů, sušení vlasů, čištění zubů, holení, masáže nebo jinou péči o tělo;    ;5;14;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Přístroje pro péči o vlasy a tělo;Spotřebiče pro stříhání vlasů, sušení vlasů, čištění zubů, holení, masáže nebo jinou péči o tělo
+2;11;1;Malé domácí spotřebiče;Hodiny, budíky a zařízení pro účely měření, indikace nebo registrace času;nad 100 g;5;11;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hodiny a hodinky;Hodiny, budíky a zařízení pro účely měření, indikace nebo registrace času nad 100 g
+2;11;2;Malé domácí spotřebiče;Hodiny, budíky a zařízení pro účely měření, indikace nebo registrace času;do 100 g;5;11;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hodiny a hodinky;Hodiny, budíky a zařízení pro účely měření, indikace nebo registrace času do 100 g
+2;12;1;Malé domácí spotřebiče; Váhy;;5;13;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Váhy;Váhy
+2;13;1;Malé domácí spotřebiče;Elektrické ventilátory malé;;5;6;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ventilační zařízení;Elektrické ventilátory do 10 kg, jejichž žádný vnější rozměr nepřesahuje 50 cm
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;10;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické konvice;Elektrické konvice
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;25;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Detektory kouře;Detektory kouře
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;30;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé výdejní automaty na výrobky;Vestavné a plně automatické kávovary
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;31;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malá zařízení s vestavěnými solárními panely;Malá zařízení s vestavěnými solárními panely
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;32;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;Ostatní malá zařízení v jiné podskupině neuvedená do 100 g
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;32;4;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;"Ostatní malá zařízení v jiné podskupině neuvedená 
+od 0,1 kg do 1 kg"
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;32;5;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;"Ostatní malé domácí spotřebiče v jiné podskupině neuvedené 
+od 1 kg do 4 kg"
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;32;6;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;"Ostatní malé domácí spotřebiče v jiné podskupině neuvedené 
+od 4 kg do 15 kg"
+2;14;1;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;nad 100 g;5;32;7;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;"Ostatní malé domácí spotřebiče v jiné podskupině neuvedené 
+nad 15 kg"
+2;14;2;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;do 100 g;5;29;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé nástroje pro monitorování a kontrolu;Malé nástroje pro monitorování a kontrolu do 0,5 kg
+2;14;2;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;do 100 g;5;31;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malá zařízení s vestavěnými solárními panely;Malá zařízení s vestavěnými solárními panely
+2;14;2;Malé domácí spotřebiče;Ostatní malé domácí spotřebiče v jiné podskupině neuvedené;do 100 g;5;32;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;Ostatní malá zařízení v jiné podskupině neuvedená do 100 g
+3;1;1;Zařízení informačních technologií a telekomunikačních zařízení;Velké sálové počítače;;4;11;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Velké sálové počítače;Zařízení informačních technologií a telekomunikačních zařízení
+3;2;1;Zařízení informačních technologií a telekomunikačních zařízení;Minipočítače;    ;6;5;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Osobní počítače;Osobní počítače (včetně základní procesorové jednotky, myši a klávesnic)
+3;3;1;Zařízení informačních technologií a telekomunikačních zařízení;Tiskové jednotky (samostatné centrální tiskárny);;4;12;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Velké tiskárny;Tiskové jednotky (samostatné centrální tiskárny)
+3;4;1;Zařízení informačních technologií a telekomunikačních zařízení;Osobní počítače (včetně základní procesorové jednotky, myši a klávesnic);    ;6;5;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Osobní počítače;Osobní počítače (včetně základní procesorové jednotky, myši a klávesnic)
+3;4;2;Zařízení informačních technologií a telekomunikačních zařízení;Komponenty  PC (klávesnice, myš);;6;8;3;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené do 100 g
+3;4;2;Zařízení informačních technologií a telekomunikačních zařízení;Komponenty  PC (klávesnice, myš);;6;8;4;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 0,1 kg do 1 kg
+3;4;2;Zařízení informačních technologií a telekomunikačních zařízení;Komponenty  PC (klávesnice, myš);;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;4;3;Zařízení informačních technologií a telekomunikačních zařízení;Sada reproduktorů;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+3;4;3;Zařízení informačních technologií a telekomunikačních zařízení;Sada reproduktorů;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+3;4;3;Zařízení informačních technologií a telekomunikačních zařízení;Sada reproduktorů;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+3;4;4;Zařízení informačních technologií a telekomunikačních zařízení;Monitory ;do 25´´;2;4;1;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Monitory;"Monitory s úhlopříčkou do 25"""
+3;4;5;Zařízení informačních technologií a telekomunikačních zařízení;Monitory ;nad 25´´;2;4;2;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Monitory;"Monitory s úhlopříčkou nad 25"""
+3;5;1;Zařízení informačních technologií a telekomunikačních zařízení;Laptopy (včetně základní procesorové jednotky,myší a klávesnic);;2;5;1;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Laptopy;Tablety, laptopy (včetně základní procesorové jednotky, myši a klávesnice)
+3;6;1;Zařízení informačních technologií a telekomunikačních zařízení;Notebooky;    ;2;6;1;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Notebooky;Notebooky
+3;7;1;Zařízení informačních technologií a telekomunikačních zařízení;Tablety;;6;8;3;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené do 100 g
+3;7;1;Zařízení informačních technologií a telekomunikačních zařízení;Tablety;;6;8;4;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 0,1 kg do 1 kg
+3;7;1;Zařízení informačních technologií a telekomunikačních zařízení;Tablety;;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;7;2;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní databanky a diáře;;6;8;3;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené do 100 g
+3;7;2;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní databanky a diáře;;6;8;4;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 0,1 kg do 1 kg
+3;7;2;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní databanky a diáře;;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;8;1;Zařízení informačních technologií a telekomunikačních zařízení;Tiskárny;    ;6;6;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Tiskárny;Tiskárny do max. velikosti tisku A4
+3;9;1;Zařízení informačních technologií a telekomunikačních zařízení;Kopírovací zařízení, multifunkční zařízení, skenery;do 50 kg;4;13;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Kopírovací zařízení;Kopírovací zařízení, multifunkční zařízení, skenery velikosti A3+A2, jejichž kterýkoli vnější rozměr přesahuje 50 cm
+3;9;1;Zařízení informačních technologií a telekomunikačních zařízení;Kopírovací zařízení, multifunkční zařízení, skenery;do 50 kg;4;13;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Kopírovací zařízení;Kopírovací zařízení, multifunkční zařízení, skenery velikosti A1+A0, jejichž kterýkoli vnější rozměr přesahuje 50 cm
+3;9;2;Zařízení informačních technologií a telekomunikačních zařízení;Kopírovací zařízení, multifunkční zařízení, skenery;nad 50 kg;4;13;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Kopírovací zařízení;Kopírovací zařízení, multifunkční zařízení, skenery velikosti A3+A2, jejichž kterýkoli vnější rozměr přesahuje 50 cm
+3;9;2;Zařízení informačních technologií a telekomunikačních zařízení;Kopírovací zařízení, multifunkční zařízení, skenery;nad 50 kg;4;13;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Kopírovací zařízení;Kopírovací zařízení, multifunkční zařízení, skenery velikosti A1+A0, jejichž kterýkoli vnější rozměr přesahuje 50 cm
+3;10;1;Zařízení informačních technologií a telekomunikačních zařízení;Elektrické a elektronické psací stroje;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+3;10;1;Zařízení informačních technologií a telekomunikačních zařízení;Elektrické a elektronické psací stroje;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+3;10;1;Zařízení informačních technologií a telekomunikačních zařízení;Elektrické a elektronické psací stroje;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+3;11;1;Zařízení informačních technologií a telekomunikačních zařízení; Kapesní a stolní kalkulačky ;;5;15;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Kalkulačky;Počtářské kalkulačky s přívodním kabelem, včetně tiskové funkce
+3;11;1;Zařízení informačních technologií a telekomunikačních zařízení;Kapesní a stolní kalkulačky ;    ;6;3;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Kapesní kalkulačky;Kapesní kalkulačky
+3;12;1;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené;do 10 kg;6;8;3;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené do 100 g
+3;12;1;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené;do 10 kg;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;12;1;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené;do 10 kg;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;12;2;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní výrobky nebo zařízení pro sbě, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené;od 10-30 kg;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;12;2;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní výrobky nebo zařízení pro sbě, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené;od 10-30 kg;6;8;6;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené nad 5 kg
+3;13;1;Zařízení informačních technologií a telekomunikačních zařízení;Uživatelské terminály a systémy;;6;2;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;GPS navigace;GPS navigace
+3;14;1;Zařízení informačních technologií a telekomunikačních zařízení;Dálnopisy;;6;8;3;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené do 100 g
+3;14;1;Zařízení informačních technologií a telekomunikačních zařízení;Dálnopisy;;6;8;4;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 0,1 kg do 1 kg
+3;14;1;Zařízení informačních technologií a telekomunikačních zařízení;Dálnopisy;;6;8;5;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Ostatní výrobky nebo zařízení pro sběr, ukládání, zpracování prezentací  nebo sdělování informací elektronickým způsobem v jiné podskupině neuvedené od 1 kg do 5 kg
+3;15;1;Zařízení informačních technologií a telekomunikačních zařízení;Faxy;;6;7;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílačky, telefony
+3;16;1;Zařízení informačních technologií a telekomunikačních zařízení;Telefony;;6;7;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílačky, telefony
+3;17;1;Zařízení informačních technologií a telekomunikačních zařízení;Telefonní automaty;    ;4;18;14;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Telefonní automaty - pouze profi
+3;18;1;Zařízení informačních technologií a telekomunikačních zařízení;Bezdrátové telefony a vysílačky;;6;7;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílačky, telefony
+3;19;1;Zařízení informačních technologií a telekomunikačních zařízení;Mobilní telefony a GSM moduly;    ;6;1;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Mobilní telefony;Mobilní telefony a GSM moduly
+3;20;1;Zařízení informačních technologií a telekomunikačních zařízení;Záznamníky;;6;7;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílačky, telefony
+3;21;1;Zařízení informačních technologií a telekomunikačních zařízení;Ostatní výrobky nebo zařízení pro přenos zvuku, obrazu a jiných informací pomocí telekomunikací v jiné podskupině neuvedené;;2;1;1;Obrazovky, monitory a zařízení obsahující obrazovky o ploše větší než 100 cm2;Obrazovky;Velkoplošné obrazovky, sportovní časomíry, speciální obrazovky, nástěnné displeje
+3;22;1;Zařízení informačních technologií a telekomunikačních zařízení;Tonerové/inkoustové kazety s elektronickou částí;;6;8;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Tonery, inkoustové náplně, cartridge do 0,5 kg
+3;22;1;Zařízení informačních technologií a telekomunikačních zařízení;Tonerové/inkoustové kazety s elektronickou částí;;6;8;2;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Ostatní malá zařízení informačních technologií a telekomunikačních zařízení v jiné podskupině neuvedená;Tonery, inkoustové náplně, cartridge nad 0,5 kg
+4;1;1;Spotřebitelská zařízení;Rádiové soupravy (radiobudíky, radiomagnetofony);;5;16;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Rozhlasové přijímače;Rozhlasové přijímače a jejich kombinace
+4;1;2;Spotřebitelská zařízení;Radiomagnetofony;;5;16;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Rozhlasové přijímače;Radiomagnetofony
+4;1;3;Spotřebitelská zařízení;Autorádia ;;5;16;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Rozhlasové přijímače;Rozhlasové přijímače a jejich kombinace
+4;2;1;Spotřebitelská zařízení;Televizory;do uhlopříčky 25´´;2;2;1;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Televize;"Televizory s úhlopříčkou do 25"""
+4;2;2;Spotřebitelská zařízení;Televizory;nad uhlopříčku 25 ´´;2;2;2;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Televize;"Televizory s úhlopříčkou nad 25"""
+4;2;3;Spotřebitelská zařízení;Projektory;    ;4;8;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Ostatní výrobky nebo zařízení pro přenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupině neuvedené
+4;2;4;Spotřebitelská zařízení;Aktivní 3D brýle;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;2;4;Spotřebitelská zařízení;Aktivní 3D brýle;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;2;5;Spotřebitelská zařízení;Digitální fotorámečky;    ;2;3;1;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";LCD fotorámečky;LCD fotorámečky
+4;3;1;Spotřebitelská zařízení;Videokamery využívané v domácnosti;    ;5;17;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Videokamery;Videokamery využívané v domácnosti
+4;3;2;Spotřebitelská zařízení;Minikamery, web kamery;    ;5;17;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Videokamery;Minikamery, web kamery
+4;3;3;Spotřebitelská zařízení;Fotoaparáty digitální ;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;3;3;Spotřebitelská zařízení;Fotoaparáty digitální ;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;3;3;Spotřebitelská zařízení;Fotoaparáty digitální ;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;3;4;Spotřebitelská zařízení;Fotoaparáty analogové;;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;3;4;Spotřebitelská zařízení;Fotoaparáty analogové;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;3;4;Spotřebitelská zařízení;Fotoaparáty analogové;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;3;5;Spotřebitelská zařízení;Fotoaparáty jednorázové;;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;3;5;Spotřebitelská zařízení;Fotoaparáty jednorázové;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;3;5;Spotřebitelská zařízení;Fotoaparáty jednorázové;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;3;6;Spotřebitelská zařízení;Samostatné příslušenství fotoaparátů (fotoblesky, teleobjektivy, expozimetry);    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;3;6;Spotřebitelská zařízení;Samostatné příslušenství fotoaparátů (fotoblesky, teleobjektivy, expozimetry);;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;3;6;Spotřebitelská zařízení;Samostatné příslušenství fotoaparátů (fotoblesky, teleobjektivy, expozimetry);;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;4;1;Spotřebitelská zařízení;Video a DVD přehrávače a rekordéry;;5;18;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Videorekordéry;Videorekordéry
+4;4;2;Spotřebitelská zařízení;Přenosný DVD přehrávač s obrazovkou;;5;18;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Videorekordéry;Videorekordéry
+4;5;1;Spotřebitelská zařízení;Hi-fi věže;    ;5;19;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hi-fi zařízení;Hi-fi zařízení
+4;5;2;Spotřebitelská zařízení;Zesilovače a tunery;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;2;Spotřebitelská zařízení;Zesilovače a tunery;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;2;Spotřebitelská zařízení;Zesilovače a tunery;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;5;3;Spotřebitelská zařízení;Receivery;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;3;Spotřebitelská zařízení;Receivery;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;3;Spotřebitelská zařízení;Receivery;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;5;4;Spotřebitelská zařízení;Kapesní přehrávače a rekordéry;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;4;Spotřebitelská zařízení;Kapesní přehrávače a rekordéry;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;4;Spotřebitelská zařízení;Kapesní přehrávače a rekordéry;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;5;5;Spotřebitelská zařízení;Diktafony;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;5;Spotřebitelská zařízení;Diktafony;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;6;Spotřebitelská zařízení;Domácí kina (bez TV);    ;4;8;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Ostatní výrobky nebo zařízení pro přenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupině neuvedené
+4;5;7;Spotřebitelská zařízení;Satelitní a DVB přijímače;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;7;Spotřebitelská zařízení;Satelitní a DVB přijímače;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;7;Spotřebitelská zařízení;Satelitní a DVB přijímače;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;5;8;Spotřebitelská zařízení;Parabolické antény s napájením;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;8;Spotřebitelská zařízení;Parabolické antény s napájením;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;8;Spotřebitelská zařízení;Parabolické antény s napájením;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;5;9;Spotřebitelská zařízení;Pokojové antény s napájením;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;9;Spotřebitelská zařízení;Pokojové antény s napájením;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;9;Spotřebitelská zařízení;Pokojové antény s napájením;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;5;10;Spotřebitelská zařízení;Komponenty pro satelitní a DVB přijímače;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;5;10;Spotřebitelská zařízení;Komponenty pro satelitní a DVB přijímače;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;5;10;Spotřebitelská zařízení;Komponenty pro satelitní a DVB přijímače;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;6;1;Spotřebitelská zařízení;Zesilovače;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;6;1;Spotřebitelská zařízení;Zesilovače;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;6;1;Spotřebitelská zařízení;Zesilovače;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;6;2;Spotřebitelská zařízení;Mixážní pult;;4;9;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;6;2;Spotřebitelská zařízení;Mixážní pult;;4;9;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;6;2;Spotřebitelská zařízení;Mixážní pult;;4;9;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;6;2;Spotřebitelská zařízení;Mixážní pult;;5;20;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;6;2;Spotřebitelská zařízení;Mixážní pult;;5;20;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;6;3;Spotřebitelská zařízení;Ekvalizéry;;4;9;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;6;3;Spotřebitelská zařízení;Ekvalizéry;;4;9;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;6;3;Spotřebitelská zařízení;Ekvalizéry;;4;9;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;6;3;Spotřebitelská zařízení;Ekvalizéry;;5;20;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;6;3;Spotřebitelská zařízení;Ekvalizéry;;5;20;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;7;1;Spotřebitelská zařízení;Bicí a kytary;    ;4;9;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;7;1;Spotřebitelská zařízení;Bicí a kytary;;4;9;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;7;1;Spotřebitelská zařízení;Bicí a kytary;;4;9;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;7;1;Spotřebitelská zařízení;Bicí a kytary;;5;20;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;7;1;Spotřebitelská zařízení;Bicí a kytary;;5;20;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;7;2;Spotřebitelská zařízení;Klávesové nástroje a syntetizátory;    ;4;9;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;7;2;Spotřebitelská zařízení;Klávesové nástroje a syntetizátory;;4;9;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;7;2;Spotřebitelská zařízení;Klávesové nástroje a syntetizátory;;4;9;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Hudební zařízení (kromě kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;7;2;Spotřebitelská zařízení;Klávesové nástroje a syntetizátory;;5;20;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;7;2;Spotřebitelská zařízení;Klávesové nástroje a syntetizátory;;5;20;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;7;3;Spotřebitelská zařízení;Aparatury;;4;8;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Ostatní výrobky nebo zařízení pro přenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupině neuvedené
+4;7;4;Spotřebitelská zařízení;Bezdrátové mikrofony a zvukové modely;;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;7;4;Spotřebitelská zařízení;Bezdrátové mikrofony a zvukové modely;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;7;4;Spotřebitelská zařízení;Bezdrátové mikrofony a zvukové modely;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;7;5;Spotřebitelská zařízení;Ostatní příslušenství;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;7;5;Spotřebitelská zařízení;Ostatní příslušenství;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;7;5;Spotřebitelská zařízení;Ostatní příslušenství;;5;21;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz od 1 kg do 4 kg
+4;7;5;Spotřebitelská zařízení;Ostatní příslušenství;;6;4;1;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Routery;Routery do 500 g
+4;7;5;Spotřebitelská zařízení;Ostatní příslušenství;;6;4;2;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Routery;Routery od 0,5 kg do 2 kg
+4;7;5;Spotřebitelská zařízení;Ostatní příslušenství;;6;4;3;Malá zařízení informačních technologií a telekomunikační zařízení, jejichž žádný vnější rozměr nepřesahuje 50 cm;Routery;Routery nad 2 kg
+4;8;1;Spotřebitelská zařízení;Reproduktory;    ;4;8;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Ostatní výrobky nebo zařízení pro přenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupině neuvedené
+4;8;2;Spotřebitelská zařízení;Megafony;;4;8;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Ostatní výrobky nebo zařízení pro přenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupině neuvedené
+4;8;3;Spotřebitelská zařízení;Elektrické chůvy;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;8;3;Spotřebitelská zařízení;Elektrické chůvy;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;8;4;Spotřebitelská zařízení;Meteostanice;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;8;4;Spotřebitelská zařízení;Meteostanice;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;8;5;Spotřebitelská zařízení;Dálkové ovladače;    ;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;8;5;Spotřebitelská zařízení;Dálkové ovladače;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+4;8;6;Spotřebitelská zařízení;Časové spínače;;5;21;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz do 100 g
+4;8;6;Spotřebitelská zařízení;Časové spínače;;5;21;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Zařízení reprodukující zvuk či obraz;Zařízení reprodukující zvuk či obraz 0,1 kg do 1 kg
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;1;1;Světelné zdroje;Přímé (trubicové) zářivky;Přímé (trubicové) zářivky
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;2;1;Světelné zdroje;Kompaktní zářivky;Kompaktní zářivky
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;3;1;Světelné zdroje;Zářivky;Zářivky
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;4;1;Světelné zdroje;Vysoce intenzivní výbojky, včetně vysokotlakých sodíkových výbojek a halogenidových výbojek;Vysoce intenzivní výbojky, včetně vysokotlakých sodíkových výbojek a halogenidových výbojek
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;5;1;Světelné zdroje;Nízkotlaké sodíkové výbojky;Nízkotlaké sodíkové výbojky
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;6;1;Světelné zdroje;"LED lampy a ostatní osvětlovací zařízení se zabudovanými 
+LED diodami";"LED lampy a ostatní osvětlovací zařízení se zabudovanými 
+LED diodami"
+5;1;1;Osvětlovací zařízení;Světelné zdroje s výjimkou přímo žhavených žárovek;;3;7;1;Světelné zdroje;Ostatní světelné zdroje v jiné podskupině neuvedené;Ostatní světelné zdroje v jiné podskupině neuvedené
+5;1;2;Osvětlovací zařízení;Svítidla s LED diodami;    ;4;7;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod do 10 kg
+5;1;2;Osvětlovací zařízení;Svítidla s LED diodami;    ;4;7;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod od 10 kg do 30 kg
+5;1;2;Osvětlovací zařízení;Svítidla s LED diodami;;4;7;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod nad 30 kg
+5;1;2;Osvětlovací zařízení;Svítidla s LED diodami;;5;4;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Svítidla (do 50 cm);"Svítidla s LED i bez LED, jejichž žádný vnější rozměr nepřesahuje 
+50 cm"
+5;1;3;Osvětlovací zařízení;Svítidla bez LED diod;;4;7;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod do 10 kg
+5;1;3;Osvětlovací zařízení;Svítidla bez LED diod;;4;7;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod od 10 kg do 30 kg
+5;1;3;Osvětlovací zařízení;Svítidla bez LED diod;;4;7;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod nad 30 kg
+5;1;3;Osvětlovací zařízení;Svítidla bez LED diod;;5;4;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Svítidla (do 50 cm);"Svítidla s LED i bez LED, jejichž žádný vnější rozměr nepřesahuje 
+50 cm"
+6;1;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Vrtačky;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;1;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Vrtačky;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;2;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Pily;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;2;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Pily;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;3;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Šicí stroje kromě zařízení používaných v domácnostech spadajících pod skupinu 2;;4;10;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Zařízení používaná k pletení a tkaní;Zařízení používaná k šití, pletení, tkaní a jinému zpracování textilu, jejichž kterýkoli vnější rozměr přesahuje 50 cm
+6;4;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Zařízení pro soustružení, frézování, broušení, drcení, řezání, sekání, stříhání, vrtání, dělání otvorů, ražení, skládání, ohýbání nebo podobné zpracování dřeva, kovů a dalších materiálů;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;4;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Zařízení pro soustružení, frézování, broušení, drcení, řezání, sekání, stříhání, vrtání, dělání otvorů, ražení, skládání, ohýbání nebo podobné zpracování dřeva, kovů a dalších materiálů;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;5;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Nástroje pro nýtování, přibíjení nebo šroubování nebo pro odstraňování nýtů, hřebíků, šroubů nebo pro podobné účely;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;5;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Nástroje pro nýtování, přibíjení nebo šroubování nebo pro odstraňování nýtů, hřebíků, šroubů nebo pro podobné účely;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;6;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Nástroje pro pájení, svařování nebo podobné použití;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;6;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Nástroje pro pájení, svařování nebo podobné použití;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;7;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Zařízení pro postřik, šíření, rozptyl nebo zpracování tekutých nebo plynných látek jinými způsoby;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;7;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Zařízení pro postřik, šíření, rozptyl nebo zpracování tekutých nebo plynných látek jinými způsoby;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;8;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Nástroje pro sečení nebo jiné zahradnické činnosti;    ;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+6;8;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Nástroje pro sečení nebo jiné zahradnické činnosti;    ;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;9;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Ostatní elektrické a elektronické nástroje v jiné podskupině neuvedené ;nad 100 g;5;27;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí nad 100 g
+6;9;2;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních průmyslových nástrojů);Ostatní elektrické a elektronické nástroje v jiné podskupině neuvedené ;do 100 g;5;27;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a nářadí do 100 g
+7;1;1;Hračky, vybavení pro volný čas a sporty;Autodráhy a železnice;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;1;1;Hračky, vybavení pro volný čas a sporty;Autodráhy a železnice;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;1;2;Hračky, vybavení pro volný čas a sporty;RC modely elektrické;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;1;2;Hračky, vybavení pro volný čas a sporty;RC modely elektrické;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;1;3;Hračky, vybavení pro volný čas a sporty;Doplňky a příslušenství;;5;22;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky do 100 g
+7;1;3;Hračky, vybavení pro volný čas a sporty;Doplňky a příslušenství;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;1;3;Hračky, vybavení pro volný čas a sporty;Doplňky a příslušenství;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;2;1;Hračky, vybavení pro volný čas a sporty;Ruční ovladače videoher;;5;22;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky do 100 g
+7;2;1;Hračky, vybavení pro volný čas a sporty;Ruční ovladače videoher;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;2;1;Hračky, vybavení pro volný čas a sporty;Ruční ovladače videoher;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;3;1;Hračky, vybavení pro volný čas a sporty;Kapesní digitální hry;;5;22;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky do 100 g
+7;3;1;Hračky, vybavení pro volný čas a sporty;Kapesní digitální hry;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;3;1;Hračky, vybavení pro volný čas a sporty;Kapesní digitální hry;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;3;2;Hračky, vybavení pro volný čas a sporty;Herní konzole;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;3;2;Hračky, vybavení pro volný čas a sporty;Herní konzole;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;4;1;Hračky, vybavení pro volný čas a sporty;Počítače pro cyklistiku,potápění, běh, veslování apod.;    ;5;24;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Počítače pro cyklistiku, potápění, běh, veslování a podobné aktivity;Počítače pro cyklistiku, potápění, běh, veslování a podobné aktivity
+7;5;1;Hračky, vybavení pro volný čas a sporty;Trenažery;do 10 kg;5;23;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Sportovní vybavení;Trenažery do 25 kg, jejichž žádný vnější rozměr nepřesahuje 50 cm
+7;5;2;Hračky, vybavení pro volný čas a sporty;Trenažery;nad 10 kg;4;18;11;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 25 kg do 50 kg"
+7;5;2;Hračky, vybavení pro volný čas a sporty;Trenažery;nad 10 kg;4;18;12;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+od 50 kg do 100 kg"
+7;5;2;Hračky, vybavení pro volný čas a sporty;Trenažery;nad 10 kg;4;18;13;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;"Ostatní velká zařízení v jiné podskupině neuvedená 
+nad 100 kg"
+7;5;2;Hračky, vybavení pro volný čas a sporty;Trenažery;nad 10 kg;5;23;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Sportovní vybavení;Trenažery do 25 kg, jejichž žádný vnější rozměr nepřesahuje 50 cm
+7;5;3;Hračky, vybavení pro volný čas a sporty;Sportovní doplňky ;;5;23;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Sportovní vybavení;Sportovní doplňky
+7;6;1;Hračky, vybavení pro volný čas a sporty;Výherní mincovní automaty;;4;14;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Velké výherní mincovní automaty;Výherní mincovní automaty
+7;7;1;Hračky, vybavení pro volný čas a sporty;Elektrické a elektronické hračky bez LCD displeje, baterie a akumulátoru;;5;22;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky do 100 g
+7;7;1;Hračky, vybavení pro volný čas a sporty;Elektrické a elektronické hračky bez LCD displeje, baterie a akumulátoru;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;7;1;Hračky, vybavení pro volný čas a sporty;Elektrické a elektronické hračky bez LCD displeje, baterie a akumulátoru;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+7;7;2;Hračky, vybavení pro volný čas a sporty;Elektrické a elektronické hračky s LCD displejem, baterií a akumulátorem;;5;22;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky do 100 g
+7;7;2;Hračky, vybavení pro volný čas a sporty;Elektrické a elektronické hračky s LCD displejem, baterií a akumulátorem;;5;22;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 0,1 kg do 1 kg
+7;7;2;Hračky, vybavení pro volný čas a sporty;Elektrické a elektronické hračky s LCD displejem, baterií a akumulátorem;;5;22;3;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Elektrické a elektronické hračky;Elektrické a elektronické hračky od 1 kg do 4 kg
+8;1;1;Lékařské přístroje;Profipřístroje;    ;4;15;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Velké zdravotnické prostředky;Velké zdravotnické prostředky
+8;2;1;Lékařské přístroje;Výrobky určené pro domácnost ;    ;5;28;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé zdravotnické prostředky;Malé zdravotnické prostředky určené pro domácnost
+9;1;1;Přístroje pro monitorování a kontrolu;Profizařízení;;4;16;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Velké přístroje pro monitorování a kontrolu;Velké přístroje pro monitorování a kontrolu
+9;2;1;Přístroje pro monitorování a kontrolu;Výrobky určené pro domácnost ;    ;5;29;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé nástroje pro monitorování a kontrolu;Malé nástroje pro monitorování a kontrolu do 0,5 kg
+9;2;1;Přístroje pro monitorování a kontrolu;Výrobky určené pro domácnost ;    ;5;29;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Malé nástroje pro monitorování a kontrolu;Malé nástroje pro monitorování a kontrolu určené nad 0,5 kg
+10;1;1;Výdejní automaty;Profizařízení;;1;3;1;Zařízení pro tepelnou výměnu;Zařízení automaticky poskytující chlazené výrobky;Zařízení automaticky poskytující chlazené výrobky
+10;1;1;Výdejní automaty;Profizařízení;;4;17;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Velké výdejní automaty na výrobky a peníze;Velké výdejní automaty na výrobky a peníze
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;1;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky do 50 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;2;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky od 50 kg do 100 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;3;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky od 100 kg do 200 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;4;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - venkovní jednotky nad 200 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;5;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - vnitřní jednotky do 35 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;6;Zařízení pro tepelnou výměnu;Klimatizační zařízení;Klimatizace - vnitřní jednotky nad 35 kg (s chladicími médii), klimatizace mobilní (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;5;1;Zařízení pro tepelnou výměnu;Odvlhčovací zařízení;Odvlhčovací zařízení do 10 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;5;2;Zařízení pro tepelnou výměnu;Odvlhčovací zařízení;Odvlhčovací zařízení nad 10 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;1;Zařízení pro tepelnou výměnu;Tepelná čerpadla;Tepelná čerpadla do 100 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;2;Zařízení pro tepelnou výměnu;Tepelná čerpadla;Tepelná čerpadla od 100 kg do 150 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;3;Zařízení pro tepelnou výměnu;Tepelná čerpadla;Tepelná čerpadla od 150kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;1;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu do 10 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;2;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu od 10 kg do 50 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;3;Zařízení pro tepelnou výměnu;Radiátory obsahující olej a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zařízení pro tepelnou výměnu využívající k tepelné výměně jiné kapaliny než vodu nad 50 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;2;1;1;"Obrazovky, monitory a zařízení obsahující obrazovky 
+o ploše větší než 100 cm2";Obrazovky;Velkoplošné obrazovky, sportovní časomíry, speciální obrazovky, nástěnné displeje
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;1;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Elektrické ohřívače vody - závěsné svislé, vodorovné, stacionární tlakové do 50 kg, jejichž kterýkoliv vnější rozměr přesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;2;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Elektrické ohřívače vody - závěsné svislé, vodorovné, stacionární tlakové nad 50 kg, jejichž kterýkoliv vnější rozměr přesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;3;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Elektrické kotle, jejichž kterýkoliv vnější rozměr přesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;4;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Elektrická akumulační kamna do 40 kg, jejichž kterýkoliv vnější rozměr přesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;5;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Elektrická akumulační kamna nad 40kg,  jejichž kterýkoliv vnější rozměr přesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;6;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Speciální elektrická topidla - výhřevné sálavé kameny, ostatní sálavé zdroje
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;7;"Velká zařízení, jejichž kterýkoli vnější rozměr 
+přesahuje 50 cm";Ostatní velká zařízení v jiné podskupině neuvedená;Rekuperační jednotky (bez chladicích médií), jejichž jakýkoliv vnější rozměr přesáhne 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;26;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Regulační ventily topení, termostaty;Regulační ventily topení, termostaty
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;32;1;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;Elektrické ohřívače vody, jejichž žádný vnější rozměr nepřesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;32;2;"Malá zařízení, jejichž žádný vnější rozměr 
+nepřesahuje 50 cm";Ostatní malá zařízení v jiné podskupině neuvedená;Speciální malá elektrická topidla
+;;;;;;;;;;;

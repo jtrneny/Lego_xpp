@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<RELDP version="2009.1" xmlns="http://schemas.cssz.cz/ELDP09">
+   <eldp09 sqnr="1" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="460712435">
+           <name sur="Zajíček" fir="Josef"/>
+           <adr cit="Valašská Polanka" str="Valašská Polanka" num="278" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1946-07-12" nam="Zajíček" cit="Znojmo"/>
+       </client>
+       <items coun="1">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-08-05" to="2013-12-31" din="122" m1="" m2="" m3="" m4="" m5="" m6="" m7="" m8="x" m9="" m10="" m11="" m12=""/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="2013-08-05"/>
+     </eldp09>
+   <eldp09 sqnr="2" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="460724433">
+           <name sur="Hromada" fir="Miroslav"/>
+           <adr cit="Leskovec" str="Leskovec" num="107" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1946-07-24" nam="Hromada" cit="Leskovec"/>
+       </client>
+       <items coun="1" sinc="401536">
+           <t1 row="1" cod="AD+" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="401536"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="1993-01-01"/>
+     </eldp09>
+   <eldp09 sqnr="3" yer="2013" typ="02" tco="" dep="894" nam="">
+       <client bno="">
+           <name sur="Rapant" fir="Karel"/>
+           <adr cit="Valašská Polanka" str="Valašská Polanka" num="308" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1950-09-10" nam="" cit=""/>
+       </client>
+       <items coun="1">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-27" to="2013-12-31" m1="" m2="" m3="" m4="" m5="" m6="" m7="" m8="x" m9="x" m10="x" m11="x" m12="x"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="2013-08-27"/>
+     </eldp09>
+   <eldp09 sqnr="4" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="510820069">
+           <name sur="Krchňák" fir="Miroslav"/>
+           <adr cit="Leskovec" str="Leskovec" num="135" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1951-08-20" nam="Krchňák" cit="Leskovec"/>
+       </client>
+       <items coun="1" sdex="131" sinc="97179">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="242" m1="" m2="" m3="" m4="" m5="" m6="" m7="" m8="x" m9="x" m10="x" m11="" m12="x" dex="131" inc="97179"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="1995-02-13"/>
+     </eldp09>
+   <eldp09 sqnr="5" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="520517103">
+           <name sur="Psota" fir="Ladislav"/>
+           <adr cit="Vsetín" str="Dolní Jasénka" num="769/12" pos="VSETÍ" pnu="75501" cnt="CZ"/>
+           <birth dat="1952-05-17" nam="Psota" cit="Francova Lhota"/>
+       </client>
+       <items coun="1" sinc="344108">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="344108"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="1992-03-05"/>
+     </eldp09>
+   <eldp09 sqnr="6" yer="2013" typ="02" tco="" dep="894" nam="">
+       <client bno="">
+           <name sur="Rapantová" fir="Marie"/>
+           <adr cit="Valašská Polanka" str="" num="308" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1951-12-14" nam="" cit=""/>
+       </client>
+       <items coun="1">
+           <t1 row="1" cod="1++" sre="N" fro="2013-10-01" to="2013-12-31" m1="" m2="" m3="" m4="" m5="" m6="" m7="" m8="" m9="" m10="x" m11="x" m12="x"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="2013-10-01"/>
+     </eldp09>
+   <eldp09 sqnr="7" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="520722062">
+           <name sur="Daněk" fir="Karel"/>
+           <adr cit="Valašská Polanka" str="Valašská Polanka" num="333" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1952-07-22" nam="Daněk" cit="Vsetín"/>
+       </client>
+       <items coun="1" sinc="231264">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="231264"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="2010-09-01"/>
+     </eldp09>
+   <eldp09 sqnr="8" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="530222077">
+           <name sur="Kohoutek" fir="Josef"/>
+           <adr cit="Lužná" str="Lužná" num="159" pos="VALAŠ" pnu="75611" cnt="CZ"/>
+           <birth dat="1953-02-22" nam="Kohoutek" cit="Lužná"/>
+       </client>
+       <items coun="1" sdex="38" sinc="197359">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="38" inc="197359"/>
+       </items>
+       <comp nam="KOVAR a.s." id="99999999" vs="8940101655" cre="2014-04-22" fro="2005-08-16"/>
+     </eldp09>
+</RELDP>

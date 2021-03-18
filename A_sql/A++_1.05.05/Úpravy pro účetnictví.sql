@@ -1,0 +1,1 @@
+update ucetsys set nrokobd = nrok*100+nobdobi

@@ -1,0 +1,14 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník úloh) SIZE(60,15) FILE(C_TASK);
+              GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect)
+  TYPE(DBrowse) SIZE(75,14) FILE(C_TASK) FIELDS(CTASK,CNAZULOHY,CULOHA) CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y) 
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail)OFFSET(14,70) PRE( tabSelect)
+  TYPE(GET) NAME(CTASK)     FPOS(15,1) FLEN(3)  FCAPTION(Zkratka úlohy)        CPOS(1,1)
+  TYPE(GET) NAME(CNAZULOHY) FPOS(15,2) FLEN(25) FCAPTION(Název úlohy)          CPOS(1,2)
+  TYPE(GET) NAME(CULOHA)    FPOS(15,3) FLEN(1)  FCAPTION(Zkratka úlohy na 1)   CPOS(1,3)
+  TYPE(GET) NAME(LUCTUJ)    FPOS(15,4) FLEN(1)  FCAPTION(Úloha úètuje)         CPOS(1,4)
+TYPE(End)
+

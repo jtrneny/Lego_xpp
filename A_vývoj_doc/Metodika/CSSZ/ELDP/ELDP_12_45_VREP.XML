@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RELDP version="2009.1" xmlns="http://schemas.cssz.cz/ELDP09">
+   <eldp09 sqnr="1" yer="2012" typ="02" tco="" dep="774" nam="">
+       <client bno="335622422">
+           <name sur="POLACHOVÁ" fir="ZDENKA"/>
+           <adr cit="Moravská Nová Ves" str="Dolní" num="135" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1933-06-22" nam="Helešicová" cit="Mor. Nová Ves"/>
+       </client>
+       <items coun="1" sinc="25741">
+           <t1 row="1" cod="1D+" sre="N" fro="2012-08-01" to="2012-09-07" din="38" inc="25741"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2013-04-09"/>
+     </eldp09>
+   <eldp09 sqnr="2" yer="2012" typ="02" tco="" dep="774" nam="">
+       <client bno="390801437">
+           <name sur="KRÁL" fir="JAN"/>
+           <adr cit="Moravská Nová Ves" str="Dolní" num="139" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1939-08-01" nam="Král" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="142208">
+           <t1 row="1" cod="1D+" sre="N" fro="2012-02-01" to="2012-12-31" din="335" inc="142208"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2013-04-09"/>
+     </eldp09>
+</RELDP>

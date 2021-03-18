@@ -1,0 +1,253 @@
+(function() {
+  $(function() {
+    var data_cislo, data_kam, data_modul, data_qq, data_rez, data_typ, data_umz, fontSize, jmhl, mark, maxmark, mystr, myurl, pos, selector;
+    mark = -1;
+    maxmark = 0;
+    jmhl = {
+      element: "em",
+      className: "highlight",
+      separateWordSearch: true
+    };
+    try {
+      data_modul = $("#dokument_js").attr("data_modul");
+      data_cislo = $("#dokument_js").attr("data_cislo");
+      data_rez = $("#dokument_js").attr("data_rez");
+      data_kam = $("#dokument_js").attr("data_kam");
+      data_qq = $("#dokument_js").attr("data_qq");
+      data_typ = $("#dokument_js").attr("data_typ");
+      data_umz = $("#dokument_js").attr("data_ukaz_moji_zonu");
+    } catch (error) {
+
+    } finally {
+      if (data_modul === "pr") {
+        fontSize = parseInt($('aspi').css('font-size'), 10);
+      } else if (data_modul === "li" && data_typ === "ko") {
+        fontSize = parseInt($('aspionline').css('font-size'), 10);
+      } else if (data_modul === "li") {
+        fontSize = parseInt($('aspionline').css('font-size'), 10);
+      } else if (data_modul === "ju") {
+        fontSize = parseInt($('jud').css('font-size'), 10);
+      }
+      myurl = window.location.href;
+      pos = myurl.lastIndexOf("#");
+      mystr = myurl.substr(pos);
+      if (pos > 0) {
+        console.log(mystr);
+        selector = $(mystr);
+        console.log($(selector).offset().top);
+        $('html, body').animate({
+          scrollTop: $(selector).offset().top - 95
+        }, 1000);
+      }
+      if (data_qq) {
+        $.ajax({
+          url: '/dokument/get_ft_data/',
+          type: 'POST',
+          contentType: 'application/json',
+          dataType: 'json',
+          data: JSON.stringify({
+            modul: data_modul,
+            cislo: data_cislo,
+            rez: data_rez,
+            qq: data_qq
+          }),
+          error: function(jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+          },
+          success: function(data, status, response) {
+            console.log(data["slova"]);
+            $('#obsahoveZneni').mark(data["slova"], {
+              'element': 'span',
+              'className': 'highlight'
+            });
+            maxmark = $('.highlight').length;
+          }
+        });
+      }
+    }
+    $(document).bind('keydown', function(e) {
+      if (e.keyCode === 38 && e.ctrlKey) {
+        if (mark > 0) {
+          mark -= 1;
+          $('html, body').animate({
+            scrollTop: $('span.highlight').eq(mark).offset().top - 95
+          }, 500);
+        }
+      } else if (e.keyCode === 40 && e.ctrlKey) {
+        mark += 1;
+        if ((mark === 0) || (mark === maxmark)) {
+          $('html, body').animate({
+            scrollTop: $('span.highlight').first().offset().top - 95
+          }, 500);
+          mark = 0;
+        } else {
+          $('html, body').animate({
+            scrollTop: $('span.highlight').eq(mark).offset().top - 95
+          }, 500);
+        }
+      } else if (e.keyCode === 79) {
+        $('html, body').animate({
+          scrollTop: 66
+        }, 500);
+      }
+    });
+    $(document).bind('keydown', function(e) {
+      var code;
+      code = e.keyCode ? e.keyCode : e.which;
+      if (code === 80 && !$('#print-modal').length) {
+        $.printPreview.loadPrintPreview();
+        return false;
+      }
+      return;
+      $('.copy-button').click(function(e) {
+        e.preventDefault();
+        $('#textToCopy').append(text);
+        $('#textToCopy').val(text);
+        document.getElementById('copyTextModal').focus();
+        document.getElementById('textToCopy').focus();
+        document.getElementById('textToCopy').select();
+        $('#copyTextModal').modal('show');
+      });
+      $('.note-document-button').click(function(e) {
+        var targ;
+        e.preventDefault();
+        targ = $(event.target.nodeName).attr('id');
+        $('#textToNote').append(targ);
+        $('#textToNote').val(targ);
+        document.getElementById('noteSelectModal').focus();
+        $('#noteSelectModal').modal('show');
+      });
+    });
+    $(".poznamka_master").click(function(e) {
+      var my_i;
+      e.preventDefault();
+      my_i = $(this).find('> td > i');
+      if ($(my_i).hasClass('glyphicon-resize-full')) {
+        $(my_i).removeClass('glyphicon-resize-full');
+        $(my_i).addClass('glyphicon-resize-small');
+      } else {
+        $(my_i).removeClass('glyphicon-resize-small');
+        $(my_i).addClass('glyphicon-resize-full');
+      }
+      $(e.target).closest("tr").next('tr').toggle("fast");
+    });
+    $('sup a').click(function(e) {
+      selector = $(this).attr('href');
+      $('html, body').animate({
+        scrollTop: $(selector).offset().top - 65
+      }, 25);
+    });
+    $('#text_small').click(function(e) {
+      if (fontSize > 8) {
+        fontSize -= 2;
+      }
+      if (data_modul === "pr") {
+        $('aspi').css('font-size', fontSize + 'px');
+      } else if (data_modul === "li" && data_typ === "ko") {
+        $('aspionline').css('font-size', fontSize + 'px');
+        console.log("ko");
+      } else if (data_modul === "li") {
+        $('aspionline').css('font-size', fontSize + 'px');
+        console.log("NEko");
+      } else if (data_modul === "ju") {
+        $('jud').css('font-size', fontSize + 'px');
+      }
+      console.log("zmensuju");
+    });
+    $('#text_big').click(function(e) {
+      if (fontSize < 22) {
+        fontSize += 2;
+      }
+      if (data_modul === "pr") {
+        $('aspi').css('font-size', fontSize + 'px');
+      } else if (data_modul === "li" && data_typ === "ko") {
+        $('aspionline').css('font-size', fontSize + 'px');
+      } else if (data_modul === "li") {
+        $('aspionline').css('font-size', fontSize + 'px');
+      } else if (data_modul === "ju") {
+        $('jud').css('font-size', fontSize + 'px');
+      }
+      console.log("zvetsuju");
+    });
+    $('#citace').click(function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: '/dokument/citace/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          modul: data_modul,
+          cislo: data_cislo
+        }),
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus);
+        },
+        success: function(data, status, response) {
+          var text;
+          text = data["citace"];
+          $('#textCitaceToCopy').val(text);
+          $('#textCitaceToCopy').select();
+          $('#citaceModal').modal('show');
+        }
+      });
+    });
+    $('#printDoc').click(function(e) {
+      var textCitace;
+      textCitace = "==========";
+      $.ajax({
+        url: '/dokument/citace/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          modul: data_modul,
+          cislo: data_cislo
+        }),
+        error: function(jqXHR, textStatus, errorThrown) {
+          textCitace = "";
+        },
+        success: function(data, status, response) {
+          var is_chrome, mojeUrl, mywindow;
+          textCitace = data["citace"];
+          mojeUrl = data["url"];
+          mywindow = window.open('', '', 'location=1,resizable=yes,height=600,width=800');
+          is_chrome = Boolean(mywindow.chrome);
+          mywindow.document.write('<html><head>');
+          mywindow.document.write('<link rel="stylesheet" href="/css/dauc_print.css" type="text/css" media="print"/>');
+          mywindow.document.write('</head><body><header><table><th><td style="text-align: left; width: 33%; font-size: 9px">DAUČ | Wolters Kluwer ČR</td><td style="text-align: right; width: 67%; font-size: 10px">');
+          mywindow.document.write(mojeUrl);
+          mywindow.document.write('</td></th></table></header>');
+          mywindow.document.write('<div class="logo_claim" align="left"><img src="/img/dauc_logo_black_claim.png" width="116" /></div><hr />');
+          mywindow.document.write($('#obsahoveZneni').html());
+          mywindow.document.write('<hr /><footer><table><th><td style="text-align: left; width: 50%">&#169; Wolters Kluwer ČR, a. s., 2017</td><td style="text-align: right; width: 50%">www.dauc.cz</td></th></table><div style="text-align: right"><img src="/img/logo-wkcr.jpg" width="180" /></div></footer><h5>');
+          mywindow.document.write(textCitace);
+          mywindow.document.write('</h5></body></html>');
+          if (is_chrome) {
+            setTimeout(function() {
+              mywindow.document.close();
+              mywindow.focus();
+              mywindow.print();
+              return mywindow.close();
+            }, 600);
+          } else {
+            mywindow.document.close();
+            mywindow.focus();
+            mywindow.print();
+            mywindow.close();
+          }
+          true;
+        }
+      });
+    });
+    if (data_umz === "spolecnost") {
+      $('#myZone').modal('show');
+    }
+    return $(".glyphicon-minus").each(function() {
+      $(this).next().next().next().toggle("fast");
+      $(this).removeClass("glyphicon glyphicon-minus");
+      $(this).addClass("glyphicon glyphicon-plus");
+    });
+  });
+
+}).call(this);

@@ -1,0 +1,139 @@
+/*****************************
+* Source : XbZ_Zip.ch
+* System : <unkown>
+* Author : Andreas Gehrs-Pahl
+* Created: 12/22/2004
+*
+* Purpose: Header File for Programs that use the XbZLibZip Class from XbZLib.dll
+* ----------------------------
+* History:
+* ----------------------------
+*    12/22/2004       AGP - Created
+*    06/15/2005       AGP - Updated length of XBZ_NEXT_LOG_LINE define constant for Version 1.4 LogWriter Class
+*    08/04/2005       AGP - Added XBZ_USER_ABORT define constant (as a pseudo Error Code)
+*****************************/
+
+#ifndef __XBZ_ZIP__
+
+#define __XBZ_ZIP__
+
+************************************************************************
+* Open Mode Defines for :New()/:Open() Methods ==> saved in :nOpenMode *
+************************************************************************
+#define XBZ_OPEN_FAILED			 0	// No Zip File Open
+#define XBZ_OPEN_CREATE			 1	// Create (Created) New Zip File (and Delete Existing)
+#define XBZ_OPEN_UPDATE			 2	// Open (Opened) Existing Zip File for Updates (if Existing)
+#define XBZ_OPEN_READ			 3	// Open (Opened) for Read-Only Access (if Existing)
+#define XBZ_OPEN_TEST			 4	// Open (Opened) for Test-Only (and Read-Only) Access (if Existing)
+
+************************************************************************
+* Status Code Defines for :Test()/:Fix() Methods ==> saved in :nStatus *
+************************************************************************
+#define XBZ_FILE_OK			 0	// All Entries in Zip File are OK
+#define XBZ_FILE_NO_DIR			 1	// No Central Directory Found
+#define XBZ_FILE_NO_ENTRIES		 2	// No Entries found in Zip File
+#define XBZ_FILE_CORRUPT		 3	// Corrupt Entries found in Zip File
+
+***************************************************************************
+* Status/Error/Corruption Codes for individual (File) Entries in Zip File *
+* Returned by :TestEntry()/:FixEntry() Methods ==> saved in :aFStatus     *
+***************************************************************************
+#define XBZ_ENTRY_OK			 0	// Local Record and Data are OK
+#define XBZ_CRC_WRONG			 1	// CRC of Data is wrong
+#define XBZ_NO_CDREC			 2	// Could not Find Central Directory Record
+#define XBZ_NO_LFDREC			 3	// Could not Find Local File Record (and Data)
+#define XBZ_VER_DIFF			 4	// Version Flag of Local and Central Header are different
+#define XBZ_GPFLAG_DIFF			 5	// GPFlag of Local and Central Header are different
+#define XBZ_METHOD_DIFF			 6	// Compression Method of Local and Central Header are different
+#define XBZ_FTIME_DIFF			 7	// File Time of Local and Central Header are different
+#define XBZ_CRC_DIFF			 8	// CRC of Local and Central Header are different
+#define XBZ_CSIZE_DIFF			 9	// Compressed-Size of Local and Central Header are different
+#define XBZ_OSIZE_DIFF			10	// Original (Un-Compressed)-Size of Local and Central Header are different
+#define XBZ_FNLEN_DIFF			11	// File Name Length of Local and Central Header are different
+#define XBZ_FNAME_DIFF			12	// File Name of Local and Central Header are different
+
+#define XBZ_MAX_ERROR_CODES		12	// Number of different Error Codes Supported for Zip File Entries
+
+*************************************************************
+* Cance/Quit Defines for :AddDir() and :CancelAdd() Methods *
+*************************************************************
+#define XBZ_DONT_QUIT			 0	// Don't Quit Adding of Files
+#define XBZ_QUIT_CURRENT		 1	// Quit Adding Files of current Directory (Level)
+#define XBZ_QUIT_ALL			 2	// Quit Adding Files completely
+
+**************************************************************
+* Overwrite Defines for :Extract() and :ExtractAll() Methods *
+**************************************************************
+#define XBZ_OVERWRITE_NEVER		 0	// Never overwrite/replace existing Files.
+#define XBZ_OVERWRITE_OLDER		 1	// Overwrite/replace only Older Files.
+#define XBZ_OVERWRITE_ALL		 2	// Always overwrite/replace existing Files.
+
+*****************************************************************************
+* Defines for Compression Ratios (2, 3, 4, 5, 6, 7, and 8 are also allowed) *
+* Can also be set in :New() and :Open() Methods ==> saved in :Compression   *
+* The original ZLib Defines were prefixed only with "Z_" instead of "XBZ_"  *
+*****************************************************************************
+#define XBZ_DEFAULT_COMPRESSION		 -1	// Default Compression (equivalent to about 6)
+#define XBZ_NO_COMPRESSION		  0	// No Compression (Store)
+#define XBZ_BEST_SPEED			  1	// Best Speed, Lowest Compression
+#define XBZ_BEST_COMPRESSION		  9	// Best Compression, Slowest Speed
+
+*********************************************************************
+* Compression Method Defines (only Store and Deflate are supported) *
+*********************************************************************
+#define XBZ_COMP_STORE			 0	// Stored (no compression)
+#define XBZ_COMP_SHRUNK			 1	// Shrunk (not supported)
+#define XBZ_COMP_REDUCED1		 2	// Reduced with Compression Factor 1 (not supported)
+#define XBZ_COMP_REDUCED2		 3	// Reduced with Compression Factor 2 (not supported)
+#define XBZ_COMP_REDUCED3		 4	// Reduced with Compression Factor 3 (not supported)
+#define XBZ_COMP_REDUCED4		 5	// Reduced with Compression Factor 4 (not supported)
+#define XBZ_COMP_IMPLODED		 6	// Imploded (not supported)
+#define XBZ_COMP_TOKENIZED		 7	// Reserved for Tokenized (not supported)
+#define XBZ_COMP_DEFLATED		 8	// Deflated
+#define XBZ_COMP_DEFLATE64		 9	// Enhanced Deflate64(tm) Deflated (not supported)
+#define XBZ_COMP_PKDCL			10	// PKWare Data Compression Library Imploding (not supported)
+
+#define XBZ_COMP_TEXT			{"Stored",;
+					 "Shrunk",;
+					 "Reduced1",;
+					 "Reduced2",;
+					 "Reduced3",;
+					 "Reduced4",;
+					 "Imploded",;
+					 "Tokenized",;
+					 "Deflated",;
+					 "Deflate64",;
+					 "PKWare DCL"}
+
+****************************************************************************
+* Error Codes for ZLib Compress(), Compress2(), and UnCompress() Functions *
+* The original ZLib Defines were prefixed only with "Z_" instead of "XBZ_" *
+****************************************************************************
+#define XBZ_OK				  0	// No Error: Successfull
+#define XBZ_STREAM_END			  1	// No Error: Stream Ended
+#define XBZ_NEED_DICT			  2	// No Error: Dictionary required
+#define XBZ_ERRNO			(-1)	// Error: Non-ZLib (OS) Error was raised
+#define XBZ_STREAM_ERROR		(-2)	// Error: Compression Level Parameter invalid
+#define XBZ_DATA_ERROR			(-3)	// Error: Input Data corrupted
+#define XBZ_MEM_ERROR			(-4)	// Error: Not enough Memory to complete operation
+#define XBZ_BUF_ERROR			(-5)	// Error: Output Buffer too small
+#define XBZ_VERSION_ERROR		(-6)	// Error: ZLib Version does not match
+
+**********************************************************************
+* The following is not a real Error Code, but can be used in calling *
+* programs to indicate that the process didn't conclude normally     *
+**********************************************************************
+#define XBZ_USER_ABORT			(-9)	// User Aborted Operation
+
+********************
+* Log File Defines *
+********************
+#define XBZ_NEXT_LOG_LINE		chr(13) + chr(10) + Space(24)	// Offset for Date/Time Stamp
+
+*************************
+* Some Pseudo Functions *
+*************************
+#xtranslate OClone(<o>) => Bin2Var(Var2Bin(<o>))
+
+#endif		// __XBZ_ZIP__
+

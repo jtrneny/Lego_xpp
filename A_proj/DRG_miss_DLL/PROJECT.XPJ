@@ -1,0 +1,166 @@
+[PROJECT]
+    DEBUG         = no
+    VERSION       = 2.0
+    OPENFILES     = DRGERRORSYS.PRG
+    DRG.XPJ
+
+[DRG.XPJ]
+    drg1.dll
+    drg2.dll
+
+[drg1.dll]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /DLL:DYNAMIC /q 
+    DEBUG_SAVE    = no
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = /dll 
+    RC_COMPILE    = arc
+    RC_FLAGS      = /v
+    OBJ_DIR       = G:\LEGO_xpp\A_proj\DRG_miss_DLL\obj
+// $START-AUTODEPEND
+    drg.ch
+    drgres.ch
+    A_lib.obj
+    ADS_.obj
+    drgActions.obj
+    drgArray.obj
+    drgBrowse.obj
+    drgBrowse_.obj
+    drgClickDate.obj
+    drgComboBox.obj
+    drgDataManager.obj
+    drgDBMS.obj
+    drgDC1.obj
+    drgDC2.obj
+    drgDC3.obj
+    drgDC4.obj
+    drgDC5.obj
+    drgDC6.obj
+    drgDialog.obj
+    drgDialogController.obj
+    drgDynamicForm.obj
+    drgEditBrowse.obj
+    drgErrorSys.obj
+    drgFile.obj
+    drgFileLib.obj
+    drgFindForm.obj
+    drgForm.obj
+    drgFormManager.obj
+    drgGet.obj
+    drgCheckBox.obj
+    drgINI.obj
+    drgLib1.obj
+    drgLib2.obj
+    drgListBrowse.obj
+    drgLog.obj
+    drgLogin.obj
+    drgMenu.obj
+    drgMessageBar.obj
+    drgMLE.obj
+    drgNLS.obj
+    drgObject.obj
+    drgPP.obj
+    drgProgram.obj
+    drgProgresMB.obj
+    drgQBrowse.obj
+    drgRadioButton.obj
+    drgRef.obj
+    drgScrPos.obj
+    drgSearch.obj
+    drgServiceThread.obj
+    drgSpinButton.obj
+    drgStatic.obj
+    drgTabPage.obj
+    drgText.obj
+    drgTreeView.obj
+    mh_.obj
+    six_.obj
+    WinApi_.obj
+    xbpGet.obj
+    XbpImageMenu.obj
+// $STOP-AUTODEPEND
+    adac20b.lib
+    ..\A_main\A_lib.prg
+    ..\A_main\ADS_.prg
+    ..\A_main\mh_.prg
+    ..\A_main\six_.prg
+    ..\A_main\WinApi_.prg
+    drgActions.PRG
+    drgArray.PRG
+    drgBrowse.PRG
+    drgBrowse_.prg
+    drgClickDate.prg
+    drgComboBox.PRG
+    drgDataManager.PRG
+    drgDBMS.PRG
+    drgDC1.PRG
+    drgDC2.PRG
+    drgDC3.PRG
+    drgDC4.PRG
+    drgDC5.PRG
+    drgDC6.PRG
+    drgDialog.PRG
+    drgDialogController.PRG
+    drgDynamicForm.PRG
+    drgEditBrowse.PRG
+    drgErrorSys.PRG
+    drgFile.PRG
+    drgFileLib.PRG
+    drgFindForm.PRG
+    drgForm.PRG
+    drgFormManager.PRG
+    drgGet.PRG
+    drgCheckBox.PRG
+    drgINI.PRG
+    drgLib1.PRG
+    drgLib2.PRG
+    drgListBrowse.PRG
+    drgLog.PRG
+    drgLogin.PRG
+    drgMenu.PRG
+    drgMessageBar.PRG
+    drgMLE.PRG
+    drgNLS.PRG
+    drgObject.PRG
+    drgPP.PRG
+    drgProgram.PRG
+    drgProgresMB.PRG
+    drgQBrowse.PRG
+    drgRadioButton.PRG
+    drgRef.PRG
+    drgScrPos.PRG
+    drgSearch.PRG
+    drgServiceThread.PRG
+    drgSpinButton.PRG
+    drgStatic.PRG
+    drgTabPage.PRG
+    drgText.PRG
+    drgTreeView.PRG
+    xbpGet.PRG
+    XbpImageMenu.prg
+
+[drg2.dll]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /DLL:DYNAMIC /q 
+    DEBUG_SAVE    = no
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = /dll 
+    RC_COMPILE    = arc
+    RC_FLAGS      = /v
+    OBJ_DIR       = G:\LEGO_xpp\A_proj\DRG_miss_DLL\obj
+// $START-AUTODEPEND
+    drg.ch
+    drgres.ch
+    drgPrint.obj
+    drgPrintDefaults.obj
+    drgPrintForm.obj
+    drgPrintWindows.obj
+// $STOP-AUTODEPEND
+    drg1.lib
+    drgPrint.prg
+    drgPrintDefaults.prg
+    drgPrintForm.prg
+    drgPrintWindows.prg
+

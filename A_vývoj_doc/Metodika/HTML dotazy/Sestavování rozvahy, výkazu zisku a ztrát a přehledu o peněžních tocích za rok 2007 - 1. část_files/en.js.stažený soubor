@@ -1,0 +1,47 @@
+/**
+ * bs_grid v0.9.2 localization - ENGLISH ***************************************
+ *
+ * DO NOT CHANGE this file, as it will be overwritten in next update.
+ * To use different values, write and use a similar structure js file.
+ *
+ */
+var rsc_bs_dg = {
+
+    columns: "Sloupce",
+    columns_show_row_numbers: "Čísla řádků",
+    columns_default: "Default",
+
+    sorting: "Sorting",
+    sort_ascending: "<i class='glyphicon glyphicon-chevron-up'></i>&nbsp;&nbsp;",
+    sort_descending: "<i class='glyphicon glyphicon-chevron-down'></i>&nbsp;&nbsp;",
+    sort_none: "<i class='glyphicon glyphicon-minus'></i>&nbsp;&nbsp;",
+    sorting_default: "Default",
+
+    filters: "Filtry",
+    filters_apply: "Použít",
+    filters_reset: "Resetovat",
+
+    select: "Vyber",
+    select_all_in_page: "Vše na stránku",
+    deselect_all_in_page: "Nic na stránku",
+    select_inverse_in_page: "Otočit",
+    deselect_all: "Odznačit vše",
+
+    row_index_header: "#",
+    no_records_found: "Žádné záznamy"
+};
+
+var rsc_bs_pag = {
+    go_to_page_title: 'Jdi na stránku',
+    rows_per_page_title: 'Řádek na stránku',
+    current_page_label: 'Strana',
+    current_page_abbr_label: 's.',
+    total_pages_label: 'z',
+    total_pages_abbr_label: '/',
+    total_rows_label: 'z',
+    rows_info_records: 'záznamů',
+    go_top_text: '&laquo;',
+    go_prev_text: '&larr;',
+    go_next_text: '&rarr;',
+    go_last_text: '&raquo;'
+};

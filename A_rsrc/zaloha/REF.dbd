@@ -1,0 +1,144 @@
+* REF.DBD
+*
+
+*
+* OBECN…
+  TYPE(FIELD) NAME(LYESNO)     DESC(LogickÈ hodnoty Ano/Ne)   CAPTION(Ano/Ne)    FTYPE(L) FLEN( 1) DEC(0) VALUES(T:Ano,F:Ne)
+
+  TYPE(FIELD) NAME(MESICE)     DESC(MÏsÌce)                   CAPTION(MÏsÌce)    FTYPE(N) FLEN( 2) DEC(0) ;
+              VALUES(1:leden,2:˙nor,3:b¯ezen,4:duben,5:kvÏten,6:Ëerven,7:Ëervenec,8:srpen,9:z·¯Ì,10:¯Ìjen,11:listopad,12:prosinec )
+
+  TYPE(FIELD) NAME(CTYPKURZU)  DESC(Typ kurzu)                CAPTION(Typ kurzu) FTYPE(C) FLEN( 3) DEC(0) ;
+              VALUES('   ':Neuveden, DEN:DennÌ, TYD:T˝dennÌ, MES:MÏsÌËnÌ, QVA:Kvart·lnÌ, POL:PololetnÌ, ROK:RoËnÌÌ)
+
+  TYPE(FIELD) NAME(CASINT)     DESC(»asovÈ intervaly)         CAPTION(»asInt)    FTYPE(N) FLEN( 2) DEC(0) ;
+              VALUES( 30:30 minut,20:20 minut,15:15 minut,10:10 minut,6: 6 minut,5: 5 minut,3: 3 minuty,2: 2 minuty,1: 1 minuta)
+
+
+*
+* KANCEL¡ÿ
+  TYPE(FIELD) NAME(TYPEDTDOK)  DESC(Typ editoru)              CAPTION(Typ EDT)    FTYPE(C) FLEN( 3) DEC(0) VALUES(TXT:notepade,RTF:rtf editor,PDF:acrobat,DOC:word,XLS:excel)
+
+  TYPE(FIELD) NAME(TYPDOKUM)   DESC(Typ dokumentu)            CAPTION(Typ dok)    FTYPE(C) FLEN(10) DEC(0) VALUES(OBECNY:Obecn˝ dokument)
+
+  TYPE(FIELD) NAME(TYPUKOLU)   DESC(Typ ˙kolu)                CAPTION(Typ ˙kolu)  FTYPE(C) FLEN(10) DEC(0) VALUES(OBECNY:Obecn˝ ˙kol)
+
+  TYPE(FIELD) NAME(TYPSPOJ)    DESC(Typ spojenÌ)              CAPTION(Typ spoj)   FTYPE(C) FLEN(10) DEC(0) VALUES(ADR: PoötovnÌ adresa,;
+                                                                                                                  TEL:    Telefon,;
+                                                                                                                  IP_TEL: IP telefon,; 
+                                                                                                                  GSM:    MobilnÌ telefon,;
+                                                                                                                  EMAIL:  E-mail,;
+                                                                                                                  SKYPE:  Skype,;
+                                                                                                                  ICQ:    ICQ,; 
+                                                                                                                  WWW:    Webov· str·nka,;
+                                                                                                                  LAN:    Lan sÌù,; 
+                                                                                                                  FTP:    P¯ipojenÌ pomocÌ FTP,;
+                                                                                                                  URL:    P¯ipojenÌ pomocÌ URL )   
+
+
+*
+* SKLADY
+  TYPE(FIELD) NAME(TYPSKLCEN)  DESC(Typ skladovÈ ceny)        CAPTION(Typ SC)    FTYPE(C) FLEN( 3) DEC(0) VALUES(PEV:Pevn·,PRU:Pr˘mÏrn·)
+
+  TYPE(FIELD) NAME(POLCEN)     DESC(CenÌkov· poloûka)         CAPTION(Cen.pol.)  FTYPE(C) FLEN( 1) DEC(0) VALUES(C:CenÌkov·,N:NecenÌkov·,E:EvidenËnÌ)
+
+  TYPE(FIELD) NAME(CVYRCIS)    DESC(Typ evidence v˝r.ËÌsel)   CAPTION(Evid.V»)   FTYPE(C) FLEN( 1) DEC(0) VALUES( :- Neevidovat -,;
+                                                                                                                 A:Individu·lnÌ evidence         ,;
+                                                                                                                 B:MnoûstevnÌ evidence (öarûe)   ,;
+                                                                                                                 C:Evidence blok˘ ( OD-DO )       )
+
+  TYPE(FIELD) NAME(CKATALCIS)  DESC(VyuûitÌ katalog. ËÌsel)   CAPTION(Katal.Ë.)  FTYPE(C) FLEN( 1) DEC(0) VALUES(N:NevyuûÌv· se,A:VyuûÌv· se)
+
+  TYPE(FIELD) NAME(NPREDANPOV) DESC(P¯enesen· daÚ.povinnost)  CAPTION(DaÚ.pov.)  FTYPE(N) FLEN( 1) DEC(0) VALUES(0:nevyuûÌv· se,;
+                                                                                                                 1:dod·nÌ zlata,;
+                                                                                                                 2:emisnÌ povolenky,;
+                                                                                                                 3:odpad)
+
+
+*
+* HIM
+  TYPE(FIELD) NAME(TYPDODPI)   DESC(Typ daÚovÈho odpisu)      CAPTION(Typ DO)    FTYPE(N) FLEN( 1) DEC(0) VALUES(1:RovnomÏrn˝,2:Zrychlen˝)
+
+  TYPE(FIELD) NAME(TYPUODPI)   DESC(Typ ˙ËetnÌho odpisu)      CAPTION(Typ UO)    FTYPE(N) FLEN( 1) DEC(0) VALUES(1:RovnomÏrn˝,3:Roven daÚovÈmu)
+
+  TYPE(FIELD) NAME(UPLPROC)    DESC(UplatnÏnÌ procent)        CAPTION( Uplat. %) FTYPE(N) FLEN( 5) DEC(2) VALUES(0.00:0.00,10.00:10.00,15.00:15.00,20.00:20.00)
+
+  TYPE(FIELD) NAME(NTYPVYPUO)  DESC(Typ v˝poËtu ˙Ëet.odpis˘)  CAPTION(V˝p.UO)    FTYPE(N) FLEN( 1) DEC(0) VALUES(1:Pln˝,2:Zkr·cen˝)
+
+  TYPE(FIELD) NAME(NZPUODPIS)  DESC(Zp˘sob odpisov·nÌ)        CAPTION(Zp.odpis.) FTYPE(N) FLEN( 1) DEC(0) VALUES(1:Dle z·kona,2:Dle internÌ smÏrnice)
+
+
+
+*
+* ZVI
+  TYPE(FIELD) NAME(TYPEVID)    DESC( Typ evidence)            CAPTION( Evid.)    FTYPE(C) FLEN( 1) DEC(0) VALUES(I:Individu·lnÌ,S:Skupinov·)
+
+  TYPE(FIELD) NAME(TYPZVR)     DESC( Typ zvÌ¯ete)             CAPTION( Typ zv.)  FTYPE(C) FLEN( 1) DEC(0) VALUES(S:Skot,V:Vep¯ovÈ)
+
+
+
+*
+* UCT
+  TYPE(FIELD) NAME(LTYP_AUT)   DESC(typ automatu NV)          CAPTION(tyz NV)    FTYPE(L) FLEN( 1) DEC(0) VALUES(T:˙ËetnÌ,F:v˝robnÌ)
+
+  TYPE(FIELD) NAME(CNAZPOLX)   DESC(n·klStruktura automat˘)   CAPTION(nsAut)     FTYPE(C) FLEN( 1) DEC(0) VALUES(cNAZPOL2:V˝robek  , ;
+                                                                                                                 cNAZPOL3:Zak·zka  , ;
+                                                                                                                 cNAZPOL4:V˝rMÌsto , ;
+                                                                                                                 cNAZPOL5:Stroj    , ;
+                                                                                                                 cNAZPOL6:V˝rOperace )
+
+  TYPE(FIELD) NAME(ru_TYPUZV)  DESC(Typ roËnÌ uz·vÏtky)       CAPTION(TypUZV)    FTYPE(N) FLEN( 2) DEC(0) VALUES(0:NerozpoËtovÈ subjekty             , ;
+                                                                                                                 1:  RozpoËtov· organizace             )
+
+  TYPE(FIELD) NAME(ru_DOPLPS)  DESC(DoplnÏn poËStav˘)         CAPTION(DoplPS)    FTYPE(N) FLEN( 2) DEC(0) VALUES(0:Bez DoplnÏnÌ poË·teËnÌch stav˘    , ;
+                                                                                                                 1:    DoplnÏnÌ poË·teËnÌch stav˘      )
+
+  TYPE(FIELD) NAME(ru_VYTPSNV) DESC(Vyto¯enÌ psNedV˝roby)     CAPTION(VztvPSNV)  FTYPE(N) FLEN( 2) DEC(0) VALUES(0:Nevytv·¯et PS nedV˝roby                 , ;
+                                                                                                                 1:  Vytvo¯it PS nedV˝r zemÏdÏlci          , ;
+                                                                                                                 2:  Vytvo¯it PS nedV˝r pr˘m.do poË.stav˘  , ;
+                                                                                                                 3:  Vytvo¯it PS nedV˝r pr˘m.do ˙Ë.poloûek , ;
+                                                                                                                 4:  Vytvo¯it PS nedV˝r bez reûijÌ           )
+
+  TYPE(FIELD) NAME(ru_TYPVNPU) DESC(Typ vnitrop⁄Ëtu)          CAPTION(TypVNP)    FTYPE(N) FLEN( 2) DEC(0) VALUES(0:VnitropodnikovÈ ˙Ëtov·nÌ 8..9     , ;
+                                                                                                                 1:VnitropodnikovÈ ˙Ëtov·nÌ 5..6       )
+
+  TYPE(FIELD) NAME(ru_TYPUZVR) DESC(Typ uzav¯enÌ roku)        CAPTION(TypUZVR)   FTYPE(N) FLEN( 2) DEC(0) VALUES(0:Bez uzav¯enÌ  ˙ËetnÌho roku       , ;
+                                                                                                                 1:S   uzav¯enÌm ˙ËetnÌho roku         )
+
+
+
+*
+* VYR
+  TYPE(FIELD) NAME(TYPSKLPOL)  DESC(Typ skladovÈ poloûky)     CAPTION(Typ skl.pol) FTYPE(C) FLEN( 2) DEC(0) VALUES(V:Materi·l pro v˝robu,;
+                                                                                                                   O:ObchodnÌ zboûÌ     ,;
+                                                                                                                   U:Materi·l nebo zboûÌ,;
+                                                                                                                   R:V˝robek            ,;
+                                                                                                                   P:Polotovar          ,;
+                                                                                                                   S:ProdejnÌ sestava    )
+
+*
+* FIN
+** FAKVYSIT
+  TYPE(FIELD) NAME(NKODPLNENI)  DESC(Kod plneni)              CAPTION(kodPlneni)   FTYPE(N) FLEN( 1) DEC(0) VALUES(0:nezahrnuje se            , ;
+                                                                                                                   1:standardnÌ zboûÌ[0]      , ;
+                                                                                                                   2:p¯emÌstÏnÌ obchMajetku[1], ;
+                                                                                                                   3:t¯Ì strann˝ obchod[2]    , ;
+
+
+*
+* PER
+** 
+  TYPE(FIELD) NAME(cTypRodPri)  DESC(Vztah rodinÈho p¯ÌsluönÌka)    CAPTION(vztRodP¯Ìs)   FTYPE(c) FLEN( 10) DEC(0) VALUES(:bez vztahu                      , ;
+                                                                                                                   manzel:manûel                           , ;
+                                                                                                                   manzelka:manûelka                       , ;
+                                                                                                                   syn:syn                                 , ;
+                                                                                                                   dcera:dcera                             , ;
+                                                                                                                   druh:druh                               , ;
+                                                                                                                   druzka:druûka                           , ;
+                                                                                                                   regpart:registrovan˝ partner            , ;
+                                                                                                                   regpart_a:registrovan· partnerka )
+
+*
+*SYS
+*
+** ASYSINFO

@@ -1,0 +1,115 @@
+*
+** pozor tento soubor je jen informaËnÌ souhrn
+** NEPÿIPOJOVOVAt Do PROJEKTU
+*
+
+c_nemPas
+
+tag C_NEMPAS01
+    UPPER(CTYPDOKLAD)+UPPER(CTYPPOHYBU)+STRZERO(nRokObd,6)+STRZERO(nPasmo,3)
+
+p¯Ìstup pro zÌsk·nÌ z·znam˘
+
+1 - cky := upper( mzdDavHdw->ctypDoklad) +upper( mzdDavHDw->ctypPohybu)
+
+2 - v INS po zad·nÌ od - do
+
+    cky rozöÌ¯Ìme o strZero( mzd_doklhrmz_nrokObd( mzdDavHdw->ddatumOd ), 6 )
+    mzdDavHdw->ddatumOd ... mzdDavHdw->ddatumDo
+
+    function mzd_doklhrmz_nrokObd( date )
+      local  retVal := 0
+
+      do case
+      * do 31.12.2010
+      case date <= ctod( '31.12.10' )
+        retVal := 201001
+
+      * od  1.1.2011
+      case date >= ctod( '01.01.11' )
+        retVal := 201101
+
+      endcase
+    return retVal
+
+3 - no a nastavÌme scope
+    c_nemPas->( dbsetScope( SCOPE_BOTH, cky))
+
+    do while .not. c_nemPas->(eof())
+
+      pokud tam nÏco je
+      musÌme nagenerovat z·znamy pro po¯ÌzenÌ nemocenky
+
+
+      c_nemPas->(dbSkip())
+    enddo
+
+    KALENDAR.PRG   - funkce pro v˝poËet dn˘ PRAC, SVAT, VOL, KAL
+        F_kalDny
+
+        F_pracDny  - MZD_funce_.prg
+        F_svatky   - MZD_funce_.prg
+        F_PrcDnyOD
+        F_VolDnyOD
+        F_SvatkyOD
+        D_DnyOdDo
+        PracFond
+        PrcFondObd
+
+    *** pro jednotlivÈ z·znamy musÌme vypoËÌtat dny
+    ddatumDo    := if( empty(mzdDavHdw->ddatumDo), mh_lastDayOM(mzdDavHdw->ddatumOd), mzdDavHdw->ddatumDo )
+    ndny_nemoci :=  ddatumDo - mzdDavHdw->ddatumOd
+
+    npasmoOd := c_nemPas->npasmoOd
+    npasmoDo := c_nemPas->npasmoDo
+
+    if ndny_nemoci >= npasmoOd .and. npasmoDo <= ndny_nemoci
+      ok
+
+      mzdDavITw->(dbAppend())
+
+      mzdDavITw->ndruhMzdy  := c_nemPas->ndruhMzdy                               //
+      mzdDavITw->dvykazN_OD                                                      // Vyk·zan· nemoc OD
+      mzdDavITw->dvykazN_DO                                                      // Vyk·zan· nemoc DO
+      mzdDavITw->nvykazN_KD := (mzdDavITw->dvykazN_Do -mzdDavITw->dvykazN_Od) +1 // Vyk·zanÈ KalDny nemoci
+
+* tohle musÌme konzultovat
+      mzdDavITw->dproplN_OD                                                      // Proplacen· nemoc niûöÌ saz. OD
+      mzdDavITw->dproplN_DO                                                      // Proplacen· nemoc niûöÌ saz. DO
+
+      mzdDavITw->nproplN_HO                                                      // Proplacen· nemoc niûöÌ saz. HO
+      mzdDavITw->nproplN_KD                                                      // Proplacen· nemoc niûöÌ saz. KD
+      mzdDavITw->nproplN_PD                                                      // Proplacen· nemoc niûöÌ saz. PD
+      mzdDavITw->nproplN_VD                                                      // Proplacen· nemoc niûöÌ saz. PV
+
+      mzdDavITw->nvykazN_PD                                                      // Vyk·zanÈ PraDny nemoci
+      mzdDavITw->nvykazN_VD                                                      // Vyk·zanÈ VolDny nemoci
+
+         TYPE(GET)  NAME(MzdDavITw->dVykazN_Od)     FPOS( 2,0) FLEN(11) FCAPTION(NemocOd     )
+         TYPE(GET)  NAME(MzdDavITw->dVykazN_Do)     FPOS( 3,0) FLEN(11) FCAPTION(NemocDo     )
+         TYPE(GET)  NAME(MzdDavITw->nVykazN_KD)     FPOS( 4,0) FLEN( 5) FCAPTION(NemKd   )
+
+         TYPE(GET)  NAME(MzdDavITw->dProplN_Od)     FPOS( 5,0) FLEN(11) FCAPTION(PlacenoOd  )
+         TYPE(GET)  NAME(MzdDavITw->dProplN_Do)     FPOS( 6,0) FLEN(11) FCAPTION(PlacenoDo  )
+
+         TYPE(GET)  NAME(MzdDavITw->nProplN_Ho)     FPOS( 7,0) FLEN( 5) FCAPTION(PlcHo  )
+         TYPE(GET)  NAME(MzdDavITw->nProplN_KD)     FPOS( 8,0) FLEN( 5) FCAPTION(PlcKd  )
+         TYPE(GET)  NAME(MzdDavITw->nProplN_PD)     FPOS( 9,0) FLEN( 5) FCAPTION(PlcPd  )
+         TYPE(GET)  NAME(MzdDavITw->nProplN_VD)     FPOS(10,0) FLEN( 5) FCAPTION(PlcVd  )
+
+      TYPE(GET)  NAME(MzdDavITw->nSazbaDokl)     FPOS(11,0) FLEN( 5) FCAPTION(PlcSaz  )
+      TYPE(GET)  NAME(MzdDavITw->nMzda)          FPOS(12,0) FLEN( 5) FCAPTION(celkMzda )
+      TYPE(GET)  NAME(MzdDavITw->nNemocCelk)     FPOS(13,0) FLEN( 5) FCAPTION(celkemNem )
+
+         TYPE(GET)  NAME(MzdDavITw->nVykazN_PD)     FPOS(14,0) FLEN( 5) FCAPTION(NemPd   )
+         TYPE(GET)  NAME(MzdDavITw->nVykazN_VD)     FPOS(15,0) FLEN( 5) FCAPTION(NemVd   )
+
+      TYPE(GET)  NAME(MzdDavITw->nSazDenNem)     FPOS(16,0) FLEN( 6) FCAPTION(SazNem»ist  )
+
+    endif
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+Ještì pøipomínky k financím
+
+- pokud vyberu zahranièní pøíkaz k úhradì vyberu úèet v èeské mìnì a vyberu platbu
+  v EUR tak se mì nezobrazí kurz a v selektu se zobrazují ve sloupci k úhzradì Kè

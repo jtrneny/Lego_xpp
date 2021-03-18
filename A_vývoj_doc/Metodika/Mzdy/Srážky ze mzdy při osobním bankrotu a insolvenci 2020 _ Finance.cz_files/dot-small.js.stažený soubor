@@ -1,0 +1,1314 @@
+if (!Array.prototype.indexOf) {
+	Array.prototype.indexOf = function (item, from) {
+		var len = this.length;
+		var i = from || 0;
+		if (i < 0) { i += len; }
+		for (; i < len; i++) {
+				if (i in this && this[i] === item) { return i; }
+		}
+		return -1;
+	}
+}
+
+(function () {
+	if (typeof window.CustomEvent === "function") return false;
+	function CustomEvent ( event, params ) {
+		params = params || { bubbles: false, cancelable: false, detail: null };
+		var evt = document.createEvent( "CustomEvent" );
+		evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+		return evt;
+	 }
+
+	CustomEvent.prototype = window.Event.prototype;
+
+	window.CustomEvent = CustomEvent;
+})();
+
+if (!window.DOT) {
+	(function () {
+		var wlocation = window.location;
+		var dlocation = document.location;
+
+		function getParameterFromURLQuery (name) {
+			name = name.replace(/[\[\]]/g, '\\$&');
+
+			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+			var results = regex.exec(wlocation.href);
+
+			if (!results || !results[2]) {
+				return null;
+			}
+
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+
+		function getParameterFromURLHash (name) {
+			name = name.replace(/[\[\]]/g, '\\$&');
+
+			var regex = new RegExp('[#&]' + name + '(=([^&]*)|&)');
+			var results = regex.exec(wlocation.hash);
+
+			if (!results || !results[2]) {
+				return null;
+			}
+
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+
+		function isSafari () { return /Apple/.test(navigator.vendor); }
+		var logEnabled = getParameterFromURLQuery("debug") === "1";
+		var redirected = getParameterFromURLQuery("redirected") === "1";
+		var useItpModal = getParameterFromURLQuery("itpmodal") === "1";
+
+		function log() {
+			if (!logEnabled) { return; }
+			// prvni param - box
+			var args = Array.prototype.slice.call(arguments, 0);
+			var params = ["%c"+args[0], "display: inline-block; color: #fff; background: #3b88c3; padding: 1px 4px; border-radius: 3px;"];
+			for (var i = 1; i < args.length; i++) {
+				params.push(args[i]);
+			}
+			console.log.apply(console, params);
+		}
+
+		function setCookie (value, name, expDays) {
+			var date = new Date();
+			var hostname = wlocation.hostname;
+			var cookie = name + '=' + value;
+
+			expDays = expDays || 365;
+			date.setTime(date.getTime() + expDays * 86400000);
+			cookie += expDays < 0 ? '' : ';expires=' + date.toUTCString();
+			cookie += ';path=/';
+
+			if (hostname === 'localhost') {
+				document.cookie = cookie;
+				return;
+			}
+
+			cookie += ';domain=.' + hostname
+				.split('.')
+				.slice(-2)
+				.join('.');
+			cookie += wlocation.protocol === 'https:' ? ';secure' : '';
+
+			document.cookie = cookie;
+		}
+
+		function getCookie (cName) {
+			var cookies;
+
+			try {
+				// kvuli amp
+				cookies = decodeURIComponent(document.cookie)
+			} catch (e) {
+				return null;
+			}
+
+			var name = cName + '=';
+			var allCookies = cookies.split(';');
+			var len = allCookies.length;
+
+			for (var i = 0; i < len; i++) {
+				var c = allCookies[i];
+				while (c.charAt(0) === ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) === 0) {
+					return c.substring(name.length);
+				}
+			}
+			return null;
+		}
+
+		function isMobileSafari () {
+			var ua = navigator.userAgent.toLowerCase();
+			var isSafari = ~ua.indexOf('safari/') && !~ua.indexOf('chrome/') && !~ua.indexOf('chromium/');
+			var mobileVersion = ~ua.indexOf('iphone') || ~ua.indexOf('ipod') || ~ua.indexOf('ipad');
+
+			return isSafari && mobileVersion;
+		}
+
+		// sends fake DOT hit with sync cookies information
+		// mobile safari only!
+		function logSyncCookie (hitaction, hitdata) {
+			if (!isMobileSafari()) {
+				return;
+			}
+
+			var hit = new Image(1,1);
+
+			// compose data
+			var data = '"action":"' + hitaction + '"';
+			if (hitdata) {
+				for (var p in hitdata) {
+					if (hitdata.hasOwnProperty(p)) {
+						data += ',"' + p + '":"' + hitdata[p] + '"';
+					}
+				}
+			}
+
+			var hitUrl = 'https://h.imedia.cz/hit/?d=' +
+			encodeURIComponent('{' + data + '}') +
+			'&a=event' +
+			'&s=idt' +
+			'&u=' + encodeURIComponent(document.location.href);
+			hit.src = hitUrl;
+		}
+
+		var AFTER_CFG_EVENT = "dot-cfg";
+		var LAZY_LOADING_ENABLED = 1;
+		var LAZY_LOADING_DISABLED = 2;
+		// Nejake televize nepodporuji querySelectorAll.
+		if (typeof document.querySelectorAll !== "undefined") {
+			// do query stringu za sid.js mohu dat parametr server
+			// server - slouzi pro vyvoj muzu nastavit server ze ktereho se nastavuje cookie
+			var scripts = document.querySelectorAll("script");
+			var scriptParams = null;
+			for (var s = 0; s < scripts.length; s++) {
+				var src = scripts[s].src;
+				if (~src.indexOf("/dot-small.js?")) {
+					scriptParams = src
+						.split('?')
+						.pop()
+						.split('&');
+					break;
+				}
+			}
+			// zpracujeme querystring a vytahneme hodnotu polozky server a predame do _cgf
+			if (scriptParams !== null) {
+				for (var p = 0; p < scriptParams.length; p++) {
+					var param = {
+						key: scriptParams[p].split('=')[0],
+						value: scriptParams[p].split('=')[1]
+					}
+
+					if (param.key === 'server') {
+						var hostFromQueryString = param.value;
+						break;
+					}
+				}
+			}
+		}
+
+		var protocol = "https:";
+		var DOT = function () {
+			this._plugins = [];
+			this._ts = 0;
+			this._dataElms = [];
+			this._delayed = {
+				action: "",
+				timeout: null,
+				count: 0
+			};
+			this._configured = 0;
+			this._SPAReferrer = "";
+			this._hitQueue = [];
+			this._lazyLoadingStatus = LAZY_LOADING_DISABLED;
+			this._cfg = {
+				host: hostFromQueryString || "h.imedia.cz", //+location.hostname.split(".").pop(), // pro unit testy ci pouziti v testu muzeme nastaveni pres hostFromQueryString hodnotu teto polozky
+				url: protocol + "//__HOST__/hit/?",	/* sem se ptame */
+				thirdPartyCookieUrl: protocol + "//__HOST__/cookie-html?", /** url pro iframe setujici cookie treti strany */
+				thirdPartyCookieUrlSeznam: protocol + "//www.seznam.cz/sync?", /** url pro obrazek setujici cookie treti strany */
+				delay: 800,										/* po tak dlouhe necinnosti posilame scrollovani/resize */
+				query: "",										/* hledany retezec */
+				service: "",									/* identifikace sluzby */
+				lsid: "",										/* lokalni session */
+				id: "",											/* id stranky */
+				rus: "",										/* uzivatel */
+				rusId: "",                                      /* rusId pro GDPR, odesíláno jako ri */
+				loginState: "",									/* login state (přihlášen, orange, nepřihlášen), odesíláno jako los */
+				version: "2.11",								/* verze api */
+				spa: false,								        /* true značí použití DOTu v SPA aplikaci */
+				pageViewId: "",									/* slouží k možnosti propojení backendových dat služby a nasbíraných hitů, odesíláno jako pvid */
+				impress: true,									/* poslat po konfiguraci automaticky merici impress pozadavek? */
+				mousedown: true,								/* zacit po konfiguraci merit mousedown? */
+				load: true,										/* poslouchat na onload a nasledne merit load? */
+				error: false,									/* poslouchat na onerror a nasledne merit nechycene vyjimky? */
+				abtest: "",										/* Identifikátor verze při AB testování */
+				serviceVariant: "",								/* Identifikátor service varianty */
+				hitTimeout: 60000,            					/* cas, po kterem se hitne error timeout */
+				lazyLoadingEnabled: false,            			/* hity se budou ukladat a poslou se az po zavolani cfg s lazyLoadingEnabled: false */
+				mousedownDataDotData: true,            			/* nebude posílat data-dot-data pri mousedown */
+				u_agrm: null,									/* user agreement pro doporučování, který se posílá se spenttime hitem */
+				spenttimeSpaReset: true,						/* resetovat spenttime pri volani DOT.cfg v SPA aplikaci */
+				itpEnabled: getParameterFromURLQuery("itp") === "1",
+				serverSideRefresher: getCookie('szncsr') !== null
+			};
+
+			this._init();
+		}
+
+		DOT.prototype.getNewInstance = function () {
+			return new DOT();
+		}
+
+		DOT.prototype.hit = function (action, data, callback) {
+			var d = data || {};
+			d.a = action;
+
+			this._addUserAgreement(d);
+			this._addCommon(d);
+			if (this._lazyLoadingStatus === LAZY_LOADING_ENABLED) {
+				this._hitQueue.push({data: d, callback: callback});
+			} else {
+				this._serialize(d);
+				return this._send(d, callback);
+			}
+		},
+
+		/**
+		 * Smaze spenttime interval pokud existuje.
+		 */
+		DOT.prototype._clearSpenttimeInterval = function() {
+			if (this._firstImpressSent && this._st && this._st.interval) {
+				clearTimeout(this._st.interval);
+				this._st.interval = null;
+			}
+		},
+
+		/**
+		 * Zrusi visibilitychange event handler.
+		 */
+		DOT.prototype._clearSpenttimeEvent = function() {
+			if (this._firstImpressSent && this._stConfigured) {
+				this._stConfigured = false;
+				document.removeEventListener('visibilitychange', this._st.listener, false);
+			}
+		},
+
+		/**
+		 * Spocita za jak dlouho se ma poslat dalsi hit.
+		 * @param {number} timeSlot
+		 * @param {number} base
+		 * @param {number} i
+		 * @return {number} V sekundach.
+		 */
+		DOT.prototype._calculateSpenttimeInterval = function(timeSlot, base, i) {
+			return timeSlot * Math.pow(base, i);
+		},
+
+		/**
+		 * Posle spenttime hit
+		 * @param {any} data
+		 * @param {number} interval
+		 */
+		DOT.prototype._spenttimeHit = function(data, interval) {
+			if (!this._stConfigured) {
+				return;
+			}
+
+			data.d.action = 'spenttime';
+			data.d.time = interval;
+			this._st.i++;
+			this.hit('event', JSON.parse(JSON.stringify(data)));
+		},
+
+		/**
+		 * Vytvori interval, ktery posila spenttime hity.
+		 * @param {number} timeSlot
+		 * @param {number} base
+		 * @param {number} i
+		 */
+		DOT.prototype._createSpenttimeInterval = function() {
+			var interval = this._calculateSpenttimeInterval(this._st.timeSlot, this._st.base, this._st.i);
+			var timeFromLastHit = this._st.i ? this._calculateSpenttimeInterval(this._st.timeSlot, this._st.base, this._st.i - 1) : 0;
+
+			// Spenttime se posila maximalne 24 hodin (86400 vterin).
+			if (interval > 86400) {
+				return;
+			}
+
+			// Po preruseni odesilani se nastavi timeFromLastHit na cas odchodu ze stranky
+			if (!this._st.interval) {
+				timeFromLastHit = this._st.pageTime;
+			}
+
+			this._st.interval = setTimeout(function() {
+				this._spenttimeHit(this._st.data, interval);
+				this._createSpenttimeInterval();
+			}.bind(this), (interval - timeFromLastHit) * 1000);
+		},
+
+		/**
+		 * Vrati aktualni timestamp
+		 * @return {number} Ve vterinach.
+		 */
+		DOT.prototype._spenttimeCurrentTime = function() {
+			return Math.floor(new Date().getTime() / 1000);
+		},
+
+		/**
+		 * Vytvori spenttime objekt
+		 */
+		DOT.prototype._spenttimeInit = function(data, timeSlot, base, i) {
+			this._st = {};
+			this._st.data = data;										// data
+			this._st.timeSlot = timeSlot;
+			this._st.base = base;
+			this._st.i = i;
+			this._st.lastVisit = this._spenttimeCurrentTime();			// timestamp posledniho zobrazeni stranky (ve vterinach)
+			this._st.pageTime = 0;										// cas straveny na strance (ve vterinach); aktualizuje se pri visibilitychange eventu
+		},
+
+		/**
+		 * Visibilitychange event handler.
+		 * Minimalizace okna a prepinani tabu
+		 */
+		DOT.prototype._spenttimeVisibilityChange = function() {
+			if (document.hidden) {
+				this._clearSpenttimeInterval();
+				this._st.pageTime += this._spenttimeCurrentTime() - this._st.lastVisit;
+			}
+			else {
+				this._st.lastVisit = this._spenttimeCurrentTime();
+				this._createSpenttimeInterval();
+			}
+		},
+
+		/**
+		 * Zapne posilani spenttime hitu. Hity jsou posilany v casovych intervalech,
+		 * ktere vychazi z funkce timeSlot * base ^ i, kde i je {0, 1, 2, 3...}.
+		 * @param {string} event
+		 * @param {any} data
+		 * @param {number} timeSlot
+		 * @param {number} base
+		 */
+		DOT.prototype.spenttime = function(data, timeSlot, base) {
+			this._clearSpenttimeInterval();
+			// nemam data, tak vyrobim zakladni objekt
+			if (!data) {
+				var data = {d:{}};
+			}
+
+			var d = data.d;
+			var dopAbVariant = getParameterFromURLHash("dop_ab_variant");
+			var dopReqId = getParameterFromURLHash("dop_req_id");
+			var dopSourceZoneName = getParameterFromURLHash	("dop_source_zone_name");
+
+			if (dopAbVariant) {
+				d.dop_ab_variant = dopAbVariant;
+			}
+
+			if (dopReqId) {
+				d.dop_req_id = dopReqId;
+			}
+
+			if (dopSourceZoneName) {
+				d.dop_source_zone_name = dopSourceZoneName;
+			}
+
+			if (data.atricleId) {
+				d.articleId = data.atricleId
+			}
+
+			var DEFAULT_TIMESLOT = 5;
+			var DEFAULT_BASE = 2;
+			var i = 0;
+
+			if (!timeSlot) {
+				timeSlot = DEFAULT_TIMESLOT;
+			}
+			if (!base) {
+				base = DEFAULT_BASE;
+			}
+
+			this._spenttimeInit(data, timeSlot, base, i);
+
+			if(!this._stConfigured) {
+				this._stConfigured = true;
+				this._st.listener = this._spenttimeVisibilityChange.bind(this);
+				document.addEventListener('visibilitychange', this._st.listener, false);
+			}
+
+			this._createSpenttimeInterval();
+		},
+
+		/**
+		 * Zrusi odesilani spenttime.
+		 */
+		DOT.prototype.cancelSpenttime = function (){
+			if (this._st) {
+				if (this._st.interval) {
+					clearTimeout(this._st.interval);
+				}
+
+				if (this._st.listener) {
+					document.removeEventListener('visibilitychange', this._st.listener, false);
+				}
+			}
+
+			this._st = {}
+			this._stConfigured = false;
+		},
+
+		/**
+		 * neblokujici odeslani hitu
+		 * Pokud se hit() zavola primo z flash playeru, muze zpusobit zasekavani videa.
+		 * Diky hitAsync se hit() zavola z JS prohlizece, a ne z flashe.
+		 * @param cb? (imgElement)->{}
+		 * nepovinny callback pro ziskani refrence na obrazek pouzity k odeslani hitu
+		 */
+		DOT.prototype.hitAsync = function (action, data, cb) {
+			var that = this;
+			cb = cb || function () { };
+			setTimeout(function () {
+				cb(that.hit(action, data));
+			}, 0)
+		},
+
+		/**
+		 * Vraci true, pokud byl zavolan DOT.cfg().
+		 */
+		DOT.prototype.isConfigured = function () {
+			return this._configured === 1;
+		},
+
+		/**
+		 * Zapne odeslani eventu po prvnim zavolani DOT.cfg()
+		 * a vraci nazev eventu.
+		 */
+		DOT.prototype.setAfterCfgEvent = function () {
+			this._fireEventAfterCfg = true;
+			return AFTER_CFG_EVENT;
+		},
+
+		/**
+		 * Pokud je posilani eventu po cfg zapnuto, tak event bude poslan.
+		 */
+		DOT.prototype._fireAfterCfgEvent = function () {
+			if (this._fireEventAfterCfg) {
+				var event = new CustomEvent(AFTER_CFG_EVENT);
+				window.dispatchEvent(event);
+			}
+		},
+
+		/**
+		 * K hitum budou pridany pouze hodnoty z additionalCfg, ktere jsou v commonCfgList.
+		 */
+		DOT.prototype._addAdditionalCfg = function (hit, cfg, commonCfgList) {
+			for (var p in cfg) {
+				if (commonCfgList[p]) {
+					hit[commonCfgList[p]] = cfg[p];
+				}
+			}
+		},
+
+		/**
+		 * Doplní u_agrm do hitu scroll, spenttime, dop-.+.
+		 */
+		DOT.prototype._addUserAgreement = function (data) {
+			var regex = /^dop-.|^spenttime$|^scroll$/;
+
+			if (this._cfg.u_agrm !== null && data.d && regex.test(data.d.action)) {
+				data.d.u_agrm = this._cfg.u_agrm;
+			}
+		},
+
+		/**
+		 * Ulozene hity budou postupne odeslany.
+		 */
+		DOT.prototype._sentSavedHits = function (additionalCfg) {
+			var commonCfgList = {
+				"loginState": "los",
+				"rus": "rus",
+				"rusId": "ri"
+			};
+			this._hitQueue.forEach((function(hit) {
+				this._addAdditionalCfg(hit.data, additionalCfg, commonCfgList);
+				this._addUserAgreement(hit.data);
+				this._serialize(hit.data);
+				this._send(hit.data, hit.callback);
+			}).bind(this))
+			this._hitQueue = [];
+		},
+
+		DOT.prototype.cfg = function (cfg, callback) {
+			for (var p in cfg) { this._cfg[p] = cfg[p]; }
+
+			if (cfg !== undefined) {
+				if (cfg.lazyLoadingEnabled === true) {
+					this._lazyLoadingStatus = LAZY_LOADING_ENABLED;
+					// Pokusi se poslat ulozene hity driv, nez uzivatel opusti stranku.
+					this._sentBeforeUnload = this._sentSavedHits.bind(this);
+					this._add(window, "beforeunload", this._sentBeforeUnload);
+				} else if (cfg.lazyLoadingEnabled === false && this._lazyLoadingStatus === LAZY_LOADING_ENABLED) {
+					this._lazyLoadingStatus = LAZY_LOADING_DISABLED;
+					this._remove(window, "beforeunload", this._sentBeforeUnload);
+					this._sentSavedHits(cfg);
+					return;
+				}
+			}
+
+			if (this._cfg.impress) {
+				if (this._cookieIframeLoaded) {
+					this.impress(callback);
+				} else {
+					this._add(DOT.prototype.cookieIframe, "load", function() { DOT.prototype._cookieIframeLoaded = true; this.impress(callback); }.bind(this));
+				}
+			}
+
+			if (this._configured) { return; }
+			this._configured = 1;
+			this._fireAfterCfgEvent();
+
+			if (this._cfg.mousedown) {
+				this._add(document, "mousedown", (function (e) { this._mousedown(e); }).bind(this));
+			}
+			if (this._cfg.load) {
+				if (document.readyState === "complete") {
+					this.load();
+				} else {
+					this._add(window, "load", (function (e) { this.load(); }).bind(this));
+				}
+			}
+			if (this._cfg.error) {
+				/* uprednostnujeme attachEvent z jedineho duvodu: v IE9 je u
+				posluchace onerror vice informaci pri pouziti attachEvent */
+				this._add(window, "error", (function (e) { this.error(e); }).bind(this), false, true);
+			}
+		},
+
+		DOT.prototype._getSPAReferrer = function () {
+			var referrer = this._SPAReferrer ? this._SPAReferrer : document.referrer;
+			this._SPAReferrer = wlocation.href;
+			return referrer;
+		},
+
+		/**
+		 * Adds impressData to dataObject.
+		 * @param {Object} dataObject
+		 * @param {Object} impressData
+		 */
+		DOT.prototype._addImpressData = function (dataObject, impressData) {
+			for (key in impressData) {
+				dataObject.d[key] = impressData[key];
+			}
+		},
+
+		DOT.prototype.impress = function (callback, impressData) { /* zacatek zobrazovani */
+			var data = {
+				q: this._cfg.query,
+				/*				p: this._plugins, DOCASNE SUSPENDOVANO */
+				d: {
+					tid: window.name,
+					referer: this._cfg.spa ? this._getSPAReferrer() : document.referrer,
+					path: this._getDataDot(document.body)
+				}
+			};
+			if (this._cfg.spa) {
+				this._setWindowNameWithId();
+			}
+			if (impressData) {
+				this._addImpressData(data, impressData);
+			} else {
+				this._getDataDotData(document.body, data);
+			}
+			this._addGeometry(data);
+			this.hit("impress", data, callback);
+			this._firstImpressSent = true;
+		},
+
+		DOT.prototype.load = function () {
+			this._dataElms = Array.prototype.slice.call(document.querySelectorAll('[data-elm]'));
+			var ts = new Date().getTime();
+			var performanceMetrics = this._getPerformanceMetrics();
+
+			var data = {
+				d: {
+					time: ts - this._ts,
+					performanceMetrics: performanceMetrics
+				}
+			};
+
+			this._addGeometry(data);
+			this.hit("load", data);
+		},
+
+		DOT.prototype.error = function (e, callback) {
+			var d = { type: "js" };
+			if (typeof (e) == "object") { /* moderni prohlizece */
+				var keys = ["message", "filename", "lineno", "colno"];
+				for (var i = 0; i < keys.length; i++) {
+					var key = keys[i];
+					if (key in e) { d[key] = e[key]; }
+				}
+				if (e.error && e.error.stack) { d.stack = e.error.stack; }
+			} else { /* IE 8/9 */
+				d.message = e;
+			}
+			this.hit("error", { d: d }, callback);
+		},
+
+		DOT.prototype._getPerformanceMetrics = function() {
+			var performanceNavigationTiming = this._getPerformanceEntriesBy("type", "navigation");
+			var performanceTiming = performance && performance.timing;
+
+			var timing = performanceNavigationTiming || performanceTiming;
+
+			if (!timing) {
+				return;
+			}
+
+			var performanceMetrics = {
+				redirect: this._differenceValue(timing.redirectStart, timing.redirectEnd),
+				appCache: this._differenceValue(timing.fetchStart, timing.domainLookupStart),
+				DNS: this._differenceValue(timing.domainLookupStart, timing.domainLookupEnd),
+				TCP: this._differenceValue(timing.connectStart, timing.connectEnd),
+				request: this._differenceValue(timing.requestStart, timing.responseStart),
+				response: this._differenceValue(timing.responseStart, timing.responseEnd),
+				processingToDI: this._differenceValue(timing.responseEnd, timing.domInteractive),
+				processingToDCL: this._differenceValue(timing.domInteractive, timing.domContentLoadedEventStart),
+				processingDCL: this._differenceValue(timing.domContentLoadedEventStart, timing.domContentLoadedEventEnd),
+				processingToDC: this._differenceValue(timing.domContentLoadedEventEnd, timing.domComplete),
+				processingL: this._differenceValue(timing.loadEventStart, timing.loadEventEnd)
+			};
+
+			performanceMetrics.HTML = this._differenceValue(timing.requestStart, timing.responseEnd);
+			performanceMetrics.navigation = this._differenceValue(timing.navigationStart || timing.startTime, timing.loadEventEnd);
+
+			var FCP = this._getPerformanceEntriesBy("name", "first-contentful-paint", { startTime: null }).startTime;
+			performanceMetrics.FCP = FCP ? Math.round(FCP) : FCP;
+			performanceMetrics.fromRequestFCP = this._differenceValue(timing.requestStart, performanceMetrics.FCP);
+
+			var FID = this._getPerformanceEntriesBy("type", "first-input", { startTime: null, duration: null, name: null });
+			performanceMetrics.FID = {
+				startTime: FID.startTime ? Math.round(FID.startTime) : FID.startTime,
+				duration: FID.duration ? Math.round(FID.duration) : FID.duration,
+				name: FID.name
+			};
+
+			return performanceMetrics;
+		},
+
+		DOT.prototype._getPerformanceEntriesBy = function(what, metric, defaultValue) {
+			what = what.charAt(0).toUpperCase() + what.slice(1);
+			var method = "getEntriesBy" + what;
+
+			return (performance && performance[method] && performance[method](metric)[0]) || defaultValue;
+		},
+
+		DOT.prototype._differenceValue = function (startValue, endValue) {
+			var result = endValue - startValue;
+
+			return !isNaN(result) && result >= 0 ? Math.round(result) : null;
+		},
+
+		DOT.prototype._setWindowNameWithId = function () {
+			this._cfg.id = "" + new Date().getTime() + Math.random();
+			if (this._cfg.spenttimeSpaReset) {
+				this._clearSpenttimeInterval();
+				this._clearSpenttimeEvent();
+			}
+			if (!window.name) { window.name = this._cfg.id; }
+		},
+
+		DOT.prototype._init = function () {
+			if (!this.synced) {
+				DOT.prototype.synced = true;
+
+				var query = wlocation.search.substring(1);
+				var params = query.split('&');
+				var znstring = null;
+
+				for (var i = 0; i < params.length; i++) {
+					var paramKey = decodeURIComponent(params[i]).split('=')[0];
+					if (paramKey.substring(0, 3) === '$zn') {
+						znstring = paramKey;
+
+						history.pushState({}, '', wlocation.href.replace(params[i], '').replace('&&', '&'));
+						break;
+					}
+				}
+
+				if (znstring) {
+					setCookie(decodeURIComponent(escape(window.atob(znstring.substring(3)))), 'sid', 3);
+				} else if (this._cfg.serverSideRefresher && getCookie('sid')) {
+					document && document.body && document.body.setAttribute('data-dot-cookie-refresh-disabled', '');
+					DOT.prototype._cookieIframeLoaded = true;
+				} else {
+					logSyncCookie("createIframe");
+					this._createCookieIframe();
+				}
+			}
+			this._ts = new Date().getTime();
+			this._setWindowNameWithId();
+			this._plugins = this._getPlugins();
+			this._lastSession = this._ts;
+			try {
+				/* pokud ma uzivatel vypnute cookies (ukladani lokalnich dat), tak pristup k window.localstorage zpusobi chybu */
+				if (window.localStorage) { /* Uložení aktuálního timestampu do localstorage pro možnost měření unikátní návštěvy a času mezi jednotlivými návštěvami */
+					var localStorageKey = "dot_lastSession";
+					this._lastSession = localStorage.getItem(localStorageKey) || 0;
+					localStorage.setItem(localStorageKey, this._ts);
+				}
+			} catch (e) {
+			}
+		},
+
+		DOT.prototype._delay = function (action, e) {
+			this._delayed.action = action;
+
+			if (this._delayed.timeout) {
+				clearTimeout(this._delayed.timeout);
+				this._delayed.timeout = null;
+			}
+
+			this._delayed.count++;
+
+			this._delayed.timeout = setTimeout((function () { this._sendDelayed(); }).bind(this), this._cfg.delay);
+		},
+
+		DOT.prototype._remove = function (elm, event, cb) {
+			if (elm.removeEventListener) {
+				elm.removeEventListener(event, cb);
+			} else {
+				elm.detachEvent("on" + event, cb);
+			}
+		}
+
+		DOT.prototype._add = function (elm, event, cb, capture, preferAttachEvent) {
+			if (preferAttachEvent && elm.attachEvent) {
+				elm.attachEvent("on" + event, cb);
+			} else if (elm.addEventListener) {
+				var c = (arguments.length > 3 ? capture : true);
+				elm.addEventListener(event, cb, c);
+			} else if (elm.attachEvent) {
+				elm.attachEvent("on" + event, cb);
+			}
+		},
+
+		DOT.prototype._serialize = function (data) { /* upravi hodnoty, aby byly retezce */
+			for (var p in data) {
+				var val = data[p];
+				if (typeof (val) == "object") {
+					if (window.JSON) {
+						data[p] = JSON.stringify(val);
+					} else {
+						data[p] = this._serializeValue(val);
+					}
+				}
+			}
+		},
+
+		DOT.prototype._serializeValue = function (value) {
+			if (value === null) { return "null"; }
+			if (value instanceof Array) {
+				var arr = [];
+				for (var i = 0; i < value.length; i++) { arr.push(this._serializeValue(value[i])); }
+				return "[" + arr.join(",") + "]";
+			} else if (typeof (value) == "object") {
+				var arr = [];
+				for (var p in value) {
+					if (p in {}) { continue; } /* HACK pro nejake obsolete interprety, ktere enumeruji i DontEnum vlastnosti */
+					arr.push('"' + this._escapeString(p) + '":' + this._serializeValue(value[p]));
+				}
+				return "{" + arr.join(",") + "}";
+			} else if (typeof (value) == "string") {
+				return '"' + this._escapeString(value) + '"';
+			} else {
+				return value;
+			}
+		},
+
+		DOT.prototype._getCookieValue = function (sKey) {
+			if (!sKey) { return null; }
+			try {
+				// kvuli amp
+				return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+			} catch (e) {
+				return null;
+			}
+		},
+
+		DOT.prototype._getSidCookie = function (data) {
+			var sid = this._getCookieValue("sid");
+			if (sid && sid.indexOf("te=") != -1) {
+				data.dsid = sid;
+			}
+		},
+
+		DOT.prototype._addCommon = function (data) { /* pridat spolecne polozky */
+			data.s = this._cfg.service;
+			data.lsid = this._cfg.lsid;
+			data.id = this._cfg.id;
+			data.v = this._cfg.version;
+			data.r = Math.random();
+			data.rus = this._cfg.rus;
+			data.ri = this._cfg.rusId == null ? "" : this._cfg.rusId;
+			data.los = this._cfg.loginState == null ? "" : this._cfg.loginState;
+			data.pvid = this._cfg.pageViewId;
+			data.spa = this._cfg.spa;
+			this._getSidCookie(data);
+			// hack pro seznam zpravy
+			var playerUrl = "www.seznamzpravy.cz/iframe/player";
+			if (dlocation.href.indexOf(playerUrl) != -1) {
+				data.u = dlocation.href.substring(0, dlocation.href.indexOf("?"));
+				// nechame cast jen po ?
+			} else {
+				data.u = dlocation.href;
+			}
+			data.lses = this._lastSession;
+			data.ab = this._cfg.abtest;
+			data.serviceVariant = this._cfg.serviceVariant;
+			data.ptitle = document.title;
+
+			var consentCookie = getCookie('euconsent');
+			if (consentCookie) {
+				data.euconsent = consentCookie;
+			}
+
+			var consentCookie2 = getCookie('euconsent-v2');
+			if (consentCookie2) {
+				data['euconsent-v2'] = consentCookie2;
+			}
+
+			return data;
+		},
+
+		DOT.prototype._addGeometry = function (data) { /* pridat geometry-related data */
+			if (!document.body) { return; }
+			if (!data.d) { data.d = {}; }
+			var d = data.d;
+
+			var sx = document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+			var sy = document.documentElement.scrollTop || document.body.scrollTop || 0;
+			d.scroll = sx + "," + sy;
+
+			var w = document.documentElement.clientWidth || document.body.clientWidth || 0;
+			var h = document.documentElement.clientHeight || document.body.clientHeight || 0;
+			d.port = w + "," + h;
+
+			d.page = document.body.offsetWidth + "," + document.body.offsetHeight;
+			d.screen = screen.width + "," + screen.height + "," + screen.colorDepth;
+
+			var visible = this._getDataElm(sx, sy, w, h);
+			if (visible.length) { d.elm = visible.join(","); }
+		},
+
+		DOT.prototype._send = function (data, callback) { /* odeslat data; hodnoty musi byt retezce */
+			var arr = [];
+			var callbackCalled = false;
+			for (var p in data) {
+				var val = data[p];
+				arr.push(encodeURIComponent(p) + "=" + encodeURIComponent(val));
+			}
+			var url = this._cfg.url.replace("__HOST__", this._cfg.host) + arr.join("&");
+			var img = document.createElement("img");
+
+			if (typeof callback === "function") {
+				var timeoutId = setTimeout(function () {
+					var error = new Error("Hit timed out");
+					error.name = "TimeoutError";
+					callCallback(error);
+				}, this._cfg.hitTimeout);
+				img.onerror = function (event) {
+					callCallback((event && event.error) || new Error("Hit failed"));
+				};
+				img.onabort = function () {
+					var error = new Error("Hit aborted");
+					error.name = "AbortError";
+					callCallback(error);
+				};
+				img.onload = function () {
+					callCallback();
+				};
+				function callCallback(argument) {
+					clearTimeout(timeoutId);
+					if (!callbackCalled) {
+						callback(argument);
+						callbackCalled = true;
+					}
+				}
+			}
+
+			img.src = url;
+			return img;
+		},
+
+		DOT.prototype._getPlugins = function () { /* soupis pluginu */
+			var data = [];
+			if (navigator.plugins && navigator.plugins.length) {
+				for (var i = 0; i < navigator.plugins.length; i++) {
+					var plug = navigator.plugins[i];
+					var name = (plug.name.match(/[0-9]/) ? plug.name : plug.description);
+					data.push(name);
+				}
+			} else if (window.ActiveXObject) {
+				var DEF = {
+					"AcroPDF.PDF": function () { return this.GetVersions(); },
+					"PDF.PdfCtrl": function () { return this.GetVersions(); },
+					"ShockwaveFlash.ShockwaveFlash": function () { return this.GetVariable("$version"); },
+					"QuickTime.QuickTime": function () { return this.QuickTimeVersion; },
+					"rmocx.RealPlayer G2 Control": function () { return this.GetVersionInfo(); },
+					"rmocx.RealPlayer G2 Control.1": function () { return this.GetVersionInfo(); },
+					"RealPlayer.RealPlayer(tm) ActiveX Control (32-bit)": function () { return this.GetVersionInfo(); },
+					"RealVideo.Rep.CalVideo(tm) ActiveX Control (32-bit)": function () { return this.GetVersionInfo(); },
+					"RealPlayer": function () { return this.GetVersionInfo(); },
+					/* "MediaPlayer.MediaPlayer": function() { return this.ClientId; }, */
+					/* "VideoLAN.VLCPlugin": function() { return this.VersionInfo; }, */
+					"WMPlayer.OCX": function () { return this.versionInfo; }/*,
+				"AgControl.AgControl": function() { return (this.IsVersionSupported("3.0") && "3") || (this.IsVersionSupported("2.0") && "2") || (this.IsVersionSupported("1.0") && "1"); }*/
+				};
+				var o, name;
+				for (var p in DEF) {
+					try {
+						o = new ActiveXObject(p);
+						name = p;
+					} catch (e) { continue; }
+					try {
+						name += " " + DEF[p].call(o);
+					} catch (e) {
+					}
+					data.push(name);
+				}
+			}
+			return data;
+		},
+
+		DOT.prototype._getCSSPath = function (elm) {
+			var arr = [];
+			var node = elm;
+			while (node && node != document && node.getAttribute) {
+				var value = node.getAttribute("class");
+				if (value) {
+					var valuesArray = value.split(" ");
+					if (valuesArray.length === 1) {
+						arr.unshift(value);
+					} else {
+						arr.unshift(
+							valuesArray.sort().join(".")
+						);
+					}
+				}
+				node = node.parentNode;
+			}
+			return arr.join("/");
+		},
+
+		DOT.prototype.getDataDot = function (elm) {
+			return this._getDataDot(elm);
+		},
+
+		DOT.prototype._getDataDot = function (elm) { /* soupis hodnot "data-dot" atributu */
+			var arr = [];
+			var node = elm;
+			while (node && node != document && node.getAttribute) {
+				var value = node.getAttribute("data-dot");
+				if (value) { arr.unshift(value); }
+				node = node.parentNode;
+			}
+			return arr.join("/");
+		},
+
+		DOT.prototype.getDataDotData = function (elm, data) {
+			this._getDataDotData(elm, data);
+		},
+
+		DOT.prototype._getDataDotData = function (elm, data) { /* mergovani hodnot "data-dot-data" atributu do data.d*/
+			var node = elm;
+			while (node && node != document && node.getAttribute) {
+				var valueDotData = node.getAttribute("data-dot-data"),
+					dataDot = undefined;
+
+				if (!valueDotData) {
+					node = node.parentNode;
+					continue;
+				}
+
+				try {
+					dataDot = JSON.parse(valueDotData);
+					for (var key in dataDot) {
+						if (!(key in data.d)) {
+							data.d[key] = dataDot[key];
+						}
+					}
+				} catch (e) { }
+
+				node = node.parentNode;
+			}
+		},
+
+		DOT.prototype._getDataElm = function (x, y, w, h) { /* hodnoty "data-elm" prvku, ktere jsou v pruhledu */
+			var results = [];
+			for (var i = 0; i < this._dataElms.length; i++) {
+				var elm = this._dataElms[i];
+				var left = elm.offsetWidth / 2;
+				var top = elm.offsetHeight / 2;
+				while (elm) {
+					left += elm.offsetLeft;
+					top += elm.offsetTop;
+					elm = elm.offsetParent;
+				}
+
+				if (left >= x && left <= x + w && top >= y && top <= y + h) {
+					results.push(this._dataElms[i].getAttribute("data-elm"));
+					this._dataElms.splice(i, 1);
+					i--;
+				}
+			}
+			return results;
+		},
+
+		DOT.prototype._getDataFieldValue = function (elm) { /* nejblizsi hodnota "data-fieldvalue", prevedena na bool */
+			var node = elm;
+			while (node && node != document) {
+				var value = node.getAttribute("data-fieldvalue");
+				if (value !== null) { return (value == "1" ? true : false); }
+				node = node.parentNode;
+			}
+			return true;
+		},
+
+		DOT.prototype._escapeString = function (str) { /* add slashes and quotes */
+			var re = /["\\\n\r\t]/g;
+			var replace = {
+				"\n": "\\n",
+				"\t": "\\t",
+				"\r": "\\r",
+				'"': '\\"',
+				'\\': "\\\\"
+			}
+			return str.replace(re, function (ch) { return replace[ch]; });
+		},
+
+		DOT.prototype._mousedown = function (e) {
+			var target = e.target || e.srcElement;
+			var data = {
+				d: {
+					pos: e.pageX + "," + e.pageY,
+					path: this._getDataDot(target),
+					css_path: this._getCSSPath(target)
+				}
+			};
+			// Některé služby nechtějí posílat data-dot-data s mousedown, protože je posílají s impress.
+			if (this._cfg.mousedownDataDotData) {
+				this._getDataDotData(target, data);
+			}
+			var name = target.nodeName.toLowerCase();
+			if (name == "input" || name == "textarea" || name == "select") {
+				if (target.name) { data.d.fieldname = target.name; }
+				if (target.type != "password" && this._getDataFieldValue(target)) { data.d.fieldvalue = target.value; }
+			}
+
+			while (target && target != document) {
+				name = target.nodeName.toLowerCase();
+				if (name == "a") {
+					data.d.href = target.href;
+					if (!target.getAttribute("data-dot-disabled")) {
+						// Atribut pro mobilní Novinky.cz, kde jejich HTML struktura článků způsobuje posílání nerelevantních textů.
+						var textFromAttr = target.getAttribute("data-dot-text");
+						data.d.text = (textFromAttr || target.textContent || target.innerText || "").replace(/\s{2,}/g, " ").substring(0, 100);
+					}
+					break;
+				}
+				target = target.parentNode;
+			}
+
+			this.hit("mousedown", data);
+		},
+
+		DOT.prototype._sendDelayed = function () {
+			var data = {
+				d: {
+					count: this._delayed.count + ""
+				}
+			};
+			this._addGeometry(data);
+			this.hit(this._delayed.action, data);
+			this._delayed.count = 0;
+		},
+
+		DOT.prototype._setAttributesToIframe = function(iframe) {
+			iframe.setAttribute("style", "width:0px; height:0px; border:0; position:absolute; visibility:hidden; display:none;");
+			iframe.setAttribute("data-dot-sync-frame", "");
+		},
+
+		DOT.prototype._sendITPModalRequest = function () {
+			var data = {name: "invokeITPModal"};
+
+			DOT.prototype.cookieIframe.contentWindow.postMessage(JSON.stringify(data), '*');
+		},
+
+		DOT.prototype._registerITPClickEvent = function () {
+			log("DOT-main", "Registering click event for ITP modal");
+
+			document.addEventListener("click", this._sendITPModalRequest);
+		},
+
+		DOT.prototype._createCookieIframe = function () {
+			window.addEventListener("message", this._handleMessageFromCookieIframe.bind(this));
+			var iframe = DOT.prototype.cookieIframe = document.createElement("iframe");
+			this._setAttributesToIframe(iframe);
+
+			var queryParams = [Math.random()];
+
+			var iframeSrc = this._cfg.thirdPartyCookieUrl.replace("__HOST__", this._cfg.host) + Math.random();
+
+			if (this._cfg.itpEnabled && isSafari()) {
+				log("DOT-main", "Iframe set with ITP enabled");
+
+				queryParams.push('itp=1');
+
+				if (useItpModal) {
+					log("DOT-main", "ITP Modal enabled");
+
+					queryParams.push('itpmodal=1');
+				}
+			}
+
+			if (logEnabled) {
+				queryParams.push('debug=1');
+			}
+
+			queryParams = queryParams.concat(this._convertObjectToKeyValueArray({
+				dsid: this._getCookieValue("sid")
+			}));
+
+			iframe.src = iframeSrc + queryParams.join('&');
+
+			this._add(iframe, "load", function() {
+				DOT.prototype._cookieIframeLoaded = true;
+				logSyncCookie("iframeLoaded", {thirdPartyCookieUrl: iframeSrc});
+
+				if (this._cfg.itpEnabled && useItpModal && isSafari()) {
+						this._registerITPClickEvent();
+				}
+			}.bind(this));
+
+			log("DOT-main", "Cookie iframe Imedia loading");
+
+			// check if body exist / dot-small could be loaded in <head> tag
+			if (document.body) {
+				document.body.appendChild(iframe);
+			} else {
+				if (typeof MutationObserver !== "undefined") {
+					var callback = function(mutationsList, observer) {
+						for(var index in mutationsList) {
+							var mutation = mutationsList[index];
+							if (mutation.type == "childList") {
+								var nodes = mutation.addedNodes;
+
+								for (var i=0; i< nodes.length; i++) {
+									if (nodes[i].nodeName.toLowerCase() == "body") {
+										nodes[i].appendChild(iframe);
+										observer.disconnect();
+										return;
+									}
+								}
+							}
+						}
+					};
+					var observer = new MutationObserver(callback);
+
+					observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
+				} else {
+					this._add(document, "DOMContentLoaded", function () {
+						document.body.appendChild(iframe);
+					})
+				}
+			}
+		}
+
+		DOT.prototype._convertObjectToKeyValueArray = function (obj) {
+			var array = [];
+
+			for (key in obj){
+				if (obj.hasOwnProperty(key)) {
+					var value = obj[key];
+
+					if (
+						value !== undefined &&
+						(typeof value === 'number' || typeof value === 'boolean' || typeof value === 'string' && value !== '')
+					) {
+						array.push(key + '=' + encodeURIComponent(value.toString()));
+					}
+				}
+			}
+
+			return array;
+		}
+
+		DOT.prototype._handleMessageFromCookieIframe = function(e) {
+			try {
+				var data = JSON.parse(e.data);
+			} catch (e) {
+				return;
+			}
+
+			if (!data.name) {
+				log("DOT-main", "Message event arrived without name, discarding");
+
+				return;
+			}
+
+			logSyncCookie('postMessageReceived',{
+				name: data.name,
+				domain: data.domain,
+				sid: data.sid
+			});
+
+			if (data.name == "sidUpdate") {
+				log("DOT-main", "Message sidUpdate accepted from " + data.domain);
+				try { // kvuli amp
+					setCookie(data.sid, 'sid', 3);
+				} catch (e) {
+					return;
+				}
+				log("DOT-main", "Sid cookie synchronised to service", this._cfg.service);
+				log("DOT-main", "show sid: ", data.sid);
+				logSyncCookie('localSid', {sid: getCookie('sid')});
+
+				//nakopirujeme do seznam domeny
+				if (data.domain == "imedia") {
+					var iframeSync = document.createElement("iframe");
+					this._setAttributesToIframe(iframeSync);
+					var cnt = document.body || document.head;
+
+					cnt.appendChild(iframeSync);
+					iframeSync.src = this._cfg.thirdPartyCookieUrlSeznam + Math.random();
+					iframeSync.onload = function () {
+						log("DOT-main", "Seznam-sync loaded");
+						var message = {name: "sidSeznamSync", sid: data.sid};
+
+						log("DOT-main", "Sending postmessage sidSeznamSync");
+						iframeSync.contentWindow.postMessage(JSON.stringify(message), "*");
+					}
+				}
+
+			} else if (data.name == "sidSidSynchronised" || data.name == "sidResolveError") {
+				log("DOT-main", "Message siddSynchronised accepted to seznam.cz domain");
+
+				// faze 2. cookie1
+				var ifrmSzn = document.createElement("iframe");
+				var cnt = document.body || document.head;
+
+				var queryParams = [Math.random()].concat(this._convertObjectToKeyValueArray({
+					dsid: this._getCookieValue("sid")
+				}));
+
+				ifrmSzn.src = 'https://www.seznam.cz/cookie?' + queryParams.join('&');
+
+
+				this._setAttributesToIframe(ifrmSzn);
+				cnt.appendChild(ifrmSzn);
+				log("DOT-main", "Cookie iframe Seznam loading");
+			}
+			else if (data.name == 'itpRedirect' && !redirected) {
+				var iframeSrc = this._cfg.thirdPartyCookieUrl.replace("__HOST__", this._cfg.host) +
+					Math.random() +
+					'&referrer=' +
+					encodeURIComponent(dlocation.href);
+
+				dlocation.replace(iframeSrc);
+			}
+			else if (data.name == 'itpRevoked') {
+				log("DOT-main", "Unregistering ITP click handler");
+
+				document.removeEventListener("click", this._sendITPModalRequest);
+			}
+		}
+
+		window.DOT = new DOT();
+	})();
+}

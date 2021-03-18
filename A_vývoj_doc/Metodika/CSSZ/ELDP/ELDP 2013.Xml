@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<RELDP version="2009.1" xmlns="http://schemas.cssz.cz/ELDP09">
+   <eldp09 sqnr="1" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="9162214391">
+           <name sur="OPRŠALOVÁ" fir="LENKA"/>
+           <adr cit="Tvrdonice" str="Svárov" num="10" pos="Tvrdo" pnu="69153" cnt="CZ"/>
+           <birth dat="1991-12-21" nam="Opršalová" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="20818">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="20818"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="2" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="PELÍŠEK" fir="CHRISTIAN"/>
+           <adr cit="Moravská Nová Ves" str="Na Výsluní" num="44" pos="Morav" pnu="69155" cnt="Cz"/>
+           <birth dat="1995-01-02" nam="Pelíšek" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="4992">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-05" to="2013-08-16" din="12" inc="4992"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-05"/>
+     </eldp09>
+   <eldp09 sqnr="4" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6258010110">
+           <name sur="PILÁTOVÁ" fir="HANA"/>
+           <adr cit="Moravská Nová Ves" str="Hlavní" num="60" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1962-08-01" nam="Dobšíčková" cit="Valtice"/>
+       </client>
+       <items coun="1" sdex="26" sinc="186062">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="26" inc="186062"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="5" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8704274458">
+           <name sur="POLACH" fir="MILAN"/>
+           <adr cit="Moravská Nová Ves" str="Dolní" num="948" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1987-04-27" nam="Polach" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="11765">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-08-31" din="31" inc="11765"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="6" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6101301019">
+           <name sur="POLÁCH" fir="PAVEL"/>
+           <adr cit="Moravská Nová Ves" str="U Jordánky" num="936" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1961-01-30" nam="Polách" cit="Hodonín"/>
+       </client>
+       <items coun="1" sdex="17" sinc="329733">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="17" inc="329733"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="7" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="9162064384">
+           <name sur="POLÁCHOVÁ" fir="MARCELA"/>
+           <adr cit="Moravská Nová Ves" str="U Jordánky" num="936" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1991-12-06" nam="Poláchová" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="18874">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="18874"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="8" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="ROLENC" fir="TOMÁŠ"/>
+           <adr cit="Hodonín" str="Slunečná" num="5" pos="Hodon" pnu="69501" cnt="CZ"/>
+           <birth dat="1993-08-18" nam="Rolenc" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="21807">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21807"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="9" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8709094482">
+           <name sur="SALAJKA" fir="RADOMÍR"/>
+           <adr cit="Moravská Nová Ves" str="Ukrajina" num="634" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1987-09-09" nam="Salajka" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="34644">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-02-28" din="59" inc="34644"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2011-11-01"/>
+     </eldp09>
+   <eldp09 sqnr="10" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8961084462">
+           <name sur="SKALNÍKOVÁ" fir="MICHAELA"/>
+           <adr cit="Moravská Nová Ves" str="Vítězství" num="361" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1989-11-08" nam="Skalníková" cit="Zlín"/>
+       </client>
+       <items coun="1" sinc="27843">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="27843"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="11" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="SKOKAN" fir="DOMINIK"/>
+           <adr cit="Týnec" str="Rybáře" num="204" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1994-09-30" nam="Skokan" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="13712">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-08-31" din="31" inc="13712"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="12" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="7251214333">
+           <name sur="SKOKANOVÁ" fir="IVANA"/>
+           <adr cit="Týnec" str="Rybáře" num="204" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1972-01-21" nam="Mráková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sdex="65" sinc="135332">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-12-31" din="306" dex="65" inc="135332"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="13" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="7251214333">
+           <name sur="SKOKANOVÁ" fir="IVANA"/>
+           <adr cit="Týnec" str="Rybáře" num="204" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1972-01-21" nam="Mráková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sdex="31" sinc="5088">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-02-15" din="46" dex="31" inc="5088"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2012-01-09"/>
+     </eldp09>
+   <eldp09 sqnr="14" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8953304426">
+           <name sur="STRÝČKOVÁ" fir="MARKÉTA"/>
+           <adr cit="Hrušky" str="Záhumenní" num="558" pos="Hrušk" pnu="69156" cnt="CZ"/>
+           <birth dat="1989-03-30" nam="Strýčková" cit="Hustopeče"/>
+       </client>
+       <items coun="1" sinc="19280">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-08-26" din="26" inc="19280"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="15" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5412292677">
+           <name sur="SUKUP" fir="JIŘÍ"/>
+           <adr cit="Moravská Nová Ves" str="Na Výsluní" num="834" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1954-12-29" nam="Sukup" cit="Valtice"/>
+       </client>
+       <items coun="1" sdex="32" sinc="211347">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="32" inc="211347"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="16" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="520609225">
+           <name sur="ŠENK" fir="VLASTIMIL"/>
+           <adr cit="Moravská Nová Ves" str="Sadová" num="849" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1952-06-09" nam="Šenk" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="258212">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="258212"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="17" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="7512074306">
+           <name sur="ŠKROBÁČEK" fir="LUDĚK"/>
+           <adr cit="Břeclav" str="Sokolovská" num="19" pos="Břecl" pnu="69002" cnt="CZ"/>
+           <birth dat="1975-12-07" nam="Škrobáček" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="348076">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="348076"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="18" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="510121197">
+           <name sur="ŠKROBÁČEK" fir="LUDVÍK"/>
+           <adr cit="Moravská Nová Ves" str="Na Rynku" num="169" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1951-01-21" nam="Škrobáček" cit="Lanžhot"/>
+       </client>
+       <items coun="1" sinc="114760">
+           <t1 row="1" cod="1++" sre="N" fro="2013-07-01" to="2013-12-31" din="184" inc="114760"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="19" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="460913428">
+           <name sur="ŠOTTL" fir="JAN"/>
+           <adr cit="Moravská Nová Ves" str="U Sokolovny" num="866" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1946-09-13" nam="Šottl" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="6743">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-09-02" to="2013-09-15" din="14" inc="6743"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-09-02"/>
+     </eldp09>
+   <eldp09 sqnr="20" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="7303294306">
+           <name sur="ŠOTTL" fir="MARTIN"/>
+           <adr cit="Moravská Nová Ves" str="Hlavní" num="50" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1973-03-29" nam="Šottl" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="360685">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="360685"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="21" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="TRČKOVÁ" fir="NIKOLA"/>
+           <adr cit="Týnec" str="" num="106" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1992-06-20" nam="Trčková" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="25250">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="25250"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="22" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="WUNSCH" fir="ERIK"/>
+           <adr cit="Týnec" str="Vyhnalov" num="118" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="2001-08-20" nam="Wunsch" cit="Přerov"/>
+       </client>
+       <items coun="1" sinc="11722">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-08-31" din="31" inc="11722"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="23" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6907254057">
+           <name sur="WUNSCH" fir="LADISLAV"/>
+           <adr cit="Týnec" str="Vyhnalov" num="118" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1969-07-25" nam="Wunsch" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="233544">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="233544"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1997-06-01"/>
+     </eldp09>
+   <eldp09 sqnr="24" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="9256216079">
+           <name sur="WUNSCHOVÁ" fir="LUCIE"/>
+           <adr cit="Týnec" str="Vyhnalov" num="118" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1992-06-21" nam="Wunschová" cit="Přerov"/>
+       </client>
+       <items coun="1" sinc="16367">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-15" din="46" inc="16367"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="25" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="ZELINKOVÁ" fir="NIKOLA"/>
+           <adr cit="Moravská Nová Ves" str="Hliník" num="326" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1988-07-31" nam="Zelinková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="38155">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-10-22" din="83" inc="38155"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="26" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5701071398">
+           <name sur="ZLÁMAL" fir="BŘETISLAV"/>
+           <adr cit="Moravská Nová Ves" str="Na Kopci" num="403" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1957-01-07" nam="Zlámal" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="297477">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="297477"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="27" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="520331249">
+           <name sur="ZUGAR" fir="BOHUMÍR"/>
+           <adr cit="Moravská Nová Ves" str="Dolní" num="149" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1952-03-31" nam="Zugar" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="229424">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="229424"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="28" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="ZUGÁRKOVÁ" fir="IVETA"/>
+           <adr cit="Týnec" str="Sluneční" num="320" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1992-06-16" nam="Zugárková" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="18903">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="18903"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="29" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="ZUGÁRKOVÁ" fir="PETRA"/>
+           <adr cit="Týnec" str="Sluneční" num="320" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1989-08-26" nam="Zugárková" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="20814">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="20814"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="30" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5905210740">
+           <name sur="ZVĚDĚLÍK" fir="VLADIMÍR"/>
+           <adr cit="Moravská Nová Ves" str="Na Kopci" num="647" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1959-05-21" nam="Zvědělík" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="326248">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="326248"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="31" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8602114455">
+           <name sur="NĚMEC" fir="VLASTIMIL"/>
+           <adr cit="Moravská Nová Ves" str="Hlavní" num="435" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1986-02-11" nam="Němec" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="102543">
+           <t1 row="1" cod="1++" sre="N" fro="2013-06-24" to="2013-11-15" din="145" inc="102543"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-06-24"/>
+     </eldp09>
+   <eldp09 sqnr="32" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="5957120598">
+           <name sur="NĚMCOVÁ" fir="BOHUMILA"/>
+           <adr cit="Moravská Nová Ves" str="Hlavní" num="435" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1959-07-12" nam="Tichá" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="201319">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-11-30" din="275" inc="201319"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="33" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5906290467">
+           <name sur="NETOPILÍK" fir="PAVEL"/>
+           <adr cit="Moravská Nová Ves" str="Na Řádku" num="452" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1959-06-29" nam="Netopilík" cit="Hodonín"/>
+       </client>
+       <items coun="1" sdex="115" sinc="217113">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="115" inc="217113"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="34" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="465427445">
+           <name sur="NEŠPOROVÁ" fir="MARIE"/>
+           <adr cit="Moravská Nová Ves" str="U Sokolovny" num="207" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1946-04-27" nam="Doležalová" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="21807">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21807"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="35" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="480529454">
+           <name sur="NAVRÁTIL" fir="ZDENĚK"/>
+           <adr cit="Moravská Nová Ves" str="Pod Náspem" num="682" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1948-05-29" nam="Navrátil" cit="Bošovice"/>
+       </client>
+       <items coun="1" sinc="41605">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-09-02" to="2013-11-06" din="66" inc="41605"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-09-02"/>
+     </eldp09>
+   <eldp09 sqnr="36" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6158231442">
+           <name sur="MALINKOVIČOVÁ" fir="BOHUMILA"/>
+           <adr cit="Moravská Nová Ves" str="Vítězství" num="957" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1961-08-23" nam="Hřebačková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="311839">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="311839"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="37" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8811194722">
+           <name sur="MALINKOVIČ" fir="ZBYNĚK"/>
+           <adr cit="Moravská Nová Ves" str="Vítězství" num="957" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1988-11-19" nam="Malinkovič" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="21979">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-20" din="51" inc="21979"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="38" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="6954104069">
+           <name sur="LIPTÁKOVÁ" fir="IVETA"/>
+           <adr cit="Týnec" str="Juráčkova" num="294" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1969-04-10" nam="Vymyslická" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="186937">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-11-30" din="275" inc="186937"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="39" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="LIPTÁK" fir="TOMÁŠ"/>
+           <adr cit="Týnec" str="Juráčkova" num="294" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1994-09-18" nam="Lipták" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="17223">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-08-31" din="31" inc="17223"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="40" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="9260084383">
+           <name sur="LÉTALOVÁ" fir="MANUELA"/>
+           <adr cit="Tvrdonice" str="Družstevní" num="70/4" pos="Tvrdo" pnu="69153" cnt="CZ"/>
+           <birth dat="1992-10-08" nam="Létalová" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="16191">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="16191"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="41" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="490316107">
+           <name sur="KUČERA" fir="JAROMÍR"/>
+           <adr cit="Moravská Nová Ves" str="Dolní" num="220" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1949-03-16" nam="Kučera" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="42988">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-09-02" to="2013-11-06" din="66" inc="42988"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-09-02"/>
+     </eldp09>
+   <eldp09 sqnr="42" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8960164389">
+           <name sur="KŘÍŽOVÁ" fir="JANA"/>
+           <adr cit="Kostice" str="Břeclavská" num="43" pos="Kosti" pnu="69152" cnt="CZ"/>
+           <birth dat="1989-10-16" nam="Křížová" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="21807">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21807"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="43" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5808080927">
+           <name sur="KŘÍŽ" fir="KAREL"/>
+           <adr cit="Kostice" str="Břeclavská" num="43" pos="Kosti" pnu="69152" cnt="CZ"/>
+           <birth dat="1958-08-08" nam="Kříž" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="252298">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="252298"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="45" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="7854115181">
+           <name sur="KOUBKOVÁ" fir="KARINA"/>
+           <adr cit="Hustopeče" str="Dukelské náměstí" num="2/2" pos="Husto" pnu="69301" cnt="CZ"/>
+           <birth dat="1978-04-11" nam="Palitefková" cit="Havířov"/>
+       </client>
+       <items coun="1" sdex="129" sinc="109057">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-11-30" din="334" dex="129" inc="109057"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2012-02-01"/>
+     </eldp09>
+   <eldp09 sqnr="46" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6553311699">
+           <name sur="KOTVANOVÁ" fir="MARIE"/>
+           <adr cit="Moravská Nová Ves" str="Jana Černého" num="794" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1965-03-31" nam="Tomaštíková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="152775">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="152775"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2001-06-05"/>
+     </eldp09>
+   <eldp09 sqnr="47" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5808301026">
+           <name sur="KOSÍK" fir="ZDENĚK"/>
+           <adr cit="Moravská Nová Ves" str="Hlavní" num="62" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1958-08-30" nam="Kosík" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="200608">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-12-31" din="306" inc="200608"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="48" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6008011680">
+           <name sur="KOPKA" fir="FRANTIŠEK"/>
+           <adr cit="Moravská Nová Ves" str="Na Mlatě" num="283" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1960-08-01" nam="Kopka" cit="Hodonín"/>
+       </client>
+       <items coun="1" sdex="50" sinc="426499">
+           <t1 row="1" cod="1+S" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="50" inc="426499"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="49" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="7256074309">
+           <name sur="KALUŽOVÁ" fir="JITKA"/>
+           <adr cit="TÝNEC" str="U KYJOVKY" num="354" pos="TÝNEC" pnu="69154" cnt="CZ"/>
+           <birth dat="1972-06-07" nam="Kalužová" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="155574">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-11-30" din="275" inc="155574"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="50" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="435323429">
+           <name sur="KALUŽÍKOVÁ" fir="ANNA"/>
+           <adr cit="Moravská Nová Ves" str="Sadová" num="843" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1943-03-23" nam="Halabrinová" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="21807">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21807"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="51" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="JURÁČEK" fir="ONDŘEJ"/>
+           <adr cit="Hodonín" str="Jižní" num="9" pos="Hodon" pnu="69501" cnt="CZ"/>
+           <birth dat="1992-01-15" nam="Juráček" cit="Kroměříž"/>
+       </client>
+       <items coun="1" sinc="21979">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21979"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="52" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="9107034398">
+           <name sur="JANULÍK" fir="PETR"/>
+           <adr cit="Tvrdonice" str="Týnecká" num="29" pos="Tvrdo" pnu="69153" cnt="CZ"/>
+           <birth dat="1991-07-03" nam="Janulík" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="15989">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="15989"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="53" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5406153423">
+           <name sur="JAGOŠ" fir="JAN"/>
+           <adr cit="Moravská Nová Ves" str="Lipová" num="246" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1954-06-15" nam="Jagoš" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sdex="31" sinc="288751">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" dex="31" inc="288751"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="54" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="7703254482">
+           <name sur="SMÉKAL" fir="MARTIN" tit="ING."/>
+           <adr cit="Vranovice" str="" num="35" pos="Vrano" pnu="79808" cnt="CZ"/>
+           <birth dat="1977-03-25" nam="Smékal" cit="Prostějov"/>
+       </client>
+       <items coun="1" sinc="18000">
+           <t1 row="1" cod="Q++" sre="N" fro="2013-07-01" to="2013-12-31" din="184" inc="18000"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-05-01"/>
+     </eldp09>
+   <eldp09 sqnr="55" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6009190858">
+           <name sur="SCHROTT" fir="WALTER" tit="ING."/>
+           <adr cit="Kroměříž" str="Havlíčkova" num="4253/119c" pos="Kromě" pnu="76701" cnt="CZ"/>
+           <birth dat="1960-09-19" nam="Schrott" cit="Kroměříž"/>
+       </client>
+       <items coun="1" sinc="18000">
+           <t1 row="1" cod="Q++" sre="N" fro="2013-07-01" to="2013-12-31" din="184" inc="18000"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2012-07-01"/>
+     </eldp09>
+   <eldp09 sqnr="57" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5709231473">
+           <name sur="ZEMÁNEK" fir="LADISLAV" tit="ING"/>
+           <adr cit="Moravská Nová Ves" str="Na Výsluní" num="947" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1957-09-23" nam="Zemánek" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="480626">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="480626"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="58" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="6906064308">
+           <name sur="MADĚŘIČ" fir="PETR" tit="ING"/>
+           <adr cit="Moravská Nová Ves" str="Kovářská" num="755" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1969-06-06" nam="Maděřič" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="31037">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-01-31" din="31" inc="31037"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-09-06"/>
+     </eldp09>
+   <eldp09 sqnr="59" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="">
+           <name sur="HLAVÁČOVÁ" fir="KATEŘINA"/>
+           <adr cit="Moravská Nová Ves" str="U Sokolovny" num="955" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1994-04-15" nam="Hlaváčová" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="21113">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21113"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="60" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6507181153">
+           <name sur="HLAVÁČ" fir="VLADIMÍR"/>
+           <adr cit="Moravská Nová Ves" str="U Sokolovny" num="955" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1965-07-18" nam="Hlaváč" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="345576">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="345576"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1995-10-01"/>
+     </eldp09>
+   <eldp09 sqnr="61" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="500626049">
+           <name sur="HES" fir="VLADIMÍR"/>
+           <adr cit="Týnec" str="U Kyjovky" num="240" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1950-06-26" nam="HES" cit="Pardubice"/>
+       </client>
+       <items coun="1" sinc="31952">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="31952"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="62" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="415909462">
+           <name sur="HAUSEROVÁ" fir="ANNA"/>
+           <adr cit="Moravská Nová Ves" str="Na Rynku" num="161" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1941-09-09" nam="Helešicová" cit="Moravská Nová Ves"/>
+       </client>
+       <items coun="1" sinc="533398">
+           <t1 row="1" cod="1DS" sre="N" fro="2013-01-02" to="2013-12-31" din="364" inc="533398"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-01-02"/>
+     </eldp09>
+   <eldp09 sqnr="63" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="7854264319">
+           <name sur="HALABRINOVÁ" fir="JANA"/>
+           <adr cit="Moravská Nová Ves" str="Sadová" num="846" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1978-04-26" nam="Halabrinová" cit="Hodonín"/>
+       </client>
+       <items coun="1" sdex="15" sinc="146524">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-11-30" din="275" dex="15" inc="146524"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="64" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="8451254306">
+           <name sur="FRÝDKOVÁ" fir="MARKÉTA"/>
+           <adr cit="Moravská Nová Ves" str="Náměstí Republiky" num="107" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1984-01-25" nam="Frýdková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="21480">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21480"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="65" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="6356190643">
+           <name sur="FRÝDKOVÁ" fir="IVANA"/>
+           <adr cit="Moravská Nová Ves" str="U Trati" num="933" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1963-06-19" nam="Hromádková" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="152433">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-11-30" din="275" inc="152433"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="66" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6110301021">
+           <name sur="FRÝDEK" fir="LUBOMÍR"/>
+           <adr cit="Moravská Nová Ves" str="U Trati" num="933" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1961-10-30" nam="Frýdek" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="333799">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="333799"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="1994-01-17"/>
+     </eldp09>
+   <eldp09 sqnr="67" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="6560090900">
+           <name sur="DREJČKOVÁ" fir="JANA"/>
+           <adr cit="Prušánky" str="" num="404" pos="Prušá" pnu="69621" cnt="CZ"/>
+           <birth dat="1965-10-09" nam="Kuchařová" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="285306">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="285306"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2012-12-01"/>
+     </eldp09>
+   <eldp09 sqnr="68" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="7802204091">
+           <name sur="DOLEŽAL" fir="ŠTĚPÁN"/>
+           <adr cit="Hrušky" str="Hlavní" num="82" pos="Hrušk" pnu="69156" cnt="CZ"/>
+           <birth dat="1978-02-20" nam="Doležal" cit="Valtice"/>
+       </client>
+       <items coun="1" sinc="288262">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="288262"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="69" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5505131665">
+           <name sur="DOLEŽAL" fir="JAROSLAV"/>
+           <adr cit="Hrušky" str="Hlavní" num="82" pos="Hrušk" pnu="69156" cnt="CZ"/>
+           <birth dat="1955-05-13" nam="Doležal" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="271860">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="271860"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="70" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="7957044315">
+           <name sur="ČECHOVÁ" fir="MICHAELA"/>
+           <adr cit="Moravská Nová Ves" str="Na Kopci" num="404" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1979-07-04" nam="Čechová" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="13514">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-07-22" din="203" m1="x" m2="x" m3="x" m4="x" m5="x" m6="" m7="" m8="" m9="" m10="" m11="" m12="" inc="13514"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2003-02-19"/>
+     </eldp09>
+   <eldp09 sqnr="71" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="9007054661">
+           <name sur="ČAPKA" fir="RADEK"/>
+           <adr cit="Moravská Nová Ves" str="Lipová" num="919" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1990-07-05" nam="Čapka" cit="Hodonín"/>
+       </client>
+       <items coun="1" sinc="19004">
+           <t1 row="1" cod="1++" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="19004"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="72" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="6051151051">
+           <name sur="BRZÁKOVÁ" fir="ALENA"/>
+           <adr cit="Týnec" str="Hrušecká" num="338" pos="Týnec" pnu="69154" cnt="CZ"/>
+           <birth dat="1960-01-15" nam="Kvasnovská" cit="Chomutov"/>
+       </client>
+       <items coun="1" sinc="156328">
+           <t1 row="1" cod="1++" sre="N" fro="2013-03-01" to="2013-11-30" din="275" inc="156328"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-03-01"/>
+     </eldp09>
+   <eldp09 sqnr="73" yer="2013" typ="02" tco="" dep="774" nam="">
+       <client bno="505205025">
+           <name sur="BLINKALOVÁ" fir="EMÍLIE"/>
+           <adr cit="Moravská Nová Ves" str="Vítězství" num="871" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1950-02-05" nam="Vlková" cit="Prušánky"/>
+       </client>
+       <items coun="1" sinc="21807">
+           <t1 row="1" cod="1D+" sre="N" fro="2013-08-01" to="2013-09-18" din="49" inc="21807"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2013-08-01"/>
+     </eldp09>
+   <eldp09 sqnr="74" yer="2013" typ="01" tco="" dep="774" nam="">
+       <client bno="5609131770">
+           <name sur="BEDNÁRIK" fir="MIROSLAV"/>
+           <adr cit="Moravská Nová Ves" str="Lipová" num="944" pos="Morav" pnu="69155" cnt="CZ"/>
+           <birth dat="1956-09-13" nam="Bednárik" cit="Cheb"/>
+       </client>
+       <items coun="1" sinc="272441">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="365" inc="272441"/>
+       </items>
+       <comp nam="AGROMORAVIA, a.s." id="25342479" vs="7740104174" cre="2014-04-24" fro="2010-02-08"/>
+     </eldp09>
+</RELDP>

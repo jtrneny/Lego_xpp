@@ -1,0 +1,27 @@
+TYPE(drgForm) DTYPE(10) TITLE(Kopie øádku definice) SIZE(107,6) ;
+              GUILOOK(Action:n,IconBar:y) FILE(DEFVYKITw) CARGO() 
+
+  TYPE(Text)  CAPTION(ZpusKum)  CPOS( 0.0,0.1)  CLEN(15) CTYPE(1)
+  TYPE(Text)  CAPTION(S1)       CPOS(21.5,0.1)  CLEN(3)  CTYPE(1)
+  TYPE(Text)  CAPTION(S2)       CPOS(24.5,0.1)  CLEN(3)  CTYPE(1)
+  TYPE(Text)  CAPTION(S3)       CPOS(28.0,0.1)  CLEN(3)  CTYPE(1)
+  TYPE(Text)  CAPTION(Øád)      CPOS(33.0,0.1)  CLEN(4)  CTYPE(1)
+  TYPE(Text)  CAPTION(Název øádku)   CPOS(37.0,0.1)  CLEN(15)  CTYPE(1)
+  TYPE(Text)  CAPTION(Sl)            CPOS(59.0,0.1)  CLEN(3)  CTYPE(1)
+  TYPE(Text)  CAPTION(Název sloupce) CPOS(63.0,0.1)  CLEN(15)  CTYPE(1)
+  TYPE(Text)  CAPTION(Zpùsob kumulace) CPOS(85.0,0.1)  CLEN(15)  CTYPE(1)
+   TYPE(COMBOBOX) NAME(DEFVYKITw->cTYPKUMVYK)  FPOS(1.0,1.2)  FLEN(18) ;
+         VALUES(K1:Kum.øádek,                                          ; 
+                K2:Kum klíè a øádek)
+   TYPE(Get)  NAME(DEFVYKITw->cSKUPINA1)  FPOS(21.0,1.2) FLEN(2)
+   TYPE(Get)  NAME(DEFVYKITw->cSKUPINA2)  FPOS(24.5,1.2) FLEN(2)
+   TYPE(Get)  NAME(DEFVYKITw->cSKUPINA3)  FPOS(28.0,1.2) FLEN(2)
+   TYPE(Get)  NAME(DEFVYKITw->nRADEKVYK)  FPOS(33.0,1.2) FLEN(3)
+   TYPE(Get)  NAME(DEFVYKITw->cNAZRADVYK) FPOS(37.0,1.2) FLEN(20)
+   TYPE(Get)  NAME(DEFVYKITw->nSLOUPVYK)  FPOS(59.0,1.2) FLEN(2)
+   TYPE(Get)  NAME(DEFVYKITw->cNAZSLOVYK) FPOS(63.0,1.2) FLEN(20)
+   TYPE(Get)  NAME(DEFVYKITw->cTYPNAPVYK) FPOS(85.0,1.2) FLEN(20)
+   TYPE(MLE)  NAME(DEFVYKITw->mVYBER)     FPOS(0.50,2.4) SIZE(105.40,3.20) READONLY(N)
+* FCAPTION(Nápoèet) CPOS(1.5, 17.8) CLEN(20) FONT(5)
+      
+TYPE(END)

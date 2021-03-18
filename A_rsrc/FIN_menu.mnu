@@ -1,0 +1,111 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Finance) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+    TYPE(Menu) LEVEL(2) CAPTION(Závazky firmy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøehled závazkù ...)      DATA(FIN_FAKPRIHD_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Likvidace závazkù...)     DATA(FIN_likvidace_scr_ZAV)
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøíkazy k úhradì ...)     DATA(FIN_PRIKUHHD_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Zaplacené zálohy ...)     DATA(FIN_FAKPRIHDZZ_SCR)
+      TYPE(Report) LEVEL(3) CAPTION(Výpisy sestav)            DATA(SYS_TISKFORM_CRD,FIN_ZAVAZKY_LST)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Pohledávky firmy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøehled pohledávek ...)   DATA(FIN_fakvyshd_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Fakturaèní ceník)   DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Likvidace pohledávek ...) DATA(FIN_likvidace_scr_POH)
+      TYPE(Dialog) LEVEL(3) CAPTION(Upomínky ...)             DATA(FIN_UPOMINHD_SCR) 
+      TYPE(Dialog) LEVEL(3) CAPTION(Zaplacení zálohy ...)     DATA(FIN_FAKVYSHDZZ_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Bankovní vztahy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøehled výpisù ...)       DATA(FIN_banvyphd_scr_ban)
+      TYPE(Dialog) LEVEL(3) CAPTION(Likvidace výpisù ...)     DATA(FIN_likvidace_scr_BAN)
+      TYPE(Dialog) LEVEL(3) CAPTION(Nastavení úètù ...)       DATA(C_BANKUC)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+   
+    TYPE(Menu) LEVEL(2) CAPTION(Pokladna)
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøehledy pokladen ...)    DATA(FIN_POKLADHD_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Likvidace pokladen ...)   DATA(FIN_likvidace_scr_POK)
+      TYPE(Dialog) LEVEL(3) CAPTION(Nastavení pokladen ...)   DATA(FIN_POKLADMS_IN)
+      TYPE(Dialog) LEVEL(3) CAPTION(Zùstatky za dny)    DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Inventura pokladen) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Úèetní doklady)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle hlavièek dokladù ...) DATA(FIN_UCETDOHD_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle úèetních pøedpisù) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)         DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Vzájemné zápoèty)
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøehled zápoètù ...)      DATA(FIN_banvyphd_scr_vzz)
+      TYPE(Dialog) LEVEL(3) CAPTION(Likvidace zápoètù ...)    DATA(FIN_likvidace_scr_VZZ)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Podniková fakturace)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle faktur ...)           DATA(FIN_FAKVNPHD_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle støediska dodavatele) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle položek faktur)       DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)            DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Daò z pøidané hodnoty)
+      TYPE(Dialog) LEVEL(3) CAPTION(Daòová pøiznání ...)     DATA(FIN_DPH_2004_SCR) 
+      TYPE(Dialog) LEVEL(3) CAPTION(Pøijatá plnìní)     DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Uskuteènìná plnìní) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Kurzovní lístek)
+*      TYPE(Dialog) LEVEL(3) CAPTION(Kurzovní lístek dle dnù) DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Kurzovní lístek ...) DATA(FIN_KURZHD)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)           DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Úèetní pøedpisy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Úèetní osnova)      DATA(UCT_cuctosn_CRD)
+      TYPE(Dialog) LEVEL(3) CAPTION(Skupiny úètù)       DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Závazky firem)      DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+    TYPE(Menu) LEVEL(2) CAPTION(Výkazy a rozbory)
+      TYPE(Dialog) LEVEL(3) CAPTION(Nastavení rozborù)  DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konstantní symboly ...)   DATA(C_KONSYM)
+    TYPE(Dialog) LEVEL(2) CAPTION(Zpùsob úhrady ...)        DATA(C_TYPUHR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Zpùsob dopravy ...)       DATA(C_ZPUDOP)
+    TYPE(Dialog) LEVEL(2) CAPTION(Vnitro banka ...)         DATA(C_VBANUC)
+    TYPE(Dialog) LEVEL(2) CAPTION(Výkaz DPH nastavení ...)  DATA(FIN_C_VYKDPH)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník zamìstnancù ...) DATA(FIN_C_ZAMEST)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION(Nastavení modulu)     DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(Období)               DATA(UCT_UCETSYS)
+    TYPE(Menu) LEVEL(2) CAPTION(Export dat)
+      TYPE(Dialog) LEVEL(3) CAPTION(Export dat na centrálu)   DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(Uzávìrka úèetního období) DATA(Sell)     
+    TYPE(Menu) LEVEL(2) CAPTION(Import dat) 
+      TYPE(Dialog) LEVEL(3) CAPTION(Import dat na centrálu)   DATA(Sell)    
+    TYPE(Menu) LEVEL(2) CAPTION(Export dat do jiných systémù) 
+      TYPE(Dialog) LEVEL(3) CAPTION(Export faktur vystavených) DATA(Sell)
+
+ 
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(TESTs -1-)   DATA(FIN_FAKVYSHD_FIR)
+    TYPE(Dialog) LEVEL(2) CAPTION(TESTs -2-)   DATA(FIN_banvyphd_vzz_scr)
+    TYPE(Dialog) LEVEL(2) CAPTION(TESTs -3-)   DATA(FIN_parprzal_rv_in)
+
+
+  TYPE(Menu) LEVEL(0) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(1) CAPTION(Tiskové výstupy)       DATA(SYS_forms_CRD)
+    TYPE(Dialog) LEVEL(1) CAPTION(Uživatelské filtry)    DATA(SYS_filtrs_SEL)
+    TYPE(Dialog) LEVEL(1) CAPTION(Uživatelské filtry_in) DATA(SYS_filtrs_IN)
+    TYPE(Dialog) LEVEL(1) CAPTION(Tiskové výstupy)       DATA(SYS_forms_SEL)
+
+ 
+

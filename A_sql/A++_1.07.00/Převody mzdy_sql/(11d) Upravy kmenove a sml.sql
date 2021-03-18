@@ -1,0 +1,12 @@
+delete from msprc_mo where nrok= 0 or nobdobi = 0 or noscisprac = 0  ;
+update msprc_mo  set lstavem = false where ddatvyst <= Convert(('01.'+Substring( cobdobi,1,2)+'.'+Convert( nrok,SQL_CHAR)), SQL_DATE) ;  
+update msprc_mo  set lstavem = true  where ddatvyst > Convert(('01.'+Substring( cobdobi,1,2)+'.'+Convert( nrok,SQL_CHAR)), SQL_DATE) ;  
+update msprc_mo  set lstavem = true  where ddatvyst is null;  
+update osoby     set osoby.lstavem = false   ;
+update osoby     set osoby.lstavem = msprc_mo.lstavem from msprc_mo where msprc_mo.cobdobi='12/12' and msprc_mo.nosoby = osoby.sID and msprc_mo.lstavem = true ; 
+update osoby     set osoby.nis_VYR = 1 from msprc_mo where msprc_mo.cobdobi='12/12' and msprc_mo.nosoby = osoby.sID and msprc_mo.lexport = true  ;
+update osoby     set osoby.noscisprac = msprc_mo.noscisprac from msprc_mo where msprc_mo.cobdobi='12/12' and msprc_mo.nosoby = osoby.sID and msprc_mo.lstavem = true ; 
+update prsmldoh  set prsmldoh.cjmenoRozl = osoby.cjmenoRozl,prsmldoh.nosoby = osoby.sid from osoby where prsmldoh.ncisosoby = osoby.ncisosoby  ;
+update prsmldoh  set prsmldoh.ddatvyst = msprc_mo.ddatvyst from msprc_mo where prsmldoh.noscisprac = msprc_mo.noscisprac and prsmldoh.nporpravzt = msprc_mo.nporpravzt and not msprc_mo.ddatvyst is null  ;
+insert into osobysk (ncisosoby,czkr_skup) select osoby.ncisosoby,'VYR' from osoby where osoby.nis_VYR=1  ;
+update msprc_mo  set nDokladCM = Convert(Substring( croobcpppv,3,9)+ Right( croobcpppv,1), SQL_NUMERIC) ;  

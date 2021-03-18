@@ -1,0 +1,18 @@
+Testování 
+- testování probíhá nad novì poøízenými doklady
+ 
+
+Pøebírání záloh u faktur vystavených
+- pøi zrušení zálohové faktury ze zúètovací dojde k pádu na zámek jedná se o opravu faktury. Je zajímavé, ale že celá faktura,
+  která obsahuje takové položky zrušit jde. 
+- byla poøízená faktura vystavená, která obsahovala dvì položky - obecné - uložila se
+     - potom se do této položkjy pøidala zálohová faktura s daòovým dokladem a uložilo se to - od tohoto okamžiku se nedá
+       na tøi teèky u zálohové faktury rozbalit daòová tabulka. Zobrazuje se jen okno pro pøepoèet sazby DPH. Mì to pøipadá jako by 
+       se špatnì vyhodnocovala pozice na které položce stojí. Pokud poøídím jako první zálohovou fakturu tak se to tváøí jakoby v 
+       poøádku.
+- pøi zrušení položky, která mìla vazbu na daòové doklady v rozpoøizované faktuøe vystavené ( má více položek) tak u zrušené položky zùstanou 
+  položky v tabulce vykdph_i - nezruší se
+
+
+
+     

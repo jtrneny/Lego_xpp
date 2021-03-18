@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://h.imedia.cz/cookie-html?0.88647488053363930.7484574797330328 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getParameterFromURLQuery (name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            var	results = regex.exec(window.location.href);
+
+            if (!results) {
+                return null;
+            }
+
+            if (!results[2]) {
+                return '';
+            }
+
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var logEnabled = getParameterFromURLQuery("debug") === "1";
+
+        function log() {
+            if (!logEnabled) {return }
+            // prvni param - box
+            var args = Array.prototype.slice.call(arguments, 0);
+            var params = ['%c'+args[0], 'display: inline-block; color: #fff; background: #8bc34a; padding: 1px 4px; border-radius: 3px;'];
+            for (var i = 1; i < args.length; i++) {
+                params.push(args[i]);
+            }
+            console.log.apply(console, params);
+        }
+
+        function isMobileSafari () {
+            var ua = navigator.userAgent.toLowerCase();
+            var isSafari = ~ua.indexOf('safari/') && !~ua.indexOf('chrome/') && !~ua.indexOf('chromium/');
+            var mobileVersion = ~ua.indexOf('iphone') || ~ua.indexOf('ipod') || ~ua.indexOf('ipad');
+
+            return isSafari && mobileVersion;
+        }
+
+        // sends fake DOT hit with sync cookies information
+        // mobile safari only!
+        function logSyncCookie (hitaction, hitdata) {
+            if (!isMobileSafari()) {
+                return;
+            }
+
+            var hit = new Image(1,1);
+
+            // compose data
+            var data = '"action":"' + hitaction + '"';
+            if (hitdata) {
+                for (var p in hitdata) {
+                    if (hitdata.hasOwnProperty(p)) {
+                        data += ',"' + p + '":"' + hitdata[p] + '"';
+                    }
+                }
+            }
+
+            var hitUrl = 'https://h.imedia.cz/hit/?d=' +
+            encodeURIComponent('{' + data + '}') +
+            '&a=event' +
+            '&s=idt' +
+            '&u=' + encodeURIComponent(document.location.href);
+            hit.src = hitUrl;
+        }
+
+        var getItem = function (sKey) {
+            if (!sKey) { return null; }
+            try {
+				// kvuli amp
+				return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+			} catch (error) {
+                log('DOT-cookie-imedia', 'error in cookie decode', error);
+
+				return null;
+			}
+        }
+
+        function isAgent(name) {
+            return navigator.userAgent.indexOf(name) !== -1;
+        }
+
+        var bot = (
+            isAgent("Google Page Speed Insights") ||
+            isAgent("Googlebot") ||
+            isAgent("Google Search Console")
+        );
+
+        function syncCookies (itpEnabled) {
+            // ziskej sid z domeny .imedia.cz
+            var sid = getItem("sid");
+            var vendorApple = /Apple/.test(navigator.vendor);
+
+            if (sid) {
+                var message = {name: "sidUpdate", sid: sid, domain:"imedia"};
+                window.parent.postMessage(JSON.stringify(message), '*');
+
+                logSyncCookie('cookieHtmlPostmessage', message);
+                log('DOT-cookie-imedia', 'Sending postmessage sidUpdate');
+                log('DOT-cookie-imedia', 'show sid: ', sid);
+            } else if (!bot && vendorApple) {
+                log('DOT-cookie-imedia', 'no sid cookie found');
+
+                if (!itpEnabled) {
+                    log('DOT-cookie-imedia', 'ITP is not enabled, cannot resolve parent cokies');
+
+                    //TODO: Mozna toto bude jiz deprecated?
+                    window.parent.postMessage(JSON.stringify({name: "sidResolveError", sid: sid, domain:"imedia"}), '*');
+                }
+            }
+        }
+
+        function isSafari () { return /Apple/.test(navigator.vendor); }
+
+        var itpEnabled = getParameterFromURLQuery("itp") === "1";
+        var referrer = getParameterFromURLQuery("referrer");
+        var useItpModal = getParameterFromURLQuery("itpmodal") === "1";
+
+        var sid = getItem("sid");
+
+        logSyncCookie('cookieHtml', {sid: sid});
+
+        if (referrer) {
+              if (!sid) {
+                  log('DOT-cookie-imedia', 'Referrer detected, but no SID cookie found!');
+
+                  //TODO: Remove, just for testing purpose
+                  document.cookie = "sznitptest=myvalue; path=/; expires=" + new Date(Date.now() + 86400000).toUTCString();
+              }
+
+              log('DOT-cookie-imedia', 'Redirecting back to referrer');
+
+              referrer = decodeURIComponent(referrer) + "&redirected=1";
+
+              window.location.replace(referrer);
+        }
+        else if (itpEnabled && isSafari()) {
+            log('DOT-cookie-imedia', 'ITP enabled');
+
+
+            if (useItpModal) {
+                log('DOT-cookie-imedia', 'ITP modal listener enabled');
+
+                function startListenToITPRequest () {
+                    window.addEventListener("message", function (event) {
+                        var data = JSON.parse(event.data);
+
+                        if (data.name === "invokeITPModal") {
+                            log('DOT-cookie-imedia', 'ITP modal invoke requested');
+
+                            document.requestStorageAccess()
+                                .then(function () {
+                                    log('DOT-cookie-imedia', 'ITP access granted');
+
+                                    syncCookies(true);
+                                })
+                                .catch(function () {
+                                    log('DOT-cookie-imedia', 'ITP access revoked');
+
+                                    var message = {name: "itpRevoked"};
+
+                                    window.parent.postMessage(JSON.stringify(message), '*');
+                                });
+                        }
+                    });
+                }
+
+                document.hasStorageAccess()
+                    .then(function (hasAccess) {
+                        if (hasAccess) {
+                            log('DOT-cookie-imedia', 'User already has storage content access');
+
+                            syncCookies(true);
+                        }
+                        else {
+                            log('DOT-cookie-imedia', 'User has NO storage content access');
+                            log('DOT-cookie-imedia', 'Waiting for ITP request event');
+
+                            startListenToITPRequest();
+                        }
+                    });
+            }
+            else {
+                if (sid) {
+                    log('DOT-cookie-imedia', 'SID found, syncing');
+
+                    syncCookies();
+                }
+                else {
+                    log('DOT-cookie-imedia', 'SID not found, sending "itpRedirect" event');
+
+                    window.parent.postMessage(JSON.stringify({name: "itpRedirect"}), '*');
+                }
+            }
+        }
+        else {
+            syncCookies();
+        }
+</script>
+
+
+</body></html>

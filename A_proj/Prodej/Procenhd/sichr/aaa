@@ -1,0 +1,4 @@
+ntypProCen = 1 .and.  
+ (ncisFirmy =        3001 .or. ncisFirmy = 0) .and. 
+( (ccisSklad = '2       ' .and. csklPol = '2/229013       ') .or. 
+nzboziKat =     50)

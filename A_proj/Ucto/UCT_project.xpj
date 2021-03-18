@@ -1,0 +1,29 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.0
+    OPENFILES     = UCT_ucto.prg;UCT_ucto.arc
+    UCT_project.XPJ
+
+[UCT_project.XPJ]
+    Ucto.EXE
+
+[Ucto.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = /PM:PM
+    RC_COMPILE    = arc
+    RC_FLAGS      = /v
+    OBJ_DIR       = C:\Lego_xpp\A_obj
+// $START-AUTODEPEND
+    drg.ch
+    drgres.ch
+    UCT_ucto.obj
+// $STOP-AUTODEPEND
+    DRG1.LIB
+    DRG2.LIB
+    UCT_ucto.arc
+    UCT_ucto.prg
+

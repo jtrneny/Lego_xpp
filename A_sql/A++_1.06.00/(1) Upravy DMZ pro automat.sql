@@ -1,0 +1,1 @@
+update druhymzd  set lAutoVypHM = true where ndruhmzdy = 120 or ndruhmzdy = 122 or ndruhmzdy = 127 or ndruhmzdy = 150 or ndruhmzdy = 156 or  ndruhmzdy = 199

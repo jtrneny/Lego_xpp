@@ -1,0 +1,5 @@
+Pro pøetáèení systému opravit
+
+- doplnit laktiv v cenzboz, firmy na TRUE
+- lhmotny v maj a majz na TRUE
+- pøetáèení úèetních pøedpisù finance versus sklady a mzdy

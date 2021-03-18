@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  
+  Schéma pro fakturu ISDOC + validace struktury digitálního podpisu
+    
+  (c) 2009 Sdružení pro informační společnost, http://www.spis.cz/
+  
+  $Id: isdoc-invoice-dsig-5.2.xsd,v 1.1 2009/03/21 15:45:59 jkj Exp $
+  
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://isdoc.cz/namespace/invoice" xmlns="http://isdoc.cz/namespace/invoice"
+  xmlns:ds="http://www.w3.org/2000/09/xmldsig#" elementFormDefault="qualified">
+
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+
+  <xs:redefine schemaLocation="isdoc-invoice-5.2.xsd">
+    <xs:group name="Signature">
+      <xs:sequence>
+        <xs:element ref="ds:Signature"/>
+      </xs:sequence>
+    </xs:group>
+  </xs:redefine>
+
+</xs:schema>

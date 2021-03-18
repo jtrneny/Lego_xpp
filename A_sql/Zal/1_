@@ -1,0 +1,5 @@
+select cenprodc.ccisSklad, cenprodc.csklPol, cenprodc.cnazZbo, 
+       cenzboz.ccisSklad, cenzboz.csklPol from cenprodc
+left outer join cenzboz on cenprodc.ccisSklad = cenzboz.ccisSklad and
+                           cenprodc.csklPol   = cenzboz.csklPol
+ 

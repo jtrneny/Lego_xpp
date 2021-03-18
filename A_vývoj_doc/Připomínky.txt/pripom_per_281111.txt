@@ -1,0 +1,16 @@
+Pár postøehù z personalistiky
+
+- pokud se zakládá nový pracovník do personalistiky a je již zaøazen v osobách tak pøi zadání nového
+  pracovního pomìru se zobrazí èíslo 0 a poøadí pracovního vztahu 2
+- pøi zadání èísla pracovníka musí probìhnout validace na duplicitu
+- upravit volání druh PV a vznik PV   (JT)
+- pøehodit položky u vzniku PV následovnì, typ PV, vznik PV dne, nástup dne 
+- u položky typ PV by mìla být nabídka na èíselník c_druhpv
+- pøehodit položky u ukonèení PV následovnì, pøedpukonè PV, typ ukonè PV, ukonèen dne 
+- pøi uloženi se nezaktualizuje èíslo pracovníka v osobách
+- do posledního aktuálního období ve mzdách založit záznam s kopií údajù ze prsmldoh
+- pøi zadání vzdìlání mì to vypadne na chybu
+- vypadne to v èíselníku lékaøù na èíslo osoby
+
+ 
+

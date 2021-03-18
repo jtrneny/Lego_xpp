@@ -1,0 +1,64 @@
+  TYPE(Text)  CAPTION(èísloSklPoložky)    CPOS( 4,0.01)   CLEN(11) CTYPE(1)
+  TYPE(Text)  CAPTION([)                  CPOS(.8,0.80)   CLEN( 2) CTYPE(2)  GROUPS(SETFONT,7.Arial CE)
+  TYPE(Text)  NAME(intpozad->ccissklad)   CPOS( 2,0.80)   CLEN(15) CTYPE(1)  GROUPS(SETFONT,7.Arial CE,GRA_CLR_BLUE)
+  TYPE(Text)  CAPTION(])                  CPOS(16,0.80)   CLEN( 2) CTYPE(2)  GROUPS(SETFONT,7.Arial CE)
+  TYPE(Text)  CAPTION(èísloVýrZakázky)    CPOS(37,0.01)   CLEN(12) CTYPE(1)
+  TYPE(Text)  CAPTION([)                  CPOS(34.8,0.80) CLEN( 2) CTYPE(2)  GROUPS(SETFONT,7.Arial CE)
+  TYPE(Text)  CAPTION(])                  CPOS(50,0.80)   CLEN( 2) CTYPE(2)  GROUPS(SETFONT,7.Arial CE)
+
+  TYPE(Text)  CAPTION(% dph)             CPOS(58 ,0.01) CLEN( 6) CTYPE(1)
+  TYPE(Text)  CAPTION(objednánoDne)      CPOS(67 ,0.01) CLEN(12) CTYPE(1)
+  TYPE(Text)  CAPTION(datumDodání)       CPOS(82 ,0.01) CLEN(10) CTYPE(1)
+  TYPE(Text)  CAPTION(katalogÈíslo)      CPOS(96 ,0.01) CLEN(12) CTYPE(1)
+*  
+* položka objednávky
+    TYPE(Get)      NAME(intpozad->csklPol)     FPOS( 1,1.2) FLEN(15) PP(2) PUSH(objVyshd_z_sel)
+    TYPE(Get)      NAME(intpozad->ccisZakazI)  FPOS(35,1.2) FLEN(15) PP(2) PUSH(vyr_vyrzakit_sel)
+
+    TYPE(Text)     NAME(intpozad->nklicdph)    CPOS(59,1.2) CLEN( 0) BGND(13)
+    TYPE(Text)     NAME(M->procDph)            CPOS(58,1.2) CLEN( 7) BGND(13) FONT(5) CTYPE(2)
+    TYPE(Text)     NAME(intpozad->ddatObDod)   CPOS(67,1.2) CLEN(12) BGND(13) CTYPE(2)
+    TYPE(Get)      NAME(intpozad->dtermDod)    FPOS(80,1.2) FLEN(12) PUSH(clickdate)
+    TYPE(Get)      NAME(intpozad->ckatczbo)    FPOS(95,1.2) FLEN(12) 
+
+    TYPE(Get)      NAME(intpozad->cnazZbo)     FPOS( 1,2.5) FLEN(49) PP(2)
+    TYPE(COMBOBOX) NAME(intpozad->ctypSklPol)  FPOS(58,2.5) FLEN(21) FCAPTION(typPol)  CPOS(52,2.5) CLEN(6) REF(typSklPol) 
+    TYPE(COMBOBOX) NAME(intpozad->cstavDokl)  FPOS(95,2.5) FLEN(13) FCAPTION(stavPol) CPOS(87,2.5) CLEN(6) REF(cstavDokl) 
+
+    TYPE(Text) CAPTION(objednáno na_skl)  CPOS(16,5.05) CLEN(13)   
+
+    TYPE(STATIC) FPOS(1,5.5) SIZE(107,3.9) STYPE(13) CTYPE(2)
+
+* množství
+      TYPE(Text) CAPTION(Množství v )         CPOS( 1, .5) CLEN( 9) 
+
+      TYPE(Get)  NAME(intpozad->nmnozObSkl)   FPOS(15, .5) FLEN(13) PP(2)
+      TYPE(Get)  NAME(intpozad->czkratJedn)   FPOS(30, .5) FLEN( 6) PP(2)
+     
+* ceny
+      TYPE(Text) CAPTION(Ceny v )            CPOS( 1,2.5) CLEN( 7) 
+      TYPE(Text) NAME(intpozad->czkratmenZ) CPOS(10,2.5) CLEN( 5) CTYPE(1) FONT(2)
+
+      TYPE(Text) CAPTION(nákupní cena)       CPOS(15,1.56) CLEN(13)         GROUPS(SETFONT,8.Cambria,GRA_CLR_BLUE) 
+      TYPE(Get)  NAME(intpozad->ncennaodod)  FPOS(15,2.5) FLEN(13)   
+
+      TYPE(Text) CAPTION(celkem bez danì)    CPOS(73,1.5) CLEN(13) CTYPE(2) GROUPS(SETFONT,8.Cambria,GRA_CLR_BLUE)
+      TYPE(Text) NAME(intpozad->nkcbdobj)    CPOS(75,2.5) CLEN(13) BGND(13) CTYPE(2)
+
+      TYPE(Text) CAPTION(celkem s daní)      CPOS(90,1.5) CLEN(10) CTYPE(2) GROUPS(SETFONT,8.Cambria,GRA_CLR_BLUE)
+      TYPE(Text) NAME(intpozad->nkczdobj)    CPOS(91,2.5) CLEN(14) BGND(13) CTYPE(2)
+
+* memoEdit
+    TYPE(GET)   NAME(intpozad->cdoplnTxt)  FPOS(1,9.6) FLEN(100)
+    TYPE(PushButton) POS(105.4,9.8) SIZE(3,1) EVENT(memoEdit) ICON1(114) ICON2(214) ATYPE(1) CAPTION(intpozad->mpoznObj,0)
+
+
+ TYPE(TEXT) CAPTION(Dodavatel)  CPOS( 3,-.3) CLEN(10) 
+    TYPE(STATIC) STYPE(9)  FPOS(1,.2) SIZE( 103, 6 ) RESIZE(yn)
+      TYPE(GET)  NAME(nCisFirmy)       FPOS(  7 ,0.5) FLEN( 8) FCAPTION(Firma)  CPOS( 1 ,0.5) PUSH(fir_firmy_sel)
+      TYPE(GET)  NAME(cNazFirmy)       FPOS( 25, 0.5) FLEN(51) FCAPTION(Název)  CPOS( 18,0.5) 
+      TYPE(GET)  NAME(cUlice)          FPOS( 25, 1.5) FLEN(20) FCAPTION(Ulice)  CPOS( 18,1.5)
+      TYPE(GET)  NAME(cSidlo)          FPOS( 53, 1.5) FLEN(23) FCAPTION(Místo)  CPOS( 47,1.5)
+      TYPE(GET)  NAME(nICO)            FPOS( 87, 0.5) FLEN(14) FCAPTION(IÈO)    CPOS( 80,0.5)
+      TYPE(GET)  NAME(cDIC)            FPOS( 87, 1.5) FLEN(14) FCAPTION(DIÈ)    CPOS( 80,1.5)
+

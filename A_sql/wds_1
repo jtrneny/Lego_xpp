@@ -1,0 +1,102 @@
+select ucetpol.nrok, 
+       ucetpol.cdenik,
+	   ucetpol.ndoklad from ucetpol
+       where ucetpol.nrok = 2011 and ucetpol.ctypDoklad = 'SKL_VYD255' and
+	         ucetpol.ndoklad NOT IN ( select pvphead.ndoklad from pvphead ) 
+	         
+
+select pvphead.nrok, 
+       pvphead.cdenik,
+	   pvphead.ndoklad,
+	   ucetpol.cdenik,
+	   ucetpol.ndoklad from ucetpol
+	   left join pvphead on ucetpol.cdenik  = pvphead.cdenik and
+	                               ucetpol.ndoklad = pvphead.ndoklad
+       where pvphead.nrok = 2011 and pvphead.ctypDoklad = 'SKL_VYD255'
+	   order by pvphead.ndoklad      	   					
+	   
+
+
+
+select ucetpol.nrok, 
+       ucetpol.cdenik, 
+       ucetpol.ndoklad,
+	   pvpitem.cdenik,
+	   pvpitem.ndoklad from pvpitem
+	   right outer join ucetpol on pvpitem.cdenik = ucetpol.cdenik and
+	                         pvpitem.ndoklad = ucetpol.ndoklad 					 
+       where ucetpol.nrok = 2011 and ucetpol.nobdobi = 2 and ucetpol.ctypDoklad = 'SKL_VYD255'
+	   order by ucetpol.ndoklad      
+ 
+
+
+
+ 
+
+
+
+
+
+>> EXPLSIT
+
+update vyrzakit
+   set vyrzakit.nmnoz_exlv = explstit.nfaktMnoz
+  from explstit
+ where (vyrzakit.cciszakazI = explstit.cciszakazI) ; 
+
+
+update vyrzakit
+   set nstav_exlv = 
+       iif( nmnoz_exlv = 0, 0, iif ( nmnoz_exlv = nmnozPlano, 2, 0 )) 
+
+
+
+>> FAKVYSIT
+
+update dodsltit
+   set dodlstit.nmnoz_fakv = fakvysit.nfaktMnoz
+  from fakvysit
+ where (dodlstit.ncislodl = fakvysit.ndoklad and dodlstit.nintCount = fakvysit.ncountdl) ; 
+
+update dodlstit
+   set nstav_fakv = 
+       iif( nmnoz_fakv = 0, 0, iif ( nmnoz_fakv = nfaktMnoz, 2, 0 )) 
+
+
+update objitem
+   set objitem.nmnoz_fakv = fakvysit.nfaktMnoz
+  from fakvysit
+ where (objitem.ccislobint = fakvysit.ccislobint and objitem.ncislpolob) = fakvysit.ncislpolob) ; 
+
+update objitem
+   set nstav_fakv = 
+       iif( nmnoz_fakv = 0, 0, iif ( nmnoz_fakv = nmnozObOdb, 2, 0 )) 
+
+
+update vyrzakit
+   set vyrzakit.nmnoz_fakv = fakvysit.nfaktMnoz
+  from fakvysit
+ where (vyrzakit.cciszakazI = fakvysit.cciszakazI) ; 
+
+update vyrzakit
+   set nstav_fakv = 
+       iif( nmnoz_fakv = 0, 0, iif ( nmnoz_fakv = nmnozPlano, 2, 0 )) 
+
+
+
+
+
+// kontrola
+select explstit.cciszakazI, 
+       vyrzakit.cciszakazI as zakazka, 
+	   vyrzakit.nmnoz_exlv, 
+	   vyrzakit.nstav_exlv, 
+	   vyrzakit.nmnozPlano from vyrzakit
+  right join explstit on vyrzakit.cciszakazI = explstit.cciszakazI
+  order by vyrzakit.cciszakazI
+
+
+// kontrola
+select explstit.cciszakazI, vyrzakit.cciszakazI from explstit
+ left join vyrzakit on vyrzakit.cciszakazI = explstit.cciszakazI  
+ order by explstit.cciszakazI  

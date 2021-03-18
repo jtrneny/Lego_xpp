@@ -1,0 +1,114 @@
+body {
+    font: normal normal normal 12px/1.5 Tahoma, helvetica, sans-serif;
+    color: #666;
+}
+h1, h2, h3, h4, #main-menu a, #first-menu a, .eshop-box .box.eshop-prod a h2, .buy-btn {
+    font-family: 'Raleway', sans-serif;
+}
+
+.box {
+    font-size: 13px;
+}
+.box a {
+    color: #45556f;
+}
+.box a:hover,
+.box a:active,
+.box a:focus {
+    color: #fc660c;
+}
+.box h2 {
+    margin: 10px 0 10px;
+    padding-top: 0;
+    font-weight: 700;
+    font-size: 19px;
+    color: #45556f;
+    font-family: 'Raleway', sans-serif;
+}
+ .box .content h2.likeh3, .box .content h3 {
+    font-weight: 600;
+}
+.catalogbox {
+    width: 288px;
+    overflow: hidden;
+}
+.catalogbox h2 {
+    padding-bottom: 8px;
+    border-bottom: 3px solid #45556f;
+}
+.catalogbox .catalog-small-item h3 {
+    color: #45556f;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.catalogbox ul.record,
+.adrlight  ul.record {
+    list-style-type: none;
+    padding-left: 0.7rem;
+}
+.catalogbox ul.record li,
+.adrlight  li {
+    margin: 0 0 3px;
+}
+.catalogbox .record li .fa,
+.adrlight .record li .fa {
+    color: #1C2D49;
+    font-weight: bold;
+    width: 18px;
+    text-align: center;
+}
+.catalogbox .catalog-small-item .item-logo,
+.catalogbox .catalog-small-item .item-no-logo,
+.adrlight .item-no-logo,
+.adrlight .item-logo {
+    /* display: none; */
+    /* width: 100px; */
+    height: 90px;
+    /* position: absolute; */
+    /* right: 1.5rem; */
+    /* top: 4rem; */
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    margin-bottom: 1.6rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.catalogbox .catalog-small-item .item-logo {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.catalogbox .catalog-small-item .item-no-logo {
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+}
+.catalogbox .catalog-small-item .item-logo img,
+.adrlight .item-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center;
+    vertical-align: middle;
+    /* line-height: 100px; */
+    /* top: 50%; */
+    margin: auto;
+}
+.catalogbox .catalog-small-item span,
+.adrlight .item-no-logo span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #45556f;
+    align-self: center;
+    vertical-align: middle;
+    margin: auto;
+}
+.catalogbox .catalog-small-item span {
+    font-size: 14px;
+    line-hright: 1.2;
+}

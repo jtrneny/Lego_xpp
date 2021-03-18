@@ -1,0 +1,577 @@
+(function() {
+  $(function() {
+    "use strict";
+    var AspiHelpers, MyForm, eac_options_1, my_title, options, sleep;
+    my_title = $("title").text();
+    AspiHelpers = function() {};
+    AspiHelpers.prototype.getIsoDateFormat = function(date, sep) {
+      var DateArray;
+      DateArray = date.split(sep);
+      if (DateArray.length === 3) {
+        return DateArray[2].trim() + "-" + DateArray[1].trim() + "-" + DateArray[0].trim();
+      } else {
+        return false;
+      }
+    };
+    Date.parseDate = function(input, format) {
+      return moment(input, format).toDate();
+    };
+    Date.prototype.dateFormat = function(format) {
+      return moment(this).format(format);
+    };
+    MyForm = function(formNode, tinyMceData) {
+      this.formNode = formNode;
+      this.result = {};
+      this.tinyMceData = tinyMceData || "undefined";
+      return this.helpers = new AspiHelpers();
+    };
+    MyForm.prototype.getFormData = function() {
+      var indexed_array, unindexed_array;
+      unindexed_array = this.formNode.serializeArray();
+      indexed_array = {};
+      $.map(unindexed_array, (function(n, i) {
+        var value;
+        if (n["name"].indexOf("-czdate") >= 0) {
+          value = this.helpers.getIsoDateFormat(n["value"], ".");
+          if (value === "undefined") {
+            console.log("Value" + n["name"] + "hase no valid czech date format");
+          }
+          return indexed_array[n["name"].replace("-czdate", "")] = value;
+        } else {
+          if (n["name"] in indexed_array) {
+            if (indexed_array[n["name"]] instanceof Array) {
+              return indexed_array[n["name"]].push(n["value"]);
+            } else {
+              return indexed_array[n["name"]] = [indexed_array[n["name"]], n["value"]];
+            }
+          } else {
+            return indexed_array[n["name"]] = n["value"];
+          }
+        }
+      }).bind(this));
+      if (this.tinyMceData !== "undefined") {
+        indexed_array[this.tinyMceData.name] = this.tinyMceData.value;
+      }
+      this.data = indexed_array;
+      return indexed_array;
+    };
+    MyForm.prototype.setValueByKey = function(key, value) {
+      return this["data"][key] = value;
+    };
+    MyForm.prototype.send = function(callback) {
+      var data;
+      data = JSON.stringify(this.data);
+      return $.ajax({
+        url: this.formNode.attr("action"),
+        contentType: "application/json",
+        data: data,
+        method: "POST",
+        dataType: "json",
+        success: callback
+      });
+    };
+    MyForm.prototype.isNumber = function(number) {
+      if (!isNaN(parseInt(number), 10)) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    MyForm.prototype.getResult = function() {
+      return this.result;
+    };
+    sleep = function(ms) {
+      var results, start;
+      start = new Date().getTime();
+      results = [];
+      while (new Date().getTime() - start < ms) {
+        continue;
+      }
+      return results;
+    };
+    $('body').prelodr({
+      prefixClass: 'prelodr',
+      show: function() {
+        console.log('Show callback');
+      },
+      hide: function() {
+        console.log('Hide callback');
+      }
+    });
+    $(".objednat_verzi").click(function(e) {
+      e.preventDefault();
+      $("#objednatVerziForm").modal("show");
+    });
+    $("#loginFormSubmit").click(function(e) {
+      var email, passwd;
+      e.preventDefault();
+      email = $("#email").val();
+      passwd = $("#passwd").val();
+      return $.ajax({
+        url: '/alogin/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          email: email,
+          password: passwd
+        }),
+        error: function(jqXHR, textStatus, errorThrown) {
+          return alert(textStatus);
+        },
+        success: function(data, status, response) {
+          if (data.server_class === 'alert-success') {
+            $("#forgotten_passwd").remove();
+            $("#loginFormClose").remove();
+            $("#login-footer").empty();
+            $("#loginFormModalBody").empty();
+            $("#loginFormModalBody").append($("<div>"));
+            $("#loginFormModalBody div").addClass("alert");
+            $("#loginFormModalBody div").addClass(data.server_class);
+            $("#loginFormModalBody div").attr("role", "alert");
+            $("#loginFormModalBody div").html("<strong>" + data.server_info + "</strong>");
+            return window.location.reload();
+          } else if (data.server_class === 'alert-warning') {
+            $("#login-server-info").remove();
+            return $("#loginFormModalBody").append('<div id="login-server-info" class="alert alert-warning" role="alert"><strong>' + data.server_info + '</strong></div>');
+          } else if (data.server_class === 'alert-wrong') {
+            $("#login-server-info").remove();
+            return $("#loginFormModalBody").append('<div id="login-server-info" class="alert alert-warning" role="alert"><strong>' + data.server_info + '</strong></div>');
+          } else {
+            $("#login-server-info").remove();
+            $("#login-server-info").remove();
+            $.each(data.server_info, function(key, value) {
+              if (key === 'password') {
+                key = 'Chybné pole Heslo:';
+                return $("#loginFormModalBody").append('<div id="login-server-info" class="alert alert-danger" role="alert"> <p class="error-item">' + key + ' ' + value + '</p> </div>');
+              } else if (key === 'email') {
+                key = 'Chybné pole Email:';
+                return $("#loginFormModalBody").append('<div id="login-server-info" class="alert alert-danger" role="alert"> <p class="error-item">' + key + ' ' + value + '</p> </div>');
+              } else {
+                return pass;
+              }
+            });
+            return $("#passwd").val("");
+          }
+        }
+      });
+    });
+    $("#loginFormClose").click(function(e) {
+      e.preventDefault();
+      $("#loginForm").modal("hide");
+      return window.location.reload();
+    });
+    $("#pwdChangeSubmit").click(function(e) {
+      var data, form, processForm;
+      e.preventDefault();
+      form = $(e.target).closest('form');
+      processForm = new AspiForm(form);
+      data = processForm.getFormData();
+      console.log(data);
+      console.log(data.newpassword);
+      $('#changePasswdFormMsgAlertBoxSuccess').html('');
+      $('#changePasswdFormMsgAlertBoxDanger').html('');
+      if (data.newpassword !== data.newpassword_again) {
+        $('#changePasswdFormMsgAlertBoxDanger').html('<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><p>Hesla se neshodují...</p></div>');
+        return;
+      } else {
+        $.ajax({
+          url: '/reset_password_form/',
+          type: 'POST',
+          contentType: 'application/json',
+          dataType: 'json',
+          data: JSON.stringify(data),
+          error: function(jqXHR, textStatus, errorThrown) {
+            $('#changePasswdFormMsgAlertBoxDanger').html('<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><p>AJAX error</p></div>');
+          },
+          success: function(data, status, response) {
+            if (data.status === 'OK') {
+              $('#changePasswdFormMsgAlertBoxSuccess').html('<div class=\'alert alert-success\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button><p>Vaše heslo bylo úspěšně změněno.</div>');
+            }
+          }
+        });
+      }
+    });
+    $("#add_to_subject_submit").click(function(e) {
+      var form, processForm;
+      e.preventDefault();
+      form = $(e.target).closest('form');
+      processForm = new AspiForm(form);
+      this.data = processForm.getFormData();
+      $('#add_to_subject_alert').html('');
+      $.ajax({
+        url: '/vloz_me_do_subjektu/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(this.data),
+        error: function(jqXHR, textStatus, errorThrown) {
+          $('#add_to_subject_alert').html('<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><p>AJAX error</p></div>');
+        },
+        success: function(data, status, response) {
+          var html, key, mykey, ref, value;
+          if (data.status === 'OK') {
+            $('body').prelodr('in', 'Váš účet byl právě přiřazen k subjektu.');
+            $('body').prelodr('out', function(done) {
+              setTimeout((function() {
+                done();
+              }), 1200);
+            });
+            window.location.href = '/';
+          } else {
+            html = '';
+            ref = data.errors;
+            for (key in ref) {
+              value = ref[key];
+              if (key === "nav_hash") {
+                mykey = "DAUČ kód";
+              }
+              html = html + '<div class=\'alert alert-danger\' role=\'alert\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\' aria-label=\'Close\'><span aria-hidden=\'true\'>×</span></button>Chybné pole - ' + mykey + ' : ' + value + '</div>';
+            }
+            $('#add_to_subject_alert').html(html);
+          }
+        }
+      });
+    });
+    eac_options_1 = {
+      url: function(q) {
+        return '/hledat/ac_hp/';
+      },
+      getValue: "q",
+      ajaxSettings: {
+        dataType: 'json',
+        method: 'POST',
+        data: {
+          dataType: 'json'
+        }
+      },
+      preparePostData: function(data) {
+        data.q = $('#ac_hledat').val();
+        return data;
+      },
+      requestDelay: 400,
+      adjustWidth: true,
+      list: {
+        maxNumberOfElements: 15
+      }
+    };
+    $('#ac_hledat').easyAutocomplete(eac_options_1);
+    options = {
+      url: function(phrase) {
+        return 'api/countrySearch.php';
+      },
+      getValue: function(element) {
+        return element.name;
+      },
+      ajaxSettings: {
+        dataType: 'json',
+        method: 'POST',
+        data: {
+          dataType: 'json'
+        }
+      },
+      preparePostData: function(data) {
+        data.phrase = $('#example-ajax-post').val();
+        return data;
+      },
+      requestDelay: 400,
+      adjustWidth: true
+    };
+    $('#example-ajax-post').easyAutocomplete(options);
+    $(".toggle_dok_kat").change(function(e) {
+      var id, status;
+      e.preventDefault();
+      id = $(this).data('id');
+      status = $(this).prop('checked');
+      $.ajax({
+        url: '/set_dok_kat/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          id: id,
+          status: status
+        }),
+        error: function(jqXHR, textStatus, errorThrown) {},
+        success: function(data, status, response) {}
+      });
+    });
+    $('.chb_newsletters').change(function(e) {
+      var id, mystatus;
+      e.preventDefault();
+      id = $(this).data('id');
+      mystatus = $(this).prop("checked");
+      $.ajax({
+        url: '/setup_newsletter/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          ktery: "dauc",
+          jak: mystatus
+        }),
+        error: function(jqXHR, textStatus, errorThrown) {},
+        success: function(data, status, response) {}
+      });
+    });
+    $("#newsletterFormSubmit").click(function(e) {
+      var cap, captcha, email, jmeno, prijmeni;
+      e.preventDefault();
+      cap = $('input[name=cap]').val();
+      captcha = $('input[name=captcha]').val();
+      jmeno = $('input[name=jmeno]').val();
+      prijmeni = $('input[name=prijmeni]').val();
+      email = $('input[name=email]').val();
+      $.ajax({
+        url: '/newsletter/',
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          cap: cap,
+          captcha: captcha,
+          jmeno: jmeno,
+          prijmeni: prijmeni,
+          email: email
+        }),
+        error: function(jqXHR, textStatus, errorThrown) {
+          return alert(textStatus);
+        },
+        success: function(data, status, response) {
+          if (data.server_class === 'alert-success') {
+            $("#newsletter_div").remove();
+            $("#newsletter_div_resume").empty();
+            return $("#newsletter_div_resume").html('<div class="alert alert-success">Děkujeme za zájem o zasílání newsletteru. Přidali jsme Vás do seznamů příjemců.</div>');
+          } else {
+            $("#newsletter_div_resume").empty();
+            return $("#newsletter_div_resume").html("<strong>" + data.server_info + "</strong>");
+          }
+        }
+      });
+    });
+    $("#klsu_grid").bootgrid({
+      ajax: true,
+      url: "/klsu_gl/",
+      selection: false,
+      multiSelect: false,
+      rowSelect: false,
+      keepSelection: false,
+      rowCount: [5, 10],
+      columnSelection: false,
+      converters: {
+        datetime: {
+          from: function(value) {
+            return moment(value);
+          },
+          to: function(value) {
+            moment.locale("cs");
+            return moment(value).format("l");
+          }
+        }
+      },
+      formatters: {
+        link: function(column, row) {
+          return '<a href="/xxx/?x=">' + row.id_klient + '</a>';
+        },
+        akce: function(column, row) {
+          var ret;
+          ret = "";
+          if (row.jsem_admin > 0) {
+            ret += '<button type="button" class="btn btn-xs btn-success command-off" data-row-id="' + row.id_klient + '"><span class="glyphicon glyphicon-off"></span></button> ';
+          }
+          return ret;
+        }
+      },
+      searchSettings: {
+        delay: 250,
+        characters: 3,
+        colvisible: "aaa"
+      },
+      labels: {
+        all: "vše",
+        infos: "{{ctx.start}} - {{ctx.end}} z {{ctx.total}} záznamů",
+        loading: "nahrávám",
+        noResults: "žádné výsledky!",
+        refresh: "obnovit",
+        search: "vyhledat"
+      }
+    }).on("loaded.rs.jquery.bootgrid", function(e) {
+      $(this).find(".command-off").on('click', function(e) {
+        return $.ajax({
+          url: '/klsu_off/',
+          type: 'POST',
+          contentType: 'application/json',
+          dataType: 'json',
+          data: JSON.stringify({
+            id_klient: $(this).data("row-id")
+          }),
+          error: function(jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+          },
+          success: function(data, status, response) {
+            $("#klsu_grid").bootgrid("reload");
+          }
+        });
+      });
+    });
+    $("#lic_grid").bootgrid({
+      ajax: true,
+      url: "/lic_gl/",
+      selection: false,
+      multiSelect: false,
+      rowSelect: false,
+      keepSelection: false,
+      rowCount: [5, 10],
+      columnSelection: false,
+      converters: {
+        datetime: {
+          from: function(value) {
+            return moment(value);
+          },
+          to: function(value) {
+            moment.locale("cs");
+            return moment(value).format("l");
+          }
+        },
+        date: {
+          from: function(value) {
+            return moment(value);
+          },
+          to: function(value) {
+            moment.locale("cs");
+            return moment(value).format("l");
+          }
+        }
+      },
+      formatters: {
+        link: function(column, row) {
+          return '<a href="/xxx/?x=">' + row.id_klient + '</a>';
+        },
+        akce: function(column, row) {
+          var ret;
+          ret = "";
+          if (row.moje) {
+            ret += '<button type="button" class="btn btn-xs command-take" data-row-id="' + row.licence + '" title="Odebrat si licenci."><span class="glyphicons glyphicons-lock" style="color:green"></span></button> ';
+          } else if (row.email === 'VOLNÁ') {
+            ret += '<button type="button" class="btn btn-xs command-take" data-row-id="' + row.licence + '" title="Převzít si licenci."><span class="glyphicons glyphicons-unlock" style="color:orange"></span></button> ';
+          } else {
+            ret += '<button type="button" class="btn btn-xs command-take" data-row-id="' + row.licence + '" title="Licence je přiřazená, pouze správce společnosti ji může odebrat uživateli."><span class="glyphicons glyphicons-lock" style="color:red"></span></button> ';
+          }
+          return ret;
+        }
+      },
+      searchSettings: {
+        delay: 250,
+        characters: 99,
+        colvisible: ""
+      },
+      labels: {
+        all: "vše",
+        infos: "{{ctx.start}} - {{ctx.end}} z {{ctx.total}} záznamů",
+        loading: "nahrávám",
+        noResults: "žádné výsledky!",
+        refresh: "obnovit",
+        search: "vyhledat"
+      }
+    }).on("loaded.rs.jquery.bootgrid", function(e) {
+      $(this).find(".command-take").on('click', function(e) {
+        return $.ajax({
+          url: '/lic_take/',
+          type: 'POST',
+          contentType: 'application/json',
+          dataType: 'json',
+          data: JSON.stringify({
+            licence: $(this).data("row-id")
+          }),
+          error: function(jqXHR, textStatus, errorThrown) {
+            alert(textStatus);
+          },
+          success: function(data, status, response) {
+            if (data.reload === 1) {
+              window.location.reload();
+            } else {
+              $("#lic_alert_p").html("");
+              $("#lic_alert_p").html(data.status);
+              $("#lic_alert").show();
+              $("#lic_grid").bootgrid("reload");
+            }
+          }
+        });
+      }).end().find(".command-info").on('click', function(e) {
+        $('body').prelodr('in', 'Starting...');
+        $('body').prelodr('out');
+        $('body').prelodr('in', 'Processing...');
+        $('body').prelodr('out', function(done) {
+          setTimeout((function() {
+            done();
+          }), 1200);
+        });
+        $('body').prelodr('in', 'Closing...');
+        return $('body').prelodr('out');
+      });
+    });
+    $('input[name=s_typ]').on('change', function(e) {
+      var status;
+      e.preventDefault();
+      status = $('input[name=s_typ]:checked').val();
+      if (status === "1") {
+        $('#typ_subjektu_s_ic').show();
+      } else {
+        $('input[name=ic]').val('');
+        $('input[name=dic]').val('');
+        $('#typ_subjektu_s_ic').hide();
+      }
+    });
+    $('#shareIcons').jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: ['twitter', 'facebook', 'linkedin']
+    });
+    $('#email').jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: [
+        {
+          share: 'email',
+          label: ' via@dauc',
+          shareIn: 'popup',
+          to: "hix.hippo@gmail.com"
+        }
+      ]
+    });
+    $('#twitter').jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: [
+        {
+          share: 'twitter',
+          label: ' via@DAUCcz',
+          shareIn: 'popup',
+          via: "DAUCcz",
+          text: my_title
+        }
+      ]
+    });
+    $('#facebook').jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: [
+        {
+          share: 'facebook',
+          shareIn: 'popup'
+        }
+      ]
+    });
+    return $('#linkedin').jsSocials({
+      showLabel: false,
+      showCount: false,
+      shares: [
+        {
+          share: 'linkedin',
+          shareIn: 'popup'
+        }
+      ]
+    });
+  });
+
+}).call(this);

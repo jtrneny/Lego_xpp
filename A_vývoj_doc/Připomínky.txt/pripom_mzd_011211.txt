@@ -1,0 +1,6 @@
+Pár postøehù z mezd
+
+- zkontrolovat zda se pøi ukládání plní položky nRokObdSta, RoObCpPp, nOsoby
+- ošetøit pøi zakládání období aby se nezakládaly záznamy pokud již není stavem
+ 
+

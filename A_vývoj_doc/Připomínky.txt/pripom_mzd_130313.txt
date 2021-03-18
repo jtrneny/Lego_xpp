@@ -1,0 +1,43 @@
+Dodìlat do mezd
+
+- není vazba u pojišoven na jejich èíslo - podobnì jak u zdravotních pojišoven
+- zakládání pracovního vztahu na vykopírování z ji existujícího asi F3 nebo ikona ++
+- dát asi monost ruèní zmìny "ve stavu" pro monost bìného poøízení dokladu "odrazit se asi od dokladu)
+- napoèet základù pro sociální a zdravotní ve vazbì na matrièák      ----hotovo-----
+- opravit generování soc. do závazkù - odpoèet náhrad    ----hotovo-----
+- nápoèet dnù z nemocenek
+- plnìní úèetní skupiny u nemocenek
+- zadání prùmìru u náhrady na nemoc u MZDDAVHD
+- øešit automatickı vıpoèet prùmìrù ke mzdì
+- pøidat filtry nad MZDZAVHD
+- generovat soubor pro penzijní pøipojištìní
+- generovat soubor pro ÈS
+- asi pøidat ID pojištovny nebo firmy pro vazbu na konrétní pojišovnu
+- neplní se nám do èistıch mezd u poøízenıch dokladù CTYPPOHZAV
+- proti sobì nìjak tuhne dìlání mzdovıch závazkù- kdy to má jeden otvøené pro prohlíení   ??? asi moje chyba 
+- dotaení celkové èástky pro sociální ve vıpoètu ÈM   ----hotovo-----
+- opravit sestavu pro odvody sociálního pojištìní - vıkazová
+- opravit sestavu kontrolní soc. a zdr.aby rozdíly byly tuèné 
+- dodat do MZDYHD asi poloku roèního zùètování o dani - pro dopoèet danì
+- pozor je potøeba v závazcích dodat kontrolu aby u všech poloek byl vyplnìnı variabilní symbol
+- u sráek typu úvìr musí bıt kontrola, e musí bıt vyplnìná èástka celkem ze které se má sráet
+- u sráek musí bıt kontrola na zpùsob sráení - povinnı údaj
+- u sráek vidìt rozlišení aktivní a neaktivní sráka
+- u závazkù pøidat tøídìní podle typu pohybu  ----hotovo-----
+-  
+- pokud dám novou sráku-insert a následnì dám ESC a stojím na poloce mzda na úèet povolí mì editovat napø poøadí uplatnìní sráky
+- duplicitnì se nám èísluje poøadí sráky
+- pozor povolí nám zadat poøadí uplatnìní sráení na hodnotu 90 ( hodnota 90 a vıš je rezervovaná pro mzdu na úèet)
+- asi vyhodit poloku typ ABO a na její místo zapsat Typ trvalého závazku a místo nìj zadat èíslo firmy a název napø. pro penzijní a   kapitálové pojištìní - vazat na typ sráky
+- chybnì se generuje odvod do závazkù odeète se hodnota náhrad
+- pøidat indikaci 
+- asi se neplní ve mzdovıch závazcích hodnota o vystaveném pøíkazu k úhradì (kdy si vyberu quick bez pøíkazu tak tam jsou všechny)
+- vidìt indikaci o automaticky vytvoøenıch dokladech ( V -vıroba, M - mzdy, D - docházka)....
+- zablokovat vıpoèet èisté mzdy v období pokud byl na jakıkoliv závazek vystaven pøíkaz k úhradì staèí jeden ( v kmenu jen pohled)
+- v poøízení dokladù kontrolovat nákladovou strukturu 
+
+
+  
+
+
+

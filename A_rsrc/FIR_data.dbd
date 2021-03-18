@@ -1,0 +1,518 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_DRVLST) DESC(»Ìsel. druh˘ vlastnictvÌ) TASK(FIR)  DISTRIB(C_DRVLS1)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nKodDrVlas) DESC(KÛd druhu vlastnictvÌ)          CAPTION(KÛdDrVlast)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cPopisVlas) DESC(Popis druhu vlastnictvÌ)        CAPTION(PopisDrVla)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cStatKodZa) DESC(Statistick˝ kÛd z·znamu)        CAPTION(StatKodZaz)  FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(mPopisDrVl) DESC(Popis FAKTURy vystavenÈ)        CAPTION(PopisFAK)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)   DESC(Zp˘sob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC(0)     
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_DRVLS1)   FNAME(C_DRVLST) CAPTION(KÛdDrVlast)  KEY(nKodDrVlas)
+  TYPE(INDEX) NAME(C_DRVLS2)   FNAME(C_DRVLST) CAPTION(PopisDrVla)  KEY(UPPER(cPopisVlas))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_DRVLST) CAPTION(DistribRec)  KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_DRVLST) CAPTION(ID)          KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_OBLAST) DESC(»ÌselnÌk oblastÌ) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nKlicObl)   DESC(KlÌË oblasti)                   CAPTION(KlÌËObl)     FTYPE(N) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazevObl)  DESC(N·zev oblasti)                  CAPTION(N·zevObl)    FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_OBL1)     FNAME(C_OBLAST) CAPTION(KlÌËObl   )  KEY(nKlicObl)
+  TYPE(INDEX) NAME(C_OBL2)     FNAME(C_OBLAST) CAPTION(N·zevObl  )  KEY(UPPER(cNazevObl))
+  TYPE(INDEX) NAME(ID)         FNAME(C_OBLAST) CAPTION(ID)          KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nKLICobl:KlÌË oblasti,cNAZEVobl:N·zev oblasti) ORDER(1) RETURN(nKLICobl)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRAVFO) DESC(»Ìsel. pr·vnÌ formy) TASK(FIR)  DISTRIB(C_PRFOR1)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nKodPrForm) DESC(KÛd pr·vnÌ formy)               CAPTION(KÛdPrFormy)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cPopisPrFo) DESC(Popis pr·vnÌ formy)             CAPTION(PopisPrFor)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cStatKodZa) DESC(Statistick˝ kÛd z·znamu)        CAPTION(StatKodZaz)  FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(mPopisPrFo) DESC(Popis FAKTURy vystavenÈ)        CAPTION(PopisFAK)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)   DESC(Zp˘sob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC(0)     
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRFOR1)   FNAME(C_PRAVFO) CAPTION(KÛdPrFormy)  KEY(nKodPrForm)
+  TYPE(INDEX) NAME(C_PRFOR2)   FNAME(C_PRAVFO) CAPTION(PopisPrFor)  KEY(UPPER(cPopisPrFo))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRAVFO) CAPTION(DistribRec)  KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRAVFO) CAPTION(ID)          KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPFO) DESC(»Ìsel. fyzick˝ch osob) TASK(FIR)  DISTRIB(C_FYZOS1)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nKodFyzOsb) DESC(KÛd fyzickÈ osoby)              CAPTION(KÛdPrFormy) FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cPopisFyOs) DESC(Popis fyzickÈ osoby)            CAPTION(PopisFyOsb) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cStatKodZa) DESC(Statistick˝ kÛd z·znamu)        CAPTION(StatKodZaz) FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)   DESC(Zp˘sob distribuce)              CAPTION(TypDistrib) FTYPE(n) FLEN( 1) DEC(0)     
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_FYZOS1)   FNAME(C_TYPFO) CAPTION(KÛdPrFormy)  KEY(UPPER(nKodFyzOsb))
+  TYPE(INDEX) NAME(C_FYZOS2)   FNAME(C_TYPFO) CAPTION(PopisFyOsb)  KEY(UPPER(cPopisFyOs))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_TYPFO) CAPTION(DistribRec)  KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_TYPFO) CAPTION(ID)          KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+* Zkratky skupin firem                  ****************************
+*
+TYPE(FILE) NAME(C_FIRMYSK)     DESC(Skupiny firem ...) TASK(FIR)   DISTRIB(C_FIRMSK01)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(czkr_Skup)  DESC(Zkratka skupiny firem)          CAPTION(ZkrSkupFirem)       FTYPE(C) FLEN( 3) DEC(0)
+  TYPE(FIELD) NAME(cnaz_Skup)  DESC(N·zev skupiny firem)            CAPTION(NazSkupFirem)       FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cskup_ODB)  DESC(NastavenÌ skupiny_ODB)          CAPTION(skup_ODB)           FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cskup_DOD)  DESC(NastavenÌ skupiny_DOD)          CAPTION(skup_DOD)           FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cskup_FAA)  DESC(NastavenÌ skupiny_FAA)          CAPTION(skup_FAA)           FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cskup_DOP)  DESC(NastavenÌ skupiny_DOP)          CAPTION(skup_DOP)           FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cskup_DOA)  DESC(NastavenÌ skupiny_DOA)          CAPTION(skup_DOA)           FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cskup_AKC)  DESC(NastavenÌ skupiny_AKC)          CAPTION(skup_AKC)           FTYPE(C) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cpovol_SKU) DESC(PovolenÈ skupiny)               CAPTION(povol_SKU)          FTYPE(C) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(cpovol_VAZ) DESC(PovolenÈ vazby)                 CAPTION(povol_VAZ)          FTYPE(C) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(nZpusobEDT) DESC(Zp˘sob povolenÈ editace)        CAPTION(zpusobEDT)          FTYPE(N) FLEN( 1)  DEC( 0)
+  TYPE(FIELD) NAME(DPLATNYOD)  DESC(Platnost OD)                    CAPTION(Platnost_OD)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)  DESC(Platnost DO)                    CAPTION(Platnost_DO)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nDistrib)   DESC(Zp˘sob distribuce)              CAPTION(TypDistrib)         FTYPE(n) FLEN( 1) DEC(0)     
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPOZNAMKA)  DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_FIRMSK01) FNAME(C_FIRMYSK) CAPTION(ZkrSkupFirem)                           KEY( UPPER(czkr_Skup))
+  TYPE(INDEX) NAME(C_FIRMSK02) FNAME(C_FIRMYSK) CAPTION(NazSkuFirem)                            KEY( UPPER(cnaz_Skup))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_FIRMYSK) CAPTION(DistribRec)                             KEY( nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_FIRMYSK) CAPTION(ID)                                     KEY( sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMY) DESC(Adres·¯ firem) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(»Ìslo firmy)                    CAPTION(»ÌslFirmy)      FTYPE(n) FLEN( 5) DEC(0)
+  TYPE(FIELD) NAME(cNazev)      DESC(N·zev firmy)                    CAPTION(N·zFirmy)       FTYPE(c) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(cNazev2)     DESC(N·zev2 firmy)                   CAPTION(N·z2Firmy)      FTYPE(c) FLEN( 50) DEC(0)
+  TYPE(FIELD) NAME(nICO)        DESC(I»O)                            CAPTION(I»O)            FTYPE(n) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cICO)        DESC(c_I»O)                          CAPTION(c_I»O)          FTYPE(c) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cDIC)        DESC(KÛd pl·tce danÏ)                CAPTION(KÛdPl·tce)      FTYPE(c) FLEN(16) DEC(0)
+  TYPE(FIELD) NAME(cDIC_old)    DESC(KÛd pl·tce danÏ)                CAPTION(KÛdPl·tce)      FTYPE(c) FLEN(16) DEC(0)
+  TYPE(FIELD) NAME(cVAT_ID)     DESC(DaÚovÈ id_ËÌslo_VAT)            CAPTION(id_VAT)         FTYPE(c) FLEN(16) DEC(0)
+  TYPE(FIELD) NAME(cVAT_VIES)   DESC(DaÚovÈ id_ËÌslo_VAT_VIES)       CAPTION(id_VAT_VIES)    FTYPE(c) FLEN(12) DEC(0)
+  TYPE(FIELD) NAME(cUlice)      DESC(Adresa - Ulice)                 CAPTION(AdrUlice)       FTYPE(c) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cCisPopis)   DESC(Adresa - »ÌsPopis)              CAPTION(Adr»ÌsPopi)     FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cCisOrien)   DESC(Adresa - »ÌsOrientaËnÌ)         CAPTION(Adr»ÌsOrie)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCisla)  DESC(Adresa - Ulice+ËÌsla)           CAPTION(AdrUl»isl)      FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObec)       DESC(Adresa - Obec)                  CAPTION(AdrObec)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCiPop)  DESC(Adresa - Ulice+ËÌsl.popisnÈ)    CAPTION(AdrUl»iPo)      FTYPE(c) FLEN(60) DEC(0)
+  TYPE(FIELD) NAME(cPoBOX)      DESC(P.O.Box)                        CAPTION(POBox)          FTYPE(c) FLEN(20) DEC(0)
+  TYPE(FIELD) NAME(cSidlo)      DESC(SÌdlo)                          CAPTION(SÌdloFirmy)     FTYPE(c) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cPSC)        DESC(PS»)                            CAPTION(PS»)            FTYPE(c) FLEN(6)  DEC(0) RELATETO(C_PSC)   RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat)  DESC(Zkratka st·tu)                  CAPTION(ZkratSt·t)      FTYPE(c) FLEN(3)  DEC(0) RELATETO(C_STATY) RELATETYPE(1)
+  TYPE(FIELD) NAME(cCinnost)    DESC(»innost firmy)                  CAPTION(»inostFir)      FTYPE(c) FLEN(15) DEC(0)
+  TYPE(FIELD) NAME(cZastupce)   DESC(OdpovÏdn˝ z·stupce)             CAPTION(Z·stFirmy)      FTYPE(c) FLEN(25) DEC(0)
+  TYPE(FIELD) NAME(cZarazeni)   DESC(Za¯azenÌ z·stupce)              CAPTION(Za¯Z·stup)      FTYPE(c) FLEN(25) DEC(0)
+  TYPE(FIELD) NAME(cTelefon)    DESC(Telefon (1))                    CAPTION(TelFirmy)       FTYPE(c) FLEN(17) DEC(0)
+  TYPE(FIELD) NAME(cFax)        DESC(Fax)                            CAPTION(FaxFirmy)       FTYPE(c) FLEN(17) DEC(0)
+  TYPE(FIELD) NAME(nCisODE)     DESC(PoslednÌ nabÌdka)               CAPTION(PoslNabidk)     FTYPE(n) FLEN( 5) DEC(0)
+  TYPE(FIELD) NAME(cZastOBCH)   DESC(ObchodnÌ z·stupce)              CAPTION(ObchZastup)     FTYPE(c) FLEN(25) DEC(0)
+  TYPE(FIELD) NAME(cTelefon2)   DESC(Telefon (2))                    CAPTION(Telef2)         FTYPE(c) FLEN(17) DEC(0)
+  TYPE(FIELD) NAME(cModemBBS)   DESC(Modem/BBS)                      CAPTION(Modem/BBS)      FTYPE(c) FLEN(17) DEC(0)
+  TYPE(FIELD) NAME(cMobilTEL)   DESC(MobilnÌ telefon)                CAPTION(Mobil/TEL)      FTYPE(c) FLEN(17) DEC(0)
+  TYPE(FIELD) NAME(cEmailTEL)   DESC(E-mail telefon)                 CAPTION(E-mail/TEL)     FTYPE(c) FLEN(65) DEC(0)
+  TYPE(FIELD) NAME(cObVzth)     DESC(ObchodnÌ vztahy)                CAPTION(ObchVztahy)     FTYPE(c) FLEN(90) DEC(0)
+  TYPE(FIELD) NAME(cUzVzth)     DESC(Vztah k uûivateli)              CAPTION(VztKUzivat)     FTYPE(c) FLEN(90) DEC(0)
+  TYPE(FIELD) NAME(nKlicObl)    DESC(KlÌË oblasti)                   CAPTION(KlÌËOblast)     FTYPE(N) FLEN( 8) DEC(0) RELATETO(C_OBLAST) RELATETYPE(2)
+  TYPE(FIELD) NAME(nMnozNeOdb)  DESC(MnoûstvÌ nepotvrzeno (S))       CAPTION(MnoNepotvr)     FTYPE(n) FLEN(13) DEC(2)
+  TYPE(FIELD) NAME(nMnozNeDod)  DESC(MnoûstvÌ nedod·no (S))          CAPTION(MnoNedodan)     FTYPE(n) FLEN(13) DEC(2)
+  TYPE(FIELD) NAME(cZkrProdej)  DESC(Zkratka prodejce)               CAPTION(ZkrProdej)      FTYPE(c) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(nCisREG)     DESC(Registr.Ë. firmy - plemen·¯i)   CAPTION(Reg»ÌsFirPle)   FTYPE(n) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cIdKoduPoj)  DESC(P¯idÏlen˝ id.kÛd pojiöùovny)    CAPTION(P¯idÏIdKÛdPo)   FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(nZdrPojis)   DESC(ZdravotnÌ pojiöùovna - kÛd)     CAPTION(ZdrPojKÛd)      FTYPE(n) FLEN( 3) DEC(0) RELATETO(C_ZDRPOJ)  RELATETYPE(2)
+  TYPE(FIELD) NAME(dREGdph_OD)  DESC(Datum REGdph_OD)                CAPTION(REGdph_OD)      FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dREGdph_DO)  DESC(Datum REGdph_DO)                CAPTION(REGdph_DO)      FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(cKRAJ)       DESC(Kraj)                           CAPTION(Kraj)           FTYPE(c) FLEN(10) DEC(0) RELATETO(C_KRAJE)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cOKRES)      DESC(Okres)                          CAPTION(Okres)          FTYPE(c) FLEN(10) DEC(0) RELATETO(C_OKRESY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cVYPsazDAN)  DESC(Pohled·vky v˝poËet sazby danÏ)  CAPTION(VYPsazDAN)      FTYPE(C) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(LAKTIVNI)    DESC(Firma je aktivnÌ)               CAPTION(AktivnÌ)        FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)      FTYPE(d) FLEN( 8) DEC(0)
+*
+  TYPE(FIELD) NAME(nis_ODB)     DESC(OdbÏratel)                      CAPTION(OdbÏratel)      FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_DOD)     DESC(Dodavatel)                      CAPTION(Dodavatel)      FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_FAA)     DESC(FakturaËnÌ adresa)              CAPTION(FaktAdresa)     FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_DOP)     DESC(Dopravce)                       CAPTION(Dopravce)       FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_DOA)     DESC(DodacÌ adresa)                  CAPTION(DodAdresa)      FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_KON)     DESC(KonkurenËnÌ firma)              CAPTION(Konkurence)     FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_KOA)     DESC(KorenspondenËnÌ adresa)         CAPTION(KorAdresa)      FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_ZAK)     DESC(Z·kaznÌk)                       CAPTION(Z·kaznÌk)       FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_MAF)     DESC(Mate¯sk· firma)                 CAPTION(MatFirma)       FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_POJ)     DESC(Pojiöùovna)                     CAPTION(Pojiöùovna)     FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_ZDP)     DESC(ZdravotnÌ pojiöùovna)           CAPTION(ZdrPojiöù)      FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_BAN)     DESC(Banka)                          CAPTION(Banka)          FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_INO)     DESC(Internet-odbÏratel)             CAPTION(InternetODB)    FTYPE(n) FLEN( 1) DEC(0)   
+  TYPE(FIELD) NAME(nis_AKC)     DESC(Akcion·¯)                       CAPTION(Akcion·¯)       FTYPE(n) FLEN( 1) DEC(0)   
+*
+  TYPE(FIELD) NAME(nC_POJUST)   DESC(Vazba na sID C_POJUST)          CAPTION()               FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmÏny)                    CAPTION(DatZmÏny)       FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Pozn·mka)                       CAPTION(Pozn·mka)       FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()               FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()               FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMY1)     FNAME(FIRMY) CAPTION(»ÌslFirmy )  KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMY2)     FNAME(FIRMY) CAPTION(N·zFirmy  )  KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(FIRMY3)     FNAME(FIRMY) CAPTION(SÌdloFirmy)  KEY(UPPER(cSidlo))
+  TYPE(INDEX) NAME(FIRMY4)     FNAME(FIRMY) CAPTION(PS»       )  KEY(UPPER(cPSC))
+  TYPE(INDEX) NAME(FIRMY5)     FNAME(FIRMY) CAPTION(MnoNepotvr)  KEY(nMnozNeOdb)
+  TYPE(INDEX) NAME(FIRMY6)     FNAME(FIRMY) CAPTION(I»O       )  KEY(nICO)
+  TYPE(INDEX) NAME(FIRMY7)     FNAME(FIRMY) CAPTION(KlÌËOblast +»ÌslFirmy ) KEY(STRZERO(nKlicObl,8) +STRZERO(nCisFirmy,5) )
+  TYPE(INDEX) NAME(FIRMY8)     FNAME(FIRMY) CAPTION(KÛdPl·tce )  KEY(UPPER(cDIC))
+  TYPE(INDEX) NAME(FIRMY9)     FNAME(FIRMY) CAPTION(ZkrSt·tu )   KEY(UPPER(cZkratStat))
+  TYPE(INDEX) NAME(FIRMY10)    FNAME(FIRMY) CAPTION(OdbÏratel )  KEY(nis_ODB)
+  TYPE(INDEX) NAME(FIRMY11)    FNAME(FIRMY) CAPTION(Dodavatel )  KEY(nis_DOD)
+  TYPE(INDEX) NAME(FIRMY12)    FNAME(FIRMY) CAPTION(FaktAdresa)  KEY(nis_FAA)
+  TYPE(INDEX) NAME(FIRMY13)    FNAME(FIRMY) CAPTION(Dopravce  )  KEY(nis_DOP)
+  TYPE(INDEX) NAME(FIRMY14)    FNAME(FIRMY) CAPTION(DodAdresa )  KEY(nis_DOA)
+  TYPE(INDEX) NAME(FIRMY15)    FNAME(FIRMY) CAPTION(Konkurence ) KEY(nis_KON)
+  TYPE(INDEX) NAME(FIRMY16)    FNAME(FIRMY) CAPTION(KorespAdr )  KEY(nis_KOA)
+  TYPE(INDEX) NAME(FIRMY17)    FNAME(FIRMY) CAPTION(Z·kaznÌk )   KEY(nis_ZAK)
+  TYPE(INDEX) NAME(FIRMY18)    FNAME(FIRMY) CAPTION(Mate¯Firma ) KEY(nis_MAF)
+  TYPE(INDEX) NAME(FIRMY19)    FNAME(FIRMY) CAPTION(Pojiöùovna ) KEY(nis_POJ)
+  TYPE(INDEX) NAME(FIRMY20)    FNAME(FIRMY) CAPTION(ZdrPojiöù )  KEY(nis_ZDP)
+  TYPE(INDEX) NAME(FIRMY21)    FNAME(FIRMY) CAPTION(Banka )      KEY(nis_BAN)
+  TYPE(INDEX) NAME(FIRMY22)    FNAME(FIRMY) CAPTION(InternetODB) KEY(nis_INO)
+  TYPE(INDEX) NAME(ID)         FNAME(FIRMY) CAPTION(ID)          KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nCisFirmy:»Ìslo firmy,cNazev:N·zev firmy,nIco:I»O,cSidlo:SÌdlo) ORDER(1) RETURN(nCisFirmy)
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(PROCENHD) KEY(nCisFirmy)         TAG(4)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMYDA) DESC(DodacÌ adresy) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(»Ìslo firmy)                    CAPTION(»ÌsloFirmy) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirDoa) DESC(»Ìslo dodacÌ adresy)            CAPTION(»ÌsloAdres) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazevDoa)  DESC(N·zev dodacÌ adresy)            CAPTION(N·zevFirmy) FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cNazevDoa2) DESC(N·zev2 dodacÌ adresy)           CAPTION(NazDodAdr2) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cCinnost)   DESC(»innost firmy)                  CAPTION(»inostFir)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cPSCDoa)    DESC(PsË)                            CAPTION(PsË)        FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cSidloDoa)  DESC(SÌdlo)                          CAPTION(SÌdlo)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cUliceDoa)  DESC(Ulice)                          CAPTION(Ulice)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cTelDoa)    DESC(»Ìslo telefonu)                 CAPTION(Telefon)    FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cFaxDoa)    DESC(»Ìslo faxu)                     CAPTION(Fax)        FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cModDoa)    DESC(Modem/BBs)                      CAPTION(Modem)      FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cZastDoa)   DESC(OdpovÏdn· osoba)                CAPTION(OdpOsoba)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYDA1)   FNAME(FIRMYDA) CAPTION(»ÌsloFirmy)              KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMYDA2)   FNAME(FIRMYDA) CAPTION(»ÌsloFirmy +N·zevFirmy ) KEY(STRZERO(nCisFirmy,5) +UPPER(cNazevDoa) )
+  TYPE(INDEX) NAME(FIRMYDA3)   FNAME(FIRMYDA) CAPTION(»ÌsloFirmyDOA)           KEY(nCisFirDoa)
+  TYPE(INDEX) NAME(ID)         FNAME(FIRMYDA) CAPTION(ID)                      KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMYFI) DESC(FinanËnÌ ˙daje o firmÏ) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(»Ìslo firmy)                    CAPTION(»ÌslFirmy)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cUct_Dod)   DESC(⁄Ëet dodavatele pro ˙Ëto)       CAPTION(⁄ËetDod)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_UCTOSN) RELATETYPE(2)
+  TYPE(FIELD) NAME(cUct_FPZ)   DESC(⁄Ëet z·loh faktury p¯ijatÈ)     CAPTION(⁄ËetFPZ)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_UCTOSN) RELATETYPE(2)
+  TYPE(FIELD) NAME(nSplatnDod) DESC(SmluvnÌ splatnost dodavatele)   CAPTION(SmlSplDod)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cVarSymD)   DESC(VariabilnÌ symbol dodavatel)    CAPTION(VarSymbD)   FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cSpecSymD)  DESC(Specifick˝ symbol dodavatel)    CAPTION(SpecSymbD)  FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(nKonstSymD) DESC(KonstantnÌ symbol dodavatel)    CAPTION(KonstSymbD) FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KONSYM,C_KONSYMd) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPen_Dod)   DESC(SmluvnÌ  proc.pen·le)           CAPTION(ProcPen·le) FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(cZkrTypUhr) DESC(Zkratka typu ˙hrady dodavatel)  CAPTION(Typ⁄hrady)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(C_TYPUHR) RELATETYPE(2)
+  TYPE(FIELD) NAME(nSplatnDod) DESC(SmluvnÌ poË.dn˘ splatnosti dod) CAPTION(PoËDn˘SplD) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nSknDnyDod) DESC(Skonto dny dodavatele)          CAPTION(SkontDny)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nSknPrcDod) DESC(Skonto v proc. dodavetele)      CAPTION(SkontProc)  FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(nUverDny)   DESC(Moûnost ˙vÏru  ve dnech)        CAPTION(⁄vÏrDny)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nLimZav)    DESC(Limit z·vazk˘)                  CAPTION(LimZ·vaz)   FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSumZav)    DESC(Suma z·vazk˘)                   CAPTION(Z·vazky)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSumZavCel) DESC(Suma z·vazk˘ celkem)            CAPTION(Z·vazkyCel) FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dDatPosZav) DESC(Datum posl. z·vazku)            CAPTION(DatPoslZ·v) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkrZpuDop) DESC(Zkratka typu dopravy)           CAPTION(TypDopravy) FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_ZPUDOP,c_zpuDoo) RELATETYPE(2)
+  TYPE(FIELD) NAME(cUct_Odb)   DESC(⁄Ëet odb. pro ˙ËetnictvÌ)       CAPTION(⁄ËetDodav)  FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_UCTOSN) RELATETYPE(2)
+  TYPE(FIELD) NAME(cUct_FVZ)   DESC(⁄Ëet z·loh vystavenÈ faktury)   CAPTION(⁄ËetFVZ)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_UCTOSN) RELATETYPE(2)
+  TYPE(FIELD) NAME(nSplatnost) DESC(SmluvnÌ poË.dn˘ splatnosti)     CAPTION(PoËDn˘Spl)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nPen_Odb)   DESC(SmluvnÌ proc. pen·le)           CAPTION(ProcPen·le) FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(cVarSymO)   DESC(VariabilnÌ symbol odbÏratel)    CAPTION(VarSymbO)   FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cSpecSymO)  DESC(Specifick˝ symbol odbÏratel)    CAPTION(SpecSymbO)  FTYPE(c) FLEN(20) DEC( 0)
+*
+  TYPE(FIELD) NAME(nKonstSymO) DESC(KonstantnÌ symbol odbÏratel)    CAPTION(KonstSymbO) FTYPE(n) FLEN( 4) DEC( 0) 
+  TYPE(FIELD) NAME(cSpecSymOd) DESC(Specifick˝ symbol)              CAPTION(SpecSymbol) FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(nKonstSymb) DESC(KonstantnÌ symbol)              CAPTION(KonstSymb)  FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KONSYM) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrTypUOd) DESC(Zkratka typu ˙hrady odbÏratel)  CAPTION(Typ⁄hrOdb)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(C_TYPUHR) RELATETYPE(2)
+  TYPE(FIELD) NAME(nSknDnyOdb) DESC(Skonto dny odbÏratel)           CAPTION(SkonDnyOdb) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nSknPrcOdb) DESC(Skonto v proc. odbÏratel)       CAPTION(SkonPrOdb)  FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(nUverDnyOd) DESC(Moûnost ˙vÏru  ve dnech)        CAPTION(⁄vÏrDny)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nLimPoh)    DESC(Limit pohled·vek)               CAPTION(LimPoh)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSumPoh)    DESC(Suma pohled·vek)                CAPTION(SumPoh)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSumPohCel) DESC(Suma pohled·vek celkem)         CAPTION(SumPohCel)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dDatPosPoh) DESC(Datum posl. pohled·vky)         CAPTION(DatPosPohl) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkrZpuDOD) DESC(Zkratka typu dopravy)           CAPTION(TypDopravy) FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_ZPUDOP) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrProdej) DESC(Zkratka prodejce)               CAPTION(ZkrProdej)  FTYPE(c) FLEN( 4) DEC( 0) RELATETO(C_PRODEJ) RELATETYPE(2)
+  TYPE(FIELD) NAME(cPracDoba1) DESC(PracovnÌ doba 1)                CAPTION(PracDoba1)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPracDoba2) DESC(PracovnÌ doba 2)                CAPTION(PracDoba2)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPrijemce1) DESC(Prijemce 1)                     CAPTION(P¯Ìjemce1)  FTYPE(c) FLEN(60) DEC( 0)
+  TYPE(FIELD) NAME(cPrijemce2) DESC(Prijemce 2)                     CAPTION(P¯Ìjemce2)  FTYPE(c) FLEN(60) DEC( 0)
+*
+  TYPE(FIELD) NAME(cBank_UcOD) DESC(»Ìslo ˙Ëtu ˙hrady)              CAPTION(»Ìslo⁄Ëtu)  FTYPE(c) FLEN(25) DEC( 0) RELATETO(C_BANKUC) RELATETYPE(2)
+  TYPE(FIELD) NAME(CZKRmenyOD) DESC(Zkratka mÏny ˙hrady)            CAPTION(MÏna)       FTYPE(C) FLEN( 3) DEC( 0) RELATETO(C_MENY)   RELATETYPE(2)
+*
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYFI1)   FNAME(FIRMYFI) CAPTION(»ÌslFirmy )  KEY(nCisFirmy)
+  TYPE(INDEX) NAME(ID)         FNAME(FIRMYFI) CAPTION(ID)          KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMYUC) DESC(⁄Ëty firem u penÏû.˙stav.) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(»Ìslo firmy)                    CAPTION(cisFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(N·zev firmy)                    CAPTION(N·zFirmy)    FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(nICO)       DESC(I»O)                            CAPTION(I»O)         FTYPE(n) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cDIC)       DESC(KÛd pl·tce danÏ)                CAPTION(KÛdPl·tce)   FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(cUcet)      DESC(»Ìslo ˙Ëtu)                     CAPTION(cisUctu)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cBank_Naz)  DESC(N·zev banky)                    CAPTION(NazBanky)    FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cBank_Pob)  DESC(PoboËka banky)                  CAPTION(PobBanky)    FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cBank_Uli)  DESC(Ulice banky)                    CAPTION(UliceBanky)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cBank_PSC)  DESC(PsË banky)                      CAPTION(PscBanky)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC)   RELATETYPE(2)
+  TYPE(FIELD) NAME(cBank_Sid)  DESC(SÌdlo banky)                    CAPTION(SidloBanky)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cBank_Sta)  DESC(St·t banky - zkratka)           CAPTION(St·tBanky)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(1)
+  TYPE(FIELD) NAME(cBank_Tel)  DESC(»Ìslo telefonu banky)           CAPTION(cisTelBank)  FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cBank_Fax)  DESC(»Ìslo faxu banky)               CAPTION(cisFaxBank)  FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cBank_Mod)  DESC(»Ìslo modemu banky)             CAPTION(cisModemBa)  FTYPE(c) FLEN(17) DEC( 0)
+  TYPE(FIELD) NAME(cBankOdpO)  DESC(OdpovÏdn· osoba)                CAPTION(OdpovOsoba)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cZkratMENY) DESC(ZkrMÃNy)                        CAPTION(ZkratkaMÏn)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_MENY) RELATETYPE(1)
+  TYPE(FIELD) NAME(cSpecSYMB)  DESC(Specifick˝ symbol)              CAPTION(SpecSymbol)  FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cUcet_UCT)  DESC(»Ìslo ˙Ëtu pro ˙ËetnictvÌ)      CAPTION(cisUctPUCE)  FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_UCTOSN) RELATETYPE(2)
+  TYPE(FIELD) NAME(cBank_Uce)  DESC(»Ìslo ˙Ëtu - elForm·t)          CAPTION(»Ìslo⁄ËtueF) FTYPE(c) FLEN(16) DEC( 0) PICTURE(@N 9999999999999999) 
+  TYPE(FIELD) NAME(cIBAN)      DESC(International Bank Acount Num.) CAPTION(IBAN)        FTYPE(c) FLEN(34) DEC( 0)
+  TYPE(FIELD) NAME(cBIC)       DESC(Bank Identifier Code)           CAPTION(BIC)         FTYPE(c) FLEN(11) DEC( 0) RELATETO(C_BANKY) RELATETYPE(1)  RELATEORD(4)
+  TYPE(FIELD) NAME(cBANIS)     DESC(Kod banky 9999)                 CAPTION(Banis)       FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(LAKTIVNI)   DESC(BankovnÌ ˙Ëet firmy je aktivnÌ) CAPTION(AktivnÌ)     FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYUC1)   FNAME(FIRMYUC) CAPTION(cisFirmy  )                   KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMYUC2)   FNAME(FIRMYUC) CAPTION(cisUctu   )                   KEY(UPPER(cUcet))
+  TYPE(INDEX) NAME(FIRMYUC3)   FNAME(FIRMYUC) CAPTION(NazBanky  )                   KEY(UPPER(cBank_Naz))
+  TYPE(INDEX) NAME(FIRMYUC4)   FNAME(FIRMYUC) CAPTION(cisFirmy +NazBanky +cisUctu ) KEY(STRZERO(nCisFirmy,5) +UPPER(cBank_Naz) +UPPER(cUcet) )
+  TYPE(INDEX) NAME(FIRMYUC5)   FNAME(FIRMYUC) CAPTION(cisFirmy +cisUctu )           KEY(STRZERO(nCisFirmy,5) +UPPER(cUcet) )
+  TYPE(INDEX) NAME(FIRMYUC6)   FNAME(FIRMYUC) CAPTION(N·zFirmy  )                   KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(FIRMYUC7)   FNAME(FIRMYUC) CAPTION(I»O       )                   KEY(nICO)
+  TYPE(INDEX) NAME(FIRMYUC8)   FNAME(FIRMYUC) CAPTION(KÛdPl·tce )                   KEY(UPPER(cDIC))
+  TYPE(INDEX) NAME(ID)         FNAME(FIRMYUC) CAPTION(ID)                           KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMYSK) DESC(Skupiny firem) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(»Ìslo firmy)                    CAPTION(»ÌsloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(czkr_Skup)  DESC(Zkratka skupiny firem)          CAPTION(ZkrSkupFirem)    FTYPE(C) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)        FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYSK01)   FNAME(FIRMYSK) CAPTION(»ÌsloFirmy)                  KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMYSK02)   FNAME(FIRMYSK) CAPTION(»ÌsloFirmy +ZkratSkupFirmy ) KEY(STRZERO(nCisFirmy,5) +UPPER(czkr_Skup) )
+  TYPE(INDEX) NAME(ID)          FNAME(FIRMYSK) CAPTION(ID)                          KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMYVA) DESC(Skupiny firem - vazby) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(»Ìslo firmy)                    CAPTION(»ÌsloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(czkr_Sk)    DESC(Zkratka skupiny firem)          CAPTION(ZkrSkupFirem)    FTYPE(C) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirVA)  DESC(»Ìslo firmy     - vazba)        CAPTION(»ÌsloFirVA)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(czkr_SkVA)  DESC(Zkratka skupiny - vazba)        CAPTION(ZkrSkupFirem)    FTYPE(C) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYVA01)   FNAME(FIRMYVA) CAPTION(»ÌsloFirmy)                   KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMYVA02)   FNAME(FIRMYVA) CAPTION(»ÌsloFirmy +ZkratSkupFirmy )  KEY(STRZERO(nCisFirmy,5) +UPPER(czkr_Sk) )
+  TYPE(INDEX) NAME(FIRMYVA03)   FNAME(FIRMYVA) CAPTION(»ÌsloFirmy +zkr_sk +zkr_skVa) KEY(STRZERO(nCisFirmy,5) +UPPER(czkr_Sk) +UPPER(czkr_skVa))
+  TYPE(INDEX) NAME(FIRMYVA04)   FNAME(FIRMYVA) CAPTION(»ÌsFirVaz+zkr_skVa)           KEY(STRZERO(nCisFirVa,5) +UPPER(czkr_skVa))
+  TYPE(INDEX) NAME(ID)          FNAME(FIRMYVA) CAPTION(ID)                           KEY(sID) UNIQUE
+
+
+*
+** Vazby na firmy           ****************************
+*
+TYPE(FILE) NAME(VazFirmy) DESC(Vazby na firmy) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nOSOBY)     DESC(ID osoby)                       CAPTION(IDosoby)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nItem)      DESC(Po¯adÌ vazby)                   CAPTION(Po¯adÌVaz)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(FIRMY)      DESC(ID firmy)                       CAPTION(IDfirmy)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cFunPra)    DESC(Zkratka funkce pracovnÌka)      CAPTION(ZkrFuncPra)  FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_FUNCPR) RELATETYPE(2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmÏny)                    CAPTION(DatZmÏny)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Pozn·mka)                       CAPTION(Pozn·mka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(nOSOBY)       FNAME(VazFirmy)  CAPTION(ID firmy)  KEY(nOSOBY)
+  TYPE(INDEX) NAME(FIRMY)       FNAME(VazFirmy)  CAPTION(ID osoby)   KEY(FIRMY)
+  TYPE(INDEX) NAME(ID)          FNAME(VazFirmy)  CAPTION(ID)         KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(FIRMYBCD) DESC(Vazba firem na BCD) TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(»Ìslo firmy)                 CAPTION(»ÌsloFirmy)     FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkrCarKod)  DESC(Typ Ë·rovÈho kÛdu)           CAPTION(ZkrFuncPra)     FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_CARKOD) RELATETYPE(2)
+  TYPE(FIELD) NAME(cCarKod)     DESC(»·rov˝ kÛd)                  CAPTION(»·rKÛd)         FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Pozn·mka)                    CAPTION(Pozn·mka)       FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()               FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYBCD01)   FNAME(FIRMYBCD) CAPTION(»ÌsloFirmy)                   KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMYBCD02)   FNAME(FIRMYBCD) CAPTION(ZkratKÛd )                    KEY(UPPER(cZkrCarKod))
+  TYPE(INDEX) NAME(FIRMYBCD03)   FNAME(FIRMYBCD) CAPTION(»·rKod )                      KEY(UPPER(cCarKod))
+  TYPE(INDEX) NAME(FIRMYBCD04)   FNAME(FIRMYBCD) CAPTION(»ÌsloFirmy +ZkratKÛd+»·rKod ) KEY(STRZERO(nCisFirmy,5) +UPPER(cZkrCarKod) +UPPER(cCarKod))
+  TYPE(INDEX) NAME(ID)           FNAME(FIRMYBCD) CAPTION(ID)                           KEY(sID) UNIQUE
+
+
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMYw)   DESC(Adres·¯ firem (w))             LIKE(FIRMY)   NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMYUCw) DESC(⁄Ëty firem u penÏû.˙stavu (w)) LIKE(FIRMYUC) NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_newrec) DESC() CAPTION() FTYPE(N) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMUCw_1) FNAME(FIRMYUCw) CAPTION() KEY(UPPER(cUcet)) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMYFIw) DESC(FinanËnÌ ˙daje o firmÏ (w))    LIKE(FIRMYFI) NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMYDAw) DESC(DodacÌ adresy (w))             LIKE(FIRMYDA) NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(C_PODRUCw) DESC(»ÌselnÌk podrozvahov˝ch ˙Ët˘ (w)) LIKE(C_PODRUC) NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PODR) FNAME(C_PODRUCw) CAPTION(Zkratka mÏny) KEY(UPPER(cZKRATMENY))
+
+* nastavenÌ firem do skupin
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMYSKw) DESC(Skupiny firem (w)) LIKE(FIRMYSK) NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_setsku) DESC() CAPTION() FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMSKw_1) FNAME(FIRMYSKw) CAPTION() KEY(UPPER(czkr_Skup))
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMY_skv) DESC(Seznam pro v˝ber do skupin (w)) LIKE(FIRMY) NOCHECK() TASK(FIR)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMY1)     FNAME(FIRMY) CAPTION(»ÌslFirmy ) KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMY2)     FNAME(FIRMY) CAPTION(N·zFirmy  ) KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(FIRMY3)     FNAME(FIRMY) CAPTION(SÌdloFirmy) KEY(UPPER(cSidlo))
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(FIRMYVAw) DESC(Skupiny firem - vazby(w)) LIKE(FIRMYVA) NOCHECK() TASK(FIR)
+  TYPE(FIELD) NAME(_nrecor)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)   DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(_nrecorva) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(FIRMYVA01)   FNAME(FIRMYVAW) CAPTION(»ÌsloFirmy)                   KEY(nCisFirmy)
+  TYPE(INDEX) NAME(FIRMYVA02)   FNAME(FIRMYVAW) CAPTION(»ÌsloFirmy +ZkratSkupFirmy )  KEY(STRZERO(nCisFirmy,5) +UPPER(czkr_Sk) )
+  TYPE(INDEX) NAME(FIRMYVA03)   FNAME(FIRMYVAW) CAPTION(»ÌsloFirmy +zkr_sk +zkr_skVa) KEY(STRZERO(nCisFirmy,5) +UPPER(czkr_Sk) +UPPER(czkr_skVa)) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+  TYPE(INDEX) NAME(FIRMYVA04)   FNAME(FIRMYVAW) CAPTION(»ÌsloFirmy +zkr_sk +zkr_skVa) KEY(STRZERO(nCisFirmy,5) +UPPER(czkr_Sk) +UPPER(czkr_skVa) +STRZERO(nCisFirVA,5))
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(VAZFIRMYw)  DESC(Vazby na ares·¯ firem (w))            LIKE(VAZFIRMY)   NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC()            CAPTION() FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC()            CAPTION() FTYPE(c) FLEN(100) DEC(0)
+*
+  TYPE(FIELD) NAME(_nrecor)    DESC()            CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC()            CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VAZFIRMYw1)  FNAME(VazFirmyw)  CAPTION(Po¯adÌVaz)    KEY(nItem) FOR((_delRec <> '9' .or. _delRec = NULL))
+
+*
+* FILE DEFINITION **************************************************
+TYPE(FILE) NAME(C_OBLASTW)  DESC(Oblasti pro hromadnou fakturaci(w))            LIKE(C_OBLAST)   NOCHECK() TASK(FIR)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nnevykPol)  DESC()            CAPTION() FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nnevykMnoz) DESC()            CAPTION() FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nnevykOdb)  DESC()            CAPTION() FTYPE(n) FLEN( 5) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_OBL1)     FNAME(C_OBLASTW) CAPTION(klÌËObl   )  KEY(nKlicObl)
+  TYPE(INDEX) NAME(C_OBL2)     FNAME(C_OBLASTW) CAPTION(n·zevObl  )  KEY(UPPER(cNazevObl))

@@ -1,0 +1,42 @@
+[PROJECT]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q /w /rDCLIPX.LIB
+    DEBUG         = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    =
+    RC_COMPILE    = arc
+    RC_FLAGS      = /v
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    AdsQuick.Exe
+    AdsSQL.Exe
+    Update.Exe
+    DataDict.Exe
+    SQLRun.Exe
+
+[AdsQuick.Exe]
+    AdsQuick.Prg
+
+[AdsSQL.Exe]
+    AdsSQL.Prg
+    Ads.Prg
+    DClipx.lib
+
+[Update.Exe]
+    Update.Prg
+    XBTBase1.Lib
+    Ads.Prg
+    Dclipx.lib
+
+[DataDict.Exe]
+    DataDict.Prg
+    PrChoice.Prg
+    Ads.Prg
+    DClipx.lib
+    DataDict.Res
+
+[SQLRun.Exe]
+    SQLRun.Prg
+    Dclipx.lib

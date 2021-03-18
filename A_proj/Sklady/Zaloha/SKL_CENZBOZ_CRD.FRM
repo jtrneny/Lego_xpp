@@ -1,0 +1,135 @@
+TYPE(drgForm) DTYPE(10) TITLE(Skladová karta) SIZE(100,25) FILE(CENZBOZw);
+              GUILOOK(Message:y,Action:n,IconBar:y:MyIconBar,Menu:y:myMenuBar);
+              POST( POSTVALIDATE) PRE( PREVALIDATE) CBSAVE(OnSave)
+*              PRE( PRE_CENZBOZ) POST( POST_CENZBOZ)
+
+TYPE(Static) STYPE(13) SIZE(99,3.8) FPOS( 0.5,0.1) RESIZE(yn) CTYPE(2)
+  TYPE(GET)  NAME(CCISSKLAD) FPOS( 1,1.2) FLEN(15) FCAPTION(Sklad) CPOS(1,0.2) PP(2) PUSH( C_SKLADY) NOREVISION()
+  TYPE(Text) NAME(C_SKLADY->cNazSklad)  CPOS(1,2.2) CLEN(30) BGND(1) FONT(5)
+  TYPE(GET)  NAME(CSKLPOL)   FPOS(20,1.2) FLEN(20) FCAPTION(Skladová položka) CPOS(20,0.2) PP(2) NOREVISION()
+  TYPE(GET)  NAME(CNAZZBO)   FPOS(45,1.2) FLEN(50) FCAPTION(Název zboží) CPOS(45,0.2) PP(2) PUSH( SKL_C_NAZZBO)
+  TYPE(GET)  NAME(CNAZZBO2)  FPOS(45,2.2) FLEN(50)
+TYPE(End)
+
+TYPE(Static) STYPE(13) SIZE(100,21) FPOS(0,4) RESIZE(yn)
+
+  TYPE(TABPAGE) CAPTION(Základní údaje) FPOS( 1,6) RESIZE(yx) OFFSET( 1,82)
+
+    TYPE(GET)  NAME(CULOZZBO)  FPOS(15,1) FLEN(15) FCAPTION(Místo uložení) CPOS(1,1)
+    TYPE(GET)  NAME(NZBOZIKAT) FPOS(15,2) FLEN(15) FCAPTION(Kategorie zboží) CPOS(1,2)
+*    TYPE(Text) NAME(C_KATZBO->cNazevKat)  CPOS(22,2) CLEN(20)
+    TYPE(GET)  NAME(NUCETSKUP) FPOS(15,3) FLEN(15) FCAPTION(Úèetní skupina) CPOS(1,3)  PP(2)
+*    TYPE(Text) NAME(C_UCTSKP->cNazUctSk)  CPOS(22,3) CLEN(20)
+
+    TYPE(Static) STYPE(12) SIZE(98, 3) FPOS(1,4.2) RESIZE(yx) CTYPE(2)
+      TYPE(COMBOBOX) NAME(CTYPSKLCEN) FPOS( 3,1.2) FLEN(12) FCAPTION(Typ sklad. ceny) CPOS( 3,0.2) REF(TYPSKLCEN)
+      TYPE(Text)     CAPTION(Skladová cena) CPOS(23, 0.2) CLEN( 12)
+      TYPE(GET)      NAME(NCENASZBO)  FPOS(18,1.2) FLEN(15)
+      TYPE(GET)      NAME(CZKRATMENY) FPOS(35,1.2) FLEN( 7) FCAPTION(Zákl.mìna)       CPOS(35,0.2)
+      TYPE(GET)      NAME(NMNOZSZBO)  FPOS(45,1.2) FLEN(13) FCAPTION(Mn. na skladu)   CPOS(49,0.2) PP(3)
+      TYPE(GET)      NAME(CZKRATJEDN) FPOS(60,1.2) FLEN( 6) FCAPTION(MJ)              CPOS(64,0.2)
+      TYPE(GET)      NAME(NCENACZBO)  FPOS(70,1.2) FLEN(13) FCAPTION(Skl.cena celkem) CPOS(72,0.2) PP(3)
+    TYPE(End)
+
+    TYPE(COMBOBOX) NAME(M->cKodTPV) FPOS(15, 7.5) FLEN(21) FCAPTION(Typ položky)      CPOS(1, 7.5);
+         VALUES(V :Materiál pro výrobu,O :Obchodní zboží,U :Materiál nebo zboží,R :Výrobek,P :Polotovar)
+    TYPE(GET)      NAME(NKLICDPH)   FPOS(15, 8.5) FLEN(20) FCAPTION(Klíè DPH)         CPOS(1, 8.5)
+*    TYPE(Text)     NAME(C_DPH->nProcDPH)  CPOS(22,8.5) CLEN(6)
+    TYPE(COMBOBOX) NAME(CPOLCEN)    FPOS(15, 9.5) FLEN(21) FCAPTION(Položka ceníku)   CPOS(1, 9.5) REF(POLCEN)
+    TYPE(GET)      NAME(CZAHRMENA)  FPOS(15,10.5) FLEN(20) FCAPTION(Zahranièní mìna)  CPOS(1,10.5)
+    TYPE(GET)      NAME(CTYPSKP)    FPOS(15,11.5) FLEN(20) FCAPTION(Klíè SKp)         CPOS(1,11.5)
+    TYPE(GET)      NAME(CZKRCARKOD) FPOS(15,12.5) FLEN(20) FCAPTION(Typ èár. kódu)    CPOS(1,12.5)
+    TYPE(GET)      NAME(NCARKKOD)   FPOS(15,13.5) FLEN(20) FCAPTION(Èárkový kód)      CPOS(1,13.5) PP(3)
+    TYPE(GET)      NAME(CDANPZBO)   FPOS(15,14.5) FLEN(20) FCAPTION(Daòová položka)   CPOS(1,14.5)
+    TYPE(GET)      NAME(CJKPOV)     FPOS(15,15.5) FLEN(20) FCAPTION(Èíslo JKPOV)      CPOS(1,15.5)
+    TYPE(COMBOBOX) NAME(CVYRCIS)    FPOS(15,16.5) FLEN(21) FCAPTION(Výrobní èíslo)    CPOS(1,16.5)
+    TYPE(GET)      NAME(CKATALCIS)  FPOS(15,17.5) FLEN(20) FCAPTION(Katalog. èíslo)   CPOS(1,17.5)
+    TYPE(GET)      NAME(CKATCZBO)   FPOS(15,18.5) FLEN(20) FCAPTION(Katalogové èíslo) CPOS(1,18.5)
+
+    TYPE(GET)      NAME(NHMOTNOST)  FPOS(60, 1) FLEN(13) FCAPTION(Hmotnost položky) CPOS(45,1)
+    TYPE(GET)      NAME(CZKRATJEDH) FPOS(80, 1) FLEN( 6) FCAPTION(MJ)               CPOS(75,1)
+    TYPE(GET)      NAME(NOBJEM)     FPOS(60, 2) FLEN(13) FCAPTION(Objem položky)    CPOS(45,2)
+    TYPE(GET)      NAME(CZKRATJEDO) FPOS(80, 2) FLEN( 6) FCAPTION(MJ)               CPOS(75,2)
+    TYPE(GET)      NAME(CBAL)       FPOS(60, 3) FLEN(15) FCAPTION(Zpùsob balení)    CPOS(45,3)
+    TYPE(GET)      NAME(NBALKS)     FPOS(87, 3) FLEN(11) FCAPTION(kusù v balení)    CPOS(76,3)
+
+*    TYPE(GET) NAME(NKLICNAZ) FPOS(15,6) FLEN(5) FCAPTION(Klíè názvu) CPOS(1,6)
+
+    TYPE(GET)      NAME(NMAXZBO)    FPOS(55,7.5) FLEN(11) FCAPTION(Maximální stav)    CPOS(40,7.5)
+    TYPE(GET)      NAME(NMINZBO)    FPOS(55,8.5) FLEN(10) FCAPTION(Minimální stav)    CPOS(40,8.5)
+    TYPE(GET)      NAME(NMNOZPOC)   FPOS(55,9.5) FLEN(11) FCAPTION(Poèát. skl. množ.) CPOS(40,9.5) PP(3)
+
+    TYPE(GET)      NAME(NMNOZDZBO)  FPOS(55,11.5) FLEN(11) FCAPTION(Mn. k dispozici)  CPOS(40,11.5) PP(3)
+    TYPE(GET)      NAME(NMNOZRZBO)  FPOS(55,12.5) FLEN(11) FCAPTION(Rezervované mn.)  CPOS(40,12.5) PP(3)
+    TYPE(GET)      NAME(NMNOZOZBO)  FPOS(55,13.5) FLEN(11) FCAPTION(Objednané mn.)    CPOS(40,13.5) PP(3)
+    TYPE(GET)      NAME(NMNOZKZBO)  FPOS(55,14.5) FLEN(11) FCAPTION(Mn. k objednání)  CPOS(40,14.5) PP(3)
+    TYPE(GET)      NAME(NMNOZRSES)  FPOS(55,16.5) FLEN(11) FCAPTION(Rezerv. výroba)   CPOS(40,16.5) PP(3)
+
+    TYPE(GET)      NAME(NCENAPOC)   FPOS(85, 9.5) FLEN(11) FCAPTION(Poèát. skl. cena)       CPOS(70, 9.5) PP(3)
+    TYPE(GET)      NAME(NCENASVZM)  FPOS(85,10.5) FLEN(11) FCAPTION(Skl. cena v zákl. mìnì) CPOS(70,10.5) PP(3)
+    TYPE(GET)      NAME(NCENAKURZ)  FPOS(85,11.5) FLEN(11) FCAPTION(Posl. cena pøi kurzu)   CPOS(70,11.5) PP(3)
+    TYPE(GET)      NAME(NCENAVNI)   FPOS(85,12.5) FLEN(11) FCAPTION(Vnitro cena)            CPOS(70,12.5) PP(3)
+
+    TYPE(GET)  NAME(CJAKOST)   FPOS(55, 18.5) FLEN(20) FCAPTION(Jakost)         CPOS(40,18.5)
+
+*    TYPE(TEXT) CAPTION(Poslední pohyb) CPOS(70,18.5)
+    TYPE(TEXT) NAME(CenZboz->DDATPZBO) CPOS(85,18.5) CLEN(11) BGND(13) FONT(5)
+
+*    TYPE(GET) NAME(NCENANZBO) FPOS(15,12) FLEN(11) FCAPTION(Posl. nákupní cena) CPOS(1,12)
+*    TYPE(GET) NAME(NCENCNZBO) FPOS(15,13) FLEN(11) FCAPTION(Nákupní ceníková cena) CPOS(1,13)
+
+  TYPE(END)
+
+  TYPE(TabPage) CAPTION(Prodejní ceny) FPOS( 1,6) RESIZE(yx) OFFSET(18,66)
+
+     TYPE(Static) STYPE(13) SIZE(94,2) FPOS(3,1) RESIZE(yx)
+      TYPE(GET)    NAME(CenProdCw->NCENCNZBO) FPOS(20,0.5) FLEN(11) FCAPTION(Nakupní ceník. cena) CPOS( 2,0.5)
+      TYPE(GET)    NAME(CenZbozw->NCENANZBO)  FPOS(55,0.5) FLEN(11) FCAPTION(Posl. nákupní cena)  CPOS(35,0.5)
+     TYPE(End)
+
+     TYPE(Static) STYPE(13) SIZE(94,9) FPOS(3,3.5) RESIZE(yx)
+       TYPE(Text) CAPTION(Prodejní ceny :)      CPOS( 1,0.5) CLEN(15) BGND(1) FONT(5)
+       TYPE(Text) CAPTION(Marže v %)            CPOS(31,0.5) CLEN(10) BGND(1) FONT(5)
+       TYPE(Text) CAPTION(Èástka )              CPOS(43,0.5) CLEN(15) BGND(1) FONT(5)
+       TYPE(Text) CAPTION( - základní bez danì) CPOS(15,1.5) CLEN(15)
+       TYPE(Text) CAPTION( - základní   s daní) CPOS(15,2.5) CLEN(15)
+
+       TYPE(Static) STYPE(16) SIZE(40,1) FPOS(15,3)
+
+       TYPE(Text) CAPTION( - èíslo 1  bez danì)  CPOS(15,4) CLEN(15)
+       TYPE(Text) CAPTION( - èíslo 2  bez danì)  CPOS(15,5) CLEN(15)
+       TYPE(Text) CAPTION( - èíslo 3  bez danì)  CPOS(15,6) CLEN(15)
+       TYPE(Text) CAPTION( - èíslo 4  bez danì)  CPOS(15,7) CLEN(15)
+
+       TYPE(GET)  NAME(CenProdCw->NPROCMARZ)  FPOS(31,1.5) FLEN( 6)
+       TYPE(GET)  NAME(CenProdCw->NCENAPZBO)  FPOS(43,1.5) FLEN(11)
+       TYPE(GET)  NAME(CenProdCw->NCENAMZBO)  FPOS(43,2.5) FLEN(11)
+       TYPE(GET)  NAME(CenProdCw->NPROCMARZ1) FPOS(31,4)   FLEN( 6)
+       TYPE(GET)  NAME(CenProdCw->NCENAP1ZBO) FPOS(43,4)   FLEN(11)
+       TYPE(GET)  NAME(CenProdCw->NPROCMARZ2) FPOS(31,5)   FLEN( 6)
+       TYPE(GET)  NAME(CenProdCw->NCENAP2ZBO) FPOS(43,5)   FLEN(11)
+       TYPE(GET)  NAME(CenProdCw->NPROCMARZ3) FPOS(31,6)   FLEN( 6)
+       TYPE(GET)  NAME(CenProdCw->NCENAP3ZBO) FPOS(43,6)   FLEN(11)
+       TYPE(GET)  NAME(CenProdCw->NPROCMARZ4) FPOS(31,7)   FLEN( 6)
+       TYPE(GET)  NAME(CenProdCw->NCENAP4ZBO) FPOS(43,7)   FLEN(11)
+       TYPE(GET)  NAME(CenProdCw->dDatAkt   ) FPOS(79,7)   FLEN(11) FCAPTION(Poslední zmìna) CPOS( 65, 7) PUSH( CLICKDATE)
+
+*       TYPE(TEXT) CAPTION(Poslední zmìna)  CPOS(68,7)
+*       TYPE(TEXT) NAME(CenProdCw->DDATAKT) CPOS(82,7) CLEN(11) FONT(5)
+
+     TYPE(End)
+  TYPE(End)
+
+  TYPE(TabPage) CAPTION(Ostatní údaje) FPOS( 1,6) RESIZE(yx) OFFSET(34,50)
+    TYPE(GET)  NAME(CVYROBCE)  FPOS(20,1) FLEN(25) FCAPTION(Výrobce zboží)         CPOS(2,1)
+*    TYPE(GET)  NAME(CJAKOST)   FPOS(15,2) FLEN(10) FCAPTION(Jakost zboží)         CPOS(2,2)
+    TYPE(GET)  NAME(NKOEFMN)   FPOS(20,3) FLEN(15) FCAPTION(Koeficient (mìrná hm.)) CPOS(2,3)
+    TYPE(GET)  NAME(NPRIRAZKA) FPOS(20,4) FLEN( 6) FCAPTION(Pøirážka)       CPOS(2,4)
+  TYPE(End)
+
+  TYPE(TabPage) CAPTION(Popis) FPOS( 1,6) RESIZE(yx) OFFSET(50,34)
+    TYPE(MLE) NAME('MPOZZBO') FPOS(3,1) SIZE(92, 18) RESIZE(yx) ;
+       FCAPTION(Popis zboží) CPOS(3,10) CLEN(12)
+  TYPE(End)
+
+TYPE(End)

@@ -1,0 +1,425 @@
+* REF.DBD
+*
+
+*
+* OBECN…
+  TYPE(FIELD) NAME(LYESNO)     DESC(LogickÈ hodnoty Ano/Ne)   CAPTION(Ano/Ne)    FTYPE(L) FLEN( 1) DEC(0) VALUES(T:Ano,F:Ne)
+
+  TYPE(FIELD) NAME(MESICE)     DESC(MÏsÌce)                   CAPTION(MÏsÌce)    FTYPE(N) FLEN( 2) DEC(0) ;
+              VALUES(1:leden,2:˙nor,3:b¯ezen,4:duben,5:kvÏten,6:Ëerven,7:Ëervenec,8:srpen,9:z·¯Ì,10:¯Ìjen,11:listopad,12:prosinec )
+
+  TYPE(FIELD) NAME(CTYPKURZU)  DESC(Typ kurzu)                CAPTION(Typ kurzu) FTYPE(C) FLEN( 3) DEC(0) ;
+              VALUES('   ':Neuveden, DEN:DennÌ, TYD:T˝dennÌ, MES:MÏsÌËnÌ, QVA:Kvart·lnÌ, POL:PololetnÌ, ROK:RoËnÌÌ)
+
+  TYPE(FIELD) NAME(CASINT)     DESC(»asovÈ intervaly)         CAPTION(»asInt)    FTYPE(N) FLEN( 2) DEC(0) ;
+              VALUES( 30:30 minut,20:20 minut,15:15 minut,10:10 minut,6: 6 minut,5: 5 minut,3: 3 minuty,2: 2 minuty,1: 1 minuta)
+
+  TYPE(FIELD) NAME(CINOUT)     DESC(Vstup-v˝stup)             CAPTION(VstV˝st)   FTYPE(C) FLEN( 1) DEC(0) VALUES(  :nedefinov·n   [ ], ;
+                                                                                                                  I:vstup         [I], ;
+                                                                                                                  O:v˝stup        [O] )
+
+  TYPE(FIELD) NAME(NPRIORITA)   DESC(Priorita)                CAPTION(Priorita)    FTYPE(N) FLEN( 2) DEC(0) ;
+              VALUES(0:nÌzk·,1:st¯ednÌ,2:vysok· )
+
+
+
+*
+* KANCEL¡ÿ
+  TYPE(FIELD) NAME(TYPEDTDOK)  DESC(Typ editoru)              CAPTION(Typ EDT)    FTYPE(C) FLEN( 3) DEC(0) VALUES(TXT:notepade,RTF:rtf editor,PDF:acrobat,DOC:word,XLS:excel)
+
+  TYPE(FIELD) NAME(TYPDOKUM)   DESC(Typ dokumentu)            CAPTION(Typ dok)    FTYPE(C) FLEN(10) DEC(0) VALUES(OBECNY:Obecn˝ dokument)
+
+  TYPE(FIELD) NAME(TYPUKOLU)   DESC(Typ ˙kolu)                CAPTION(Typ ˙kolu)  FTYPE(C) FLEN(10) DEC(0) VALUES(OBECUKOL:Obecn˝ ˙kol,;
+                                                                                                                  SCHUZKA:Sch˘zka )
+
+  TYPE(FIELD) NAME(TYPSPOJ)    DESC(Typ spojenÌ)              CAPTION(Typ spoj)   FTYPE(C) FLEN(10) DEC(0) VALUES(ADR: PoötovnÌ adresa,;
+                                                                                                                  TEL:    Telefon,;
+                                                                                                                  DATSCH: Datov· schr·nka,;
+                                                                                                                  IP_TEL: IP telefon,; 
+                                                                                                                  GSM:    MobilnÌ telefon,;
+                                                                                                                  EMAIL:  E-mail,;
+                                                                                                                  SKYPE:  Skype,;
+                                                                                                                  ICQ:    ICQ,; 
+                                                                                                                  WWW:    Webov· str·nka,;
+                                                                                                                  LAN:    Lan sÌù,; 
+                                                                                                                  FTP:    P¯ipojenÌ pomocÌ FTP,;
+                                                                                                                  URL:    P¯ipojenÌ pomocÌ URL )   
+
+
+*
+* OSOBY
+
+  TYPE(FIELD) NAME(nStupInv)  DESC(StupeÚ invalidity)         CAPTION(StupInval) FTYPE(n) FLEN( 1) DEC(0) VALUES( 0:bez invalidity                   , ;
+                                                                                                                  1:prvnÌ stupeÚ invalidity [1]      , ;
+                                                                                                                  2:druh˝ stupeÚ invalidity [2]      , ;
+                                                                                                                  3:t¯etÌ stupeÚ invalidity [3]  )
+
+
+  TYPE(FIELD) NAME(cPrukazZPS)  DESC(Typ pr˘kazu zdravotnÌho postiûenÌ)  CAPTION(pr˘kazZPS) FTYPE(c) FLEN( 10) DEC(0) VALUES(:bez zdravotnÌho pr˘kazu               , ;
+                                                                                                            TP:pr˘kaz TP    [tÏûkÈ zdravotnÌ postiûenÌ]             , ;
+                                                                                                           ZTP:pr˘kaz ZTP   [zvl·öù tÏûkÈ zdr.postiûenÌ]            , ;
+                                                                                                         ZTP/P:pr˘kaz ZTP/P [zvl·öù tÏûkÈ zdr.postiûenÌ s pr˘vodcem]) 
+
+
+
+
+*
+* DOCHAZKA
+
+  TYPE(FIELD) NAME(nStavAkt)  DESC(Stav aktualizace)         CAPTION(StavAktual) FTYPE(n) FLEN( 1) DEC(0) VALUES( 0:bez aktualizace              ,;
+                                                                                                                  1:aktualizce dspohyby [1]  )
+
+
+
+*
+* SKLADY
+  TYPE(FIELD) NAME(TYPSKLCEN)  DESC(Typ skladovÈ ceny)        CAPTION(Typ SC)    FTYPE(C) FLEN( 3) DEC(0) VALUES(PEV:Pevn·,PRU:Pr˘mÏrn·)
+
+  TYPE(FIELD) NAME(POLCEN)     DESC(CenÌkov· poloûka)         CAPTION(Cen.pol.)  FTYPE(C) FLEN( 1) DEC(0) VALUES(C:CenÌkov·,N:NecenÌkov·,E:EvidenËnÌ)
+
+  TYPE(FIELD) NAME(CVYRCIS)    DESC(Typ evidence v˝r.ËÌsel)   CAPTION(Evid.V»)   FTYPE(C) FLEN( 1) DEC(0) VALUES( :- Neevidovat -,;
+                                                                                                                 A:Individu·lnÌ evidence         ,;
+                                                                                                                 B:MnoûstevnÌ evidence (öarûe)   ,;
+                                                                                                                 C:Evidence blok˘ ( OD-DO )       )
+
+  TYPE(FIELD) NAME(CKATALCIS)  DESC(VyuûitÌ katalog. ËÌsel)   CAPTION(Katal.Ë.)  FTYPE(C) FLEN( 1) DEC(0) VALUES(N:NevyuûÌv· se,A:VyuûÌv· se)
+
+  TYPE(FIELD) NAME(NPREDANPOV) DESC(P¯enesen· daÚ.povinnost)  CAPTION(DaÚ.pov.)  FTYPE(N) FLEN( 1) DEC(0) VALUES(0:nevyuûÌv· se,;
+                                                                                                                 1:dod·nÌ zlata,;
+                                                                                                                 2:emisnÌ povolenky,;
+                                                                                                                 3:odpad)
+
+  TYPE(FIELD) NAME(CULOZSYS) DESC(⁄loûn˝ systÈm)              CAPTION(⁄loûSys)   FTYPE(C) FLEN( 3) DEC(0) VALUES(   :nevyuûÌv· , ;                                                                                                                                            KAR:Kardex,;
+                                                                                                                 KPK:Kpk,;
+                                                                                                                 BOX:box n·¯adÌ,;
+                                                                                                                 ECM:eComp,;
+                                                                                                                 PHM:stojan PHM,;
+                                                                                                                 XXX:rezerva)
+
+
+
+                                                                                                                 
+* DIM
+  TYPE(FIELD) NAME(NTYPEVIDIM) DESC(Typ evidence DIM)         CAPTION(TypEvidDim) FTYPE(N) FLEN( 2) DEC(0) VALUES( 0:Evid.z·kladnÌ,;
+                                                                                                                   1:Evid.ochr.pom˘cek,;
+                                                                                                                   2:Evid.elektr.n·¯adÌ,;
+                                                                                                                   3:Evid.mÏ¯idel,;
+                                                                                                                   4:Evid.n·¯adÌ)
+
+  TYPE(FIELD) NAME(NNARADI)    DESC(Typ n·¯adÌ)               CAPTION(TypN·¯adÌ)  FTYPE(N) FLEN( 2) DEC(0) VALUES( 0:nenÌ n·¯adÌ,;
+                                                                                                                   1:ElektrickÈ n·¯adÌ,;
+                                                                                                                   2:StrojnÌ n·¯adÌ,;
+                                                                                                                   3:Z·meËnickÈ n·¯adÌ,;
+                                                                                                                   4:StavebnÌ n·¯adÌ)
+
+
+*
+* HIM
+  TYPE(FIELD) NAME(TYPDODPI)   DESC(Typ daÚovÈho odpisu)      CAPTION(Typ DO)     FTYPE(N) FLEN( 1) DEC(0) VALUES(1:RovnomÏrn˝,2:Zrychlen˝)
+
+  TYPE(FIELD) NAME(TYPUODPI)   DESC(Typ ˙ËetnÌho odpisu)      CAPTION(Typ UO)     FTYPE(N) FLEN( 1) DEC(0) VALUES(1:RovnomÏrn˝,3:Roven daÚovÈmu)
+
+  TYPE(FIELD) NAME(UPLPROC)    DESC(UplatnÏnÌ procent)        CAPTION( Uplat. %)  FTYPE(N) FLEN( 5) DEC(2) VALUES(0.00:0.00,10.00:10.00,15.00:15.00,20.00:20.00)
+
+  TYPE(FIELD) NAME(NTYPVYPUO)  DESC(Typ v˝poËtu ˙Ëet.odpis˘)  CAPTION(V˝p.UO)     FTYPE(N) FLEN( 1) DEC(0) VALUES(1:Pln˝,2:Zkr·cen˝)
+
+  TYPE(FIELD) NAME(NZPUODPIS)  DESC(Zp˘sob odpisov·nÌ)        CAPTION(Zp.odpis.)  FTYPE(N) FLEN( 1) DEC(0) VALUES(1:Dle z·kona,2:Dle internÌ smÏrnice)
+
+
+
+*
+* ZVI
+  TYPE(FIELD) NAME(TYPEVID)    DESC( Typ evidence)            CAPTION( Evid.)    FTYPE(C) FLEN( 1) DEC(0) VALUES(I:Individu·lnÌ,S:Skupinov·)
+
+  TYPE(FIELD) NAME(TYPZVR)     DESC( Typ zvÌ¯ete)             CAPTION( Typ zv.)  FTYPE(C) FLEN( 1) DEC(0) VALUES(S:Skot,V:Vep¯ovÈ)
+
+
+
+*
+* UCT
+  TYPE(FIELD) NAME(LTYP_AUT)   DESC(typ automatu NV)          CAPTION(tyz NV)    FTYPE(L) FLEN( 1) DEC(0) VALUES(T:˙ËetnÌ,F:v˝robnÌ)
+
+  TYPE(FIELD) NAME(CNAZPOLX)   DESC(n·klStruktura automat˘)   CAPTION(nsAut)     FTYPE(C) FLEN( 1) DEC(0) VALUES(cNAZPOL2:V˝robek  , ;
+                                                                                                                 cNAZPOL3:Zak·zka  , ;
+                                                                                                                 cNAZPOL4:V˝rMÌsto , ;
+                                                                                                                 cNAZPOL5:Stroj    , ;
+                                                                                                                 cNAZPOL6:V˝rOperace )
+
+  TYPE(FIELD) NAME(ru_TYPUZV)  DESC(Typ roËnÌ uz·vÏtky)       CAPTION(TypUZV)    FTYPE(N) FLEN( 2) DEC(0) VALUES(0:NerozpoËtovÈ subjekty             , ;
+                                                                                                                 1:  RozpoËtov· organizace             )
+
+  TYPE(FIELD) NAME(ru_DOPLPS)  DESC(DoplnÏn poËStav˘)         CAPTION(DoplPS)    FTYPE(N) FLEN( 2) DEC(0) VALUES(0:Bez DoplnÏnÌ poË·teËnÌch stav˘    , ;
+                                                                                                                 1:    DoplnÏnÌ poË·teËnÌch stav˘      )
+
+  TYPE(FIELD) NAME(ru_VYTPSNV) DESC(Vyto¯enÌ psNedV˝roby)     CAPTION(VztvPSNV)  FTYPE(N) FLEN( 2) DEC(0) VALUES(0:Nevytv·¯et PS nedV˝roby                 , ;
+                                                                                                                 1:  Vytvo¯it PS nedV˝r zemÏdÏlci          , ;
+                                                                                                                 2:  Vytvo¯it PS nedV˝r pr˘m.do poË.stav˘  , ;
+                                                                                                                 3:  Vytvo¯it PS nedV˝r pr˘m.do ˙Ë.poloûek , ;
+                                                                                                                 4:  Vytvo¯it PS nedV˝r bez reûijÌ           )
+
+  TYPE(FIELD) NAME(ru_TYPVNPU) DESC(Typ vnitrop⁄Ëtu)          CAPTION(TypVNP)    FTYPE(N) FLEN( 2) DEC(0) VALUES(0:VnitropodnikovÈ ˙Ëtov·nÌ 8..9     , ;
+                                                                                                                 1:VnitropodnikovÈ ˙Ëtov·nÌ 5..6       )
+
+  TYPE(FIELD) NAME(ru_TYPUZVR) DESC(Typ uzav¯enÌ roku)        CAPTION(TypUZVR)   FTYPE(N) FLEN( 2) DEC(0) VALUES(0:Bez uzav¯enÌ  ˙ËetnÌho roku       , ;
+                                                                                                                 1:S   uzav¯enÌm ˙ËetnÌho roku         )
+
+
+
+*
+* VYR
+  TYPE(FIELD) NAME(TYPSKLPOL)  DESC(Typ skladovÈ poloûky)     CAPTION(Typ skl.pol) FTYPE(C) FLEN( 2) DEC(0) VALUES(V:Materi·l pro v˝robu,;
+                                                                                                                   O:ObchodnÌ zboûÌ     ,;
+                                                                                                                   U:Materi·l nebo zboûÌ,;
+                                                                                                                   R:V˝robek            ,;
+                                                                                                                   P:Polotovar          ,;
+                                                                                                                   S:ProdejnÌ sestava   ,;
+                                                                                                                   D:Doprava            ,;
+                                                                                                                   K:Kooperace          ,;  
+                                                                                                                   X:Neza¯azen· poloûka ,;
+                                                                                                                   Y:RecyklaËnÌ poplatek,;   
+                                                                                                                    :Neuveden            )
+
+
+
+
+*
+* PRO
+** NABVYSHD, OBJHEAD
+    TYPE(FIELD) NAME(nTypCenNab) DESC(Typ uveden˝ch cen v nabÌdce) CAPTION(TypCenVNab)    FTYPE(n) FLEN( 1) DEC( 0) VALUES(0:[0]  bez p¯Ìplatk˘                   , ;
+                                                                                                                           1:[1]  s recyklaËnÌm p¯Ìplatkem        , ;
+                                                                                                                           2:[2]  s dopravou                      , ;
+                                                                                                                           3:[3]  s recykl.p¯Ìplatkem a dopravou    )
+
+
+*
+* FIN
+** FAKVYSIT
+  TYPE(FIELD) NAME(NKODPLNENI)  DESC(Kod plneni)              CAPTION(kodPlneni)   FTYPE(N) FLEN( 1) DEC(0) VALUES(0:nezahrnuje se            , ;
+                                                                                                                   1:standardnÌ zboûÌ[0]      , ;
+                                                                                                                   2:p¯emÌstÏnÌ obchMajetku[1], ;
+                                                                                                                   3:t¯Ì strann˝ obchod[2]    , ;
+                                                                                                                   4:sluûby[3]                )
+
+ TYPE(FIELD) NAME(NTYPPREDAN) DESC(Typ p¯enesenÈ daÚ.povinnosti)  CAPTION(TypDaÚPov) FTYPE(N) FLEN( 3) DEC(0) VALUES(0:††††††††††††, ;
+                                                                                                   1:dod·nÌ zlata         , ;
+                                                                                                   3:dod·nÌ nemovitÈ vÏci , ;
+                                                                                                   4:stavebnÌ pr·ce       , ;
+                                                                                                   5:odpad                , ;
+                                                                                                  11:emisnÌ povolenky     , ;
+                                                                                                  12:obiloviny            , ;
+                                                                                                  13:kovy                 , ;
+                                                                                                  14:mobilnÌ telefony     , ;
+                                                                                                  15:integrovanÈ obvody   , ;
+                                                                                                  16:p¯enosn· za¯ÌzenÌ pro aut.zpracov·nÌ dat, ;
+                                                                                                  17:videohernÌ konzole   , ;
+                                                                                                  18:dod·nÌ certifik·t˘ elekt¯iny                           , ;
+                                                                                                  19:dod·nÌ elekt¯iny soustavami nebo sÌtÏmi obchodnÌkovi   , ;
+                                                                                                  20:dod·nÌ plynu soustavami nebo sÌtÏmi obchodnÌkovi )
+
+
+ TYPE(FIELD) NAME(CTYPPREDAN) DESC(Typ p¯enesenÈ daÚ.povinnosti)  CAPTION(TypDaÚPov) FTYPE(C) FLEN( 3) DEC(0) VALUES( :††††††††††††, ;
+                                                                                                   1:1  dod·nÌ zlata         , ;
+                                                                                                  1a:1a zlato-zprost¯edkov·nÌ dod·nÌ investiËnÌho zlata, ;
+                                                                                                   3:3  dod·nÌ nemovitÈ vÏci , ;
+                                                                                                  3a:3a dod·nÌ nemovitÈ vÏci v nucenÈm prodeji, ;
+                                                                                                   4:4  stavebnÌ pr·ce       , ;
+                                                                                                  4a:4a stavebnÌ a mont·ûnÌ pr·ce-poskytnutÌ pracovnÌk˘, ;
+                                                                                                   5:5  odpad                , ;
+                                                                                                   6:6  dod·nÌ zboûÌ poskytnutÈho p˘vodnÏ jako z·ruka,  ;
+                                                                                                   7:7  dod·nÌ zboûÌ po postoupenÌ v˝hrady vlastnictvÌ, ;
+                                                                                                  11:11 emisnÌ povolenky     , ;
+                                                                                                  12:12 obiloviny            , ;
+                                                                                                  13:13 kovy                 , ;
+                                                                                                  14:14 mobilnÌ telefony     , ;
+                                                                                                  15:15 integrovanÈ obvody   , ;
+                                                                                                  16:16 p¯enosn· za¯ÌzenÌ pro aut.zpracov·nÌ dat, ;
+                                                                                                  17:17 videohernÌ konzole, ;
+                                                                                                  18:18 dod·nÌ certifik·t˘ elekt¯iny, ;
+                                                                                                  19:19 dod·nÌ elekt¯iny soustavami nebo sÌtÏmi obchodnÌkovi,   ;
+                                                                                                  20:20 dod·nÌ plynu soustavami nebo sÌtÏmi obchodnÌkovi,       ;
+                                                                                                  21:21 poskytnutÌ vymezen˝ch sluûeb elektronick˝ch komunikacÌ )
+
+
+** DPHKOHHD
+  TYPE(FIELD) NAME(cTYPKONTHL)  DESC(Typ kontrolnÌho hl·öenÌ k DPH)      CAPTION(TypKoHlDPH)      FTYPE(C) FLEN( 1) DEC(0) VALUES(B:¯·dnÈ                    , ;
+                                                                                                                                  O:¯·dnÈ opravnÈ            , ;
+                                                                                                                                  N:n·slednÈ                 , ;
+                                                                                                                                  E:n·slednÈ opravnÈ )
+
+  TYPE(FIELD) NAME(cRychOdpov)  DESC(Rychl· odpovÏÔ)                     CAPTION(RychlOdp)        FTYPE(c) FLEN( 1) DEC(0) VALUES( :                                             , ;  
+                                                                                                                                  B:Nem·m povinnost podat KH (nulovÈ KH)         , ; 
+                                                                                                                                  P:Potvrzuji spr·vnost naposledy podanÈho KH)  
+
+** DPHKOHIT
+  TYPE(FIELD) NAME(nKODREZPLN)  DESC(KÛd reûimu plnÏnÌ)                  CAPTION(KÛdReûPlnÏ)      FTYPE(n) FLEN( 2) DEC(0) VALUES(0:bÏûnÈ plnÏnÌ                  , ;
+                                                                                                                                  1:ß 89 ZDPH - cestovnÌ sluûba   , ;
+                                                                                                                                  2:ß 90 ZDPH - pouûitÈ zboûÌ )
+
+  TYPE(FIELD) NAME(cParagr44)   DESC(Paragraf 44)                        CAPTION(Paragr44)        FTYPE(c) FLEN( 1) DEC(0) VALUES(N:nejedn· se o ß 44 ZDPH        , ;
+                                                                                                                                  A:jedn· se o ß 44 ZDPH )
+
+
+*
+* PER
+** 
+  TYPE(FIELD) NAME(cTypDucReg)  DESC(Typ d˘chodu pro registr »SSZ)  CAPTION(typD˘chSoc) FTYPE(c) FLEN( 1) DEC(0) VALUES(  :bez d˘chodu                                     , ;
+                                                                                                                1:starobnÌ                                        , ;
+                                                                                                                2:invalidnÌ 3.stupnÏ                              , ;
+                                                                                                                8:invalidnÌ 1. nebo 2.stupnÏ                      , ;
+                                                                                                                A:cizÌ-charakteru starobnÌho                      , ;
+                                                                                                                B:cizÌ-charakteru invalidnÌho 3.stupnÏ            , ;
+                                                                                                                C:cizÌ-charakteru invalidnÌho 1. nebo 2.stupnÏ )
+
+
+  TYPE(FIELD) NAME(cTypRodPri)  DESC(Vztah rodinÈho p¯ÌsluönÌka)  CAPTION(vztRodP¯Ìs) FTYPE(c) FLEN( 10) DEC(0) VALUES(:bez vztahu                          , ;
+                                                                                                                   manzel:manûel                           , ;
+                                                                                                                   manzelka:manûelka                       , ;
+                                                                                                                   syn:syn                                 , ;
+                                                                                                                   dcera:dcera                             , ;
+                                                                                                                   otec:otec                               , ;
+                                                                                                                   matka:matka                             , ;
+                                                                                                                   vnuk:vnuk                               , ;
+                                                                                                                   vnucka:vnuËka                           , ;
+                                                                                                                   druh:druh                               , ;
+                                                                                                                   druzka:druûka                           , ;
+                                                                                                                   regpart:registrovan˝ partner            , ;
+                                                                                                                   regpart_a:registrovan· partnerka )
+
+
+*
+* MZD
+** 
+  TYPE(FIELD) NAME(nAutoGen)  DESC(Typ gener.-import.doklad˘)  CAPTION(GenImpDokl) FTYPE(n) FLEN( 1) DEC(0) VALUES( 0:ruËnÏ po¯Ìzen˝ doklad                , ;
+                                                                                                                    1:generovan˝ doklad HM [M]             , ;
+                                                                                                                    2:aut.generovanÈ prÈmie [P]            , ;
+                                                                                                                    3:v˝poËet danÏ - p¯eplatek [N]         , ;
+                                                                                                                    5:import z v˝roby [V]                  , ;
+                                                                                                                    6:import z doch·zky [D] )
+
+  TYPE(FIELD) NAME(nTypVypVNU)  DESC(Typ v˝poËtu p¯i VNU ˙Ëtov·nÌ) CAPTION(TypV˝poËVNU) FTYPE(n) FLEN( 1) DEC(0) VALUES( 0:nepoËÌt· se ,       ;
+                                                                                                                         1:hodiny * sazba,     ;
+                                                                                                                         2:mnoû.pr·ce * sazba, ;
+                                                                                                                         3:hrub· mzda * sazba )
+
+  TYPE(FIELD) NAME(nTypNulVNU)  DESC(Typ nulov·nÌ p¯i v˝poËtu VNU) CAPTION(TypNulovVNU) FTYPE(n) FLEN( 1) DEC(0) VALUES( 0:nevyuûÌv· se )
+
+
+*
+*SYS
+*
+** ASYSINFO
+
+  TYPE(FIELD) NAME(ZPUSOBEDT)  DESC(Zp˘sob editace)           CAPTION(Zp˘sobEdt)    FTYPE(N) FLEN( 1) DEC(0) ;
+              VALUES( 0: zak·zan· editace, 1: povolen· editace)
+
+*
+* STAVDOKLADU
+  TYPE(FIELD) NAME(cStavDokl)  DESC(KÛd stavu dokladu)        CAPTION(KÛdStavuDok) FTYPE(C) FLEN( 2) DEC(0) VALUES( :Neuveden    ,;
+                                                                                                                         U:Uzav¯en˝    ,;
+                                                                                                                         R:Rozpracovan˝,;
+                                                                                                                         K:K objedn·nÌ, ;
+                                                                                                                         O:Objedn·no,   ;
+                                                                                                                         S:Stornov·no   ) 
+
+*
+* ZPUSOB DISTRIBUCE
+  TYPE(FIELD) NAME(nDistrib)  DESC(Zp˘sob distribuce)         CAPTION(ZpusDistr)   FTYPE(N) FLEN( 1) DEC(0) VALUES( 0:0 - Nedistribuje se,            ;
+                                                                                                                    1:1 - Vûdy se p¯episuje,          ;
+                                                                                                                    2:2 - P¯id· se pokud neexistuje,  ;
+                                                                                                                    3:3 - ZruöÌ se pokud existuje,    ;
+                                                                                                                    4:4 - P¯id· se jen pokud pr·zdn· DB ) 
+
+*
+* TYPY AUTOMATICKY GENEROVAN›CH DOKLADU
+  TYPE(FIELD) NAME(cAUTGENDOK)  DESC(Typy auto.gen.doklad˘)   CAPTION(TypAutGenDok)   FTYPE(C) FLEN( 3) DEC(0) VALUES(  E01:E01-Doklad vytvo¯en˝ z fakturace,              ;
+                                                                                                                        E02:E02-Fakturace z obj.p¯ijatÈ,                   ;
+                                                                                                                        F01:F01-Hromadn· fakturace z obj.p¯ij. za oblasti, ;
+                                                                                                                        M01:M01-Doklady ze mzdov˝ch lÌstk˘ z v˝roby,       ;
+                                                                                                                        M02:M02-Doklady z doch·zky zamÏstnanc˘,            ;
+                                                                                                                        M03:M03-Doklady z roËnÌho vy˙Ëtov·nÌ danÏ,         ;
+                                                                                                                        I01:I01-Generovan˝ mÏsÌËnÌ odpis )
+
+
+*
+* STAVY
+* 
+* STAV DOKLADU
+  TYPE(FIELD) NAME(nStav_Dokl)  DESC(KÛd stavu dokladu)        CAPTION(KÛdStavuDok) FTYPE(N) FLEN( 1) DEC(0) VALUES( 0:Otev¯en˝   ,;
+                                                                                                                     1:Rozpracovan˝,;                                                                                                                                                                      
+                                                                                                                     9:Uzav¯en˝   ) 
+
+
+* STAV POLOéKY DOKLADU
+  TYPE(FIELD) NAME(nStav_Polo)  DESC(KÛd stavu poloûky)        CAPTION(KÛdStavuPol) FTYPE(N) FLEN( 1) DEC(0) VALUES( 0:Otev¯en·   ,;
+                                                                                                                     1:Rozpracovan·,;                                                                                                                                                                
+                                                                                                                     9:Uzav¯en·   ) 
+
+
+* STAV KOMUNIKACE
+  TYPE(FIELD) NAME(nStav_Komu)  DESC(KÛd stavu komunikace)     CAPTION(KÛdStavuKom) FTYPE(N) FLEN( 1) DEC(0) VALUES( 0:Bez komunikace,;
+                                                                                                                     1:Exportovan˝,;                                                                                                                                                                            2:Importovan˝,;
+                                                                                                                     3:Synchronizovat,;
+                                                                                                                     4:Synchronizovan˝,;
+                                                                                                                     5:Znovu odeslat ) 
+
+* STAV NABÕDKY VYSTAVEN…
+  TYPE(FIELD) NAME(nStav_NABV)  DESC(Stav NABV)              CAPTION(StavNabV)      FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan·,;
+                                                                                                                      1:Exportovan˝,;                                                                                                                                                             
+                                                                                                                      2:Importovan˝  )
+
+* STAV FAKTURY VYDAN…
+  TYPE(FIELD) NAME(nStav_FAKV)  DESC(Stav FAKT)              CAPTION(StavFaktV)     FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:K fakturaci,;
+                                                                                                                      1:»·steËnÏ fakturovan·,;                                                                                                                                                    
+                                                                                                                      2:VyfakturovanÈ  )
+
+* STAV DODACÕHO LISTU VYSTAVEN…HO 
+  TYPE(FIELD) NAME(nStav_DLV)   DESC(Stav DLV)               CAPTION(StavDodLV)     FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan˝,;
+                                                                                                                      1:»·steËnÏ vydod·no,;                                                                                                                                                   
+                                                                                                                      2:Vydod·no  )
+
+* STAV DODACÕHO LISTU PÿIJAT…HO 
+  TYPE(FIELD) NAME(nStav_DLP)   DESC(Stav DLP)               CAPTION(StavDodLP)     FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan˝,;
+                                                                                                                      1:»·steËnÏ dod·no,;                                                                                                                                                             
+                                                                                                                      2:Dod·no  )
+
+
+* STAV OBJEDN¡VKY PÿIJAT…
+  TYPE(FIELD) NAME(nStav_OBJP)  DESC(Stav OBJP)              CAPTION(StavObjP¯)     FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan·,     ;
+                                                                                                                      1:»·steËnÏ dod·no, ;
+                                                                                                                      2:Dod·no,          ; 
+                                                                                                                      4:K odsouhlasenÌ,  ; 
+                                                                                                                      5:Odsouhlasen· )
+
+* STAV EXPEDI»NÕHO LISTU VYSTAVEN…HO 
+  TYPE(FIELD) NAME(nStav_EXLV)  DESC(Stav EXLV)              CAPTION(StavExLiVy)    FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan˝,;
+                                                                                                                      1:»·steËnÏ expedovan˝; 
+                                                                                                                      2:Vyexpedovan˝  )
+
+
+* STAV V›ROBNÕ ZAK¡ZKY 
+  TYPE(FIELD) NAME(nStav_VYRZ)  DESC(Stav VYRZ)              CAPTION(StavVyrZak)    FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan·,;
+                                                                                                                      1:»·steËnÏ vykryt·,;                                                                                                                                                                
+                                                                                                                      2:Vykryt·  )
+
+* STAV KUPNÕ SMLOUVY 
+  TYPE(FIELD) NAME(nStav_KSMV)  DESC(Stav KSMV)              CAPTION(StavKSmV)      FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan·,;
+                                                                                                                      1:Podepsan·,;                                                                                                                                                                                              2:Z realizovan·,;
+                                                                                                                      3:Potvrzen· )
+
+* STAV SKLADOV… V›DEJKY 
+  TYPE(FIELD) NAME(nStav_SVYD)  DESC(Stav SVYD)              CAPTION(StavSVyd)      FTYPE(n) FLEN( 1) DEC( 0) VALUES( 0:Zaevidovan·,;
+                                                                                                                      1:»·steËnÏ dod·no,; 
+                                                                                                                      2:Dod·no  )
+
+* STAV ZAK¡ZKY - v˝robnÌ
+  TYPE(FIELD) NAME(cStavZAKAZ)  DESC(Stav zak·zky)           CAPTION(StavZakaz)     FTYPE(c) FLEN( 1) DEC( 0) VALUES(  :Nedefinov·n,;
+                                                                                                                      0:Nov· zak·zka-vyr.poloûka neexistuje ,; 
+                                                                                                                      1:Stornovan· zak·zka,; 
+                                                                                                                      2:ProbÌh· konstrukËnÌ schv·lenÌ,; 
+                                                                                                                      3:Vyr·bÏn· poloûka nenÌ schv·len·,; 
+                                                                                                                      4:Vyr·bÏn· poloûka je schv·len·,; 
+                                                                                                                      5:P¯ed·ny Ë·steËnÈ v˝robnÌ podklady,; 
+                                                                                                                      6:P¯ed·ny kompletnÌ v˝robnÌ podklady,; 
+                                                                                                                      7:Vyrobena z Ë·sti,; 
+                                                                                                                      8:Vyrobena cel· a odvedena,; 
+                                                                                                                      U:UkonËen· zak·zka  )

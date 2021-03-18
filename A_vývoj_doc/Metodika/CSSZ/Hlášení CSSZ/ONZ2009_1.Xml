@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<ONZ version="2009.1" xmlns="http://schemas.cssz.cz/ONZ2009">
+   <employee sqnr="1" dep="894" act="1" fro="2013-05-16" dat="2013-05-16" ver="2">
+       <client bno="8301314791">
+           <name sur="Pospíchal" ona="" fir="Ondřej" tit="Ing."/>
+           <birth dat="1983-01-31" nam="Pospíchal" cit="Nové Město na Moravě"/>
+           <stat mal="1" cnt=""/>
+           <adr str="Nížkov" num="173" pnu="59212" cit="Nížkov" cnt="CZ" pos="Nížko"/>
+             <fdr cit="" str="" num="" pnu=""/>
+           <cdr str="Nížkov" num="173" pnu="59212" cit="Nížkov" cnt="CZ" pos="Nížko"/>
+       </client>
+       <comp vs="8940101655" nvs="" id="45197164" nam="KOVAR s.r.o."/>
+       <job fro="2013-05-02" to="" rel="1" per="CZ" sme="N"/>
+       <forin nam="" str="" num="" pnu="" cit="" cnt="" id="" cur=""/>
+       <pens typ="" tak=""/>
+       <insh cnr="111"/>
+       <inso nam=""/>
+       <insp nam=""/>
+   </employee>
+</ONZ>

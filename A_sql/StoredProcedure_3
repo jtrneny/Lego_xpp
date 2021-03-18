@@ -1,0 +1,35 @@
+The Advantage v10 beta  includes a variety of performance improvements directly targeting stored 
+procedure performance. Here are some things to consider with the current shipping version, however:
+
+In your CreateItems procedure it would likely be more efficient to replace
+
+@MainName  = (SELECT MainName  FROM __input);
+@SubName   = (SELECT SubName   FROM __input);
+@MainValue = (SELECT MainValue FROM __input);
+@SubValue  = (SELECT SubValue  FROM __input);
+
+with the use of a single cursor to retrieve all parameters:
+
+DECLARE input CURSOR; 
+OPEN input as SELECT * from __input;
+FETCH input;
+@MainName  = input.MainName;
+@SubName   = input.SubName;
+@MainValue = input.MainValue;
+@SubValue  = input.SubValue;
+CLOSE input;
+
+That will avoid 3 statement parse/semantic/optimize/execute operations just to retrieve the input 
+parameters (I know, we really need to eliminate the __input table altogether).
+
+The SelectItems procedure is rarely ever going to be as fast as a select from the client, especially in this 
+case where it really isn't doing anything except abstracting a parameter value (which can easily be done on the client). 
+Remember that because it is a JOIN, the SELECT to fill the __output table is going to be a static cursor 
+(meaning an internal temporary file for the server to create and fill), but now in addition you have the __output table 
+which is yet another temporary file for the server, plus you have additional overhead to populate this __output table with 
+data that has already been place in the static cursor temp table, just for the sake of duplicating it 
+(server could do a better job of detecting this and replacing __output with the existing static cursor reference, but it currently doesn't).
+
+I will try to make some time to try your procedures on version 10. 
+If you have the test tables you used in your testing feel free to zip them up and send them to Advantage@iAnywhere.com and put attn:JD 
+in the subject.

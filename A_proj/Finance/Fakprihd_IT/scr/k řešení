@@ -1,0 +1,21 @@
+ 1 - z èeho uživatel bude tvoøit položku, jak se rozhodne 
+ 2 - položku bude muset dohledávat jen podle textu 
+ 3 - vedlejší náklady
+ 4 - na FA je 5 položek 3 - udìlá tak aby se generovala pøíjemka
+                        2 - neví co s nimi, udìlá je jednou položkou s DPH
+     ? skladová pøíjemnka bude špatnì
+ 5 - slevy za fakturu jak poèítat
+ 6 - slevy na položku jak poèítat
+ 7 - celní faktura nápoèet do šuflat
+ 8 - DPH editovatelné, které
+ 9 - asi budou potøebovat zadat cenu vè. DPH a my ji musíme vypoèítat
+10 - jak vyøešit podrozvahu  
+11 - asi to nej zachováme nìjak stávající vstup, nebo ho odkloníme do nového poøízení, starý nebude existovat
+12 - zaokrouhlení faktury
+13 - tyto položky otevøít pro editaci
+
+     TYPE(TEXT) NAME(FAKVYSITw->ncenzakcel) CPOS(29,7.3) CTYPE(2) CLEN(14)                          GROUPS(FAK,SETFONT,8.Cambria,GRA_CLR_RED)  PICTURE(@N 9999999999.99)
+GET     TYPE(TEXT) NAME(FAKVYSITw->nsazdan)    CPOS(77,7.3) CTYPE(2) CLEN(14)                          GROUPS(FAK,SETFONT,8.Cambria,GRA_CLR_RED)  PICTURE(@N 9999999999.99)
+     TYPE(TEXT) NAME(FAKVYSITw->ncenzakced) CPOS(93,7.3) CTYPE(2) CLEN(14)                          GROUPS(FAK,SETFONT,8.Cambria,GRA_CLR_RED)  PICTURE(@N 9999999999.99)
+
+14 - kde a jak zadat krácení

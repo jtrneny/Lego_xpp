@@ -1,0 +1,4034 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Dosis:400,700|Open+Sans+Condensed:300,300italic,700&subset=latin,latin-ext);
+
+
+
+@media print {
+
+  @page:first {
+    
+  }  
+
+  @page {
+
+  }  
+
+  body {
+    position: relative;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    margin-left: 10pt;
+    margin-right: 10pt;
+    font-family: 'Open Sans', monospace !important; 
+    font-size: 0.75em;
+   /* puvodni velikost je mala font-size: 9pt; */
+
+  }
+
+  .logo_claim {
+    position: relative;
+    margin-top: 15px;
+    
+  }
+
+}
+br {
+  display: block;
+}
+
+
+
+clanek-text {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 7pt;
+}
+
+
+
+conversion-group {
+  display: block;
+}
+
+
+
+conversion {
+  display: block;
+}
+
+definice {
+  display: block;
+  margin-top: 10;
+  margin-bottom: 10;
+/* puvodne bylo kurzivou - detail uctovy osnovy  font-style: italic; */
+}
+
+judikatura {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+judikatura-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+meritum-nazev {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 10pt;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+meritum-rok {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+dil {
+  margin-top: 15pt;
+  margin-bottom: 25pt;
+  display: block;
+}
+
+dil-cislo {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 7pt;
+  text-align: center;
+  font-size: 10pt;
+  color: #336633;
+}
+
+dil-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 9pt;
+  text-align: center;
+  
+}
+
+oddil {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 25pt;
+  display: block;
+}
+
+oddil-cislo {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 7pt;
+  text-align: center;
+  font-size: 9pt;
+  color: #336633;
+  font-style: italic;
+}
+
+oddil-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 9pt;
+  text-align: center;
+  
+}
+
+hlava {
+  margin-top: 15pt;
+  margin-bottom: 25pt;
+  display: block;
+}
+
+hlava-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 9pt;
+  text-align: center;
+  
+}
+
+hlava-cislo {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 7pt;
+  text-align: center;
+  font-size: 10pt;
+  color: #336633;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+cast {
+  display: block;
+/* kvuli velkemu odsazeni ?modul=li&cislo=205322  margin-top: 15pt;
+  margin-bottom: 25pt;  */
+}
+
+cast-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+/*zruseno kvuli velikemu odsazeni v ?modul=li&cislo=205322  margin-top: 37pt; */
+  font-weight: bold;
+}
+
+cast-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 9pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+cast-nadpis {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+
+aspionline {
+  margin-left: 20pt;
+/*zdroj je moc daleko od textu  margin-right: 20pt;*/
+  font-family: 'Open Sans', monospace !important;
+/* puvodni  font-size: 10pt; prevadim na em*/
+  font-size: 1em;
+}
+clanek-perex {
+   font-weight: bold;
+   display: block;
+   margin-top: 10pt;
+   margin-bottom: 15pt;
+
+}
+
+clanek-nazev {
+
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  font-size: 1.6em;
+  color: #336633;
+
+}
+
+
+
+
+kapitola {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+kapitola-cislo {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 7pt;
+  font-size: 9pt;
+  color: #336633;
+}
+
+kapitola-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+
+
+podkapitola {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+podkapitola-cislo {
+  display: inline;
+  font-weight: bold;
+  font-size: 8pt;
+  color: #336633;
+}
+
+podkapitola-nazev {
+  display: inline;
+}
+
+mclanek {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+mclanek-cislo {
+  display: inline;
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+mclanek-nazev {
+  display: inline;
+}
+
+podclanek {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+podclanek-cislo {
+  display: inline;
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+podclanek-nazev {
+  display: inline;
+}
+
+priklad {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+/* zruseni odsazeni   margin-left: 20pt; 
+  margin-right: 20pt; 
+  margin-top: 10pt;
+  margin-bottom: 10pt; */
+  color: #000000;
+/* priklad color puvodni  color: #666; */
+}
+
+/* odsazeni textu v prikladu, kurziva */
+priklad > odstavec
+{
+  text-indent: 0;
+  font-style: italic;
+}
+
+/* zruseni kurzivy v prikladu <pre> */
+priklad > odstavec > pre
+{
+  font-style: normal;
+}
+
+/* kurziva v prikladu <odrazky> */
+priklad odrazka
+{
+  font-style: italic;
+}
+
+
+
+priklad-nazev{
+	
+  display: block;
+/* zruseni odsazeni  text-indent: 30pt; */
+  margin-top: 15pt;
+  margin-bottom: 5pt;
+  text-align: justify;
+  font-weight: bold;
+  color: #000000;
+/* puvodni barva  color: #347ab6; */
+}
+
+priklad-reseni{
+
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 10pt;
+  text-align: justify;
+  font-size: 1.0em;
+  
+}
+
+clanek-podnazev{
+
+  display: block;
+  text-align: center;
+/*  font-weight: bold; */
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+  font-size: 1.4em;
+  color: #336633;
+
+}
+
+clanek-autor {
+  display: block;
+  text-align: center;
+}
+ 
+meritum-autor {
+  display: block;
+}
+
+autor-titul-pred {
+  display: inline;
+  font-size: 1.0em;
+  color: #666;
+}
+
+autor-titul-za {
+  display: inline;
+  font-size: 1.0em;
+  color: #666;
+  font-weight: bold;
+}
+
+autor-pracoviste {
+  display: inline;
+  font-size: 1.0em;
+  color: #666;
+}
+
+
+autor-jmeno {
+  display: inline;
+  font-size: 1.0em;
+  color: #666;
+}
+
+autor-prijmeni {
+  display: inline;
+  font-size: 1.0em;
+  font-weight: bold;
+  color: #666;
+}
+
+odstavec {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  text-align: justify;
+} 
+
+citace {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 10pt;
+  text-align: justify;
+  margin-left: 30pt;
+  margin-right: 30pt;
+  font-style: italic;
+}
+
+citace-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+} 
+
+link {
+  display: inline;
+  text-decoration: underline;
+  color: #001dc4;
+}
+
+linkpoj {
+  display: inline;
+  text-decoration: underline;
+  color: #00bc55;
+}
+
+image {
+  display: block;
+  margin-left: 30pt;
+  color: #ff6633;
+  text-decoration: underline;
+}
+
+nazev-1{	
+  display: block;
+  text-align: left;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #347ab8;
+  text-transform: uppercase; /*kapitalky alias velka pismena nazvu-1*/
+}
+
+nazev-2 {
+  display: block;
+  text-align: justify;
+  margin-top: 15pt;
+  margin-bottom: 5pt;
+  font-weight: bold;
+  font-size: 1.15em;
+  color: #347ab8;
+/* puvodni barva  color: #336633; */
+}
+
+nazev-3 {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 5pt;
+  text-align: justify;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+marginalie{
+  display: block;
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  font-size: 1.0em;
+  text-align: right;
+}
+
+
+odrazky-symboly{
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 30pt;
+  text-align: justify;
+  margin-top: 7pt;
+}
+
+vyklad {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 7pt;
+}
+
+/* zniceni velkych mezer pri <definice> <vyklad> */
+aspionline > meritum > kapitola > definice, vyklad
+{
+  margin-top: 0pt;
+}
+
+odrazky-pismena{
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 30pt;
+  text-align: justify;
+
+}
+
+odrazky-cisla {
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 30pt;
+  text-align: justify;
+
+}
+
+odrazky-specialni {
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 30pt;
+  text-align: justify;
+
+}
+
+odrazka {
+  margin-top: 10px;
+  display: block;
+}
+
+/*odrazka-symbol{
+  display: inline;
+  margin-left: 20pt;
+  font-size: 1.0em;
+  margin-bottom: 15pt;
+} */
+
+odrazka-obsah{
+  display: inline;
+  text-align: justify;
+  margin-bottom: 0pt;
+  margin-left: 10pt;
+  text-indent: 0px;  
+} 
+
+marginalni-cislo {
+  display: inline;
+  font-weight: bold;
+}
+
+marginalni-cislo-pokracovani {
+  display: inline;
+  font-weight: bold;
+}
+
+b{
+   font-weight: bold;
+}
+
+index-dolni {
+  display: inline;
+  position: relative;
+  font-size: 0.85em;  
+/* blbe posunuti indexu  top: 05em; */
+}
+
+index-horni {
+  display: inline;
+  position: relative;
+  font-size: 0.85em;  
+  top: -05em;  
+}
+
+poznamka{
+/*zruseni pro zarovnani s ostatnim textem  display: block;   
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  color: #666;*/
+  text-align: justify;
+  font-size: 1.0em;
+}
+
+poznamka > odstavec
+{
+   text-indent: 0;
+}
+
+/*zruseni poznamka-nazev{
+  display: block;
+  font-weight: bold;
+  color: #000033;
+  margin-top: 10pt;
+}*/
+
+i {
+   font-style:italic;
+}
+
+cislo-uctu {
+   font-style:italic;
+}
+
+odkaz-na-poznamku-pod-carou {
+  display: inline;
+  color: #001dc4;
+  font-size: 0.9em;
+  position: relative;
+  top: -05em;
+}
+
+poznamky-pod-carou {
+  display: block;
+  margin-top: 15pt;
+}
+
+
+poznamka-pod-carou
+{
+  display: block;
+  text-align: justify;
+  font-size: 0.90em;
+  margin-top: 7pt;
+  color: #800000;
+}
+
+preskrtnuti{
+text-decoration: line-through;
+}
+
+pre {
+  white-space: pre;
+  display: block;
+  font-family: "Courier New" !important; 
+  font-size: 7pt;
+  text-indent: 0px;
+  word-wrap: Normal;
+}
+
+footnote {
+  display: block;
+  text-align: justify;
+  font-size: 098em;
+  margin-top: 7pt;
+  color: #800000;
+}
+
+lfoot {
+  display: block;
+  margin-top: 15pt;
+}
+
+sup {
+  display: inline;
+  color: #001dc4;
+/*zmenseni pisma font-size: 0.9em;  */
+  position: relative;
+/*zruseni odsazeni poznamek pod carou  top: -05em; */
+}
+
+pridano{
+  display:inline;
+  font-style:italic;
+  font-weight:bold;
+  
+}
+
+
+upozorneni {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+upozorneni-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+vyjimka {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+vyjimka-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+vzor {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+vzor-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+/* ZACATEK KOMENTAROVEHO CSS */
+komentar-priklad-reseni  {
+ font-weight: bold;
+ display: block;
+}
+komentar-autori{
+  text-align: center;
+  display:block;
+}
+komentar-autor{
+  text-align: center;
+  display:block;
+}
+komentar-predpis-nadpis{
+  text-align: center;
+  font-weight: bold;
+  display:block;
+}
+komentar-paragraf-nadpis{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  display:block;
+}
+komentar-oddil-nadpis{
+  text-align: center;
+  display:block;
+}
+komentar-body{
+  margin: 10pt;
+  text-align: justify;
+  display:block;
+}
+komentar-k-cemu{
+  font-weight: bold;
+  display:block;
+}
+komentar-odstavec{
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  text-indent: 182em;
+  display:block;
+}
+komentar-souvisejici{
+  margin-left: 364em;
+  display:block;
+}
+komentar-souvisejici-nadpis{
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  font-weight: bold;
+  display:block;
+}
+komentar-vztahy{
+  margin-left: 182em;
+  display:block;
+}
+komentar-vztah{
+  margin-top:4pt;
+  margin-bottom:4pt;
+  display:block;
+}
+komentar-literatura{
+  margin-left: 182em;
+  display:block;
+}
+komentar-judikaty{
+  margin-left: 182em;
+  display:block;
+}
+komentar-biblio{
+  margin-top:4pt;
+  margin-bottom:4pt;
+  display:block;
+}
+komentar-judikatura{
+  margin-top:4pt;
+  margin-bottom:4pt;
+  display:block;
+}
+komentar-judikatura-celek{
+  margin-top:12pt;
+  display:block;
+}
+komentar-jud-p{
+  display:block;
+  text-indent: 20pt;
+  margin-bottom: 10pt;
+  margin-top: 10pt;
+}
+komentar-jud-pv{
+  display:block;
+}
+komentar-jud-vec{
+  font-weight: bold;
+  display:block;
+}
+komentar-priklad{
+  margin-left: 364em;
+  display:block;
+}
+komentar-priklad-nadpis{
+  font-weight: bold;
+  display:block;
+}
+komentar-p{
+  display:block;
+}
+komentar-priklad-p{
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  display:block;
+}
+komentar-spec{
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  margin-left: 364em;
+  display:block;
+}
+komentar-c-jud{
+  display:block;
+  font-style: italic;
+}
+komentar-c-predpis{
+  margin-top: 6pt;
+  margin-bottom: 6pt;
+  font-style: italic;
+  display:block;
+}
+
+komentar-sup {
+  display:inline;
+  color: #800000;
+  font-size: 0.85em;
+  position: relative;
+  top:-05em;
+}
+
+komentar-judikatura-nadpis {
+  display:inline;
+  font-weight: bold;
+}
+komentar-kl-veta {
+  display:inline;
+  font-weight: bold;
+}
+komentar-odstavec-cislo {
+  display:block;
+  margin-top: 6pt;
+  margin-left: -28pt;
+  font-weight: bold;
+}
+b-nazev {
+  display:inline;
+  font-style: italic;
+}
+b-periodikum {
+  display:inline;
+  font-style: italic;
+}
+komentar-citace {
+  display:inline;
+  font-style: italic;
+}
+komentar-cizijazyk {
+  display:inline;
+  font-style: italic;
+}
+b-prijmeni {
+  display:inline;
+}
+
+b-autor {
+  display:inline;
+}
+
+b-jmeno {
+  display:inline;
+}
+b-rok {
+  display:inline;
+}
+b-cislo-casti  {
+  display:inline;
+}
+
+b-nakladatel {
+  display:inline;
+}
+
+b-misto{
+  display:inline;
+}
+
+b-st-cislo{
+  display:inline;
+}
+
+b-rozsah{
+  display:inline;
+}
+
+b-vydani{
+  display:inline;
+}
+
+b-rocnik{
+  display:inline;
+}
+
+komentar-odstavec-text {
+ display:inline;
+}
+b-autori {
+ display:inline;
+}
+b-podrizena-odpovednost {
+ display:inline;
+}
+b-edice {
+ display:inline;
+}
+b-poznamky {
+ display:inline;
+}
+b-lokace {
+ display:inline;
+}
+b-dostupnost {
+ display:inline;
+}
+b-in {
+ display:inline;
+}
+b-podnazev {
+ display:inline;
+}
+b-cast-podnazev {
+ display:inline;
+}
+b-cast-nazev {
+ display:inline;
+}
+b-vydavani-udaje {
+ display:inline;
+}
+b-patent-zeme {
+ display:inline;
+}
+b-patent-druh {
+ display:inline;
+}
+b-patent-cislo {
+ display:inline;
+}
+b-patent-datum {
+ display:inline;
+}
+b-medium {
+ display:inline;
+}
+b-citace-datum {
+ display:inline;
+}
+b-vydani-datum {
+ display:inline;
+}
+b-aktualizace-datum {
+ display:inline;
+}
+b-cislovani {
+ display:inline;
+}
+b-cislo-svazku  {
+ display:inline;
+}
+b-zdroj-podnazev {
+ display:inline;
+}
+b-zdroj-nazev {
+ display:inline;
+}
+b-periodikum-podnazev  {
+ display:inline;
+}
+b-zdroj-autori {
+ display:inline;
+}
+
+komentar-odchylka-nadpis {
+  display:block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15pt;
+  margin-bottom: 3pt;
+}
+
+komentar-odchylka-predpis {
+  display:block;
+  font-style: italic;
+  margin-top: 7pt;
+}
+
+komentar-odchylka-vysvetleni {
+  display:block;
+}
+
+komentar-odchylka-paragraf {
+  display:inline;
+  font-style: italic;
+}
+
+komentar-nadpis  {
+  display:block;
+  font-weight: bold;
+  margin-top: 3pt;
+}
+
+komentar-podnadpis  {
+  display:block;
+  font-weight: bold;
+  margin-top: 3pt;
+}
+
+odrazka-p {
+  display: block;
+  text-align: justify;
+}
+
+b-jako {
+  display: block;
+  text-align: justify;
+}
+
+
+image {
+  display: block;
+  text-decoration: underline;
+  color: #4040FF;
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  text-align: left;
+}
+
+/* u image nesmi byt v navbaru margin-top, v ie to navbar roztahuje */
+.navbar-brand > image
+{
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+
+adresat {
+  text-align: left;
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+}
+
+adresat-funkce {
+  text-align: left;
+  display: block;
+  margin-bottom: 3pt;
+}
+
+adresat-jmeno {
+  text-align: left;
+  display: block;
+  margin-bottom: 3pt;
+}
+
+adresat-osloveni {
+  text-align: left;
+  display: block;
+  margin-bottom: 3pt;
+}
+
+adresat-misto {
+  text-align: left;
+  display: block;
+  margin-bottom: 3pt;
+}
+
+adresat-stat {
+  text-align: left;
+  display: block;
+  margin-bottom: 3pt;
+}
+
+bod {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 22pt;
+}
+
+aspi {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  margin-left: 15pt;
+  margin-right: 15pt;
+  font-family: 'Open Sans', monospace !important;
+  font-size: 1.0em;
+}
+
+autor {
+  display: inline;
+  text-align: left;
+  margin-bottom: 22pt;
+}
+
+bod-text {
+  display: block;
+  text-indent: 15pt;
+  margin-bottom: 10pt;
+  margin-top: 13pt;
+  text-align: justify;
+}
+
+bod-uvod {
+  display: block;
+  text-indent: 15pt;
+  margin-top: 12pt;
+  margin-bottom: 7pt;
+  text-align: justify;
+}
+
+bod-zaver {
+  display: block;
+  margin-top: 12pt;
+  text-align: justify;
+}
+
+vztah {
+  display: block;
+  text-align: left;
+  margin-bottom: 10pt;
+}
+
+
+clanek {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 30pt; /*puvodne 37*/
+}
+
+clanek-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  font-size: 1.2em;
+  margin-bottom: 10pt;
+}
+
+clanek-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+clanek-group-nadpis {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+clanek-nadpis {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+odstavec {
+/* zruseni odsazeni odstavcu na LI  text-indent: 30pt; */
+/* mezery mezi odstavci margin-top: 18pt; */
+  display: block;
+  text-align: justify;
+}
+
+pismeno {
+  display: block;
+  text-indent: -15pt;
+  margin-left: 30pt;
+  margin-top: 4pt;
+  text-align: justify;
+}
+
+datum-misto {
+  display: block;
+  text-align: left;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+}
+
+datum {
+  text-align: right;
+  display: block;
+  margin-bottom: 4pt;
+}
+
+datum-schvaleni {
+  text-align: center;
+  display: block;
+  margin-bottom: 4pt;
+}
+
+dil {
+  display: block;
+  margin-top: 30pt;
+  margin-bottom: 37pt;
+/*  text-indent: 22pt; */
+}
+
+dil-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+/* puvodni  font-size: 1.2em; */
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #347ab8;
+}
+
+dil-nadpis {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+dohoda {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+dohoda-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+dohoda-datum {
+  text-align: left;
+  display: block;
+  margin-bottom: 7pt;
+  margin-top: 7pt;
+  text-indent: 15pt;
+}
+
+dohoda-nadpis {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+souvisejici-ustanoveni {
+  display: block;
+  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+skutek-rozhodnuti {
+  text-align: left;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  font-size: 1em;
+}
+
+s-autor {
+  text-align: right;
+  display: block;
+}
+
+s-cislo {
+  margin-top: 5pt;
+  margin-bottom: 7pt;
+  display: block;
+  text-align: right;
+}
+
+s-datum {
+  color: fuchsia;
+}
+
+dopis {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+dopis-datum {
+  display: block;
+  text-align: right;
+}
+
+predpis-autor {
+  text-align: center;
+  display: block;
+  font-size: 1.3em;
+  margin-bottom: 4pt;
+  font-weight: bold;
+}
+
+predpis-cislo {
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 15pt;
+}
+
+predpis-druh {
+  text-align: center;
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 4pt;
+}
+
+predpis-nadpis {
+  display: block;
+  margin-bottom: 22pt;
+}
+
+predpis-nazev {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+uvodni-veta {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+  text-indent: 15pt;
+  text-align: justify;
+}
+
+body {
+  display: block;
+  margin-bottom: 7pt;
+  margin-top: 7pt;
+/*# font-family: 'Open Sans', monospace !important;*/
+}
+
+body {
+/*#  font-family: 'Open Sans', monospace !important; */
+}
+
+future_text {
+  display: block;
+  background-image: url('http://portalaspicz/img/zelenyjpg');
+  background-repeat:repeat-y;
+  background-position: center;
+}
+
+past_text {
+  display: block;
+  background-image: url('http://portalaspicz/img/cervenyjpg');
+  background-repeat:repeat-y;
+  background-position: center;
+}
+
+odstavec-group {
+  display: block;
+  text-indent: 7pt;
+}
+
+pismeno-group {
+  display: block;
+}
+
+podpisy {
+  margin-top: 37pt;
+  margin-bottom: 52pt;
+  display: block;
+}
+
+podpis {
+  display: block;
+  text-align: center;
+  margin-bottom: 18pt;
+}
+
+ucinnost {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  text-indent: 30pt;
+  text-align: justify;
+}
+
+podpismeno {
+  margin-left: 45pt;
+  text-indent: -15pt;
+  display: block;
+}
+
+link {
+  display: inline;
+  text-decoration: underline;
+  color: #4040FF;
+}
+
+paragraf {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+paragraf-cislo {
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 10pt;
+    margin-top: 22pt;
+}
+
+paragraf-nadpis {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+paragraf-vztah {
+  display: block;
+  text-align: center;
+  margin-bottom: 7pt;
+}
+
+priloha {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+priloha-cislo {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+}
+
+footnote {
+  display: block;
+  text-align: justify;
+  font-size: 0.9em;
+  margin-top: 10pt;
+/*#  color: #800000;*/
+}
+
+lfoot {
+  display: block;
+  margin-top: 22pt;
+}
+
+
+podpis-jmeno {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10pt;
+}
+
+pre {
+  white-space: pre;
+  display: block;
+  font-size: 0.8em;
+  font-family: "Courier New";
+}
+
+ifootnote {
+  display: block;
+  text-indent: 15pt;
+  text-align: justify;
+  font-size: 0.90em;
+  margin-bottom: 4pt;
+  color: #420000;
+}
+
+ifoot {
+  display: block;
+  margin-bottom: 15pt;
+  margin-top: 15pt;
+  margin-left: 30pt;
+}
+
+isup {
+  display: inline;
+  color: #420000;
+  font-size: 0.85em;
+  position: relative;
+  top: -05em;
+}
+
+podpis-funkce {
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  display: block;
+}
+
+priloha-nadpis {
+  text-align: center;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+trida {
+  display: block;
+  text-align: center;
+  margin-top: 7pt;
+  margin-bottom: 30pt;
+}
+
+oddil {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+oddil-cislo {
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+oddil-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+paragraf-group {
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  display: block;
+}
+
+paragraf-group-nadpis {
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+foot-bod {
+  display: block;
+  margin-left: 15pt;
+}
+
+foot-p {
+  display: block;
+  text-align: justify;
+  margin-top: 10pt;
+}
+
+
+foot-pismeno {
+  display: block;
+}
+
+foot-uvod {
+  display: block;
+  margin-bottom: 3pt;
+}
+
+head {
+  display: block;
+}
+
+hlava {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+hlava-cislo {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+hlava-nadpis {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+}
+
+info {
+  display: block;
+}
+
+ipriloha {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+kurziva {
+  display: inline;
+  font-style: italic;
+}
+
+bold {
+  display: inline;
+  font-style: bold;
+}
+
+podtrzene {
+  display: inline;
+  text-decoration: underline
+}
+
+tucne {
+  display: inline-block;
+  font-weight: bold;
+  text-indent: initial;
+}
+
+exp {
+  display: inline;
+}
+
+kontakt {
+  display: block;
+  margin-bottom: 3pt;
+}
+
+kontakty {
+  display: block;
+  margin-bottom: 22pt;
+}
+
+list {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 7pt;
+}
+
+list-nadpis {
+  display: block;
+  margin-bottom: 15pt;
+}
+
+
+list-podpolozka {
+  display: block;
+  margin-left: 60pt;
+  margin-top: 3pt;
+}
+
+list-polozka {
+  display: block;
+  margin-left: 30pt;
+  margin-top: 4pt;
+  text-align: justify;
+}
+
+list-uvod {
+  display: block;
+  margin-top: 15pt;
+  margin-bottom: 7pt;
+}
+
+ltree {
+  display: block;
+}
+
+novela {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+novela-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+oddil-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+oddil-group-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+opatreni {
+  display: block;
+}
+
+osloveni {
+  display: block;
+  margin-bottom: 15pt;
+  text-align: left;
+}
+
+podpismeno-group {
+  display: block;
+  margin-top: 3pt;
+  margin-bottom: 3pt;
+}
+
+pokyn {
+  display: block;
+}
+
+postup {
+  display: block;
+}
+
+preambula {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+preambula-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+preambula-text {
+  display: block;
+  text-indent: 15pt;
+  margin-top: 18pt;
+}
+
+predpis-vztah {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+}
+
+priloha-dokument {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 15pt;
+}
+
+rad {
+  display: block;
+}
+
+rozhodnuti {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+sdeleni {
+  display: block;
+}
+
+sdeleni-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  text-indent: 15pt;
+}
+
+seznam-nadpis {
+  display: block;
+  margin-bottom: 6pt;
+  text-align: center;
+  text-indent: 15pt;
+  font-size: 1.3em;
+}
+
+seznam {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+smlouva {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+smlouva-datum {
+  display: block;
+  text-align: left;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  text-indent: 15pt;
+}
+
+smlouva-dodatek {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+smlouva-dodatek-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+}
+
+smlouva-dodatek-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+smlouva-druh {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+smlouva-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+sup {
+  display: inline;
+  color: #800000;
+/*zmenseni pisma  font-size: 0.85em; */
+  position: relative;
+ /*zruseni odsazeni poznamek pod carou top: -05em; */
+}
+
+title {
+  display: block;
+}
+
+tree {
+  display: block;
+}
+
+version {
+  display: block;
+}
+
+versions {
+  display: block;
+}
+
+veta {
+  display: block;
+  text-indent: 15pt;
+  margin-top: 7pt;
+  text-align: justify;
+}
+
+vymer {
+  display: block;
+}
+
+vynos {
+  display: block;
+}
+
+vysvetlivky {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  font-size: 1.0em
+}
+
+vysvetlivky-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.0em;
+  text-align: left;
+}
+
+zasady {
+  display: block;
+}
+
+bod-ucinnost {
+  margin-bottom: 7pt;
+  text-indent: 15pt;
+  display: block;
+}
+
+kapitola {
+  margin-top: 25pt; /*puvodne 30*/
+  margin-bottom: 7pt; /* puvodne 37 */
+  display: block;
+}
+
+kapitola-nazev {
+  display: block;
+  margin-bottom: 7pt;
+/* puvodni velikost  font-size: 08em; */
+  font-weight: bold;
+  font-size: 1.6em;
+/*puvodni cervena  color: #e90b4e;*/
+/*nove modra*/
+  color: #347ab8;
+  text-align: center;
+}
+
+/* zvetseni mezer pro nadpis DS */
+aspionline > meritum > kapitola > kapitola-nazev
+{
+  margin-bottom: 20pt;
+}
+
+kapitola-cislo {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+/* puvodni velikost  font-size: 1.3em; */	
+  font-size: 1.5em;
+  color: #347ab8;
+  line-height: 1;
+}
+
+kapitola-nadpis {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+protokol {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+protokol-cislo {
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+protokol-nadpis {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 10pt;
+}
+
+protokol-podpis {
+  display: block;
+  text-align: left;
+  margin-top: 7pt;
+  text-indent: 15pt;
+}
+
+oznameni {
+  display: block;
+}
+
+doplnek-predpis {
+  display: block;
+}
+
+sazebnik {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+sazebnik-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+sazebnik-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+group-nadpis-center {
+  display: block;
+  text-align: center;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+vyhlaska {
+  margin-bottom: 2em;
+  display: block;
+}
+
+vyhlaska-nadpis {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+vyhlaska-tema {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+vyhlaska-text {
+  display: block;
+  font-style: italic;
+  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+prikaz {
+  display: block;
+}
+
+bod-polozka {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  text-indent: 15pt;
+}
+
+dodatek-predpis {
+  display: block;
+}
+
+dohoda-podpis {
+  margin-top: 7pt;
+  display: block;
+  text-indent: 15pt;
+  text-align: justify;
+}
+
+navod {
+  display: block;
+}
+
+group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+statut {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+statut-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+statut-nadpis {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10pt;
+  display: block;
+}
+
+dohoda-dodatek {
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  display: block;
+}
+
+dohoda-dodatek-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+dohoda-dodatek-nadpis {
+  text-align: center;
+  margin-bottom: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+seznam-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+smlouva-podpis {
+  margin-top: 7pt;
+  display: block;
+  text-indent: 15pt;
+}
+
+protokol-datum {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  text-indent: 15pt;
+}
+
+rad-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 22pt;
+  font-size: 1.2em;
+}
+
+rad-nadpis {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  margin-top: 22pt;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+pravidlo-nadpis {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+pravidlo-cislo {
+  text-align: center;
+  margin-bottom: 10pt;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+pravidlo {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+pokyn-cislo {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  margin-top: 22pt;
+  font-size: 1.3em;
+}
+
+pokyn-nadpis {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+zasady-cislo {
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+zasady-nadpis {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+graf {
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  display: block;
+  text-align: center;
+}
+
+graf-cislo {
+  margin-bottom: 10pt;
+  text-align: center;
+  display: block;
+  font-size: 1.3em;
+}
+
+graf-nadpis {
+  margin-bottom: 10pt;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+nota {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+nota-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+rozhodnuti-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+rozhodnuti-nadpis {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+index-dolni {
+  display: inline;
+  position: relative;
+/* blbe posunuti indexu  top: 05em;  */
+}
+
+index-horni {
+  display: inline;
+  position: relative;
+  top: -0.5em;
+
+}
+
+priloha-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+priloha-group-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+umluva {
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  display: block;
+}
+
+umluva-cislo {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+umluva-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+umluva-datum {
+  text-indent: 15pt;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  display: block;
+}
+
+nota-nadpis {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10pt;
+}
+
+zakon {
+  display: block;
+}
+
+stanovy {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+stanovy-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+stanovy-nadpis {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+titul {
+  display: block;
+}
+
+titul-cislo {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+titul-nadpis {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+narizeni {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+pretisk {
+  display: block;
+}
+
+pretisk-nadpis {
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+usneseni {
+  display: block;
+}
+
+vestnik {
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  display: block;
+}
+
+vestnik-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+group-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+}
+
+doplnek-predpis-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+doplnek-predpis-nadpis {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+postup-cislo {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+postup-nadpis {
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+jmenem {
+  margin-bottom: 4pt;
+  display: block;
+  text-align: center;
+  font-size: 1.0em;
+}
+
+dopis-nadpis {
+  margin-bottom: 10pt;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+pododdil {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+pododdil-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+}
+
+pododdil-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+cast-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+cast-group-nadpis {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+clanek-vztah {
+  display: block;
+  margin-bottom: 10pt;
+  text-align: center;
+}
+
+kapitola-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+kapitola-group-nadpis {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+narizeni-nadpis {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+novela-nadpis {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+oddil-vztah {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+}
+
+popis {
+  display: block;
+}
+
+popis-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+}
+
+popis-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+smernice {
+  display: block;
+}
+
+umluva-podpis {
+  display: block;
+  text-indent: 15pt;
+  margin-top: 7pt;
+}
+
+jmenem-nadpis {
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+}
+
+dil-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+dil-group-nadpis {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+foot-podpismeno {
+  margin-left: 45pt;
+  display: block;
+  text-indent: 10pt;
+}
+
+listina {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+listina-cislo {
+  margin-bottom: 10pt;
+  margin-top: 22pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+listina-nadpis {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+predpis-podpis {
+  margin-top: 7pt;
+  text-indent: 15pt;
+  display: block;
+}
+
+ratifikace-vyhlaseni {
+  display: block;
+  text-indent: 15pt;
+}
+
+vysvetlivky-cislo {
+  display: block;
+  text-align: left;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+}
+
+schvaleni {
+  display: block;
+}
+
+nalez {
+  display: block;
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  text-indent: 20pt;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 125em;
+}
+
+nalez-nadpis {
+  display: block;
+  text-align: center;
+  font-size: 125em;
+  font-weight: bold;
+}
+
+nalez-stanovisko {
+  text-indent: 15pt;
+  margin-top: 18pt;
+  display: block;
+}
+
+informace {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+stanovisko {
+  display: block;
+}
+
+oduvodneni {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+oduvodneni-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight:bold;
+}
+
+vyrok {
+  display: block;
+  text-indent: 20pt;
+  margin-top: 18pt;
+  font-weight:bold;
+  text-align: justify;
+}
+
+ciselnik {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+citace {
+  display: block;
+  text-indent: 15pt;
+  margin-top: 18pt;
+}
+
+citace-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+deklarace {
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+  display: block;
+}
+
+deklarace-druh {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+deklarace-nadpis {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+deklarace-datum {
+  text-indent: 15pt;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  display: block;
+}
+
+deklarace-podpis {
+  text-indent: 15pt;
+  margin-top: 7pt;
+  display: block;
+}
+
+dodatek-predpis-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+}
+
+dodatek-predpis-nadpis {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+dohoda-doplnek {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+dohoda-doplnek-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+dohoda-doplnek-nadpis {
+  text-align: center;
+  display: block;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+dopis-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+}
+
+implementace {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+informace-cislo {
+  margin-bottom: 10pt;
+  display: block;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+informace-nadpis {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+podpis-vyhrady {
+  display: block;
+  text-indent: 15pt;
+  margin-top: 18pt;
+}
+
+protokol-group {
+  display: block;
+  margin-top: 22pt;
+  margin-bottom: 37pt;
+}
+
+protokol-group-nadpis {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-weight: bold;
+}
+
+sdeleni-cislo {
+  display: block;
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 1.3em;
+}
+
+stanovisko-nadpis {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10pt;
+}
+
+stanovisko-us {
+  display: block;
+}
+
+ujednani {
+  display: block;
+}
+
+ujednani-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+ujednani-nadpis {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  text-align: center;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+upozorneni {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+upozorneni-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+usneseni-cislo {
+  display: block;
+  text-align: center;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+usneseni-nadpis {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: block;
+  text-align: center;
+}
+
+vyrok-polozka {
+  text-indent: 10pt;
+  margin-top: 7pt;
+  margin-left: 30pt;
+  display: block;
+}
+
+conversion-group {
+  display: block;
+}
+
+conversion {
+  display: block;
+}
+
+foot-p-group {
+  display: block;
+}
+
+foot-center {
+  display: block;
+  text-align: center;
+  margin-bottom: 6pt;
+  font-weight: bold;
+}
+vec-nadpis {
+  display: block;
+  font-weight: bold;
+  margin-top: 30pt;
+  margin-bottom: 5pt;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+klic-veta {
+  display: block;
+}
+
+klic-zkratka {
+  display: block;
+}
+
+klic {
+  display: block;
+  text-align: left;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-style: italic;
+  font-size: 1.3em;
+  text-indent: 20pt;
+}
+
+cislo-jednaci {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10pt;
+  color: #347ab8;
+  font-style: normal;
+}
+
+oblast-upravy {
+  display: block;
+  text-indent: 20pt;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  font-size: 1.2em;
+}
+citace-p {
+  display: block;
+  font-style: italic;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-align: justify;
+}
+
+citace-nadpis {
+  display: block;
+  font-style: italic;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-align: justify;
+  font-weight: bold;
+  text-indent: 20pt;
+}
+
+oduvodneni-nadpis {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-top: 20pt;
+  margin-bottom: 0pt;
+}
+
+nadpis1 {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+zavery-nadpis {
+  display: block;
+  font-weight: bold;
+  margin-top: 15pt;
+  margin-bottom: 5pt;
+  text-indent: 0pt;
+  font-size: 1.3em;
+}
+
+shrnuti-esd {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+shrnuti-esd-head {
+  display: block;
+  text-align: center;
+}
+
+shrnuti-esd-nadpis {
+  display: block;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-bottom: 5pt;
+  text-indent: 0pt;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+auto-esd-nadpis {
+  display: block;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-bottom: 5pt;
+  text-indent: 0pt;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+stanovisko-esd{
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+stanovisko-esd-head{
+  display: block;
+  text-indent: 0;
+  text-align: center;
+}
+
+rozhodnuti-esd {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+auto-esd {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+rozhodnuti-esd-nadpis {
+  display: block;
+  font-weight: bold;
+  margin-top: 30pt;
+  margin-bottom: 5pt;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+stanovisko-esd-nadpis {
+  display: block;
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+nadpis2 {
+  display: block;
+  font-style: italic;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  text-indent: 0pt;
+  font-size: 1.3em;
+}
+
+nadpis3 {
+  display: block;
+  font-style: normal;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  text-indent: 0pt;
+  font-size: 1.3em;
+}
+
+shrnuti-esd-klic {
+  display: block;
+  font-style: italic;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-indent: 20pt;
+}
+
+lokal-vztah {
+  display: block;
+  text-align: right;
+  margin-bottom: 5pt;
+}
+
+shrnuti-esd-p {
+  display: block;
+  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-align: justify;
+}
+
+pp{
+  display: block;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+  margin-left: 30pt;
+}
+
+ppp {
+  display: block;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+  margin-left: 40pt;
+}
+
+pravni-veta {
+  text-indent: 0pt;
+  display: block;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-right: 0pt;
+  margin-left: 0pt;
+  font-size: 1em;
+  text-align: justify;
+}
+
+pravni-veta-nadpis {
+  text-align: center;
+  display: block;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 3pt;
+}
+
+poznamka {
+  display: block;
+/* puvodni barva  color: #800000; */
+  color: #000000;
+  font-style: italic;
+/* zruseni odsazeni  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt; */
+}
+
+/* zruseni nazev poznamky zarovnan s textem poznamky */
+/*poznamka-nazev  {
+  text-indent: 30pt;
+}*/
+
+
+poznamka-nadpis {
+  text-align: left;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+poznamka-pc {
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+/* odsazeni citace od ostatniho textu na detailu danoveho systemu*/
+aspionline > meritum > kapitola > literatura > odstavec {
+  margin-top: 30pt;
+}
+
+
+pc {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  text-align: center;
+  text-indent: 20pt;
+}
+
+judikatura {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  display: block;
+}
+
+judikatura-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+
+prejudikatura {
+  display: block;
+  text-align: left;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-style: italic;
+}
+
+vyrok-nadpis {
+  text-align: center;
+  margin-top: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+pouceni {
+  display: block;
+  text-align: left;
+  font-size: 1em;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+datum-ze-dne {
+  display: block;
+  text-align: center;
+}
+
+heslo {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+duvody {
+  display: block;
+}
+
+duvod-nadpis {
+  text-align: left;
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+vec {
+  text-align: justify;
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  text-indent: 0pt;
+}
+
+versus {
+  display: block;
+  text-align: center;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+vec-esd {
+  display: block;
+  text-indent: 0pt;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+ucastnici {
+  display: block;
+  text-indent: 0pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+ucastnik {
+  display: block;
+  text-indent: 0pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+ucastnici-zastoupeni {
+  display: block;
+  text-indent: 0pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+ucastnici-oznaceni {
+  display: block;
+  text-align: right;
+  margin-left: 0pt;
+}
+
+ucastnik-oznaceni {
+  display: block;
+  text-align: right;
+  margin-left: 0pt;
+}
+
+ucastnik-nazev {
+  display: inline;
+  font-weight: bold;
+}
+
+ucastnik-zastoupeni {
+  display: inline;
+}
+
+ucastnik-sidlo {
+  display: inline;
+}
+
+predmet {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  margin-left: 0pt;
+  text-align: justify;
+}
+
+autor-center {
+  display: block;
+  text-align: center;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+druh-center {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15pt;
+  margin-bottom: 20pt;
+  font-size: 1.4em;
+}
+
+soudci {
+  display: block;
+  margin-bottom: 5pt;
+}
+
+vedouci-kancelare {
+  display: block;
+  margin-bottom: 5pt;
+}
+
+generalni-advokat {
+  display: block;
+  margin-bottom: 5pt;
+}
+
+p-left {
+  display: block;
+  text-align: left;
+}
+
+autor-osoby {
+  display: block;
+  text-indent: 0pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+podklady-data{
+  display: block;
+  text-indent: 0pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-align: left;
+}
+
+rozhodnuti-esd-head {
+  text-indent: 0pt;
+}
+
+rozsudek-nadpis {
+  display: block;
+  text-align: center;
+}
+
+vyroky {
+  font-weight: bold;
+  margin-left: 15pt;
+  display: block;
+  font-size: 1.2em;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+p {
+  display: block;
+/*  text-indent: 20pt;*/
+  margin-top: 15pt;
+  margin-bottom: 5pt;
+  text-align: justify;
+}
+
+cara {
+  text-align: center;
+  font-weight: bold;
+}
+
+dotaz {
+  display: block;
+}
+
+nadpis {
+  display: block;
+  text-align: left;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #347ab8;
+  text-transform: uppercase;
+/*  display: block;
+  text-align: left;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.2em; */
+/* nadpis puvodni  font-size: 0.9em; */
+}
+
+podnadpis {
+  display: block;
+  text-align: left;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+
+vztah-k-paragrafum {
+  text-indent: 20pt;
+  display: block;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  margin-bottom: 20pt;
+  font-size: 125em;
+}
+
+pppp {
+  display: block;
+  margin-top: 5pt;
+  margin-left: 50pt;
+  margin-bottom: 5pt;
+}
+
+b {
+  font-weight: bold;
+  display: inline;
+}
+i {
+  font-style: italic;
+  display: inline;
+}
+
+
+clanek-autor {
+  display:block;
+/* zarovnani autora na stred  text-indent: 20pt; */
+}
+autor-jmeno {
+  display:inline;
+  font-weight: bold;
+  color: #000000;
+}
+autor-prijmeni {
+  display:inline;
+  font-weight: bold;
+  color: #000000;
+}
+autor-titul-pred {
+  display:inline;
+  font-weight: bold;
+  color: #000000;
+}
+autor-pracoviste {
+  display: inline;
+  font-size: 1.0em;
+  color: #666;
+}
+autor-titul-za {
+  display:inline;
+  font-weight: bold;
+  color: #000000;
+}
+autor-poznamka {
+  display: inline;
+  font-size: 1.0em;
+  color: #000000;
+/*puvodni = vyblita sed  color: #666; */
+}
+
+poznamka-nazev{
+  display: block;
+  font-weight: bold;
+/* puvodni color: #000033; */
+  color: #000000;
+  margin-top: 10pt;
+}
+
+odrazky-symboly{
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 20pt;
+  text-align: justify;
+  margin-top: 7pt;
+}
+odrazky-pismena{
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 20pt;
+  text-align: justify;
+}
+odrazky-cisla{
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 20pt;
+  text-align: justify;
+}
+odrazky-specialni{
+  display: block;
+  /*text-indent: -14pt;*/
+  margin-left: 20pt;
+  text-align: justify;
+
+}
+odrazka {
+  display: block;
+  margin-left: 10pt;
+  margin-top: 3pt;
+  text-align: justify;
+}
+odrazka-symbol {
+  display: block;
+  float: left;
+  width: 0;
+  margin-left: 0pt;
+  padding-right: 10pt;
+  font-size: 1.0em;
+  text-indent: 0pt;
+  /*margin-bottom: 15pt;*/
+}
+
+
+/*posunute odrazky k posunutym marginaliim, juhuu :-/ li201764, 201765*/
+/*aspionline > meritum > kapitola > vyklad > odrazky-symboly > odrazka > odrazka-symbol
+{
+  position: relative;
+  top: 2em;
+}*/
+
+
+/* zarovnani textu v odrazkach*/
+odrazka-obsah {
+  display:block;
+  margin-left: 20pt;
+}
+
+/* zvetseni mezer pro odrazky cisla a pismena - jsou sirsi nez odrazky symboly
+odrazky-cisla > odrazka > odrazka-symbol, odrazky-pismena > odrazka > odrazka-symbol {
+  margin-left: 0pt;
+}*/
+
+/* ohraniceni souvisejicich boxu v leve casti stranky */
+
+.box.sidebox-document td
+/* souvisejici predpisy - detail clanku */
+{
+border-bottom: 1px solid #dddddd;
+}
+
+
+HEAD
+
+clanek-text {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 7pt;
+}
+definice {
+  display: block;
+  margin-top: 0pt; /*bylo tu nesmyslne margin-top: 10 - coz nic nedela */
+  margin-bottom: 0pt; /*bylo tu nesmyslne margin-bottom: 10 - coz nic nedela */
+/* puvodne bylo kurzivou - detail uctovy osnovy  font-style: italic; */
+}
+
+meritum-nazev {
+  display: block;
+  margin-top: 30pt;
+  margin-bottom: 10pt;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+/* puvodne  display: block;
+  margin-top: 20pt;
+  margin-bottom: 10pt;
+  font-size: 1.4em;
+  font-weight: bold; */
+}
+
+meritum-rok {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+}
+dil-nazev {
+  display: block;
+  margin-bottom: 7pt;
+/* puvodni font-size: 0.9em; */
+  font-size: 1.4em;
+  text-align: center;
+
+}
+oddil-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 0.9em;
+  text-align: center;
+
+}
+hlava-nazev {
+  display: block;
+  margin-bottom: 7pt;
+  font-size: 0.9em;
+  text-align: center;
+}
+cast-nazev {
+  display: block;
+  text-align: center;
+  margin-top: 22pt;
+  margin-bottom: 10pt;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #347ab8;
+/* puvodne  display: block;
+  margin-bottom: 7pt;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold; */
+}
+clanek-perex {
+   font-weight: bold;
+   display: block;
+   margin-top: 10pt;
+   margin-bottom: 15pt;
+}
+clanek-nazev {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30pt; /*zvyseno na 30 kvuli informacim vpravo - vydano, schvaleno RR)*/
+  margin-bottom: 5pt;
+  font-size: 1.6em;
+  color: #347ab8;
+/* puvodni barva  color: #336633; */
+}
+podkapitola {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+podkapitola-cislo {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em;
+  color: #363;
+}
+
+podkapitola-nazev {
+  display: inline-block;
+}
+mclanek {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+mclanek-cislo {
+  display: inline;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+mclanek-nazev {
+  display: inline-block;
+}
+podclanek {
+  display: block;
+  margin-top: 25pt;
+  margin-bottom: 7pt;
+}
+
+podclanek-cislo {
+  display: inline;
+  font-size: 08em;
+  font-weight: bold;
+}
+
+podclanek-nazev {
+  display: inline;
+}
+clanek-podnazev{
+  display: block;
+  text-align: center;
+  font-weight: bold; 
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+  font-size: 1.3em;
+  color: #000000;
+  /* puvodni barva color: #336633; */
+}
+meritum-autor {
+  display: block;
+}
+linkpoj {
+  display: inline;
+  text-decoration: underline;
+  color: #00bc55;
+}
+
+marginalie{
+  display: inline; /* hodi marginalie doleva vedle textu */
+/*  display: block;*/
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  font-size: 1.0em;
+  text-align: right;
+/* odsazeni marginalii vpravo od nalepeneho textu */
+  margin-right: 15pt;
+}
+
+/* odsazeni prvniho radku odstavce */
+/*aspionline > meritum > kapitola > vyklad > odstavec
+{
+  margin-top: 0;
+  text-indent: 30pt;
+  position: relative;
+  padding-top: 1em;
+}*/
+
+/* odsazeni prvniho radku odstavce */
+/*aspionline > meritum > kapitola > vyklad > odstavec > marginalie
+{
+/*  display: block;*/
+/*  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  font-size: 1.0em;*/
+/*  text-align: right; */
+/*  position: absolute;
+  right: 0pt;
+  top: -15pt;
+}*/
+
+/* odsazeni tabulky od marginalie */
+/*aspionline > meritum > kapitola > vyklad > table
+{
+  margin-bottom: 1em;
+}*/
+
+vyklad {
+  display: block;
+/*  margin-top: 20pt; */
+  margin-bottom: 7pt;
+}
+marginalni-cislo {
+  font-weight: bold;
+  display: inline-block;
+  text-indent: 0;
+}
+
+marginalni-cislo-pokracovani {
+  font-weight: bold;
+  display: inline-block;
+  text-indent: 0;
+}
+cislo-uctu {
+   font-style:italic;
+}
+odkaz-na-poznamku-pod-carou {
+  display: inline;
+  color: #001dc4;
+  font-size: 0.9em;
+  position: relative;
+  top: -05em;
+}
+poznamky-pod-carou {
+  display: block;
+  margin-top: 15pt;
+}
+poznamka-pod-carou
+{
+  display: block;
+  text-align: justify;
+  font-size: 0.90em;
+  margin-top: 7pt;
+  color: #800000;
+}
+preskrtnuti{
+  text-decoration: line-through;
+}
+pridano{
+  display:inline;
+  font-style:italic;
+  font-weight:bold;
+}
+vyjimka {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-left: 30pt;
+  margin-right: 30pt;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+
+vyjimka-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+vzor {
+  display: block;
+  text-align: justify;
+  font-size: 1.0em;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+}
+vzor-nazev {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+
+odstavec-new {
+  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 10pt;
+  display: block;
+  text-align: justify;
+}
+
+text {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+}
+
+text-new {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+}
+
+text-nadpis {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+}
+
+text-nadpis-new {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  font-size: 11em;
+}
+
+semantika-nadpis {
+  text-align: left;
+  margin-top: 15pt;
+  display: block;
+  font-weight: bold;
+}
+
+semantika {
+  text-align: justify;
+  display: block;
+  margin-left: 100pt;
+}
+
+keywords-group {
+  display: block;
+}
+
+keywords {
+  display: block;
+}
+keywords-group-nadpis {
+  text-align: left;
+  margin-top: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+keyword {
+  text-align: justify;
+  display: block;
+  margin-left: 100pt;
+}
+
+keyword-old {
+  text-align: justify;
+  display: block;
+  margin-left: 100pt;
+  color: red;
+}
+
+vztah-group {
+  display: block;
+}
+
+vztah-group-nadpis {
+  text-align: left;
+  margin-top: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+vztah-ustanoveni {
+  text-align: justify;
+  display: block;
+  margin-left: 100pt;
+}
+
+institut-nazev{
+  text-align: left;
+  margin-top: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+institut{
+  text-align: center;
+  display: block;
+  margin-top: 5pt;
+  margin-bottom: 20pt;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+rekodifikace-nadpis {
+  display: block;
+  margin-top: 7pt;
+  margin-bottom: 7pt;
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: bold;
+}
+
+autori {
+  display: block;
+  margin-bottom: 7pt;
+}
+
+autori-nadpis {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 7pt;
+  font-weight: bold;
+}
+linkla {
+  text-decoration: underline;
+  color: #00A400;
+  display: inline;
+}
+

@@ -1,0 +1,34 @@
+.holder {
+	FILTER: progid:DXImageTransform.Microsoft.Shadow(direction=140,color=#555555,strength=4)
+		progid:DXImageTransform.Microsoft.GradientWipe(GradientSize=0.00,wipestyle=1,motion=forward)
+}
+.pad {
+	BORDER-BOTTOM: #004ea0 1px solid; BORDER-LEFT: #004ea0 1px solid; BACKGROUND-COLOR: #1a76c3; BORDER-TOP: #004ea0 1px solid; BORDER-RIGHT: #004ea0 1px solid
+}
+.item {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 4px
+}
+.itemOff {
+	
+}
+.itemOn {
+	BACKGROUND-COLOR: white; CURSOR: pointer
+}
+.font {
+	FONT-SIZE: 8pt
+}
+.fontOff {
+	COLOR: white
+}
+.fontOn {
+	COLOR: #004ea0
+}
+.tag {
+	
+}
+.tagOff {
+	
+}
+.separator {
+	BACKGROUND-COLOR: #004ea0
+}

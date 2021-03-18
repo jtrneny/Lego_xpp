@@ -1,0 +1,608 @@
+1;1;1;Velké domácí spotøebièe;Velká chladicí zaøízení;;1;1;1;Zaøízení pro tepelnou výmìnu;Chladnièky;Chladnièky, kombinace chladnièky a mraznièky
+1;1;1;Velké domácí spotøebièe;Velká chladicí zaøízení;;1;1;2;Zaøízení pro tepelnou výmìnu;Chladnièky;Zaøízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavøeném okruhu)
+1;2;1;Velké domácí spotøebièe;Chladnièky, kombinace chladnièky a mraznièky;nad 40kg;1;1;1;Zaøízení pro tepelnou výmìnu;Chladnièky;Chladnièky, kombinace chladnièky a mraznièky
+1;2;1;Velké domácí spotøebièe;Chladnièky, kombinace chladnièky a mraznièky;nad 40kg;1;1;2;Zaøízení pro tepelnou výmìnu;Chladnièky;Zaøízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavøeném okruhu)
+1;2;2;Velké domácí spotøebièe;Chladnièky, kombinace chladnièky a mraznièky;do 40 kg ;1;1;1;Zaøízení pro tepelnou výmìnu;Chladnièky;Chladnièky, kombinace chladnièky a mraznièky
+1;2;2;Velké domácí spotøebièe;Chladnièky, kombinace chladnièky a mraznièky;do 40 kg ;1;1;2;Zaøízení pro tepelnou výmìnu;Chladnièky;Zaøízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavøeném okruhu)
+1;3;1;Velké domácí spotøebièe;Mraznièky;nad 40kg;1;2;1;Zaøízení pro tepelnou výmìnu;Mraznièky;Mraznièky
+1;3;2;Velké domácí spotøebièe;Mraznièky;do 40 kg ;1;2;1;Zaøízení pro tepelnou výmìnu;Mraznièky;Mraznièky
+1;4;1;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;s chladícími medii;1;1;2;Zaøízení pro tepelnou výmìnu;Chladnièky;Zaøízení používaná pro chlazení, uchování a skladování potravin (s chladicími médii v uzavøeném okruhu)
+1;4;1;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;s chladicími médii;1;8;1;Zaøízení pro tepelnou výmìnu;Ostatní zaøízení pro tepelnou výmìnu v jiné podskupinì neuvedená;"Ostatní zaøízení pro tepelnou výmìnu v jiné podskupinì neuvedená 
+do 10 kg (s chladicími médii)"
+1;4;1;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;s chladicími médii;1;8;2;Zaøízení pro tepelnou výmìnu;Ostatní zaøízení pro tepelnou výmìnu v jiné podskupinì neuvedená;"Ostatní zaøízení pro tepelnou výmìnu v jiné podskupinì neuvedená 
+od 10 kg do 50 kg (s chladicími médii)"
+1;4;1;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;s chladicími médii;1;8;3;Zaøízení pro tepelnou výmìnu;Ostatní zaøízení pro tepelnou výmìnu v jiné podskupinì neuvedená;"Ostatní zaøízení pro tepelnou výmìnu v jiné podskupinì neuvedená 
+od 50 kg do 100 kg (s chladicími médii)"
+1;4;2;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;4;2;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;11;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 25 kg do 50 kg"
+1;4;2;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;12;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 50 kg do 100 kg"
+1;4;2;Velké domácí spotøebièe;Ostatní velká zaøízení používaná pro chlazení, uchování a skladování potravin;bez chladících medií;4;18;13;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+nad 100 kg"
+1;5;1;Velké domácí spotøebièe;Praèky;nad 30 kg;4;1;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Praèky;Praèky nad 30 kg
+1;5;2;Velké domácí spotøebièe;Praèky;do 30 kg;4;1;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Praèky;Praèky do 30 kg
+1;6;1;Velké domácí spotøebièe;Sušièky;    ;4;2;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Sušièky;Sušièky s tepelným èerpadlem
+1;6;1;Velké domácí spotøebièe;Sušièky;;4;2;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Sušièky;Sušièky bez tepelného èerpadla
+1;7;1;Velké domácí spotøebièe;Myèky nádobí;;4;3;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Myèky nádobí;Myèky nádobí
+1;8;1;Velké domácí spotøebièe;Peèící zaøízení;nad 10 kg;4;4;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Vaøièe a peèící trouby;Vaøièe a peèící trouby, velká zaøízení používaná k vaøení a jinému zpracování potravin do 25 kg
+1;8;1;Velké domácí spotøebièe;Peèící zaøízení;nad 10 kg;4;4;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Vaøièe a peèící trouby;Vaøièe a peèící trouby, velká zaøízení používaná k vaøení a jinému zpracování potravin nad 25 kg
+1;8;2;Velké domácí spotøebièe;Peèící zaøízení;do 10 kg;4;4;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Vaøièe a peèící trouby;Vaøièe a peèící trouby, velká zaøízení používaná k vaøení a jinému zpracování potravin do 25 kg
+1;9;1;Velké domácí spotøebièe;Elektrické sporáky;    ;4;5;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Elektrické sporáky;Elektrické sporáky
+1;10;1;Velké domácí spotøebièe;Elektrické plotny;    ;4;6;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Elektrické varné desky;Elektrické varné desky
+1;11;1;Velké domácí spotøebièe;Mikrovlnné trouby;;5;5;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Mikrovlnné trouby;Mikrovlnné trouby
+1;12;1;Velké domácí spotøebièe;Ostatní velká zaøízení používaná k vaøení a jinému zpracování potravin;nad 10 kg;4;4;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Vaøièe a peèící trouby;Vaøièe a peèící trouby, velká zaøízení používaná k vaøení a jinému zpracování potravin do 25 kg
+1;12;1;Velké domácí spotøebièe;Ostatní velká zaøízení používaná k vaøení a jinému zpracování potravin;nad 10 kg;4;4;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Vaøièe a peèící trouby;Vaøièe a peèící trouby, velká zaøízení používaná k vaøení a jinému zpracování potravin nad 25 kg
+1;12;2;Velké domácí spotøebièe;Ostatní velká zaøízení používaná k vaøení a jinému zpracování potravin;do 10 kg;4;4;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Vaøièe a peèící trouby;Vaøièe a peèící trouby, velká zaøízení používaná k vaøení a jinému zpracování potravin do 25 kg
+1;13;1;Velké domácí spotøebièe;Elektrická topidla;nad 30 Kg;4;18;11;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 25 kg do 50 kg"
+1;13;2;Velké domácí spotøebièe;Elektrická topidla;10-30Kg;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;13;3;Velké domácí spotøebièe;Elektrická topidla;do 10 kg;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;14;1;Velké domácí spotøebièe;Elektrické radiátory;nad 30 Kg;1;7;2;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu od 10 kg do 50 kg
+1;14;1;Velké domácí spotøebièe;Elektrické radiátory;nad 30 Kg;1;7;3;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu nad 50 kg
+1;14;2;Velké domácí spotøebièe;Elektrické radiátory;10-30Kg;1;7;2;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu od 10 kg do 50 kg
+1;14;3;Velké domácí spotøebièe;Elektrické radiátory;do 10 kg;1;7;1;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu do 10 kg
+1;15;1;Velké domácí spotøebièe;Ostatní velká zaøízení pro vytápìní místností, lùžek a sedacího nábytku;nad 30 Kg;4;18;11;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 25 kg do 50 kg"
+1;15;1;Velké domácí spotøebièe;Ostatní velká zaøízení pro vytápìní místností, lùžek a sedacího nábytku;nad 30 Kg;4;18;12;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 50 kg do 100 kg"
+1;15;1;Velké domácí spotøebièe;Ostatní velká zaøízení pro vytápìní místností, lùžek a sedacího nábytku;nad 30 Kg;4;18;13;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+nad 100 kg"
+1;15;2;Velké domácí spotøebièe;Ostatní velká zaøízení pro vytápìní místností, lùžek a sedacího nábytku;10-30Kg;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;15;3;Velké domácí spotøebièe;Ostatní velká zaøízení pro vytápìní místností, lùžek a sedacího nábytku;do 10 kg;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;16;1;Velké domácí spotøebièe;Elektrické ventilátory velké;nad 10 kg;4;18;8;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Ventilaèní a odsávací velké domácí spotøebièe do 25 kg
+1;16;1;Velké domácí spotøebièe;Elektrické ventilátory velké;nad 10 kg;4;18;9;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Ventilaèní a odsávací velké domácí spotøebièe nad 25 kg
+1;17;1;Velké domácí spotøebièe;Klimatizaèní zaøízení;s chladícími medii;1;4;1;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky do 50 kg (s chladicími médii)
+1;17;1;Velké domácí spotøebièe;Klimatizaèní zaøízení;s chladícími medii;1;4;2;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky od 50 kg do 100 kg (s chladicími médii)
+1;17;1;Velké domácí spotøebièe;Klimatizaèní zaøízení;s chladícími medii;1;4;3;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky od 100 kg do 200 kg (s chladicími médii)
+1;17;1;Velké domácí spotøebièe;Klimatizaèní zaøízení;s chladícími medii;1;4;4;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky nad 200 kg (s chladicími médii)
+1;17;1;Velké domácí spotøebièe;Klimatizaèní zaøízení;s chladícími medii;1;4;5;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - vnitøní jednotky do 35 kg (s chladicími médii)
+1;17;1;Velké domácí spotøebièe;Klimatizaèní zaøízení;s chladícími medii;1;4;6;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - vnitøní jednotky nad 35 kg (s chladicími médii), klimatizace mobilní (s chladicími médii)
+1;17;2;Velké domácí spotøebièe;Klimatizaèní zaøízení;bez chladících medií;4;2;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Sušièky;Sušièky s tepelným èerpadlem
+1;17;2;Velké domácí spotøebièe;Klimatizaèní zaøízení;bez chladících medií;4;2;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Sušièky;Sušièky bez tepelného èerpadla
+1;17;2;Velké domácí spotøebièe;Klimatizaèní zaøízení;bez chladících medií;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;18;1;Velké domácí spotøebièe;Ostatní ventilaèní, odsávací a klimatizaèní zaøízení;nad 10 kg;1;5;2;Zaøízení pro tepelnou výmìnu;Odvlhèovací zaøízení;Odvlhèovací zaøízení nad 10 kg (s chladicími médii)
+1;18;2;Velké domácí spotøebièe;Ostatní ventilaèní, odsávací a klimatizaèní zaøízení;odsavaèe par;4;18;8;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Ventilaèní a odsávací velké domácí spotøebièe do 25 kg
+1;18;2;Velké domácí spotøebièe;Ostatní ventilaèní, odsávací a klimatizaèní zaøízení;odsavaèe par;4;18;9;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Ventilaèní a odsávací velké domácí spotøebièe nad 25 kg
+1;18;3;Velké domácí spotøebièe;Ostatní ventilaèní, odsávací a klimatizaèní zaøízení;do 10 kg;1;5;1;Zaøízení pro tepelnou výmìnu;Odvlhèovací zaøízení;Odvlhèovací zaøízení do 10 kg (s chladicími médii)
+1;19;1;Velké domácí spotøebièe;Ostatní velké domácí spotøebièe v jiné podskupinì neuvedené;nad 30 Kg;1;3;1;Zaøízení pro tepelnou výmìnu;Zaøízení automaticky poskytující chlazené výrobky;Zaøízení automaticky poskytující chlazené výrobky
+1;19;1;Velké domácí spotøebièe;Ostatní velké domácí spotøebièe v jiné podskupinì neuvedené;nad 30 Kg;4;18;11;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 25 kg do 50 kg"
+1;19;1;Velké domácí spotøebièe;Ostatní velké domácí spotøebièe v jiné podskupinì neuvedené;nad 30 Kg;4;18;12;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 50 kg do 100 kg"
+1;19;1;Velké domácí spotøebièe;Ostatní velké domácí spotøebièe v jiné podskupinì neuvedené;nad 30 Kg;4;18;13;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+nad 100 kg"
+1;19;2;Velké domácí spotøebièe;Ostatní velké domácí spotøebièe v jiné podskupinì neuvedené;10-30Kg;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+1;19;3;Velké domácí spotøebièe;Ostatní velké domácí spotøebièe v jiné podskupinì neuvedené;do 10 kg;4;18;10;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+do 25 kg"
+2;1;1;Malé domácí spotøebièe; Vysavaèe;nad 2 kg;5;1;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Vysavaèe;Vysavaèe nad 2 kg
+2;1;2;Malé domácí spotøebièe; Vysavaèe;do 2 kg;5;1;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Vysavaèe;Vysavaèe do 2 kg
+2;2;1;Malé domácí spotøebièe;Èistící stroje na koberce;;5;2;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Stroje na èištìní kobercù;Stroje na èištìní kobercù
+2;3;1;Malé domácí spotøebièe;Ostatní zaøízení pro èištìní;nad 10 kg;5;2;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Stroje na èištìní kobercù;Stroje na èištìní kobercù
+2;3;2;Malé domácí spotøebièe;Ostatní zaøízení pro èištìní;do 10 kg;5;2;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Stroje na èištìní kobercù;Stroje na èištìní kobercù
+2;4;1;Malé domácí spotøebièe;Zaøízení používaná k šití, pletení, tkaní a jinému zpracování textilu;;4;10;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení používaná k pletení a tkaní;Zaøízení používaná k šití, pletení, tkaní a jinému zpracování textilu, jejichž kterýkoli vnìjší rozmìr pøesahuje 50 cm
+2;4;1;Malé domácí spotøebièe;Zaøízení používaná k šití, pletení, tkaní a jinému zpracování textilu;;5;3;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Šicí stroje;"Šicí stroje používané v domácnostech, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm"
+2;5;1;Malé domácí spotøebièe; Žehlièky a jiné spotøebièe používané k žehlení, mandlování a další péèi o odìvy;;5;7;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Žehlièky;Žehlièky a jiné spotøebièe používané k žehlení, mandlování a další péèi o odìvy
+2;6;1;Malé domácí spotøebièe;Topinkovaèe;;5;8;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Opékaèe topinek;Topinkovaèe, opékaèe topinek a další zaøízení na pøípravu nápojù a jídel, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+2;7;1;Malé domácí spotøebièe;Fritovací hrnce;;5;8;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Opékaèe topinek;Topinkovaèe, opékaèe topinek a další zaøízení na pøípravu nápojù a jídel, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+2;8;1;Malé domácí spotøebièe;Mlýnky, kávovary a zaøízení pro otevírání nebo uzavírání nádob nebo obalù;;5;8;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Opékaèe topinek;Topinkovaèe, opékaèe topinek a další zaøízení na pøípravu nápojù a jídel, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+2;9;1;Malé domácí spotøebièe;Elektrické nože;    ;5;9;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické nože;Elektrické nože
+2;10;1;Malé domácí spotøebièe;Spotøebièe pro støíhání vlasù, sušení vlasù, èištìní zubù, holení, masáže nebo jinou péèi o tìlo;;5;12;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické holicí strojky;Elektrické holicí strojky
+2;10;1;Malé domácí spotøebièe;Spotøebièe pro støíhání vlasù, sušení vlasù, èištìní zubù, holení, masáže nebo jinou péèi o tìlo;    ;5;14;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Pøístroje pro péèi o vlasy a tìlo;Spotøebièe pro støíhání vlasù, sušení vlasù, èištìní zubù, holení, masáže nebo jinou péèi o tìlo
+2;11;1;Malé domácí spotøebièe;Hodiny, budíky a zaøízení pro úèely mìøení, indikace nebo registrace èasu;nad 100 g;5;11;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hodiny a hodinky;Hodiny, budíky a zaøízení pro úèely mìøení, indikace nebo registrace èasu nad 100 g
+2;11;2;Malé domácí spotøebièe;Hodiny, budíky a zaøízení pro úèely mìøení, indikace nebo registrace èasu;do 100 g;5;11;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hodiny a hodinky;Hodiny, budíky a zaøízení pro úèely mìøení, indikace nebo registrace èasu do 100 g
+2;12;1;Malé domácí spotøebièe; Váhy;;5;13;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Váhy;Váhy
+2;13;1;Malé domácí spotøebièe;Elektrické ventilátory malé;;5;6;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ventilaèní zaøízení;Elektrické ventilátory do 10 kg, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;10;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické konvice;Elektrické konvice
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;25;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Detektory kouøe;Detektory kouøe
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;30;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé výdejní automaty na výrobky;Vestavné a plnì automatické kávovary
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;31;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malá zaøízení s vestavìnými solárními panely;Malá zaøízení s vestavìnými solárními panely
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;32;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;Ostatní malá zaøízení v jiné podskupinì neuvedená do 100 g
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;32;4;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;"Ostatní malá zaøízení v jiné podskupinì neuvedená 
+od 0,1 kg do 1 kg"
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;32;5;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;"Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené 
+od 1 kg do 4 kg"
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;32;6;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;"Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené 
+od 4 kg do 15 kg"
+2;14;1;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;nad 100 g;5;32;7;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;"Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené 
+nad 15 kg"
+2;14;2;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;do 100 g;5;29;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé nástroje pro monitorování a kontrolu;Malé nástroje pro monitorování a kontrolu do 0,5 kg
+2;14;2;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;do 100 g;5;31;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malá zaøízení s vestavìnými solárními panely;Malá zaøízení s vestavìnými solárními panely
+2;14;2;Malé domácí spotøebièe;Ostatní malé domácí spotøebièe v jiné podskupinì neuvedené;do 100 g;5;32;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;Ostatní malá zaøízení v jiné podskupinì neuvedená do 100 g
+3;1;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Velké sálové poèítaèe;;4;11;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Velké sálové poèítaèe;Zaøízení informaèních technologií a telekomunikaèních zaøízení
+3;2;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Minipoèítaèe;    ;6;5;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Osobní poèítaèe;Osobní poèítaèe (vèetnì základní procesorové jednotky, myši a klávesnic)
+3;3;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tiskové jednotky (samostatné centrální tiskárny);;4;12;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Velké tiskárny;Tiskové jednotky (samostatné centrální tiskárny)
+3;4;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Osobní poèítaèe (vèetnì základní procesorové jednotky, myši a klávesnic);    ;6;5;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Osobní poèítaèe;Osobní poèítaèe (vèetnì základní procesorové jednotky, myši a klávesnic)
+3;4;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Komponenty  PC (klávesnice, myš);;6;8;3;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené do 100 g
+3;4;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Komponenty  PC (klávesnice, myš);;6;8;4;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 0,1 kg do 1 kg
+3;4;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Komponenty  PC (klávesnice, myš);;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;4;3;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Sada reproduktorù;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+3;4;3;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Sada reproduktorù;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+3;4;3;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Sada reproduktorù;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+3;4;4;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Monitory ;do 25´´;2;4;1;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Monitory;"Monitory s úhlopøíèkou do 25"""
+3;4;5;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Monitory ;nad 25´´;2;4;2;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Monitory;"Monitory s úhlopøíèkou nad 25"""
+3;5;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Laptopy (vèetnì základní procesorové jednotky,myší a klávesnic);;2;5;1;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Laptopy;Tablety, laptopy (vèetnì základní procesorové jednotky, myši a klávesnice)
+3;6;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Notebooky;    ;2;6;1;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Notebooky;Notebooky
+3;7;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tablety;;6;8;3;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené do 100 g
+3;7;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tablety;;6;8;4;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 0,1 kg do 1 kg
+3;7;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tablety;;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;7;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní databanky a diáøe;;6;8;3;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené do 100 g
+3;7;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní databanky a diáøe;;6;8;4;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 0,1 kg do 1 kg
+3;7;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní databanky a diáøe;;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;8;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tiskárny;    ;6;6;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Tiskárny;Tiskárny do max. velikosti tisku A4
+3;9;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery;do 50 kg;4;13;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Kopírovací zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery velikosti A3+A2, jejichž kterýkoli vnìjší rozmìr pøesahuje 50 cm
+3;9;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery;do 50 kg;4;13;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Kopírovací zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery velikosti A1+A0, jejichž kterýkoli vnìjší rozmìr pøesahuje 50 cm
+3;9;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery;nad 50 kg;4;13;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Kopírovací zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery velikosti A3+A2, jejichž kterýkoli vnìjší rozmìr pøesahuje 50 cm
+3;9;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery;nad 50 kg;4;13;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Kopírovací zaøízení;Kopírovací zaøízení, multifunkèní zaøízení, skenery velikosti A1+A0, jejichž kterýkoli vnìjší rozmìr pøesahuje 50 cm
+3;10;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Elektrické a elektronické psací stroje;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+3;10;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Elektrické a elektronické psací stroje;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+3;10;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Elektrické a elektronické psací stroje;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+3;11;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení; Kapesní a stolní kalkulaèky ;;5;15;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Kalkulaèky;Poètáøské kalkulaèky s pøívodním kabelem, vèetnì tiskové funkce
+3;11;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Kapesní a stolní kalkulaèky ;    ;6;3;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Kapesní kalkulaèky;Kapesní kalkulaèky
+3;12;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené;do 10 kg;6;8;3;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené do 100 g
+3;12;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené;do 10 kg;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;12;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené;do 10 kg;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;12;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní výrobky nebo zaøízení pro sbì, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené;od 10-30 kg;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;12;2;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní výrobky nebo zaøízení pro sbì, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené;od 10-30 kg;6;8;6;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené nad 5 kg
+3;13;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Uživatelské terminály a systémy;;6;2;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;GPS navigace;GPS navigace
+3;14;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Dálnopisy;;6;8;3;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené do 100 g
+3;14;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Dálnopisy;;6;8;4;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 0,1 kg do 1 kg
+3;14;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Dálnopisy;;6;8;5;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Ostatní výrobky nebo zaøízení pro sbìr, ukládání, zpracování prezentací  nebo sdìlování informací elektronickým zpùsobem v jiné podskupinì neuvedené od 1 kg do 5 kg
+3;15;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Faxy;;6;7;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílaèky, telefony
+3;16;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Telefony;;6;7;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílaèky, telefony
+3;17;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Telefonní automaty;    ;4;18;14;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Telefonní automaty - pouze profi
+3;18;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Bezdrátové telefony a vysílaèky;;6;7;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílaèky, telefony
+3;19;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Mobilní telefony a GSM moduly;    ;6;1;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Mobilní telefony;Mobilní telefony a GSM moduly
+3;20;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Záznamníky;;6;7;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Telefony;Záznamníky, bezdrátové telefony a vysílaèky, telefony
+3;21;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Ostatní výrobky nebo zaøízení pro pøenos zvuku, obrazu a jiných informací pomocí telekomunikací v jiné podskupinì neuvedené;;2;1;1;Obrazovky, monitory a zaøízení obsahující obrazovky o ploše vìtší než 100 cm2;Obrazovky;Velkoplošné obrazovky, sportovní èasomíry, speciální obrazovky, nástìnné displeje
+3;22;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tonerové/inkoustové kazety s elektronickou èástí;;6;8;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Tonery, inkoustové náplnì, cartridge do 0,5 kg
+3;22;1;Zaøízení informaèních technologií a telekomunikaèních zaøízení;Tonerové/inkoustové kazety s elektronickou èástí;;6;8;2;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Ostatní malá zaøízení informaèních technologií a telekomunikaèních zaøízení v jiné podskupinì neuvedená;Tonery, inkoustové náplnì, cartridge nad 0,5 kg
+4;1;1;Spotøebitelská zaøízení;Rádiové soupravy (radiobudíky, radiomagnetofony);;5;16;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Rozhlasové pøijímaèe;Rozhlasové pøijímaèe a jejich kombinace
+4;1;2;Spotøebitelská zaøízení;Radiomagnetofony;;5;16;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Rozhlasové pøijímaèe;Radiomagnetofony
+4;1;3;Spotøebitelská zaøízení;Autorádia ;;5;16;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Rozhlasové pøijímaèe;Rozhlasové pøijímaèe a jejich kombinace
+4;2;1;Spotøebitelská zaøízení;Televizory;do uhlopøíèky 25´´;2;2;1;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Televize;"Televizory s úhlopøíèkou do 25"""
+4;2;2;Spotøebitelská zaøízení;Televizory;nad uhlopøíèku 25 ´´;2;2;2;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Televize;"Televizory s úhlopøíèkou nad 25"""
+4;2;3;Spotøebitelská zaøízení;Projektory;    ;4;8;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Ostatní výrobky nebo zaøízení pro pøenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupinì neuvedené
+4;2;4;Spotøebitelská zaøízení;Aktivní 3D brýle;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;2;4;Spotøebitelská zaøízení;Aktivní 3D brýle;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;2;5;Spotøebitelská zaøízení;Digitální fotorámeèky;    ;2;3;1;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";LCD fotorámeèky;LCD fotorámeèky
+4;3;1;Spotøebitelská zaøízení;Videokamery využívané v domácnosti;    ;5;17;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Videokamery;Videokamery využívané v domácnosti
+4;3;2;Spotøebitelská zaøízení;Minikamery, web kamery;    ;5;17;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Videokamery;Minikamery, web kamery
+4;3;3;Spotøebitelská zaøízení;Fotoaparáty digitální ;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;3;3;Spotøebitelská zaøízení;Fotoaparáty digitální ;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;3;3;Spotøebitelská zaøízení;Fotoaparáty digitální ;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;3;4;Spotøebitelská zaøízení;Fotoaparáty analogové;;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;3;4;Spotøebitelská zaøízení;Fotoaparáty analogové;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;3;4;Spotøebitelská zaøízení;Fotoaparáty analogové;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;3;5;Spotøebitelská zaøízení;Fotoaparáty jednorázové;;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;3;5;Spotøebitelská zaøízení;Fotoaparáty jednorázové;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;3;5;Spotøebitelská zaøízení;Fotoaparáty jednorázové;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;3;6;Spotøebitelská zaøízení;Samostatné pøíslušenství fotoaparátù (fotoblesky, teleobjektivy, expozimetry);    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;3;6;Spotøebitelská zaøízení;Samostatné pøíslušenství fotoaparátù (fotoblesky, teleobjektivy, expozimetry);;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;3;6;Spotøebitelská zaøízení;Samostatné pøíslušenství fotoaparátù (fotoblesky, teleobjektivy, expozimetry);;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;4;1;Spotøebitelská zaøízení;Video a DVD pøehrávaèe a rekordéry;;5;18;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Videorekordéry;Videorekordéry
+4;4;2;Spotøebitelská zaøízení;Pøenosný DVD pøehrávaè s obrazovkou;;5;18;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Videorekordéry;Videorekordéry
+4;5;1;Spotøebitelská zaøízení;Hi-fi vìže;    ;5;19;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hi-fi zaøízení;Hi-fi zaøízení
+4;5;2;Spotøebitelská zaøízení;Zesilovaèe a tunery;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;2;Spotøebitelská zaøízení;Zesilovaèe a tunery;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;2;Spotøebitelská zaøízení;Zesilovaèe a tunery;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;5;3;Spotøebitelská zaøízení;Receivery;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;3;Spotøebitelská zaøízení;Receivery;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;3;Spotøebitelská zaøízení;Receivery;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;5;4;Spotøebitelská zaøízení;Kapesní pøehrávaèe a rekordéry;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;4;Spotøebitelská zaøízení;Kapesní pøehrávaèe a rekordéry;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;4;Spotøebitelská zaøízení;Kapesní pøehrávaèe a rekordéry;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;5;5;Spotøebitelská zaøízení;Diktafony;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;5;Spotøebitelská zaøízení;Diktafony;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;6;Spotøebitelská zaøízení;Domácí kina (bez TV);    ;4;8;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Ostatní výrobky nebo zaøízení pro pøenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupinì neuvedené
+4;5;7;Spotøebitelská zaøízení;Satelitní a DVB pøijímaèe;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;7;Spotøebitelská zaøízení;Satelitní a DVB pøijímaèe;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;7;Spotøebitelská zaøízení;Satelitní a DVB pøijímaèe;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;5;8;Spotøebitelská zaøízení;Parabolické antény s napájením;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;8;Spotøebitelská zaøízení;Parabolické antény s napájením;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;8;Spotøebitelská zaøízení;Parabolické antény s napájením;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;5;9;Spotøebitelská zaøízení;Pokojové antény s napájením;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;9;Spotøebitelská zaøízení;Pokojové antény s napájením;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;9;Spotøebitelská zaøízení;Pokojové antény s napájením;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;5;10;Spotøebitelská zaøízení;Komponenty pro satelitní a DVB pøijímaèe;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;5;10;Spotøebitelská zaøízení;Komponenty pro satelitní a DVB pøijímaèe;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;5;10;Spotøebitelská zaøízení;Komponenty pro satelitní a DVB pøijímaèe;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;6;1;Spotøebitelská zaøízení;Zesilovaèe;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;6;1;Spotøebitelská zaøízení;Zesilovaèe;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;6;1;Spotøebitelská zaøízení;Zesilovaèe;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;6;2;Spotøebitelská zaøízení;Mixážní pult;;4;9;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;6;2;Spotøebitelská zaøízení;Mixážní pult;;4;9;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;6;2;Spotøebitelská zaøízení;Mixážní pult;;4;9;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;6;2;Spotøebitelská zaøízení;Mixážní pult;;5;20;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;6;2;Spotøebitelská zaøízení;Mixážní pult;;5;20;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;6;3;Spotøebitelská zaøízení;Ekvalizéry;;4;9;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;6;3;Spotøebitelská zaøízení;Ekvalizéry;;4;9;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;6;3;Spotøebitelská zaøízení;Ekvalizéry;;4;9;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;6;3;Spotøebitelská zaøízení;Ekvalizéry;;5;20;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;6;3;Spotøebitelská zaøízení;Ekvalizéry;;5;20;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;7;1;Spotøebitelská zaøízení;Bicí a kytary;    ;4;9;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;7;1;Spotøebitelská zaøízení;Bicí a kytary;;4;9;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;7;1;Spotøebitelská zaøízení;Bicí a kytary;;4;9;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;7;1;Spotøebitelská zaøízení;Bicí a kytary;;5;20;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;7;1;Spotøebitelská zaøízení;Bicí a kytary;;5;20;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;7;2;Spotøebitelská zaøízení;Klávesové nástroje a syntetizátory;    ;4;9;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry do 10 kg
+4;7;2;Spotøebitelská zaøízení;Klávesové nástroje a syntetizátory;;4;9;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry od 10 do 30 kg
+4;7;2;Spotøebitelská zaøízení;Klávesové nástroje a syntetizátory;;4;9;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Hudební zaøízení (kromì kostelních varhan);Hubební nástroje, mixážní pulty, ekvalizéry nad 30 kg
+4;7;2;Spotøebitelská zaøízení;Klávesové nástroje a syntetizátory;;5;20;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje do 4 kg
+4;7;2;Spotøebitelská zaøízení;Klávesové nástroje a syntetizátory;;5;20;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Hudební nástroje;Hubební nástroje nad 4 kg
+4;7;3;Spotøebitelská zaøízení;Aparatury;;4;8;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Ostatní výrobky nebo zaøízení pro pøenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupinì neuvedené
+4;7;4;Spotøebitelská zaøízení;Bezdrátové mikrofony a zvukové modely;;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;7;4;Spotøebitelská zaøízení;Bezdrátové mikrofony a zvukové modely;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;7;4;Spotøebitelská zaøízení;Bezdrátové mikrofony a zvukové modely;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;7;5;Spotøebitelská zaøízení;Ostatní pøíslušenství;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;7;5;Spotøebitelská zaøízení;Ostatní pøíslušenství;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;7;5;Spotøebitelská zaøízení;Ostatní pøíslušenství;;5;21;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz od 1 kg do 4 kg
+4;7;5;Spotøebitelská zaøízení;Ostatní pøíslušenství;;6;4;1;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Routery;Routery do 500 g
+4;7;5;Spotøebitelská zaøízení;Ostatní pøíslušenství;;6;4;2;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Routery;Routery od 0,5 kg do 2 kg
+4;7;5;Spotøebitelská zaøízení;Ostatní pøíslušenství;;6;4;3;Malá zaøízení informaèních technologií a telekomunikaèní zaøízení, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm;Routery;Routery nad 2 kg
+4;8;1;Spotøebitelská zaøízení;Reproduktory;    ;4;8;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Ostatní výrobky nebo zaøízení pro pøenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupinì neuvedené
+4;8;2;Spotøebitelská zaøízení;Megafony;;4;8;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Ostatní výrobky nebo zaøízení pro pøenos zvuku, obrazu a jiných informací pomocí telekomunikace v jiné podskupinì neuvedené
+4;8;3;Spotøebitelská zaøízení;Elektrické chùvy;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;8;3;Spotøebitelská zaøízení;Elektrické chùvy;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;8;4;Spotøebitelská zaøízení;Meteostanice;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;8;4;Spotøebitelská zaøízení;Meteostanice;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;8;5;Spotøebitelská zaøízení;Dálkové ovladaèe;    ;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;8;5;Spotøebitelská zaøízení;Dálkové ovladaèe;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+4;8;6;Spotøebitelská zaøízení;Èasové spínaèe;;5;21;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz do 100 g
+4;8;6;Spotøebitelská zaøízení;Èasové spínaèe;;5;21;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Zaøízení reprodukující zvuk èi obraz;Zaøízení reprodukující zvuk èi obraz 0,1 kg do 1 kg
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;1;1;Svìtelné zdroje;Pøímé (trubicové) záøivky;Pøímé (trubicové) záøivky
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;2;1;Svìtelné zdroje;Kompaktní záøivky;Kompaktní záøivky
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;3;1;Svìtelné zdroje;Záøivky;Záøivky
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;4;1;Svìtelné zdroje;Vysoce intenzivní výbojky, vèetnì vysokotlakých sodíkových výbojek a halogenidových výbojek;Vysoce intenzivní výbojky, vèetnì vysokotlakých sodíkových výbojek a halogenidových výbojek
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;5;1;Svìtelné zdroje;Nízkotlaké sodíkové výbojky;Nízkotlaké sodíkové výbojky
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;6;1;Svìtelné zdroje;"LED lampy a ostatní osvìtlovací zaøízení se zabudovanými 
+LED diodami";"LED lampy a ostatní osvìtlovací zaøízení se zabudovanými 
+LED diodami"
+5;1;1;Osvìtlovací zaøízení;Svìtelné zdroje s výjimkou pøímo žhavených žárovek;;3;7;1;Svìtelné zdroje;Ostatní svìtelné zdroje v jiné podskupinì neuvedené;Ostatní svìtelné zdroje v jiné podskupinì neuvedené
+5;1;2;Osvìtlovací zaøízení;Svítidla s LED diodami;    ;4;7;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod do 10 kg
+5;1;2;Osvìtlovací zaøízení;Svítidla s LED diodami;    ;4;7;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod od 10 kg do 30 kg
+5;1;2;Osvìtlovací zaøízení;Svítidla s LED diodami;;4;7;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod nad 30 kg
+5;1;2;Osvìtlovací zaøízení;Svítidla s LED diodami;;5;4;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Svítidla (do 50 cm);"Svítidla s LED i bez LED, jejichž žádný vnìjší rozmìr nepøesahuje 
+50 cm"
+5;1;3;Osvìtlovací zaøízení;Svítidla bez LED diod;;4;7;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod do 10 kg
+5;1;3;Osvìtlovací zaøízení;Svítidla bez LED diod;;4;7;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod od 10 kg do 30 kg
+5;1;3;Osvìtlovací zaøízení;Svítidla bez LED diod;;4;7;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Svítidla (nad 50 cm);Svítidla s LED diodami/bez LED diod nad 30 kg
+5;1;3;Osvìtlovací zaøízení;Svítidla bez LED diod;;5;4;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Svítidla (do 50 cm);"Svítidla s LED i bez LED, jejichž žádný vnìjší rozmìr nepøesahuje 
+50 cm"
+6;1;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Vrtaèky;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;1;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Vrtaèky;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;2;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Pily;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;2;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Pily;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;3;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Šicí stroje kromì zaøízení používaných v domácnostech spadajících pod skupinu 2;;4;10;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Zaøízení používaná k pletení a tkaní;Zaøízení používaná k šití, pletení, tkaní a jinému zpracování textilu, jejichž kterýkoli vnìjší rozmìr pøesahuje 50 cm
+6;4;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Zaøízení pro soustružení, frézování, broušení, drcení, øezání, sekání, støíhání, vrtání, dìlání otvorù, ražení, skládání, ohýbání nebo podobné zpracování døeva, kovù a dalších materiálù;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;4;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Zaøízení pro soustružení, frézování, broušení, drcení, øezání, sekání, støíhání, vrtání, dìlání otvorù, ražení, skládání, ohýbání nebo podobné zpracování døeva, kovù a dalších materiálù;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;5;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Nástroje pro nýtování, pøibíjení nebo šroubování nebo pro odstraòování nýtù, høebíkù, šroubù nebo pro podobné úèely;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;5;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Nástroje pro nýtování, pøibíjení nebo šroubování nebo pro odstraòování nýtù, høebíkù, šroubù nebo pro podobné úèely;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;6;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Nástroje pro pájení, svaøování nebo podobné použití;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;6;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Nástroje pro pájení, svaøování nebo podobné použití;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;7;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Zaøízení pro postøik, šíøení, rozptyl nebo zpracování tekutých nebo plynných látek jinými zpùsoby;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;7;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Zaøízení pro postøik, šíøení, rozptyl nebo zpracování tekutých nebo plynných látek jinými zpùsoby;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;8;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Nástroje pro seèení nebo jiné zahradnické èinnosti;    ;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+6;8;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Nástroje pro seèení nebo jiné zahradnické èinnosti;    ;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;9;1;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Ostatní elektrické a elektronické nástroje v jiné podskupinì neuvedené ;nad 100 g;5;27;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí nad 100 g
+6;9;2;Elektrické a elektronické nástroje (s výjimkou velkých stacionárních prùmyslových nástrojù);Ostatní elektrické a elektronické nástroje v jiné podskupinì neuvedené ;do 100 g;5;27;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé elektrické a elektronické nástroje;Malé elektrické a elektronické nástroje a náøadí do 100 g
+7;1;1;Hraèky, vybavení pro volný èas a sporty;Autodráhy a železnice;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;1;1;Hraèky, vybavení pro volný èas a sporty;Autodráhy a železnice;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;1;2;Hraèky, vybavení pro volný èas a sporty;RC modely elektrické;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;1;2;Hraèky, vybavení pro volný èas a sporty;RC modely elektrické;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;1;3;Hraèky, vybavení pro volný èas a sporty;Doplòky a pøíslušenství;;5;22;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky do 100 g
+7;1;3;Hraèky, vybavení pro volný èas a sporty;Doplòky a pøíslušenství;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;1;3;Hraèky, vybavení pro volný èas a sporty;Doplòky a pøíslušenství;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;2;1;Hraèky, vybavení pro volný èas a sporty;Ruèní ovladaèe videoher;;5;22;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky do 100 g
+7;2;1;Hraèky, vybavení pro volný èas a sporty;Ruèní ovladaèe videoher;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;2;1;Hraèky, vybavení pro volný èas a sporty;Ruèní ovladaèe videoher;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;3;1;Hraèky, vybavení pro volný èas a sporty;Kapesní digitální hry;;5;22;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky do 100 g
+7;3;1;Hraèky, vybavení pro volný èas a sporty;Kapesní digitální hry;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;3;1;Hraèky, vybavení pro volný èas a sporty;Kapesní digitální hry;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;3;2;Hraèky, vybavení pro volný èas a sporty;Herní konzole;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;3;2;Hraèky, vybavení pro volný èas a sporty;Herní konzole;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;4;1;Hraèky, vybavení pro volný èas a sporty;Poèítaèe pro cyklistiku,potápìní, bìh, veslování apod.;    ;5;24;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Poèítaèe pro cyklistiku, potápìní, bìh, veslování a podobné aktivity;Poèítaèe pro cyklistiku, potápìní, bìh, veslování a podobné aktivity
+7;5;1;Hraèky, vybavení pro volný èas a sporty;Trenažery;do 10 kg;5;23;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Sportovní vybavení;Trenažery do 25 kg, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+7;5;2;Hraèky, vybavení pro volný èas a sporty;Trenažery;nad 10 kg;4;18;11;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 25 kg do 50 kg"
+7;5;2;Hraèky, vybavení pro volný èas a sporty;Trenažery;nad 10 kg;4;18;12;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+od 50 kg do 100 kg"
+7;5;2;Hraèky, vybavení pro volný èas a sporty;Trenažery;nad 10 kg;4;18;13;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;"Ostatní velká zaøízení v jiné podskupinì neuvedená 
+nad 100 kg"
+7;5;2;Hraèky, vybavení pro volný èas a sporty;Trenažery;nad 10 kg;5;23;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Sportovní vybavení;Trenažery do 25 kg, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+7;5;3;Hraèky, vybavení pro volný èas a sporty;Sportovní doplòky ;;5;23;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Sportovní vybavení;Sportovní doplòky
+7;6;1;Hraèky, vybavení pro volný èas a sporty;Výherní mincovní automaty;;4;14;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Velké výherní mincovní automaty;Výherní mincovní automaty
+7;7;1;Hraèky, vybavení pro volný èas a sporty;Elektrické a elektronické hraèky bez LCD displeje, baterie a akumulátoru;;5;22;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky do 100 g
+7;7;1;Hraèky, vybavení pro volný èas a sporty;Elektrické a elektronické hraèky bez LCD displeje, baterie a akumulátoru;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;7;1;Hraèky, vybavení pro volný èas a sporty;Elektrické a elektronické hraèky bez LCD displeje, baterie a akumulátoru;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+7;7;2;Hraèky, vybavení pro volný èas a sporty;Elektrické a elektronické hraèky s LCD displejem, baterií a akumulátorem;;5;22;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky do 100 g
+7;7;2;Hraèky, vybavení pro volný èas a sporty;Elektrické a elektronické hraèky s LCD displejem, baterií a akumulátorem;;5;22;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 0,1 kg do 1 kg
+7;7;2;Hraèky, vybavení pro volný èas a sporty;Elektrické a elektronické hraèky s LCD displejem, baterií a akumulátorem;;5;22;3;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Elektrické a elektronické hraèky;Elektrické a elektronické hraèky od 1 kg do 4 kg
+8;1;1;Lékaøské pøístroje;Profipøístroje;    ;4;15;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Velké zdravotnické prostøedky;Velké zdravotnické prostøedky
+8;2;1;Lékaøské pøístroje;Výrobky urèené pro domácnost ;    ;5;28;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé zdravotnické prostøedky;Malé zdravotnické prostøedky urèené pro domácnost
+9;1;1;Pøístroje pro monitorování a kontrolu;Profizaøízení;;4;16;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Velké pøístroje pro monitorování a kontrolu;Velké pøístroje pro monitorování a kontrolu
+9;2;1;Pøístroje pro monitorování a kontrolu;Výrobky urèené pro domácnost ;    ;5;29;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé nástroje pro monitorování a kontrolu;Malé nástroje pro monitorování a kontrolu do 0,5 kg
+9;2;1;Pøístroje pro monitorování a kontrolu;Výrobky urèené pro domácnost ;    ;5;29;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Malé nástroje pro monitorování a kontrolu;Malé nástroje pro monitorování a kontrolu urèené nad 0,5 kg
+10;1;1;Výdejní automaty;Profizaøízení;;1;3;1;Zaøízení pro tepelnou výmìnu;Zaøízení automaticky poskytující chlazené výrobky;Zaøízení automaticky poskytující chlazené výrobky
+10;1;1;Výdejní automaty;Profizaøízení;;4;17;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Velké výdejní automaty na výrobky a peníze;Velké výdejní automaty na výrobky a peníze
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;1;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky do 50 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;2;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky od 50 kg do 100 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;3;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky od 100 kg do 200 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;4;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - venkovní jednotky nad 200 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;5;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - vnitøní jednotky do 35 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;6;Zaøízení pro tepelnou výmìnu;Klimatizaèní zaøízení;Klimatizace - vnitøní jednotky nad 35 kg (s chladicími médii), klimatizace mobilní (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;5;1;Zaøízení pro tepelnou výmìnu;Odvlhèovací zaøízení;Odvlhèovací zaøízení do 10 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;5;2;Zaøízení pro tepelnou výmìnu;Odvlhèovací zaøízení;Odvlhèovací zaøízení nad 10 kg (s chladicími médii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;1;Zaøízení pro tepelnou výmìnu;Tepelná èerpadla;Tepelná èerpadla do 100 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;2;Zaøízení pro tepelnou výmìnu;Tepelná èerpadla;Tepelná èerpadla od 100 kg do 150 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;3;Zaøízení pro tepelnou výmìnu;Tepelná èerpadla;Tepelná èerpadla od 150kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;1;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu do 10 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;2;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu od 10 kg do 50 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;3;Zaøízení pro tepelnou výmìnu;Radiátory obsahující olej a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu;Radiátory obsahující olej, a jiná zaøízení pro tepelnou výmìnu využívající k tepelné výmìnì jiné kapaliny než vodu nad 50 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;2;1;1;"Obrazovky, monitory a zaøízení obsahující obrazovky 
+o ploše vìtší než 100 cm2";Obrazovky;Velkoplošné obrazovky, sportovní èasomíry, speciální obrazovky, nástìnné displeje
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;1;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Elektrické ohøívaèe vody - závìsné svislé, vodorovné, stacionární tlakové do 50 kg, jejichž kterýkoliv vnìjší rozmìr pøesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;2;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Elektrické ohøívaèe vody - závìsné svislé, vodorovné, stacionární tlakové nad 50 kg, jejichž kterýkoliv vnìjší rozmìr pøesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;3;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Elektrické kotle, jejichž kterýkoliv vnìjší rozmìr pøesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;4;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Elektrická akumulaèní kamna do 40 kg, jejichž kterýkoliv vnìjší rozmìr pøesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;5;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Elektrická akumulaèní kamna nad 40kg,  jejichž kterýkoliv vnìjší rozmìr pøesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;6;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Speciální elektrická topidla - výhøevné sálavé kameny, ostatní sálavé zdroje
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;7;"Velká zaøízení, jejichž kterýkoli vnìjší rozmìr 
+pøesahuje 50 cm";Ostatní velká zaøízení v jiné podskupinì neuvedená;Rekuperaèní jednotky (bez chladicích médií), jejichž jakýkoliv vnìjší rozmìr pøesáhne 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;26;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Regulaèní ventily topení, termostaty;Regulaèní ventily topení, termostaty
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;32;1;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;Elektrické ohøívaèe vody, jejichž žádný vnìjší rozmìr nepøesahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;32;2;"Malá zaøízení, jejichž žádný vnìjší rozmìr 
+nepøesahuje 50 cm";Ostatní malá zaøízení v jiné podskupinì neuvedená;Speciální malá elektrická topidla
+;;;;;;;;;;;

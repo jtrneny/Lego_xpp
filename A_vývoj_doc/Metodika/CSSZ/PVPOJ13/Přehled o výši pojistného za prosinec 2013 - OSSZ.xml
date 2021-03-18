@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pvpoj xmlns="http://schemas.cssz.cz/POJ/PVPOJ2013">
+	<prehled verze="2013.0" typPrehledu="N">
+		<okres>
+			<kodOSSZ>781</kodOSSZ>
+			<nazevOSSZ>Uherské Hradiště</nazevOSSZ>
+		</okres>
+		<obdobi>
+			<mesic>12</mesic>
+			<rok>2013</rok>
+		</obdobi>
+		<zamestnavatel>
+			<vs>7812007396</vs>
+			<IC>29290589</IC>
+			<nazev>KOVOSTEEL Recycling, s.r.o.</nazev>
+			<adresa>
+				<ulice>Brněnská</ulice>
+				<cisloDomu>1372</cisloDomu>
+				<obec>Staré Město</obec>
+				<PSC>68603</PSC>
+				<stat>CZ</stat>
+			</adresa>
+			<sazba>1</sazba>
+		</zamestnavatel>
+		<pojistne>
+			<uhrnVymerovacichZakladuPbezDS>1807439</uhrnVymerovacichZakladuPbezDS>
+			<uhrnPojistnehoPbezDS>117521</uhrnPojistnehoPbezDS>
+			<uhrnVymerovacichZakladuPsDS>0</uhrnVymerovacichZakladuPsDS>
+			<uhrnPojistnehoPsDS>0</uhrnPojistnehoPsDS>
+			<uhrnVymerovacichZakladu>1807439</uhrnVymerovacichZakladu>
+			<uhrnPojistneho>451860</uhrnPojistneho>
+			<pojistneCelkem>569381</pojistneCelkem>
+		</pojistne>
+		<nahradyMzdy>
+			<uhrnZuctovanychNahrad>0</uhrnZuctovanychNahrad>
+			<polovinaZuctovanychNahrad>0</polovinaZuctovanychNahrad>
+		</nahradyMzdy>
+		<rozdilPojistneNahrady>569381</rozdilPojistneNahrady>
+		<platebniUdaje>
+			<bankaCisloUctu/>
+		</platebniUdaje>
+		<pracovnik>
+			<jmeno>Jana</jmeno>
+			<prijmeni>Pařenicová</prijmeni>
+			<telefon>572419704</telefon>
+			<datumVyplneni>2014-01-22</datumVyplneni>
+		</pracovnik>
+	</prehled>
+</pvpoj>

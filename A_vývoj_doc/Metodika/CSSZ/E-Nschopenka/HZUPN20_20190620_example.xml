@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PodaniHZUPN xmlns="http://schemas.cssz.cz/nem/HZUPN20" version="2020.0" partialAccept="A">
+	<VENDOR productName="FormApps Server" productVersion="1.4.0"/>
+	<SENDER EmailNotifikace="jmeno.prijmeni@domena.cz" ISDSreport="XML+HTML"/>
+	<FormularHZUPN poradoveCislo="1">
+		<dokument>
+			<hlasZamest>A</hlasZamest>
+			<hlasOsoby>N</hlasOsoby >
+			<cisloPotvrzeni>P5599661</cisloPotvrzeni>
+			<kodOSSZ>661</kodOSSZ>
+			<nazevOSSZ>Hradec Kralové</nazevOSSZ>
+			<datumVystaveni>2020-06-30</datumVystaveni>
+			<opravnePodani>N</opravnePodani>
+		</dokument>
+		<pojistenec>
+			<jmeno>Jan</jmeno>
+			<prijmeni>Novák</prijmeni>
+			<titul>Ing.</titul>
+			<rodCislo>7603074919</rodCislo>
+			<datumNar>1976-03-07</datumNar>
+		</pojistenec>
+		<zamestnani>
+			<nazevZamestnavatel>Výzkumný ústav</nazevZamestnavatel>
+			<ICZamestnavatel>87654321</ICZamestnavatel>
+			<variabilniSymbol>1159876547</variabilniSymbol>
+		</zamestnani>
+		<potvrzeniZamestnavatele>
+			<navratDoPrace>A</navratDoPrace>
+			<duvodNavratDoPrace></duvodNavratDoPrace>
+			<datumNavratDoPrace>2020-06-30</datumNavratDoPrace>
+			<pocetOdpracHodinPoslDenPD>4.5</pocetOdpracHodinPoslDenPD>
+			<pracovniDobaPoslDenPD>8.5</pracovniDobaPoslDenPD>
+		</potvrzeniZamestnavatele>
+		<praceVeDnech>
+			<interval>
+				<pracovalOd>2020-06-29</pracovalOd>
+				<pracovalDo>2020-06-30</pracovalDo>
+			</interval>
+		</praceVeDnech>
+	</FormularHZUPN>
+</PodaniHZUPN>

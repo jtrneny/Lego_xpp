@@ -1,0 +1,35 @@
+Function VS_TESTe( Cargo, lIsRUN)
+	Local  N, nITEMs
+	Local  cScreen := SaveScreen()
+	Local  nGATE := 0, aGATE := { 4, 5, 6, 7, 15, 16, 17, 18 }
+	Local  lOK := .T.
+	Local  lVYRAZ_1 := .T., lRELACE := .T., lVYRAZ_2 := .T., lOPERAND := .T.
+	Local  pA
+
+	Default lIsRUN To .F.
+
+	If !Empty( Cargo)
+		nITEMs := Len( ::aFLT_Item)
+	  For N := 1 To nITEMs
+		  pA := ::aFLT_Item[ N]
+		  aEVAL( pA, { |X,I|  ;
+		   If( aSCAN( aGATE, I ) <> 0 .and. !Empty( X), nGATE++,  Nil ), ;
+		   If( Empty( pA.cVYRAZ_1), lVYRAZ_1 := .F., Nil              ), ;
+		   If( Empty( pA.cRELACE ), lRELACE  := .F., Nil              ), ;
+		   If( Empty( pA.cVYRAZ_2) .and. lIsRUN, lVYRAZ_2 := .F., Nil ), ;
+		   If( Empty( pA.cOPERAND) .and. ( N <> nITEMs), lOPERAND := .F., Nil ) })
+	  Next
+	Else
+		nGATE := 3
+	EndIf
+
+	If !( Mod( nGATE, 2) == 0 .and. lVYRAZ_1 .and. lRELACE .and. lVYRAZ_2 .and. lOPERAND)
+	  DispBOX( 16, 58, 22, 76, BX_DOUBLE +' ', 'N/BG*' )
+    @ 17, 60 Say 'ÚÄÄ¿ Ú¿Ú¿       ' Color 'R+/BG*'
+    @ 18, 60 Say '³Ú¿³ ³³³³       ' Color 'R+/BG*'
+    @ 19, 60 Say '³ÀÙ³ ³³³³ Ú¿Ú¿Ú¿' Color 'R+/BG*'
+    @ 20, 60 Say '³Ú¿³ ³ÀÙ³ ÀÙÀÙÀÙ' Color 'R+/BG*'
+    @ 21, 60 Say 'ÀÙÀÙ ÀÄÄÙ       ' Color 'R+/BG*'
+	  ( lOK := .F., InKey( 1), RestScreen( ,,,, cScreen))
+	EndIf
+Return( lOK)

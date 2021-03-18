@@ -1,0 +1,6 @@
+   var cpexCAFSettings = cpexCAFSettings || {};
+   cpexCAFSettings['slideup'] = cpexCAFSettings['slideup'] || {};
+   cpexCAFSettings['slideup']['CLOSE']= cpexCAFSettings['slideup']['CLOSE'] || {};
+   cpexCAFSettings['slideup']['CLOSE'] = {innerHTML: 'Zavřít reklamu'}
+   cpexCAFSettings['slideup']['CLOSE'] = {css: 'font-family: Arial, sans-serif !important;top: -32px;height: 32px;font-size: 14px;line-height: 34px; background:grey; padding: 0 16px 0 13px;' +
+           'cursor: pointer;border-top: 1px solid gray;border-left: 1px solid gray;color: black;text-decoration: none;position: absolute;right: 0;display:none;'}

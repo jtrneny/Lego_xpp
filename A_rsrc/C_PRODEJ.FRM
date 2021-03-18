@@ -1,0 +1,12 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník zkratek prodejcù ...) SIZE(75,15) FILE(C_PRODEJ) GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) RESIZE(yy) PRE( tabSelect) 
+  TYPE(DBrowse) SIZE(75,14) FILE(C_PRODEJ) FIELDS(CZKRPRODEJ,CNAZPRODEJ::40);
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y)
+TYPE(End)
+
+TYPE(TabPage) CAPTION(DetailA)OFFSET(14,70) PRE( tabSelect)
+  TYPE(GET) NAME(CZKRPRODEJ) FPOS(15,1) FLEN(15) FCAPTION(Zkratka prodejce)    CPOS(1,1)
+  TYPE(GET) NAME(CNAZPRODEJ) FPOS(15,2) FLEN(30) FCAPTION(Jméno prodejce)      CPOS(1,2)
+TYPE(End)
+

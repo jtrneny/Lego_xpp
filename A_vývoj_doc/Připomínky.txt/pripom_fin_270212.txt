@@ -1,0 +1,20 @@
+- zálohová FA na 1500 uhrazena 
+  DD - 1          500
+  DD - 2          500
+--- v tomto pøípadì se pøebírá celá hodnota zálohy tzn.     500 jde na volno. Mìla by být povinnost pøevzít     pøíslušné daòové doklady.
+    Na pøíslušnou zálohovou fakturu se 
+    nesmí již dát vystavit daòový doklad(500). 
+
+
+-- jak se budou moci opravovat položky DD  vèetnì promítnutí do ceny
+
+
+- zálohová FA na 1000 uhrazena 
+  DD - 1          500
+  DD - 2          500  
+
+- vlastnì dtto. v obou pøípadech co když žádnou èástku z DD nechci/ nemúžu na FA upatnit
+
+--- jedná se o chybu na kterou by jsme mìli upozornit.     Jinak øeèeno hodnota zálohy je vìtší než hodnota 
+    daòových dokladù a nezbývá již nic k pøevzetí. Mùže 
+    ještì nastat pøípad kdy zbývá ještì na zálohové     faktuøe k pøevzetí tak mùže ponížit na daòových     dokladech právì do této hodnoty.

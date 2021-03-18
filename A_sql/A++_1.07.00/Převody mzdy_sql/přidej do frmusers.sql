@@ -1,0 +1,3 @@
+INSERT INTO frmusers (CFORMNAME,CUSER,CCALLFORM,CIDFORMS,CIDFILTERS,MTISK,dVznikZazn,dZmenaZazn,mPOZNAMKA,mUserZmenR)
+        SELECT CFORMNAME,'gonsenjana',CCALLFORM,CIDFORMS,CIDFILTERS,MTISK,dVznikZazn,dZmenaZazn,mPOZNAMKA,mUserZmenR
+             FROM frmusers_

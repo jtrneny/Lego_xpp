@@ -1,0 +1,73 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Personalistika) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+    TYPE(Menu) LEVEL(2) CAPTION(Kmenové údaje o pracovnících)
+      TYPE(Dialog) LEVEL(3) CAPTION(Osobní údaje o zamìstnanci)        DATA(PER_kmenmsos_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Mzdové údaje o zamìstnanci)        DATA(PER_kmenmsmo_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Rodinní pøíslušníci zamìstnance)   DATA(PER_kmenmsrp_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)                     DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(Vzdìlání, školení a kursy)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dosažená vzdìlání)      DATA(PER_vzdelani_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Školení a kursy)        DATA(PER_skoleni_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)          DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(Lékaøské prohlídky)
+      TYPE(Dialog) LEVEL(3) CAPTION(Lékaøské prohlídky)  DATA(PER_lekprohl_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)       DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(Plán školení, vzdìlávání a lékaøských prohlídek)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovníkù)          DATA(PER_persitem_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle položek plánu)       DATA(PER_persitem2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle období)              DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle kalendáøních dnù)    DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)           DATA()
+
+    TYPE(MEnu) LEVEL(2) CAPTION(Uskuteènìní školení, vzdìlávání a lékaøských prohlídek)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovníkù)         DATA(PER_persitus_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle položek plánu)      DATA(PER_persitus2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle období)             DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle kalendáøních dnù)   DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)          DATA()
+
+    TYPE(Menu) LEVEL(2) CAPTION(Školení, vzdìlání a lékaøské prohlídky)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle pracovníkù)         DATA(PER_persitvs_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle položek plánu)      DATA(PER_persitvs2_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle období)             DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle kalendáøních dnù)   DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)          DATA()
+
+  TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Pracovní vztah)              DATA(C_PRACVZ)
+    TYPE(Dialog) LEVEL(2) CAPTION(Ukonèení pracovního vztahu)  DATA(C_UKONPV)
+    TYPE(Dialog) LEVEL(2) CAPTION(Zamìstnanecký vztah)         DATA(C_ZAMEVZ)
+    TYPE(Dialog) LEVEL(2) CAPTION(Mimopracovní vztah)          DATA(C_MIMPRV)
+    TYPE(Dialog) LEVEL(2) CAPTION(Pracovní zaøazení)           DATA(C_PRACZA)
+    TYPE(Dialog) LEVEL(2) CAPTION(Funkce pracovníka)           DATA(C_FUNCPR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Dùchody)                     DATA(C_DUCHOD)
+    TYPE(Dialog) LEVEL(2) CAPTION(Klasifikace zamìstnaní)      DATA(C_KLAZAM)
+    TYPE(Dialog) LEVEL(2) CAPTION(Rodinný vztah)               DATA(C_RODSTA)
+    TYPE(Dialog) LEVEL(2) CAPTION(Státní pøíslušnost)          DATA(C_STATPR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Národnost)                   DATA(C_NAROD)
+    TYPE(Dialog) LEVEL(2) CAPTION(Vzdìlání)                    DATA(C_VZDEL)
+    TYPE(Dialog) LEVEL(2) CAPTION(Vzdìlání - ukonèení)         DATA(C_VZDELUK)
+    TYPE(Dialog) LEVEL(2) CAPTION(Školení)                     DATA(C_SKOLEN)
+    TYPE(Dialog) LEVEL(2) CAPTION(Školení - ukonèení)          DATA(C_SKOLUK)
+    TYPE(Dialog) LEVEL(2) CAPTION(Školitelé)                   DATA(C_SKOLIT)
+    TYPE(Dialog) LEVEL(2) CAPTION(Lékaøské prohlídky)          DATA(C_LEKPRO)
+    TYPE(Dialog) LEVEL(2) CAPTION(Lékaøi)                      DATA(C_LEKARI)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION(Nastavení modulu)  DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(Kalkulaèka)        DATA(Sell)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Parametry pro zpracování) DATA(Sell)

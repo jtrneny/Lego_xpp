@@ -1,0 +1,6 @@
+EXECUTE PROCEDURE sp_ModifyTableProperty(
+'MSPRC_MO',
+'TABLE_PRIMARY_KEY',
+'MSPRC01',
+'VALIDATE_WRITE_FAIL',
+'deleted.adt');

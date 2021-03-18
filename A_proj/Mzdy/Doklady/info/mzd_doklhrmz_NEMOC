@@ -1,0 +1,152 @@
+*
+** pozor tento soubor je jen informaËnÌ souhrn
+** NEPÿIPOJOVOVAt Do PROJEKTU
+*
+
+takûe st·vajÌcÌ p·sma jsou  1 ... 21 tj. kalend·¯nÌ dny
+                           22 ...
+
+ale platÌ se jen pracovnÌ dny                 3 PD nedostanu nic
+pak z tÏch yb˝valÌcÌch 18 kalend·¯nÌch dn˘    x PD 60% ale to nenÌ nemocensk·,
+pokud mÏ m· zamÏstnavatel r·d, m˘ûe mÏ d·t vÌc, ale pak z toho co je nad 60% musÌ odvÈst
+daÚ, soci·lnÌ i zdravotnÌ
+
+c_nemPas
+
+tag C_NEMPAS01
+    UPPER(CTYPDOKLAD)+UPPER(CTYPPOHYBU)+STRZERO(nRokObd,6)+STRZERO(nPasmo,3)
+
+p¯Ìstup pro zÌsk·nÌ z·znam˘
+
+1 - cky := upper( mzdDavHdw->ctypDoklad) +upper( mzdDavHDw->ctypPohybu)
+
+2 - v INS po zad·nÌ od - do
+
+    cky rozöÌ¯Ìme o strZero( mzd_doklhrmz_nrokObd( mzdDavHdw->ddatumOd ), 6 )
+    mzdDavHdw->ddatumOd ... mzdDavHdw->ddatumDo
+
+    function mzd_doklhrmz_nrokObd( date )
+      local  retVal := 0
+
+      do case
+      * do 31.12.2010
+      case date <= ctod( '31.12.10' )
+        retVal := 201001
+
+      * od  1.1.2011
+      case date >= ctod( '01.01.11' )
+        retVal := 201101
+
+      endcase
+    return retVal
+
+3 - no a nastavÌme scope
+    c_nemPas->( dbsetScope( SCOPE_BOTH, cky))
+
+    ddatumDo    := if( empty(mzdDavHdw->ddatumDo), EoM(mzdDavHdw->ddatumOd), mzdDavHdw->ddatumDo )
+    ndny_nemoci := ddatumDo - mzdDavHdw->ddatumOd
+    *
+    ndnyNem := ndny_nemoci
+
+    do while .not. c_nemPas->(eof())
+
+      dvykazN_OD := mzdDavHdw->ddatumOd
+      npasmoOd   := c_nemPas->npasmoOd
+      npasmoDo   := c_nemPas->npasmoDo
+      ndnyPas    := npasmo_Do - npsamo_Od + 1
+
+      if ndny_nemoci >= npasmoOd .and. npasmoDo <= ndny_nemoci
+
+       ** append + naplnÏnÌ z·znamu
+
+       mzdDavITw->dvykazN_OD := mzdDavITw->dproplN_OD := dvykazN_OD
+       mzdDavITw->dvykazN_DO := mzdDavITw->dproplN_DO := dvykazN_OD + min( ndnyPas, ndnyNem) -1
+      endif
+
+      dvykazN_OD := mzdDavITw->dvykazN_DO +1
+      ndnyNem    -= ndnyPas
+
+      c_nemPas->(dbSkip())
+    enddo
+
+
+    KALENDAR.PRG   - funkce pro v˝poËet dn˘ PRAC, SVAT, VOL, KAL
+        F_kalDny
+
+        F_pracDny  - MZD_funce_.prg
+        F_svatky   - MZD_funce_.prg
+        F_PrcDnyOD
+        F_VolDnyOD
+        F_SvatkyOD
+        D_DnyOdDo
+        PracFond
+        PrcFondObd
+        fPracDoba  - MZD_funce_.prg
+
+    *** pro jednotlivÈ z·znamy musÌme vypoËÌtat dny
+    5.5 - 17.5  17 - 5 + 1 = 13
+
+    ddatumDo    := if( empty(mzdDavHdw->ddatumDo), mh_lastDayOM(mzdDavHdw->ddatumOd), mzdDavHdw->ddatumDo )
+    ndny_nemoci := ddatumDo - mzdDavHdw->ddatumOd
+
+    ndnyBeg := 0
+    ndnyNem := ndny_nemoci
+    ndnyPas := npasmo_Do - npsamo_Od + 1
+
+    13 >=  1 ^    3 <= 13           408  5.5 + ndnyBeg   7.5 + min( ndnyPas, ndnyNem)  3
+
+    ndnyBeg += ndnyPas
+    ndnyNem -= ndnyPas
+    13 >=  4 ^   21 <= 13           409  5.5 + ndnyBeg  17.5 + min( ndnyPas, ndnyNem) 10
+
+    13 >= 22 ^ 9999 <= 13           ---
+
+    408  1     3
+    409  4    21
+    401 22  9999
+
+
+
+    ddatumDo    := if( empty(mzdDavHdw->ddatumDo), mh_lastDayOM(mzdDavHdw->ddatumOd), mzdDavHdw->ddatumDo )
+    ndny_nemoci :=  ddatumDo - mzdDavHdw->ddatumOd
+
+    npasmoOd := c_nemPas->npasmoOd
+    npasmoDo := c_nemPas->npasmoDo
+
+    if ndny_nemoci >= npasmoOd .and. npasmoDo <= ndny_nemoci
+      ok
+
+      mzdDavITw->(dbAppend())
+
+      * kalend·¯nÌ dny
+      mzdDavITw->ndruhMzdy  := c_nemPas->ndruhMzdy                               //
+      mzdDavITw->dvykazN_OD                                                      // Vyk·zan· nemoc OD kd
+      mzdDavITw->dvykazN_DO                                                      // Vyk·zan· nemoc DO kd
+      mzdDavITw->nvykazN_KD := (mzdDavITw->dvykazN_Do -mzdDavITw->dvykazN_Od) +1 // Vyk·zanÈ KalDny nemoci
+
+
+      * proplacenÈ dny
+      MzdDavITw->dProplN_Od
+      MzdDavITw->dProplN_Do
+
+
+-      TYPE(GET)  NAME(MzdDavITw->nDruhMzdy)      FPOS( 1,0) FLEN( 4) FCAPTION(Dmz    )
+-      TYPE(GET)  NAME(MzdDavITw->dVykazN_Od)     FPOS( 2,0) FLEN(11) FCAPTION(NemocOd)
+-      TYPE(GET)  NAME(MzdDavITw->dVykazN_Do)     FPOS( 3,0) FLEN(11) FCAPTION(NemocDo)
+-      TYPE(GET)  NAME(MzdDavITw->nVykazN_KD)     FPOS( 4,0) FLEN( 5) FCAPTION(NemKd  )  PICTURE(999)
+
+-      TYPE(GET)  NAME(MzdDavITw->dProplN_Od)     FPOS( 5,0) FLEN(11) FCAPTION(PlacenoOd  )
+-      TYPE(GET)  NAME(MzdDavITw->dProplN_Do)     FPOS( 6,0) FLEN(11) FCAPTION(PlacenoDo  )
+
+      TYPE(GET)  NAME(MzdDavITw->nProplN_Ho)     FPOS( 7,0) FLEN( 5) FCAPTION(PlcHo  )
+      TYPE(GET)  NAME(MzdDavITw->nProplN_KD)     FPOS( 8,0) FLEN( 5) FCAPTION(PlcKd  )
+      TYPE(GET)  NAME(MzdDavITw->nProplN_PD)     FPOS( 9,0) FLEN( 5) FCAPTION(PlcPd  )
+      TYPE(GET)  NAME(MzdDavITw->nProplN_VD)     FPOS(10,0) FLEN( 5) FCAPTION(PlcVd  )
+      TYPE(GET)  NAME(MzdDavITw->nSazbaDokl)     FPOS(11,0) FLEN( 5) FCAPTION(PlcSaz  )
+      TYPE(GET)  NAME(MzdDavITw->nMzda)          FPOS(12,0) FLEN( 5) FCAPTION(celkMzda )
+      TYPE(GET)  NAME(MzdDavITw->nNemocCelk)     FPOS(13,0) FLEN( 5) FCAPTION(celkemNem )
+      ¥
+      TYPE(GET)  NAME(MzdDavITw->nVykazN_PD)     FPOS(14,0) FLEN( 5) FCAPTION(NemPd   )
+      TYPE(GET)  NAME(MzdDavITw->nVykazN_VD)     FPOS(15,0) FLEN( 5) FCAPTION(NemVd   )
+
+      TYPE(GET)  NAME(MzdDavITw->nSazDenNem)     FPOS(16,0) FLEN( 6) FCAPTION(SazNem»ist  )

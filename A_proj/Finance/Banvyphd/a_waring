@@ -1,0 +1,78 @@
+Warning] FIN_BAN_VZZ_POK_.PRG(86): XBT0103: Ambiguous variable reference, assuming MEMVAR naVrub
+[Warning] FIN_BAN_VZZ_POK_.PRG(86): XBT0103: Ambiguous variable reference, assuming MEMVAR likvPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(93): XBT0103: Ambiguous variable reference, assuming MEMVAR naVrub
+[Warning] FIN_BAN_VZZ_POK_.PRG(94): XBT0103: Ambiguous variable reference, assuming MEMVAR likvPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(100): XBT0102: Ambiguous variable reference likvPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(100): XBT0102: Ambiguous variable reference naVrub
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR prijem
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR vydej
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR prijemz
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR vydejz
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR likPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR sumLik
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0103: Ambiguous variable reference, assuming MEMVAR rozdilPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(133): XBT0103: Ambiguous variable reference, assuming MEMVAR prijem
+[Warning] FIN_BAN_VZZ_POK_.PRG(133): XBT0103: Ambiguous variable reference, assuming MEMVAR vydej
+[Warning] FIN_BAN_VZZ_POK_.PRG(133): XBT0103: Ambiguous variable reference, assuming MEMVAR prijemz
+[Warning] FIN_BAN_VZZ_POK_.PRG(133): XBT0103: Ambiguous variable reference, assuming MEMVAR vydejz
+[Warning] FIN_BAN_VZZ_POK_.PRG(137): XBT0103: Ambiguous variable reference, assuming MEMVAR likPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(138): XBT0103: Ambiguous variable reference, assuming MEMVAR sumLik
+[Warning] FIN_BAN_VZZ_POK_.PRG(138): XBT0102: Ambiguous variable reference likPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(140): XBT0102: Ambiguous variable reference likPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(148): XBT0103: Ambiguous variable reference, assuming MEMVAR sumLik
+[Warning] FIN_BAN_VZZ_POK_.PRG(151): XBT0103: Ambiguous variable reference, assuming MEMVAR sumLik
+[Warning] FIN_BAN_VZZ_POK_.PRG(154): XBT0103: Ambiguous variable reference, assuming MEMVAR rozdilPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(154): XBT0102: Ambiguous variable reference sumLik
+[Warning] FIN_BAN_VZZ_POK_.PRG(156): XBT0102: Ambiguous variable reference rozdilPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(156): XBT0102: Ambiguous variable reference rozdilPol
+[Warning] FIN_BAN_VZZ_POK_.PRG(188): XBT0102: Ambiguous variable reference prijemz
+[Warning] FIN_BAN_VZZ_POK_.PRG(188): XBT0102: Ambiguous variable reference vydejz
+[Warning] FIN_BAN_VZZ_POK_.PRG(188): XBT0102: Ambiguous variable reference prijem
+[Warning] FIN_BAN_VZZ_POK_.PRG(188): XBT0102: Ambiguous variable reference vydej
+[Warning] FIN_BAN_VZZ_POK_.PRG(190): XBT0102: Ambiguous variable reference prijem
+[Warning] FIN_BAN_VZZ_POK_.PRG(191): XBT0102: Ambiguous variable reference prijemz
+[Warning] FIN_BAN_VZZ_POK_.PRG(192): XBT0102: Ambiguous variable reference vydej
+[Warning] FIN_BAN_VZZ_POK_.PRG(193): XBT0102: Ambiguous variable reference vydejz
+[Warning] FIN_BAN_VZZ_POK_.PRG(119): XBT0116: LOCAL variable cenZakCel unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(206): XBT0116: LOCAL variable varsym_sel unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(314): XBT0103: Ambiguous variable reference, assuming MEMVAR ovar
+[Warning] FIN_BAN_VZZ_POK_.PRG(321): XBT0103: Ambiguous variable reference, assuming MEMVAR ovar
+[Warning] FIN_BAN_VZZ_POK_.PRG(322): XBT0102: Ambiguous variable reference ovar
+[Warning] FIN_BAN_VZZ_POK_.PRG(340): XBT0119: Parameter equalMena unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(421): XBT0103: Ambiguous variable reference, assuming MEMVAR cKy
+[Warning] FIN_BAN_VZZ_POK_.PRG(422): XBT0102: Ambiguous variable reference cKy
+[Warning] FIN_BAN_VZZ_POK_.PRG(449): XBT0116: LOCAL variable dc unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(448): XBT0119: Parameter mp2 unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(448): XBT0119: Parameter oXbp unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(478): XBT0116: LOCAL variable nEvent unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(508): XBT0116: LOCAL variable aSize unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(540): XBT0119: Parameter mp1 unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(540): XBT0119: Parameter mp2 unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(540): XBT0119: Parameter oXbp unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(564): XBT0116: LOCAL variable val unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(573): XBT0116: LOCAL variable nEvent unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(593): XBT0116: LOCAL variable it_file unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(669): XBT0116: LOCAL variable aSize unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(688): XBT0116: LOCAL variable neu_tuz unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(689): XBT0116: LOCAL variable neu_zah unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(682): XBT0116: LOCAL variable newRec unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(684): XBT0116: LOCAL variable neu unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(693): XBT0116: LOCAL variable shodaMen unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(683): XBT0116: LOCAL variable odrg unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(814): XBT0116: LOCAL variable kurzahmen unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(850): XBT0103: Ambiguous variable reference, assuming MEMVAR likpol
+[Warning] FIN_BAN_VZZ_POK_.PRG(863): XBT0102: Ambiguous variable reference likpol
+[Warning] FIN_BAN_VZZ_POK_.PRG(849): XBT0116: LOCAL variable cencel unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(905): XBT0103: Ambiguous variable reference, assuming MEMVAR mp1
+[Warning] FIN_BAN_VZZ_POK_.PRG(905): XBT0103: Ambiguous variable reference, assuming MEMVAR mp2
+[Warning] FIN_BAN_VZZ_POK_.PRG(908): XBT0102: Ambiguous variable reference mp1
+[Warning] FIN_BAN_VZZ_POK_.PRG(908): XBT0102: Ambiguous variable reference mp2
+[Warning] FIN_BAN_VZZ_POK_.PRG(909): XBT0102: Ambiguous variable reference mp1
+[Warning] FIN_BAN_VZZ_POK_.PRG(909): XBT0102: Ambiguous variable reference mp1
+[Warning] FIN_BAN_VZZ_POK_.PRG(966): XBT0102: Ambiguous variable reference mp1
+[Warning] FIN_BAN_VZZ_POK_.PRG(904): XBT0116: LOCAL variable ucet_uctk unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(905): XBT0116: LOCAL variable isF4 unused
+[Warning] FIN_BAN_VZZ_POK_.PRG(993): XBT0102: Ambiguous variable reference drgDBMS
+[Warning] FIN_BAN_VZZ_POK_.PRG(994): XBT0102: Ambiguous variable reference drgDBMS
+[Warning] FIN_BAN_VZZ_POK_.PRG(1019): XBT0103: Ambiguous variable reference, assuming MEMVAR oDialog
+[Warning] FIN_BAN_VZZ_POK_.PRG(1019): XBT0102: Ambiguous variable reference oDialog

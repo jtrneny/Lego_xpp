@@ -1,0 +1,155 @@
+* DRG Standard messages
+DRG0001 Not programed yet!
+DRG0002 Chybná hodnota
+DRG0003 Chybná hodnota; Povolené hodnoty jsou
+DRG0004 Definice dialogu nenalezena
+DRG0005 Chybová zpráva programu
+
+DRG0008 Probíhá indexování tabulky &.
+DRG0009 Probíhá konverze tabulky &.
+DRG0010 Vyskytla se neopravitelná chyba. Více informací naleznete v chybovém souboru!
+DRG0011 Zpráva!
+DRG0012 Odpovìzte na dotaz
+DRG0013 Varování!
+DRG0014 Chyba!
+DRG0015 & sekund zbıvá
+DRG0016 O~K
+DRG0017 ~Storno
+DRG0018 Zvolte monost!
+DRG0019 Tøídìno
+DRG0020 ~Akce
+
+* drgPostUniqueKey messages
+DRG0101 Klíè ji existuje !
+DRG0102 Klíè nemùe bıt zmìnìn!
+DRG0103 Prázdná hodnota není povolena!
+
+* Dialog controllers messages
+DRG0110 Record has been locked by other user.;+
+Choose "Retry" to retry update of record!;+
+If you choose "Cancel" your data might become unstable!;+
+In this case you should probably contact program supplier!;;
+DRG0111 You have choosed "Cancel". Is this OK?
+DRG0112 Edit dialog not defined!
+DRG0113 Zrušit!;;Opravdu chcete zrušit záznam ?
+DRG0114 Record NOT deleted due to error?
+DRG0115 Data byla zmìnìna.;; Uloit zmìny?
+DRG0117 Last record reached!
+DRG0118 Illegal data
+DRG0119 Another user has changed record while record was edited!;;+
+Save data anyway?;;+
+Select YES to save your data.+
+Select NO to retain current data.
+DRG0120 Data conflict! Index "&"!;;Duplicate value!
+DRG0121 Data conflict! Index "&"!;;Index key value can not be changed!
+DRG0122 Undo last record update operation?
+DRG0123 Default print program not defined!
+DRG0124 Save changes before using find!
+DRG0125 Tabulka je prázdná. Novı záznam bude pøidán automaticky.
+
+* DRG application messages
+DRG1101 Description for file & already exist! Overwrite it?
+DRG1102 Filename & doesn't exist!
+DRG1103 Description file(DBD) for & doesn't exist!
+DRG1104 FORM Description file & already exist! Overwrite it?
+DRG1105 Select INDEXFILE no. &
+DRG1106 Import database description from
+
+* DRG standardDialog menu and iconTips
+DRG1200 ~Dialog, ~Uloit,Uloit/~Konec,Tisk,Ukonèit dialog,+
+~Editace,Editovat,Kopírovat,Pøidat,Vymazat,+
+První,Následující,Pøedchozí,Poslední,+
+Nás~troje,Tøídìní,Hledat,Hledat další,Filtr,Zruš filtr,Dokumenty,Komunikace,Podpora sw,+
+~Nápovìda,Index,Nápovìda,O aplikaci
+DRG1201 Ukonèit dialog (ALT Q),Uloit zmìny a ukonèit dialog (CTRL X),Uloit zmìny (CTRL S),Tisk (CTRL P),+
+Editovat záznam (ENTER),Vytvoøit kopii aktuálního záznamu (F3),+
+Pøidat prázdnı záznam (INS),Vymazat záznam (CTRL DEL),+
+První záznam (CTRL PgUp),Pøedchozí záznam nebo stránka,+
+Následující záznam nebo stránka,Poslední záznam (CTRL PgDn),Tøídìní (F7),Hledání (CTRL F),Nastavit filtr (F8),Zrušit filtr(CTRL F8),+
+Pøipojení dokumentù k záznamu (CTRL D),Nastavení komunikace s okolím (CTRL C),Vytvoøení poadavku na systém (CTRL W),+
+Nápovìda k dialogu
+
+
+* drgMenu menu and iconTips
+DRG1210 ~Dialog,~Vıpis chyb,Seznam dialogù,Podpora sw,Ukonèit aplikaci,+
+~Nápovìda,Nápovìda k menu,Nápovìda k aplikaci,O aplikaci
+DRG1211 Ukonèení aplikace,Zobrazení vıpisu chyb,Zobrazí seznam aktivních dialogù,+
+Podpora sw,Nápovìda k aplikaci
+DRG1212 Pøed ukonèením aplikace musí bıt uzavøeny všechny dialogy!
+DRG1213 Seznam dialogù
+DRG1214 Program je aktivní!
+DRG1215 Hlavní nabídka
+
+* drgSearch menu and iconTips
+DRG1220 ~Dialog,Select and E~xit,~Quit,~Help,Help on search
+DRG1221 Konec dialogu,Vıbìr a konec,Spus dialog k editaci, Nápovìda
+DRG1222 Edit
+DRG1223 Hledat
+DRG1224 Defaultní editaèní formuláø tabulky & nebyl nalezen!
+DRG1225 Nástroje
+
+
+* drgLog menu and iconTips
+DRG1230 ~Dialog,~Tisk vıpisu,Poslat jako ~Mail,~Zrušit,~Ukonèit,~Nápovìda,Nápovìda,Help on error log
+DRG1231 Ukonèit dialog,Tisk vıpisu,Zaslat vıpis administrátorovi,Zrušit vıpis chyb,Nápovìda
+DRG1233 Zrušit vıpis chyb?
+DRG1232 Vıpis chyb
+
+* DRG drgStdBrowseIconBar icon tips
+DRG1241 Ukonèit dialog,Tisk,+
+Pøesun na první záznam,Pøesun na pøedchozí stránku,+
+Pøesun na další stránkue,Pøesun na poslední záznam,+
+Hledat,Help on dialog
+
+* DRG drgListBrowse object buttons
+DRG1251 ~Editovat,~Pøidat,~Vymazat,~Nahoru,D~olù
+
+* drgLogIN messages
+DRG1260 Pøihlášení do systému
+DRG1261 Uivatélské jméno
+DRG1262 Heslo
+DRG1263 Zadáno chybné heslo!
+
+* DRG drgFind dialog messages
+DRG1269 Hledat
+DRG1270 Údaj
+DRG1270 Od hodnoty
+DRG1271 Do hodnoty
+DRG1272 a
+DRG1273 Tøídìní
+DRG1274 Filter O~N
+DRG1275 Filter ~OFF
+DRG1276 ~Hledat
+DRG1277 ~Hledat další
+DRG1278 Turn record selection filter ON
+DRG1279 Turn record selection filter OFF
+DRG1280 Find first record
+DRG1281 Find next record for last specified parameters
+DRG1282 Close find dialog
+
+* drgPrint system messages
+DRG2001 ~Dialog,~Output,~Print,~Quit,+
+~Help,Help on dialog,Help on application,About
+DRG2002 Print dialog
+DRG2003 Print program HDR definition & not found.
+DRG2004 ~Setup
+DRG2005 Setup print device
+DRG2006 ~Print
+DRG2007 Start print job
+DRG2008 ~Storno
+DRG2009 Cancel printing
+DRG2010 Invalid print program definition &.
+DRG2011 Print device setup
+DRG2012 Properties
+DRG2013 Storno
+DRG2014 Print error!;& &;;Correct error and choose option.
+DRG2015 Printing may not be canceled!
+DRG2016 Screen preview
+DRG2017 Tisk do souboru
+DRG2018 Tiskárna
+DRG2019 Vıstupní soubor uloen jako &.
+
+* drgProgram system messages
+DRG2050 Spustit program
+DRG2051 Zrušit a uzavøít dialog.
+DRG2052 Program & neexistuje!

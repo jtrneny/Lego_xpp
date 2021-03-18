@@ -1,0 +1,10 @@
+OpenSSL and SHA256
+By default, OpenSSL cryptographic tools are configured to make SHA1 signatures.
+for example, if you want to generate a SHA256-signed certificate request (CSR) , add in the command line: -sha256, as: 
+openssl req -new -newkey rsa:2048 -nodes -sha256 -out www.mydomain.com.sha256.csr -keyout www.mydomain.key -subj "/C=FR/ST=Calvados/L=CAEN/O=TBS INTERNET/CN=www.moydomain.com" 
+Note: To do so, you'll need OpenSSL version 0.9.8o at least.
+Generate a CSR for Apache with OpenSSL
+
+Decipher a SSL certificate: 
+openssl x509 -text -in [path-to-your-certificate]
+Check the field "Signature Algorithm". It should indicate either "sha1WithRSAEncryption" or "sha256WithRSAEncryption". 

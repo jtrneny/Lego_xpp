@@ -1,0 +1,377 @@
+/*
+1 - stáhnout do pomocného souboru s_tables data z ADD mìlo by staèit
+select left(Name,20)   ,
+       Table_Encryption from system.tables
+
+    Name              C, 200 , 0   -  200 je moc staèí 20
+    Table_Encryption  L,   1 , 0
+    Name             - pro kontrolu existence v DBD
+    Table_Encryption - mùže dojít k nastavení, nebo zrušení Table_Encryption zase v DBD
+
+2 - stáhnout do pomocného souboru s_columns data z ADD tady toho potøebujeme víc
+select left(Name  , 20),
+       left(Parent, 20),
+       Field_Num       ,
+       Field_Type      ,
+       Field_Length    ,
+       Field_decimal  from system.columns
+
+    Name              C, 200 , 0   -  200 je zase moc staèí cca 20B
+    Parent            C, 200 , 0   -  200 váže na table.name musí být stejnì dlouhé 20B
+    Field_Num         I,   4 , 0   -  poøadí
+    Field_Type        I,   2 , 0   -  naše TYPE
+    Field_Length      I,   2 , 0   -       LEN
+    Field_decimal     I,   4 , 0   -       DEC
+
+    - tady by bylo dobré to stáhnout naráz oprevøení SQL trochu trvá a udìlat indexák
+      Parent + strZeroField_Num,3)
+
+3 - stáhnout do pomocného souboru s_indexes data z ADD tady by staèilo
+select left(Name  , 20),
+       left(Parent, 20),
+       left(Index_File_Name, 20),
+       Index_Expression,
+       Index_Condition ,
+       Index_Options   from system.indexes
+
+    Name              C, 200 , 0   -  zase staèí cca 20B
+    Parent            C, 200 , 0   -  200 váže na table.name musí být stejnì dlouhé 20B
+    Index_File_Name   C, 200 , 0   -  tohle asi? nepotøebujeme uvidí se
+    Index_Expression  C, 510 , 0
+    Index_Condition   C, 510 , 0
+    Index_Options     I,   4 , 0   - tohle je blbé váže to na konstanty buï je tam 2 / 2051
+
+    - tady by bylo dobré to stáhnout naráz oprevøení SQL trochu trvá a udìlat indexák,
+      ale na rozíl od columns tam není poøadí AU...
+      Parent + Field_Num -- co si to poøadí pøidat do struktury
+
+--- KONTROLA ---
+pojedeme po s_tables
+  - tabulka není v DBD byla zrušena musí se dropnout vèetnì inedáku
+  - tabulka   je v DBD
+    1 - konrola struktury
+        -   je OK
+        - není OK - tady mám 2 možnosti  SQL alter table     ...  tohle je pøíjemné dá se nastavit vše k položce i default etc.
+                                         AdsRestructureTable ...  nemumí nastavit DEFAULT, ale má 3 parametry
+                                                                  pucAddFields
+                                                                  pucDeleteFields
+                                                                  pucChangeFields
+                  -  musím zrušit a pøebudovat indexáky  zase SQL drop index + sp_createIndex90
+                                                              AdsDeleteIndex + AdsCreateIndex
+
+   2   - kontrola indexákù
+       - tady je to jednoznaèné zrušit a pøebudovat VŠECHNY !!!
+
+!! sakryš, málem jsem zapomìl v DBD mohou být nové datové tabulky, musí se to dojet i opaènì DBD -> ADD
+*/
+
+
+#include "adsdbe.ch"
+#include 'common.ch'
+#include "dbstruct.ch"
+
+
+#define CRLF       Chr(13) + Chr(10)
+
+
+static  atable_stru  := { { 'Name'                       , 'C' , 200 , 0 }, ;
+                          { 'Table_Relative_Path'        , 'C' , 260 , 0 }, ;
+                          { 'Table_Type'                 , 'I' ,   2,  0 }, ;
+                          { 'Table_Auto_Create'          , 'L' ,   1,  0 }, ;
+                          { 'Table_Primary_Key'          , 'C' , 128,  0 }, ;
+                          { 'Table_Default_Index'        , 'C' , 128,  0 }, ;
+                          { 'Table_Encryption'           , 'L' ,   1,  0 }, ;
+                          { 'Table_Permission_Level'     , 'I' ,   2 , 0 }, ;
+                          { 'Table_Memo_Block_Size'      , 'I' ,   4 , 0 }, ;
+                          { 'Table_Validation_Expr'      , 'M' ,   9 , 0 }, ;
+                          { 'Table_Validation_Msg'       , 'M' ,   9 , 0 }, ;
+                          { 'Comment'                    , 'M' ,   9 , 0 }, ;
+                          { 'User_Defined_Prop'          , 'V' ,   9 , 0 }, ;
+                          { 'Triggers_Disabled'          , 'L' ,   1 , 0 }  }
+
+static acolumn_astru := { { 'Name'                       , 'C' , 200, 0  }, ;
+                          { 'Parent'                     , 'C' , 200, 0  }, ;
+                          { 'Field_Num'                  , 'I' ,   4, 0  }, ;
+                          { 'Field_Type'                 , 'I' ,   2, 0  }, ;
+                          { 'Field_Length'               , 'I' ,   2, 0  }, ;
+                          { 'Field_decimal'              , 'I' ,   4, 0  }, ;
+                          { 'Field_Min_Value'            , 'M' ,   9, 0  }, ;
+                          { 'Field_Max_Value'            , 'M' ,   9, 0  }, ;
+                          { 'Field_Can_Null'             , 'L' ,   1, 0  }, ;
+                          { 'Field_Default_Value'        , 'M' ,   9, 0  }, ;
+                          { 'Field_Validation_Msg'       , 'M' ,   9, 0  }, ;
+                          { 'Comment'                    , 'M' ,   9, 0  }, ;
+                          { 'User_Defined_Prop'          , 'V' ,   9, 0  }, ;
+                          { 'Field_Options'              , 'I' ,   4, 0  }  }
+
+static aindexes_stru := { { 'Name'                       , 'C' , 200 , 0 }, ;
+                          { 'Parent'                     , 'C' , 200 , 0 }, ;
+                          { 'Index_File_Name'            , 'C' , 200 , 0 }, ;
+                          { 'Index_Expression'           , 'C' , 510 , 0 }, ;
+                          { 'Index_Condition'            , 'C' , 510 , 0 }, ;
+                          { 'Index_Options'              , 'I' ,   4 , 0 }, ;
+                          { 'Index_Key_Length'           , 'I' ,   4 , 0 }, ;
+                          { 'Index_FTS_Min_Length'       , 'I' ,   4 , 0 }, ;
+                          { 'Index_FTS_Delimiters'       , 'M' ,   9 , 0 }, ;
+                          { 'Index_FTS_Noise'            , 'M' ,   9 , 0 }, ;
+                          { 'Index_FTS_Drop_Chars'       , 'M' ,   9 , 0 }, ;
+                          { 'Index_FTS_Conditional_Chars', 'M' ,   9 , 0 }, ;
+                          { 'Comment'                    , 'M' ,   9 , 0 }, ;
+                          { 'Index_Collation'            , 'C' ,  40 , 0 }  }
+
+
+
+function get_system_tables()
+  local oStatement
+  local cStatement := 'select left(Name,20) as Name,' + ;
+                             'Table_Encryption from system.tables'
+  *
+  local cwork_Dir  := drgINI:dir_USERfitm +userWorkDir() +'\'
+  local cWork_File := cwork_Dir +'sys_tables'
+  *
+  local calias, hcursor
+
+
+  oStatement := AdsStatement():New(cStatement,oSession_data)
+
+  if oStatement:LastError > 0
+    return .f.
+  endif
+
+  oStatement:Execute('tables', .f.)
+  calias  := oStatement:Alias
+  hCursor := oStatement:hCursor
+
+
+  * uložíme si data
+  createDir(cwork_Dir)
+  AdsCopyTable( hCursor,, cwork_File )
+
+*  DbCreate( cwork_File, atable_stru, oSession_free)
+*  DbUseArea( .T., oSession_free, cwork_File, 's_tables')
+
+*  save_to_file( calias, hcursor, atable_stru, 's_tables' )
+return oStatement
+
+
+static function save_to_file( cin_alias, hCursor, astru, cout_alias )
+  local x, cfield, xVal, pa
+  *
+  local  hObj := (cout_alias)->( DbInfo(ADSDBO_TABLE_HANDLE) )
+
+  do while .not. (cin_alias) ->(eof())
+    (cout_alias)->(dbAppend())
+
+    for x := 1 to len(astru) step 1
+      cfield := astru[x,DBS_NAME]
+      pa := AdsGetField( hCursor, cfield)
+      AdsSetField( hObj, cfield, pa[1], pa[2] )
+    next
+
+    (cin_alias)->(dbSkip())
+  enddo
+return nil
+
+
+
+function sp_ModifyFieldProperty()
+  local  values, adbd, adesc, pao
+  *
+  local  cdata_path := AllTrim(drgINI:dir_DATA), cfile
+  local  adesc_dat    , adesc_dbd    , x, y, z, t
+  local  adesc_dat_tag, adesc_dbd_tag, cordKey_dbd, cordKey_dat
+
+  values := drgDBMS:dbd:values
+
+  for x := 1 to len(values) step 1
+    adbd := values[x,2]
+
+    if adbd:lIsCheck
+      adesc_dat := {}
+      adesc_dbd := {}
+      *
+      cfile         := values[x,1]
+      adesc_dbd_tag := values[x,2]:indexDef
+      adesc         := adbd:desc
+
+      for t := 1 to len(adesc) step 1
+        pao := adesc[t]
+        aadd( adesc_dbd, {pao:name, pao:adt_type, pao:adt_len, pao:adt_dec} )
+      next
+
+      if file( cdata_path +cfile +'.adt' ) .and. lower(cfile) <> 'licasys'
+        dbUseArea( .t., oSession_data, cfile, , .f. )
+
+        adesc_dat     := dbStruct()
+        adesc_dat_tag := ordList()
+
+        * kontrola datové strukturz
+        if len( adesc_dbd) <> len( adesc_dat)
+          drgDump('Zmìna struktury ... ' +cfile +str(len( adesc_dbd)) +str( len( adesc_dat)) )
+
+        else
+*          begin sequence
+            for y := 1 to len(adesc_dbd) step 1
+              for z := 1 to DBS_ALEN step 1
+                if adesc_dbd[y,z] <> adesc_dat[y,z]
+                  drgDump('Zmìna struktury ... ' +cfile + str(y) +str(z))
+                  drgDump( adesc_dbd[y])
+                  drgDump( adesc_dat[y])
+
+*          break
+                endif
+              next
+            next
+*          end sequence
+        endif
+
+        * kotrola tagu
+        if len( adesc_dbd_tag) <> len( adesc_dat_tag)
+          drgDump( 'Zmìna ADI souboru ... ' +cfile +str(len( adesc_dbd_tag)) +str( len( adesc_dat_tag)) )
+
+        else
+*          begin sequence
+            for y := 1 to len( adesc_dbd_tag) step 1
+              cordKey_dbd := upper( strTran( adesc_dbd_tag[y]:cindexKey, ' ', ''))
+              cordKey_dat := upper( strTran( ordKey( adesc_dat_tag[y]) , ' ', ''))
+
+              if cordKey_dbd <> cordKey_dat
+                drgDump( 'Zmìna ADI souboru ... ' +cfile )
+                drgDump( cordKey_dbd)
+                drgDump( cordKey_dat)
+
+*          break
+              endif
+            next
+*          end sequence
+        endif
+
+        dbCloseArea()
+      endif
+
+    endif
+
+  next
+return .t.
+
+
+
+static function write_qsl_script(cfile, pa)
+  local  cfile_sql := 'modifyFieldProperty.sql'
+  local  cscript   := ''
+  local  cmain     := 'EXECUTE PROCEDURE sp_ModifyFieldProperty( '
+  local  cradek
+  *
+  local  x
+
+
+  if file( cfile_sql )
+    cscript := MemoRead( cfile_sql )
+  endif
+
+  for x := 1 to len(pa) step 1
+    cradek := cmain                                + ;
+              padr( "'" +cfile   +"'", 15)   + ',' + ;
+              padr( "'" +pa[x,1] +"'", 15)   + ',' + ;
+              "'Field_Default_Value'"        + ',' + ;
+              "'" +pa[x,2]       +"'"        + ',' + ;
+              "'APPEND_FAIL'"                + ',' + ;
+              "'" +cfile +"fail'"                  + ');'+ CRLF
+
+**            "'asysinifail'"                      + ');'+ CRLF
+
+
+    if x = 1
+      cscript += '' +CRLF+ '// ' +cfile +CRLF
+    endif
+
+    cscript += cradek
+  next
+
+  MemoWrit( cfile_sql, cscript )
+return nil
+
+
+/*
+originál
+function sp_ModifyFieldProperty()
+  local  values
+  local  x, y, err_index
+  *
+  local  cfile, aIndex, cIndex, keyWord, cfield, pa, ctype, nlen ,def_value
+
+  values := drgDBMS:dbd:values
+
+
+  for x := 1 to len(values) step 1
+    adbd := values[x,2]
+
+    if adbd:lIsCheck
+
+      pa     := {}
+      cfile  := values[x,1]
+      aIndex := values[x,2]:indexDef
+
+
+*     drgDump('')
+*     drgDump(cfile)
+*     drgDump('-----------------------')
+
+      for y := 1 to len(aIndex) step 1
+        cIndex    := aIndex[y]:cIndexKey
+        err_index := aIndex[y]:cIndexKey
+
+*       drgDump(cIndex)
+*       drgDump('-----------------')
+
+        * bacha nepársuje èisté numerické klíèe
+        if( at( '(', cIndex) = 0, cIndex := '(' +cIndex +')', Nil)
+
+        do while( keyWord := _parse(@cIndex, @cfield)) != NIL
+
+          nPos      := at(',', cfield)
+          cfield    := if( nPos <> 0, substr(cfield,1,nPos-1), cfield)
+
+          if isObject(adbd:getFieldDesc(cfield))
+            ctype     := adbd:getFieldDesc(cfield):type
+            nlen      := adbd:getFieldDesc(cfield):len
+
+            def_value := if( ctype = 'N', '0' , ;
+                         if( ctype = 'L', 'NO', ;
+                         if( ctype = 'D', '          ', space(nlen))))
+
+            if AScan(pa, {|u| lower(u[1]) = lower(cfield)}) = 0
+              AAdd(pa, { cfield, def_value } )
+            endif
+
+*           drgDump(value)
+          else
+
+            drgDump( padr(cfile,15) +err_index )
+          endif
+        enddo
+      next
+
+*     drgDump(cfile)
+*     drgDump(pa)
+
+      if( len(pa) <> 0, write_qsl_script(cfile, pa), nil )
+
+    endif
+  next
+return .t.
+*/
+
+/*
+EXECUTE PROCEDURE sp_ModifyFieldProperty ( 'asysini',
+      'nneco', 'Field_Default_Value',
+      '0', 'APPEND_FAIL', 'asysinifail' );
+
+EXECUTE PROCEDURE sp_ModifyFieldProperty ( 'asysini',
+      'dneco', 'Field_Default_Value',
+      ' ', 'APPEND_FAIL', 'asysinifail' );
+
+EXECUTE PROCEDURE sp_ModifyFieldProperty ( 'asysini',
+      'llogicka', 'Field_Default_Value',
+      'F', 'APPEND_FAIL', 'asysinifail' );
+*/

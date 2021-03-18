@@ -1,0 +1,19 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník spojení) SIZE(70,18) FILE(C_SPOJEN);
+              GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect)
+  TYPE(DBrowse) SIZE(60,16.8) FILE(C_SPOJEN) FIELDS(CTYPSPOJ,CZKRSPOJ,CNAZSPOJ,DPLATNYOD,DPLATNYDO);
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y)
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail) OFFSET(14,70) PRE( tabSelect)
+  TYPE(COMBOBOX) NAME(CTYPSPOJ)   FPOS(15,1) FLEN(50) FCAPTION(Typ spojení)           CPOS(1,1) REF(TYPSPOJ)
+  TYPE(GET)      NAME(CZKRSPOJ)   FPOS(15,2) FLEN(10) FCAPTION(Zkratka spojení)       CPOS(1,2) ;
+            POST( drgPostUniqueKey)
+  TYPE(GET)      NAME(CNAZSPOJ)   FPOS(15,3) FLEN(50) FCAPTION(Název spojení)         CPOS(1,3)
+  TYPE(GET)      NAME(CADRELSPOJ) FPOS(15,4) FLEN(50) FCAPTION(Pøednastavení adresy)  CPOS(1,4)
+  TYPE(GET)      NAME(DPLATNYOD)  FPOS(15,6) FLEN(11) FCAPTION(Platnost OD)           CPOS(1,6) PUSH(CLICKDATE)
+  TYPE(GET)      NAME(DPLATNYDO)  FPOS(15,7) FLEN(11) FCAPTION(Platnost DO)           CPOS(1,7) PUSH(CLICKDATE)
+  TYPE(MLE)      NAME(MPOZNAMKA)  FPOS(15,9) SIZE(50,6)  FCAPTION(Poznámka)           CPOS(1,9)
+
+TYPE(End)

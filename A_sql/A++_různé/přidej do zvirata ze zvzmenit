@@ -1,0 +1,4 @@
+INSERT INTO UCETPRIT (CTASK,cUloha,cTypDoklad,cMAINFILE,cTypPohybu,cUcetSkup,cNazUcPred,dPlatnyOd,nPolUctPr,nSubPolUc,cTypUct,cUcetMD,cUcetDAL,cNazPol1,cNazPol2,
+cNazPol3,cNazPol4,cNazPol5,cNazPol6,mPodminka,mKLikvid,mZLikvid,lWrtRecHD,mPopisUcPr,dVznikZazn,dZmenaZazn,mPOZNAMKA,cUniqIdRec,mUserZmenR) SELECT 
+CTASK,cUloha,cTypDoklad,cMAINFILE,cTypPohybu,cUcetSkup,cNazUcPred,dPlatnyOd,nPolUctPr,nSubPolUc,cTypUct,cUcetMD,cUcetDAL,cNazPol1,cNazPol2,
+cNazPol3,cNazPol4,cNazPol5,cNazPol6,mPodminka,mKLikvid,mZLikvid,lWrtRecHD,mPopisUcPr,dVznikZazn,dZmenaZazn,mPOZNAMKA,cUniqIdRec,mUserZmenR FROM POM where pom.ctask='FIN'  

@@ -1,0 +1,1 @@
+update ucetpol set ddatporiz = '01.01.2010' where cdenik='X' and cobdobi='01/10'

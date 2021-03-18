@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NEMPRI xmlns="http://schemas.cssz.cz/nem/NEMPRI20" version="2020.0" partialAccept="A">
+	<VENDOR productName="FormApps Server" productVersion="1.4.0"/>
+	<SENDER EmailNotifikace="jmeno.prijmeni@domena.cz" ISDSreport="XML+HTML"/>
+	<datovaVeta poradoveCislo="1">
+		<dokument>
+			<zahranicni>N</zahranicni>
+			<cisloPotvrzeni>P5599661</cisloPotvrzeni>
+			<poznamka>Opravné podání</poznamka>
+			<kodOSSZ>661</kodOSSZ>
+			<nazevOSSZ>Hradec Kralové</nazevOSSZ>
+			<druhDavky>NEM</druhDavky>
+			<opravnePodani>N</opravnePodani>
+		</dokument>
+		<pojistenec>
+			<jmeno>Jan</jmeno>
+			<prijmeni>Novák</prijmeni>
+			<rodneCislo>7603074919</rodneCislo>
+		</pojistenec>
+		<zamestnani>
+			<VSZamestnavatel>1159876547</VSZamestnavatel>
+			<ICZamestnavatel>87654321</ICZamestnavatel>
+			<nazevZamestnavatel>Výzkumný ústav</nazevZamestnavatel>
+			<zamestnanOd>2008-04-01</zamestnanOd>
+			<zamestnanDo>2020-12-31</zamestnanDo>
+			<druhCinnosti>1</druhCinnosti>
+		</zamestnani>
+		<rozhodneObdobi>
+			<rozhodneObdobiOd>2020-01-01</rozhodneObdobiOd>
+			<rozhodneObdobiDo>2020-12-31</rozhodneObdobiDo>
+			<polozky>
+				<polozka>
+					<kalendarniMesic>1</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>20000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>2</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>21000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>3</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>22000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>4</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>23000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>5</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>24000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>6</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>25000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>7</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>26000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>8</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>27000</zapocitatelnyPrijem>
+					<vylouceneDny>5</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>9</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>28000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>10</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>29000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>11</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>30000</zapocitatelnyPrijem>
+					<vylouceneDny>10</vylouceneDny>
+				</polozka>
+				<polozka>
+					<kalendarniMesic>12</kalendarniMesic>
+					<kalendarniRok>2020</kalendarniRok>
+					<zapocitatelnyPrijem>31000</zapocitatelnyPrijem>
+					<vylouceneDny>0</vylouceneDny>
+				</polozka>
+			</polozky>
+			<zapocitatelnyPrijemCelkem>306000</zapocitatelnyPrijemCelkem>
+			<vylouceneDnyCelkem>15</vylouceneDnyCelkem>
+			<pravdepodobnaVysePrijmu>300000.50</pravdepodobnaVysePrijmu>
+		</rozhodneObdobi>
+		<potvrzeniZamestnavatele>
+			<pocetOdpracovanychHodin>4.5</pocetOdpracovanychHodin>
+			<pracovniDoba>8.5</pracovniDoba>
+		</potvrzeniZamestnavatele>
+		<prilohaStrana2>
+			<pracoval>A</pracoval>
+			<prijemMalyRozsah>30000.50</prijemMalyRozsah>
+			<pobiraDuchod>A</pobiraDuchod>
+			<druhDuchodu>1</druhDuchodu>
+			<jeStudentem>N</jeStudentem>
+			<spadaDoPrazdnin>N</spadaDoPrazdnin>
+			<dobaVolnaPrvniZamestnani>A</dobaVolnaPrvniZamestnani>
+			<volnoBezNahrady>A</volnoBezNahrady>
+			<volnoBezNahradyOd>2020-01-08</volnoBezNahradyOd>
+			<volnoBezNahradyDo>2020-02-08</volnoBezNahradyDo>
+			<nastupujePPM>A</nastupujePPM>
+			<narozeniDitete>2020-12-01</narozeniDitete>
+			<prevedenaNaJinouPraci>A</prevedenaNaJinouPraci>
+			<datumNaJinouPraci>2020-10-21</datumNaJinouPraci>
+			<exekuce>N</exekuce>
+			<insolvence>N</insolvence>
+			<dalsiSdeleni>Text dalšího sdělení</dalsiSdeleni>
+			<kontaktniPracovnik>František Koudelka</kontaktniPracovnik>
+			<kontaktniTelefon>+420123456789</kontaktniTelefon>
+			<podanoV>Praze</podanoV>
+			<platebniSpojeni>
+			<vyplatitUcetCR>A</vyplatitUcetCR>
+				<ucetCZ>
+					<predcisli>123456</predcisli>
+					<ucetCislo>1234567890</ucetCislo>
+					<specSymbol>98765432</specSymbol>
+					<bankaKod>0300</bankaKod>
+				</ucetCZ>
+			</platebniSpojeni>
+			<prilohy coun="2">
+				<priloha>
+					<nazev>scan dokumentu 1</nazev>
+					<typ>image/jpeg</typ>
+					<komentar>Hola hej 1</komentar>
+					<base64data>77u/YXNkZmdoamtsxa……………………../Cpw0K</base64data>
+				</priloha>
+				<priloha>
+					<nazev>scan dokumentu 2</nazev>
+					<typ>image/jpeg</typ>
+					<komentar>Hola hej 2</komentar>
+					<base64data>77u/YXNkZmdoamtsxa……………………../Cpw0K</base64data>
+				</priloha>
+			</prilohy>
+		</prilohaStrana2>
+	</datovaVeta>
+</NEMPRI>

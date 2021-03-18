@@ -1,0 +1,102 @@
+CREATE TABLE MainTable
+(
+   Id    INTEGER PRIMARY KEY,
+   Name  VARCHAR(50),
+   Value INTEGER
+);
+
+CREATE UNIQUE INDEX MainTableName_UIX ON MainTable ( Name );
+
+CREATE TABLE SubTable
+(
+  Id     INTEGER PRIMARY KEY,
+  MainId INTEGER, 
+  Name   VARCHAR(50),
+  Value  INTEGER
+);
+
+CREATE INDEX SubTableMainId_UIX ON SubTable ( MainId );
+CREATE UNIQUE INDEX SubTableName_UIX ON SubTable ( Name );
+
+CREATE PROCEDURE CreateItems
+( 
+  MainName  VARCHAR ( 20 ),
+  SubName   VARCHAR ( 20 ),
+  MainValue INTEGER,
+  SubValue  INTEGER,
+  MainId    INTEGER OUTPUT,
+  SubId     INTEGER OUTPUT
+) 
+BEGIN 
+  DECLARE @MainName  VARCHAR ( 20 ); 
+  DECLARE @SubName   VARCHAR ( 20 );
+  DECLARE @MainValue INTEGER; 
+  DECLARE @SubValue  INTEGER;
+
+  DECLARE @MainId    INTEGER;
+  DECLARE @SubId     INTEGER;
+
+  @MainName  = (SELECT MainName  FROM __input);
+  @SubName   = (SELECT SubName   FROM __input);
+  @MainValue = (SELECT MainValue FROM __input);
+  @SubValue  = (SELECT SubValue  FROM __input);
+
+  @MainId = (SELECT MAX(Id)+1 FROM MainTable);
+  @SubId  = (SELECT MAX(Id)+1 FROM SubTable );
+
+  INSERT INTO MainTable (Id, Name, Value) VALUES (@MainId, @MainName, @MainValue);
+  INSERT INTO SubTable (Id, Name, MainId, Value) VALUES (@SubId, @SubName, @MainId, @SubValue);
+
+  INSERT INTO __output SELECT @MainId, @SubId FROM system.iota;
+END;
+
+CREATE PROCEDURE UpdateItems
+( 
+  MainName  VARCHAR ( 20 ),
+  MainValue INTEGER,
+  SubValue  INTEGER
+) 
+BEGIN 
+  DECLARE @MainName  VARCHAR ( 20 ); 
+  DECLARE @MainValue INTEGER; 
+  DECLARE @SubValue  INTEGER;
+
+  DECLARE @MainId    INTEGER;
+
+  @MainName  = (SELECT MainName  FROM __input);
+  @MainValue = (SELECT MainValue FROM __input);
+  @SubValue  = (SELECT SubValue  FROM __input);
+
+  @MainId    = (SELECT TOP 1 Id  FROM MainTable WHERE Name = @MainName);
+
+  UPDATE MainTable SET Value = @MainValue WHERE Id     = @MainId;
+  UPDATE SubTable  SET Value = @SubValue  WHERE MainId = @MainId;
+END;
+
+CREATE PROCEDURE SelectItems
+( 
+  MainName        VARCHAR ( 20 ),
+  CalculatedValue INTEGER OUTPUT
+) 
+BEGIN 
+  DECLARE @MainName VARCHAR ( 20 ); 
+
+  @MainName = (SELECT MainName FROM __input);
+
+  INSERT INTO __output SELECT m.Value * s.Value FROM MainTable m INNER JOIN SubTable s ON m.Id = s.MainId WHERE m.Name = @MainName;
+END;
+
+CREATE PROCEDURE DeleteItems
+( 
+  MainName VARCHAR ( 20 )
+) 
+BEGIN 
+  DECLARE @MainName VARCHAR ( 20 ); 
+  DECLARE @MainId   INTEGER; 
+
+  @MainName = (SELECT MainName FROM __input);
+  @MainId   = (SELECT TOP 1 Id FROM MainTable WHERE Name = @MainName);
+
+  DELETE FROM SubTable  WHERE MainId = @MainId;
+  DELETE FROM MainTable WHERE Id     = @MainId;
+END;

@@ -1,0 +1,31 @@
+*
+** SHBrowseForFolder
+*
+** B_rowse F_or F_older M_essage BFFM_
+** B_rowse I_n  F_o structure    BIF_
+
+#ifndef BFFM_INITIALIZED
+#define BFFM_INITIALIZED        1
+#define BFFM_SELCHANGED         2
+#define BFFM_VALIDATEFAILED     3
+#define BFFM_IUNKNOWN           5
+#define BFFM_SETSTATUSTEXT      0x464
+#define BFFM_ENABLEOK           0x465
+#define BFFM_SETSELECTION       0x466
+#define BIF_RETURNONLYFSDIRS   0x0001
+#define BIF_DONTGOBELOWDOMAIN  0x0002
+#define BIF_STATUSTEXT         0x0004
+#define BIF_RETURNFSANCESTORS  0x0008
+#define BIF_EDITBOX            0x0010
+#define BIF_VALIDATE           0x0020
+#define BIF_NEWDIALOGSTYLE     0x0040
+#define BIF_USENEWUI           nOr(BIF_NEWDIALOGSTYLE , BIF_EDITBOX)
+#define BIF_BROWSEINCLUDEURLS  0x0080
+#define BIF_UAHINT             0x0100
+#define BIF_NONEWFOLDERBUTTON  0x0200
+#define BIF_NOTRANSLATETARGETS 0x0400
+#define BIF_BROWSEFORCOMPUTER  0x1000
+#define BIF_BROWSEFORPRINTER   0x2000
+#define BIF_BROWSEINCLUDEFILES 0x4000
+#define BIF_SHAREABLE          0x8000
+#endif

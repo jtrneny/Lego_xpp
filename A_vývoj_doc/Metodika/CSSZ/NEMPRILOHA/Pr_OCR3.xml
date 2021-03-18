@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<d:NEMPRI xmlns:d="http://schemas.cssz.cz/nem/NEMPRI/1.0.0">
+  <d:datovaVeta poradoveCislo="1">
+    <d:dokument>
+      <d:cisloPotvrzeni>4654318A</d:cisloPotvrzeni>
+      <d:poznamka>Příklad typu "Ošetřovné" - část</d:poznamka >
+      <d:kodOSSZ>886</d:kodOSSZ>
+      <d:nazevOSSZ>Frýdek-Místek</d:nazevOSSZ>
+      <d:druhDavky>OCR</d:druhDavky>
+    </d:dokument>
+    ...
+  </d:datovaVeta>
+</d:NEMPRI>

@@ -1,0 +1,13 @@
+[ASSOCIATION]
+makefile=D:\bigdog\StoredProcedureExamples\Example2\Example2.dsp
+makefiletype=microsoft visual c++
+[COMPILER]
+INCLUDEDIRS=%(INCLUDE)
+COMPILE=concur|capture,nmake /F "%rn.mak" %b "%bd%n.obj"
+MAKE=concur|capture,msdev "%rn.dsp" /make %bn
+EXECUTE=,"%bdExample2.exe"
+DEBUG=,msdev "%bdExample2.exe"
+REBUILD=concur|capture,nmake /A /F "%rn.mak" %b
+usertool_resource_editor=hide|:Resource Editor:Resource Editor,msdev
+version=5.0
+workingdir=.

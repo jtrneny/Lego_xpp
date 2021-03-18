@@ -1,0 +1,14 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Dialog) LEVEL(0) CAPTION(FIN_BanVypIT1_crd) DATA(FIN_BanVypIT_CRD)
+TYPE(Dialog) LEVEL(0) CAPTION(FIN_BanVypIT2_crd) DATA(FIN_BanVypIT2_CRD)
+TYPE(Dialog) LEVEL(0) CAPTION(FIN_BanVypIT3_crd) DATA(FIN_BanVypIT3_CRD)
+TYPE(Dialog) LEVEL(0) CAPTION(FIN_BanVypIT_src)  DATA(FIN_BanVypIT_SCR)
+TYPE(Dialog) LEVEL(0) CAPTION(FIN) DATA()

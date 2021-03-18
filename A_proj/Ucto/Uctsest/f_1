@@ -1,0 +1,69 @@
+{                                                                
+  { "UCETKUM"  1   "TMPKUM"                                                     
+    { "nKcMDpsO"   , "nKcDALpsO" , "nKcMDobrO" , "nKcDALobrO" , "nKcMDpsR"   , "nKcDALpsR" , "nKcMDobrR" , "nKcDALobrR" , "nKcMDksR"                                                 
+      "nKcDALksR"  , "nMnozNAT"  , "nMnozNAT2" , "nMnozNATR"  , "nMnozNAT2R"     }                                                            
+    "TMPKUM ->cUCETMD"                                           
+    "UCTKw_01"                                                   
+  }                                                              
+  { "UCETKUMk"  1   "TMPKUMm"                                                    
+    { "nKcMDpsO"  , "nKcDALpsO"  , "nKcMDobrO" , "nKcDALobrO" , "nKcMDpsR"   , "nKcDALpsR"  , "nKcMDobrR"  , "nKcDALobrR" , "nKcMDksR"                                                 
+      "nKcDALksR" , "nMnozNAT"   , "nMnozNAT2" , "nMnozNATR"  , "nMnozNAT2R"    }                                                            
+    "TMPKUMm ->cUCETMD"                                          
+    "UCTKKw_01"                                                  
+  }                                                              
+  { "UCETPLAN"  1  "TMPPLAN"                                                    
+    { "nPLANzaOBD" ,  "nPLANkOBD" , "nPLANROK" , "nPLANzaoOR" , "nMnozNAT"  ,  "nMnozNAT2"    }                                                            
+    "TMPPLAN ->cUCETMD"                                          
+    "UCTPw_01"                                                   
+  }
+}  
+
+
+ For N := 1 To LEN( axDEF_INs) Step 1           //컴IDNEXACE a SUMACE컴컴컴컴
+    ( cOBDs    := '(( ', cOBDm    := '(( ', cNSs := ''     )
+    ( cOBD_NFo := '( ' , cNSH_NFo := ''   , cNSI_NFo := '' )
+
+    cFILE_Ma := axDEF_INs[ N, 1]
+    cFILE_Tm := FHOMADR() +'\TMP\' +axDEF_INs[ N, 3]
+    cFILE_Id := FHOMADR() +'\TMP\' +axDEF_INs[ N, 6]
+
+    UCETSYS ->( dbEVAL( { || ;
+    If( M6_IsFILTREC( nRYOo, UCETSYS ->( RecNO())), ;
+        ( cOBD_NFo += UCETSYS ->cOBDOBI +' 頰 '                             , ;
+          cOBDs += cFILE_Ma +" ->cOBDOBI == '" +UCETSYS ->cOBDOBI +"' .or. ", ;
+          cOBDm += cFILE_Ma +" ->cOBDOBI == '" +STRZERO( UCETSYS ->nOBDOBI) +'/' ;
+                                               +RIGHT( STR( UCETSYS ->nROK -1, 4), 2 ) + ;
+                                                "' .or. " ), Nil ) }))
+    cOBD_NFo  := SUBSTR( cOBD_NFo, 1, LEN( cOBD_NFo) -4) +' )'
+    cOBDs     := SUBSTR( cOBDs   , 1, LEN( cOBDs)    -6)  +' ))'
+    cOBDm     := SUBSTR( cOBDm   , 1, LEN( cOBDm)    -6)  +' ))'
+    cOBD      := If( N == 2, cOBDm, cOBDs)
+    B_IDX_FOR := COMPILE( cOBD)
+
+    For nN := 1 To 6 Step 1
+      If axEDIT[nN].IsEDIT
+        If lIsSELnakl
+          cNSs += cFILE_Ma +" -> " +axEDIT[nN].Items + " + "
+        Else
+          cNSs += cFILE_Ma +" ->cNAZPOL" +STR( C_VYCNsH ->nTYP_VYCns,1) + " + "
+        EndIf
+      EndIf
+    Next
+    cNSs := SUBSTR( cNSs, 1, LEN( cNSs) -3)
+    B_IDX_KEY := COMPILE( cNSs)
+
+    If lIsSELnakl  ;  cKYs := cNSs + ' + ' + cFILE_Ma +' ->cUCETMD'
+    Else           ;  cKYs := cFILE_MA +' ->cUCETMD +' +cNSs
+    EndIf
+
+    lTURBo := ( cFILE_Ma) ->( SX_TURBOAREA(.T.))
+              ( cFILE_MA) ->( ORDsetFOCUS(0))
+
+    dbSELECTAREA( cFILE_Ma)
+     INDEX On &cKYs TO (cFILE_Id) FOR UcSES_FOR()
+      ( cFILE_Ma) ->( SX_TURBOAREA(lTURBo))
+  Next
+
+
+
+

@@ -1,0 +1,1 @@
+update msvprum set msvprum.lstavem = msprc_mo.lstavem where msvprum.croobcpppv = msprc_mo.croobcpppv

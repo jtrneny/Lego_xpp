@@ -1,0 +1,23 @@
+var cpexCAFSettings = cpexCAFSettings || {};
+cpexCAFSettings.native = {
+    targetEls: [
+        {
+            el: 'nativeAdplaceHolder',
+            templateId: 1
+        }
+    ],
+    templates: [
+        {
+            id: 1,
+            html:
+                '<div class="hpArticle">' +
+                '   <a href="{{link}}">' +
+                '       <h2>{{title}}</h2>' +
+                '      <img src="{{img | dimension: \'120: 80\'}}" style="height: 80px; width: 120px;">' +
+                '       <span class="grayText">Dnes | Komerční sdělení</span>' +
+                '      <p>{{desc}}</p>' +
+                '   </a>' +
+                '</div>'
+        }
+    ]
+};

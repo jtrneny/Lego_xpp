@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEMPRI xmlns="http://schemas.cssz.cz/nem/NEMPRI/1.0.0">
+ <datovaVeta poradoveCislo="1">
+ <dokument>
+ <cisloPotvrzeni>5596642A</cisloPotvrzeni><poznamka></poznamka><kodOSSZ>894</kodOSSZ><nazevOSSZ>Vsetín</nazevOSSZ><druhDavky>OCR</druhDavky></dokument><pojistenec>
+ <jmeno>Pavel</jmeno><prijmeni>Randus</prijmeni><rodneCislo>5807020648</rodneCislo></pojistenec><zamestnani>
+ <VSZamestnavatel>8940101655</VSZamestnavatel><ICZamestnavatel>25978438</ICZamestnavatel><nazevZamestnavatel>KOVAR a.s.</nazevZamestnavatel><zamestnanOd>1996-04-12</zamestnanOd><zamestnanDo></zamestnanDo><druhCinnosti>1</druhCinnosti></zamestnani><rozhodneObdobi>
+ <rozhodneObdobiOd>2012-12-01</rozhodneObdobiOd><rozhodneObdobiDo>2013-11-30</rozhodneObdobiDo><polozky>
+ <polozka>
+ <kalendarniMesic>12</kalendarniMesic><kalendarniRok>2012</kalendarniRok><zapocitatelnyPrijem>17327</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>1</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>18415</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>2</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>12760</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>3</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>12758</zapocitatelnyPrijem><vylouceneDny>7</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>4</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>0</zapocitatelnyPrijem><vylouceneDny>30</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>5</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>0</zapocitatelnyPrijem><vylouceneDny>31</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>6</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>12888</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>7</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>17886</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>8</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>19216</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>9</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>18866</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>10</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>9279</zapocitatelnyPrijem><vylouceneDny>17</vylouceneDny></polozka><polozka>
+ <kalendarniMesic>11</kalendarniMesic><kalendarniRok>2013</kalendarniRok><zapocitatelnyPrijem>25045</zapocitatelnyPrijem><vylouceneDny>0</vylouceneDny></polozka></polozky><zapocitatelnyPrijemCelkem>164440</zapocitatelnyPrijemCelkem><vylouceneDnyCelkem>85</vylouceneDnyCelkem><pravdepodobnaVysePrijmu></pravdepodobnaVysePrijmu></rozhodneObdobi><potvrzeniZamestnavatele>
+ <pocetOdpracovanychHodin></pocetOdpracovanychHodin><pracovniDoba></pracovniDoba></potvrzeniZamestnavatele><prilohaStrana2>
+ <pracoval>N</pracoval><prijemMalyRozsah></prijemMalyRozsah><pobiraDuchod>A</pobiraDuchod><druhDuchodu>8</druhDuchodu><jeStudentem>N</jeStudentem><spadaDoPrazdnin>N</spadaDoPrazdnin><dobaVolnaPrvniZamestnani>N</dobaVolnaPrvniZamestnani><volnoBezNahradyOd></volnoBezNahradyOd><volnoBezNahradyDo></volnoBezNahradyDo><nastupujePPM>N</nastupujePPM><narozeniDitete></narozeniDitete><neredukovanyDVZPPM></neredukovanyDVZPPM><prevedenaNaJinouPraci></prevedenaNaJinouPraci><dalsiSdeleni></dalsiSdeleni><kontaktniPracovnik>Administrátor</kontaktniPracovnik><kontaktniTelefon>+420571425501 </kontaktniTelefon><podanoV>Uherské Hradiště</podanoV></prilohaStrana2></datovaVeta></NEMPRI>

@@ -1,0 +1,21 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Osoby) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+    TYPE(Dialog) LEVEL(2) CAPTION(Adresáø osob ...)             DATA(OSB_OSOBY_SCR)
+    TYPE(Report) LEVEL(2) CAPTION(Výpisy sestav)                DATA(SYS_TISKFORM_CRD,OSB_OSOBY_LST)
+  TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Elektonická spojení)          DATA(C_TypElS)
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace OSOBY)            DATA(SYS_CONFIG_SCR_OSB)
+TYPE(Menu) LEVEL(0) CAPTION(Servis)
+  TYPE(Dialog) LEVEL(1) CAPTION(Tiskové výstupy)        DATA(SYS_forms_SEL)
+  TYPE(Dialog) LEVEL(1) CAPTION(Uživatelské filtry)     DATA(SYS_filtrs_SEL)

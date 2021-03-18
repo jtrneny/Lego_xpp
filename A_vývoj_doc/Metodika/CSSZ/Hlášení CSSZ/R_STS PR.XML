@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ONZ version="2009.1" xmlns="http://schemas.cssz.cz/ONZ2009">
+   <employee sqnr="1" dep="552" act="1" fro="2014-08-07" dat="2014-08-25" ver="2">
+       <client bno="7306266495">
+           <name sur="Takács" ona="" fir="Ladislav"/>
+           <birth dat="1973-06-26" nam="Takács" cit="Dunajská Streda"/>
+           <stat mal="M" cnt="SK"/>
+           <adr str="Hlavná ulica" num="5/11" pnu="93012" cit="Ohrady" cnt="SK" pos="SK"/>
+           <fdr cit="Klášterec nad Ohří" str="V.Řezáče" num="293" pnu="43151"/>
+           <cdr str="Hlavná ulica" num="5/11" pnu="93012" cit="Ohrady" cnt="SK" pos="SK"/>
+       </client>
+       <comp vs="5520102178" nvs="" id="48288551" nam="STS Prunéřov, a.s."/>
+       <job fro="2014-08-07" to="" rel="1" per="CZ" sme="N"/>
+       <forin nam="" str="" num="" pnu="" cit="" cnt="" id="" cur=""/>
+       <pens typ="" tak=""/>
+       <insh cnr="111"/>
+       <inso nam=""/>
+       <insp nam=""/>
+   </employee>
+</ONZ>

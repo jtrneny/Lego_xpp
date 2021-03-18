@@ -1,0 +1,79 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Prodej)
+TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+  TYPE(Menu) LEVEL(2) CAPTION(Nabídky pøijaté)
+**    TYPE(Dialog) LEVEL(3) CAPTION(dle Zboží)     DATA(ODB_seznabpZ_SCR) patøí do pohledu CENYBOZ
+**    TYPE(Dialog) LEVEL(3) CAPTION(dle Firem)     DATA(ODB_seznabpF_SCR) parøí do pohledy FIRMY
+    TYPE(Dialog) LEVEL(3) CAPTION(dle Nabídek)   DATA(ODB_seznabp_SCR)
+    TYPE(Dialog) LEVEL(3) CAPTION(výpisy Sestav) DATA(Sell)
+
+  TYPE(Menu) LEVEL(2) CAPTION(Nabídky odeslané)
+    TYPE(Dialog) LEVEL(3) CAPTION(dle Nabídek)   DATA(ODB_odesnhe_SCR)
+**    TYPE(Dialog) LEVEL(3) CAPTION(dle Firem)     DATA(PRG004)
+**    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav) DATA(PRG004)
+ 
+  TYPE(Menu) LEVEL(2) CAPTION(Objednávky pøijaté) 
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle objednávek) DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle firem)      DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle zboží)      DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle položek)     DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle stavu ZBOŽÍ) DATA(PRG004)
+    TYPE(Menu) LEVEL(2) CAPTION(Vykrytí objednávek)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle fakturace) DATA(PRG004)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle dodacích listù) DATA(PRG004)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle výrobních zakázek) DATA(PRG004)  
+
+  TYPE(Menu) LEVEL(2) CAPTION(Objednávky vystavené)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle objednávek)         DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle zakázek)            DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Dle firem)              DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(K objednávce dle firem) DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(K objednávce dle zboží) DATA(PRG004)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)          DATA(PRG004)
+
+  TYPE(Dialog) LEVEL(1) CAPTION(Aktualizace ceníku) DATA(PRG004)
+  TYPE(Menu) LEVEL(1) CAPTION(Slevy na zboží) 
+    TYPE(Dialog) LEVEL(2) CAPTION(Dle firem) DATA(PRG004)
+    TYPE(Dialog) LEVEL(2) CAPTION(Dle firem a KATEGORIE) DATA(PRG004)
+    TYPE(Dialog) LEVEL(2) CAPTION(Dle firem a skladové položky) DATA(PRG004)
+    TYPE(Dialog) LEVEL(2) CAPTION(Dle kategorie) DATA(PRG004)
+    TYPE(Dialog) LEVEL(2) CAPTION(Dle skladové položky) DATA(PRG004)
+    TYPE(Dialog) LEVEL(2) CAPTION(Výpisy sestav) DATA(PRG004)
+
+TYPE(Menu) LEVEL(0) CAPTION(Èíselníky)
+  TYPE(Menu) LEVEL(1) CAPTION(Podnikové) 
+    TYPE(Dialog) LEVEL(2) CAPTION(Mìny) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Uživatelé) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Mìrné jednotky) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Sazby DPH) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Zaokrouhlení) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(PSÈ) DATA(PRG002)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Odbyt)
+    TYPE(Dialog) LEVEL(2) CAPTION(Obchodní vztah) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Prodejci) DATA(PRG002)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Sklady)
+    TYPE(Dialog) LEVEL(2) CAPTION(Názvu zboží) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Kategorií zboží) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Místa uložení zboží) DATA(PRG002)
+    
+  TYPE(Menu) LEVEL(1) CAPTION(Finance) 
+    TYPE(Dialog) LEVEL(2) CAPTION(Zpùsob úhrady) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Zpùsob dopravy) DATA(PRG002)
+    
+  TYPE(Menu) LEVEL(1) CAPTION(Firmy) 
+    TYPE(Dialog) LEVEL(2) CAPTION(Oblasti) DATA(PRG002)
+    TYPE(Dialog) LEVEL(2) CAPTION(Státy) DATA(PRG002)
+
+TYPE(Menu) LEVEL(0) CAPTION(Servis)
+  TYPE(Dialog) LEVEL(1) CAPTION(Nastavení modulu) DATA(Sell)
+  TYPE(Dialog) LEVEL(1) CAPTION(Kalkulaèka) DATA(Sell)

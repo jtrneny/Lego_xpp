@@ -1,0 +1,19 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník typù dokladù ...) SIZE(75,15) FILE(C_TYPDOK) GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect)
+  TYPE(DBrowse) SIZE(75,14) FILE(C_TYPDOK) FIELDS(CTASK,CULOHA,CTYPDOKLAD,CNAZTYPDOK,LCOPYDOK,DPLATNYOD);
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y) 
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail)OFFSET(14,70) PRE( tabSelect)
+  TYPE(GET)  NAME(CTYPDOKLAD) FPOS(25,1) FLEN(11) FCAPTION(Typ dokladu)  CPOS(1,1)
+  TYPE(GET)  NAME(CNAZTYPDOK) FPOS(25,2) FLEN(30) FCAPTION(Náz dokladu)  CPOS(1,2)
+  TYPE(GET)  NAME(CTASK)      FPOS(25,3) FLEN( 6) FCAPTION(Task)         CPOS(1,3) 
+   TYPE(TEXT) NAME(C_TASK->CNAZULOHY)                                    CPOS(33,3) CLEN(30) 
+
+  TYPE(GET)      NAME(CULOHA)     FPOS(25,4) FLEN( 3)  FCAPTION(Úloha)                          CPOS(1,4) 
+  TYPE(GET)      NAME(CPODULOHA)  FPOS(25,5) FLEN(14)  FCAPTION(Pod úloha)                      CPOS(1,5) 
+  TYPE(COMBOBOX) NAME(lCOPYDOK)   FPOS(25,6) FLEN(15)  FCAPTION(Povolené kopírování dokladu)    CPOS(1,6) REF( LYESNO) 
+  TYPE(GET)      NAME(DPLATNYOD)  FPOS(25,7) FLEN(14)  FCAPTION(Platný OD)    CPOS(1,7) 
+TYPE(End)
+

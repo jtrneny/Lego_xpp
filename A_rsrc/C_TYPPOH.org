@@ -1,0 +1,27 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník typù pohybù ...) SIZE(75,15) FILE(C_TYPPOH) GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect) 
+  TYPE(DBrowse) SIZE(75,14) FILE(C_TYPPOH) FIELDS(CTASK,CTYPPOHYBU,CNAZTYPPOH,CTYPKURZU,DPLATNYOD,CPODULOHA);
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y)
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail)OFFSET(14,70) PRE( tabSelect) 
+  TYPE(GET)  NAME(CTYPPOHYBU) FPOS(15,1) FLEN(11) FCAPTION(Typ pohybu)  CPOS(1,1)
+  TYPE(GET)  NAME(CNAZTYPPOH) FPOS(15,2) FLEN(30) FCAPTION(Náz pohybu)  CPOS(1,2)
+  TYPE(GET)  NAME(CTYPDOKLAD) FPOS(15,3) FLEN(14) FCAPTION(Typ dokladu) CPOS(1,3)
+   TYPE(TEXT) NAME(C_TYPDOK->CNAZTYPDOK)                                 CPOS(31,3) CLEN(25)
+  TYPE(GET)  NAME(CRADDPH)    FPOS(15,4) FLEN(14) FCAPTION(Øád.výk.DPH) CPOS(1,4)
+  TYPE(COMBOBOX)  NAME(CTYPKURZU)  FPOS(15,5) FLEN(15) FCAPTION(Typ kurzu)   CPOS(1,5)      ;
+                       VALUES('   ':Neuveden, DEN:Denní, TYD:Týdenní, MES:Mìsíèní, QVA:Kvartální, POL:Pololetní, ROK:Roèníí  )
+  TYPE(GET)  NAME(LNAKLSTR)   FPOS(15,6) FLEN(3)  FCAPTION(Kontrola NS)  CPOS(1,6)
+  TYPE(GET)  NAME(DPLATNYOD)  FPOS(15,7) FLEN(14) FCAPTION(Platný OD)   CPOS(1,7)
+  TYPE(TEXT)                                       CAPTION(Task)        CPOS(1,8) CLEN(10)
+  TYPE(TEXT) NAME(CTASK)      CPOS(15,8) CLEN(5)  BGND(13)
+   TYPE(TEXT) NAME(C_TASK->CNAZULOHY)                                    CPOS(21,8) CLEN(30) 
+  TYPE(TEXT)                                       CAPTION(Úloha)       CPOS(1,9)
+  TYPE(TEXT) NAME(CULOHA)     CPOS(15,9) CLEN(3)  BGND(13)
+  TYPE(TEXT)                                       CAPTION(Pod úloha)   CPOS(1,10)
+  TYPE(TEXT) NAME(CPODULOHA)  CPOS(15,10) CLEN(20) BGND(13)
+   
+TYPE(End)
+

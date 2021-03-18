@@ -1,0 +1,87 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.0
+    OPENFILES     = SKL_POHYBY_SCR.PRG;SKL_POHYBY_DLG.prg;SKL_Pohyby_CRD.prg;SKL_LIB.prg;..\DRG_miss\drgDC20.prg
+    SKL_SKLADY.XPJ
+
+[SKL_SKLADY.XPJ]
+    SKLADY.EXE
+
+[SKLADY.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      = /v
+    OBJ_DIR       = C:\LEGO_xpp\A_obj
+    BREAKPOINT    = SKL_HLA01_DLG.prg:79=1@.T.@1@-1@1@.T.@0@@;CENZBOZ.PRG:201=1@.T.@1@-1@1@.T.@0@@,198=1@.T.@1@-1@1@.T.@0@@
+// $START-AUTODEPEND
+    SKL_SKLADY.CH
+    A_LIB.obj
+    A_system.obj
+    drgActions.obj
+    drgBrowse.obj
+    drgComboBox.obj
+    drgDataManager.obj
+    drgDBMS.obj
+    drgDC10.obj
+    drgDC20.obj
+    drgDialog.obj
+    drgDialogController.obj
+    drgFile.obj
+    drgFileLib.obj
+    drgForm.obj
+    drgGet.obj
+    drglib2.obj
+    drgMenu.obj
+    drgObject.obj
+    drgStatic.obj
+    drgTabPage.obj
+    RD_CONFI.obj
+    SKL_CENZBOZ_CRD.obj
+    SKL_CENZBOZ_SCR.obj
+    SKL_CenZboz2_SCR.obj
+    SKL_CULOZMI.obj
+    SKL_LIB.obj
+    SKL_Pohyby_CRD.obj
+    SKL_POHYBY_DLG.obj
+    SKL_POHYBY_SCR.obj
+    SKL_SKLADY.obj
+// $STOP-AUTODEPEND
+    DRG1.LIB
+    DRG2.LIB
+    SKL_SKLADY.ARC
+    ..\A_MAIN\A_LIB.PRG
+    ..\A_Main\A_system.PRG
+    ..\A_Main\RD_CONFI.PRG
+    ..\DRG_miss\drgActions.prg
+    ..\DRG_miss\drgBrowse.prg
+    ..\DRG_miss\drgComboBox.prg
+    ..\DRG_miss\drgDataManager.PRG
+    ..\DRG_miss\drgDBMS.prg
+    ..\DRG_miss\drgDC10.prg
+    ..\DRG_miss\drgDC20.prg
+    ..\DRG_miss\drgDialog.prg
+    ..\DRG_miss\drgDialogController.prg
+    ..\DRG_miss\drgFile.prg
+    ..\DRG_miss\drgFileLib.prg
+    ..\DRG_miss\drgForm.prg
+    ..\DRG_miss\drgGet.prg
+    ..\DRG_miss\drglib2.prg
+    ..\DRG_miss\drgMenu.PRG
+    ..\DRG_miss\drgObject.prg
+    ..\DRG_miss\drgStatic.prg
+    ..\DRG_miss\drgTabPage.prg
+    SKL_CENZBOZ_CRD.PRG
+    SKL_CENZBOZ_SCR.PRG
+    SKL_CenZboz2_SCR.prg
+    SKL_CULOZMI.PRG
+    SKL_LIB.prg
+    SKL_Pohyby_CRD.prg
+    SKL_POHYBY_DLG.prg
+    SKL_POHYBY_SCR.PRG
+    SKL_SKLADY.PRG
+

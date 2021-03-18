@@ -1,0 +1,11 @@
+TYPE(drgForm) DTYPE(2) TITLE(Druhy mezd ...) SIZE(75,15) FILE(DRUHYMZD) GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84)
+  TYPE(Browse) SIZE(75,14) FIELDS(nDruhMzdy,cNazevDMZ) CURSORMODE(3) PP(5)
+TYPE(End)
+
+TYPE(TabPage) CAPTION(DetailA)OFFSET(14,70)
+  TYPE(GET) NAME(nDruhMzdy)  FPOS(15,1) FLEN(4)  FCAPTION(Druh mzdy)       CPOS(1,1)
+  TYPE(GET) NAME(cNazevDMZ)  FPOS(15,2) FLEN(30) FCAPTION(Název druh mzdy) CPOS(1,2)
+TYPE(End)
+

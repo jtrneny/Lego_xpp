@@ -1,0 +1,18 @@
+select objitem.ccislObInt, objitem.nmnozOBodb, objitem.nmnozPLodb, objitem.csklPol, objitem.cnazZbo,
+       objhead.ccislObInt, objhead.ddatobj 
+	   from objitem
+left outer join objhead on objitem.ccislObInt = objhead.ccislObInt
+where objhead.ddatObj >= '20.02.2008' and
+      objhead.ddatObj <= '01.07.2008' and
+      objitem.nmnozOBodb > objitem.nmnozPLodb
+order by objhead.ddatObj	
+
+**
+select objitem.ccislObInt, objitem.nmnozOBodb, objitem.nmnozPLodb,
+       objhead.ccislObInt, objhead.ddatobj 
+	   from objitem
+left outer join objhead on objitem.ccislObInt = objhead.ccislObInt
+where objhead.ddatObj >= '20.02.2008' and
+      objhead.ddatObj <= '01.07.2008' and
+      objitem.nmnozOBodb > objitem.nmnozPLodb
+order by objhead.ddatObj	

@@ -1,0 +1,608 @@
+﻿1;1;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;VelkĂˇ chladicĂ­ zaĹ™Ă­zenĂ­;;1;1;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky
+1;1;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;VelkĂˇ chladicĂ­ zaĹ™Ă­zenĂ­;;1;1;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin (s chladicĂ­mi mĂ©dii v uzavĹ™enĂ©m okruhu)
+1;2;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky;nad 40kg;1;1;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky
+1;2;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky;nad 40kg;1;1;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin (s chladicĂ­mi mĂ©dii v uzavĹ™enĂ©m okruhu)
+1;2;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky;do 40 kg ;1;1;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky
+1;2;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ChladniÄŤky, kombinace chladniÄŤky a mrazniÄŤky;do 40 kg ;1;1;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin (s chladicĂ­mi mĂ©dii v uzavĹ™enĂ©m okruhu)
+1;3;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;MrazniÄŤky;nad 40kg;1;2;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;MrazniÄŤky;MrazniÄŤky
+1;3;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;MrazniÄŤky;do 40 kg ;1;2;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;MrazniÄŤky;MrazniÄŤky
+1;4;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;s chladĂ­cĂ­mi medii;1;1;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ChladniÄŤky;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin (s chladicĂ­mi mĂ©dii v uzavĹ™enĂ©m okruhu)
+1;4;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;s chladicĂ­mi mĂ©dii;1;8;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OstatnĂ­ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 10 kg (s chladicĂ­mi mĂ©dii)"
+1;4;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;s chladicĂ­mi mĂ©dii;1;8;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OstatnĂ­ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 10 kg do 50 kg (s chladicĂ­mi mĂ©dii)"
+1;4;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;s chladicĂ­mi mĂ©dii;1;8;3;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OstatnĂ­ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 50 kg do 100 kg (s chladicĂ­mi mĂ©dii)"
+1;4;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;bez chladĂ­cĂ­ch mediĂ­;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;4;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;bez chladĂ­cĂ­ch mediĂ­;4;18;11;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 25 kg do 50 kg"
+1;4;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;bez chladĂ­cĂ­ch mediĂ­;4;18;12;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 50 kg do 100 kg"
+1;4;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ pro chlazenĂ­, uchovĂˇnĂ­ a skladovĂˇnĂ­ potravin;bez chladĂ­cĂ­ch mediĂ­;4;18;13;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+nad 100 kg"
+1;5;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;PraÄŤky;nad 30 kg;4;1;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";PraÄŤky;PraÄŤky nad 30 kg
+1;5;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;PraÄŤky;do 30 kg;4;1;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";PraÄŤky;PraÄŤky do 30 kg
+1;6;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;SuĹˇiÄŤky;    ;4;2;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SuĹˇiÄŤky;SuĹˇiÄŤky s tepelnĂ˝m ÄŤerpadlem
+1;6;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;SuĹˇiÄŤky;;4;2;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SuĹˇiÄŤky;SuĹˇiÄŤky bez tepelnĂ©ho ÄŤerpadla
+1;7;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;MyÄŤky nĂˇdobĂ­;;4;3;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";MyÄŤky nĂˇdobĂ­;MyÄŤky nĂˇdobĂ­
+1;8;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;PeÄŤĂ­cĂ­ zaĹ™Ă­zenĂ­;nad 10 kg;4;4;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby;VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby, velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin do 25 kg
+1;8;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;PeÄŤĂ­cĂ­ zaĹ™Ă­zenĂ­;nad 10 kg;4;4;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby;VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby, velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin nad 25 kg
+1;8;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;PeÄŤĂ­cĂ­ zaĹ™Ă­zenĂ­;do 10 kg;4;4;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby;VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby, velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin do 25 kg
+1;9;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© sporĂˇky;    ;4;5;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ElektrickĂ© sporĂˇky;ElektrickĂ© sporĂˇky
+1;10;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© plotny;    ;4;6;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ElektrickĂ© varnĂ© desky;ElektrickĂ© varnĂ© desky
+1;11;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;MikrovlnnĂ© trouby;;5;5;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MikrovlnnĂ© trouby;MikrovlnnĂ© trouby
+1;12;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin;nad 10 kg;4;4;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby;VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby, velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin do 25 kg
+1;12;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin;nad 10 kg;4;4;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby;VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby, velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin nad 25 kg
+1;12;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin;do 10 kg;4;4;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby;VaĹ™iÄŤe a peÄŤĂ­cĂ­ trouby, velkĂˇ zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k vaĹ™enĂ­ a jinĂ©mu zpracovĂˇnĂ­ potravin do 25 kg
+1;13;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂˇ topidla;nad 30 Kg;4;18;11;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 25 kg do 50 kg"
+1;13;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂˇ topidla;10-30Kg;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;13;3;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂˇ topidla;do 10 kg;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;14;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© radiĂˇtory;nad 30 Kg;1;7;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu od 10 kg do 50 kg
+1;14;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© radiĂˇtory;nad 30 Kg;1;7;3;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu nad 50 kg
+1;14;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© radiĂˇtory;10-30Kg;1;7;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu od 10 kg do 50 kg
+1;14;3;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© radiĂˇtory;do 10 kg;1;7;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu do 10 kg
+1;15;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pro vytĂˇpÄ›nĂ­ mĂ­stnostĂ­, lĹŻĹľek a sedacĂ­ho nĂˇbytku;nad 30 Kg;4;18;11;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 25 kg do 50 kg"
+1;15;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pro vytĂˇpÄ›nĂ­ mĂ­stnostĂ­, lĹŻĹľek a sedacĂ­ho nĂˇbytku;nad 30 Kg;4;18;12;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 50 kg do 100 kg"
+1;15;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pro vytĂˇpÄ›nĂ­ mĂ­stnostĂ­, lĹŻĹľek a sedacĂ­ho nĂˇbytku;nad 30 Kg;4;18;13;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+nad 100 kg"
+1;15;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pro vytĂˇpÄ›nĂ­ mĂ­stnostĂ­, lĹŻĹľek a sedacĂ­ho nĂˇbytku;10-30Kg;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;15;3;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ pro vytĂˇpÄ›nĂ­ mĂ­stnostĂ­, lĹŻĹľek a sedacĂ­ho nĂˇbytku;do 10 kg;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;16;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© ventilĂˇtory velkĂ©;nad 10 kg;4;18;8;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;VentilaÄŤnĂ­ a odsĂˇvacĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe do 25 kg
+1;16;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© ventilĂˇtory velkĂ©;nad 10 kg;4;18;9;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;VentilaÄŤnĂ­ a odsĂˇvacĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe nad 25 kg
+1;17;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;s chladĂ­cĂ­mi medii;1;4;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky do 50 kg (s chladicĂ­mi mĂ©dii)
+1;17;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;s chladĂ­cĂ­mi medii;1;4;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky od 50 kg do 100 kg (s chladicĂ­mi mĂ©dii)
+1;17;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;s chladĂ­cĂ­mi medii;1;4;3;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky od 100 kg do 200 kg (s chladicĂ­mi mĂ©dii)
+1;17;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;s chladĂ­cĂ­mi medii;1;4;4;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky nad 200 kg (s chladicĂ­mi mĂ©dii)
+1;17;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;s chladĂ­cĂ­mi medii;1;4;5;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - vnitĹ™nĂ­ jednotky do 35 kg (s chladicĂ­mi mĂ©dii)
+1;17;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;s chladĂ­cĂ­mi medii;1;4;6;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - vnitĹ™nĂ­ jednotky nad 35 kg (s chladicĂ­mi mĂ©dii), klimatizace mobilnĂ­ (s chladicĂ­mi mĂ©dii)
+1;17;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;bez chladĂ­cĂ­ch mediĂ­;4;2;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SuĹˇiÄŤky;SuĹˇiÄŤky s tepelnĂ˝m ÄŤerpadlem
+1;17;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;bez chladĂ­cĂ­ch mediĂ­;4;2;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SuĹˇiÄŤky;SuĹˇiÄŤky bez tepelnĂ©ho ÄŤerpadla
+1;17;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;bez chladĂ­cĂ­ch mediĂ­;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;18;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ ventilaÄŤnĂ­, odsĂˇvacĂ­ a klimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;nad 10 kg;1;5;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­ nad 10 kg (s chladicĂ­mi mĂ©dii)
+1;18;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ ventilaÄŤnĂ­, odsĂˇvacĂ­ a klimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;odsavaÄŤe par;4;18;8;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;VentilaÄŤnĂ­ a odsĂˇvacĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe do 25 kg
+1;18;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ ventilaÄŤnĂ­, odsĂˇvacĂ­ a klimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;odsavaÄŤe par;4;18;9;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;VentilaÄŤnĂ­ a odsĂˇvacĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe nad 25 kg
+1;18;3;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ ventilaÄŤnĂ­, odsĂˇvacĂ­ a klimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;do 10 kg;1;5;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­ do 10 kg (s chladicĂ­mi mĂ©dii)
+1;19;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 30 Kg;1;3;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ZaĹ™Ă­zenĂ­ automaticky poskytujĂ­cĂ­ chlazenĂ© vĂ˝robky;ZaĹ™Ă­zenĂ­ automaticky poskytujĂ­cĂ­ chlazenĂ© vĂ˝robky
+1;19;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 30 Kg;4;18;11;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 25 kg do 50 kg"
+1;19;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 30 Kg;4;18;12;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 50 kg do 100 kg"
+1;19;1;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 30 Kg;4;18;13;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+nad 100 kg"
+1;19;2;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;10-30Kg;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+1;19;3;VelkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ velkĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;do 10 kg;4;18;10;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+do 25 kg"
+2;1;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe; VysavaÄŤe;nad 2 kg;5;1;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";VysavaÄŤe;VysavaÄŤe nad 2 kg
+2;1;2;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe; VysavaÄŤe;do 2 kg;5;1;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";VysavaÄŤe;VysavaÄŤe do 2 kg
+2;2;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ÄŚistĂ­cĂ­ stroje na koberce;;5;2;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Stroje na ÄŤiĹˇtÄ›nĂ­ kobercĹŻ;Stroje na ÄŤiĹˇtÄ›nĂ­ kobercĹŻ
+2;3;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ zaĹ™Ă­zenĂ­ pro ÄŤiĹˇtÄ›nĂ­;nad 10 kg;5;2;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Stroje na ÄŤiĹˇtÄ›nĂ­ kobercĹŻ;Stroje na ÄŤiĹˇtÄ›nĂ­ kobercĹŻ
+2;3;2;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ zaĹ™Ă­zenĂ­ pro ÄŤiĹˇtÄ›nĂ­;do 10 kg;5;2;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Stroje na ÄŤiĹˇtÄ›nĂ­ kobercĹŻ;Stroje na ÄŤiĹˇtÄ›nĂ­ kobercĹŻ
+2;4;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k ĹˇitĂ­, pletenĂ­, tkanĂ­ a jinĂ©mu zpracovĂˇnĂ­ textilu;;4;10;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k pletenĂ­ a tkanĂ­;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k ĹˇitĂ­, pletenĂ­, tkanĂ­ a jinĂ©mu zpracovĂˇnĂ­ textilu, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+2;4;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k ĹˇitĂ­, pletenĂ­, tkanĂ­ a jinĂ©mu zpracovĂˇnĂ­ textilu;;5;3;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Ĺ icĂ­ stroje;"Ĺ icĂ­ stroje pouĹľĂ­vanĂ© v domĂˇcnostech, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm"
+2;5;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe; Ĺ˝ehliÄŤky a jinĂ© spotĹ™ebiÄŤe pouĹľĂ­vanĂ© k ĹľehlenĂ­, mandlovĂˇnĂ­ a dalĹˇĂ­ pĂ©ÄŤi o odÄ›vy;;5;7;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Ĺ˝ehliÄŤky;Ĺ˝ehliÄŤky a jinĂ© spotĹ™ebiÄŤe pouĹľĂ­vanĂ© k ĹľehlenĂ­, mandlovĂˇnĂ­ a dalĹˇĂ­ pĂ©ÄŤi o odÄ›vy
+2;6;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;TopinkovaÄŤe;;5;8;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OpĂ©kaÄŤe topinek;TopinkovaÄŤe, opĂ©kaÄŤe topinek a dalĹˇĂ­ zaĹ™Ă­zenĂ­ na pĹ™Ă­pravu nĂˇpojĹŻ a jĂ­del, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+2;7;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;FritovacĂ­ hrnce;;5;8;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OpĂ©kaÄŤe topinek;TopinkovaÄŤe, opĂ©kaÄŤe topinek a dalĹˇĂ­ zaĹ™Ă­zenĂ­ na pĹ™Ă­pravu nĂˇpojĹŻ a jĂ­del, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+2;8;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;MlĂ˝nky, kĂˇvovary a zaĹ™Ă­zenĂ­ pro otevĂ­rĂˇnĂ­ nebo uzavĂ­rĂˇnĂ­ nĂˇdob nebo obalĹŻ;;5;8;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OpĂ©kaÄŤe topinek;TopinkovaÄŤe, opĂ©kaÄŤe topinek a dalĹˇĂ­ zaĹ™Ă­zenĂ­ na pĹ™Ă­pravu nĂˇpojĹŻ a jĂ­del, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+2;9;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© noĹľe;    ;5;9;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© noĹľe;ElektrickĂ© noĹľe
+2;10;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;SpotĹ™ebiÄŤe pro stĹ™Ă­hĂˇnĂ­ vlasĹŻ, suĹˇenĂ­ vlasĹŻ, ÄŤiĹˇtÄ›nĂ­ zubĹŻ, holenĂ­, masĂˇĹľe nebo jinou pĂ©ÄŤi o tÄ›lo;;5;12;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© holicĂ­ strojky;ElektrickĂ© holicĂ­ strojky
+2;10;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;SpotĹ™ebiÄŤe pro stĹ™Ă­hĂˇnĂ­ vlasĹŻ, suĹˇenĂ­ vlasĹŻ, ÄŤiĹˇtÄ›nĂ­ zubĹŻ, holenĂ­, masĂˇĹľe nebo jinou pĂ©ÄŤi o tÄ›lo;    ;5;14;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";PĹ™Ă­stroje pro pĂ©ÄŤi o vlasy a tÄ›lo;SpotĹ™ebiÄŤe pro stĹ™Ă­hĂˇnĂ­ vlasĹŻ, suĹˇenĂ­ vlasĹŻ, ÄŤiĹˇtÄ›nĂ­ zubĹŻ, holenĂ­, masĂˇĹľe nebo jinou pĂ©ÄŤi o tÄ›lo
+2;11;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;Hodiny, budĂ­ky a zaĹ™Ă­zenĂ­ pro ĂşÄŤely mÄ›Ĺ™enĂ­, indikace nebo registrace ÄŤasu;nad 100 g;5;11;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Hodiny a hodinky;Hodiny, budĂ­ky a zaĹ™Ă­zenĂ­ pro ĂşÄŤely mÄ›Ĺ™enĂ­, indikace nebo registrace ÄŤasu nad 100 g
+2;11;2;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;Hodiny, budĂ­ky a zaĹ™Ă­zenĂ­ pro ĂşÄŤely mÄ›Ĺ™enĂ­, indikace nebo registrace ÄŤasu;do 100 g;5;11;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Hodiny a hodinky;Hodiny, budĂ­ky a zaĹ™Ă­zenĂ­ pro ĂşÄŤely mÄ›Ĺ™enĂ­, indikace nebo registrace ÄŤasu do 100 g
+2;12;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe; VĂˇhy;;5;13;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";VĂˇhy;VĂˇhy
+2;13;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;ElektrickĂ© ventilĂˇtory malĂ©;;5;6;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";VentilaÄŤnĂ­ zaĹ™Ă­zenĂ­;ElektrickĂ© ventilĂˇtory do 10 kg, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;10;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© konvice;ElektrickĂ© konvice
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;25;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Detektory kouĹ™e;Detektory kouĹ™e
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;30;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© vĂ˝dejnĂ­ automaty na vĂ˝robky;VestavnĂ© a plnÄ› automatickĂ© kĂˇvovary
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;31;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂˇ zaĹ™Ă­zenĂ­ s vestavÄ›nĂ˝mi solĂˇrnĂ­mi panely;MalĂˇ zaĹ™Ă­zenĂ­ s vestavÄ›nĂ˝mi solĂˇrnĂ­mi panely
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;32;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ do 100 g
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;32;4;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 0,1 kg do 1 kg"
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;32;5;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ© 
+od 1 kg do 4 kg"
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;32;6;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ© 
+od 4 kg do 15 kg"
+2;14;1;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;nad 100 g;5;32;7;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ© 
+nad 15 kg"
+2;14;2;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;do 100 g;5;29;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© nĂˇstroje pro monitorovĂˇnĂ­ a kontrolu;MalĂ© nĂˇstroje pro monitorovĂˇnĂ­ a kontrolu do 0,5 kg
+2;14;2;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;do 100 g;5;31;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂˇ zaĹ™Ă­zenĂ­ s vestavÄ›nĂ˝mi solĂˇrnĂ­mi panely;MalĂˇ zaĹ™Ă­zenĂ­ s vestavÄ›nĂ˝mi solĂˇrnĂ­mi panely
+2;14;2;MalĂ© domĂˇcĂ­ spotĹ™ebiÄŤe;OstatnĂ­ malĂ© domĂˇcĂ­ spotĹ™ebiÄŤe vÂ jinĂ© podskupinÄ› neuvedenĂ©;do 100 g;5;32;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ do 100 g
+3;1;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;VelkĂ© sĂˇlovĂ© poÄŤĂ­taÄŤe;;4;11;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VelkĂ© sĂˇlovĂ© poÄŤĂ­taÄŤe;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­
+3;2;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;MinipoÄŤĂ­taÄŤe;    ;6;5;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OsobnĂ­ poÄŤĂ­taÄŤe;OsobnĂ­ poÄŤĂ­taÄŤe (vÄŤetnÄ› zĂˇkladnĂ­ procesorovĂ© jednotky, myĹˇi a klĂˇvesnic)
+3;3;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;TiskovĂ© jednotky (samostatnĂ© centrĂˇlnĂ­ tiskĂˇrny);;4;12;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VelkĂ© tiskĂˇrny;TiskovĂ© jednotky (samostatnĂ© centrĂˇlnĂ­ tiskĂˇrny)
+3;4;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OsobnĂ­ poÄŤĂ­taÄŤe (vÄŤetnÄ› zĂˇkladnĂ­ procesorovĂ© jednotky, myĹˇi a klĂˇvesnic);    ;6;5;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OsobnĂ­ poÄŤĂ­taÄŤe;OsobnĂ­ poÄŤĂ­taÄŤe (vÄŤetnÄ› zĂˇkladnĂ­ procesorovĂ© jednotky, myĹˇi a klĂˇvesnic)
+3;4;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Komponenty  PC (klĂˇvesnice, myĹˇ);;6;8;3;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© do 100 g
+3;4;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Komponenty  PC (klĂˇvesnice, myĹˇ);;6;8;4;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 0,1 kg do 1 kg
+3;4;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Komponenty  PC (klĂˇvesnice, myĹˇ);;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;4;3;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Sada reproduktorĹŻ;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+3;4;3;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Sada reproduktorĹŻ;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+3;4;3;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Sada reproduktorĹŻ;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+3;4;4;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Monitory ;do 25Â´Â´;2;4;1;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Monitory;"Monitory s ĂşhlopĹ™Ă­ÄŤkou do 25"""
+3;4;5;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Monitory ;nad 25Â´Â´;2;4;2;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Monitory;"Monitory s ĂşhlopĹ™Ă­ÄŤkou nad 25"""
+3;5;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Laptopy (vÄŤetnÄ› zĂˇkladnĂ­ procesorovĂ© jednotky,myĹˇĂ­ a klĂˇvesnic);;2;5;1;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Laptopy;Tablety, laptopy (vÄŤetnÄ› zĂˇkladnĂ­ procesorovĂ© jednotky, myĹˇi a klĂˇvesnice)
+3;6;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Notebooky;    ;2;6;1;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Notebooky;Notebooky
+3;7;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Tablety;;6;8;3;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© do 100 g
+3;7;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Tablety;;6;8;4;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 0,1 kg do 1 kg
+3;7;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Tablety;;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;7;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ databanky a diĂˇĹ™e;;6;8;3;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© do 100 g
+3;7;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ databanky a diĂˇĹ™e;;6;8;4;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 0,1 kg do 1 kg
+3;7;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ databanky a diĂˇĹ™e;;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;8;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;TiskĂˇrny;    ;6;6;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;TiskĂˇrny;TiskĂˇrny do max. velikosti tisku A4
+3;9;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery;do 50 kg;4;13;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery velikosti A3+A2, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+3;9;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery;do 50 kg;4;13;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery velikosti A1+A0, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+3;9;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery;nad 50 kg;4;13;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery velikosti A3+A2, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+3;9;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery;nad 50 kg;4;13;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­;KopĂ­rovacĂ­ zaĹ™Ă­zenĂ­, multifunkÄŤnĂ­ zaĹ™Ă­zenĂ­, skenery velikosti A1+A0, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+3;10;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;ElektrickĂ© a elektronickĂ© psacĂ­ stroje;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+3;10;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;ElektrickĂ© a elektronickĂ© psacĂ­ stroje;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+3;10;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;ElektrickĂ© a elektronickĂ© psacĂ­ stroje;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+3;11;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­; KapesnĂ­ a stolnĂ­ kalkulaÄŤky ;;5;15;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";KalkulaÄŤky;PoÄŤtĂˇĹ™skĂ© kalkulaÄŤky s pĹ™Ă­vodnĂ­m kabelem, vÄŤetnÄ› tiskovĂ© funkce
+3;11;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;KapesnĂ­ a stolnĂ­ kalkulaÄŤky ;    ;6;3;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;KapesnĂ­ kalkulaÄŤky;KapesnĂ­ kalkulaÄŤky
+3;12;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ©;do 10 kg;6;8;3;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© do 100 g
+3;12;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ©;do 10 kg;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;12;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ©;do 10 kg;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;12;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ©;od 10-30 kg;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;12;2;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ©;od 10-30 kg;6;8;6;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© nad 5 kg
+3;13;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;UĹľivatelskĂ© terminĂˇly a systĂ©my;;6;2;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;GPS navigace;GPS navigace
+3;14;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;DĂˇlnopisy;;6;8;3;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© do 100 g
+3;14;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;DĂˇlnopisy;;6;8;4;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 0,1 kg do 1 kg
+3;14;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;DĂˇlnopisy;;6;8;5;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro sbÄ›r, uklĂˇdĂˇnĂ­, zpracovĂˇnĂ­ prezentacĂ­  nebo sdÄ›lovĂˇnĂ­ informacĂ­ elektronickĂ˝m zpĹŻsobem v jinĂ© podskupinÄ› neuvedenĂ© od 1 kg do 5 kg
+3;15;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Faxy;;6;7;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Telefony;ZĂˇznamnĂ­ky, bezdrĂˇtovĂ© telefony a vysĂ­laÄŤky, telefony
+3;16;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;Telefony;;6;7;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Telefony;ZĂˇznamnĂ­ky, bezdrĂˇtovĂ© telefony a vysĂ­laÄŤky, telefony
+3;17;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;TelefonnĂ­ automaty;    ;4;18;14;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;TelefonnĂ­ automaty - pouze profi
+3;18;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;BezdrĂˇtovĂ© telefony a vysĂ­laÄŤky;;6;7;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Telefony;ZĂˇznamnĂ­ky, bezdrĂˇtovĂ© telefony a vysĂ­laÄŤky, telefony
+3;19;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;MobilnĂ­ telefony a GSM moduly;    ;6;1;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;MobilnĂ­ telefony;MobilnĂ­ telefony a GSM moduly
+3;20;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;ZĂˇznamnĂ­ky;;6;7;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Telefony;ZĂˇznamnĂ­ky, bezdrĂˇtovĂ© telefony a vysĂ­laÄŤky, telefony
+3;21;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro pĹ™enos zvuku, obrazu a jinĂ˝ch informacĂ­ pomocĂ­ telekomunikacĂ­ v jinĂ© podskupinÄ› neuvedenĂ©;;2;1;1;Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2;Obrazovky;VelkoploĹˇnĂ© obrazovky, sportovnĂ­ ÄŤasomĂ­ry, speciĂˇlnĂ­ obrazovky, nĂˇstÄ›nnĂ© displeje
+3;22;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;TonerovĂ©/inkoustovĂ© kazety s elektronickou ÄŤĂˇstĂ­;;6;8;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;Tonery, inkoustovĂ© nĂˇplnÄ›, cartridge do 0,5 kg
+3;22;1;ZaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­;TonerovĂ©/inkoustovĂ© kazety s elektronickou ÄŤĂˇstĂ­;;6;8;2;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ch zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;Tonery, inkoustovĂ© nĂˇplnÄ›, cartridge nad 0,5 kg
+4;1;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;RĂˇdiovĂ© soupravy (radiobudĂ­ky, radiomagnetofony);;5;16;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";RozhlasovĂ© pĹ™ijĂ­maÄŤe;RozhlasovĂ© pĹ™ijĂ­maÄŤe a jejich kombinace
+4;1;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Radiomagnetofony;;5;16;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";RozhlasovĂ© pĹ™ijĂ­maÄŤe;Radiomagnetofony
+4;1;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;AutorĂˇdia ;;5;16;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";RozhlasovĂ© pĹ™ijĂ­maÄŤe;RozhlasovĂ© pĹ™ijĂ­maÄŤe a jejich kombinace
+4;2;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Televizory;do uhlopĹ™Ă­ÄŤky 25Â´Â´;2;2;1;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Televize;"Televizory s ĂşhlopĹ™Ă­ÄŤkou do 25"""
+4;2;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Televizory;nad uhlopĹ™Ă­ÄŤku 25 Â´Â´;2;2;2;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Televize;"Televizory s ĂşhlopĹ™Ă­ÄŤkou nad 25"""
+4;2;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Projektory;    ;4;8;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro pĹ™enos zvuku, obrazu a jinĂ˝ch informacĂ­ pomocĂ­ telekomunikace v jinĂ© podskupinÄ› neuvedenĂ©
+4;2;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;AktivnĂ­ 3D brĂ˝le;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;2;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;AktivnĂ­ 3D brĂ˝le;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;2;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;DigitĂˇlnĂ­ fotorĂˇmeÄŤky;    ;2;3;1;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";LCD fotorĂˇmeÄŤky;LCD fotorĂˇmeÄŤky
+4;3;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Videokamery vyuĹľĂ­vanĂ© v domĂˇcnosti;    ;5;17;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Videokamery;Videokamery vyuĹľĂ­vanĂ© v domĂˇcnosti
+4;3;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Minikamery, web kamery;    ;5;17;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Videokamery;Minikamery, web kamery
+4;3;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty digitĂˇlnĂ­ ;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;3;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty digitĂˇlnĂ­ ;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;3;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty digitĂˇlnĂ­ ;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;3;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty analogovĂ©;;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;3;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty analogovĂ©;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;3;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty analogovĂ©;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;3;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty jednorĂˇzovĂ©;;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;3;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty jednorĂˇzovĂ©;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;3;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;FotoaparĂˇty jednorĂˇzovĂ©;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;3;6;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;SamostatnĂ© pĹ™Ă­sluĹˇenstvĂ­ fotoaparĂˇtĹŻ (fotoblesky, teleobjektivy, expozimetry);    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;3;6;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;SamostatnĂ© pĹ™Ă­sluĹˇenstvĂ­ fotoaparĂˇtĹŻ (fotoblesky, teleobjektivy, expozimetry);;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;3;6;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;SamostatnĂ© pĹ™Ă­sluĹˇenstvĂ­ fotoaparĂˇtĹŻ (fotoblesky, teleobjektivy, expozimetry);;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;4;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Video a DVD pĹ™ehrĂˇvaÄŤe a rekordĂ©ry;;5;18;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";VideorekordĂ©ry;VideorekordĂ©ry
+4;4;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;PĹ™enosnĂ˝ DVD pĹ™ehrĂˇvaÄŤ s obrazovkou;;5;18;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";VideorekordĂ©ry;VideorekordĂ©ry
+4;5;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Hi-fi vÄ›Ĺľe;    ;5;19;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";Hi-fi zaĹ™Ă­zenĂ­;Hi-fi zaĹ™Ă­zenĂ­
+4;5;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ZesilovaÄŤe a tunery;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ZesilovaÄŤe a tunery;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ZesilovaÄŤe a tunery;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;5;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Receivery;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Receivery;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Receivery;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;5;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KapesnĂ­ pĹ™ehrĂˇvaÄŤe a rekordĂ©ry;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KapesnĂ­ pĹ™ehrĂˇvaÄŤe a rekordĂ©ry;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KapesnĂ­ pĹ™ehrĂˇvaÄŤe a rekordĂ©ry;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;5;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Diktafony;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Diktafony;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;6;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;DomĂˇcĂ­ kina (bez TV);    ;4;8;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro pĹ™enos zvuku, obrazu a jinĂ˝ch informacĂ­ pomocĂ­ telekomunikace v jinĂ© podskupinÄ› neuvedenĂ©
+4;5;7;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;SatelitnĂ­ a DVB pĹ™ijĂ­maÄŤe;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;7;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;SatelitnĂ­ a DVB pĹ™ijĂ­maÄŤe;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;7;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;SatelitnĂ­ a DVB pĹ™ijĂ­maÄŤe;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;5;8;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ParabolickĂ© antĂ©ny s napĂˇjenĂ­m;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;8;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ParabolickĂ© antĂ©ny s napĂˇjenĂ­m;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;8;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ParabolickĂ© antĂ©ny s napĂˇjenĂ­m;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;5;9;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;PokojovĂ© antĂ©ny s napĂˇjenĂ­m;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;9;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;PokojovĂ© antĂ©ny s napĂˇjenĂ­m;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;9;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;PokojovĂ© antĂ©ny s napĂˇjenĂ­m;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;5;10;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Komponenty pro satelitnĂ­ a DVB pĹ™ijĂ­maÄŤe;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;5;10;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Komponenty pro satelitnĂ­ a DVB pĹ™ijĂ­maÄŤe;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;5;10;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Komponenty pro satelitnĂ­ a DVB pĹ™ijĂ­maÄŤe;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;6;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ZesilovaÄŤe;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;6;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ZesilovaÄŤe;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;6;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ZesilovaÄŤe;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;6;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;MixĂˇĹľnĂ­ pult;;4;9;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry do 10 kg
+4;6;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;MixĂˇĹľnĂ­ pult;;4;9;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry od 10 do 30 kg
+4;6;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;MixĂˇĹľnĂ­ pult;;4;9;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry nad 30 kg
+4;6;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;MixĂˇĹľnĂ­ pult;;5;20;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje do 4 kg
+4;6;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;MixĂˇĹľnĂ­ pult;;5;20;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje nad 4 kg
+4;6;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;EkvalizĂ©ry;;4;9;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry do 10 kg
+4;6;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;EkvalizĂ©ry;;4;9;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry od 10 do 30 kg
+4;6;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;EkvalizĂ©ry;;4;9;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry nad 30 kg
+4;6;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;EkvalizĂ©ry;;5;20;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje do 4 kg
+4;6;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;EkvalizĂ©ry;;5;20;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje nad 4 kg
+4;7;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BicĂ­ a kytary;    ;4;9;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry do 10 kg
+4;7;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BicĂ­ a kytary;;4;9;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry od 10 do 30 kg
+4;7;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BicĂ­ a kytary;;4;9;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry nad 30 kg
+4;7;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BicĂ­ a kytary;;5;20;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje do 4 kg
+4;7;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BicĂ­ a kytary;;5;20;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje nad 4 kg
+4;7;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KlĂˇvesovĂ© nĂˇstroje a syntetizĂˇtory;    ;4;9;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry do 10 kg
+4;7;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KlĂˇvesovĂ© nĂˇstroje a syntetizĂˇtory;;4;9;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry od 10 do 30 kg
+4;7;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KlĂˇvesovĂ© nĂˇstroje a syntetizĂˇtory;;4;9;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";HudebnĂ­ zaĹ™Ă­zenĂ­ (kromÄ› kostelnĂ­ch varhan);HubebnĂ­ nĂˇstroje, mixĂˇĹľnĂ­ pulty, ekvalizĂ©ry nad 30 kg
+4;7;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KlĂˇvesovĂ© nĂˇstroje a syntetizĂˇtory;;5;20;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje do 4 kg
+4;7;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;KlĂˇvesovĂ© nĂˇstroje a syntetizĂˇtory;;5;20;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";HudebnĂ­ nĂˇstroje;HubebnĂ­ nĂˇstroje nad 4 kg
+4;7;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Aparatury;;4;8;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro pĹ™enos zvuku, obrazu a jinĂ˝ch informacĂ­ pomocĂ­ telekomunikace v jinĂ© podskupinÄ› neuvedenĂ©
+4;7;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BezdrĂˇtovĂ© mikrofony a zvukovĂ© modely;;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;7;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BezdrĂˇtovĂ© mikrofony a zvukovĂ© modely;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;7;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;BezdrĂˇtovĂ© mikrofony a zvukovĂ© modely;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;7;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;OstatnĂ­ pĹ™Ă­sluĹˇenstvĂ­;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;7;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;OstatnĂ­ pĹ™Ă­sluĹˇenstvĂ­;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;7;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;OstatnĂ­ pĹ™Ă­sluĹˇenstvĂ­;;5;21;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz od 1 kg do 4 kg
+4;7;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;OstatnĂ­ pĹ™Ă­sluĹˇenstvĂ­;;6;4;1;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Routery;Routery do 500 g
+4;7;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;OstatnĂ­ pĹ™Ă­sluĹˇenstvĂ­;;6;4;2;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Routery;Routery od 0,5 kg do 2 kg
+4;7;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;OstatnĂ­ pĹ™Ă­sluĹˇenstvĂ­;;6;4;3;MalĂˇ zaĹ™Ă­zenĂ­ informaÄŤnĂ­ch technologiĂ­ a telekomunikaÄŤnĂ­ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm;Routery;Routery nad 2 kg
+4;8;1;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Reproduktory;    ;4;8;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro pĹ™enos zvuku, obrazu a jinĂ˝ch informacĂ­ pomocĂ­ telekomunikace v jinĂ© podskupinÄ› neuvedenĂ©
+4;8;2;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Megafony;;4;8;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;OstatnĂ­ vĂ˝robky nebo zaĹ™Ă­zenĂ­ pro pĹ™enos zvuku, obrazu a jinĂ˝ch informacĂ­ pomocĂ­ telekomunikace v jinĂ© podskupinÄ› neuvedenĂ©
+4;8;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ElektrickĂ© chĹŻvy;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;8;3;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ElektrickĂ© chĹŻvy;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;8;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Meteostanice;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;8;4;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;Meteostanice;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;8;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;DĂˇlkovĂ© ovladaÄŤe;    ;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;8;5;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;DĂˇlkovĂ© ovladaÄŤe;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+4;8;6;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ÄŚasovĂ© spĂ­naÄŤe;;5;21;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz do 100 g
+4;8;6;SpotĹ™ebitelskĂˇ zaĹ™Ă­zenĂ­;ÄŚasovĂ© spĂ­naÄŤe;;5;21;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz;ZaĹ™Ă­zenĂ­ reprodukujĂ­cĂ­ zvuk ÄŤi obraz 0,1 kg do 1 kg
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;1;1;SvÄ›telnĂ© zdroje;PĹ™Ă­mĂ© (trubicovĂ©) zĂˇĹ™ivky;PĹ™Ă­mĂ© (trubicovĂ©) zĂˇĹ™ivky
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;2;1;SvÄ›telnĂ© zdroje;KompaktnĂ­ zĂˇĹ™ivky;KompaktnĂ­ zĂˇĹ™ivky
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;3;1;SvÄ›telnĂ© zdroje;ZĂˇĹ™ivky;ZĂˇĹ™ivky
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;4;1;SvÄ›telnĂ© zdroje;Vysoce intenzivnĂ­ vĂ˝bojky, vÄŤetnÄ› vysokotlakĂ˝ch sodĂ­kovĂ˝ch vĂ˝bojek a halogenidovĂ˝ch vĂ˝bojek;Vysoce intenzivnĂ­ vĂ˝bojky, vÄŤetnÄ› vysokotlakĂ˝ch sodĂ­kovĂ˝ch vĂ˝bojek a halogenidovĂ˝ch vĂ˝bojek
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;5;1;SvÄ›telnĂ© zdroje;NĂ­zkotlakĂ© sodĂ­kovĂ© vĂ˝bojky;NĂ­zkotlakĂ© sodĂ­kovĂ© vĂ˝bojky
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;6;1;SvÄ›telnĂ© zdroje;"LED lampy a ostatnĂ­ osvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­ se zabudovanĂ˝mi 
+LED diodami";"LED lampy a ostatnĂ­ osvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­ se zabudovanĂ˝mi 
+LED diodami"
+5;1;1;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvÄ›telnĂ© zdroje s vĂ˝jimkou pĹ™Ă­mo ĹľhavenĂ˝ch ĹľĂˇrovek;;3;7;1;SvÄ›telnĂ© zdroje;OstatnĂ­ svÄ›telnĂ© zdroje v jinĂ© podskupinÄ› neuvedenĂ©;OstatnĂ­ svÄ›telnĂ© zdroje v jinĂ© podskupinÄ› neuvedenĂ©
+5;1;2;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla s LED diodami;    ;4;7;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SvĂ­tidla (nad 50 cm);SvĂ­tidla s LED diodami/bez LED diod do 10 kg
+5;1;2;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla s LED diodami;    ;4;7;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SvĂ­tidla (nad 50 cm);SvĂ­tidla s LED diodami/bez LED diod od 10 kg do 30 kg
+5;1;2;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla s LED diodami;;4;7;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SvĂ­tidla (nad 50 cm);SvĂ­tidla s LED diodami/bez LED diod nad 30 kg
+5;1;2;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla s LED diodami;;5;4;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";SvĂ­tidla (do 50 cm);"SvĂ­tidla s LED i bez LED, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 
+50 cm"
+5;1;3;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla bez LED diod;;4;7;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SvĂ­tidla (nad 50 cm);SvĂ­tidla s LED diodami/bez LED diod do 10 kg
+5;1;3;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla bez LED diod;;4;7;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SvĂ­tidla (nad 50 cm);SvĂ­tidla s LED diodami/bez LED diod od 10 kg do 30 kg
+5;1;3;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla bez LED diod;;4;7;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";SvĂ­tidla (nad 50 cm);SvĂ­tidla s LED diodami/bez LED diod nad 30 kg
+5;1;3;OsvÄ›tlovacĂ­ zaĹ™Ă­zenĂ­;SvĂ­tidla bez LED diod;;5;4;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";SvĂ­tidla (do 50 cm);"SvĂ­tidla s LED i bez LED, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 
+50 cm"
+6;1;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);VrtaÄŤky;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;1;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);VrtaÄŤky;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;2;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);Pily;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;2;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);Pily;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;3;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);Ĺ icĂ­ stroje kromÄ› zaĹ™Ă­zenĂ­ pouĹľĂ­vanĂ˝ch v domĂˇcnostech spadajĂ­cĂ­ch pod skupinu 2;;4;10;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k pletenĂ­ a tkanĂ­;ZaĹ™Ă­zenĂ­ pouĹľĂ­vanĂˇ k ĹˇitĂ­, pletenĂ­, tkanĂ­ a jinĂ©mu zpracovĂˇnĂ­ textilu, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+6;4;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);ZaĹ™Ă­zenĂ­ pro soustruĹľenĂ­, frĂ©zovĂˇnĂ­, brouĹˇenĂ­, drcenĂ­, Ĺ™ezĂˇnĂ­, sekĂˇnĂ­, stĹ™Ă­hĂˇnĂ­, vrtĂˇnĂ­, dÄ›lĂˇnĂ­ otvorĹŻ, raĹľenĂ­, sklĂˇdĂˇnĂ­, ohĂ˝bĂˇnĂ­ nebo podobnĂ© zpracovĂˇnĂ­ dĹ™eva, kovĹŻ a dalĹˇĂ­ch materiĂˇlĹŻ;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;4;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);ZaĹ™Ă­zenĂ­ pro soustruĹľenĂ­, frĂ©zovĂˇnĂ­, brouĹˇenĂ­, drcenĂ­, Ĺ™ezĂˇnĂ­, sekĂˇnĂ­, stĹ™Ă­hĂˇnĂ­, vrtĂˇnĂ­, dÄ›lĂˇnĂ­ otvorĹŻ, raĹľenĂ­, sklĂˇdĂˇnĂ­, ohĂ˝bĂˇnĂ­ nebo podobnĂ© zpracovĂˇnĂ­ dĹ™eva, kovĹŻ a dalĹˇĂ­ch materiĂˇlĹŻ;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;5;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);NĂˇstroje pro nĂ˝tovĂˇnĂ­, pĹ™ibĂ­jenĂ­ nebo ĹˇroubovĂˇnĂ­ nebo pro odstraĹovĂˇnĂ­ nĂ˝tĹŻ, hĹ™ebĂ­kĹŻ, ĹˇroubĹŻ nebo pro podobnĂ© ĂşÄŤely;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;5;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);NĂˇstroje pro nĂ˝tovĂˇnĂ­, pĹ™ibĂ­jenĂ­ nebo ĹˇroubovĂˇnĂ­ nebo pro odstraĹovĂˇnĂ­ nĂ˝tĹŻ, hĹ™ebĂ­kĹŻ, ĹˇroubĹŻ nebo pro podobnĂ© ĂşÄŤely;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;6;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);NĂˇstroje pro pĂˇjenĂ­, svaĹ™ovĂˇnĂ­ nebo podobnĂ© pouĹľitĂ­;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;6;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);NĂˇstroje pro pĂˇjenĂ­, svaĹ™ovĂˇnĂ­ nebo podobnĂ© pouĹľitĂ­;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;7;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);ZaĹ™Ă­zenĂ­ pro postĹ™ik, ĹˇĂ­Ĺ™enĂ­, rozptyl nebo zpracovĂˇnĂ­ tekutĂ˝ch nebo plynnĂ˝ch lĂˇtek jinĂ˝mi zpĹŻsoby;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;7;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);ZaĹ™Ă­zenĂ­ pro postĹ™ik, ĹˇĂ­Ĺ™enĂ­, rozptyl nebo zpracovĂˇnĂ­ tekutĂ˝ch nebo plynnĂ˝ch lĂˇtek jinĂ˝mi zpĹŻsoby;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;8;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);NĂˇstroje pro seÄŤenĂ­ nebo jinĂ© zahradnickĂ© ÄŤinnosti;    ;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+6;8;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);NĂˇstroje pro seÄŤenĂ­ nebo jinĂ© zahradnickĂ© ÄŤinnosti;    ;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;9;1;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);OstatnĂ­ elektrickĂ© a elektronickĂ© nĂˇstroje vÂ jinĂ© podskupinÄ› neuvedenĂ© ;nad 100 g;5;27;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ nad 100 g
+6;9;2;ElektrickĂ© a elektronickĂ© nĂˇstroje (s vĂ˝jimkou velkĂ˝ch stacionĂˇrnĂ­ch prĹŻmyslovĂ˝ch nĂˇstrojĹŻ);OstatnĂ­ elektrickĂ© a elektronickĂ© nĂˇstroje vÂ jinĂ© podskupinÄ› neuvedenĂ© ;do 100 g;5;27;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje;MalĂ© elektrickĂ© a elektronickĂ© nĂˇstroje a nĂˇĹ™adĂ­ do 100 g
+7;1;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;AutodrĂˇhy a Ĺľeleznice;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;1;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;AutodrĂˇhy a Ĺľeleznice;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;1;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;RC modely elektrickĂ©;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;1;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;RC modely elektrickĂ©;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;1;3;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;DoplĹky a pĹ™Ă­sluĹˇenstvĂ­;;5;22;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky do 100 g
+7;1;3;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;DoplĹky a pĹ™Ă­sluĹˇenstvĂ­;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;1;3;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;DoplĹky a pĹ™Ă­sluĹˇenstvĂ­;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;2;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;RuÄŤnĂ­ ovladaÄŤe videoher;;5;22;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky do 100 g
+7;2;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;RuÄŤnĂ­ ovladaÄŤe videoher;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;2;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;RuÄŤnĂ­ ovladaÄŤe videoher;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;3;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;KapesnĂ­ digitĂˇlnĂ­ hry;;5;22;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky do 100 g
+7;3;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;KapesnĂ­ digitĂˇlnĂ­ hry;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;3;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;KapesnĂ­ digitĂˇlnĂ­ hry;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;3;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;HernĂ­ konzole;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;3;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;HernĂ­ konzole;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;4;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;PoÄŤĂ­taÄŤe pro cyklistiku,potĂˇpÄ›nĂ­, bÄ›h, veslovĂˇnĂ­ apod.;    ;5;24;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";PoÄŤĂ­taÄŤe pro cyklistiku, potĂˇpÄ›nĂ­, bÄ›h, veslovĂˇnĂ­ a podobnĂ© aktivity;PoÄŤĂ­taÄŤe pro cyklistiku, potĂˇpÄ›nĂ­, bÄ›h, veslovĂˇnĂ­ a podobnĂ© aktivity
+7;5;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;TrenaĹľery;do 10 kg;5;23;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";SportovnĂ­ vybavenĂ­;TrenaĹľery do 25 kg, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+7;5;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;TrenaĹľery;nad 10 kg;4;18;11;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 25 kg do 50 kg"
+7;5;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;TrenaĹľery;nad 10 kg;4;18;12;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+od 50 kg do 100 kg"
+7;5;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;TrenaĹľery;nad 10 kg;4;18;13;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;"OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ 
+nad 100 kg"
+7;5;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;TrenaĹľery;nad 10 kg;5;23;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";SportovnĂ­ vybavenĂ­;TrenaĹľery do 25 kg, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+7;5;3;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;SportovnĂ­ doplĹky ;;5;23;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";SportovnĂ­ vybavenĂ­;SportovnĂ­ doplĹky
+7;6;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;VĂ˝hernĂ­ mincovnĂ­ automaty;;4;14;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VelkĂ© vĂ˝hernĂ­ mincovnĂ­ automaty;VĂ˝hernĂ­ mincovnĂ­ automaty
+7;7;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;ElektrickĂ© a elektronickĂ© hraÄŤky bez LCD displeje, baterie a akumulĂˇtoru;;5;22;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky do 100 g
+7;7;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;ElektrickĂ© a elektronickĂ© hraÄŤky bez LCD displeje, baterie a akumulĂˇtoru;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;7;1;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;ElektrickĂ© a elektronickĂ© hraÄŤky bez LCD displeje, baterie a akumulĂˇtoru;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+7;7;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;ElektrickĂ© a elektronickĂ© hraÄŤky s LCD displejem, bateriĂ­ a akumulĂˇtorem;;5;22;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky do 100 g
+7;7;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;ElektrickĂ© a elektronickĂ© hraÄŤky s LCD displejem, bateriĂ­ a akumulĂˇtorem;;5;22;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 0,1 kg do 1 kg
+7;7;2;HraÄŤky, vybavenĂ­ pro volnĂ˝ ÄŤas a sporty;ElektrickĂ© a elektronickĂ© hraÄŤky s LCD displejem, bateriĂ­ a akumulĂˇtorem;;5;22;3;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";ElektrickĂ© a elektronickĂ© hraÄŤky;ElektrickĂ© a elektronickĂ© hraÄŤky od 1 kg do 4 kg
+8;1;1;LĂ©kaĹ™skĂ© pĹ™Ă­stroje;ProfipĹ™Ă­stroje;    ;4;15;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VelkĂ© zdravotnickĂ© prostĹ™edky;VelkĂ© zdravotnickĂ© prostĹ™edky
+8;2;1;LĂ©kaĹ™skĂ© pĹ™Ă­stroje;VĂ˝robky urÄŤenĂ© pro domĂˇcnost ;    ;5;28;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© zdravotnickĂ© prostĹ™edky;MalĂ© zdravotnickĂ© prostĹ™edky urÄŤenĂ© pro domĂˇcnost
+9;1;1;PĹ™Ă­stroje pro monitorovĂˇnĂ­ a kontrolu;ProfizaĹ™Ă­zenĂ­;;4;16;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VelkĂ© pĹ™Ă­stroje pro monitorovĂˇnĂ­ a kontrolu;VelkĂ© pĹ™Ă­stroje pro monitorovĂˇnĂ­ a kontrolu
+9;2;1;PĹ™Ă­stroje pro monitorovĂˇnĂ­ a kontrolu;VĂ˝robky urÄŤenĂ© pro domĂˇcnost ;    ;5;29;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© nĂˇstroje pro monitorovĂˇnĂ­ a kontrolu;MalĂ© nĂˇstroje pro monitorovĂˇnĂ­ a kontrolu do 0,5 kg
+9;2;1;PĹ™Ă­stroje pro monitorovĂˇnĂ­ a kontrolu;VĂ˝robky urÄŤenĂ© pro domĂˇcnost ;    ;5;29;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";MalĂ© nĂˇstroje pro monitorovĂˇnĂ­ a kontrolu;MalĂ© nĂˇstroje pro monitorovĂˇnĂ­ a kontrolu urÄŤenĂ© nad 0,5 kg
+10;1;1;VĂ˝dejnĂ­ automaty;ProfizaĹ™Ă­zenĂ­;;1;3;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;ZaĹ™Ă­zenĂ­ automaticky poskytujĂ­cĂ­ chlazenĂ© vĂ˝robky;ZaĹ™Ă­zenĂ­ automaticky poskytujĂ­cĂ­ chlazenĂ© vĂ˝robky
+10;1;1;VĂ˝dejnĂ­ automaty;ProfizaĹ™Ă­zenĂ­;;4;17;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";VelkĂ© vĂ˝dejnĂ­ automaty na vĂ˝robky a penĂ­ze;VelkĂ© vĂ˝dejnĂ­ automaty na vĂ˝robky a penĂ­ze
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky do 50 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky od 50 kg do 100 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;3;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky od 100 kg do 200 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;4;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - venkovnĂ­ jednotky nad 200 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;5;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - vnitĹ™nĂ­ jednotky do 35 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;4;6;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;KlimatizaÄŤnĂ­ zaĹ™Ă­zenĂ­;Klimatizace - vnitĹ™nĂ­ jednotky nad 35 kg (s chladicĂ­mi mĂ©dii), klimatizace mobilnĂ­ (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;5;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­ do 10 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;5;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­;OdvlhÄŤovacĂ­ zaĹ™Ă­zenĂ­ nad 10 kg (s chladicĂ­mi mĂ©dii)
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;TepelnĂˇ ÄŤerpadla;TepelnĂˇ ÄŤerpadla do 100 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;TepelnĂˇ ÄŤerpadla;TepelnĂˇ ÄŤerpadla od 100 kg do 150 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;6;3;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;TepelnĂˇ ÄŤerpadla;TepelnĂˇ ÄŤerpadla od 150kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;1;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu do 10 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;2;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu od 10 kg do 50 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;1;7;3;ZaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu;RadiĂˇtory obsahujĂ­cĂ­ olej a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu;RadiĂˇtory obsahujĂ­cĂ­ olej, a jinĂˇ zaĹ™Ă­zenĂ­ pro tepelnou vĂ˝mÄ›nu vyuĹľĂ­vajĂ­cĂ­ k tepelnĂ© vĂ˝mÄ›nÄ› jinĂ© kapaliny neĹľ vodu nad 50 kg
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;2;1;1;"Obrazovky, monitory a zaĹ™Ă­zenĂ­ obsahujĂ­cĂ­ obrazovky 
+o ploĹˇe vÄ›tĹˇĂ­ neĹľ 100 cm2";Obrazovky;VelkoploĹˇnĂ© obrazovky, sportovnĂ­ ÄŤasomĂ­ry, speciĂˇlnĂ­ obrazovky, nĂˇstÄ›nnĂ© displeje
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;1;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;ElektrickĂ© ohĹ™Ă­vaÄŤe vody - zĂˇvÄ›snĂ© svislĂ©, vodorovnĂ©, stacionĂˇrnĂ­ tlakovĂ© do 50 kg, jejichĹľ kterĂ˝koliv vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;2;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;ElektrickĂ© ohĹ™Ă­vaÄŤe vody - zĂˇvÄ›snĂ© svislĂ©, vodorovnĂ©, stacionĂˇrnĂ­ tlakovĂ© nad 50 kg, jejichĹľ kterĂ˝koliv vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;3;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;ElektrickĂ© kotle, jejichĹľ kterĂ˝koliv vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;4;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;ElektrickĂˇ akumulaÄŤnĂ­ kamna do 40 kg, jejichĹľ kterĂ˝koliv vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;5;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;ElektrickĂˇ akumulaÄŤnĂ­ kamna nad 40kg,  jejichĹľ kterĂ˝koliv vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;6;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;SpeciĂˇlnĂ­ elektrickĂˇ topidla - vĂ˝hĹ™evnĂ© sĂˇlavĂ© kameny, ostatnĂ­ sĂˇlavĂ© zdroje
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;4;18;7;"VelkĂˇ zaĹ™Ă­zenĂ­, jejichĹľ kterĂ˝koli vnÄ›jĹˇĂ­ rozmÄ›r 
+pĹ™esahuje 50 cm";OstatnĂ­ velkĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;RekuperaÄŤnĂ­ jednotky (bez chladicĂ­ch mĂ©diĂ­), jejichĹľ jakĂ˝koliv vnÄ›jĹˇĂ­ rozmÄ›r pĹ™esĂˇhne 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;26;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";RegulaÄŤnĂ­ ventily topenĂ­, termostaty;RegulaÄŤnĂ­ ventily topenĂ­, termostaty
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;32;1;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;ElektrickĂ© ohĹ™Ă­vaÄŤe vody, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r nepĹ™esahuje 50 cm
+od 1.1.2019;od 1.1.2019;od 1.1.2019;;;;5;32;2;"MalĂˇ zaĹ™Ă­zenĂ­, jejichĹľ ĹľĂˇdnĂ˝ vnÄ›jĹˇĂ­ rozmÄ›r 
+nepĹ™esahuje 50 cm";OstatnĂ­ malĂˇ zaĹ™Ă­zenĂ­ v jinĂ© podskupinÄ› neuvedenĂˇ;SpeciĂˇlnĂ­ malĂˇ elektrickĂˇ topidla
+;;;;;;;;;;;

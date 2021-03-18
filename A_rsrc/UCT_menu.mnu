@@ -1,0 +1,88 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Úèetnictví) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+    TYPE(Dialog) LEVEL(2) CAPTION(Aktualizace úèetních knih) DATA(UCT_aktucdat_SCR)
+
+  TYPE(Menu) LEVEL(2) CAPTION(Vstup a úèetní deníky)
+    TYPE(Menu) LEVEL(3) CAPTION(Vstup a oprava dat)
+      TYPE(Dialog) LEVEL(4) CAPTION(Dle úèetních dokladù) DATA(Sell)
+      TYPE(Dialog) LEVEL(4) CAPTION(Výpisy sestav)        DATA(Sell)
+ 
+    TYPE(Menu) LEVEL(2) CAPTION(Dle deníkù)
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Úèetnictví)   DATA(Sell)
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Financí)      DATA(Sell)  
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Skladù)       DATA(Sell)  
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Mezd)         DATA(Sell) 
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Majetku IM)   DATA(Sell)  
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Majetku IMZV) DATA(Sell)  
+      TYPE(Dialog) LEVEL(3) CAPTION(dle Zvíøat)       DATA(Sell)
+
+    TYPE(Dialog) LEVEL(2) CAPTION(Dle všech deníkù)   DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(Karty úètù)         DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(Výpisy sestav)      DATA(Sell)
+    
+  TYPE(Menu) LEVEL(2) CAPTION(Výsledky a obraty úètu)
+    TYPE(Dialog) LEVEL(3) CAPTION(Obraty na úètech)   DATA(Sell) 
+    TYPE(Dialog) LEVEL(3) CAPTION(Karty úètù)         DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+    
+  TYPE(Menu) LEVEL(2) CAPTION(Saldokonto úètu)
+    TYPE(Dialog) LEVEL(3) CAPTION(Saldo dle položek)  DATA(UCT_UCETSALD_CRD)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)      DATA(Sell)
+
+  TYPE(Menu) LEVEL(2) CAPTION(Výkazy a rozbory)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkazy ziskù a ztrát v plném znìní)          DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha v plném rozsahu)                     DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Cash flow)                                   DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozbor hospodaøení 1)                        DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Kalkulace rostlinné výroby)                  DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Kalkulace živoèišné výroby)                  DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkaz v plném znìní ROPO)                    DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha v plném znìní ROPO)                  DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkaz ziskù a ztrát nezaokrouhlený)          DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha v plném nezaokrouhlení)              DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Cash flow nezaokrouhlený)                    DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Sumáø výsledkù)                              DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkaz ziskù a ztrát KAMPELIÈKY)              DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha pro KAMPELIÈky)                      DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Kalkulace RV var.2)                          DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozbor hospodaøení 2)                        DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Kalkulace ZV var.2)                          DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkaz ziskù a ztrát zkrácenì)                DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha ve zkráceném rozsahu)                DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkaz ziskù a ztrát PRÙBÌŽNÌ)       	       DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha v plném rozsahu 2002)                DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Rozvaha v plném rozsahu nezaokrouhlená 2002) DATA(Sell)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výkaz ziskù a ztrát 2002)                    DATA(Sell)
+   
+  TYPE(Menu) LEVEL(2) CAPTION(Automatické operace)
+    TYPE(Dialog) LEVEL(3) CAPTION(Nastavení parametrù)          DATA(UCT_AUTOM_HD)
+    TYPE(Dialog) LEVEL(3) CAPTION(Pøehled generovaných položek) DATA(UCT_UCETPOLA_SCR)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)                DATA(Sell)
+
+  TYPE(Menu) LEVEL(2) CAPTION(Poèáteèní stavy úètu)
+    TYPE(Dialog) LEVEL(3) CAPTION(Nastavení poèateèních stavù)  DATA(UCT_UCETPOCS_CRD)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)                DATA(Sell)
+   
+  TYPE(Menu) LEVEL(2) CAPTION(Pøedpisy zaúètování)
+    TYPE(Dialog) LEVEL(3) CAPTION(Úèetní osnova)                DATA(UCT_c_uctosn)
+    TYPE(Dialog) LEVEL(3) CAPTION(Skupiny úètù)                 DATA(UCT_c_skupuc)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)                DATA(Sell)
+
+  TYPE(Menu) LEVEL(2) CAPTION(Úèetní plán)
+    TYPE(Dialog) LEVEL(3) CAPTION(Nastavení úèetního plánu)     DATA(UCT_ucetplan_CRD)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy sestav)                DATA(Sell)
+        
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION(Nastavení modulu)             DATA(Sell)
+    TYPE(Dialog) LEVEL(2) CAPTION(Období)                       DATA(UCT_UCETSYS)
+
+

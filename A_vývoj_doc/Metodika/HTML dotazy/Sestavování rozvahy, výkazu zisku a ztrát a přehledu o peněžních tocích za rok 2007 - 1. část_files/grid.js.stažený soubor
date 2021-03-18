@@ -1,0 +1,127 @@
+    
+
+// var createGrid = function(){
+//     $("#demo_grid1").bs_grid({
+//         ajaxFetchDataURL: "http://dauc.cz:8088/kalendar/get_list/",
+//         row_primary_key: "id_kal_udalost",
+//         pageNum: 1,
+//         bootstrap_version: "3",
+//         actionButtons: [{label: 'Smazat', css: 'btn btn-danger btn-xs', id: 'delete-btn', handle: function(){
+//           var delConfirmation = confirm("Opravdu chcete smazat redakční událost #"+this.value+" ?");
+//           if(delConfirmation){
+//             $("#editorialEventsOverViewMsgAlertBoxDanger").html("");
+//             var data = new Object();
+//             data.id_kal_udalost = this.value;
+//             var row = $(this).parent().parent();
+//             json = JSON.stringify(data);
+//             $.ajax({
+//               url: "/kalendar/delete/",
+//               contentType: "application/json",
+//               data: json, 
+//               method: "POST",
+//               dataType: "json",
+//               success: function(result){
+//                 if(result.status == "OK"){
+//                   var html = "<div class='alert alert-success' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><p>Redakční událost byla uspěšně smazána.</p></div>";
+//                   row.hide("slow");
+//                 }else{
+//                   var html = "<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><p>Redakční událost se nepodařilo smazat</p></div>";
+//                 }
+//                 $("#editorialEventsOverViewMsgAlertBoxDanger").append(html);
+//               }});            
+//           }
+//         }},
+//         {label: 'Editovat', css: 'btn btn-info btn-xs', id: 'edit-btn', handle: function(){
+//           var data = new Object();
+//           data.id_kal_udalost = this.value;
+//           json = JSON.stringify(data);
+//           $.ajax({
+//             url: "/kalendar/get/",
+//               contentType: "application/json",
+//               data: json, 
+//               method: "POST",
+//               dataType: "json",
+//               success: function(result){
+//                 console.log(result);
+//           }}); 
+//         }}
+//         ],
+//         rowsPerPage: 10,
+//         maxRowsPerPage: 100,
+//         dataTableClass: "table table-hover table-condensed",
+//         onDisplay: function(data){
+//             console.log(data);
+//         },
+//         columns: [
+//             {field: "id_kal_udalost", header: "ID"},
+//             {field: "datum_od", header: "Od", visible: "yes"},
+//             {field: "datum_do", header: "Do"},
+//             {field: "kategorie", header: "Kategorie", visible: "yes", "sortable": "yes"},
+//             {field: "nazev", header: "Název"},
+//             {field: "typ", header: "Typ"},
+//         ],
+ 
+//         sorting: [
+//             {sortingName: "Datum do", field: "datum_do", order: "none"},
+//             {sortingName: "Datum od", field: "datum_od", order: "ascending"},
+//         ],
+ 
+//         filterOptions: {
+//             filters: [
+//                 {
+//                     filterName: "Datum do", "filterType": "date", field: "datum_do", filterLabel: "Datum do",
+//                     excluded_operators: ["in", "not_in"],
+//                     filter_interface: [
+//                         {
+//                             filter_element: "input",
+//                             filter_element_attributes: {"type": "date"}
+//                         }
+//                     ]
+//                 },
+//                 {
+//                     filterName: "Gender", "filterType": "number", "numberType": "integer", field: "lk_genders_id", filterLabel: "Gender",
+//                     excluded_operators: ["equal", "not_equal", "less", "less_or_equal", "greater", "greater_or_equal"],
+//                     filter_interface: [
+//                         {
+//                             filter_element: "input",
+//                             filter_element_attributes: {type: "checkbox"}
+//                         }
+//                     ],
+//                     lookup_values: [
+//                         {lk_option: "Male", lk_value: "1"},
+//                         {lk_option: "Female", lk_value: "2", lk_selected: "yes"}
+//                     ]
+//                 },
+//                 {
+//                     filterName: "DateUpdated", "filterType": "date", field: "date_updated", filterLabel: "Datetime updated",
+//                     excluded_operators: ["in", "not_in"],
+//                     filter_interface: [
+//                         {
+//                             filter_element: "input",
+//                             filter_element_attributes: {
+//                                 type: "text",
+//                                 title: "Set the date and time using format: dd/mm/yyyy hh:mm:ss"
+//                             },
+//                             filter_widget: "datetimepicker",
+//                             filter_widget_properties: {
+//                                 dateFormat: "dd/mm/yy",
+//                                 timeFormat: "HH:mm:ss",
+//                                 changeMonth: true,
+//                                 changeYear: true,
+//                                 showSecond: true
+//                             }
+//                         }
+//                     ],
+//                     validate_dateformat: ["DD/MM/YYYY HH:mm:ss"],
+//                     filter_value_conversion: {
+//                         function_name: "local_datetime_to_UTC_timestamp",
+//                         args: [
+//                             {"filter_value": "yes"},
+//                             {"value": "DD/MM/YYYY HH:mm:ss"}
+//                         ]
+//                     }
+//                 }
+//             ]
+//         }
+//     });
+// }

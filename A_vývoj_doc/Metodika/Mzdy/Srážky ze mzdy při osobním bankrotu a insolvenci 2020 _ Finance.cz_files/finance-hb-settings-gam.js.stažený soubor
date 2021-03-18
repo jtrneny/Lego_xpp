@@ -1,0 +1,384 @@
+/* BEGIN - finance-hb-settings-gam - BEGIN */
+/* 2020-05-22 09:37 */
+var pbjs = pbjs || {};
+pbjs.CPEX_setAdUnits = function () {
+
+    pbjs.CPExWindowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    window.__cmp = window.__cmp || (function (w, r) {
+    w[r] = w[r] || function (command, parameter, callback) {
+        (w[r].commandQueue = w[r].commandQueue || []).push({
+            command: command,
+            parameter: parameter,
+            callback: callback
+        });
+    };
+    return w[r];
+})(window, 'cmp');
+pbjs.CPEX_enableAnalytics = true;
+
+    pbjs.CPEX_isSkin = (typeof cpexSkinObject === 'object' && cpexSkinObject.isReadyToRender);
+
+    pbjs.CPEX_adUnits = [];
+    
+if(pbjs.CPExWindowWidth >= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-DESKTOP - Leaderboard_lower 10.1.4-/90723337/10/10.1.4',
+        code: '/90723337/10/10.1.4',
+            mediaTypes: {
+               banner: {sizes: [[728,90],[970,90],[970,100],[970,210]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 122518,
+                    zoneId: 578346,
+                    position: 'btf',
+                    sizes: [2,55,95,96],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 122520,
+                    zoneId: 578456,
+                    position: 'btf',
+                    sizes: [2,55,95,96],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 15720466
+                }
+            }
+,{ bidder: 'adform', params: { mid : 523893, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 523932, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 292286, rcur: 'USD' }},
+{ bidder: 'smartadserver', params: { domain: '//prg.smartadserver.com', siteId: '287027', pageId: '1049283', formatId: '63011', currency: 'USD' }},
+{bidder: 'pubmatic', params: { publisherId: '158732', adSlot: '2543632'}},
+{"bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "1000x200_2","m": 0}},]
+    });
+    
+}
+
+if(pbjs.CPExWindowWidth >= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-DESKTOP - leaderboard_upper 10.1.1-/90723337/10/10.1.1',
+        code: '/90723337/10/10.1.1',
+            mediaTypes: {
+               banner: {sizes: pbjs.CPEX_isSkin ? [[728,90],[970,90],[970,210],[2000,1400]]:[[728,90],[970,90],[970,210]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 122518,
+                    zoneId: 578356,
+                    position: 'atf',
+                    sizes: pbjs.CPEX_isSkin ? [2,55,96,230]:[2,55,96],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 122520,
+                    zoneId: 578452,
+                    position: 'atf',
+                    sizes: pbjs.CPEX_isSkin ? [2,55,96,230]:[2,55,96],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 15720464
+                }
+            }
+,
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 19307898
+                }
+            }
+,{ bidder: 'adform', params: { mid : 523892, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 523931, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 292285, rcur: 'USD' }},
+{ bidder: 'smartadserver', params: { domain: '//prg.smartadserver.com', siteId: '287027', pageId: '1049282', formatId: '63011', currency: 'USD' }},
+{bidder: 'pubmatic', params: { publisherId: '158732', adSlot: '2543631'}},
+{ "bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "branding","m": 0}},
+{ "bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "1000x200_1","m": 0}},]
+    });
+    
+}
+
+if(pbjs.CPExWindowWidth >= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-DESKTOP - skyscraper_lower 10.1.3-/90723337/10/10.1.3',
+        code: '/90723337/10/10.1.3',
+            mediaTypes: {
+               banner: {sizes: [[120,600],[160,600],[300,250],[300,600]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144570,
+                    zoneId: 871902,
+                    position: 'atf',
+                    sizes: [8,9,15,10],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144572,
+                    zoneId: 871882,
+                    position: 'atf',
+                    sizes: [8,9,15,10],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 15720474
+                }
+            }
+,{ bidder: 'adform', params: { mid : 556653, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 556654, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 651967, rcur: 'USD' }},
+{ bidder: 'smartadserver', params: { domain: '//prg.smartadserver.com', siteId: '287027', pageId: '1049283', formatId: '45380', currency: 'USD' }},
+{bidder: 'pubmatic', params: { publisherId: '158732', adSlot: '2541789'}},
+{ "bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "300x600_2","m": 0}},]
+    });
+    
+}
+
+if(pbjs.CPExWindowWidth >= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-DESKTOP - skyscraper_upper 10.1.2-/90723337/10/10.1.2',
+        code: '/90723337/10/10.1.2',
+            mediaTypes: {
+               banner: {sizes: [[120,600],[160,600],[300,250],[300,600]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 122518,
+                    zoneId: 578336,
+                    position: 'atf',
+                    sizes: [8,9,15,10],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 122520,
+                    zoneId: 578460,
+                    position: 'atf',
+                    sizes: [8,9,15,10],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 15720472
+                }
+            }
+,{ bidder: 'adform', params: { mid : 523894, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 523933, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 292288, rcur: 'USD' }},
+{ bidder: 'smartadserver', params: { domain: '//prg.smartadserver.com', siteId: '287027', pageId: '1049282', formatId: '45380', currency: 'USD' }},
+{bidder: 'pubmatic', params: { publisherId: '158732', adSlot: '2543639'}},
+{ "bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "300x600_1","m": 0}},]
+    });
+    
+}
+
+if(pbjs.CPExWindowWidth <= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-MOBIL - interscroller 10.2.1-/90723337/10/10.2.1',
+        code: '/90723337/10/10.2.1',
+            mediaTypes: {
+               banner: {sizes: [[300,100],[300,250],[300,300],[480,820]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144596,
+                    zoneId: 1057166,
+                    position: 'atf',
+                    sizes: [19,15,48,256],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144598,
+                    zoneId: 1057156,
+                    position: 'atf',
+                    sizes: [19,15,48,256],
+                    inventory: {}
+                }
+            },{"bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "interscroller","m": 0}},
+{"bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "300x300_1","m": 1}}]
+    });
+    
+}
+
+if(pbjs.CPExWindowWidth <= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-MOBIL - square_lower 10.2.2-/90723337/10/10.2.2',
+        code: '/90723337/10/10.2.2',
+            mediaTypes: {
+               banner: {sizes: [[250,250],[300,100],[300,250],[300,300]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144596,
+                    zoneId: 886798,
+                    position: 'atf',
+                    sizes: [14,19,15,48],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144598,
+                    zoneId: 886856,
+                    position: 'atf',
+                    sizes: [14,19,15,48],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 15720470
+                }
+            }
+,{ bidder: 'adform', params: { mid : 614071, rcur: 'USD' }},
+{ bidder: 'adform', params: { mid : 651972, rcur: 'USD' }},
+{ bidder: 'smartadserver', params: { domain: '//prg.smartadserver.com', siteId: '287027', pageId: '1049286', formatId: '62397', currency: 'USD' }},
+{bidder: 'pubmatic', params: { publisherId: '158732', adSlot: '2541797'}},
+{"bidder": "r2b2","params": {"d": "finance.cz","g": "hb","p": "300x300_2","m": 1}},]
+    });
+    
+}
+
+if(pbjs.CPExWindowWidth <= 1000) {
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-MOBIL -mobile_branding 10.2.3-/90723337/10/10.2.3',
+        code: '/90723337/10/10.2.3',
+            mediaTypes: {
+               banner: {sizes: [[300,120],[320,150]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144596,
+                    zoneId: 1191404,
+                    position: 'atf',
+                    sizes: [85,60],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144598,
+                    zoneId: 1191416,
+                    position: 'atf',
+                    sizes: [85,60],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'appnexus',
+                params: {
+                    placementId: 17419746
+                }
+            }
+,,]
+    });
+    
+}
+
+
+    pbjs.CPEX_adUnits.push({
+        id: 'finance-hb-settings-gam-NATIVE - allweb 10.4.1-/90723337/10/10.4.1',
+        code: '/90723337/10/10.4.1',
+            mediaTypes: {
+               banner: {sizes: [[548,150]]}
+            },
+        bids: [
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144570,
+                    zoneId: 1483166,
+                    position: 'atf',
+                    sizes: [90],
+                    inventory: {}
+                }
+            },
+            {
+                bidder: 'rubicon',
+                params: {
+                    accountId: '10900',
+                    siteId: 144572,
+                    zoneId: 1483168,
+                    position: 'atf',
+                    sizes: [90],
+                    inventory: {}
+                }
+            }]
+    });
+    
+
+
+
+};
+
+if (typeof cpexLoader !== 'undefined'
+    && typeof cpexLoader.useSequential !== 'undefined'
+    && !cpexLoader.useSequential
+) {
+    cpexLoader.waitFor('cpexSkinObject', function (e, d) {
+        pbjs.CPEX_setAdUnits(); cpexLoader.emitEvent('pbjs.setAdUnits');
+    });
+} else {
+    pbjs.CPEX_setAdUnits();
+}
+
+/* END - finance-hb-settings-gam - END */

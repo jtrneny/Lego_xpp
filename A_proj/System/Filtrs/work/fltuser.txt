@@ -1,0 +1,22 @@
+Table Information
+FLTUSERS.DBF
+
+Type: Fox Pro
+Records Number: 209
+Fields Number: 11
+Header Size: 386
+Record Length: 194
+
+#  Field Name Field Type Field Size 
+-- ---------- ---------- ---------- 
+1  CFLTNAME   Character  50         
+2  CUSER      Character  10         
+3  CCALLFORM  Character  50         
+4  CIDFILTERS Character  10         
+5  CIDFORMS   Character  10         
+6  LSELECT    Logical    1          
+7  DVZNIKZAZN Date       8          
+8  DZMENAZAZN Date       8          
+9  MPOZNAMKA  Memo       10         
+10 CUNIQIDREC Character  26         
+11 MUSERZMENR Memo       10         

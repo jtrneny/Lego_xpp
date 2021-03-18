@@ -1,0 +1,204 @@
+(function () {
+//Definice HB pozice
+var ADSLOT = "1-1x1";
+var ADSIZE = "[[1,1]]";
+
+var GOOGLESIZE = "[[1, 1],'fluid']";
+var GOOGLESLOT = '/85483919/mladafrontanative/mladafrontanative-finance.cz//hp//infeed-1x1';
+
+//MF FINANCE
+var plcHolder = '#nativeAdplaceHolder'; 
+    
+var mfCode = '/90723337/10/10.4.1';
+
+if (location.pathname.match(/^\/$/)){// HP
+    GOOGLESLOT= '/85483919/mladafrontanative/mladafrontanative-finance.cz//hp//infeed-1x1';
+} else {// Clanek
+    GOOGLESLOT = '/85483919/mladafrontanative/mladafrontanative-finance.cz//inarticle-1x1';
+};
+
+var APPNEXUS_ID = 17852955; //17852955, test: 14788200, appnexustest: 13232354, 13232354
+
+var ADFORM_MID = 729730; //729730 test: 680131, , euro:729730
+
+var pmpb = "pmpb-"+ADSLOT,
+    pmpbg = "pmpbg-"+ADSLOT,
+    pmif = "pmif-"+ADSLOT,
+    pmpbSel = "#"+pmpb,
+    pmifSel = "#"+pmif;
+    
+    
+//div pro reklamu
+try {
+        doc = top.document;
+        target = doc.createElement("div");
+        target.id = pmpb;
+        var article = doc.querySelector(plcHolder);
+        article.appendChild(target);
+
+    } catch (e) {
+        /* ... */ }
+    
+    
+
+//vytvorit iframe
+var ifrm = document.createElement("iframe");
+    ifrm.id = pmif;
+    ifrm.scrolling = "no";
+    ifrm.setAttribute("marginwidth", "0");
+    ifrm.setAttribute("marginheight", "0");
+    ifrm.setAttribute("frameborder", "0");
+    ifrm.style = "border: 0px; vertical-align: bottom;margin: 0px auto;border:0;width:100%";
+    ifrm.width = "0";
+    ifrm.height = "0";
+    target.appendChild(ifrm);
+
+// ======== HB =========== //
+var hbScript = [
+'var adUnits = [',
+ '   {',
+ '       code:"'+pmpbg+'",',
+ '       sizes:'+ADSIZE+',',
+ '       mediaTypes: {',
+ '           native: {',
+ '               title: {',
+ '                   required: true,',
+ '                   len: 27',
+ '               },',
+ '               sponsoredBy: {',
+ '                   required: true',
+ '               },',
+ '               body: {',
+ '                   required: true, ',
+ '                   len: 150,',
+ '              },',
+ '               image: {',
+ '                   required: true,',
+ '                   sizes: [[200,100], {min_width: 200,min_height: 100}]',
+ '               }',
+ '           }',
+ '      },',
+ '       bids: [{',
+ '           bidder: "appnexus",',
+ '           params: {',
+ '               placementId: '+APPNEXUS_ID+',',
+ '               allowSmallerSizes: true',
+ '           }',
+ '       },',
+ '       {',
+ '          bidder: "adformOpenRTB",',
+ '          params: {',
+ '              mid: '+ADFORM_MID+',',
+ '              rcur: "USD"',
+ '          }',
+ '        }]',
+ '  },',
+'];',  
+'var PREBID_TIMEOUT = 1000;',
+'var FAILSAFE_TIMEOUT = 3000;',   
+'var googletag = googletag || {};',
+'googletag.cmd = googletag.cmd || [];',
+'googletag.cmd.push(function() {',
+'    googletag.pubads().disableInitialLoad();',
+'});',
+'var pbjs = pbjs || {};',
+'pbjs.que = pbjs.que || [];',
+'pbjs.que.push(function() {',
+'   pbjs.setConfig({',
+'       consentManagement: {',
+'           gdpr: {',
+'               cmpApi: "iab",',
+'               timeout: 8000,',
+'               allowAuctionWithoutConsent: true',
+'               }',
+'        }',
+'    });',
+'    pbjs.addAdUnits(adUnits);',
+'    pbjs.aliasBidder("appnexus", "prgmt");',
+'    pbjs.requestBids({',
+'        bidsBackHandler: initAdserver,',
+'        timeout:PREBID_TIMEOUT',
+'    });',
+'});',
+'function initAdserver() {',
+'    if (pbjs.initAdserverSet) return;',
+'    pbjs.initAdserverSet = true;',
+'    googletag.cmd.push(function() {',
+'        pbjs.que.push(function() {',
+'            pbjs.setTargetingForGPTAsync();',
+'            var cmp = window.top.__cmp;',
+'            if(cmp){',   
+'                cmp("getVendorConsents", null,',
+'                    function(result) {',
+'                        if (result && result.purposeConsents[2]) {',
+'                            googletag.pubads().setRequestNonPersonalizedAds(1);',
+'                            googletag.pubads().refresh();',
+'                        } else {',
+'                            googletag.pubads().setRequestNonPersonalizedAds(0);',
+'                            googletag.pubads().refresh();',
+'                        }',
+'                    });',
+'              } else {',
+'                googletag.pubads().setRequestNonPersonalizedAds(0);',
+'                googletag.pubads().refresh();',
+'              }',
+'        });',
+'    });',
+'}',
+'setTimeout(function() {',
+'    initAdserver();',
+'}, FAILSAFE_TIMEOUT);',
+'googletag.cmd.push(function() {',
+'    googletag.defineSlot("'+GOOGLESLOT+'", '+GOOGLESIZE+', "'+pmpbg+'").addService(googletag.pubads());',
+'    googletag.pubads().enableSingleRequest();',
+'    googletag.pubads().collapseEmptyDivs(true);',
+'    googletag.pubads().setCentering(true);',
+'     googletag.pubads().set("page_url", "finance.cz");',
+'     googletag.pubads().setTargeting("MFCODE", "'+mfCode+'");',
+'    googletag.enableServices(); ',
+'});' ,
+'function frameSChange() {', //zmena velikosti iframe
+'    for (i = 1; i <= 30; ++i) e = i, setTimeout(function() {',
+'    if(parent.document.querySelector("'+pmifSel+'")){',
+'    var gam = parent.document.querySelector("'+pmifSel+'");',
+'    var gamW = gam.contentWindow;',
+'        if(gamW.document.getElementsByTagName("iframe")[0]){',
+'        var fframe = gamW.document.getElementsByTagName("iframe")[0];',
+'        var fh = fframe.scrollHeight;',
+'        var fw = fframe.scrollWidth;',
+'        console.log(i+" "+e+" "+fw+"x"+fh);',
+'        gam.style.width=fw+"px";',
+'        gam.style.height=fh+"px";',
+'        gam.width = fw;',
+'        gam.height = fh;',
+'        }',
+'    }',
+'    }, 200 * e * e * e );',
+'    var e',
+'};',
+'document.addEventListener("DOMContentLoaded", function(event) {',
+'    googletag.cmd.push(function() { ',
+'        googletag.display("'+pmpbg+'");',
+'    });',
+'frameSChange();',
+'})'].join('\n');
+
+//vlozeni do iframe    
+var fdoc = top.document.getElementById(pmif).contentWindow.document;
+fdoc.open();
+fdoc.write('<style>body{margin:0;padding:0;}</style><script async="" src="//www.googletagservices.com/tag/js/gpt.js"></scr'+'ipt><script async="" src="//eu.prgmt.com/lib/pbjs/last/prebid.js"></scr'+'ipt><div id="'+pmpbg+'"></div><script>'+hbScript+'</sc'+'ript>');
+fdoc.close();    
+})();    
+
+/*//adsense verify
+var h = top.document.head || top.document.getElementsByTagName('head')[0],
+    s = document.createElement('script');
+
+s.type = 'text/javascript';
+s.async = true;
+s.setAttribute( 'data-ad-client', 'ca-pub-3810793496333918' );
+s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+h.insertBefore(s, h.firstChild);
+
+var s = top.document.createElement( 'script' );
+*/

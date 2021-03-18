@@ -1,0 +1,157 @@
+AED   Dirham SAE 
+AFN   Afghán 
+ALL   Lek 
+AMD   Dram arménský 
+ANG   Zlatý Nizozemských Antil 
+AOA   Kwanza 
+ARS   Peso argentinské 
+AUD   Dolar australský 
+AWG   Zlatý arubský 
+AZN   Manat azerbajdžánský 
+BAM   Marka konvertibilní 
+BBD   Dolar barbadoský 
+BDT   Taka 
+BGN   Lev bulharský 
+BHD   Dinár bahrajnský 
+BIF   Frank burundský 
+BMD   Dolar bermudský 
+BND   Dolar brunejský 
+BOB   Boliviano 
+BOV   Mvdol 
+BRL   Real brazilský 
+BSD   Dolar bahamský 
+BTN   Ngultrum 
+BWP   Pula 
+BYR   Rubl bìloruský 
+BZD   Dolar belizský 
+CAD   Dolar kanadský 
+CDF   Frank konžský 
+CHF   Frank švýcarský 
+CLF   Unidades de fomento 
+CLP   Peso chilské 
+CNY   Juan renminbi 
+COP   Peso kolumbijské 
+CRC   Colón kostarický 
+CUC   Peso konvertibilní 
+CUP   Peso kubánské 
+CVE   Escudo kapverdské 
+CZK   Koruna èeská 
+DJF   Frank džibutský 
+DKK   Koruna dánská 
+DOP   Peso dominikánské 
+DZD   Dinár alžírský 
+EGP   Libra egyptská 
+ERN   Nakfa 
+ETB   Birr etiopský 
+EUR   Euro 
+FJD   Dolar Fidži 
+FKP   Libra falklandská 
+GBP   Libra šterlinkù 
+GEL   Lari 
+GHS   Cedi ghanské 
+GIP   Libra gibraltarská 
+GMD   Dalasi 
+GNF   Frank guinejský 
+GTQ   Quetzal 
+GYD   Dolar guyanský 
+HKD   Dolar hongkongský 
+HNL   Lempira 
+HRK   Kuna 
+HTG   Gourde 
+HUF   Forint 
+IDR   Rupie 
+ILS   Šekel izraelský nový 
+INR   Rupie indická 
+IQD   Dinár irácký 
+IRR   Riál íránský 
+ISK   Koruna islandská 
+JMD   Dolar jamajský 
+JOD   Dinár jordánský 
+JPY   Yen 
+KES   Šilink keòský  
+KGS   Som 
+KHR   Riel 
+KMF   Frank komorský 
+KPW   Won severokorejský 
+KRW   Won 
+KWD   Dinár kuvajtský 
+KYD   Dolar Kajmanských ostrovù 
+KZT   Tenge 
+LAK   Kip 
+LBP   Libra libanonská 
+LKR   Rupie srílanská 
+LRD   Dolar liberijský 
+LSL   Loti 
+LTL   Litus litevský 
+LVL   Lat lotyšský 
+LYD   Dinár libyjský 
+MAD   Dirham marocký 
+MDL   Leu moldavský 
+MGA   Ariary madagaskarský 
+MKD   Denár 
+MMK   Kyat 
+MNT   Tugrik 
+MOP   Pataca 
+MRO   Ouguiya 
+MUR   Rupie mauricijská 
+MVR   Rufiyaa 
+MWK   Kwacha (malawská) 
+MXN   Peso mexické 
+MYR   Ringgit malajsijský 
+MZN   Metical mozambijský 
+NAD   Dolar namibijský 
+NGN   Naira 
+NIO   Cordoba oro 
+NOK   Koruna norská 
+NPR   Rupie nepálská 
+NZD   Dolar novozélandský 
+OMR   Rijál ománský 
+PAB   Balboa 
+PEN   Nuevo sol 
+PGK   Kina 
+PHP   Peso filipínské 
+PKR   Rupie pákistánská 
+PLN   Zlotý 
+PYG   Guarani 
+QAR   Riál katarský 
+RON   Nové Leu 
+RSD   Dinár srbský 
+RUB   Rubl ruský 
+RWF   Frank rwandský 
+SAR   Rijál saúdský 
+SBD   Dolar Šalamounových ostrovù 
+SCR   Rupie seychelská 
+SDG   Libra sudánská 
+SEK   Koruna švédská 
+SGD   Dolar singapurský 
+SHP   Libra Svaté Heleny 
+SLL   Leone 
+SOS   Šilink somálský 
+SRD   Surinamský dolar 
+STD   Dobra 
+SVC   Colón salvadorský 
+SYP   Libra syrská 
+SZL   Lilangeni 
+THB   Baht 
+TJS   Somoni 
+TMT   Manat nový 
+TND   Dinár tuniský 
+TOP   Paanga 
+TRY   Lira turecká 
+TTD   Dolar Trinidad a Tobago 
+TWD   Dolar tchajwanský nový 
+TZS   Šilink tanzanský 
+UAH   Høivna 
+UGX   Šilink ugandský 
+USD   Dolar americký 
+USN   Dolar americký (pøíští den) 
+UYU   Peso uruguayské 
+UZS   Sum uzbecký 
+VEF   Bolivar Fuerte 
+VND   Dong 
+VUV   Vatu 
+WST   Tala 
+YER   Riál jemenský 
+ZAR   Rand 
+ZMK   Kwacha (zambijská) 
+ZWL   Dolar zimbawský 

@@ -1,0 +1,36 @@
+***************************************************************************
+*
+*   HIM_MENU.mnu
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(HIM) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Evidence majetku)
+    TYPE(Menu)   LEVEL(2) CAPTION(Stavy majetku)
+      TYPE(Dialog) LEVEL(3) CAPTION(Karty majetku ...)                   DATA(HIM_MAJ_SCR)
+*      TYPE(Dialog) LEVEL(3) CAPTION(Archiv daòových a úèetních stavù)    DATA()
+      TYPE(Dialog) LEVEL(3) CAPTION(Stavy za období ...)                 DATA(HIM_SUMMAJ_SCR)
+    TYPE(Menu)   LEVEL(2) CAPTION(Pohyby majetku)
+      TYPE(Dialog)   LEVEL(3) CAPTION(Dle dokladù ...)         DATA(HIM_POHYBY_SCR)
+    TYPE(Menu)   LEVEL(2) CAPTION(Likvidace)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle dokladù ...)           DATA(HIM_LIKVDOK_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle majetku ...)           DATA(HIM_LIKVMAJ_SCR)
+      TYPE(Dialog) LEVEL(3) CAPTION(Dle úèetních pøedpisù ...) DATA(HIM_LIKVUCT_SCR)
+    TYPE(Dialog) LEVEL(2) CAPTION(Roèní závìrka)               DATA()
+
+  TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typù majetku)                  DATA(C_TYPMAJ)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník daòových odpisových skupin )   DATA(C_DANSKP)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník druhù pohybù )                 DATA(C_DRPOHI)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník aktivace majetku)              DATA(C_AKTIV)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník editaèních karet)              DATA(C_TYPKAI)
+    TYPE(Dialog) LEVEL(2) CAPTION(Èíselník klasifikace pro stavební díla) DATA(C_KLASSD)
+
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+    TYPE(Dialog) LEVEL(2) CAPTION( Parametry úlohy) DATA(HIM_MAJ_CRD)
+    TYPE(Dialog) LEVEL(2) CAPTION( Export dat úèto) DATA()
+    TYPE(Dialog) LEVEL(2) CAPTION( Období)          DATA()
+
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION( Konfigurace ...) DATA()
+
+

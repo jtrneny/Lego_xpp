@@ -1,0 +1,1 @@
+select sum(nKcMD) from ucetpsnv where nrok=2011 and norducto=2 

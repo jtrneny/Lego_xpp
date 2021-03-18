@@ -1,0 +1,430 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Dosis:400,700|Open+Sans+Condensed:300,300italic,700&subset=latin,latin-ext);
+
+
+
+@media print {
+
+  @page:first {
+    
+  }  
+
+  @page {
+
+  }  
+
+  body {
+    position: relative;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    margin-left: 10pt;
+    margin-right: 10pt;
+    font-family: 'Open Sans', monospace !important; 
+    font-size: 0.75em;
+   /* puvodni velikost je mala font-size: 9pt; */
+
+  }
+
+  .logo_claim {
+    position: relative;
+    margin-top: 15px;
+    
+  }
+
+}
+
+jud {
+  font-family: "Courier New";
+/* puvodni transformovana a nevyhovujici velikost  font-size: 7pt; */
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+/* nechci odsazovat  margin-left: 10pt; */
+  margin-right: 10pt;
+}
+
+lit {
+/*prekopirovano z aspionline*/
+  margin-left: 20pt;
+  margin-top: 20pt;
+/*zdroj je moc daleko od textu  margin-right: 20pt;*/
+  font-family: 'Open Sans', monospace !important;
+/* puvodni  font-size: 10pt; prevadim na em*/
+  font-size: 1em;
+
+
+/* zlobi v koovech  display: block;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  margin-left: 10pt;
+  margin-right: 10pt;
+  font-family: "Courier New";
+  font-size: 7pt;*/
+}
+
+cara {
+  text-align: center;
+  font-weight: bold;
+}
+
+cast {
+  display: block;
+}
+
+cast-nadpis {
+  color: black;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  display: block;
+}
+
+cislo-jednaci {
+  text-align: left;
+  display: block;
+  font-style: italic;
+  margin-bottom: 10pt;
+  margin-top: 10pt;
+  font-size: 8pt;
+}
+
+datum {
+  display: block;
+  text-align: left;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+dotaz {
+  display: block;
+}
+
+duvod-nadpis {
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  display: block;
+}
+
+duvody {
+  display: block;
+}
+
+footnote {
+  color: #800000;
+  font-size: 0.87em;
+  display: block;
+}
+
+heslo {
+  margin-bottom: 10pt;
+  margin-right: 12pt;
+  margin-left: 12pt;
+  font-weight: bold;
+  display: block;
+}
+
+judikatura {
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  display: block;
+}
+
+klic {
+  text-align: left;
+  color: navy;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  font-style: italic;
+  font-size: 0.75em;
+  display: block;
+}
+
+klic-veta {
+  display: block;
+}
+
+klic-zkratka {
+  display: block;
+}
+
+link {
+  text-decoration: underline;
+  color: #4040FF;
+}
+
+nadpis {
+  display: block;
+  text-align: left;
+  margin-top: 15pt;
+  margin-bottom: 10pt;
+  font-weight: bold;
+  font-size: 9pt;
+}
+
+nalez {
+  display: block;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  text-indent: 20pt;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+nalez-nadpis {
+  display: block;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+oblast-upravy {
+  text-indent: 20pt;
+  display: block;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  font-size: 8pt;
+}  
+
+oduvodneni {
+  display: block;
+}
+
+oduvodneni-nadpis {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  font-size: 9pt;
+  margin-bottom: 10pt;
+  margin-top: 10pt;
+}
+
+p {
+  display: block;
+/*  text-indent: 20pt;*/
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  text-align: justify;    
+}
+
+pc {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  text-align: center;
+  text-indent: 20pt;
+}
+
+pp {
+  display: block;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+  margin-left: 30pt;
+}
+
+ppp {
+  display: block;
+  margin-bottom: 5pt;
+  margin-top: 5pt;
+  margin-left: 40pt;
+}
+
+pouceni {
+  display: block;
+  text-align: left;
+  font-size:8pt;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+poznamka {
+  display: block;
+  color: #800000;
+  margin-top: 15pt;
+  margin-bottom: 5pt;
+}
+
+poznamka-nadpis {
+  text-align: left;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+poznamka-pc {
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+pravni-veta {
+  text-indent: 20pt;
+  display: block;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  font-size: 9pt;
+}
+
+pre {
+  white-space: pre;
+  display: block;
+  font-family: "Courier New CE";
+}
+
+	
+prejudikatura {
+  text-align: left;
+  margin-top: 10pt;
+  margin-bottom: 10pt;
+  font-style: italic;
+  display: block;
+}
+
+rozhodnuti {
+  text-align: left;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+rozsudek-nadpis {
+  display: block;
+  text-align: center;
+}
+
+s-autor {
+  text-align: right;
+  display: block;
+}
+
+s-cislo {
+  margin-top: 5pt;
+  margin-bottom: 7pt;
+  display: block;
+  text-align: right;
+} 
+
+s-datum {
+  color: fuchsia;
+}
+
+skutek-rozhodnuti {
+  text-align: left;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+  font-size: 1em;
+}
+
+souvisejici-ustanoveni {
+  display: block;
+  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+stanovisko-nadpis {
+  display: block;
+  text-align: left;
+  text-decoration: underline;
+  font-size: 2em;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+} 
+
+sup {
+  color: #800000;
+  display: inline;
+}
+
+usneseni-nadpis {
+  display: block;
+  text-align: center;
+}
+
+vyhlaska {
+  margin-bottom: 2em;
+  display: block;
+}
+
+vyhlaska-nadpis {
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+vyhlaska-tema {
+  margin-bottom: 10pt;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+vyhlaska-text {
+  display: block;
+  font-style: italic;
+  text-indent: 20pt;
+  margin-top: 5pt;
+  margin-bottom: 5pt;
+}
+
+vyrok {
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+  display: block;
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  font-size: 1.15em;
+}
+
+vyrok-nadpis {
+  text-align: center;
+  margin-top: 10pt;
+  display: block;
+  font-weight: bold;
+}
+
+vztah-k-paragrafum {
+  text-indent: 20pt;
+  display: block;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 20pt;
+  margin-right: 30pt;
+  margin-left: 30pt;
+  margin-bottom: 20pt;
+  font-size: 1.25em;
+}
+
+komentar-nadpis {
+  font-weight: bold;
+}
+
+pppp {
+  display: block;
+  margin-top: 5pt;
+  margin-left: 50pt;
+  margin-bottom: 5pt;
+}
+
+nadpis1 {
+  display: block;
+  text-align: center;
+  margin-bottom: 20pt;
+  margin-top: 20pt;
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+tucne {
+  font-weight: bold;
+}
+
+kurziva {
+  font-style: italic;
+}

@@ -1,0 +1,9 @@
+
+Osoby
+- zda by šlo nad výbìry pro spojení, dokumenty, úkoly pøidat QUICK na pøíslušné typy a pøipadnì  jednoduchou lištu s filterm
+- trochu jsem upravil a ukotvil naplnìní SCR
+
+
+
+
+   

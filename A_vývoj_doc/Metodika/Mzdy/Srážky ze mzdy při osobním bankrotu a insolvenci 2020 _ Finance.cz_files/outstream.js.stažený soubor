@@ -1,0 +1,118 @@
+function bb_outstream_init(width, height, skipTime){
+
+    var width = width || 680;
+    var height = height || 380;
+    var skipTime = skipTime || 5;
+
+    var player = null;
+
+    function closeAd(container) {
+        container.style.height = 0;
+        setTimeout(function () {
+            container.remove();
+        }, 500);
+    }
+
+    function openAd(container) {
+        container.style.transition = 'height .5s ease';
+        player.play();
+    }
+
+    var container = document.getElementById('bb_outstream_container');
+
+    function handleScroll(e) {
+        var containerOffsetTop = container.getBoundingClientRect().top;
+        var windowHeight = window.innerHeight;
+
+        if (containerOffsetTop < windowHeight/1) {
+            openAd(container);
+            document.removeEventListener('DOMContentLoaded', handleScroll, false);
+            window.removeEventListener('scroll', handleScroll, false);
+        }
+    }
+
+    function requestVASTXML(callback) {
+        var xmlText = new XMLSerializer().serializeToString(window.bb_outstreamVastXML);
+        callback(null, xmlText);
+    }
+
+    document.addEventListener('DOMContentLoaded', handleScroll, false);
+    window.addEventListener('scroll', handleScroll, false);
+
+    var vastUrl = container.getAttribute('data-vast-url');
+
+    if (vastUrl) {
+        //prepare player
+        var playerHTML = '<video muted id="bb_outstream_video" class="video-js vjs-16-9" controls preload="auto" width="' + width + '" height="' + height + '" data-setup="{}">';
+        playerHTML += '<source src="https://f.mf.cz/outstream/js/videojs/sample_black.mp4" type="video/mp4">';
+        playerHTML += '</video>';
+
+        //prepare skip button
+        var buttonHTML = '<button id="bb_outstream_skipAdButton" disabled>Přeskočit reklamu za ' + skipTime + ' sekund</button>';
+        container.insertAdjacentHTML('beforeend', playerHTML);
+        container.insertAdjacentHTML('beforeend', buttonHTML);
+
+        //activate VideoJS player
+        player = videojs('bb_outstream_video');
+        player.vastClient({
+            adTagXML: requestVASTXML,
+            vpaidFlashLoaderPath: 'https://f.mf.cz/outstream/js/videojs/VPAIDFlash.swf'
+        });
+
+        //Sample video end
+        player.on('vast.contentEnd', function(){
+            closeAd(container);
+        });
+
+        player.on('ended', function () {
+            closeAd(container);
+        });
+
+        var skipAdButton = document.getElementById('bb_outstream_skipAdButton');
+
+        skipAdButton.addEventListener('click', function() {
+            player.vast.disable();
+            container.innerHtml = '';
+            closeAd(container);
+        });
+
+        player.vast.enable();
+
+        //skip time counting
+        player.on('vast.adStart', function(){
+            container.style.height = container.offsetWidth * 9 / 16 + 'px';
+
+            var skipInterval = setInterval(function() {
+                var currentTime = player.currentTime();
+                var skipCount = skipTime - Math.floor(currentTime);
+                var timeWord;
+                if (skipCount > 4) {
+                    timeWord = ' sekund';
+                }
+                else if (skipCount > 1) {
+                    timeWord = ' sekundy';
+                } else {
+                    timeWord = ' sekundu';
+                }
+                var buttonText = 'Přeskočit reklamu za '+ skipCount + timeWord;
+                skipAdButton.innerText = buttonText;
+                if (skipCount < 1) {
+                    buttonText = 'Přeskočit reklamu';
+                    skipAdButton.innerText = buttonText;
+                    skipAdButton.removeAttribute('disabled');
+                    clearInterval(skipInterval);
+                }
+            }, 1000);
+        });
+
+        container.addEventListener('mouseenter', function () {
+            player.volume(1);
+        });
+        container.addEventListener('mouseleave', function () {
+            player.volume(0);
+        });
+
+        player.volume(0);
+    }
+
+}

@@ -1,0 +1,70 @@
+Os.Á/DP(H,V,C):   25/  JmÈno: çedov· Eli ka                    StÍ./VM:900_/  10
+===================================dny======hod========kÁ=======================
+Prof/Kat/Sp:    0/ T/   Odpr.Áas:   20    160.00    12727   OON nezda•. :      0
+Da•ovÈ odpoÁ:A/0/A/N/N  åkol.mzda:          0.00        0   OON zdan≥nÈ :      0
+Odbory[A/N]/Opr: N/   0 Prostoj  :          0.00        0   OON stat.org:      0
+Hl.O«/VO«1:   0/   0    ◊·d.dov.:    2     16.00     1608   Pokladna    :      0
+Ved.O« 2/3:   0/   0    NevyÁ.◊D:    0      0.00        0   Op.dan,ZP,SP:  N/N/N
+N·rok ◊D    :    7.0    Ost.n·hr:    0      0.00        0   Odp.h.(1.50):   0.00
+Præm.n·hr 100.49/ 90.45 Odpr.sv.:    0      0.00        0   NoÁ.h.(3.00):   0.00
+Præm≥r DNP  :           Voj.cviÁ:    0      0.00        0   PÍÌplat.15% :   0.00
+Pr.doba sml.:  40.00    Nepl.vol:    0      0.00 kd:  0/  0 PÍesÁas 25% :   0.00
+Pr.doba z·k.:  40.00    Neomluv.:    0      0.00 kal.d:  0  PresÁas  0% :   0.00
+DÈlka túdne :      5    N·hr.DPN:    0      0.00        0   PresÁas 60% :   0.00
+Z·kl.mzda: M/  14000    Nemoc   :    0      0.00        0   SO + NE 25% :   0.00
+Os.oh-dekret:      0    O«R     :    0      0.00        0   SO + NE 50% :   0.00
+Poji t≥nÌ   :      0    Mat.dov.:    0      0.00        0   D≥len· sm≥na:      0
+SpoÍ/åÁet:  1380/       neod.dny DNP:  0  Dopl.m.m:     0   PÍÌp/vedenÌ :      0
+PæjÁky spoÍ.:      0     -hod.DNP:  0.00  Odm≥ny  :100000   Instrukt.pÍ.:      0
+PæjÁky FKSP :      0     -hod.O«R:  0.00  OdstupnÈ:     0   PÍÌp/vozidlo:      0
+Exekuce     :      0     -hod.MD :  0.00  Âiv.vúr.:     0   ZtÌ≈.prostÍ.:      0
+N·jemnÈ     :      0    PrÈmie KÁ:  2727  Fond ved:     0   Pohotovost  :      0
+Z·loha      :      0    PrÈmie % :     0  RoÁ.o.FO:      0  Zastup./m≥s.:      0
+Fpos/Fpræ/PÍ:           Ost.odm≥n:     0  Os.od.FO:      0  Refundace   :N/N/N/N
+Op.z·k:N/N/N/N/N/N/N/N/N/N/N              OdmStOrg:      0  N·hr.vúdajæ : N/N/N
+Op.os.oh:    0                                              Ost.pÍÌp.:     0  CZ
+
+
+
+«Ìslo:   25   JmÈno: çedov· Eli ka         stÍed/VM:  900/   10
+================================================================================
+RodnÈ jmÈno : Slov·Ákov·_____  Rod.ÁÌslo: 545814/0710
+Ulice       :  535
+PS« / Obec  : 68710 / Zlechov
+«Ìs.obÁ.præk: JP       717590  Telefon  : 0632 /   597376
+Rodin.stav  : Vdan·     [S=Svobodnú,Z=Âenatú,V=Vdan·,R=Rozv.,O=Ovdov≥lú,D=Druh]
+Dat.narozenÌ: 14/ 8/1954   mÌsto naroz: UherskÈ Hradi t≥
+Man≈el(-ka) : çeda Du an          rod.Á:531126/080
+1.dÌt≥-jmÈno: MagdalÈna çedov·    rod.Á:795305/4593
+2.dÌt≥-jmÈno: Ivona çedov·        rod.Á:835418/4619
+3.dÌt≥-jmÈno:                     rod.Á:      /
+4.dÌt≥-jmÈno:                     rod.Á:      /
+5.dÌt≥-jmÈno:                     rod.Á:      /
+6.dÌt≥-jmÈno:                     rod.Á:      /
+HlavnÌ   -1.Z:  1/ 1/1997   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+          2.Z:  0/ 0/   0   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+          3.Z:  0/ 0/   0   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+          4.Z:  0/ 0/   0   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+
+StarobnÌ dæchod-  PoÁet d≥tÌ:   2 Odchod do SD:  4/2014 V≥k: 59+ 8
+
+VúpoÁet podÌlæ[A/N]: A  PoÁÌtat do stavu[A/N]: A  PÍÌle≈itostnú p.p.[A/N]: N
+Dæchod      :                     [S=StarobnÌ I=Invalid. C=«·st.inv. V=Vdovskú
+ZPS[A/N/T/V]: N [A=ZPS,T=TZP,V=vylouÁit(jmenov.,volenú)]    +=Starob+Vdovskú] CZ
+
+
+
+
+==================== HrubÈ mzdy pro stÍediska  150-  150 ====================
+osob                  odpracov.  z·kl                    n·-   mzda præm≥rD·vky
+ÁÌs. PÍÌjmenÌ,jmÈno  dny hodiny  mzda prÈm. odm≥n pÍÌpl hrady  celk na hod  DNP
+  20 Dvouletú Karel   22 185.50 10388  6307     0   560   732 17987  93.02    0
+  30 Foltúnek Vladim  21 178.50  9996  6069     0   241   736 17042  91.35    0
+  74 Petr≈elka Jaros  20 168.50 15165  1180     0  2940  2724 22009 114.45    0
+  95 çoustek Vojt≥ch  18 151.50  8484  5909     0   547  3888 18828  98.61    0
+ 107 Tom·nek Mirosla  22 185.50 10388  6678     0   573   748 18387  95.09    0
+ 282 PerniÁka JiÍÌ    20 170.00  9520  1870     0   170  1088 12648  68.00    0
+
+
+
+

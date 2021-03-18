@@ -1,0 +1,15 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Docházka) ICON1(500)
+  TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+  TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+  TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+    TYPE(Dialog) LEVEL(2) CAPTION(Parametry pro zpracování) DATA(Sell)

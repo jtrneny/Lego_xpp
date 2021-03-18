@@ -1,0 +1,20 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Èíselníky)
+TYPE(Menu) LEVEL(1) CAPTION(Podnikové)  
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník mìrných jednotek) DATA(CIS_CJEDNOT)
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník mìn) DATA(CIS_CMENY)
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typù SKP) DATA(CIS_CTYPSKP)
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník skladù) DATA(CIS_CSKLADY)
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník DPH) DATA(CIS_CDPH)
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník PSÈ) DATA(CIS_CPSC)
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník kódù zaokrouhlení) DATA(CIS_CZAOKR)
+TYPE(Menu) LEVEL(1) CAPTION(Dim)  
+   TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typù DIM) DATA(DIM_CTYPDIM)

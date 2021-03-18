@@ -1,0 +1,34 @@
+***************************************************************************
+*
+*   Copyright:
+*             , (c) 2003. All rights reserved.
+*
+*    Contents:
+*             Main application menu tree example
+*
+***************************************************************************
+TYPE(Menu) LEVEL(0) CAPTION(Dim) ICON1(500)
+TYPE(Menu) LEVEL(1) CAPTION(Zpracování)
+  TYPE(Dialog) LEVEL(2) CAPTION(Základni -evidence ...) DATA(DIM_MSDIM_SCR)
+  TYPE(Menu)   LEVEL(2) CAPTION(Pøehled zmen DIM)
+    TYPE(Dialog) LEVEL(3) CAPTION(Pøehled zmìn ...)     DATA(DIM_ZMENYDIM_SCR)
+    TYPE(Dialog) LEVEL(3) CAPTION(Výpisy setav)     DATA(Sell)    
+
+  TYPE(Menu)   LEVEL(2) CAPTION(Evidence [EL] náøadí)
+    TYPE(Dialog) LEVEL(3) CAPTION(Pøehled  [EL] náøadí)  DATA(DIM_elnardim_SCR)
+    TYPE(Dialog) LEVEL(3) CAPTION(Kontroly [EL] náøadí)  DATA(PRG002)
+
+TYPE(Menu) LEVEL(1) CAPTION(Èíselníky)
+  TYPE(Dialog) LEVEL(2) CAPTION(Èíselník typu        DIM ...)  DATA(C_TYPDIM)
+  TYPE(Dialog) LEVEL(2) CAPTION(Èíselník hodnocení  EL ...)    DATA(C_TYPHOD)
+  TYPE(Dialog) LEVEL(2) CAPTION(Èíselník mìøení        EL ...) DATA(C_TYPMER)
+  TYPE(Dialog) LEVEL(2) CAPTION(Èíselník setavy        EL ...) DATA(C_TYPSES)
+
+TYPE(Menu) LEVEL(1) CAPTION(Servis)
+  TYPE(Dialog) LEVEL(2) CAPTION(DO 10) DATA(PRG010)
+  TYPE(Dialog) LEVEL(2) CAPTION(DO 11) DATA(PRG011)
+  TYPE(Dialog) LEVEL(2) CAPTION(DO 12) DATA(PRG012)
+
+TYPE(Menu) LEVEL(1) CAPTION(Konfigurace)
+  TYPE(Dailog) LEVEL(2) CAPTION(Konfigurace -1-) DATA(Sell)
+  TYPE(Dialog) LEVEL(2) CAPTION(Konfigurace -2-) DATA(Sell)

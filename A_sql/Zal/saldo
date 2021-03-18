@@ -1,0 +1,29 @@
+select sum(ucetpol.nkcmd), sum(ucetpol.nkcdal) from ucetpol
+left outer join c_uctosn on ucetpol.cucetmd = c_uctosn.cucetmd 
+where c_uctosn.lsaldouct = 1 and ucetpol.nrok = 2007 and ucetpol.nobdobi = 1  
+
+*
+select ucetsald.cucetmd, 
+       ucetsald.csymbol,
+	   ucetsald.d_kcmd  , 
+	   ucetsald.d_kcdal ,
+	   ucetsalk.k_kcmd  ,
+	   ucetsalk.k_kcdal ,
+	   ucetsalk.k_kcmd  -ucetsald.d_kcmd, 
+	   ucetsalk.k_kcdal -ucetsald.d_kcdal from ucetsald_01 as ucetsald
+left outer join ucetsalk_01 as ucetsalk on ucetsald.cucetmd = ucetsalk.cucetmd and 
+                                           ucetsald.csymbol = ucetsalk.csymbol
+where (ucetsalk.k_kcmd  -ucetsald.d_kcmd) <> 0 or (ucetsalk.k_kcdal -ucetsald.d_kcdal) <> 0										    
+order by ucetsald.cucetmd,ucetsald.csymbol
+         
+
+             
+
+
+
+				
+ 
+ 
+
+
+  

@@ -1,0 +1,105 @@
+method  PRO_nabvyshd_SCR:pro_nabvyshd_new_CPY()
+  local  odialog, nexit := drgEVENT_QUIT
+  local  o_nabvysit_in  := pro_nabvyshd_in():new( ::drgDialog )
+  local  arSelect       := aclone( ::brow[1]:arselect)
+  *
+  local  doklad, datOdes, pa_firmy := {}
+  local  cInfo          := 'Promiote prosím,' +CRLF
+
+  if( len(arSelect) <> 0, aadd( arSelect, nabvyshd->(recNo())), nil )
+
+  * oznaeil si záznamy pro kopii
+  * musíme zkontrolovat zda se jedná i stejnou firmu
+  if len(arSelect) <> 0
+    nabhd_cpw->(ads_setAof('.F.'))
+    nabhd_cpw->(ads_customizeAOF(arSelect), dbgotop())
+
+    do while .not. nabhd_cpw->(eof())
+      if( npos := ascan( pa_Firmy, {|x| x[1] = nabhd_cpw->ncisFirmy })) = 0
+        aadd( pa_Firmy, { nabhd_cpw->ncisFirmy    , ;
+                          nabhd_cpw->cnazev       , ;
+                          nabhd_cpyw->(recNo())   , ;
+                          { nabhd_cpyw->ndoklad } } )
+      else
+        aadd( pa_Firmy[npos,4], nabhd_cpyw->ndoklad )
+      endif
+      nabhd_cpw->(dbskip())
+    enddo
+
+    if len(pa_Firmy) > 1
+      cinfo += 'máte oznaeené nabídky pro ruzné firmy ...' +CRLF
+      aeval( pa_Firmy, { |x| cinfo += str(x[1]) +'_' +x[2] +CRLF }, 1, 2 )
+
+      cinfo += if( len(pa_Firmy) > 2, ' ... ' +CRLF, '' )
+      cinfo += CRLF +'požadujete vytvooit jejich kopie ?' +CRLF
+
+      nsel := confirmBox( , cinfo                           , ;
+                           'Vytvooit více kopií nabídky ...', ;
+                            XBPMB_YESNO                     , ;
+                            XBPMB_QUESTION+XBPMB_APPMODAL+XBPMB_MOVEABLE,XBPMB_DEFBUTTON2)
+    endif
+  endif
+
+  nabvyshdw->(dbAppend())
+  nabvyshdw->ddatOdes := date()
+
+  odialog := drgDialog():new('PRO_nabvyshd_new_cpy',::drgDialog)
+  odialog:create(,,.T.)
+  nexit := odialog:exitState
+
+  nabvyshdw ->(dbclosearea())
+  nabvysitw ->(dbclosearea())
+  nabit_iw  ->(dbclosearea())
+  vyrpolw   ->(dbclosearea())
+
+  *
+  ** holt chce kopii
+  if nexit = drgEVENT_EXIT
+    datOdes := odialog:dataManager:get('nabVysHdw->ddatOdes')
+    doklad  := fin_range_key('NABVYSHD')[2]
+
+    PRO_nabvyshd_cpy()
+
+    nabvyshdw->ndoklad    := doklad
+    nabvyshdw->ddatodes   := datOdes
+    nabvyshdw->cintpracov := logOsoba
+    nabvyshdw->_nrecor    := 0
+
+    o_nabvysit_in:int_cislNabidky(.f., .t.)
+
+    nabvysitw->(dbgoTop())
+    do while .not. nabvysitw->(eof())
+      nabvysitw->ndoklad  := nabvyshdw->ndoklad
+      nabvysitw->cnazOdes := nabvyshdw->cnazOdes
+      nabvysitw->ncisOdes := nabvyshdw->ncisOdes
+      nabvysitw->_nrecor  := 0
+
+      * položka nabídky je vystavená z vyrzak, musí se vytvooit vazby
+      if lower(nabvysitw->cfile_iv) = 'vyrzak'
+        vyrzak->(dbgoto( nabvysitw->nrecs_iv))
+
+      o_nabvyshd_in:vyr_vyrpol_sel()
+      endif
+      nabvysitw->(dbskip())
+    enddo
+
+    nabvysitw->(dbgoTop())
+
+    ::lnewRec := .t.
+    PRO_nabvyshd_wrt_inTrans( self )
+    ::lnewRec := .f.
+
+    ::brow[1]:oxbp:refreshAll()
+    postAppEvent(xbeBRW_ItemMarked,,,::brow[1]:oxbp)
+  endif
+
+  o_nabvysit_in:destroy()
+  odialog:destroy()
+
+  if  select('nabvyshdw') <> 0
+    nabvyshdw ->(dbclosearea())
+    nabvysitw ->(dbclosearea())
+    nabit_iw  ->(dbclosearea())
+    vyrpolw   ->(dbclosearea())
+  endif
+return self

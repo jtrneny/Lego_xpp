@@ -1,0 +1,70 @@
+Os.è/DP(H,V,C):   25/  Jméno: Šedová Eliška                    Stø./VM:900_/  10
+===================================dny======hod========kè=======================
+Prof/Kat/Sp:    0/ T/   Odpr.èas:   20    160.00    12727   OON nezdaò. :      0
+Daòové odpoè:A/0/A/N/N  Úkol.mzda:          0.00        0   OON zdanìˆné :      0
+Odbory[A/N]/Opr: N/   0 Prostoj  :          0.00        0   OON stat.org:      0
+Hl.OÈ/VOÈ1:   0/   0    Øád.dov.:    2     16.00     1608   Pokladna    :      0
+Ved.OÈ 2/3:   0/   0    Nevyè.ØD:    0      0.00        0   Op.dan,ZP,SP:  N/N/N
+Nárok ØD    :    7.0    Ost.náhr:    0      0.00        0   Odp.h.(1.50):   0.00
+Prùm.náhr 100.49/ 90.45 Odpr.sv.:    0      0.00        0   Noè.h.(3.00):   0.00
+Prùmìˆr DNP  :           Voj.cviè:    0      0.00        0   Pøíplat.15% :   0.00
+Pr.doba sml.:  40.00    Nepl.vol:    0      0.00 kd:  0/ 0  Pøesèas 25% :   0.00
+Pr.doba zák.:  40.00    Neomluv.:    0      0.00 kal.d:  0  Presèas  0% :   0.00
+Délka t˜ýdne :      5    Náhr.DPN:    0      0.00        0   Presèas 60% :   0.00
+Zákl.mzda: M/  14000    Nemoc   :    0      0.00        0   SO + NE 25% :   0.00
+Os.oh-dekret:      0    OÈR     :    0      0.00        0   SO + NE 50% :   0.00
+Pojištìˆní   :      0    Mat.dov.:    0      0.00        0   Dìˆlená smìˆna:      0
+Spoø/Úèet:  1380/       neod.dny DNP:  0  Dopl.m.m:     0   Pøíp/vedení :      0
+Pùjèky spoø.:      0     -hod.DNP:  0.00  Odmˆìny  :100000   Instrukt.pø.:      0
+Pùjèky FKSP :      0     -hod.OÈR:  0.00  Odstupné:     0   Pøíp/vozidlo:      0
+Exekuce     :      0     -hod.MD :  0.00  Živ.v˜r.:      0   Ztíž.prostø.:      0
+Nájemné     :      0    Prémie Kè:  2727  Fond ved:     0   Pohotovost  :      0
+Záloha      :      0    Prémie % :     0  Roè.o.FO:      0  Zastup./mìs.:      0
+Fpos/Fprù/Pø:           Ost.odmˆn:     0   Os.od.FO:      0  Refundace   :N/N/N/N
+Op.zák:N/N/N/N/N/N/N/N/N/N/N              OdmStOrg:      0  Náhr.vý˜dajù : N/N/N
+Op.os.oh:    0                                              Ost.pøíp.:     0  CZ
+
+
+
+Èíslo:   25   Jméno: Šedová Eliška         støed/VM:  900/   10
+================================================================================
+Rodné jméno : Slováèková_____  Rod.èíslo: 545814/0710
+Ulice       :  535
+PSÈ / Obec  : 68710 / Zlechov
+Èís.obè.prùk: JP       717590  Telefon  : 0632 /   597376
+Rodin.stav  : Vdaná     [S=Svobodn˜,Z=Ženat˜,V=Vdaná,R=Rozv.,O=Ovdovˆl˜,D=Druh]
+Dat.narození: 14/ 8/1954   místo naroz: Uherské Hradištˆì
+Manžel(-ka) : Šeda Dušan         rod.è:531126/080
+1.dítìˆ-jméno: Magdaléna Šedová    rod.è:795305/4593
+2.dítˆì-jméno: Ivona Šedová        rod.è:835418/4619
+3.dítˆì-jméno:                     rod.è:      /
+4.dítˆì-jméno:                     rod.è:      /
+5.dítìˆ-jméno:                     rod.è:      /
+6.dítìˆ-jméno:                     rod.è:      /
+Hlavní   -1.Z:  1/ 1/1997   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+          2.Z:  0/ 0/   0   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+          3.Z:  0/ 0/   0   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+          4.Z:  0/ 0/   0   S:  0/ 0/   0   K:  0/ 0/   0 Duv:
+
+Starobní dùchod-  Poèet dìˆtí:   2 Odchod do SD:  4/2014 Vìˆk: 59+ 8
+
+Vý˜poèet podílù[A/N]: A  Poèítat do stavu[A/N]: A  Pøíležitostní˜ p.p.[A/N]: N
+Dùchod      :                     [S=Starobní I=Invalid. C=Èást.inv. V=Vdovsk˜
+ZPS[A/N/T/V]: N [A=ZPS,T=TZP,V=vylouèit(jmenov.,volen˜)]    +=Starob+Vdovsk˜] CZ
+
+
+
+
+==================== Hrubé mzdy pro støediska  150-  150 ====================
+osob                  odpracov.  zákl                    ná-   mzda prùmìˆrDávky
+èís. Pøíjmení,jméno  dny hodiny  mzda prém. odmˆìn pøípl hrady  celk na hod  DNP
+  20 Dvoulet˜ Karel    22 185.50 10388  6307     0   560   732 17987  93.02    0
+  30 Folt˜nek Vladim   21 178.50  9996  6069     0   241   736 17042  91.35    0
+  74 Petrželka Jaros  20 168.50 15165  1180     0  2940  2724 22009 114.45    0
+  95 Šoustek Vojtˆch   18 151.50  8484  5909     0   547  3888 18828  98.61    0
+ 107 Tománek Mirosla  22 185.50 10388  6678     0   573   748 18387  95.09    0
+ 282 Pernièka Jiøí    20 170.00  9520  1870     0   170  1088 12648  68.00    0
+
+
+
+

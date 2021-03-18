@@ -1,0 +1,1 @@
+INSERT INTO zvkarty_ps (cnazpol1,cnazpol4,nzvirkat,nrok,ncenapoczv,nmnozpoczv,nkusypoczv,nkdpoczv) select cnazpol1,cnazpol4,nzvirkat,2010,ncenapoczv,nmnozpoczv,nkusypoczv,nkdpoczv from zvkarty

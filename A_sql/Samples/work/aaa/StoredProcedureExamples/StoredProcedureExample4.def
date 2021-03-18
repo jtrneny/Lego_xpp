@@ -1,0 +1,12 @@
+LIBRARY       Example4StoredProc
+DESCRIPTION   'An example DLL that contains stored procedures for use with the Advantage Database Server'
+
+EXPORTS
+   BeginTransaction             @1
+   CommitTransaction            @2
+   RollBackTransaction          @3
+   GetInfoForTable              @4
+   AddRecordToData              @5
+   Shutdown                     @6
+   Startup                      @7
+

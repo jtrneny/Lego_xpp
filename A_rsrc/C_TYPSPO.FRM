@@ -1,0 +1,15 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník typù spojení) SIZE(70,15) FILE(C_TYPSPO);
+              GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect) 
+  TYPE(DBrowse) SIZE(60,14) FILE(C_TYPSPO) FIELDS(CTYPSPOJ,CNAZTYP,DPLATNYOD,DPLATNYDO) ;
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y)
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail) OFFSET(14,70) PRE( tabSelect) 
+  TYPE(GET) NAME(CTYPSPOJ)   FPOS(15,1) FLEN(10)    FCAPTION(Typ spojení)           CPOS(1,1) POST( drgPostUniqueKey)
+  TYPE(GET) NAME(CNAZTYP)    FPOS(15,3) FLEN(30)    FCAPTION(Název typu spojení)    CPOS(1,3)
+  TYPE(GET) NAME(DPLATNYOD)  FPOS(15,5) FLEN(11)    FCAPTION(Platnost OD)           CPOS(1,5) PUSH(CLICKDATE)
+  TYPE(GET) NAME(DPLATNYDO)  FPOS(15,6) FLEN(11)    FCAPTION(Platnost DO)           CPOS(1,6) PUSH(CLICKDATE)
+¨ TYPE(MLE) NAME(MPOZNAMKA)  FPOS(15,8) SIZE(50,5)  FCAPTION(Poznámka)              CPOS(1,8)
+TYPE(End)

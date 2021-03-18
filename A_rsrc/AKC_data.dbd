@@ -1,0 +1,501 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_NAPOCA) DESC(Èíselník nápoètu akcií...) TASK(AKC)  DISTRIB(C_NAPOCA01)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(nZusobNapo)  DESC(Zpùsob nápoètu akcií)           CAPTION(ZpùsNápAkcií)       FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cNazevNpoc)  DESC(Název zpùsobu nápoètu akcií)    CAPTION(NázNápAkcií)        FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYOD)   DESC(Platnost OD)                    CAPTION(Platnost_OD)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)   DESC(Platnost DO)                    CAPTION(Platnost_DO)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)         FTYPE(n) FLEN( 1) DEC(0)     
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)          FTYPE(t) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPOZNAMKA)   DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_NAPOCA01)  FNAME(C_NAPOCA) CAPTION(Zpùsob nápoètu akcií)   KEY(nZusobNapo)
+  TYPE(INDEX) NAME(C_NAPOCA02)  FNAME(C_NAPOCA) CAPTION(Název nápoètu akcií)    KEY(UPPER(cNazevNpoc))
+  TYPE(INDEX) NAME(DistribRec)  FNAME(C_NAPOCA) CAPTION(DistribRec)             KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)          FNAME(C_NAPOCA) CAPTION(ID)                     KEY(sID)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nZusobNapo:Zpùsob nápoètu,cNazevNpoc:Názvy nápoètù) ORDER(1) RETURN(nZusobNapo)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_OBLASA) DESC(Èíselník oblastí akcionáøù...) TASK(AKC) 
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(cZkrOblast)  DESC(Zkratka oblasti)                CAPTION(ZkratOblast)        FTYPE(C) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(cNazevObl)   DESC(Název oblasti)                  CAPTION(NázevOblast)        FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYOD)   DESC(Platnost OD)                    CAPTION(Platnost_OD)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)   DESC(Platnost DO)                    CAPTION(Platnost_DO)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)          FTYPE(t) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPOZNAMKA)   DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_OBLASA01)  FNAME(C_OBLASA) CAPTION(Zkratka oblasti)        KEY(cZkrOblast)
+  TYPE(INDEX) NAME(C_OBLASA02)  FNAME(C_OBLASA) CAPTION(Název oblasti)          KEY(UPPER(cNazevObl))
+  TYPE(INDEX) NAME(ID)          FNAME(C_OBLASA) CAPTION(ID)                     KEY(sID)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrOblast:Zkratka oblasti,cNazevObl:Název oblasti) ORDER(1) RETURN(cZkrOblast)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPAKC) DESC(Èíselník typù akcií...) TASK(AKC)  
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(cZkrTypAkc)  DESC(Zkratka typu akcie)             CAPTION(ZkrTypAkc)          FTYPE(C) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(cNazevAkc)   DESC(Název typu akcie)               CAPTION(NázevTypAkc)        FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(nZusobNapo)  DESC(Zpùsob nápoètu akcie)           CAPTION(ZpùsNápAkc)         FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(lZapocDoVH)  DESC(Zapoèítávat do výpoètu hlasù)   CAPTION(ZapVýpHlas)         FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYOD)   DESC(Platnost OD)                    CAPTION(Platnost_OD)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)   DESC(Platnost DO)                    CAPTION(Platnost_DO)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)          FTYPE(t) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPOZNAMKA)   DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_TYPAKC01)  FNAME(C_TYPAKC) CAPTION(Zkratka typu akcie)     KEY(cZkrTypAkc)
+  TYPE(INDEX) NAME(C_TYPAKC02)  FNAME(C_TYPAKC) CAPTION(Název typu akcie)       KEY(UPPER(cNazevAkc))
+  TYPE(INDEX) NAME(ID)          FNAME(C_TYPAKC) CAPTION(ID)                     KEY(sID)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrTypAkc:Zkratka typu akcie,cNazevAkc:Název typu akcie) ORDER(1) RETURN(cZkrTypAkc)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPAR) DESC(Èíselník typù akcionáøù...) TASK(AKC)  
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(cZkrTypAr)   DESC(Zkratka typu akcionáøe)         CAPTION(ZkrTypAkcio)        FTYPE(C) FLEN( 4) DEC(0)
+  TYPE(FIELD) NAME(cNazevAr)    DESC(Název typu akcionáøe)           CAPTION(NázTypAkcio)        FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(lucastNaVH)  DESC(Úèastník valné hromady)         CAPTION(úèastNaVH)          FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYOD)   DESC(Platnost OD)                    CAPTION(Platnost_OD)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)   DESC(Platnost DO)                    CAPTION(Platnost_DO)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)          FTYPE(t) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPOZNAMKA)   DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_TYPAR01)   FNAME(C_TYPAR) CAPTION(Zkratka typu akcionáøe)     KEY(cZkrTypAr)
+  TYPE(INDEX) NAME(C_TYPAR02)   FNAME(C_TYPAR) CAPTION(Název typu akcionáøe)       KEY(UPPER(cNazevAr))
+  TYPE(INDEX) NAME(ID)          FNAME(C_TYPAR) CAPTION(ID)                         KEY(sID)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrTypAr:Zkratka typu akcionáøe,cNazevAr:Název typu akcionáøe) ORDER(1) RETURN(cZkrTypAr)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TYPVYPHL) DESC(Èíselník typù výpoètu hlasù...) TASK(AKC)  
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(nTypVypHla)  DESC(Typ výpoètu hlasù)              CAPTION(TypVypHl)           FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(cPopVypHla)  DESC(Popis výpoètu poètu hlasù)      CAPTION(PopVypHla)          FTYPE(C) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(nDelitel)    DESC(Dìlitel)                        CAPTION(Dìlitel)            FTYPE(N) FLEN( 9) DEC(2)
+  TYPE(FIELD) NAME(lAktivni)    DESC(Aktivni)                        CAPTION(Aktivní)            FTYPE(L) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYOD)   DESC(Platnost OD)                    CAPTION(Platnost_OD)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)   DESC(Platnost DO)                    CAPTION(Platnost_DO)        FTYPE(D) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)          FTYPE(t) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPOZNAMKA)   DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_TYPVYP01)  FNAME(C_TYPVYPHL) CAPTION(Typ výpoètu hlasù)          KEY(nTypVypHla)
+  TYPE(INDEX) NAME(C_TYPVYP02)  FNAME(C_TYPVYPHL) CAPTION(Popis výpoètu poètu hlasù)  KEY(UPPER(cPopVypHla))
+  TYPE(INDEX) NAME(C_TYPVYP03)  FNAME(C_TYPVYPHL) CAPTION(aktivní+typVypHl)           KEY(if (lAktivni, '1', '0') +strZero(ntypVypHla,2,0))
+  TYPE(INDEX) NAME(C_TYPVYP04)  FNAME(C_TYPVYPHL) CAPTION(dìlitel)                    KEY(strZero(ndelitel,9,2))
+  TYPE(INDEX) NAME(ID)          FNAME(C_TYPVYPHL) CAPTION(ID)                         KEY(sID)
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nTypVypHla:Typ výpoètu hlasù,cpopVypHl:Popis výpoètu hlasù) ORDER(1) RETURN(ntypVypHla)
+
+*
+** AKCIONÁØI                            ****************************
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(AKCIE) DESC(Akcie ...) TASK(AKC)
+* FIELD DEFINITION **************************************************** 
+  TYPE(FIELD) NAME(cJmenoAkci)  DESC(Jméno akcionáøe)                CAPTION(JmenoAk)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypAr)   DESC(Zkratka typu akcionáøe)         CAPTION(ZkrTypAk)        FTYPE(C) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisAkc)  DESC(Rodné èíslo akcionáøe)          CAPTION(RodCisAk)        FTYPE(C) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypAkc)  DESC(Zkratka typu akcie)             CAPTION(ZkrTypAkc)       FTYPE(C) FLEN( 4) DEC( 0) RELATETO(C_TYPAKC)   RELATETYPE(1)
+  TYPE(FIELD) NAME(cSerCisAkc ) DESC(Sériové èíslo akcie)            CAPTION(SerÈisAkc)       FTYPE(C) FLEN(25) DEC( 0) 
+  TYPE(FIELD) NAME(nHodnotaAk)  DESC(Nominální hodnota akcie)        CAPTION(NomHodnAkc)      FTYPE(N) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nDoklad_OR)  DESC(Doklad originální)              CAPTION(Doklad_OR)       FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nZusobNapo)  DESC(Zpùsob nápoètu akcie)           CAPTION(ZpùsNápAkc)      FTYPE(N) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nzakHodAkc)  DESC(Základní hodnota akcie)         CAPTION(ZákHodnAkc)      FTYPE(n) FLEN(13) DEC( 2)
+*  
+* vazba na OSOBY                                                                                                                     
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)        FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)      DESC(Osoby - celé jméno)             CAPTION(CelJmOsoby)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl)  DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl)      FTYPE(c) FLEN(65) DEC( 0)
+*
+  TYPE(FIELD) NAME(cPoznamka1)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka2)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nAKCIONAR)   DESC(Vazba na sID akcionar)          CAPTION()                FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION ****************************************************
+  TYPE(INDEX) NAME(Akcie01)    FNAME(AKCIE) CAPTION(rodÈísAKC)                                KEY(crodCisAkc)
+  TYPE(INDEX) NAME(Akcie02)    FNAME(AKCIE) CAPTION(zkrTypAkc+serCisAkc)                      KEY(upper(cZkrTypAkc)+upper(cSerCisAkc))
+  TYPE(INDEX) NAME(Akcie03)    FNAME(AKCIE) CAPTION(serCisAkc)                                KEY(upper(cSerCisAkc))
+  TYPE(INDEX) NAME(Akcie04)    FNAME(AKCIE) CAPTION(celJmOsoby)                               KEY(UPPER(cOsoba))
+  TYPE(INDEX) NAME(Akcie05)    FNAME(AKCIE) CAPTION(celJmOsoby)                               KEY(UPPER(crodCisAkc)+upper(cZkrTypAkc))
+  TYPE(INDEX) NAME(Akcie06)    FNAME(AKCIE) CAPTION(ÈísOsoby)                                 KEY(nCisOsoby)
+  TYPE(INDEX) NAME(Akcie07)    FNAME(AKCIE) CAPTION(sID_AKCIONAR+serCISakc)                   KEY(strZero(nAKCIONAR,10,0) +upper(cSerCisAkc))
+  TYPE(INDEX) NAME(Akcie08)    FNAME(AKCIE) CAPTION(celJmOsRozl)                              KEY(UPPER(cJmenoRozl))
+  TYPE(INDEX) NAME(Akcie09)    FNAME(AKCIE) CAPTION(zkrTypAkc)                                KEY(cZkrTypAkc)
+  TYPE(INDEX) NAME(Akcie10)    FNAME(AKCIE) CAPTION(zkrTypAr)                                 KEY(cZkrTypAr)
+  TYPE(INDEX) NAME(AKCIONAR)   FNAME(AKCIE) CAPTION(sID_AKCIONAR)                             KEY(nAKCIONAR) 
+  TYPE(INDEX) NAME(ID)         FNAME(AKCIE) CAPTION()                                         KEY(sID) UNIQUE
+
+*
+TYPE(FILE) NAME(AKCIONAR) DESC(Akcionáøi ...) TASK(AKC)
+* FIELD DEFINITION **************************************************** 
+  TYPE(FIELD) NAME(cJmenoAkci) DESC(Jméno akcionáøe)                 CAPTION(JmenoAk)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRod)  DESC(Rodné jméno osoby)               CAPTION(RodJmPrac)      FTYPE(c) FLEN(25) DEC( 0)
+*
+  TYPE(FIELD) NAME(cUlice)     DESC(Bydlištì - Ulice)                CAPTION(BydlUlice)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Bydlištì - Místo)                CAPTION(BydlMisto)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Bydlištì - Psè)                  CAPTION(BydlPsc)        FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC)   RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Bydlištì - Stát)                 CAPTION(BydlStat)       FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+*    
+  TYPE(FIELD) NAME(cCisPopis)  DESC(Bydlištì - ÈísPopisné)           CAPTION(BydÈísPopi)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cCisOrien)  DESC(Bydlištì - ÈísOrientaèní)        CAPTION(BydÈísOrie)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCisla) DESC(Bydlištì - Ulice+èísla)          CAPTION(BydlUlÈisl)     FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObec)      DESC(Bydlištì - Obec)                 CAPTION(BydlObec)       FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCiPop) DESC(Bydlištì - Ulice+èísl.popisné)   CAPTION(BydlUlÈiPo)     FTYPE(c) FLEN(65) DEC( 0)
+*
+  TYPE(FIELD) NAME(cPreUlice)  DESC(Pøechodné bydlištì - Ulice)      CAPTION(PøBydlUlic)     FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPreMisto)  DESC(Pøechodné bydlištì - Místo)      CAPTION(PøBydMisto)     FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cPrePsc)    DESC(Pøechodné bydlištì - Psè)        CAPTION(PøBydPsc)       FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC,c_pscPre)     RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrStatPr) DESC(Pøechodné bydlištì - Stát)       CAPTION(PøBydStat)      FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY,c_statyPre) RELATETYPE(2)
+*  
+  TYPE(FIELD) NAME(cPreCisPop) DESC(Pøechodné bydlištì - ÈísPopis)   CAPTION(PøBydÈPopi)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPreUliCis) DESC(Pøechodné bydlištì - Ul+Èísla)   CAPTION(PøBydlUlÈí)     FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cPreObec)   DESC(Pøechodné bydlištì - Obec)       CAPTION(PøBydlObec)     FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPreUliCPo) DESC(Pøechodné bydlištì - Ul+Èí.po)   CAPTION(PøBydlUlÈP)     FTYPE(c) FLEN(35) DEC( 0)
+*
+  TYPE(FIELD) NAME(cPreTel)    DESC(Telefon - pøechodné bydlištì)    CAPTION(TelPøechod)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cDomTel)    DESC(Telefon - domù)                  CAPTION(TelDomù)        FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cZamTel)    DESC(Telefon - zamìstnání)            CAPTION(TelZamìst)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelPriv)   DESC(Telefon - privát)                CAPTION(TelPrivát)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelZames)  DESC(Telefon - zamìstnání)            CAPTION(TelZamìst)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelMobil)  DESC(Telefon - mobil)                 CAPTION(TelMobil)       FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelefon)   DESC(Telefon)                         CAPTION(Telefon)        FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cEmail)     DESC(e-mailová adresa)                CAPTION(e-mail)         FTYPE(c) FLEN(50) DEC( 0)
+*   
+  TYPE(FIELD) NAME(cRodCisAkc)  DESC(Rodné èíslo akcionáøe)          CAPTION(RodCisAk)       FTYPE(C) FLEN(13) DEC( 0) PICTURE(@N 99-99-99/9999)
+  TYPE(FIELD) NAME(cZkrTypAr)   DESC(Zkratka typu akcionáøe)         CAPTION(ZkrTypAk)       FTYPE(C) FLEN( 4) DEC( 0) RELATETO(C_TYPAR)    RELATETYPE(1)
+  TYPE(FIELD) NAME(cZkrOblast)  DESC(Zkratka oblasti)                CAPTION(ZkrOblasti)     FTYPE(c) FLEN( 4) DEC( 0) RELATETO(C_OBLASA)   RELATETYPE(1)
+  TYPE(FIELD) NAME(nStavAkc)    DESC(Stav akcionáøe)                 CAPTION(StavAkc)        FTYPE(n) FLEN( 1) DEC( 0)
+*
+  TYPE(FIELD) NAME(nPocetHlas)  DESC(Poèet hlasù)                    CAPTION(PoèetHlasù)     FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nPocetAkci)  DESC(Poèet akcií)                    CAPTION(PoèetAkcií)     FTYPE(n) FLEN( 8) DEC( 2)
+  TYPE(FIELD) NAME(nHodnotaAk)  DESC(Nominální hodnota akcie)        CAPTION(NomHodnAkc)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nHodnotaVH)  DESC(Hodnota akcií po výpoètu hlasù) CAPTION(HodAkcPoVyp)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nVymeraHa)   DESC(Výmìra v hektarech)             CAPTION(VýmìraVHa)      FTYPE(n) FLEN(13) DEC( 4)
+*  
+* vazba na OSOBY
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)       FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)      DESC(Osoby - celé jméno)             CAPTION(CelJmOsoby)     FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl)  DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl)     FTYPE(c) FLEN(65) DEC( 0)
+*
+* vazba na FIRMY
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy odbìratele)          CAPTION(ÈísFirOdb)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název odbìratele)                CAPTION(NázevOdbìr)     FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cNazev2)    DESC(Název2 odbìratele)               CAPTION(Název2Odbì)     FTYPE(c) FLEN(50) DEC( 0)  
+*
+  TYPE(FIELD) NAME(cPoznamka1) DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka2) DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(tvznikzazn) DESC(Vznik záznamu)                  CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nOSOBY)     DESC(Vazba na sID osoby)             CAPTION()                FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nFIRMY)     DESC(Vazba na sID firmy)             CAPTION()                FTYPE(n) FLEN(10) DEC( 0)  
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Akcionar01)    FNAME(AKCIONAR) CAPTION(rodÈísAkc)                         KEY(crodCisAkc)
+  TYPE(INDEX) NAME(Akcionar02)    FNAME(AKCIONAR) CAPTION(CelJmOsoby)                        KEY(UPPER(cOsoba))  
+  TYPE(INDEX) NAME(Akcionar03)    FNAME(AKCIONAR) CAPTION(ÈísOsoby)                          KEY(nCisOsoby)
+  TYPE(INDEX) NAME(Akcionar04)    FNAME(AKCIONAR) CAPTION(celJmOsRozl)                       KEY(UPPER(cJmenoRozl))
+  TYPE(INDEX) NAME(Akcionar05)    FNAME(AKCIONAR) CAPTION(JménoAkc)                          KEY(UPPER(cJmenoAkci))
+  TYPE(INDEX) NAME(OSOBY)         FNAME(AKCIONAR) CAPTION(sID_OSOBY)                         KEY(nOSOBY)
+  TYPE(INDEX) NAME(FIRMY)         FNAME(AKCIONAR) CAPTION(sID_FIRMY)                         KEY(nFIRMY)
+  TYPE(INDEX) NAME(ID)            FNAME(AKCIONAR) CAPTION()                                  KEY(sID) UNIQUE
+
+*
+TYPE(FILE) NAME(APOHYBAK) DESC(Pohyby/zmìny akcií ...) TASK(AKC)
+* FIELD DEFINITION **************************************************** 
+  TYPE(FIELD) NAME(nDoklad)     DESC(Èíslo dokladu)                      CAPTION(ÈísloDokl)       FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypPoh)  DESC(Zkratka typu pohybu)                CAPTION(ZkrTypPoh)       FTYPE(C) FLEN( 4) DEC( 0)
+*
+* pùvodní akcionáø vlastník akcie 
+  TYPE(FIELD) NAME(cJmenoAkci)  DESC(Jméno akcionáøe)                    CAPTION(JmenoAk)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypAr)   DESC(Zkratka typu akcionáøe)             CAPTION(ZkrTypAk)        FTYPE(C) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisAkc)  DESC(Rodné èíslo akcionáøe)              CAPTION(RodCisAk)        FTYPE(C) FLEN(13) DEC( 0) PICTURE(@N 99-99-99/9999)
+  TYPE(FIELD) NAME(cZkrTypAkc)  DESC(Zkratka typu akcie)                 CAPTION(ZkrTypAkc)       FTYPE(C) FLEN( 4) DEC( 0)
+*
+* nový akcionáø vlastník akcie
+  TYPE(FIELD) NAME(cJmenoNew)   DESC(Jméno akcionáøe-nové)               CAPTION(JmenoAkNew)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypArN)  DESC(Zkratka typu akcionáøe-nová)        CAPTION(ZkrTypAkNew)     FTYPE(C) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisNew)  DESC(Rodné èíslo akcionáøe-nové)         CAPTION(RodCisAkNew)     FTYPE(C) FLEN(13) DEC( 0) PICTURE(@N 99-99-99/9999)
+  TYPE(FIELD) NAME(cZkrTypNew)  DESC(Zkratka typu akcie-nová)            CAPTION(ZkrTypAkcNew)    FTYPE(C) FLEN( 4) DEC( 0)
+*  
+  TYPE(FIELD) NAME(cSerCisAkc)  DESC(Sériové èíslo akcie)                CAPTION(SerÈisAkc)       FTYPE(C) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cSerCisNew)  DESC(Sériové èíslo akcie-nové)           CAPTION(SerÈisNew)       FTYPE(C) FLEN(25) DEC( 0)
+*  
+  TYPE(FIELD) NAME(nHodnotaAk)  DESC(Hodnota zmìny akcie)                CAPTION(HodnZmAkc)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nHodnotOld)  DESC(Vstupní hodnota pøed zmìnou)        CAPTION(VstHodPøedZm)    FTYPE(n) FLEN(13) DEC( 2)
+*  
+  TYPE(FIELD) NAME(nProcentZm)  DESC(Procento hodnoty zmìny)             CAPTION(ProcHodZmìny)    FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nDoklad_OR)  DESC(Doklad originální)                  CAPTION(Doklad_OR)       FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nZusobNapo)  DESC(Zpùsob nápoètu akcie)               CAPTION(ZpùsNápAkc)      FTYPE(N) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                        CAPTION(ÈísOsoby)        FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)      DESC(Osoby - celé jméno)                 CAPTION(CelJmOsoby)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl)  DESC(Jméno osoby s rozlišením)           CAPTION(JmOsobRozl)      FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cText)       DESC(Text)                               CAPTION(Text)            FTYPE(c) FLEN(250) DEC( 0)
+*
+  TYPE(FIELD) NAME(cPoznamka1)  DESC()                                   CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka2)  DESC()                                   CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                      CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                       CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                        CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC()                                   CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                                   CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nAKCIONAR)   DESC(Vazba na sID nového akcionaøe)      CAPTION()                FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nAKCIONARp)  DESC(Vazba na sID pùvodního akcionaøe)   CAPTION()                FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nAKCIE)      DESC(Vazba na sID akcie)                 CAPTION()                FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                                   CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(ApohybAK01)    FNAME(APOHYBAK) CAPTION(ÈísOsoby)                           KEY(nCisOsoby)
+  TYPE(INDEX) NAME(ApohybAK02)    FNAME(APOHYBAK) CAPTION(CelJmOsoby)                         KEY(UPPER(cOsoba))
+  TYPE(INDEX) NAME(ApohybAK03)    FNAME(APOHYBAK) CAPTION(sID_AKCIONAR+serCISakc)             KEY(strZero(nAKCIONAR,10,0) +upper(cSerCisAkc))
+  TYPE(INDEX) NAME(ApohybAK04)    FNAME(APOHYBAK) CAPTION(jmenoRozl)                          KEY(UPPER(cJmenoRozl))
+  TYPE(INDEX) NAME(ApohybAK05)    FNAME(APOHYBAK) CAPTION(Doklad)                             KEY(nDoklad)
+  TYPE(INDEX) NAME(ApohybAK06)    FNAME(APOHYBAK) CAPTION(rodÈísAkc)                          KEY(crodCisAkc)
+  TYPE(INDEX) NAME(ApohybAK07)    FNAME(APOHYBAK) CAPTION(zkrTypAkc)                          KEY(cZkrTypAkc)
+  TYPE(INDEX) NAME(ApohybAK08)    FNAME(APOHYBAK) CAPTION(zkrTypAr)                           KEY(cZkrTypAr)
+  TYPE(INDEX) NAME(ApohybAK09)    FNAME(APOHYBAK) CAPTION(zkrTypPoh)                          KEY(cZkrTypPoh)
+  TYPE(INDEX) NAME(ApohybAK10)    FNAME(APOHYBAK) CAPTION(serCISakc)                          KEY(cSerCisAkc)
+  TYPE(INDEX) NAME(nAKCIONAR)     FNAME(APOHYBAK) CAPTION(sID_AKCIONAR)                       KEY(nAKCIONAR)
+  TYPE(INDEX) NAME(nAKCIONARp)    FNAME(APOHYBAK) CAPTION(sID_AKCIONARp)                      KEY(nAKCIONARp)
+  TYPE(INDEX) NAME(nAKCIE)        FNAME(APOHYBAK) CAPTION(sID_AKCIE)                          KEY(nAKCIE)
+  TYPE(INDEX) NAME(ID)            FNAME(APOHYBAK) CAPTION()                                   KEY(sID) UNIQUE
+
+*
+TYPE(FILE) NAME(AVALHRHD) DESC(Valné hromady  ...) TASK(AKC)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(nPorValHro)  DESC(Poøadí valné hromady)           CAPTION(poøValHr)        FTYPE(n) FLEN( 6) DEC( 0) 
+  TYPE(FIELD) NAME(ctypVAlhro)  DESC(Typ valné hromady)              CAPTION(typVALhr)        FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(ddatKonani)  DESC(Datum konání valné hromady)     CAPTION(datKonValHr)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ccasKonani)  DESC(Èas konání valné hromady)       CAPTION(casKonValHr)     FTYPE(c) FLEN( 5) DEC( 0) RELATETO(C_CAS) RELATETYPE(2) PICTURE(@N 99:99)
+  TYPE(FIELD) NAME(cjmenoJedn)  DESC(Jméno jednatele)                CAPTION(jmenoJedn)       FTYPE(c) FLEN(50) DEC( 0)
+*
+* místo konání
+  TYPE(FIELD) NAME(cUlice)      DESC(Ulice)                          CAPTION(BydlUlice)       FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)      DESC(Místo)                          CAPTION(BydlMisto)       FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)        DESC(Psè)                            CAPTION(BydlPsc)         FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTelMobil)   DESC(Telefon - mobil)                CAPTION(TelMobil)        FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelefon)    DESC(Telefon)                        CAPTION(Telefon)         FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cEmail)      DESC(e-mailová adresa)               CAPTION(e-mail)          FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(mporadHro)   DESC(Poøad a návrh usnesení)         CAPTION(poøUsnes)        FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nPocetHlas)  DESC(Poèet hlasù)                    CAPTION(PoèetHlasù)      FTYPE(n) FLEN( 8) DEC( 2)
+  TYPE(FIELD) NAME(nPocetAkci)  DESC(Poèet akcií)                    CAPTION(PoèetAkcií)      FTYPE(n) FLEN( 8) DEC( 2)
+  TYPE(FIELD) NAME(nHodnotaAk)  DESC(Nominální hodnota akcií)        CAPTION(NomHodnAkc)      FTYPE(n) FLEN(13) DEC( 2)
+*
+  TYPE(FIELD) NAME(cPoznamka1)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka2)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Avakhrhd01)    FNAME(AVALHRHD) CAPTION(poøValHro)                          KEY(nPorValHro)
+  TYPE(INDEX) NAME(Avakhrhd02)    FNAME(AVALHRHD) CAPTION(datKonValHr)                        KEY(if(empty(dDatKonani) ,'        ' , DTOS(dDatKonani)))
+  TYPE(INDEX) NAME(ID)            FNAME(AVALHRHD) CAPTION()                                   KEY(sID) UNIQUE  
+
+*  
+TYPE(FILE) NAME(AVALHRIT) DESC(Valné hromady položky ...) TASK(AKC)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(nPorValHro)  DESC(Poøadí valné hromady)           CAPTION(poøValHr)        FTYPE(n) FLEN( 6) DEC( 0) 
+  TYPE(FIELD) NAME(dDatKonani)  DESC(Datum konání valné hromady)     CAPTION(datKonValHr)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoAkci)  DESC(Jméno akcionáøe)                CAPTION(JmenoAk)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypAr)   DESC(Zkratka typu akcionáøe)         CAPTION(ZkrTypAk)        FTYPE(C) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisAkc)  DESC(Rodné èíslo akcionáøe)          CAPTION(RodCisAk)        FTYPE(C) FLEN(13) DEC( 0)  
+*  
+  TYPE(FIELD) NAME(nPocetHlas)  DESC(Poèet hlasù)                    CAPTION(PoèetHlasù)      FTYPE(n) FLEN( 8) DEC( 2)
+  TYPE(FIELD) NAME(nPocetAkci)  DESC(Poèet akcií)                    CAPTION(PoèetAkcií)      FTYPE(n) FLEN( 8) DEC( 2)
+  TYPE(FIELD) NAME(nHodnotaAk)  DESC(Nominální hodnota akcií)        CAPTION(NomHodnAkc)      FTYPE(n) FLEN(13) DEC( 2)
+*
+  TYPE(FIELD) NAME(cPoznamka)   DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nAKCIONAR)   DESC(Vazba na sID akcionar)          CAPTION()                FTYPE(n) FLEN(10) DEC( 0)  
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Avakhrit01)    FNAME(AVALHRIT) CAPTION(poøValHro)                          KEY(nPorValHro)
+  TYPE(INDEX) NAME(Avakhitd02)    FNAME(AVALHRIT) CAPTION(datKonValHr)                        KEY(if(empty(dDatKonani) ,'        ' , DTOS(dDatKonani)))
+  TYPE(INDEX) NAME(AKCIONAR)      FNAME(AVALHRIT) CAPTION(sID_AKCIONAR)                       KEY(nAKCIONAR) 
+  TYPE(INDEX) NAME(ID)            FNAME(AVALHRIT) CAPTION()                                   KEY(sID) UNIQUE
+  
+*  
+TYPE(FILE) NAME(AZMENYAK) DESC(Zmìny u akcií ...) TASK(AKC)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(cSerCisAkc)   DESC(Sériové èíslo akcie)           CAPTION(SerÈisAkc)       FTYPE(C) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cpopisZmen)   DESC(Popis zmìny akcie)             CAPTION(popisZmeny)      FTYPE(C) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cfieldPole)   DESC(Pole zmìny akcie)              CAPTION(poleZmìny)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cbrowsePol)   DESC(Název mìnìného údaje)          CAPTION(názevÚdaje)      FTYPE(C) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(coldValue)    DESC(Pùvodní hodnota údaje)         CAPTION(pùvHodnÚdaje)    FTYPE(C) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cnewValue)    DESC(Nová hodnota údaje)            CAPTION(newHodnÚdaje)    FTYPE(C) FLEN(30) DEC( 0)  
+*
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nAKCIE)      DESC(Vazba na sID akcie)             CAPTION()                FTYPE(n) FLEN(10) DEC( 0)  
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Azmenyak01)    FNAME(AZMENYAK) CAPTION(serÈísAkcie)                        KEY(upper(cserCisAkc))
+  TYPE(INDEX) NAME(Azmenyak02)    FNAME(AZMENYAK) CAPTION(datZmìny)                           KEY(if(empty(dzmenaZazn) ,'        ' , DTOS(dzmenaZazn)))
+  TYPE(INDEX) NAME(AKCIE)         FNAME(AZMENYAK) CAPTION(sID_AKCIONAR)                       KEY(nAKCIE) 
+  TYPE(INDEX) NAME(ID)            FNAME(AZMENYAK) CAPTION()                                   KEY(sID) UNIQUE
+  
+*  
+TYPE(FILE) NAME(AZMENYAR) DESC(Zmìny u akcionáøù ...) TASK(AKC)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(cRodCisAkc)   DESC(Rodné èíslo akcionáøe)         CAPTION(RodCisAk)        FTYPE(C) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cpopisZmen)   DESC(Popis zmìny akcie)             CAPTION(popisZmeny)      FTYPE(C) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cfieldPole)   DESC(Pole zmìny akcie)              CAPTION(poleZmìny)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cbrowsePol)   DESC(Název mìnìného údaje)          CAPTION(názevÚdaje)      FTYPE(C) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(coldValue)    DESC(Pùvodní hodnota údaje)         CAPTION(pùvHodnÚdaje)    FTYPE(C) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cnewValue)    DESC(Nová hodnota údaje)            CAPTION(newHodnÚdaje)    FTYPE(C) FLEN(30) DEC( 0)  
+*
+  TYPE(FIELD) NAME(tvznikzazn)  DESC(Vznik záznamu)                  CAPTION(VznikZázn)       FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatZmìny)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nAKCIONAR)   DESC(Vazba na sID akcionar)          CAPTION()                FTYPE(n) FLEN(10) DEC( 0)  
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Azmenyar01)    FNAME(AZMENYAR) CAPTION(serÈísAkcie)                        KEY(crodCisAkc)
+  TYPE(INDEX) NAME(Azmenyar02)    FNAME(AZMENYAR) CAPTION(datZmìny)                           KEY(if(empty(dzmenaZazn) ,'        ' , DTOS(dzmenaZazn)))
+  TYPE(INDEX) NAME(AKCIONAR)      FNAME(AZMENYAR) CAPTION(sID_AKCIONAR)                       KEY(nAKCIONAR) 
+  TYPE(INDEX) NAME(ID)            FNAME(AZMENYAR) CAPTION()                                   KEY(sID) UNIQUE  
+
+
+* TMP
+* FILE DEFINITION **************************************************
+* AKC_akcionar_IN
+*
+* AKCIONAR
+TYPE(FILE) NAME(AKCIONARw) DESC(Akcionáøi (w)) LIKE(AKCIONAR) NOCHECK() TASK(AKC)
+  TYPE(FIELD) NAME(nZusobNapo)  DESC(c_typakc) CAPTION() FTYPE(N) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(lZapocDoVH)  DESC(c_typakc) CAPTION() FTYPE(L) FLEN( 1) DEC(0) 
+  TYPE(FIELD) NAME(nhodnAK_or)  DESC()         CAPTION() FTYPE(n) FLEN(13) DEC(2)
+  TYPE(FIELD) NAME(nhodnVH_or)  DESC()         CAPTION() FTYPE(n) FLEN(13) DEC(2)
+  TYPE(FIELD) NAME(_nrecor)     DESC()         CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)     DESC()         CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+
+*
+* AKCIE
+TYPE(FILE) NAME(AKCIEw) DESC(Akcie (w))        LIKE(AKCIE)    NOCHECK() TASK(AKC)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nzmHODakc)  DESC(Zmìna HODakc +/-) CAPTION() FTYPE(n) FLEN(13) DEC(2)
+  TYPE(FIELD) NAME(_nrecor)    DESC()                 CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC()                 CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(AKCIEW_1) FNAME(AKCIEW) CAPTION() KEY(sID)       FOR( (_delRec <> '9' .or. _delRec = NULL)  )
+  TYPE(INDEX) NAME(AKCIEW_2) FNAME(AKCIEW) CAPTION() KEY(nAKCIONAR) FOR( (_delRec <> '9' .or. _delRec = NULL)  )
+
+*
+* AKC_akcie_SCR
+TYPE(FILE) NAME(AKCIEsw) DESC(Akcie (sw))        LIKE(AKCIE)    NOCHECK() TASK(AKC)
+  TYPE(FIELD) NAME(nAKCIE)   DESC(Vazba na sID akcie)              CAPTION() FTYPE(n) FLEN(10) DEC(0)  
+  TYPE(FIELD) NAME(npocAkci) DESC(Poèet akcionáøù vlastnící akcii) CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(maofAkci) DESC(Pro AOF na sID akcionáøù)        CAPTION() FTYPE(m) FLEN(10) DEC(0)  
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(AKCIEsw01)    FNAME(AKCIEsw) CAPTION(zkrTypAkc+serCisAkc)                      KEY(upper(cZkrTypAkc)+upper(cSerCisAkc))
+  TYPE(INDEX) NAME(AKCIEsw02)    FNAME(AKCIEsw) CAPTION(serCisAkc)                                KEY(upper(cSerCisAkc))
+
+*
+** AKC_akcie_IN.FRM
+*******************************************************************************
+TYPE(FILE) NAME(APOHYBAKw) DESC(Pohyb akcií (sw))        LIKE(APOHYBAK)    NOCHECK() TASK(AKC)
+  TYPE(FIELD) NAME(nPOH_SIGn) DESC() CAPTION() FTYPE(n) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(_nrecOr)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delRec)   DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(_nrecAr)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Apohybak01)    FNAME(APOHYBAKw) CAPTION(rodÈísAkc)                         KEY(crodCisAkc)
+  TYPE(INDEX) NAME(Apohybak02)    FNAME(APOHYBAKw) CAPTION(CelJmOsoby)                        KEY(UPPER(cjmenoAkci))  
+
+TYPE(FILE) NAME(AKCIONAR_s) DESC(Seznam akcionáøù pro SEL dialog  (w))   LIKE(AKCIONAR) NOCHECK() TASK(FIN)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Akcionar01)    FNAME(AKCIONAR) CAPTION(rodÈísAkc)                         KEY(crodCisAkc)
+  TYPE(INDEX) NAME(Akcionar02)    FNAME(AKCIONAR) CAPTION(CelJmOsoby)                        KEY(UPPER(cOsoba))  
+
+*
+*
+* AKC_avalhrhd_IN.FRM
+*******************************************************************************
+TYPE(FILE) NAME(AVALHRHDw)  DESC(Avalhrhd (w))        LIKE(AVALHRHD)    NOCHECK() TASK(AKC)
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+
+TYPE(FILE) NAME(AKCIONARsw) DESC(Akcionáøi (sw))      LIKE(AVALHRIT)    NOCHECK() TASK(AKC)
+  TYPE(FIELD) NAME(cUlice)     DESC(Bydlištì - Ulice)                CAPTION(BydlUlice)      FTYPE(c) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Bydlištì - Místo)                CAPTION(BydlMisto)      FTYPE(c) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Bydlištì - Psè)                  CAPTION(BydlPsc)        FTYPE(c) FLEN( 6) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC()                                CAPTION()               FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Akcionar01)    FNAME(AKCIONARsw) CAPTION(rodÈísAkc)                         KEY(crodCisAkc)        FOR( (_delRec <> '9' .or. _delRec = NULL))
+  TYPE(INDEX) NAME(Akcionar02)    FNAME(AKCIONARsw) CAPTION(jménoAkcionáøe)                    KEY(UPPER(cJmenoAkci)) FOR( (_delRec <> '9' .or. _delRec = NULL))   
+  TYPE(INDEX) NAME(AKCIONAR)      FNAME(AKCIONARsw) CAPTION(sID_AKCIONAR)                      KEY(nAKCIONAR) INSORT(N)  
+
+
+TYPE(FILE) NAME(AVALHRITw)  DESC(Avalhrit (w))        LIKE(AVALHRIT)    NOCHECK() TASK(AKC)
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(Avalhrit01)    FNAME(AVALHRITw) CAPTION(rodÈísAkc)                       KEY(crodCisAkc)
+  TYPE(INDEX) NAME(Avalhrit02)    FNAME(AVALHRITw) CAPTION(jménoAkcionáøe)                  KEY(UPPER(cJmenoAkci))
+  TYPE(INDEX) NAME(AKCIONAR)      FNAME(AVALHRITw) CAPTION(sID_AKCIONAR)                    KEY(nAKCIONAR) INSORT(N)  

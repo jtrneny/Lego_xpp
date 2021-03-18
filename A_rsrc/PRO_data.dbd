@@ -1,0 +1,1379 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_ROATPR) DESC(Èíselník rozlišovacích atributù prodej ...) TASK(PRO)  DISTRIB(C_ROATPR01)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(CROZATRPRO)  DESC(Rozliš.atribut)              CAPTION(AtribRozl)          FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(CNAZROZATE)  DESC(Název rozlišov.atributu)     CAPTION(NázRozlAtr)         FTYPE(c) FLEN(50) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYOD)   DESC(Platnost parametru OD)       CAPTION(Platnost_OD)        FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(DPLATNYDO)   DESC(Platnost parametru DO)       CAPTION(Platnost_DO)        FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)           CAPTION(TypDistrib)         FTYPE(n) FLEN( 1) DEC(0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)          FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatZmìny)           FTYPE(d) FLEN( 8) DEC(0)
+  TYPE(FIELD) NAME(mPOZNAMKA)   DESC()                            CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()                   FTYPE(m) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()                   FTYPE(s) FLEN( 0) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_ROATPR01) FNAME(C_ROATPR) CAPTION(Rozlišovací atribut)         KEY(UPPER(CROZATRPRO))  DUPKEYS(N)
+  TYPE(INDEX) NAME(C_ROATPR02) FNAME(C_ROATPR) CAPTION(Název rozlišov.atributu)     KEY(UPPER(CNAZROZATE))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_ROATPR) CAPTION(DistribRec)                  KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_ROATPR) CAPTION(ID)                          KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(CROZATRPRO:Rozlišovací atribut,CNAZROZATE:Název rozlišovacího atributu) ORDER(1) RETURN(CROZATRPRO)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRODEJ) DESC(Èíselník prodejcù)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkrProdej)  DESC(Zkratka prodejce)            CAPTION(ZkrProdej)     FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cNazProdej)  DESC(Jméno prodejce)              CAPTION(Prodejce)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                 CAPTION(ÈísOsoby)       FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                 CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRODEJ1)    FNAME(C_PRODEJ) CAPTION(ZkrProdej ) KEY(UPPER(cZkrProdej))
+  TYPE(INDEX) NAME(PRODEJ2)    FNAME(C_PRODEJ) CAPTION(Prodejce  ) KEY(UPPER(cNazProdej))
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRODEJ) CAPTION()           KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(CZKRPRODEJ:Zkratka prodejce,cNAZPRODEJ:Jméno prodejce) ORDER(1) RETURN(CZKRPRODEJ)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TRASY) DESC(Èíselník rozvozových tras)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(ccistrasy)   DESC(èíslo trasy)                 CAPTION(cisTrasy)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cnaztrasy)   DESC(Název trasy)                 CAPTION(nazTrasy)      FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TRASY1)     FNAME(C_TRASY) CAPTION(cisTrasy) KEY(UPPER(ccistrasy))
+  TYPE(INDEX) NAME(TRASY2)     FNAME(C_TRASY) CAPTION(nazTrasy) KEY(UPPER(cnaztrasy))
+  TYPE(INDEX) NAME(ID)         FNAME(C_TRASY) CAPTION()         KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(CCISTRASY:Èíslo trasy,CNAZTRASY:Název trasy) ORDER(1) RETURN(CCISTRASY)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PROCENHD) DESC(Prodejní ceníky - hlavièky)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypProCen)  DESC(Typ prodejního ceníku)       CAPTION(ÈísloProCen)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisProCen)  DESC(Èíslo prodejního ceníku)     CAPTION(ÈísloProCen)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                 CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)      DESC(Název firmy)                 CAPTION(NázFirmy)       FTYPE(c) FLEN(100) DEC(0)
+  TYPE(FIELD) NAME(cOznProCen)  DESC(Oznaèení ceníku)             CAPTION(OznaèProCen)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazProCen)  DESC(Název prodejního ceníku)     CAPTION(NázevProCen)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(lHlaProCen)  DESC(Hlavní prodejní ceník)       CAPTION(HlaProCen)     FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lProCenZbo)  DESC(Prodej jen ceníkové zboží)   CAPTION(ProdCenZbo)    FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cZkratMENY)  DESC(ZkrMÌNy)                     CAPTION(ZkratkaMìn)    FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_MENY)   RELATETYPE(2)
+  TYPE(FIELD) NAME(cZKRTYPuhr)  DESC(Zkratka typu úhrady)         CAPTION(TypUhrady)     FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nTypHodn)    DESC(Typ hodnoty)                 CAPTION(TypHodnoty)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dPlatnyOD)   DESC(Platnost OD)                 CAPTION(PlatnýOd)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dPlatnyDO)   DESC(Platnost OD)                 CAPTION(PlatnýOd)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()              FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PROCENHD01) FNAME(PROCENHD)    CAPTION(ÈísCeníku)            KEY(nCisProCen)
+  TYPE(INDEX) NAME(PROCENHD02) FNAME(PROCENHD)    CAPTION(Typ+ÈísloCeníku)      KEY(strzero(nTypProCen,5)+strzero(nCisProCen,10))
+  TYPE(INDEX) NAME(PROCENHD03) FNAME(PROCENHD)    CAPTION(OznaèeníCeníku)       KEY(UPPER(coznprocen))
+  TYPE(INDEX) NAME(PROCENHD04) FNAME(PROCENHD)    CAPTION(ÈísFirmy)             KEY(nCisFirmy)
+  TYPE(INDEX) NAME(PROCENHD05) FNAME(PROCENHD)    CAPTION(NázFirmy  )           KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(PROCENHD06) FNAME(PROCENHD)    CAPTION(TypFirmaMìnaOd)       KEY(strzero(nTypProCen,5)+strzero(nCisFirmy,5)+upper(czkratmeny)+if(empty(dPlatnyOD) ,'        ' , DTOS(dPlatnyOD))  )
+  TYPE(INDEX) NAME(PROCENHD07) FNAME(PROCENHD)    CAPTION(NázProdCeníku)        KEY(UPPER(cNazProCen))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(PROCENHD)    CAPTION()                     KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(PROCENHD)    CAPTION()                     KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PROCENIT) DESC(Prodejní ceníky - položky)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypProCen)  DESC(Typ prodejního ceníku)       CAPTION(ÈísloProCen)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisProCen)  DESC(Èíslo prodejního ceníku)     CAPTION(ÈísloProCen)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPolProCen)  DESC(Položka prodejního ceníku)   CAPTION(PoložProCen)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                 CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cOznProCen)  DESC(Oznaèení ceníku)             CAPTION(OznaèProCen)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKat)   DESC(Kategorie zboží)             CAPTION(KatZboží)      FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KATZBO) RELATETYPE(2)
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Sklad)                       CAPTION(Sklad)         FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)     DESC(Skladová položka)            CAPTION(SklPoložka)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(CNAZZBO)     DESC(Název zboží)                 CAPTION(Název zboží)   FTYPE(C) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cZKRTYPuhr)  DESC(Zkratka typu úhrady)         CAPTION(TypUhrady)     FTYPE(c) FLEN( 5) DEC( 0) RELATETO(C_TYPUHR) RELATETYPE(2)
+  TYPE(FIELD) NAME(nTypHodn)    DESC(Typ hodnoty)                 CAPTION(TypHodnoty)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()              FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PROCENIT01) FNAME(PROCENIT)    CAPTION(TypCeníku)      KEY(nTypProCen)
+  TYPE(INDEX) NAME(PROCENIT02) FNAME(PROCENIT)    CAPTION(ÈísCeníku)      KEY(nCisProCen)
+  TYPE(INDEX) NAME(PROCENIT03) FNAME(PROCENIT)    CAPTION(TypÈísPol)      KEY(strzero(nTypProCen,5)+strzero(nCisProCen,10)+strzero(nPolProCen,6))
+  TYPE(INDEX) NAME(PROCENIT04) FNAME(PROCENIT)    CAPTION(SklPoložka)     KEY(UPPER(cSklPol))
+  TYPE(INDEX) NAME(PROCENIT05) FNAME(PROCENIT)    CAPTION(Kategorie)      KEY(nZboziKat)
+  TYPE(INDEX) NAME(PROCENIT06) FNAME(PROCENIT)    CAPTION(NázevZboží)     KEY(UPPER(cNazZbo))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(PROCENIT)    CAPTION()               KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(PROCENIT)    CAPTION()               KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PROCENHO) DESC(Prodejní ceníky - hodnoty)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypProCen)  DESC(Typ prodejního ceníku)       CAPTION(ÈísloProCen)     FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisProCen)  DESC(Èíslo prodejního ceníku)     CAPTION(ÈísloProCen)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPolProCen)  DESC(Položka prodejního ceníku)   CAPTION(PoložProCen)     FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(lHlaProCen)  DESC(Hlavní prodejní ceník)       CAPTION(HlaProCen)       FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                 CAPTION(ÈísloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKat)   DESC(Kategorie zboží)             CAPTION(KatZboží)        FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KATZBO) RELATETYPE(2)
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Sklad)                       CAPTION(Sklad)           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)     DESC(Skladová položka)            CAPTION(SklPoložka)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(NCENAPZBO)   DESC(Prodejní cena záklBez danì)  CAPTION(PC záklBez danì) FTYPE(N) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(cZKRTYPuhr)  DESC(Zkratka typu úhrady)         CAPTION(TypUhrady)       FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratMENY)  DESC(ZkrMÌNy)                     CAPTION(ZkratkaMìn)      FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_MENY)   RELATETYPE(1)
+  TYPE(FIELD) NAME(nTypHodn)    DESC(Typ hodnoty)                 CAPTION(TypHodnoty)      FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nHodnota)    DESC(Hodnota)                     CAPTION(Hodnota)         FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nProcento)   DESC(Procento)                    CAPTION(Procento)        FTYPE(n) FLEN( 9) DEC( 4)
+  TYPE(FIELD) NAME(dPlatnyOD)   DESC(Platnost OD)                 CAPTION(PlatnýOd)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dPlatnyDO)   DESC(Platnost OD)                 CAPTION(PlatnýOd)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)        FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()                FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PROCENHO01) FNAME(PROCENHO)    CAPTION(TypCeníku)      KEY(nTypProCen)
+  TYPE(INDEX) NAME(PROCENHO02) FNAME(PROCENHO)    CAPTION(ÈísCeníku)      KEY(nCisProCen)
+  TYPE(INDEX) NAME(PROCENHO03) FNAME(PROCENHO)    CAPTION(PolCeníku)      KEY(nPolProCen)
+  TYPE(INDEX) NAME(PROCENHO04) FNAME(PROCENHO)    CAPTION(TypFirSklPol)   KEY(strzero(nTypProCen,5)+strzero(nCisFirmy,5)+upper(cCisSklad)+upper(csklpol))
+  TYPE(INDEX) NAME(PROCENHO05) FNAME(PROCENHO)    CAPTION(TypFirKateg)    KEY(strzero(nTypProCen,5)+strzero(nCisFirmy,5)+strzero(nZboziKat,4))
+  TYPE(INDEX) NAME(PROCENHO06) FNAME(PROCENHO)    CAPTION(TypSklPol)      KEY(strzero(nTypProCen,5)+upper(cCisSklad)+upper(csklpol))
+  TYPE(INDEX) NAME(PROCENHO07) FNAME(PROCENHO)    CAPTION(TypKateg)       KEY(strzero(nTypProCen,5)+strzero(nZboziKat,4))
+  TYPE(INDEX) NAME(PROCENHO08) FNAME(PROCENHO)    CAPTION(TypCisPol)      KEY(strzero(nTypProCen,5)+strzero(nCisProCen,10)+strzero(nPolProCen,6))
+  TYPE(INDEX) NAME(PROCENHO09) FNAME(PROCENHO)    CAPTION(SkladSklPol)    KEY(upper(cCisSklad)+upper(csklpol))
+  TYPE(INDEX) NAME(PROCENHO10) FNAME(PROCENHO)    CAPTION(Kategorie)      KEY(nZboziKat)
+  TYPE(INDEX) NAME(PROCENHO11) FNAME(PROCENHO)    CAPTION(TypFirKat)      KEY(strzero(nTypProCen,5)+strzero(nCisFirmy,5)+strzero(nZboziKat,4))
+  TYPE(INDEX) NAME(PROCENHO12) FNAME(PROCENHO)    CAPTION(Firma)          KEY(ncisFirmy)
+  TYPE(INDEX) NAME(PROCENHO13) FNAME(PROCENHO)    CAPTION(Sklad)          KEY(ccisSklad) 
+  TYPE(INDEX) NAME(PROCENHO14) FNAME(PROCENHO)    CAPTION(sklPol)         KEY(csklPol)
+  TYPE(INDEX) NAME(PROCENHO15) FNAME(PROCENHO)    CAPTION(platnyOd)       KEY(if(empty(dplatnyOd) ,'        ' , DTOS(dplatnyOd)))
+  TYPE(INDEX) NAME(PROCENHO16) FNAME(PROCENHO)    CAPTION(zkrTypUhr)      KEY(upper(czkrTypUhr))
+  TYPE(INDEX) NAME(PROCENHO17) FNAME(PROCENHO)    CAPTION(platnyOd-desc)  KEY(if(empty(dplatnyOd) ,'        ' , DTOS(dplatnyOd)))  DESCEND(Y)
+  TYPE(INDEX) NAME(PROCENHO18) FNAME(PROCENHO)    CAPTION(ÈísFirDatOd)    KEY(STRZERO(nCisFirmy,5) + if(empty(dplatnyOd) ,'        ' , DTOS(dplatnyOd)) )  DESCEND(Y)
+  TYPE(INDEX) NAME(PROCENHO19) FNAME(PROCENHO)    CAPTION(platnyDo)       KEY(if(empty(dplatnyDo) ,'        ' , DTOS(dplatnyDo)))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(PROCENHO)    CAPTION()               KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(PROCENHO)    CAPTION()               KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PROCENFI) DESC(Prodejní ceníky - vazba na firmy)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypProCen)  DESC(Typ prodejního ceníku)       CAPTION(ÈísloProCen)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisProCen)  DESC(Èíslo prodejního ceníku)     CAPTION(ÈísloProCen)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                 CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()              FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PROCENHFI1) FNAME(PROCENFI)    CAPTION(ÈísCeníku)      KEY(strzero(nTypProCen,5)+strzero(nCisProCen,10)+strzero(ncisfirmy,5))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(PROCENFI)    CAPTION()               KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(PROCENFI)    CAPTION()               KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(AKTPROCH) DESC(Aktuální prodejní ceny k firmì hlavièky )  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈísloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Sklad)                          CAPTION(Sklad)           FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKLADY) RELATETYPE(1)
+  TYPE(FIELD) NAME(dDatum)      DESC(K datumu)                       CAPTION(K datumu)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ddatZprac)   DESC(datumu pøepoètu)                CAPTION(datZprac)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)        FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                               CAPTION()                FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(AKTPROCH01) FNAME(AKTPROCH)    CAPTION(ÈísFirmy)                   KEY(ncisfirmy)
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(AKTPROCH)    CAPTION()                           KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(AKTPROCH)    CAPTION()                           KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(AKTPROCI) DESC(Aktuální prodejní ceny k firmì položky)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈísloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Sklad)                          CAPTION(Sklad)           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)     DESC(Skladová položka)               CAPTION(SklPoložka)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKat)   DESC(Kategorie zboží)                CAPTION(KatZboží)        FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KATZBO) RELATETYPE(2)
+  TYPE(FIELD) NAME(CNAZZBO)     DESC(Název zboží)                    CAPTION(Název zboží)     FTYPE(C) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(CZKRATJEDN)  DESC(Zkratka mìrné jednotky)         CAPTION(Zkratka MJ)      FTYPE(C) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nProcDPH)    DESC(Procento DPH)                   CAPTION(ProcDPH)         FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nProcento)   DESC(Procento)                       CAPTION(Procento)        FTYPE(n) FLEN( 9) DEC( 4)
+  TYPE(FIELD) NAME(NCENAPZBO)   DESC(Prodejní cena záklBez danì)     CAPTION(PC záklBez danì) FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCeJPrZBZ)   DESC(Cena jednot.ProdZ bez DPH zahr) CAPTION(CeJPrZBZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCeJPrKBZ)   DESC(Cena jednot.ProdK bez DPH zahr) CAPTION(CeJPrKBZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCeJPrKDZ)   DESC(Cena jednot.ProdK s DPH   zahr) CAPTION(CeJPrKDZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCeJPrZDZ)   DESC(Cena jednot.ProdZ s DPH   zahr) CAPTION(CeJPrZDZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)        FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                               CAPTION()                FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(AKTPROCI01) FNAME(AKTPROCI)    CAPTION(ÈísFirmy)                   KEY(ncisfirmy)
+  TYPE(INDEX) NAME(AKTPROCI02) FNAME(AKTPROCI)    CAPTION(Fir+Sklad+ÈísSklPol)        KEY(StrZero(ncisfirmy,5)+Upper(cCisSklad) +Upper(cSklPol))
+  TYPE(INDEX) NAME(AKTPROCI03) FNAME(AKTPROCI)    CAPTION(Fir+ÈísSklPol+Sklad)        KEY(StrZero(ncisfirmy,5) +Upper(cSklPol)+Upper(cCisSklad))
+  TYPE(INDEX) NAME(AKTPROCI04) FNAME(AKTPROCI)    CAPTION(Sklad+ÈísSklPol+Fir)        KEY(Upper(cCisSklad) +Upper(cSklPol)+StrZero(ncisfirmy,5))
+  TYPE(INDEX) NAME(AKTPROCI05) FNAME(AKTPROCI)    CAPTION(ÈísSklPol)                  KEY(Upper(cSklPol))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(AKTPROCI)    CAPTION()                           KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(AKTPROCI)    CAPTION()                           KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(ZALISTZB) DESC(Zalistované zboží - k firmì)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                 CAPTION(ÈísloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Sklad)                       CAPTION(Sklad)           FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKLADY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cSklPol)     DESC(Skladová položka)            CAPTION(SklPoložka)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKat)   DESC(Kategorie zboží)             CAPTION(KatZbo)          FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KATZBO) RELATETYPE(2)
+  TYPE(FIELD) NAME(CNAZZBO)     DESC(Název zboží)                 CAPTION(NázZbo)          FTYPE(C) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(CNAZZBOFIR)  DESC(Název zboží k firmì)         CAPTION(NázZboFir)       FTYPE(C) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(dDatumOd)    DESC(Datum OD)                    CAPTION(DatumOd)         FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatumDo)    DESC(Datum DO)                    CAPTION(DatumDo)         FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)        FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()                FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()                FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(nCENZBOZ)    DESC(Vazba na sID cenzboz)        CAPTION()                FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()                FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(ZALISTZB01) FNAME(ZALISTZB)    CAPTION(ÈísCeníku)      KEY(ncisfirmy)
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(ZALISTZB)    CAPTION()               KEY(cDBID_imp)
+  TYPE(INDEX) NAME(CENZBOZ)    FNAME(ZALISTZB)    CAPTION()               KEY(nCENZBOZ)
+  TYPE(INDEX) NAME(ID)         FNAME(ZALISTZB)    CAPTION()               KEY(sID) UNIQUE
+* RELATION DEFINE ***************************************************
+  TYPE(RELATION) TO(FIRMY) KEY(nCisFirmy)         TAG(1)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(NABVYSHD) DESC(Nabídky vystavené _ HLA)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD) DESC(Typ dokladu)                 CAPTION(TypDokl)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU) DESC(Typ pohybu)                  CAPTION(TypPoh)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)    DESC(Èíslo dokladu)               CAPTION(ÈísloDokl)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Firma èíslo)                 CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název odbìratele)            CAPTION(NázevOdbìr)    FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cNazev2)    DESC(Název2 odbìratele)           CAPTION(Název2Odbì)    FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nIco)       DESC(IÈO odbìratele)              CAPTION(IÈOOdbì)       FTYPE(n) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cDic)       DESC(DIÈ odbìratele)              CAPTION(DIÈOdbì)       FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Ulice odbìratele)            CAPTION(UliceOdbì)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cCisPopis)  DESC(ÈísPopis odbìratele)         CAPTION(AdrÈísPopi)     FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cCisOrien)  DESC(ÈísOrientaèní odbìratele)    CAPTION(AdrÈísOrie)     FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCisla) DESC(Ulice+èísla odbìratele)      CAPTION(AdrUlÈisl)      FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObec)      DESC(Obec odbìratele)             CAPTION(AdrObec)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cSidlo)     DESC(Místo odbìratele)            CAPTION(MístoOdbì)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(PSè odbìratele)              CAPTION(PSÈOdbì)       FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cUcet)      DESC(Èíslo úètu odbìratele)       CAPTION(ÈíslÚètuOd)    FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPrijemce1) DESC(Prijemce 1)                  CAPTION(Pøíjemce1)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cPrijemce2) DESC(Prijemce 2)                  CAPTION(Pøíjemce2)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCinnost)   DESC(Èinnost firmy)               CAPTION(CinnFirmy)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Zkratka státu)               CAPTION(ZkratStát)     FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(1)
+*
+  TYPE(FIELD) NAME(nCisOdes)   DESC(Èíslo nabídky)               CAPTION(ÈísloNabid)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazOdes)   DESC(Interní èíslo nabídky)       CAPTION(IntCisNab)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(ccisNabOd)  DESC(Èíslo nabídky_odbìratel)     CAPTION(èíslo_nabOdb)  FTYPE(c) FLEN(15) DEC( 0)
+*
+  TYPE(FIELD) NAME(dDatOdes)   DESC(Datum nabídky)               CAPTION(DatNabidky)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatDoOdb)  DESC(Datum možného dodání)        CAPTION(DatDodNabidky) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPlat)   DESC(Datum platnosti nabídky)     CAPTION(DatPlatNabDo)  FTYPE(d) FLEN( 8) DEC( 0)
+
+  TYPE(FIELD) NAME(cCasTermin) DESC(Èasový termín dodání)        CAPTION(ZkrÈasTermDod) FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_CASTER) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrTypUhr) DESC(Zpùsob platby)               CAPTION(ZpPlatby)      FTYPE(c) FLEN( 5) DEC( 0) RELATETO(C_TYPUHR) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrZpuDop) DESC(Zpùsob dopravy)              CAPTION(Zpdopravy)     FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_ZPUDOP) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratMENy) DESC(Zkratka zákl. mìny)          CAPTION(ZkratZákMì)    FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratMENz) DESC(Zkratka mìny dokladu)        CAPTION(ZkratDokMì)    FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKurZahMen) DESC(Kurz zahr. mìny)             CAPTION(KurzZahMìn)    FTYPE(n) FLEN(13) DEC( 8)
+  TYPE(FIELD) NAME(nMnozPrep)  DESC(Množství pøepoètu)           CAPTION(MnožPøepoè)    FTYPE(n) FLEN( 7) DEC( 0)
+*
+  TYPE(FIELD) NAME(nOsvOdDan)  DESC(Èástka osv.od dan³)          CAPTION(OsvOdDanì)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nPROCdan_1) DESC(Procento danì snížené)       CAPTION(PROCdan1)      FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nZaklDan_1) DESC(Základ danì 1)               CAPTION(ZáklDaò1)      FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSazDan_1)  DESC(Sazba danì 1)                CAPTION(SazbaDaò1)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nPROCdan_2) DESC(Procento danì základní)      CAPTION(PROCdan2)      FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nZaklDan_2) DESC(Základ danì 2)               CAPTION(ZáklDaò2)      FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSazDan_2)  DESC(Sazba danì 2)                CAPTION(SazbaDaò2)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nPROCdan_3) DESC(Procento danì snížené 3)     CAPTION(PROCdan3)      FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nZaklDan_3) DESC(Základ danì 3)               CAPTION(ZáklDaò3)      FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nSazDan_3)  DESC(Sazba danì 3)                CAPTION(SazbaDaò3)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenZakCel) DESC(Cena celkem s DPH)           CAPTION(CelkemSDPH)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenDanCel) DESC(Cena celkem bez Dph)         CAPTION(CelkemBDPH)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCENfakCEL) DESC(Celkem FA/tuzMÌNA)           CAPTION(CENfakCEL)     FTYPE(N) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCENfazCEL) DESC(Celkem FA/zahrMÌNA)          CAPTION(CENfazCEL)     FTYPE(N) FLEN(13) DEC( 2)
+*
+  TYPE(FIELD) NAME(nKodZaokr)  DESC(Kód zaokrouhlení )           CAPTION(KódZaokFak)    FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKodZaokrD) DESC(Kód zaokr. Dph)              CAPTION(KódZaokDPH)    FTYPE(n) FLEN( 3) DEC( 0)
+*
+  TYPE(FIELD) NAME(cIntPracov) DESC(Vyøizuje pracovník)          CAPTION(VyrizPrac)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cNazPracov) DESC(Vyøizuje pracovník)          CAPTION(VyrPracOdb)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazPracob) DESC(Zkratka pracovníka)          CAPTION(zkrPrac)       FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(mPoznNab)   DESC(Poznamka)                    CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nTypSlevy)  DESC(Typ slevy)                   CAPTION(TypSlevy)      FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nProcSlev)  DESC(Procento slevy základní)     CAPTION(ProcSlevZa)    FTYPE(n) FLEN( 4) DEC( 1)
+  TYPE(FIELD) NAME(nPROCslFAO) DESC(Procento slevy Fak_Obr)      CAPTION(ProcSlFaOb)    FTYPE(n) FLEN( 4) DEC( 1)
+  TYPE(FIELD) NAME(nPROCslHOT) DESC(Procento slevy HOT)          CAPTION(ProcSlHOT)     FTYPE(n) FLEN( 4) DEC( 1)
+  TYPE(FIELD) NAME(nHodnSlev)  DESC(Hodnota slevy)               CAPTION(HodnSlevy)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenaZakl)  DESC(Cena základní bez slevy)     CAPTION(CenZakBSle)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKlicObl)   DESC(Klíè oblasti)                CAPTION(KlicOblast)    FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkrProdej) DESC(Zkratka prodejce)            CAPTION(ZkrProdej)     FTYPE(c) FLEN( 4) DEC( 0) RELATETO(c_prodej) RELATETYPE(2)
+  TYPE(FIELD) NAME(nTypCenNab) DESC(Typ uvedených cen v nabídce) CAPTION(TypCenVNab)    FTYPE(n) FLEN( 1) DEC( 0)
+*
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(Èíslo zakázky)               CAPTION(cisZakazky)    FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dDATodvVYR) DESC(Datum odvedení z výroby)     CAPTION(DATodvVYR)     FTYPE(D) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(NHMOTNOSTJ) DESC(Hmotnost_jedn)               CAPTION(HmotnostJed)   FTYPE(N) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nHmotnost)  DESC(Hmotnost)                    CAPTION(Hmotnost)      FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(cZkratJedH) DESC(Mìrná jednotka hmotnosti)    CAPTION(MìrJedHmot)    FTYPE(c) FLEN( 3) DEC( 0)
+*
+  TYPE(FIELD) NAME(NOBJEMJ)    DESC(Objem_jedn)                  CAPTION(ObjemJed)      FTYPE(N) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nObjem)     DESC(Objem)                       CAPTION(Objem)         FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(cZkratJedO) DESC(Mìrná jednotka objemu)       CAPTION(MìrJedObje)    FTYPE(c) FLEN( 3) DEC( 0)
+
+*
+  TYPE(FIELD) NAME(nKontVykMn) DESC(Zpùsob kontroly vykrývaného množství)  CAPTION(KontVykMnož) FTYPE(n) FLEN( 1) DEC(0)
+
+* stavdokladu
+  TYPE(FIELD) NAME(cStavDokl)  DESC(Kód stavu dokladu)              CAPTION(KódStavuDok)    FTYPE(C) FLEN( 2) DEC( 0)
+
+* vykrývání obchodního pøípadu  
+  TYPE(FIELD) NAME(nStav_NABV) DESC(Stav vykrytí NABV)              CAPTION(StavVyNabV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_FAKV) DESC(Stav vykrytí FAKT)              CAPTION(StavVyFaktV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_DLV)  DESC(Stav vykrytí DLV)               CAPTION(StavVyDodLV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_OBJP) DESC(Stav vykrytí OBJP)              CAPTION(StavVyObjPø)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_EXLV) DESC(Stav vykrytí EXLV)              CAPTION(StavVyExLiVy)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_VYRZ) DESC(Stav vykrytí VYRZ)              CAPTION(StavVyVyrZak)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_KSMV) DESC(Stav vykrytí KSMV)              CAPTION(StavVyKSmV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_SVYD) DESC(Stav vykrytí SVYD)              CAPTION(StavVySVyd)     FTYPE(n) FLEN( 1) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                  CAPTION(DatVzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                   CAPTION(DatVzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                      CAPTION(Poznámka)       FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                              CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                              CAPTION()               FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                              CAPTION()               FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(NABVYSH1)   FNAME(NABVYSHD) CAPTION(NázevNab +ÈísloFirmy )   KEY(UPPER(cNazOdes) +STRZERO(nCisFirmy,5) )
+  TYPE(INDEX) NAME(NABVYSH2)   FNAME(NABVYSHD) CAPTION(ÈísloFirmy +NázevNab )   KEY(STRZERO(nCisFirmy,5) +UPPER(cNazOdes) )
+  TYPE(INDEX) NAME(NABVYSH3)   FNAME(NABVYSHD) CAPTION(ÈísloFirmy +ÈísloNabid ) KEY(STRZERO(nCisFirmy,5) +STRZERO(nCisOdes,5) )
+  TYPE(INDEX) NAME(NABVYSH4)   FNAME(NABVYSHD) CAPTION(doklad )                 KEY(ndoklad)
+  TYPE(INDEX) NAME(NABVYSH5)   FNAME(NABVYSHD) CAPTION(èíslo_nabOdb)            KEY(Upper(ccisNabOd))
+  TYPE(INDEX) NAME(NABVYSH6)   FNAME(NABVYSHD) CAPTION(èisNabGen)               KEY(cNazOdes)
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(NABVYSHD) CAPTION()                        KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(NABVYSHD) CAPTION()                        KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(NABVYSIT) DESC(Nabídky vystavené _ POL)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nDoklad)     DESC(Èíslo dokladu)                  CAPTION(ÈísloDokl)     FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCisOdes)    DESC(Èíslo nabídky)                  CAPTION(ÈísloNabid)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazOdes)    DESC(Název nabídky)                  CAPTION(NázevNab)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(ddatDoOdb)   DESC(Datum možného dodání)           CAPTION(DatDodNabidky) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nIntCount)   DESC(Poøadí položek)                 CAPTION(PoøadíPol)     FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nvaz_Rp)     DESC(Vazba na recPopl)               CAPTION(vaz_Rp)        FTYPE(n) FLEN( 5) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCinnost)    DESC(Èinnost firmy)                  CAPTION(CinnFirmy)     FTYPE(c) FLEN(15) DEC( 0)
+*
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Èíslo skladu)                   CAPTION(ÈísSkladu)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)     DESC(Skladová položka)               CAPTION(SklPoložka)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cPolCen)     DESC(Ceníková položka A/N)           CAPTION(CenPol)        FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(CTYPSKLPOL)  DESC(Typ skladové položky)           CAPTION(Typ sklPol)    FTYPE(C) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazZBO)     DESC(Název zboží)                    CAPTION(NazZbo)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(nKlicNaz)    DESC(Klíè názvu zboží)               CAPTION(KlicNazZbo)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKAT)   DESC(Kategorie zboží)                CAPTION(KategZbo)      FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJedn)  DESC(Zkratka mer.jednotky)           CAPTION(ZkrMernJed)    FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(1)
+  TYPE(FIELD) NAME(nKlicDph)    DESC(Kód danì)                       CAPTION(KodDane)       FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nProcDPH)    DESC(Procento DPH)                   CAPTION(ProcDPH)       FTYPE(n) FLEN( 5) DEC( 2) RELATETO(C_DPH)    RELATETYPE(2) RELATEORD(2)
+  TYPE(FIELD) NAME(NPREDANPOV)  DESC(Pøenesená daòová povinnost)     CAPTION(Daò.pov.)      FTYPE(N) FLEN( 1) DEC(0)  
+  TYPE(FIELD) NAME(CROZLATR)    DESC(Rozlišovací atribut)            CAPTION(RozlAtrib)     FTYPE(C) FLEN(10) DEC(0) 
+  TYPE(FIELD) NAME(CROZPORADI)  DESC(Rozlišení poøadí)               CAPTION(RozlPoøadí)    FTYPE(C) FLEN(10) DEC(0) 
+*
+  TYPE(FIELD) NAME(nMnoznOdes)  DESC(Nabízené množství)              CAPTION(NabizenMno)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCenJedNak)  DESC(Nákupní cena Mj)                CAPTION(NakupCenMJ)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCenJedZak)  DESC(Prodejní cena Mj)               CAPTION(ProdeCenMJ)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCenJedZaD)  DESC(Cena/Mj s daní)                 CAPTION(CenaMJSDan)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCenZakCel)  DESC(Cena celk. bez danì)            CAPTION(cCelkBDane)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCenZakCeD)  DESC(Cena celk. s daní)              CAPTION(cCelkSDani)    FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(mPoznOdes)   DESC(Poznámka)                       CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCenaPrINT)  DESC(Cena pøepoètená a rozpoètená)   CAPTION(CenPreARoz)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKcsBdObj)   DESC(Celkem bez dane)                CAPTION(CelkBDane)     FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKcsZdObj)   DESC(Celkem s dani)                  CAPTION(CelkSDani)     FTYPE(n) FLEN(13) DEC( 2)
+*
+  TYPE(FIELD) NAME(nTypSlevy)   DESC(Typ slevy)                      CAPTION(TypSlevy)      FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nProcSlev)   DESC(Procento slevy)                 CAPTION(ProcSlevy)     FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(nPROCslFAO)  DESC(Procento slevy FAO)             CAPTION(ProSlevFaO)    FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(lPROCslFAO)  DESC(Procento slevy FAO z HD)        CAPTION(ProSlevFA)     FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nPROCslHOT)  DESC(Procento slevy HOT)             CAPTION(ProcSlHOT)     FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(nPROCslMNO)  DESC(Procento slemy MNO)             CAPTION(ProcSlMNO)     FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(nHodnSlev)   DESC(Hodnota slevy)                  CAPTION(HodnSlevy)     FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCenaZakl)   DESC(Cena základní bez slevy)        CAPTION(CenZakBSle)    FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCelkSlev)   DESC(Celkem sleva)                   CAPTION(CelkSleva)     FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nKlicObl)    DESC(Klíè oblasti)                   CAPTION(KlicOblast)    FTYPE(n) FLEN( 3) DEC( 0)
+*
+  TYPE(FIELD) NAME(NMNOZSZBO)   DESC(Množství na skladu)             CAPTION(MnSkladem)     FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZKZBO)   DESC(Množství k objednání)           CAPTION(MnKObjend)     FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZOZBO)   DESC(Objednané množství)             CAPTION(MnObjedn)      FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZRZBO)   DESC(Rezervované množství)           CAPTION(MnRezerv)      FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZDZBO)   DESC(Množství k dispozici)           CAPTION(MnKDisp)       FTYPE(N) FLEN(11) DEC( 2)
+*
+  TYPE(FIELD) NAME(cDoplnTxt)  DESC(Doplòující text)                 CAPTION(DoplText)      FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(NHMOTNOSTJ)  DESC(Hmotnost_jedn)                  CAPTION(HmotnostJed)   FTYPE(N) FLEN(15) DEC(4)
+  TYPE(FIELD) NAME(NOBJEMJ)     DESC(Objem_jedn)                     CAPTION(ObjemJed)      FTYPE(N) FLEN(15) DEC(4)
+  TYPE(FIELD) NAME(NHMOTNOST)   DESC(Hmotnost)                       CAPTION(Hmotnost)      FTYPE(N) FLEN(15) DEC(4)
+  TYPE(FIELD) NAME(NOBJEM)      DESC(Objem)                          CAPTION(Objem)         FTYPE(N) FLEN(15) DEC(4)
+
+* vazba na VYRPOL
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(Èíslo výrobní zakázky)           CAPTION(Zakázka)       FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyrábìná položka)                CAPTION(Vyr. položka)  FTYPE(C) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(Variantní èíslo)                 CAPTION(Varianta)      FTYPE(N) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cCisVyk)    DESC(Èíslo výkresu)                   CAPTION(Èíslo výkresu) FTYPE(C) FLEN(26) DEC( 0) 
+  TYPE(FIELD) NAME(cCisZakazI) DESC(Položka výr. zakázky)            CAPTION(Pol.zakázky)   FTYPE(C) FLEN(36) DEC( 0)  
+
+* vykrývání obchodního pøípadu  
+  TYPE(FIELD) NAME(nMnoz_NABV) DESC(Množství vykryté nab.vys.)      CAPTION(MnožVyNabV)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_NABV) DESC(Stav vykrytí NABV)              CAPTION(StavVyNabV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_FAKV) DESC(Množství vykryté fakt.vys.)     CAPTION(MnožVyFaktV)    FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_FAKV) DESC(Stav vykrytí FAKT)              CAPTION(StavVyFaktV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_DLV)  DESC(Množství vykryté dod.list.)     CAPTION(MnožVyDodLV)    FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_DLV)  DESC(Stav vykrytí DLV)               CAPTION(StavVyDodLV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_OBJP) DESC(Množství vykryté obj.pøij.)     CAPTION(MnožVyObjPø)    FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_OBJP) DESC(Stav vykrytí OBJP)              CAPTION(StavVyObjPø)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_EXLV) DESC(Množství vykryté exped.list.)   CAPTION(MnožVyExLiVy)   FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_EXLV) DESC(Stav vykrytí EXLV)              CAPTION(StavVyExLiVy)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_VYRZ) DESC(Množství vykryté výr.zak.)      CAPTION(MnožVyVyrZak)   FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_VYRZ) DESC(Stav vykrytí VYRZ)              CAPTION(StavVyVyrZak)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_KSMV) DESC(Množství vykryté kup.sml.vys)   CAPTION(MnožVyKSmV)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_KSMV) DESC(Stav vykrytí KSMV)              CAPTION(StavVyKSmV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_SVYD) DESC(Množství vykryté sklad.vyd.)    CAPTION(MnožVySVyd)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_SVYD) DESC(Stav vykrytí SVYD)              CAPTION(StavVySVyd)     FTYPE(n) FLEN( 1) DEC( 0)
+*
+  TYPE(FIELD) NAME(nMnozZdok)  DESC(Množství z dokladu)             CAPTION(MnozZdok)      FTYPE(n) FLEN(15) DEC( 4)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                  CAPTION(DatVzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                   CAPTION(DatVzniku)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                      CAPTION(Poznámka)       FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                              CAPTION()               FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                              CAPTION()                FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                              CAPTION()               FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(NABVYSI1)   FNAME(NABVYSIT) CAPTION(ÈísloFirmy +ÈísloNab +PoøadíRoz +PoøadíPol ) KEY(STRZERO(nCisFirmy,5) +STRZERO(nCisOdes,5) +STRZERO(nIntCount,5))
+  TYPE(INDEX) NAME(NABVYSI2)   FNAME(NABVYSIT) CAPTION(NázevZboží)                        KEY(UPPER(cNazZBO))
+  TYPE(INDEX) NAME(NABVYSI3)   FNAME(NABVYSIT) CAPTION(ÈísloNab  )                        KEY(nCisOdes)
+  TYPE(INDEX) NAME(NABVYSI4)   FNAME(NABVYSIT) CAPTION(ÈísloFirmy)                        KEY(nCisFirmy)
+  TYPE(INDEX) NAME(NABVYSI5)   FNAME(NABVYSIT) CAPTION(ÈísloFirmy +ÈísloNab +KategZboží ) KEY(STRZERO(nCisFirmy,5) +STRZERO(nCisOdes,5) +STRZERO(nZboziKAT,4) )
+  TYPE(INDEX) NAME(NABVYSI6)   FNAME(NABVYSIT) CAPTION(ÈísloFirmy +ÈísloNab +NázevZboží ) KEY(STRZERO(nCisFirmy,5) +STRZERO(nCisOdes,5) +UPPER(cNazZBO) )
+  TYPE(INDEX) NAME(NABVYSI7)   FNAME(NABVYSIT) CAPTION(ÈísloFirmy +ÈísloNab +SkladPol )   KEY(STRZERO(nCisFirmy,5) +STRZERO(nCisOdes,5) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(NABVYSI8)   FNAME(NABVYSIT) CAPTION(ndoklad)                           KEY(ndoklad)
+  TYPE(INDEX) NAME(NABVYSI9)   FNAME(NABVYSIT) CAPTION(èísloNabídky)                      KEY(UPPER(cNazOdes))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(NABVYSIT) CAPTION()                                  KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(NABVYSIT) CAPTION()                                  KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OBJHEAD) DESC(Objednávky pøijaté _ HLA)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cUloha)     DESC(Pùvod dokladu)               CAPTION(PùvodDokl)        FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(CTASK)      DESC(Úloha systému-zkratka)       CAPTION(ZkratkaÚlohy)     FTYPE(C) FLEN( 3) DEC( 0) RELATETO(C_TASK) RELATETYPE(2)
+  TYPE(FIELD) NAME(CSUBTASK)   DESC(Pod úloha systému-zkratka)   CAPTION(ZkratkaPodÚlohy)  FTYPE(C) FLEN( 3) DEC( 0) RELATETO(C_TASK) RELATETYPE(2)
+  TYPE(FIELD) NAME(CTYPDOKLAD) DESC(Typ dokladu)                 CAPTION(TypDokl)          FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU) DESC(Typ pohybu)                  CAPTION(TypPoh)           FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cStavDokl)  DESC(Kód stavu dokladu)           CAPTION(KódStavuDok)      FTYPE(c) FLEN( 2) DEC(0)
+  TYPE(FIELD) NAME(nDoklad)    DESC(Èíslo dokladu)               CAPTION(ÈísloDokl)        FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Firma èíslo)                 CAPTION(ÈísloFirmy)       FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název odbìratele)            CAPTION(NázevOdbìr)       FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cNazev2)    DESC(Název2 odbìratele)           CAPTION(Název2Odbì)       FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nIco)       DESC(IÈO odbìratele)              CAPTION(IÈOOdbì)          FTYPE(n) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cDic)       DESC(DIÈ odbìratele)              CAPTION(DIÈOdbì)          FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Ulice odbìratele)            CAPTION(UliceOdbì)        FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cCisPopis)  DESC(ÈísPopis odbìratele)         CAPTION(ÈísPopiOdbì)      FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cCisOrien)  DESC(ÈísOrientaèní odbìratele)    CAPTION(ÈísOrieOdbì)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCisla) DESC(Ulice+èísla odbìratele)      CAPTION(UlÈislaOdbì)      FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObec)      DESC(Obec odbìratele)             CAPTION(ObecOdbì)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cSidlo)     DESC(Místo odbìratele)            CAPTION(MístoOdbì)        FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(PSè odbìratele)              CAPTION(PSÈOdbì)          FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cUcet)      DESC(Èíslo úètu odbìratele)       CAPTION(ÈíslÚètuOd)       FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirDOA) DESC(Èíslo firmy dodací adresy)   CAPTION(ÈíslFirDoA)       FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazevDOA)  DESC(Název  dodací adresy)        CAPTION(NázevDodA)        FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cNazevDOA2) DESC(Název2  dodací adresy)       CAPTION(Název2DodA)       FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cUliceDOA)  DESC(Ulice dodací adresy)         CAPTION(UliceDodA)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cCisPopDOA) DESC(ÈísPopis dodací adresy)      CAPTION(ÈísPopiDodA)      FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cCisOriDOA) DESC(ÈísOrient.dodací adresy)     CAPTION(ÈísOrieDodA)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUliCisDOA) DESC(Ulice+èísla dodací adresy)   CAPTION(UlÈislaDodA)      FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObecDOA)   DESC(Obec dodací adresy)          CAPTION(ObecDodA)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cSidloDOA)  DESC(Místo dodací adresy)         CAPTION(MístDodA)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPscDOA)    DESC(PSÈ dodací adresy)           CAPTION(PSÈDodA)          FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cPrijemce1) DESC(Prijemce 1)                  CAPTION(Pøíjemce1)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPrijemce2) DESC(Prijemce 2)                  CAPTION(Pøíjemce2)        FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cCinnost)   DESC(Èinnost firmy)               CAPTION(CinnFirmy)        FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Zkratka státu)               CAPTION(ZkratStát)        FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(1)
+  TYPE(FIELD) NAME(nCislObINT) DESC(Èíslo obj.inter)             CAPTION(SidloObjIn)       FTYPE(n) FLEN( 7) DEC( 0)
+  TYPE(FIELD) NAME(cCislObINT) DESC(Èíslo obj.inter)             CAPTION(ÈísloObj)         FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cCisOBJ)    DESC(Èíslo objednávky odbìratele) CAPTION(ÈísloObjOdb)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisODV)    DESC(Èíslo odvolávky odbìratele)  CAPTION(ÈísloOdvOdb)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(dDatOBJ)    DESC(Datum objednávky)            CAPTION(DatObjedn)        FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatDoOdb)  DESC(Datum dodání zboží)          CAPTION(DatDodávky)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkrTypUhr) DESC(Zpùsob platby)               CAPTION(ZpPlatby)         FTYPE(c) FLEN( 5) DEC( 0) RELATETO(C_TYPUHR) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrZpuDop) DESC(Zpùsob dopravy)              CAPTION(Zpdopravy)        FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_ZPUDOP) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratMENy) DESC(Zkratka zákl. mìny)          CAPTION(ZkratZákMì)       FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratMENz) DESC(Zkratka mìny dokladu)        CAPTION(ZkratDokMì)       FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKurZahMen) DESC(Kurz zahr. mìny)             CAPTION(KurzZahMìn)       FTYPE(n) FLEN(13) DEC( 8)
+  TYPE(FIELD) NAME(nMnozPrep)  DESC(Množství pøepoètu)           CAPTION(MnožPøepoè)       FTYPE(n) FLEN( 7) DEC( 0)
+  TYPE(FIELD) NAME(cMistoOBJ)  DESC(Místo urèení)                CAPTION(MistoUrcen)       FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nPocPolOBJ) DESC(Poèet položek)               CAPTION(PocetPoloz)       FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKcsBdOBJ)  DESC(Celková cena bez danì)       CAPTION(cCelkBDane)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKcsZdOBJ)  DESC(Celková cena s daní)         CAPTION(cCelkSDani)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKcsZdOBJZ) DESC(Celková cena s daní zaokr.)  CAPTION(cCelkSDanZ)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenZakCel) DESC(Cena celkem s DPH)           CAPTION(CelkemSDPH)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenDanCel) DESC(Cena celkem bez Dph)         CAPTION(CelkemBDPH)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCisDealer) DESC(Dealer èíslo)                CAPTION(cisDealer)        FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazDealer) DESC(Dealer název)                CAPTION(NazDealer)        FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazPracov) DESC(Vyøizuje pracovník Odb)      CAPTION(VyrPracOdb)       FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cIntPracov) DESC(Vyøizuje pracovník)          CAPTION(VyrizPrac)        FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(lPotvrzOBJ) DESC(Objednávka potvrzena)        CAPTION(ObjPotvrz)        FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKcsUhrOBJ) DESC(Uhrazeno Kès)                CAPTION(UhrazKC)          FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dDatUhrOBJ) DESC(Uhrazeno dne)                CAPTION(UhrazDne)         FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nCisODE)    DESC(Èíslo nabídky pokud exist.)  CAPTION(cisNabidky)       FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cPokrObj)   DESC(Pokrytí objednávky)          CAPTION(PokrytiObj)       FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnozObOdb) DESC(Množství objednáno S)        CAPTION(MnoObj)           FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPoOdb) DESC(Množství potvrzeno S)        CAPTION(MnoPotvrz)        FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozNeOdb) DESC(Množství nepotvrzeno S)      CAPTION(MnoNepotvr)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPlOdb) DESC(Množství plnìní S)           CAPTION(MnoPlneni)        FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nTypSlevy)  DESC(Typ slevy)                   CAPTION(TypSlevy)         FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nProcSlev)  DESC(Procento slevy základní)     CAPTION(ProcSlevZa)       FTYPE(n) FLEN( 4) DEC( 1)
+  TYPE(FIELD) NAME(nPROCslFAO) DESC(Procento slevy Fak_Obr)      CAPTION(ProcSlFaOb)       FTYPE(n) FLEN( 4) DEC( 1)
+  TYPE(FIELD) NAME(nPROCslHOT) DESC(Procento slevy HOT)          CAPTION(ProcSlHOT)        FTYPE(n) FLEN( 4) DEC( 1)
+  TYPE(FIELD) NAME(nHodnSlev)  DESC(Hodnota slevy)               CAPTION(HodnSlevy)        FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenaZakl)  DESC(Cena základní bez slevy)     CAPTION(CenZakBSle)       FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKlicObl)   DESC(Klíè oblasti)                CAPTION(KlicOblast)       FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkrProdej) DESC(Zkratka prodejce)            CAPTION(ZkrProdej)        FTYPE(c) FLEN( 4) DEC( 0) RELATETO(c_prodej) RELATETYPE(2)
+  TYPE(FIELD) NAME(mPoznObj)   DESC(Poznamka)                    CAPTION()                 FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(Èíslo zakázky)               CAPTION(cisZakazky)       FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dDATodvVYR) DESC(Datum odvedení z výroby)     CAPTION(DATodvVYR)        FTYPE(D) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nROK_OBJ)   DESC(Rok objednávky)              CAPTION(ROK_OBJ)          FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPOR_OBJ)   DESC(Poøadí objednávky v ROCE)    CAPTION(POR_OBJ)          FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nextObj)    DESC(Externí objednávka)          CAPTION(EXT_obj)          FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(ccistrasyp) DESC(Èíslo trasy_pl)              CAPTION(cisTrasy_p)       FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_TRASY) RELATETYPE(2)
+  TYPE(FIELD) NAME(ccistrasys) DESC(Èíslo trasy_sk)              CAPTION(cisTrasy_s)       FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisDodavk) DESC(Èíslo dodávky)               CAPTION(ÈísDodávky)       FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(ddatRvykr)  DESC(Datum ruèního vykrytí)       CAPTION(datRvykr)         FTYPE(D) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ccisNabOd)  DESC(Èíslo nabídky_odbìratel)     CAPTION(èíslo_nabOdb)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nTypCenNab) DESC(Typ uvedených cen v nabídce) CAPTION(TypCenVNab)       FTYPE(n) FLEN( 1) DEC( 0)
+*
+  TYPE(FIELD) NAME(NHMOTNOST)  DESC(Hmotnost_celk)               CAPTION(Hmotnost_cel)     FTYPE(N) FLEN(15) DEC(4)
+  TYPE(FIELD) NAME(NOBJEM)     DESC(Objem_celk)                  CAPTION(Objem_cel)        FTYPE(N) FLEN(15) DEC(4)
+
+*
+  TYPE(FIELD) NAME(nKontVykMn) DESC(Zpùsob kontroly vykrývaného množství)  CAPTION(KontVykMnož) FTYPE(n) FLEN( 1) DEC(0)
+
+* vykrývání obchodního pøípadu  
+  TYPE(FIELD) NAME(nStav_NABV) DESC(Stav NABV)                      CAPTION(StavVyNabV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_FAKV) DESC(Stav FAKT)                      CAPTION(StavVyFaktV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_DLV)  DESC(Stav DLV)                       CAPTION(StavVyDodLV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_OBJP) DESC(Stav OBJP)                      CAPTION(StavVyObjPø)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_EXLV) DESC(Stav EXLV)                      CAPTION(StavVyExLiVy)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_VYRZ) DESC(Stav VYRZ)                      CAPTION(StavVyVyrZak)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_KSMV) DESC(Stav KSMV)                      CAPTION(StavVyKSmV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nStav_SVYD) DESC(Stav SVYD)                      CAPTION(StavVySVyd)     FTYPE(n) FLEN( 1) DEC( 0)
+
+* stav komunikace
+  TYPE(FIELD) NAME(nStav_KOMU) DESC(Kód stavu komunikace)           CAPTION(KódStavuKom)    FTYPE(N) FLEN( 1) DEC( 0) 
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()              FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJHEAD0)   FNAME(OBJHEAD) CAPTION(ÈísloObj +ÈísloFirmy ) KEY(UPPER(cCislObINT) +STRZERO(nCisFirmy,5) )
+  TYPE(INDEX) NAME(OBJHEAD1)   FNAME(OBJHEAD) CAPTION(ÈísloFirmy +ÈísloObj ) KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) )
+  TYPE(INDEX) NAME(OBJHEAD2)   FNAME(OBJHEAD) CAPTION(DatObjedn )            KEY(if(empty(dDatOBJ) ,'        ' , DTOS(dDatOBJ)) )
+  TYPE(INDEX) NAME(OBJHEAD3)   FNAME(OBJHEAD) CAPTION(DatDodávky)            KEY(if(empty(dDatDoOdb) ,'        ' , DTOS(dDatDoOdb)) )
+  TYPE(INDEX) NAME(OBJHEAD4)   FNAME(OBJHEAD) CAPTION(ROK_OBJ +POR_OBJ )     KEY(STRZERO(nROK_OBJ,4) +STRZERO(nPOR_OBJ,5) )
+  TYPE(INDEX) NAME(OBJHEAD5)   FNAME(OBJHEAD) CAPTION(POR_OBJ +ROK_OBJ )     KEY(STRZERO(nPOR_OBJ,5) +STRZERO(nROK_OBJ,4) )
+  TYPE(INDEX) NAME(OBJHEAD6)   FNAME(OBJHEAD) CAPTION(NázFirmy  )            KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(OBJHEAD7)   FNAME(OBJHEAD) CAPTION(doklad)                KEY(NDOKLAD)
+  TYPE(INDEX) NAME(OBJHEAD8)   FNAME(OBJHEAD) CAPTION(IÈO)                   KEY(nICO)
+  TYPE(INDEX) NAME(OBJHEAD9)   FNAME(OBJHEAD) CAPTION(SídloFirmy)            KEY(UPPER(cSidlo))
+  TYPE(INDEX) NAME(OBJHEAD10)  FNAME(OBJHEAD) CAPTION(SídloFirmy_dodací)     KEY(UPPER(cSidloDOA))
+  TYPE(INDEX) NAME(OBJHEAD11)  FNAME(OBJHEAD) CAPTION(Kontaktní osoba)       KEY(UPPER(cNazPracov))
+  TYPE(INDEX) NAME(OBJHEAD12)  FNAME(OBJHEAD) CAPTION(Firma)                 KEY(nCisFirmy)
+  TYPE(INDEX) NAME(OBJHEAD13)  FNAME(OBJHEAD) CAPTION(ExtIntObj)             KEY(nExtObj)
+  TYPE(INDEX) NAME(OBJHEAD14)  FNAME(OBJHEAD) CAPTION(Zkratka prodejce)      KEY(UPPER(cZkrProdej))
+  TYPE(INDEX) NAME(OBJHEAD15)  FNAME(OBJHEAD) CAPTION(ÈísloObj )             KEY(cCislObINT )
+  TYPE(INDEX) NAME(OBJHEAD16)  FNAME(OBJHEAD) CAPTION(ÈísloObj )             KEY(cCislObINT ) DESCEND(Y)
+  TYPE(INDEX) NAME(OBJHEAD17)  FNAME(OBJHEAD) CAPTION(ÈísloFirmy +ÈísloObj ) KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) ) DESCEND(Y)
+  TYPE(INDEX) NAME(OBJHEAD18)  FNAME(OBJHEAD) CAPTION(ÈísloFirmy +DatObjedn) KEY(STRZERO(nCisFirmy,5) +if(empty(dDatOBJ) ,'        ' , DTOS(dDatOBJ)) )  DESCEND(Y)
+  TYPE(INDEX) NAME(OBJHEAD19)  FNAME(OBJHEAD) CAPTION(èíslo_nabOdb)          KEY(Upper(ccisNabOd))
+  TYPE(INDEX) NAME(OBJHEAD20)  FNAME(OBJHEAD) CAPTION(èíslo_objOdb)          KEY(Upper(ccisObj))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(OBJHEAD) CAPTION()                      KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(OBJHEAD) CAPTION()                      KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OBJIT_AT) DESC(ObjPØIJATÉ _ ROZDÌLENÍ)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)               CAPTION(ÈísloFirmy) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název firmy)               CAPTION(NázFirmy)   FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cCislObINT) DESC(Èíslo obj.inter)           CAPTION(ÈísObjInt)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nCislPolOb) DESC(Poøadi položek objednávky) CAPTION(ÈísPolObj)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazZBO)    DESC(Název zboží)               CAPTION(NazZbo)     FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Skladová položka)          CAPTION(SklPoložka) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisSklad)  DESC(Èíslo skladu)              CAPTION(ÈísSkladu)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nMnozObDOD) DESC(Množství obj.dodavatel)    CAPTION(MnoObjDoda) FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnozObDOR) DESC(Množství OBJ_DOD_OR)       CAPTION()           FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnozKoDOD) DESC(Množství k objedn.dodav.)  CAPTION(MnoKObjDod) FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnozObSKL) DESC(Množství obj. na sklad)    CAPTION(MnoObSKL)   FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnozZuOBJ) DESC(Množství ZBY_OBJ)          CAPTION()           FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(dDatReODB)  DESC(Datum rezervace)           CAPTION(DatRezOdb)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatDoOdb)  DESC(Datum doddání zboží)       CAPTION(DatDodaZbo) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nOBJIT_OR)  DESC(Záznam OBJITEM)            CAPTION(OBJITEM_OR) FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nVZTAH_OR)  DESC(Záznam VZTAHOBJ)           CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cCISzakaz)  DESC(Èíslo zakázky)             CAPTION(cisZakazky) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)              CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)               CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0) 
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                  CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                          CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)  DESC()                          CAPTION()                FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                          CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJITAT0)   FNAME(OBJIT_AT) CAPTION(DatRezOdb ) KEY(if(empty(dDatReODB) ,'        ' , DTOS(dDatReODB)) )
+  TYPE(INDEX) NAME(OBJITAT1)   FNAME(OBJIT_AT) CAPTION(NázFirmy  ) KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(OBJITAT2)   FNAME(OBJIT_AT) CAPTION(ÈísObjInt ) KEY(UPPER(cCislObINT))
+  TYPE(INDEX) NAME(DBID_imp)   FNAME(OBJIT_AT) CAPTION()           KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)         FNAME(OBJIT_AT) CAPTION()           KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OBJITEM) DESC(Objednávky pøijaté _ POL)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cUloha)     DESC(Pùvod dokladu)                  CAPTION(PùvodDokl)     FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(CTASK)      DESC(Úloha systému-zkratka)          CAPTION(ZkratkaÚlohy)  FTYPE(C) FLEN( 3) DEC( 0) RELATETO(C_TASK) RELATETYPE(2)
+  TYPE(FIELD) NAME(CTYPDOKLAD) DESC(Typ dokladu)                    CAPTION(TypDokl)     FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU) DESC(Typ pohybu)                     CAPTION(TypPoh)      FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(NSTAVDOKL)  DESC(Kód stavu dokladu)              CAPTION(KódStavuDok) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)    DESC(Èíslo dokladu)                  CAPTION(ÈísloDokl)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nextObj)    DESC(Externí objednávka)             CAPTION(EXT_obj)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈísloFirmy)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCinnost)   DESC(Èinnost firmy)                  CAPTION(CinnFirmy)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCislObINT) DESC(Èíslo obj.inter)                CAPTION(ÈísObjInt)   FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nCislPolOb) DESC(Poøadi položek objednávky)      CAPTION(ÈísPolObj)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nvaz_Rp)    DESC(Vazba na recPopl)               CAPTION(vaz_Rp)      FTYPE(n) FLEN( 5) DEC( 0)
+*
+  TYPE(FIELD) NAME(cStavDokl)  DESC(Kód stavu dokladu)              CAPTION(KódStavuDok) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cRozAtrPro) DESC(Rozliš.atribut)                 CAPTION(AtribRozl)   FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_ROATPR) RELATETYPE(1)
+  TYPE(FIELD) NAME(cNazZBO)    DESC(Název zboží)                    CAPTION(NazZbo)      FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(nKlicNaz)   DESC(Klíè názvu zboží)               CAPTION(KlicNazZbo)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Skladová položka)               CAPTION(SklPoložka)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(CTYPSKLPOL) DESC(Typ skladové položky)           CAPTION(Typ skl.pol) FTYPE(C) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cPolCen)    DESC(Ceníková položka A/N)           CAPTION(CenPol)      FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(NUCETSKUP)  DESC(Úèetní skupina)                 CAPTION(Úèet.skup.)  FTYPE(N) FLEN( 3) DEC( 0) RELATETO(C_UCTSKP) RELATETYPE(1)
+  TYPE(FIELD) NAME(CUCETSKUP)  DESC(Úèetní skupina -znak)           CAPTION(Úèet.skup.)  FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKAT)  DESC(Kategorie zboží)                CAPTION(KategZbo)    FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nKlicDpH)   DESC(Klíè DpH)                       CAPTION(KlicDpH)     FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(NPREDANPOV) DESC(Pøenesená daòová povinnost)     CAPTION(Daò.pov.)    FTYPE(N) FLEN( 1) DEC( 0)  
+  TYPE(FIELD) NAME(CROZLATR)   DESC(Rozlišovací atribut)           CAPTION(RozlAtrib)    FTYPE(C) FLEN(10) DEC(0) 
+  TYPE(FIELD) NAME(CROZPORADI) DESC(Rozlišení poøadí)              CAPTION(RozlPoøadí)   FTYPE(C) FLEN(10) DEC(0) 
+*
+  TYPE(FIELD) NAME(cCisOBJ)    DESC(Èíslo objednávky odbìratele)    CAPTION(ÈísObjOdb)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisODV)    DESC(Èíslo odvolávky odbìratele)     CAPTION(ÈísOdvOdb)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(dDatOBJ)    DESC(Datum objednávky)               CAPTION(DatObjedn)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCislVpINT) DESC(Èíslo výr.pøíkazu)              CAPTION(cisVyrPrik)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dDatVpINT)  DESC(Datum výr.pøíkazu)              CAPTION(DatVyrPrik)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lViceVpINT) DESC(Více výr.pøíkazù)               CAPTION(ViceVyrPri)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnozVpINT) DESC(Množství k výrobì)              CAPTION(MnoKVyrobe)  FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nCenaPrINT) DESC(Cena pøepoètená a rozpoètená)   CAPTION(CenPreARoz)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(cCisSklad)  DESC(Èíslo skladu)                   CAPTION(ÈísSkladu)   FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCislObDOD) DESC(Èíslo obj.dodavatel)            CAPTION(cisObjDoda)  FTYPE(c) FLEN(15) DEC( 0)
+
+* vazba na nabídky vystavené NABVYSIT
+  TYPE(FIELD) NAME(ndokladNav)  DESC(Èíslo dokladu nabídky)         CAPTION(DokladNav)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisOdes)    DESC(Èíslo nabídky)                 CAPTION(ÈísloNabid)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazOdes)    DESC(Název nabídky)                 CAPTION(NázevNab)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(ncountNav)   DESC(Položka nabídky)               CAPTION(PoložkaNav)  FTYPE(n) FLEN( 5) DEC( 0)
+
+  TYPE(FIELD) NAME(dDatObDOD)  DESC(Datum obj.dodavatel)            CAPTION(DatObjDod)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nMnozObDOD) DESC(Množství obj.dodavatel)         CAPTION(MnoObjDoda)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPoDOD) DESC(Množství potvrz.dodav.)         CAPTION(MnoPotvDod)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dDatPoDOD)  DESC(Datum potvrz.dodav.)            CAPTION(DatPotvDod)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nMnozKoDod) DESC(Množství k objedn.dodav.)       CAPTION(MnoKObjDod)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenNaoDOD) DESC(Nákupní cena dodav.)            CAPTION(NakCenDod)   FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenProDOD) DESC(Prodejní cena dodav.)           CAPTION(ProdCenDod)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dDatPrDOD)  DESC(Datum pøíjmu zboží)             CAPTION(DatPrijZbo)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nCenNapDOD) DESC(Nákupní cena pøíjmu)            CAPTION(NakCenPrij)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPrDOD) DESC(Množství pøijato)               CAPTION(MnoPrijato)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozObODB) DESC(Objednáno množství)             CAPTION(ObjMno)      FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPoODB) DESC(Množství potvrzeno)             CAPTION(MnoPotvrz)   FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPdODB) DESC(Množství potvrzeno PFa/KSm/EXp) CAPTION(MnoPOTVDok)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(cMnozPoODB) DESC(Množství potvrz.znak)           CAPTION(MnoPotvZna)  FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnozNeODB) DESC(Množství nepotvrzeno)           CAPTION(MnoNepotvr)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(dDatReODB)  DESC(Datum rezervace)                CAPTION(DatRezOdb)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatDoOdb)  DESC(Datum doddání zboží)            CAPTION(DatDodaZbo)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nMnozReODB) DESC(Množství rezervace)             CAPTION(MnoRezerva)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPlODB) DESC(Množství plnìní)                CAPTION(MnoPlneni)   FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKcsBdObj)  DESC(Celkem bez dane)                CAPTION(CelkBDane)   FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nKcsZdObj)  DESC(Celkem s dani)                  CAPTION(CelkSDani)   FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nCenaDlODB) DESC(Prodejní cena na dod.listu)     CAPTION(PrCenDoLis)  FTYPE(n) FLEN(13) DEC( 2)
+  TYPE(FIELD) NAME(nIntIndOBJ) DESC(0 nová, 1 oprava, 2 zrušení)    CAPTION(0no1opr2zr)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cIndexPol)  DESC(Index položky objednávky)       CAPTION(IndexPolObj) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakaz)  DESC(Èíslo zakázky)                  CAPTION(cisZakazky)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakazI) DESC(Èíslo položky výr.zakázky)      CAPTION(polVýrZak)   FTYPE(C) FLEN(36) DEC( 0)
+  TYPE(FIELD) NAME(nCislPolZa) DESC(Poøadi položek v zakázce)       CAPTION(ÈísPolZak)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJedn) DESC(Zkratka mer.jednotky)           CAPTION(ZkrMernJed)  FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nTypSlevy)  DESC(Typ slevy)                      CAPTION(TypSlevy)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nProcSlev)  DESC(Procento slevy)                 CAPTION(ProcSlevy)   FTYPE(n) FLEN( 8) DEC( 4)
+  TYPE(FIELD) NAME(nPROCslFAO) DESC(Procento slevy FAO)             CAPTION(ProSlevFaO)  FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(lPROCslFAO) DESC(Procento slevy FAO z HD)        CAPTION(ProSlevFA)   FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nPROCslHOT) DESC(Procento slevy HOT)             CAPTION(ProcSlHOT)   FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(nPROCslMNO) DESC(Procento slemy MNO)             CAPTION(ProcSlMNO)   FTYPE(n) FLEN( 7) DEC( 4)
+  TYPE(FIELD) NAME(nHodnSlev)  DESC(Hodnota slevy)                  CAPTION(HodnSlevy)   FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCenaZakl)  DESC(Cena základní bez slevy)        CAPTION(CenZakBSle)  FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCelkSlev)  DESC(Celkem sleva)                   CAPTION(CelkSleva)   FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nKlicObl)   DESC(Klíè oblasti)                   CAPTION(KlicOblast)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkrProdej) DESC(Zkratka prodejce)               CAPTION(ZkrProdej)   FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPodilProd) DESC(Podíl prodejce)                 CAPTION(PodílProd)   FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(nMnPotVyr)  DESC(Mn.potvrzené výrobou)           CAPTION()            FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnPusVyr)  DESC(Mn. puštìné do výroby)          CAPTION()            FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(dPusVyr)    DESC(Dat.puštìní do výroby)          CAPTION()            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nMnPriVyr)  DESC(Mn. pøijato z výroby)           CAPTION()            FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(dPriVyr)    DESC(Dat.pøijetí z výroby)           CAPTION()            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cVyrPol)    DESC(Vyrábìná položka)               CAPTION()            FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nVarCis)    DESC(Varianta vyr.položky)           CAPTION()            FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cStred)     DESC(Støedisko požadující)           CAPTION()            FTYPE(c) FLEN( 8) DEC( 0) RELATETO(c_Stred) RELATETYPE(2)
+  TYPE(FIELD) NAME(nRAvyska)   DESC(Výška)                          CAPTION()            FTYPE(n) FLEN(11) DEC( 3)
+  TYPE(FIELD) NAME(nRBsirka)   DESC(Šíøka)                          CAPTION()            FTYPE(n) FLEN(11) DEC( 3)
+  TYPE(FIELD) NAME(lPozVyroba) DESC(Požadavek z výroby)             CAPTION()            FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnKalkul)  DESC(Kalkulaèní množství)            CAPTION()            FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nDelka)     DESC(Délka)                          CAPTION()            FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nPocet)     DESC(Poèet)                          CAPTION()            FTYPE(n) FLEN( 9) DEC( 2)
+  TYPE(FIELD) NAME(nPozice)    DESC(Pozice)                         CAPTION()            FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nMnNaKus)   DESC(Množství na kus)                CAPTION()            FTYPE(n) FLEN(10) DEC( 3)
+  TYPE(FIELD) NAME(cText1)     DESC(Text 1)                         CAPTION()            FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cText2)     DESC(Text 2)                         CAPTION()            FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nRokRV)     DESC(Rok)                            CAPTION(RokVytvoø)   FTYPE(N) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPolObjRV)  DESC(ID objednávky)                  CAPTION(ID_objedn.)  FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dDATodvVYR) DESC(Datum odvedení z výroby)        CAPTION(DATodvVYR)   FTYPE(D) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cPOPpolOBJ) DESC(Popis položky OBJ_pøijaté)      CAPTION(POPpolOBJ)   FTYPE(C) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(aULOZENI)   DESC()                               CAPTION()            FTYPE(M) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dRezerv)    DESC(Pøerezervace KDY)               CAPTION()            FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cRezerv)    DESC(Pøerezervace KDO)               CAPTION()            FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nNavysPRC)  DESC(% navýšení)                     CAPTION()            FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nKusRoz)    DESC(Kusy daných rozmìrù)            CAPTION()            FTYPE(n) FLEN( 7) DEC( 3)
+  TYPE(FIELD) NAME(nCisOper)   DESC(Èís. operace)                   CAPTION()            FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nPocCeZapZ) DESC(Poèet zapuštìní)                CAPTION()            FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cKodPoz)    DESC(Kód pozice)                     CAPTION()            FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(ccistrasyp) DESC(Èíslo trasy_pl)                 CAPTION(cisTrasy_p)  FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_TRASY) RELATETYPE(2)
+  TYPE(FIELD) NAME(ccistrasys) DESC(Èíslo trasy_sk)                 CAPTION(cisTrasy_s)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nCisDodavk) DESC(Èíslo dodávky)                  CAPTION(ÈísDodávky)  FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(NMNOZSZBO)  DESC(Množství na skladu)             CAPTION(MnSkladem)   FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZKZBO)  DESC(Množství k objednání)           CAPTION(MnKObjend)   FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZOZBO)  DESC(Objednané množství)             CAPTION(MnObjedn)    FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZRZBO)  DESC(Rezervované množství)           CAPTION(MnRezerv)    FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(NMNOZDZBO)  DESC(Množství k dispozici)           CAPTION(MnKDisp)     FTYPE(N) FLEN(11) DEC( 2)
+* 
+  TYPE(FIELD) NAME(nCisVysFak) DESC(Èís. vyst.faktury odbìratele)   CAPTION(ÈísloFakt)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDoplnTxt)  DESC(Doplòující text)                CAPTION(DoplText)    FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(nMnoz_FAKT) DESC(Množství fakturované)           CAPTION(MnožFakt)      FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nstav_FAKT) DESC(Stav fakturace)                 CAPTION(MnožFakt)      FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_DLVY) DESC(Množství vydané)                CAPTION(MnožDod)       FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nMnoz_EXPL) DESC(Množství vyexpedované)          CAPTION(MnožVyexp)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nMnoz_ZAK)  DESC(Množství vykryté na zak)        CAPTION(MnožVykrytZak) FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(ddatRvykr)  DESC(Datum ruèního vykrytí)          CAPTION(datRvykr)      FTYPE(D) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(NHMOTNOSTJ) DESC(Hmotnost_jedn)                  CAPTION(HmotnostJed)   FTYPE(N) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nHmotnost)  DESC(Hmotnost)                       CAPTION(Hmotnost)      FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(cZkratJedH) DESC(Mìrná jednotka hmotnosti)       CAPTION(MìrJedHmot)    FTYPE(c) FLEN( 3) DEC( 0)
+*
+  TYPE(FIELD) NAME(NOBJEMJ)    DESC(Objem_jedn)                     CAPTION(ObjemJed)      FTYPE(N) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nObjem)     DESC(Objem)                          CAPTION(Objem)         FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(cZkratJedO) DESC(Mìrná jednotka objemu)          CAPTION(MìrJedObje)    FTYPE(c) FLEN( 3) DEC( 0)
+* vykrývání obchodního pøípadu  
+  TYPE(FIELD) NAME(nMnoz_NABV) DESC(Množství vykryté nab.vys.)      CAPTION(MnožVyNabV)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_NABV) DESC(Stav vykrytí NABV)              CAPTION(StavVyNabV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_FAKV) DESC(Množství vykryté fakt.vys.)     CAPTION(MnožVyFaktV)    FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_FAKV) DESC(Stav vykrytí FAKT)              CAPTION(StavVyFaktV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_DLV)  DESC(Množství vykryté dod.list.)     CAPTION(MnožVyDodLV)    FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_DLV)  DESC(Stav vykrytí DLV)               CAPTION(StavVyDodLV)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_OBJP) DESC(Množství vykryté obj.pøij.)     CAPTION(MnožVyObjPø)    FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_OBJP) DESC(Stav vykrytí OBJP)              CAPTION(StavVyObjPø)    FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_EXLV) DESC(Množství vykryté exped.list.)   CAPTION(MnožVyExLiVy)   FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_EXLV) DESC(Stav vykrytí EXLV)              CAPTION(StavVyExLiVy)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_VYRZ) DESC(Množství vykryté výr.zak.)      CAPTION(MnožVyVyrZak)   FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_VYRZ) DESC(Stav vykrytí VYRZ)              CAPTION(StavVyVyrZak)   FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_KSMV) DESC(Množství vykryté kup.sml.vys)   CAPTION(MnožVyKSmV)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_KSMV) DESC(Stav vykrytí KSMV)              CAPTION(StavVyKSmV)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nMnoz_SVYD) DESC(Množství vykryté sklad.vyd.)    CAPTION(MnožVySVyd)     FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(nStav_SVYD) DESC(Stav vykrytí SVYD)              CAPTION(StavVySVyd)     FTYPE(n) FLEN( 1) DEC( 0)
+
+* stav komunikace
+  TYPE(FIELD) NAME(nStav_KOMU) DESC(Kód stavu komunikace)           CAPTION(KódStavuKom)    FTYPE(N) FLEN( 1) DEC( 0) 
+*
+  TYPE(FIELD) NAME(nMnozZdok)  DESC(Množství z dokladu)             CAPTION(MnozZdok)      FTYPE(n) FLEN(15) DEC( 4)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cDBID_imp)   DESC()                            CAPTION()              FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJITEM0) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt +NazZbo )                          KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +UPPER(cNazZBO) )
+  TYPE(INDEX) NAME(OBJITEM1) FNAME(OBJITEM) CAPTION(SklPoložka +ÈísObjInt )                                  KEY(UPPER(cSklPol) +UPPER(cCislObINT) )
+  TYPE(INDEX) NAME(OBJITEM2) FNAME(OBJITEM) CAPTION(ÈísObjInt +ÈísPolObj )                                   KEY(UPPER(cCislObINT) +STRZERO(nCislPolOb,5) )
+  TYPE(INDEX) NAME(OBJITEM3) FNAME(OBJITEM) CAPTION(ÈísSkladu +SklPoložka +DatRezOdb +ÈísObjInt )            KEY(UPPER(cCisSklad) +UPPER(cSklPol) +if(empty(dDatReODB) ,'        ' , DTOS(dDatReODB)) +UPPER(cCislObINT) )
+  TYPE(INDEX) NAME(OBJITEM4) FNAME(OBJITEM) CAPTION(ÈísSkladu +SklPoložka +DatObjDod +ÈísObjInt )            KEY(UPPER(cCisSklad) +UPPER(cSklPol) +if(empty(dDatObDOD) ,'        ' , DTOS(dDatObDOD)) +UPPER(cCislObINT) )
+  TYPE(INDEX) NAME(OBJITEM5) FNAME(OBJITEM) CAPTION(ZkrProdej )                                              KEY(UPPER(cZkrProdej))
+  TYPE(INDEX) NAME(OBJITEM6) FNAME(OBJITEM) CAPTION(MnoKVyrobe)                                              KEY(nMnozVpINT)
+  TYPE(INDEX) NAME(OBJITEM7) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt + +SklPoložka )                    KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +UPPER(cVyrPol) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(OBJITEM8) FNAME(OBJITEM) CAPTION(cisZakazky +ÈísPolObj )                                  KEY(UPPER(cCisZakaz) +STRZERO(nCislPolOb,5) )
+  TYPE(INDEX) NAME(OBJITEM9) FNAME(OBJITEM) CAPTION(NazZbo    )                                              KEY(UPPER(cNazZBO))
+  TYPE(INDEX) NAME(OBJITE10) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt +ÈísPolObj )                       KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +STRZERO(nCislPolOb,5) )
+  TYPE(INDEX) NAME(OBJITE11) FNAME(OBJITEM) CAPTION(RokVytvoø +ID_objedn. )                                  KEY(STRZERO(nRokRV,4) +STRZERO(nPolObjRV,10) )
+  TYPE(INDEX) NAME(OBJITE12) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt +SklPoložka )                      KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(OBJITE13) FNAME(OBJITEM) CAPTION(cisZakazky  )                                            KEY(UPPER(cCisZakaz) +UPPER(cVyrPol) +STRZERO(nCisOper,4) )
+  TYPE(INDEX) NAME(OBJITE14) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt +ÚèetníSkup + VyrPol +SklPoložka ) KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +STRZERO(nUCETskup,3) +UPPER(cVyrPol) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(OBJITE15) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt +ÈísSkladu +NazZbo )               KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +UPPER(cCisSklad) +UPPER(cNazZBO) )
+  TYPE(INDEX) NAME(OBJITE16) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísObjInt +ÈísSkladu +SklPoložka )           KEY(STRZERO(nCisFirmy,5) +UPPER(cCislObINT) +UPPER(cCisSklad) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(OBJITE17) FNAME(OBJITEM) CAPTION(ÈísloFirmy +ÈísPolZak +PoøÈísPolZak )                    KEY(STRZERO(nCisFirmy,5) +UPPER(cCisZakazI) +STRZERO(nCislPolZa,5) )
+  TYPE(INDEX) NAME(OBJITE18) FNAME(OBJITEM) CAPTION(ÈísPolZak +PoøÈísPolZak )                                KEY(UPPER(cCisZakazI) +STRZERO(nCislPolZa,5))
+  TYPE(INDEX) NAME(OBJITE19) FNAME(OBJITEM) CAPTION(ÈísFirmy)                                                KEY(ncisFirmy)
+  TYPE(INDEX) NAME(OBJITE20) FNAME(OBJITEM) CAPTION(KategZbo +SklPoložka)                                    KEY(STRZERO(nZboziKAT,4) +UPPER(cSklPol))
+  TYPE(INDEX) NAME(OBJITE21) FNAME(OBJITEM) CAPTION(Doklad)                                                  KEY(nDoklad)
+  TYPE(INDEX) NAME(OBJITE22) FNAME(OBJITEM) CAPTION(ÈísObjInt+KategZbo+SklPoložka)                           KEY(UPPER(cCislObINT) +STRZERO(nZboziKAT,4) +UPPER(cSklPol))
+  TYPE(INDEX) NAME(OBJITE23) FNAME(OBJITEM) CAPTION(StavFakt)                                                KEY(nSTAV_FAKT)
+  TYPE(INDEX) NAME(OBJITE24) FNAME(OBJITEM) CAPTION(doklad +stavFakt)                                        KEY(strZero(nDoklad,10) +strZero(nSTAV_FAKT,1))
+  TYPE(INDEX) NAME(OBJITE25) FNAME(OBJITEM) CAPTION(doklad +polObjedn)                                       KEY(strZero(nDoklad,10) +strZero(nCislPolOb,5))
+  TYPE(INDEX) NAME(OBJITE26) FNAME(OBJITEM) CAPTION(Firma+sklad+sklpol+doklad +polObjedn)                    KEY(STRZERO(nCisFirmy,5) +UPPER(cCisSklad) +UPPER(cSklPol) +strZero(nDoklad,10) +strZero(nCislPolOb,5)) DESCEND(Y)
+  TYPE(INDEX) NAME(OBJITE27) FNAME(OBJITEM) CAPTION(stav_fakv)                                               KEY(nstav_fakv)
+  TYPE(INDEX) NAME(OBJITE28) FNAME(OBJITEM) CAPTION(stav_exlv)                                               KEY(nstav_exlv)
+  TYPE(INDEX) NAME(OBJITE29) FNAME(OBJITEM) CAPTION(èísloSkladu)                                             KEY(ccisSklad)
+  TYPE(INDEX) NAME(OBJITE30) FNAME(OBJITEM) CAPTION(sklPoložka)                                              KEY(csklPol)
+  TYPE(INDEX) NAME(OBJITE31) FNAME(OBJITEM) CAPTION(Položky)                                                 KEY(nCislPolOb)
+  TYPE(INDEX) NAME(OBJITE32) FNAME(OBJITEM) CAPTION(ÈísObjInt)                                               KEY(cCislObINT)
+  TYPE(INDEX) NAME(OBJITE33) FNAME(OBJITEM) CAPTION(ÈísObjInt )                                              KEY(cCislObINT) DESCEND(Y)
+  TYPE(INDEX) NAME(OBJITE34) FNAME(OBJITEM) CAPTION(Rozl.poø+Kateg+Skl.pol)                                  KEY(UPPER(CROZPORADI)+ STRZERO(NZBOZIKAT,4) + UPPER(CSKLPOL))
+  TYPE(INDEX) NAME(OBJITE35) FNAME(OBJITEM) CAPTION(klicObl +èísloFirmy)                                     KEY(STRZERO(NKLICOBL,3)+STRZERO(NCISFIRMY,5)+UPPER(CROZPORADI)+STRZERO(NZBOZIKAT,4)+UPPER(CSKLPOL)) FOR((nmnozOBodb > nmnoz_FAKT)) INSORT(N)
+  TYPE(INDEX) NAME(OBJITE36) FNAME(OBJITEM) CAPTION(datDodání)                                               KEY(dDatDoOdb)
+  TYPE(INDEX) NAME(OBJITE37) FNAME(OBJITEM) CAPTION(doklNabv +poøPol)                                        KEY(STRZERO(ndokladNav,10) +STRZERO(ncountNav,5))
+  TYPE(INDEX) NAME(DBID_imp) FNAME(OBJITEM) CAPTION()                                                        KEY(cDBID_imp)
+  TYPE(INDEX) NAME(ID)       FNAME(OBJITEM) CAPTION()                                                        KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cCislObInt:Èíslo objednávky:25:C,cSklPol:Skl. položka:15:C,cNazZbo:Název zboží:30:C,nCisFirmy:Firma:5:N) ORDER(3) RETURN(cCislObInt)
+* RELATION DEFINE PVPITEM ******************************************
+  TYPE(RELATION) TO(OBJHEAD) KEY(ndoklad)                  TAG(8)
+  TYPE(RELATION) TO(KUSOV)   KEY(ccisloObInt +ncisloPolOb) TAG(5)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(EXPLSTHD) DESC(Expedièní listy - hlavièky) LIKE(FAKVYSHD) TASK(PRO)
+* FIELD DEFINITION **************************************************
+*
+  TYPE(FIELD) NAME(dExpedice)    DESC(Datum expedice)               CAPTION(datExpedice) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dNakladky)    DESC(Datum nakládky)               CAPTION(datNakl)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasNaklad)   DESC(Èas nakládky)                 CAPTION(èasNakl)     FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVykladky)    DESC(Datum vykládky)               CAPTION(datVykl)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasVyklad)   DESC(Èas vykládky)                 CAPTION(èasVykl)     FTYPE(c) FLEN( 8) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(EXPLSTHD01)  FNAME(EXPLSTHD) CAPTION(ÈísloExpLi) KEY(nDoklad)
+  TYPE(INDEX) NAME(ID)          FNAME(EXPLSTHD) CAPTION()           KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(EXPLSTIT) DESC(Expedièní listy - položky) LIKE(FAKVYSIT) TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cNazev)      DESC(Název odbìratele)              CAPTION(NázevOdbìr)  FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cNazev2)     DESC(Název2 odbìratele)             CAPTION(Název2Odbì)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(nIco)        DESC(IÈO odbìratele)                CAPTION(IÈOOdbì)     FTYPE(n) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cDic)        DESC(DIÈ odbìratele)                CAPTION(DIÈOdbì)     FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)      DESC(Ulice odbìratele)              CAPTION(UliceOdbì)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cCisPopis)   DESC(ÈísPopis odbìratele)           CAPTION(ÈísPopiOdbì) FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cCisOrien)   DESC(ÈísOrientaèní odbìratele)      CAPTION(ÈísOrieOdbì) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCisla)  DESC(Ulice+èísla odbìratele)        CAPTION(UlÈislaOdbì) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObec)       DESC(Obec odbìratele)               CAPTION(ObecOdbì)    FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cSidlo)      DESC(Místo odbìratele)              CAPTION(MístoOdbì)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)        DESC(PSè odbìratele)                CAPTION(PSÈOdbì)     FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC)   RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat)  DESC(Zkratka státu)                 CAPTION(ZkratStát)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(1)
+*
+  TYPE(FIELD) NAME(cnazevDOA)   DESC(Název firmy dodací adresy)     CAPTION(NázevDodA)   FTYPE(c) FLEN(100) DEC( 0)
+  TYPE(FIELD) NAME(cnazevDOA2)  DESC(Název2  dodací adresy)         CAPTION(Název2DodA)  FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(nicoDOA)     DESC(IÈO firmy dodAdresy)           CAPTION(ièoDOA)      FTYPE(n) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cdicDOA)     DESC(DIÈ firmz dodAdresy)           CAPTION(dièDOA)      FTYPE(c) FLEN(16) DEC( 0)
+  TYPE(FIELD) NAME(culiceDOA)   DESC(Ulice dodací adresy)           CAPTION(UliceDodA)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cCisPopDOA)  DESC(ÈísPopis dodací adresy)        CAPTION(ÈísPopiDodA)      FTYPE(c) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(cCisOriDOA)  DESC(ÈísOrient.dodací adresy)       CAPTION(ÈísOrieDodA)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUliCisDOA)  DESC(Ulice+èísla dodací adresy)     CAPTION(UlÈislaDodA)      FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cObecDOA)    DESC(Obec dodací adresy)            CAPTION(ObecDodA)         FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(csidloDOA)   DESC(Místo dodací adresy)           CAPTION(MístDodA)    FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cpscDOA)     DESC(PSÈ dodací adresy)             CAPTION(PSÈDodA)     FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(dNakladky)   DESC(Datum nakládky)                CAPTION(datNakl)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasNaklad)  DESC(Èas nakládky)                  CAPTION(èasNakl)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ntypPriloh)  DESC(Typ pøílohy)                   CAPTION(typPril)     FTYPE(n) FLEN( 1) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(EXPLSTIT01) FNAME(EXPLSTIT) CAPTION(ÈísloExpLi)            KEY(nDoklad)
+  TYPE(INDEX) NAME(EXPLSTIT02) FNAME(EXPLSTIT) CAPTION(èísloExp +èísloZakazI) KEY(strZero(ndoklad,10) +upper(cCisZakazI))
+  TYPE(INDEX) NAME(EXPLSTIT03) FNAME(EXPLSTIT) CAPTION(èísloExp +èísloZakazI) KEY(upper(cCisZakazI)   +strZero(ndoklad,10))
+  TYPE(INDEX) NAME(EXPLSTIT04) FNAME(EXPLSTIT) CAPTION(ÈísloExp +PoøadíExp)   KEY(STRZERO(ndoklad,10) +STRZERO(nIntCount,5))
+  TYPE(INDEX) NAME(ID)         FNAME(EXPLSTIT) CAPTION()                      KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VZTAHOBJ) DESC(Vztah mezi objednávkami)   TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈísloFirmy) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCislObInt) DESC(Interní èíslo objednávky pøij.) CAPTION(IntcisObjP) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nCislPolOb) DESC(Interní èíslo položky obj.pøij) CAPTION(IntCPolObP) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCisSklad)  DESC(Èíslo skladu)                   CAPTION(cisSkladu)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC(Skladová položka)               CAPTION(SklPolozka) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cPolCen)    DESC(Typ ceníkové položky)           CAPTION(TypCenPol)  FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cCisObj)    DESC(Interní èíslo objednávky vyst)  CAPTION(IntcisObjV) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nIntCount)  DESC(Interní èíslo položky obj.vyst) CAPTION(IntCPolObV) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(dDatObj)    DESC(Datum objednání)                CAPTION(DatObjedn)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nMnozObDod) DESC(Množství objednané odbìrateli)  CAPTION(MnoObjdOdb) FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnozObSkl) DESC(Množství objednané na sklad)    CAPTION(MnoObjNSkl) FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(cCISzakaz)  DESC(Èíslo zakázky)                  CAPTION(cisZakazky) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cUsrZmenyR) DESC()                               CAPTION()           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatZmenyR) DESC()                               CAPTION()           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasZmenyR) DESC()                               CAPTION()           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cUsrVznikR) DESC()                               CAPTION()           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatVznikR) DESC()                               CAPTION()           FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasVznikR) DESC()                               CAPTION()           FTYPE(c) FLEN( 8) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VZTAHOB1) FNAME(VZTAHOBJ) CAPTION(cisSkladu +SklPolozka ) KEY(UPPER(cCisSklad) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(VZTAHOB2) FNAME(VZTAHOBJ) CAPTION(IntcisObjP) KEY(UPPER(cCislObInt))
+  TYPE(INDEX) NAME(VZTAHOB3) FNAME(VZTAHOBJ) CAPTION(IntcisObjV) KEY(UPPER(cCisObj))
+  TYPE(INDEX) NAME(VZTAHOB4) FNAME(VZTAHOBJ) CAPTION(IntcisObjV +cisSkladu +SklPolozka +IntcisObjP +IntCPolObP ) KEY(UPPER(cCisObj) +UPPER(cCisSklad) +UPPER(cSklPol) +UPPER(cCislObInt) +STRZERO(nCislPolOb) )
+  TYPE(INDEX) NAME(VZTAHOB5) FNAME(VZTAHOBJ) CAPTION(IntcisObjP +IntCPolObP ) KEY(UPPER(cCislObInt) +STRZERO(nCislPolOb) )
+  TYPE(INDEX) NAME(VZTAHOB6) FNAME(VZTAHOBJ) CAPTION(IntcisObjV +cisSkladu +SklPolozka +IntcisObjP +IntCPolObP +IntCPolObV ) KEY(UPPER(cCisObj) +UPPER(cCisSklad) +UPPER(cSklPol) +UPPER(cCislObInt) +STRZERO(nCislPolOb) +STRZERO(nIntCount) )
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PLOZTRHD) DESC(Plán tras- Rozvoz zboží _ HLA)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD)  DESC(Typ dokladu)                 CAPTION(TypDokl)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU)  DESC(Typ pohybu)                  CAPTION(TypPoh)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)     DESC(Èíslo dokladu)               CAPTION(ÈísloDokl)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cRozvoz)     DESC(Oznaèení rozvozu)            CAPTION(Rozvoz)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cNazRozvoz)  DESC(Název rozvozu)               CAPTION(NázRozvoz)     FTYPE(C) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(ccistrasy)   DESC(èíslo trasy)                 CAPTION(cisTrasy)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cnaztrasy)   DESC(Název trasy)                 CAPTION(nazTrasy)      FTYPE(c) FLEN(30) DEC( 0)
+*
+  TYPE(FIELD) NAME(nStroj)      DESC(Èíslo stroje)               CAPTION(Typ stroje)     FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(ncisFirDOP)   DESC(Èíslo firmy dopravce)         CAPTION(èísFirDOP)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cnazevDOP)    DESC(Název firmy dopravce)         CAPTION(názevDOP)    FTYPE(c) FLEN(100) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                  CAPTION(ÈísOsoby)       FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)     CAPTION(JmOsobRozl)     FTYPE(c) FLEN(65) DEC( 0)
+*
+  TYPE(FIELD) NAME(dOdjezd)     DESC(Datum odjezdu)               CAPTION(datOdjezd)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasOdjezd)  DESC(Èas odjezdu)                 CAPTION(èasOdjezd)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dPrijezd)    DESC(Datum pøíjezdu)              CAPTION(datPrijezd)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasPrijezd) DESC(Èas pøíjezdu)                CAPTION(èasPrijezd)    FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PLROTRHD01)  FNAME(PLROTRHD) CAPTION(ÈísRozvozu)         KEY(nDoklad)
+  TYPE(INDEX) NAME(ID)          FNAME(PLROTRHD) CAPTION()                   KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PLROTRIT) DESC(Plán tras- Rozvoz zboží _ POL)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD)  DESC(Typ dokladu)                    CAPTION(TypDokl)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU)  DESC(Typ pohybu)                     CAPTION(TypPoh)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)     DESC(Èíslo dokladu)                  CAPTION(ÈísloDokl)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cRozvoz)     DESC(Oznaèení rozvozu)               CAPTION(Rozvoz)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(ccistrasy)   DESC(èíslo trasy)                    CAPTION(cisTrasy)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cnaztrasy)   DESC(Název trasy)                    CAPTION(nazTrasy)      FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(ccistrasyp)  DESC(Èíslo trasy_pl)                 CAPTION(cisTrasy_p)    FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_TRASY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisDodavk)  DESC(Èíslo dodávky)                  CAPTION(ÈísDodávky)    FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nDOKLAD_OP)  DESC(Èíslo dokladu obj.pøij)         CAPTION(ÈÍSdolDOK)     FTYPE(N) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakazI)  DESC(Èíslo položky výr.zakázky)      CAPTION(polVýrZak)     FTYPE(C) FLEN(36) DEC( 0)
+*
+  TYPE(FIELD) NAME(cNazDodavk)  DESC(Název dodávky)                  CAPTION(NázDodávky)    FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Firma èíslo)                    CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazFirmy)   DESC(Název odbìratele)               CAPTION(NázOdbìrat)    FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(dNakladky)    DESC(Datum nakládky)                CAPTION(datNakl)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasNaklad)   DESC(Èas nakládky)                  CAPTION(èasNakl)       FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVykladky)    DESC(Datum vykládky)                CAPTION(datVykl)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasVyklad)   DESC(Èas vykládky)                  CAPTION(èasVykl)       FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(nEXPLSTIT)  DESC(Vazba na sID explstit)           CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nROZVOZHD)  DESC(Vazba na sID rozvozhd)           CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nVYRZAKIT)  DESC(Vazba na sID vyrzakit)           CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nOBJITEM)   DESC(Vazba na sID objitem)            CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PLROTRIT01)  FNAME(PLROTRIT)   CAPTION(ÈísRozvozu)         KEY(nDoklad)
+  TYPE(INDEX) NAME(ID)          FNAME(PLROTRIT)   CAPTION()                   KEY(sID) UNIQUE
+
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(ROZVOZHD) DESC(Rozvoz zboží _ HLA)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD)  DESC(Typ dokladu)                 CAPTION(TypDokl)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU)  DESC(Typ pohybu)                  CAPTION(TypPoh)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nStavRozv)   DESC(Stav rozvozu)                CAPTION(StavRozv)      FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)     DESC(Èíslo dokladu)               CAPTION(ÈísloDokl)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cRozvoz)     DESC(Oznaèení rozvozu)            CAPTION(Rozvoz)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cNazRozvoz)  DESC(Název rozvozu)               CAPTION(NázRozvoz)     FTYPE(C) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(ccistrasy)   DESC(èíslo trasy)                 CAPTION(cisTrasy)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cnaztrasy)   DESC(Název trasy)                 CAPTION(nazTrasy)      FTYPE(c) FLEN(30) DEC( 0)
+*
+  TYPE(FIELD) NAME(nStroj)      DESC(Èíslo stroje - tahaè)        CAPTION(StrojTah )     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nStroj_2)    DESC(Èíslo stroje - pøívìs)       CAPTION(StrojPøí )     FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(ncisFirDOP)   DESC(Èíslo firmy dopravce)       CAPTION(èísFirDOP)     FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cnazevDOP)    DESC(Název firmy dopravce)       CAPTION(názevDOP)      FTYPE(c) FLEN(100) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                  CAPTION(ÈísOsoby)      FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)     CAPTION(JmOsobRozl)    FTYPE(c) FLEN(65) DEC( 0)
+*
+  TYPE(FIELD) NAME(dOdjezd)     DESC(Datum odjezdu)               CAPTION(datOdjezd)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasOdjezd)  DESC(Èas odjezdu)                 CAPTION(èasOdjezd)     FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dPrijezd)    DESC(Datum pøíjezdu)              CAPTION(datPrijezd)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasPrijezd) DESC(Èas pøíjezdu)                CAPTION(èasPrijezd)    FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                 CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                    CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                            CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                            CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(ROZVOZHD01)  FNAME(ROZVOZHD) CAPTION(ÈísRozvozu)         KEY(nDoklad)
+  TYPE(INDEX) NAME(ROZVOZHD02)  FNAME(ROZVOZHD) CAPTION(OznRozvozu)         KEY(Upper(cRozvoz))
+  TYPE(INDEX) NAME(ROZVOZHD03)  FNAME(ROZVOZHD) CAPTION(èísFirDopr)         KEY(ncisFirDOP)
+  TYPE(INDEX) NAME(ID)          FNAME(ROZVOZHD) CAPTION()                   KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(ROZVOZIT) DESC(Rozvoz zboží _ POL)  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD)  DESC(Typ dokladu)                    CAPTION(TypDokl)       FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU)  DESC(Typ pohybu)                     CAPTION(TypPoh)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)     DESC(Èíslo dokladu)                  CAPTION(ÈísloDokl)     FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cRozvoz)     DESC(Oznaèení rozvozu)               CAPTION(Rozvoz)        FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(ccistrasy)   DESC(èíslo trasy)                    CAPTION(cisTrasy)      FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cnaztrasy)   DESC(Název trasy)                    CAPTION(nazTrasy)      FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(ccistrasyp)  DESC(Èíslo trasy_pl)                 CAPTION(cisTrasy_p)    FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_TRASY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisDodavk)  DESC(Èíslo dodávky)                  CAPTION(ÈísDodávky)    FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(nDOKLAD_OP)  DESC(Èíslo dokladu obj.pøij)         CAPTION(ÈÍSdolDOK)     FTYPE(N) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cCisZakazI)  DESC(Èíslo položky výr.zakázky)      CAPTION(polVýrZak)     FTYPE(C) FLEN(36) DEC( 0)
+*
+  TYPE(FIELD) NAME(cNazDodavk)  DESC(Název dodávky)                  CAPTION(NázDodávky)    FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Firma èíslo)                    CAPTION(ÈísloFirmy)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazFirmy)   DESC(Název odbìratele)               CAPTION(NázOdbìrat)    FTYPE(c) FLEN(50) DEC( 0)
+*
+  TYPE(FIELD) NAME(dNakladky)    DESC(Datum nakládky)                CAPTION(datNakl)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasNaklad)   DESC(Èas nakládky)                  CAPTION(èasNakl)       FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVykladky)    DESC(Datum vykládky)                CAPTION(datVykl)       FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCasVyklad)   DESC(Èas vykládky)                  CAPTION(èasVykl)       FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(nEXPLSTIT)  DESC(Vazba na sID explstit)           CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nROZVOZHD)  DESC(Vazba na sID rozvozhd)           CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nVYRZAKIT)  DESC(Vazba na sID vyrzakit)           CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nOBJITEM)   DESC(Vazba na sID objitem)            CAPTION()              FTYPE(n) FLEN(10) DEC( 0)
+*
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)     FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)      FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(ROZVOZIT01)  FNAME(ROZVOZIT)   CAPTION(ÈísRozvozu)          KEY(nDoklad)
+  TYPE(INDEX) NAME(ROZVOZIT02)  FNAME(ROZVOZIT)   CAPTION(DatÈasNákl)          KEY(StrZero(nDoklad,10)+if(empty(dNakladky) ,'        ' , DTOS(dNakladky))+ Upper(cCasNaklad))
+  TYPE(INDEX) NAME(ROZVOZIT03)  FNAME(ROZVOZIT)   CAPTION(DatVykl)             KEY(StrZero(nDoklad,10)+if(empty(dVykladky) ,'        ' , DTOS(dVykladky))+ Upper(cCasVyklad))
+  TYPE(INDEX) NAME(ROZVOZIT04)  FNAME(ROZVOZIT)   CAPTION(èísloRozv +èísloZak) KEY(StrZero(nDoklad,10)+upper(ccisZakazI)) 
+  TYPE(INDEX) NAME(ID)          FNAME(ROZVOZIT)   CAPTION()                    KEY(sID) UNIQUE
+
+
+
+* TMP
+* FILE DEFINITION **************************************************
+*
+* OBJEDNÁVKY PØIJATÉ
+********************
+TYPE(FILE) NAME(OBJHEADw) DESC(Objednávky pøijaté hlavièky (w)) LIKE(OBJHEAD) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+
+
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OBJITEMw) DESC(Objednávky pøijaté poožky   (w)) LIKE(OBJITEM) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cfile_iv)   DESC() CAPTION() FTYPE(C) FLEN(10)
+  TYPE(FIELD) NAME(nrecs_iv)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nrecor)    DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(_mnozPoOdb) DESC() CAPTION() FTYPE(n) FLEN(11) DEC(2)
+  TYPE(FIELD) NAME(_mnozVpInt) DESC() CAPTION() FTYPE(n) FLEN(11) DEC(2)
+  TYPE(FIELD) NAME(nmnozEdit)  DESC() CAPTION() FTYPE(n) FLEN(10) DEC(2)
+  TYPE(FIELD) NAME(_nbasket)   DESC() CAPTION() FTYPE(N) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJITEM_1) FNAME(OBJITEMw) CAPTION()   KEY(STRZERO(ncislpolob,5)) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+  TYPE(INDEX) NAME(OBJITEM_2) FNAME(OBJITEMw) CAPTION()   KEY(UPPER(cCislObINT) +STRZERO(nCislPolOb,5) )
+  TYPE(INDEX) NAME(OBJITEM_3) FNAME(OBJITEMw) CAPTION()   KEY(UPPER(cCisSklad) +UPPER(cSklPol))
+  TYPE(INDEX) NAME(OBJITEM_4) FNAME(OBJITEMw) CAPTION()   KEY( _nbasket) FOR( _nbasket = 1 )
+
+* OBJEDNÁVKY PØIJATÉ - rozdìlìní
+********************************
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(OBJIT_ATw) DESC(Objednávky pøijaté rozdìlìní (w)) LIKE(OBJIT_AT) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+*
+* OBJEDNÁVKY PØIJATÉ - hromadná fakturace
+*****************************************
+TYPE(FILE) NAME(OBJHEADww) DESC(Objednávky pøijaté hlavièky (w)) LIKE(OBJHEAD) NOCHECK()  TASK(PRO)
+  TYPE(FIELD) NAME(nmaxDoklad)    DESC(Nejvyšší èíslo dokladu)      CAPTION()   FTYPE(n) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(ninRange)      DESC(v rozsahu od-do 1, mimo 0)   CAPTION()   FTYPE(n) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJHEAD1)  FNAME(OBJHEADww) CAPTION(Firma)                 KEY(nCisFirmy)
+  TYPE(INDEX) NAME(OBJHEAD2)  FNAME(OBJHEADww) CAPTION(NázFirmy  )            KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(OBJHEAD3)  FNAME(OBJHEADww) CAPTION(oblast)                KEY(nklicObl)
+  TYPE(INDEX) NAME(OBJHEAD4)  FNAME(OBJHEADww) CAPTION(oblast +èísloFirmy)    KEY(strZero(nklicObl,3) +strZero(ncisFirmy,5))
+
+
+TYPE(FILE) NAME(OBJITEMww) DESC(Objednávky pøijaté položky  (w)) LIKE(OBJITEM) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nmnozkFak) DESC() CAPTION() FTYPE(n) FLEN(13) DEC(2)
+  TYPE(FIELD) NAME(_nsidCENzb) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nsidDHww)  DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(nOrdItem)   DESC() CAPTION() FTYPE(n) FLEN( 5) DEC(0)
+  TYPE(FIELD) NAME(ninRange)   DESC(v rozsahu od-do 1, mimo 0)   CAPTION()   FTYPE(n) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJITEM1) FNAME(OBJITEMww) CAPTION(SklPoložka +ÈísObjInt )     KEY(UPPER(cSklPol) +UPPER(cCislObINT) )
+  TYPE(INDEX) NAME(OBJITEM2) FNAME(OBJITEMww) CAPTION(nazZbo                )     KEY(UPPER(cNazZBO))
+  TYPE(INDEX) NAME(OBJITEM3) FNAME(OBJITEMww) CAPTION(KategZbo +SklPoložka)       KEY(STRZERO(nZboziKAT,4) +UPPER(cSklPol))
+  TYPE(INDEX) NAME(OBJITEM4) FNAME(OBJITEMww) CAPTION(rozlPoø+Kateg+Skl.pol)      KEY(UPPER(CROZPORADI)+ STRZERO(NZBOZIKAT,4) + UPPER(CSKLPOL))
+  TYPE(INDEX) NAME(OBJITEM5) FNAME(OBJITEMww) CAPTION(poøadíPoložky)              KEY(nordItem)
+  TYPE(INDEX) NAME(sidHDww)  FNAME(OBJITEMww) CAPTION()                           KEY(_nsidDHww) INSORT(N)
+
+TYPE(FILE) NAME(OBJITEMwds) DESC(Objednávky pøijaté položky-SUM  (wds)) NOCHECK()  TASK(PRO)
+  TYPE(FIELD) NAME(cCisSklad)  DESC()      CAPTION() FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)    DESC()      CAPTION() FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nsumKFak)   DESC()      CAPTION() FTYPE(n) FLEN(15) DEC( 4)
+  TYPE(FIELD) NAME(npocOdb)    DESC()      CAPTION() FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(_nsidCENzb) DESC()      CAPTION() FTYPE(N) FLEN(10) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(OBJITEM1) FNAME(OBJITEMwds) CAPTION(cisSklad +sklPol )     KEY( UPPER(ccisSklad) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(sidCENz)  FNAME(OBJITEMwds) CAPTION()                      KEY(_nsidCENzb)
+
+
+* EXPEDIÈNÍ LISTY EXPLSTHD/EXPLSTIT
+************************************
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(EXPLSTHDw) DESC(Expedièní listy - hlavièky (w))  LIKE(EXPLSTHD) NOCHECK() TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+
+
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(EXPLSTITw) DESC(Expedièní listy - položky (w))   LIKE(EXPLSTIT) NOCHECK() TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cfile_iv)   DESC() CAPTION() FTYPE(C) FLEN(10)
+  TYPE(FIELD) NAME(nrecs_iv)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nrecpvph)  DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nrecpvpi)  DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nrecor)    DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(EXPLIT_1) FNAME(EXPLSTITw) CAPTION() KEY( STRZERO(nINTCOUNT,5)) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+
+
+* PRODEJNÍ CENÍKY - rozdìlìní
+********************************
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PROCENHDw) DESC(Prodejní ceníky - hlavièky (w)) LIKE(PROCENHD) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+TYPE(FILE) NAME(PROCENITw) DESC(Prodejní ceníky - položky (w)) LIKE(PROCENIT) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+TYPE(FILE) NAME(PROCENHOw) DESC(Prodejní ceníky - hodnoty (w)) LIKE(PROCENHO) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+TYPE(FILE) NAME(PROCENHO1w) DESC(Prodejní ceníky - hodnoty výpoèet cen (w)) LIKE(PROCENHO) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+
+
+* NABÍDKY VYSTAVENÉ
+********************
+TYPE(FILE) NAME(NABVYSHDw) DESC(Nabídky vystavené hlavièky (w)) LIKE(NABVYSHD) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+
+
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(NABVYSITw) DESC(Nabídky vystavené položky   (w)) LIKE(NABVYSIT) NOCHECK()  TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cfile_iv)   DESC() CAPTION() FTYPE(C) FLEN(10)
+  TYPE(FIELD) NAME(nrecs_iv)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nrecor)    DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC() CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(_mnozPoOdb) DESC() CAPTION() FTYPE(n) FLEN(11) DEC(2)
+  TYPE(FIELD) NAME(_mnozVpInt) DESC() CAPTION() FTYPE(n) FLEN(11) DEC(2)
+  TYPE(FIELD) NAME(nmnozEdit)  DESC() CAPTION() FTYPE(n) FLEN(10) DEC(2)
+  TYPE(FIELD) NAME(nrec_VPol)  DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(NABVYSI_1) FNAME(NABVYSITw) CAPTION()   KEY(STRZERO(nintCount,5)) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+  TYPE(INDEX) NAME(NABVYSI_2) FNAME(NABVYSITw) CAPTION()   KEY(UPPER(cCisSklad) +UPPER(cSklPol))
+
+
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VZTAHOBJw) DESC(Vztah mezi objitem_objvysit (w)) LIKE(VZTAHOBJ) NOCHECK() TASK(ODB)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nMnozObOdb) DESC() CAPTION() FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nMnozPoODB) DESC() CAPTION() FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nMnozKoDod) DESC() CAPTION() FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nmnozKOdor) DESC() CAPTION() FTYPE(n) FLEN(10) DEC( 2)
+  TYPE(FIELD) NAME(nmnozOBorg) DESC() CAPTION() FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(dDatReODB)  DESC() CAPTION() FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatDoOdb)  DESC() CAPTION() FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(_nrecobjit) DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_nrecor)    DESC() CAPTION() FTYPE(N) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(_delrec)    DESC() CAPTION() FTYPE(C) FLEN( 1) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VZTAHOB_1) FNAME(VZTAHOBJw) CAPTION(cisSkladu +SklPolozka ) KEY(UPPER(cCisSklad) +UPPER(cSklPol) )
+  TYPE(INDEX) NAME(VZTAHOB_2) FNAME(VZTAHOBJw) CAPTION(intCISobjP +intCISpolP +intCISobjV +intCISpolV) KEY(UPPER(cCislObInt) +strZero(nCislPolOb,5) +UPPER(ccisOBJ) +STRZERO(nintCount,5) )
+  TYPE(INDEX) NAME(VZTAHOB_3) FNAME(VZTAHOBJw) CAPTION(intCISobjP +intCISpolP +cisSkladu +SklPolozka)  KEY(UPPER(cCislObInt) +strZero(nCislPolOb,5) +UPPER(cCisSklad) +UPPER(cSklPol) )
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(AKTPROCENw) DESC(Aktuální prodejní ceny k firmì (w))  NOCHECK() TASK(PRO)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈísloFirmy)      FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cCisSklad)   DESC(Sklad)                          CAPTION(Sklad)           FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cSklPol)     DESC(Skladová položka)               CAPTION(SklPoložka)      FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nZboziKat)   DESC(Kategorie zboží)                CAPTION(KatZboží)        FTYPE(n) FLEN( 4) DEC( 0) RELATETO(C_KATZBO) RELATETYPE(2)
+  TYPE(FIELD) NAME(CNAZZBO)     DESC(Název zboží)                    CAPTION(Název zboží)     FTYPE(C) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(CZKRATJEDN)  DESC(Zkratka mìrné jednotky)         CAPTION(Zkratka MJ)      FTYPE(C) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nProcDPH)    DESC(Procento DPH)                   CAPTION(ProcDPH)         FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nProcento)   DESC(Procento)                       CAPTION(Procento)        FTYPE(n) FLEN( 9) DEC( 4)
+  TYPE(FIELD) NAME(NCENAPZBO)   DESC(Prodejní cena záklBez danì)     CAPTION(PC záklBez danì) FTYPE(N) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(nCeJPrZBZ)   DESC(Cena jednot.ProdZ bez DPH zahr) CAPTION(CeJPrZBZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCeJPrKBZ)   DESC(Cena jednot.ProdK bez DPH zahr) CAPTION(CeJPrKBZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCeJPrKDZ)   DESC(Cena jednot.ProdK s DPH   zahr) CAPTION(CeJPrKDZ)        FTYPE(n) FLEN(13) DEC( 4)
+  TYPE(FIELD) NAME(nCeJPrZDZ)   DESC(Cena jednot.ProdZ s DPH   zahr) CAPTION(CeJPrZDZ)        FTYPE(n) FLEN(13) DEC( 4)
+* INDEX DEFINITION **************************************************

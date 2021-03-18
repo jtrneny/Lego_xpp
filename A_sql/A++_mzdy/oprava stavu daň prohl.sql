@@ -1,0 +1,1 @@
+update msprc_mo set ldanprohl = lstavem where nrok=2016 and ldanprohl and not lstavem

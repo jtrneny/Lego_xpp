@@ -1,0 +1,162 @@
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+}
+body {
+	background: url("images/bg01.gif") repeat-x left top rgb(231, 231, 231); margin: 0px; padding: 0px; color: rgb(112, 112, 112); font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 11px;
+}
+h1 {
+	color: rgb(69, 117, 82); text-transform: lowercase; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; margin-top: 0px;
+}
+h2 {
+	color: rgb(69, 117, 82); text-transform: lowercase; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; margin-top: 0px;
+}
+h1 {
+	letter-spacing: -2px; font-size: 35px;
+}
+h2 {
+	letter-spacing: -1px; font-size: 24px;
+}
+h1 span {
+	color: rgb(65, 65, 65);
+}
+h2 span {
+	color: rgb(65, 65, 65);
+}
+p {
+	text-align: justify; line-height: 2.2; margin-top: 0px; margin-bottom: 20px;
+}
+ol {
+	text-align: justify; line-height: 2.2; margin-top: 0px; margin-bottom: 20px;
+}
+ul {
+	text-align: justify; line-height: 2.2; margin-top: 0px; margin-bottom: 20px;
+}
+strong {
+	color: rgb(80, 80, 80);
+}
+a {
+	color: rgb(72, 126, 82);
+}
+a:hover {
+	text-decoration: none;
+}
+a img {
+	border: currentColor;
+}
+img.border {
+	
+}
+img.alignleft {
+	margin-right: 25px; float: left;
+}
+img.alignright {
+	margin-left: 50px; float: right;
+}
+img.aligncenter {
+	margin: 0px auto;
+}
+hr {
+	display: none;
+}
+.white-wrapper {
+	background: url("images/bg03.gif") repeat-y left top rgb(255, 255, 255);
+}
+.white-wrapper .bg-top {
+	background: url("images/bg04.gif") no-repeat left top;
+}
+.white-wrapper .bg-bottom {
+	background: url("images/bg05.gif") no-repeat left bottom; padding: 0px 0px 50px;
+}
+.blue-wrapper {
+	background: url("images/bg06.gif") no-repeat top rgb(15, 47, 21);
+}
+.blue-wrapper .container {
+	padding: 50px 0px 30px;
+}
+.blue-wrapper * {
+	color: rgb(156, 177, 160);
+}
+.blue-wrapper h1 {
+	color: rgb(255, 255, 255);
+}
+.blue-wrapper h2 {
+	color: rgb(255, 255, 255);
+}
+.blue-wrapper h1 span {
+	color: rgb(177, 212, 184);
+}
+.blue-wrapper h2 span {
+	color: rgb(177, 212, 184);
+}
+.blue-wrapper ul {
+	list-style: none; line-height: 2.8; padding-left: 0px; margin-left: 0px;
+}
+.blue-wrapper ul li {
+	border-top-color: rgb(44, 76, 50); border-top-width: 1px; border-top-style: solid;
+}
+.blue-wrapper ul li.first {
+	border: currentColor;
+}
+.blue-wrapper a {
+	color: rgb(192, 214, 196);
+}
+.blue-wrapper strong {
+	color: rgb(212, 231, 216);
+}
+.container {
+	margin: 0px auto; width: 1000px;
+}
+.clearfix {
+	clear: both;
+}
+#header {
+	height: 190px;
+}
+#menu {
+	background: url("images/bg02.gif") no-repeat left top; height: 110px;
+}
+#menu ul {
+	list-style: none; margin: 0px; padding: 67px 0px 0px; line-height: normal; float: right;
+}
+#menu li {
+	margin: 0px 30px 0px 0px; padding: 12px 3px 0px; height: 31px; float: left;
+}
+#menu a {
+	font: 18px Georgia, "Times New Roman", Times, serif; color: rgb(137, 136, 136); text-transform: lowercase; letter-spacing: -1px; text-decoration: none; float: left; font-size-adjust: none; font-stretch: normal;
+}
+#menu a:hover {
+	text-decoration: underline;
+}
+#menu li.active {
+	background: rgb(255, 255, 255);
+}
+#menu li.active a {
+	color: rgb(69, 69, 69); text-decoration: none;
+}
+#menu li.active a:hover {
+	color: rgb(69, 69, 69); text-decoration: none;
+}
+.page {
+	
+}
+.content {
+	padding: 0px 50px 0px 0px; width: 675px; float: right;
+}
+.single .content {
+	padding: 0px 50px; width: auto; float: none;
+}
+.sidebar {
+	padding: 0px 0px 0px 50px; width: 175px; float: left;
+}
+#footer {
+	background: rgb(9, 30, 13); padding: 40px 0px;
+}
+#footer p {
+	margin: 0px; padding: 0px; text-align: center; color: rgb(27, 57, 33); text-transform: lowercase;
+}
+#footer a {
+	color: rgb(177, 212, 184);
+}

@@ -1,0 +1,244 @@
+#include "Common.ch"
+#include "drg.ch"
+#include "appevent.ch"
+//
+#include "DRGres.Ch'
+#include "XBP.Ch"
+
+#include "Gra.ch"
+
+#include "..\Asystem++\Asystem++.ch"
+
+
+*
+*
+** CLASS DOH_dochazkadny_IN *******************************************************
+CLASS DOH_dochazkadny_IN FROM drgUsrClass
+EXPORTED:
+  var     obdobi
+  var     rok
+  var     rokobdobi
+  var     stavem
+  var     tyd1, tyd2, tyd3, tyd4, tyd5, tyd6
+  var     firstatrr
+
+  method  Init
+  method  InFocus
+  method  drgDialogStart
+*  method  comboBoxInit
+*  method  comboItemSelected
+*  method  CardOfDochazka
+*  method  setSysFilter
+
+*  method  stableBlock
+  *
+  method  preValidGet, posValidGet
+
+  inline method eventHandled(nEvent, mp1, mp2, oXbp)
+
+    do case
+    * zmìna období - budeme reagovat
+    case(nevent = drgEVENT_OBDOBICHANGED)
+*       ::setSysFilter()
+       ::obdobi := uctOBDOBI:DOH:NOBDOBI
+       return .t.
+    otherwise
+      return .f.
+    endcase
+  return .f.
+
+*    do case
+*    case nEvent = drgEVENT_EDIT   ;   ::CardOfKmenMzd()
+*    case nEvent = xbeP_Keyboard
+*      Do Case
+*      Case mp1 = xbeK_INS   ;   ::CardOfKmenMzd(.T.)
+*      Case mp1 = xbeK_ENTER ;   ::CardOfKmenMzd(.F.)
+*      Case mp1 = xbeK_ESC   ;   PostAppEvent(xbeP_Close,nEvent,,oXbp)
+*      Otherwise
+*        RETURN .F.
+*      EndCase
+*    OTHERWISE
+*      RETURN .F.
+*    ENDCASE
+*  return .T.
+
+hidden:
+  var  brow, dm, dc, df
+
+endclass
+
+*********************************************************************
+* Initialization part. Open all files
+*********************************************************************
+METHOD DOH_dochazkadny_IN:Init(parent)
+  LOCAL  nROK, nOBDOBI
+  LOCAL  cFiltr
+  LOCAL  cX
+  local  atrr
+
+  ::drgUsrClass:init(parent)
+
+  ::rok       := uctOBDOBI:DOH:NROK
+  ::obdobi    := uctOBDOBI:DOH:NOBDOBI
+  ::rokobdobi := uctOBDOBI:DOH:NROKOBD
+  ::stavem    := '1'
+  ::tyd1 := '1. týden'
+  ::tyd2 := '2. týden'
+  ::tyd3 := '3. týden'
+  ::tyd4 := '4. týden'
+  ::tyd5 := '5. týden'
+  ::tyd6 := '6. týden'
+
+  drgDBMS:open('CNAZPOL4')
+  drgDBMS:open('MSPRC_MO')
+  drgDBMS:open('OSOBY')
+  drgDBMS:open('C_PRACDO')
+  drgDBMS:open('DRUHYMZD')
+  drgDBMS:open('kalendar')
+  drgDBMS:open('dspohyby',,,,,'dspohybya')
+  drgDBMS:open('listit')
+  drgDBMS:open('listit',,,,,'listitv')
+
+*  drgDBMS:open('c_cas',,,,,'c_cas_p')
+*  drgDBMS:open('c_cas',,,,,'c_cas_o')
+*  drgDBMS:open('c_cas',,,,,'c_cas_c')
+
+  * TMP soubory *
+  drgDBMS:open('mesicw'  ,.T.,.T.,drgINI:dir_USERfitm); ZAP
+  drgDBMS:open('dspohybyw'  ,.T.,.T.,drgINI:dir_USERfitm); ZAP
+  drgDBMS:open('tminfsumw'  ,.T.,.T.,drgINI:dir_USERfitm); ZAP
+
+  cfiltr := Format("nRokObd= %%", {::rokobdobi})
+  kalendar->(ads_setaof(cfiltr), dbGoTop())
+  kalendar->( dbGoTop())
+
+  mesicw->( dbAppend())
+  do while .not. kalendar->( Eof())
+    atrr := 'd' +Str(kalendar->ntydvmespo,1) +Str(kalendar->ndenvtydpo,1)
+    mesicw->&atrr := kalendar->nden
+    atrr := 'c' + atrr
+    mesicw->&atrr := StrZero( kalendar->nden,2)
+    if( kalendar->nden = 1, ::firstatrr := atrr, nil)
+    kalendar->(dbSkip())
+  enddo
+  mesicw->( dbCommit())
+  kalendar->( dbGoTop())
+
+
+  cfiltr := Format("nCISOSOBY= %% .and. nrok = %% .and. nobdobi = %%", {OSOBY->nCISOSOBY, ::rok, ::obdobi})
+  dspohybya->( ads_setaof(cfiltr), dbGoTop())
+
+   do while .not. dspohybya->( Eof())
+     mh_copyFld('dspohybya', 'dspohybyW', .T., .t.)
+     dspohybya->( dbSkip())
+   enddo
+
+  dspohybya->( ads_clearaof())
+
+//  if .not. Empty( xden)
+  cfiltr := Format("nden = %%", {1})
+  dspohybyw->( ads_setaof(cfiltr), dbGoTop())
+  cfiltr := Format("ncisosoby = %% and dvyhotskut = '%%'", {osoby->ncisosoby,dspohybyw->dDatum})
+  listit->( ads_setaof(cfiltr), dbGoTop())
+
+
+*  ::setSysFilter(.t.)
+RETURN self
+
+
+METHOD DOH_dochazkadny_IN:InFocus(oB)
+ ::drgDialog:DialogCtrl:oBrowse := oB:cargo
+RETURN .T.
+
+
+METHOD DOH_dochazkadny_IN:drgDialogStart(drgDialog)
+  local n
+  local first
+  local pole
+
+
+  ::brow   := drgDialog:dialogCtrl:oBrowse
+  ::dm     := drgDialog:dataManager             // dataMabanager
+  ::dc     := drgDialog:dialogCtrl              // dataCtrl
+  ::df     := drgDialog:oForm                   // dialogForm
+
+
+   for n := 43 to 84
+     if Empty(mesicw->( FieldGet(n)))
+       pole := Lower( 'mesicw->' + Alltrim( mesicw->(FieldName(n))))
+       ::dm:has( pole):odrg:isEdit     := .f.
+//       ::dm:has( pole):odrg:isReadOnly := .f.
+       ::dm:has( pole):odrg:oxbp:Hide()
+     endif
+   next
+RETURN self
+
+
+METHOD DOH_dochazkadny_IN:preValidGet()
+  local cname
+  local xden, nden, n
+  local avars
+
+  cname := ::dc:members[1]:oLastDrg:name
+  xden  := ::dm:get( cname)
+  nden  := Val( xden)
+
+//  drgVar:odrg:oxbp:setColorBG( GRA_CLR_RED )
+
+
+//  if .not. Empty( xden)
+    dspohybyw->( ads_clearaof())
+    listit->( ads_clearaof())
+    cfiltr := Format("nden = %%", {nden})
+    dspohybyw->( ads_setaof(cfiltr), dbGoTop())
+    cfiltr := Format("ncisosoby = %% and dvyhotskut = '%%'", {osoby->ncisosoby,dspohybyw->dDatum})
+    listit->( ads_setaof(cfiltr), dbGoTop())
+
+//  endif
+//  dspohybyW->( dbGoTop())
+//  ::dc:oaBrowse:oxbp:refreshCurrent()
+  ::dc:oBrowse[1]:oxbp:refreshAll()
+  ::dc:oBrowse[2]:oxbp:refreshAll()
+  ::dc:oBrowse[3]:oxbp:refreshAll()
+//  members  := drgDialog:dialogCtrl:members[1]:aMembers
+
+//  ::dm:has(xden):odrg:isEdit := .f.
+  avars := ::dm:vars:values
+  if (n := AScan( avars, {|X| X[1] = Lower(cname)} ) ) > 0      //   AScan( ::aEDITs,{|X| X[1] = pA[1]})
+    avars[n,2]:odrg:oXbp:Editable := .f.
+//    avars[n,2]:odrg:isEdit := .f.
+//    avars[n,2]:odrg:disabled := .t.
+  endif
+
+//  qqq[nden,2]:odrg:isEdit := .f.
+
+RETURN .t.
+
+
+
+METHOD DOH_dochazkadny_IN:posValidGet()
+  local cname
+  local xden, n
+  local avars
+
+//  drgVar:odrg:oxbp:setColorBG( GRA_CLR_WHITE )
+
+  cname := ::dc:members[1]:oLastDrg:name
+  xden  := ::dm:get( cname)
+
+//  ::dm:has(xden):odrg:isEdit := .t.
+  avars := ::dm:vars:values
+  if (n := AScan( avars, {|X| X[1] = Lower(cname)} ) ) > 0      //   AScan( ::aEDITs,{|X| X[1] = pA[1]})
+    avars[n,2]:odrg:oXbp:Editable := .t.
+//    avars[n,2]:odrg:isEdit := .t.
+//    avars[n,2]:odrg:disabled := .f.
+  endif
+
+// uložení záznamù do originálu
+
+
+// zrušení omezení na pøíslušný den
+  dspohybyw->( ads_clearaof())
+  listit->( ads_clearaof())
+
+RETURN .t.

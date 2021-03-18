@@ -1,0 +1,46 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(D_CNAZPOL1) DESC(Èíselník støedisek ...) TASK(CIS)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cNazPol1)   DESC(Støedisko)                      CAPTION(Støedisko)          FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()                   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(tVznikZazn) DESC(Datum vzniku záznamu)           CAPTION(Dat.vzniku)         FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()                   FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(D_CNAZPOL1)   FNAME(D_CNAZPOL1) CAPTION(Støedisko)                     KEY(UPPER(cNAZPOL1)) DUPKEYS(N)
+  TYPE(INDEX) NAME(ID)         FNAME(D_CNAZPOL1) CAPTION(ID)                            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(D_CNAZPOL2) DESC(Èíselník výrobkù ...) TASK(CIS)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cNazPol2)   DESC(Èíslo výrobku)                  CAPTION(Výrobek)       FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()              FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(tVznikZazn) DESC(Datum vzniku záznamu)           CAPTION(Dat.vzniku)    FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()              FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(D_CNAZPOL1)   FNAME(D_CNAZPOL2)  CAPTION(Èíslo výrobku)     KEY(UPPER(cNAZPOL2 )) UNIQUE(Y) DUPKEYS(N)
+  TYPE(INDEX) NAME(ID)         FNAME(D_CNAZPOL2)  CAPTION(ID)                KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(D_CNAZPOL3) DESC(Èíselník zakázek) TASK(CIS)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cNazPol3)   DESC(Èíslo zakázky)               CAPTION(Zakázka)              FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                            CAPTION()                     FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(tVznikZazn) DESC(Datum vzniku záznamu)        CAPTION(Dat.vzniku)           FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                            CAPTION()                     FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(D_CNAZPOL1)   FNAME(D_CNAZPOL3)  CAPTION(Èíslo zakázky)     KEY(UPPER(cNAZPOL3)) 
+  TYPE(INDEX) NAME(ID)           FNAME(D_CNAZPOL3)  CAPTION(ID)                KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+
+

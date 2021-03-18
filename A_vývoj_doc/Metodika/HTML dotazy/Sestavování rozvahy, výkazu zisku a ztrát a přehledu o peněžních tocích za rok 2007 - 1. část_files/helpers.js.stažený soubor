@@ -1,0 +1,21 @@
+/* 
+* @Author: ebola
+* @Date:   2015-04-23 18:37:51
+* @Last Modified by:   ebola
+* @Last Modified time: 2015-06-10 14:33:23
+*/
+
+'use strict';
+
+var AspiHelpers = function(){
+};
+
+AspiHelpers.prototype.getIsoDateFormat = function(date, sep){
+  var DateArray = date.split(sep);
+  if(DateArray.length == 3){
+    return DateArray[2].trim()+"-"+DateArray[1].trim()+"-"+DateArray[0].trim();  
+  }else{
+    return false;
+  }
+  
+}

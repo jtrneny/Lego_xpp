@@ -1,0 +1,34 @@
+Test 04.11.2011
+
+Kanceláø
+-
+
+
+Osoby
+- oprava inicial osoby promítnout i pod sebe
+
+Personalistika
+- neplnily se mì osoby u rodinnıch pøíslušníkù. Zjistil jsem e tam máme chybnì volanı tag na relaci u
+  osob. Volá se tam nOSOBY ale má se volat ID. Pokud jsem to zmìnil tak to zaèalo fungovat SCR i CRD.
+  Prosím tì mrkni na to zda to není ještì nìkde jinde. Podobnì se mì zdá e je stejná chyba u školení a lekprohl.
+- nevím proè se mì u nìkterıch rodinnıch pøíslušníkù správnì zobrazuje vztah a u nìkterıch ne. Zkoušel jsem to na 
+  nezdenicích. Poslední pøevedená data jsem dal na G:\Asystem++
+- nešikovnì se zobrazuje poøadí pracovních vztahù. Je tam vidìt vdy jen první pracovní vztah a ne poslední.
+  
+
+
+
+Test 24.10.2011
+
+Osoby
+- pøidat èíselník obcí
+- u názvu spojení pøednaplnit z èíselníku typu spojení
+- info text u názvu spojení pøednastavit z èíselníku c_typspo->infotext
+- pokud se osoba stane zamìstnancem tak plnit mateøskou firmu ( to je ještì na konzultaci)
+- neplní se mì èíslo osoby ve src
+- neplní se sloenı údaj ulice + èíslo popisné
+
+Personalistika
+- chybí vazba na èíselník národností a státní pøíslušnost
+
+   

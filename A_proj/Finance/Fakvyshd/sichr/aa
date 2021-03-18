@@ -1,0 +1,6 @@
+if isobject(oDialog)                          .and. ;
+       oDialog:drgDialog:cargo = drgEVENT_APPEND2 .and. ;
+       .not. fakVysHD->(eof())                    .and. ;
+       empty( fakVysHD->csubTask)                 .and. ;
+       fakVysHd->nparZalFak = 0                   .and. ;
+       fakVysHd->nparZahFak = 0

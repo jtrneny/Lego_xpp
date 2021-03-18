@@ -1,0 +1,62 @@
+METHOD SYS_filtrs_REL:M_treeViewInit(drgObj)
+  ::M_tree := drgObj:oXbp
+  ::M_fillRoot(::M_tree)
+
+  ::fillTree()
+RETURN
+
+
+method SYS_filtrs_rel:M_fillRoot()
+  local  oDbd  := drgDBMS:getDBD(::m_file)
+  *
+  ::M_rootItem := relXbpTreeViewItem():New()
+  * Set icon images
+  ::M_rootItem:image         := DRG_ICON_PGM1 // DIA1
+  ::M_rootItem:expandedImage := DRG_ICON_PGM2 // DIA2
+  ::M_rootItem:markedImage   := DRG_ICON_PGM3 // DIA3
+  ::M_rootItem:caption       := oDbd:description + '[' +upper(::m_file) +']'
+
+  ::M_rootItem:create()
+  ::M_tree:rootitem:additem(::M_rootItem)
+return self
+
+
+method SYS_filtrs_rel:fillTree()
+  local  oDbd := drgDBMS:getDBD(::m_file)
+  local  x, y, oRELa, oRELs
+  *
+  local  o_rootItem := ::M_rootItem, oSUBitm, oSSUBitm, oItem, pa := ::a_relFIles
+
+  oRELa := oDbd:relDef
+
+  for x := 1 to len(oRELa) step 1
+*****
+    AAdd(pa, oRELa[x]:relFile)
+*****
+    oItem := relXbpTreeViewItem():New()
+
+    * Set icon images
+    oItem:image         := DRG_ICON_PGM1 // DIA1
+    oItem:expandedImage := DRG_ICON_PGM2 // DIA2
+    oItem:markedImage   := DRG_ICON_PGM3 // DIA3
+
+    oItem:caption       := drgDBMS:getDBD(oRELa[x]:relFile):description + '[' +oRELa[x]:relKey +']'
+    oItem:cargo         := oRELa[x]
+
+    oItem:create()
+    o_rootItem:additem(oItem)
+
+    for y := 1 to len(oRELa[x]:relSubs) step 1
+      oRELs     := oRELa[x]:relSubs[y]
+      otree_itm := relXbpTreeViewItem():New()
+
+      otree_itm:caption := drgDBMS:getDBD(oRELs:relFile):description + '[' +oRELs:relKey +']'
+      otree_itm:cargo   := oRELs
+
+      otree_itm:create()
+      oItem:addItem(otree_itm)
+
+      oItem := otree_itm
+    next
+  next
+return self

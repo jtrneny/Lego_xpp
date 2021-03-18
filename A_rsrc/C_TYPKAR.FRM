@@ -1,0 +1,15 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník typù karet) SIZE(60,15) FILE(C_TYPKAR);
+              GUILOOK(Action:n)
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect)
+  TYPE(DBrowse) SIZE(60,14) FILE(C_TYPKAR) FIELDS(NKARTA,CPOPISKAR);
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y)
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail)OFFSET(14,70) PRE( tabSelect)
+  TYPE(Static) STYPE(13) SIZE( 59, 13.6) FPOS( 0.5,0.2) RESIZE(yn)
+    TYPE(GET) NAME(NKARTA)    FPOS(15,1) FLEN( 5) FCAPTION(Karta) CPOS(1,1);
+                                                  POST( drgPostUniqueKey)
+    TYPE(GET) NAME(CPOPISKAR) FPOS(15,2) FLEN(30) FCAPTION(Popis karty) CPOS(1,2) POST( postLastField_2)
+  TYPE(End)
+TYPE(End)

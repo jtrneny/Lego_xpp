@@ -1,0 +1,22 @@
+static function myTest()
+  local  buffer, con, cnt := 1, filtr, arg := {}, cc, cx
+
+  fakprihd->(ordsetfocus(0),DbGoBottom())
+
+  buffer := StrTran(MemoTran(fakprihd->mpopisfak,chr(0)), ' ', '')
+
+  while( asc(buffer) <> 0 .and. (n := at(chr(0), buffer)) > 0 )
+    if cnt = 1   ;  filtr := buffer
+    else
+      cc := substr(buffer,1,n -1)
+      cx := '{|| ' +cc  +' }'
+      val := eval(&(cx))
+      aadd(arg, val)
+    endif
+
+    cnt++
+    buffer := substr(buffer, n +1)
+  end
+
+  filtrs := format(filtr,arg)
+return nil

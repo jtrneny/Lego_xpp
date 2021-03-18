@@ -1,0 +1,90 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.0
+    OPENFILES     = A++_service_task.PRG
+    A_service_project.XPJ
+
+[A_service_project.XPJ]
+    A++_service_task.exe
+    A++_service_manager.exe
+
+[A++_service_task.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /b /q /rXPPUI2.LIB
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = /debug
+    RC_COMPILE    = ARC
+    RC_FLAGS      = /v
+    RUNPARAMETER  = aservice
+// $START-AUTODEPEND
+    ADS.CH
+    ADSDBE.CH
+    COLLAT.CH
+    DMLB.CH
+    GET.CH
+    MEMVAR.CH
+    NATMSG.CH
+    PROMPT.CH
+    SET.CH
+    STD.CH
+    APPEVENT.CH
+    ASINETC.CH
+    COLLAT.CH
+    SERVICE.CH
+    OS.CH
+    SIMPLEIO.CH
+    FILEIO.CH
+    asystem++.res
+    A++_service_sys.obj
+    A++_service_task.obj
+    RecordSet.obj
+// $STOP-AUTODEPEND
+    ADAC20B.LIB
+    ADSUTIL.LIB
+    ASYSTEM_1.LIB
+    asystem++.arc
+    OT4XB.LIB
+    XBTBASE1.LIB
+    XBTBASE2.LIB
+    A++_service_sys.PRG
+    A++_service_task.PRG
+    RecordSet.prg
+
+[A++_service_manager.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /b /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = /debug
+    RC_COMPILE    = ARC
+    RC_FLAGS      = /v
+    WATCH         = Expression:lok=lok
+    RUNPARAMETER  = "aservice"
+// $START-AUTODEPEND
+    ADS.CH
+    ADSDBE.CH
+    COLLAT.CH
+    DMLB.CH
+    GET.CH
+    MEMVAR.CH
+    NATMSG.CH
+    PROMPT.CH
+    SET.CH
+    STD.CH
+    APPEVENT.CH
+    ASINETC.CH
+    COLLAT.CH
+    SERVICE.CH
+    OS.CH
+    SIMPLEIO.CH
+    FILEIO.CH
+    asystem++.res
+    A++_service_manager.obj
+// $STOP-AUTODEPEND
+    ASYSTEM_1.LIB
+    asystem++.arc
+    A++_service_manager.PRG
+

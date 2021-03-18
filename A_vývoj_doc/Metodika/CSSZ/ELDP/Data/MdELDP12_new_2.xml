@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RELDP version="2009.1" xmlns="http://schemas.cssz.cz/ELDP09">
+    <eldp09 sqnr="1" yer="2013" typ="01" tco="" dep="894" nam="Vsetín" dre="">
+       <client bno="7956155867">
+          <name sur="Tkadlecová" fir="Jana" tit="">
+          </name>
+          <adr cit="Vsetín" str="Tichá" num="1789" pos="Vsetí" pnu="75501" cnt="CZ">
+          </adr>
+          <birth dat="1979-06-15" nam="Zajíčková" cit="Vsetín">
+          </birth>
+       </client>
+       <items coun="1" sdex="18" sinc="" sdar="">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="61" m1="X" m2="X" m3="X" m4="X" m5="X" m6="X" m7="X" m10="X" m11="X"               m12="X" dex="18" m8="" m9="" m13="" inc="" dar="">
+           </t1>
+       </items>
+       <comp nam="KOVAR a.s." id="45197164" vs="8940101655" cre="2014-03-28" fro="2007-04-02">
+       </comp>
+   </eldp09>
+</RELDP>

@@ -1,0 +1,152 @@
+* DRG Standard messages
+DRG0001 Not programed yet!
+DRG0002 Invalid value!
+DRG0003 Invalid value!; Allowed values are:
+DRG0004 Dialog definitions not found!
+DRG0005 Program Error Message!
+
+DRG0008 Creating index files for table &.
+DRG0009 Conversion of table & in progress.
+DRG0010 Unrecoverable error has ocured. Please see error log for more information!
+DRG0011 Message!
+DRG0012 Answer to the question
+DRG0013 Warning!
+DRG0014 Error!
+DRG0015 & seconds left
+DRG0016 O~K
+DRG0017 ~Cancel
+DRG0018 Choose option!
+DRG0019 Sorted
+DRG0020 ~Actions
+
+* drgPostUniqueKey messages
+DRG0101 Key already exists!
+DRG0102 Key can not be changed!
+DRG0103 Empty value not allowed!
+
+* Dialog controllers messages
+DRG0110 Record has been locked by other user.;+
+Choose "Retry" to retry update of record!;+
+If you choose "Cancel" your data might become unstable!;+
+In this case you should probably contact program supplier!;;
+DRG0111 You have choosed "Cancel". Is this OK?
+DRG0112 Edit dialog not defined!
+DRG0113 Delete record!;;Are you sure?
+DRG0114 Record NOT deleted due to error?
+DRG0115 Data has been changed.;; Save changes?
+DRG0117 Last record reached!
+DRG0118 Illegal data
+DRG0119 Another user has changed record while record was edited!;;+
+Save data anyway?;;+
+Select YES to save your data.+
+Select NO to retain current data.
+DRG0120 Data conflict! Index "&"!;;Duplicate value!
+DRG0121 Data conflict! Index "&"!;;Index key value can not be changed!
+DRG0122 Undo last record update operation?
+DRG0123 Default print program not defined!
+DRG0124 Save changes before using find!
+DRG0125 Table is empty. New record has been appended automatically.
+
+* DRG application messages
+DRG1101 Description for file & already exist! Overwrite it?
+DRG1102 Filename & doesn't exist!
+DRG1103 Description file(DBD) for & doesn't exist!
+DRG1104 FORM Description file & already exist! Overwrite it?
+DRG1105 Select INDEXFILE no. &
+DRG1106 Import database description from
+
+* DRG standardDialog menu and iconTips
+DRG1200 ~Dialog,~Save,Save/E~xit,Print,~Quit,+
+~Edit,Edit,Add+,Add,Delete,+
+First,Next,Previous,Last,Find,Find next,+
+~Help,Help Index,Help,About
+DRG1201 Quit dialog,Save changes and exit dialog,Save changes,Print,+
+Edit record,Append new record with current data,+
+Append new blank record,Delete record,+
+First record,Previous record or page,+
+Next record or page,Last record,Find,+
+Help on dialog
+
+* drgMenu menu and iconTips
+DRG1210 ~Dialog,~Error log,Dialog ~list,End application,+
+~Help,Help on menu,Help on application,About
+DRG1211 End application,Display error log,Display currently active dialog list,+
+Help on application
+DRG1212 All dialogs must be closed before application end!
+DRG1213 Dialog list
+DRG1214 Program is already active!
+DRG1215 Main menu
+
+* drgSearch menu and iconTips
+DRG1220 ~Dialog,Select and E~xit,~Quit,~Help,Help on search
+DRG1221 Quit dialog,Select and Exit,Run edit dialog,Help
+DRG1222 Edit
+DRG1223 Search
+DRG1224 Default edit form for table & not found!
+DRG1225 Tools
+
+* drgLog menu and iconTips
+DRG1230 ~Dialog,~Print log,Send as ~Mail,~Erase,~Quit,~Help,Help,Help on error log
+DRG1231 Quit dialog,Print log,Mail log to administrator,Delete log file,Help
+DRG1233 Delete log file?
+DRG1232 Error log
+
+* DRG drgStdBrowseIconBar icon tips
+DRG1241 Close dialog,Print,+
+To first record,Previous page,+
+Next page,To last record,+
+Find,Help on dialog
+
+* DRG drgListBrowse object buttons
+DRG1251 ~Edit,~Add,~Delete,~Up,D~own
+
+* drgLogIN messages
+DRG1260 Login
+DRG1261 Username
+DRG1262 Password
+DRG1263 Invalid password entered!
+
+* DRG drgFind dialog messages
+DRG1269 Find dialog
+DRG1270 Where field has
+DRG1270 FROM value
+DRG1271 TO value
+DRG1272 AND
+DRG1273 Order
+DRG1274 Filter O~N
+DRG1275 Filter ~OFF
+DRG1276 ~Find
+DRG1277 Find ~next
+DRG1278 Turn record selection filter ON
+DRG1279 Turn record selection filter OFF
+DRG1280 Find first record
+DRG1281 Find next record for last specified parameters
+DRG1282 Close find dialog
+
+* drgPrint system messages
+DRG2001 ~Dialog,~Output,~Print,~Quit,+
+~Help,Help on dialog,Help on application,About
+DRG2002 Print dialog
+DRG2003 Print program HDR definition & not found.
+DRG2004 ~Setup
+DRG2005 Setup print device
+DRG2006 ~Print
+DRG2007 Start print job
+DRG2008 ~Cancel
+DRG2009 Cancel printing
+DRG2010 Invalid print program definition &.
+DRG2011 Print device setup
+DRG2012 Properties
+DRG2013 Cancel
+DRG2014 Print error!;& &;;Correct error and choose option.
+DRG2015 Printing may not be canceled!
+DRG2016 Screen preview
+DRG2017 Print to file
+DRG2018 Printer
+DRG2019 Output file saved as &.
+
+* drgProgram system messages
+DRG2050 Run program
+DRG2051 Cancel and close dialog.
+DRG2052 Program & doesn't exist!
+

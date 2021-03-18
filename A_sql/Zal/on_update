@@ -1,0 +1,18 @@
+INSERT INTO SLABS( CODE, NAME, LABELNAME, QTY, COMPANY, LOCATION, SERIAL )
+SELECT N.CODE, N.NAME, N.LABELTEMPLATENAME, 1, Q.COMPANY, Q.LOCATION,
+(SELECT TOP 1 CODE FROM SCODE WHERE ITEMCODE = N.CODE ORDER BY ROWVER DESC)
+FROM __NEW N RIGHT JOIN SQTY Q ON Q.CODE = N.CODE
+LEFT JOIN __OLD O ON N.CODE= O.CODE
+WHERE N.SHELFLBL = 'Y'
+AND ((N.PRICE1 <> O.PRICE1) OR (N.NAME <> O.NAME))
+AND NOT EXISTS (SELECT * FROM SLABS L WHERE L.CODE = N.CODE AND L.COMPANY = 
+Q.COMPANY AND L.LOCATION = Q.LOCATION);
+
+
+declare cnt integer;
+cnt=(select count(*) from __new a, __old b where a.Price1=b.Price1 and
+a.Name=b.Name);
+if cnt>0 then
+  //nothing has changed
+  //insert your huge sql stateement here
+end if;

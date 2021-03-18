@@ -1,0 +1,67 @@
+TYPE(DBD) DBENGINE(ADSDBE) 
+
+*
+** FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(tmpcomelw) DESC(Registraèní pokladna - položky -import COMELCOM) TASK(PRO)
+  TYPE(FIELD) NAME(C_1)   DESC() CAPTION() FTYPE(C) FLEN( 5)
+  TYPE(FIELD) NAME(O_1)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_2)   DESC() CAPTION() FTYPE(C) FLEN(14)
+  TYPE(FIELD) NAME(O_2)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_3)   DESC() CAPTION() FTYPE(C) FLEN( 9)
+  TYPE(FIELD) NAME(O_3)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_4)   DESC() CAPTION() FTYPE(C) FLEN(12)
+  TYPE(FIELD) NAME(O_4)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_5)   DESC() CAPTION() FTYPE(C) FLEN(14)
+  TYPE(FIELD) NAME(O_5)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_6)   DESC() CAPTION() FTYPE(C) FLEN(16)
+  TYPE(FIELD) NAME(O_6)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_7)   DESC() CAPTION() FTYPE(C) FLEN( 9)
+  TYPE(FIELD) NAME(O_7)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+  TYPE(FIELD) NAME(C_8)   DESC() CAPTION() FTYPE(C) FLEN( 9)
+  TYPE(FIELD) NAME(O_8)   DESC() CAPTION() FTYPE(C) FLEN( 1)
+* INDEX DEFINITION **************************************************
+
+*  TYPE(FIELD) NAME(nrecs_iv)   DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+*  TYPE(FIELD) NAME(_nrecpvph)  DESC() CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+*TYPE(FILE) NAME(FIRMYw)   DESC(Adresáø firem (w))             LIKE(FIRMY)   NOCHECK()
+* FIELD DEFINITION **************************************************
+*  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+
+*
+* FILE DEFINITION **************************************************
+*
+*TYPE(FILE) NAME(FIRMYUCw) DESC(Úèty firem u penìž.ústavu (w)) LIKE(FIRMYUC) NOCHECK()
+* FIELD DEFINITION **************************************************
+*  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+
+*
+* FILE DEFINITION **************************************************
+*
+*TYPE(FILE) NAME(FIRMYFIw) DESC(Finanèní údaje o firmì (w))    LIKE(FIRMYFI) NOCHECK()
+* FIELD DEFINITION **************************************************
+*  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+
+*
+* FILE DEFINITION **************************************************
+*
+*TYPE(FILE) NAME(FIRMYDAw) DESC(Dodací adresy (w))             LIKE(FIRMYDA) NOCHECK()
+* FIELD DEFINITION **************************************************
+*  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+
+*
+* FILE DEFINITION **************************************************
+*
+*TYPE(FILE) NAME(W_PODRUC) DESC(Èíselník podrozvahových úètù (w)) LIKE(C_PODRUC) NOCHECK()
+* FIELD DEFINITION **************************************************
+*  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+*  TYPE(INDEX) NAME(C_PODR) FNAME(W_PODRUC) CAPTION(Zkratka mìny) KEY(UPPER(cZKRATMENY))
+
+

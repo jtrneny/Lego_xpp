@@ -1,0 +1,175 @@
+html {height:100%}
+body {margin:0;font-family:Tahoma,Sans-Serif;font-size:12px/*.8eM*/; height:95%;}
+form {margin:10px auto;min-height:100%;position:relative} /*height settings are related to "footer always bottom" solution */
+
+#main-content h1 {font-size:1.8eM;font-weight:normal;letter-spacing:4px; margin:.5eM 0 .75eM; text-align:left}
+#main-content h1 a {text-decoration:none;color:#000; font-weight:normal}
+#main-content h2 {background:#006225 url(/images/leaf-inverted.png) no-repeat 15px center; color: #fff; font-size:1.1eM; padding:2px 4px 2px 45px; margin: .75eM 0 0; min-height:18px; line-height:18px; position:relative; left:-15px; width:654px}
+#main-content h2 a {text-decoration:none;color:#fff}
+#main-content td h2 {left:0;width:auto;} 
+#secondary-content h2 {font-size:1.1eM; background: url(/images/leaf-big.png) no-repeat; min-height:35px; padding: 8px 0 0 40px; margin: .5eM 0 0;}
+.article h3 {color:#006225; font-weight:bold; font-size: 1.1eM}
+
+img {border:0}
+input[type=button], input[type=submit] {cursor:pointer;}
+input::-moz-focus-inner {border:0;} /*remove inner border in buttons in FF */
+.article {border: 1px solid #b9c8ba; margin-top:5px; clear:both; padding: 0 15px 15px; text-align:justify} #secondary-content .article {padding: 0 10px 10px} #main-content .article {min-height:450px; position:relative} #main-content .article.short {min-height:0}
+.article a {color:#006225; font-weight:bold} .article a:hover, .article a:visited {color:/*#b9c8ba*/#88a28a}
+.article p, .article ul, .article ol, .article table, .article img {margin: .75eM 0 0}
+.article li {margin-bottom:.5eM}
+table {min-width:70%; border-collapse:collapse}
+td, th {padding:4px 6px;border:1px solid #88a28a;border-left:1px solid #b9c8ba;border-right:1px solid #b9c8ba; text-align:left}
+th {font-weight:bold; background:#dbe3dc}
+
+/* --- header --- */
+#header {position:relative; height:80px; width:1167px; margin:0 auto}
+#header .header-link {position:absolute; left:0; top:10px; width:71px; height:71px}
+#header h1, #header h2 {font-size:22px;font-weight:normal;text-transform:uppercase;letter-spacing:2px;background:url(/images/logo.png) no-repeat 0 10px; height:50px;padding:35px 0 0 100px;margin:0}
+#top-navigation {position:absolute; top:0px;right:95px}
+#top-navigation li {display:inline-block; border-left:1px solid #000;padding: 0 2px 0 6px; margin:0; font-size:.9eM}
+#top-navigation li:first-child {border:none;}
+#top-navigation a {color:#000; text-decoration:none}
+#language-switching {position:absolute; top:0px;right:10px; padding:0}
+#language-switching li {display:inline-block; margin:0 5px 0 0;}
+#language-switching a {display:block; width:20px; height:13px;}
+#language-switching span {display:none}
+#language-switching .lang-de a {background:url(/images/flags.png)}
+#language-switching .lang-en a {background:url(/images/flags.png) 0 -13px;}
+#language-switching .lang-fr a {background:url(/images/flags.png) 0 -26px;}
+#language-switching .lang-cz a {background:url(/images/flags.png) 0 -39px;}
+/* --- search --- */
+#search-area {position:absolute;right:10px;top:40px;}
+#search-area input {border:1px solid #b9c8ba;background:none;color:#77a279;padding:5px 13px;margin:0 0 0 4px}
+#search-area input[type=text] {width:151px}
+#search-area input[type=submit] {font-weight:bold}
+
+
+/* --- google cs --- */
+#search-area form.gsc-search-box {max-width:300px;width:auto;min-height:0}
+#search-area td {padding:0;width:auto;min-width:0;margin:0;border:none}
+#search-area td input.gsc-search-button {width:70px;}
+.gsc-clear-button {display:none}
+#search-area input.gsc-input, #search-area input.gsc-search-button {font-family:Tahoma, Sans-Serif; font-size:13px}
+.gsc-completion-container {position:relative; left:-200px}
+.gsc-completion-container td {border:none}
+.gsc-control-cse {padding:0 !important}
+.gsc-control-cse td {padding:0; border:none;}
+.gsc-above-wrapper-area {padding:0 !important}
+.gsc-result .gs-title, .cse .gs-snippet, .gs-snippet, .cse .gs-spelling-original, .gs-spelling-original,
+.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title *
+	{font-size:12px !important; overflow:visible}
+.gsc-webResult .gsc-result {padding:.25eM 0 0 !important}
+.cse .gsc-webResult, .gsc-webResult, .gsc-webresult .gsc-result, .gsc-imageResult-classic, .gsc-imageResult-column {border:none !important}
+.gsc-cursor-page {border:none !important; padding:0 !important}
+.gsc-cursor-current-page {background-color:#fff !important; color:#000 !important;text-shadow:none !important;font-weight:bold !important}
+div.gsc-orderby div.gsc-orderby-label {display:none;}
+div.gsc-orderby div.gsc-option-menu-container div.gsc-selected-option-container {padding:2px 10px}
+.gs-result img.gs-image, .gs-result img.gs-promotion-image {margin-top:0}
+
+/* --- main navigaiton --- */
+#main-navigation {width:100%; min-width:1167px; height:40px; background:#f48b5c; margin:18px 0 20px; position:relative}
+#main-navigation ul {margin:0;padding:0;list-style-type:none;height:75px; width:977px; margin:0 auto; padding-left:190px; position:relative; top:-10px}
+#main-navigation li {display:block; margin:0;padding:0; float:left /*must float due to Opera vertical-align:middle bug */}
+#main-navigation a {display:block; border:1px solid #b9c8ba; color:#006225;text-decoration:none;margin: 0 0 0 5px; background:#fff}
+#main-navigation li:first-child a {margin:0}
+#main-navigation a.mn-7 {width:129px; height:40px;background:url(/images/e-portal-navigation-image.png); border:none}
+#main-navigation a.mn-8 {position:absolute; top:-48px; left:780px; width:82px; height:27px; line-height:27px; padding:0 0 0 30px; background:#fff url(/images/contacts-small.png) no-repeat 10px 4px; color:#000; border: 1px solid #B9C8BA;}
+#main-navigation a span {display:table-cell; vertical-align:middle; text-align:center;height:38px; width:110px; font-weight:bold;max-width:112px; padding:0 1px}
+#main-navigation a.mn-8 span {height:25px}
+
+/* --- middle part columns--- */
+#body {width:1167px; margin:0 auto; clear:both}
+
+#secondary-navigation {width:180px;float:left;margin:5px 0 0}
+#secondary-navigation ul {margin:0; padding:0; list-style:none}
+#secondary-navigation li {margin:0 0 5px; padding:0;border:1px solid #b9c8ba;}
+#secondary-navigation a {color:#000;font-weight:bold;font-size:1.1eM;text-decoration:none; display:table-cell; vertical-align:middle; height:36px; width:155px;padding:0 12px 0 12px;}
+#secondary-navigation li li {border:none; margin:0}
+#secondary-navigation li li a {color:#006225; font-size:.9eM; display:block;height:auto;border-top: 1px solid #b9c8ba; margin:0 16px 4px; padding:4px 0 0; width:auto}
+#secondary-navigation li li:first-child a {border:none}
+#secondary-navigation-addtnl-content {margin-top:50px}
+#secondary-navigation-addtnl-content a {margin:0; padding:0}
+
+#main-content {float:left; margin:0 10px; width:705px;}
+#main-content.exclusive {width:967px}
+#main-content.exclusive h2 {width:916px} #main-content.exclusive td h2 {width:auto; margin:0}
+
+#breadcrumb {font-size:1.1eM; margin: 5px 0 0}
+#breadcrumb a {font-size:.8eM}
+
+#secondary-content {font-size:.9eM; float:left; width:252px; margin:0}
+#secondary-content .article h3 {font-size:1eM}
+
+/* --- footer ---- */
+form:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;} /* clearing of floating elements */
+#body {margin-bottom:100px}
+#body:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;} /* clearing of floating elements */
+#footer {position:absolute; bottom:0px; width:100%; min-width:1167px; background:#006225; height:85px}
+#footer-inner {width:1167px; margin:0 auto; padding:20px 0 0}
+#footer ul {width:730px; margin:0 0 0 190px; padding:0}
+#footer li {display:inline-block; line-height:22px; padding:0 20px 0 24px; background:url(/images/footer-separator.png) no-repeat 0 10px}
+#footer li:first-child {padding:0 12px 0 0; background:none}
+#footer li a {color:#fff; text-decoration:none;}
+
+/* --- special content --- */
+.article-image {margin-top:5px;}
+.article-image img {border: 1px solid #b9c8ba;} /* unsolved Opera bug - images overflowing over rounded corners */
+#secondary-content h2.contacts{ background:url(/images/contacts.png) no-repeat; padding-left:50px; text-transform:uppercase; }
+#secondary-content h2.contacts a {color:#000; text-decoration:none} 
+#secondary-content .article.contacts {padding:0; font-size:1.12eM}
+.article.contacts a {background:url(/images/contacts.png) no-repeat 10px 4px; display:block; line-height:38px; padding:0 0 0 60px;color:#000; text-decoration:none; text-transform:uppercase}
+.topheading {background: url(data:image/gif;base64,R0lGODlhAQAZAIAAAABiJf///yH5BAAHAP8ALAAAAAABABkAAAIEhI+pWAA7) repeat-x}
+#main-content h2.topheading {margin-top:2px; background-color:transparent;}
+#active-map {height:126px; width:220px; background:url(/images/map.png)} #active-map img {margin:0;}
+.publications-table {width: 100%;border: none;margin-top: 1eM;}
+.publications-table td {border: none;text-align: justify;border-bottom: 2eM solid #ffffff;}
+.table-form {text-align:left;border:none;font-size:1em;margin-left:50px;vertical-align:baseline;width:auto}
+.table-form tr {vertical-align:top;} .table-form td {border : none;}
+.e-podani span {font-style:italic; text-transform:lowercase}
+#external-map {cursor:pointer;width:196px; height:198px; position:absolute; left: 495px;top:75px;border: 1px solid #b9c8ba;}
+
+/* --- article lists --- */
+.list-item {clear:both;}
+.list-item-date {float:left; width: 80px;color:#006225; font-weight:bold; padding:2px 0 1eM; text-align:left}
+.list-item-date img {margin-top:2px;}
+.list-item-content {margin-left:90px;padding-bottom:1eM;}
+.list-item-content h3 {margin: .5eM 0 .25eM; text-align:left}
+#secondary-content .list-item-date {float:left;margin:0; padding:0}
+#secondary-content .list-item-content {margin:0}
+
+/* --- vnitrni usporadani -- */
+table.structure {border: none;border-collapse : collapse;font-size: .9eM;margin-top: 1eM;}
+table.structure td {border:none;margin: 0px;padding: 0px;}
+table.structure td.structure-element {width: 190px;color: #666666;font-weight: bold;}
+table.structure td.structure-line {width: 16px;font-size: 0px;background-position: center;}
+table.structure td.structure-element div.unitHeader {width: 188px;border: 1px solid black;background: #CFD7D4;text-align: center;}
+table.structure td.structure-element div.unitDetail {width: 188px;border: 1px solid black;border-top: none;margin-bottom: 1eM;}
+table.structure td.structure-element div div {padding: 2px;}
+table.structure td.structure-element div.unitPerson {text-align:center;color:#444343;padding-bottom:0;}
+
+/* --- authoring console --- */
+#secondary-navigation .console h2 {font-size:1.2eM; background: url(/images/leaf-big.png) no-repeat; line-height:32px; text-indent:35px}
+#secondary-navigation .console ul {padding:0; border-bottom: 1px solid #b9c8ba; padding-bottom:3px}
+#secondary-navigation .console ul:last-child {border-bottom:none}
+#secondary-navigation .console li {display:list-item; border:none; margin:.5eM 0; padding:0; min-height:0; height:auto; font-size:.9eM}
+#secondary-navigation .console a {display:inline; color:#006225; padding:0; font-size:1eM}
+.placeholder-required {display:none}
+
+/* --- rounded corners --- */
+#search-area input, #secondary-navigation li, #main-navigation a, .article, .article-image img
+{-o-border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px;border-radius:10px}
+
+
+
+@media print
+{
+	html, body {height:auto}
+	form {width:100%; min-height:0; margin:0}
+	#search-area, #header ul,#main-navigation, #secondary-navigation, #footer, #breadcrumb, #active-map {display:none;}
+	#header, #main-content, #secondary-content {width:100%; margin:0 0 1eM 0}
+	#header h1, #header h2 {width:100%; margin:.5eM 0}
+	#main-content {padding-bottom: 20px; border-bottom:1px solid #b9c8ba}
+	#main-content h2 {color: #000; font-size:1.4eM; font-weight:normal; background: #fff url(/images/leaf-big.png) no-repeat; min-height:35px; line-height:35px; padding: 0 0 0 40px; margin:1eM 20px}
+	.article {border:0; margin-top: 1eM; padding:10px; background:none}
+	.article-image img {margin-top: 1eM;max-width:100%}
+}

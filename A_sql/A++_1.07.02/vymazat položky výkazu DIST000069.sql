@@ -1,0 +1,1 @@
+delete from defvykit where cidvykazu='DIST000069'

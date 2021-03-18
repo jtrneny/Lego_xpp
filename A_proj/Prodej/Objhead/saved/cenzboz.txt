@@ -1,0 +1,80 @@
+Table Information
+CENZBOZ.DBF
+
+Type: Fox Pro
+Records Number: 8202
+Fields Number: 68
+Header Size: 2210
+Record Length: 628
+
+#  Field Name Field Type Field Size 
+-- ---------- ---------- ---------- 
+	1  CCISSKLAD  Character  8          
+	2  CSKLPOL    Character  15         
+	3  NKLICNAZ   Float      5:0        
+	4  NZBOZIKAT  Number     4          
+	5  NUCETSKUP  Number     3          
+	6  CUCETSKUP  Character  10         
+	7  CNAZZBO    Character  30         
+	8  CNAZZBO2   Character  30         
+	9  CKATCZBO   Character  15         
+	10 CJKPOV     Character  15         
+	11 CDANPZBO   Character  15         
+	12 CZKRATJEDN Character  3          
+	13 NKLICDPH   Number     2          
+	14 NCENANZBO  Float      11:2       
+	15 NCENCNZBO  Float      11:2       
+	16 NCENAKURZ  Float      11:2       
+	17 CZKRATMENY Character  3          
+	18 CZAHRMENA  Character  3          
+	19 NCENAPZBO  Float      11:2       
+	20 NCENAMZBO  Float      11:2       
+	21 NCENASZBO  Float      13:4       
+	22 NCENACZBO  Float      11:2       
+	23 NCENASVZM  Float      11:2       
+	24 NCENAVNI   Float      11:2       
+	25 NCENAPOC   Float      11:2       
+
+26 NMNOZPOC   Float      11:2       
+27 NMNOZSZBO  Float      11:2       
+28 NMNOZKZBO  Float      11:2    -----   CMP REZZBO      
+29 NMNOZOZBO  Float      11:2    -----   CMP REZZBO   
+30 NMNOZRZBO  Float      11:2    -----   CMP REZZBO   
+31 NMNOZRSES  Float      11:2       
+32 NMNOZDZBO  Float      11:2    -----   CMP REZZBO     
+33 NMNOZNZBO  Float      11:2       
+	34 NMAXZBO    Float      11:2       
+	35 NMINZBO    Float      10:2       
+	36 DDATPZBO   Date       8          
+	37 NRECNAB    Float      5:0        
+	38 NRECZBO    Float      5:0        
+	39 CZKRCARKOD Character  3          
+	40 NCARKKOD   Float      13:0       
+	41 NCENPOL    Number     1          
+	42 CBAL       Character  15         
+	43 NBALKS     Float      11:2       
+	44 CCENSES    Character  1          
+	45 NPRISRAZBO Float      6:2        
+	46 CULOZZBO   Character  8          
+	47 LVICECENP  Logical    1          
+	48 CTYPSKLCEN Character  3          
+	49 CPOLCEN    Character  1          
+	50 CVYRCIS    Character  1          
+	51 CKATALCIS  Character  1          
+	52 CVYROBCE   Character  25         
+	53 CJAKOST    Character  10         
+	54 MPOZZBO    Memo       10         
+	55 NULOZCELK  Float      11:2       
+	56 CTYPSKP    Character  15         
+	57 NKOEFMN    Float      5:2        
+	58 NPRIRAZKA  Float      6:2        
+	59 NHMOTNOST  Float      13:2       
+	60 CZKRATJEDH Character  3          
+	61 NOBJEM     Float      13:2       
+	62 CZKRATJEDO Character  3          
+	63 CUSRZMENYR Character  8          
+	64 DDATZMENYR Date       8          
+	65 CCASZMENYR Character  8          
+	66 CUSRVZNIKR Character  8          
+	67 DDATVZNIKR Date       8          
+	68 CCASVZNIKR Character  8          

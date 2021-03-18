@@ -1,0 +1,818 @@
+$(document).ready(function() {
+
+    var retinaImages = function() {
+        if (window.devicePixelRatio >= 2) {
+
+            var images = $("img.hires");
+            var imageType;
+            var imageName;
+            var initWidth;
+            var initHeight;
+
+            // loop through the images and make them hi-res
+            for (var i = 0; i < images.length; i++) {
+
+                //init dimensions
+                initWidth = $(images[i]).width();
+                initHeight = $(images[i]).height();
+
+                // create new image name
+                imageType = images[i].src.substr(-4);
+                imageName = images[i].src.substr(0, images[i].src.length - 4);
+                imageName += "@2x" + imageType;
+
+                //rename image
+                images[i].src = imageName;
+
+                //reset dimensions
+                $(images[i]).width(initWidth);
+                $(images[i]).height(initHeight);
+            }
+        }
+    }
+
+    retinaImages();
+
+    function fluidDialog() {
+        var $visible = $(".ui-dialog:visible");
+        // each open dialog
+        $visible.each(function () {
+            var $this = $(this);
+            var dialog = $this.find(".ui-dialog-content").data("ui-dialog");
+            // if fluid option == true
+            if (dialog.options.fluid) {
+                var wWidth = $(window).width();
+                // check window width against dialog width
+                if (wWidth < (parseInt(dialog.options.maxWidth) + 50))  {
+                    // keep dialog from filling entire screen
+                    $this.css("max-width", "90%");
+                } else {
+                    // fix maxWidth bug
+                    $this.css("max-width", dialog.options.maxWidth + "px");
+                }
+                //reposition dialog
+                dialog.option("position", dialog.options.position);
+            }
+        });
+
+    }
+
+    var $scrollingDiv = $("#skyscraper-l");
+    var $scrollingDiv2 = $("#skyscraper-r");
+    var $doc_height = $(document).height();
+    $(window).scroll(function(){
+        var documentHeight = $(document).height();
+        var scrollDifference = $(window).height() + $(window).scrollTop();
+        if ($(window).height() + $(window).scrollTop()
+            >= $doc_height) {
+            return false;
+        }
+        var marginTop = $(window).scrollTop() - 100;
+        if(marginTop < 0) {
+            marginTop = 0;
+        }
+        $scrollingDiv.stop().animate({"marginTop": marginTop + "px"}, 2000 );
+        $scrollingDiv2.stop().animate({"marginTop": marginTop + "px"}, 2000 );
+    });
+
+    $('.eshopForm #email').change(function(event) {
+        $.get('/jquery_php/check_user_exists.php',
+            {email: $(this).val()},
+            function(data) {
+                if(data) {
+                    alert('Uživatel již existuje. Přihlaste se prosím.');
+                }
+            }
+        );
+    });
+
+
+    var formQuestion = $('#ModalNewsRegForm');
+    $(formQuestion).submit(function(event) {
+        var formData = $(formQuestion).serialize();
+        $('#mnr-success-response').hide();
+        $('#mnr-error-response').hide();
+        $.ajax({
+            type: 'POST',
+            url: '/jquery_php/register_email2news.php',
+            data: formData,
+            success: function(result) {
+                if(result == 1) {
+                    $('#mnr-success-response').html('Děkujeme Vám za registraci Vaši emailové adresy<br />Pro její potvrzení prosím použijte odkaz ve zprávě, který jsme zaslali na zadanou emailovou adresu');
+                    $('#mnr-success-response').show();
+                    $('.remove-bottom').hide();
+                } else if(result == -1) {
+                    $('#mnr-error-response').html('Zadaný email je již k odběru novinek přihlásen.');
+                    $('#mnr-error-response').show();
+                } else if(result == -9) {
+                    $('#mnr-error-response').html('Nesprávny formát emailu.');
+                    $('#mnr-error-response').show();
+                } else {
+                    $('#mnr-error-response').html('Zadaný email se nepodařilo přihlásit k odběru novinek.<br />Zkuste to prosím znovu.');
+                    $('#mnr-error-response').show();
+                }
+            }
+        })
+        return false;
+    });
+
+
+    $('.article-banner-close').on('click touch', function() {
+        $("#article-banner-dynamic").toggle('1200');
+    });
+
+    function number_format (number, decimals, dec_point, thousands_sep) {
+
+        number = (number + '')
+            .replace(/[^0-9+\-Ee.]/g, '')
+        var n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+            s = '',
+            toFixedFix = function (n, prec) {
+                var k = Math.pow(10, prec)
+                return '' + (Math.round(n * k) / k)
+                        .toFixed(prec)
+            }
+        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n))
+            .split('.')
+        if (s[0].length > 3) {
+            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep)
+        }
+        if ((s[1] || '')
+                .length < prec) {
+            s[1] = s[1] || ''
+            s[1] += new Array(prec - s[1].length + 1)
+                .join('0')
+        }
+        return s.join(dec)
+    }
+
+    var showPromocodeDialog = function(text) {
+        $('#promo-code-result').html(text);
+        $('#promo-code-result').dialog({
+            buttons: {
+                OK: function() {
+                    $( this ).dialog("close");
+                }
+            },
+            title: 'Slevový nebo firemní kód',
+            draggable: false,
+            show: { duration: 200 },
+            hide: { duration: 100 },
+        });
+    }
+
+    var showDiscountPriceV2 = function(price, discountPercent, productID) {
+        var discountVal = parseFloat(Math.round((price * discountPercent / 100) * 100) / 100).toFixed(0);
+        $('#discount_prod_' + productID).html('sleva ' + discountPercent + '%: -' + number_format(discountVal, 0, ',', ' ') + ' Kč');
+        $('#discount_prod_' + productID).fadeIn(400);
+        return discountVal;
+    }
+    var hideDiscountPriceV2 = function(productID) {
+        $('#discount_prod_'+productID).fadeOut(400, function() {
+            $('#discount_prod_'+productID).html('');
+        });
+        $('#sleva_' + productID).val(0);
+        $('#promo_code_id_' + productID).val(0);
+    }
+
+    var showDiscountPrice = function(price, discountPercent) {
+        var discountVal = parseFloat(Math.round((price * discountPercent / 100) * 100) / 100).toFixed(2);
+        var discountedPrice = parseFloat(Math.round((price - discountVal) * 100) / 100).toFixed(2);
+        $('#discountPercent').html('<strong>Sleva ' + discountPercent + '%:</strong> ' + number_format(discountVal, 2, ',', ' ') + ' Kč');
+        $('#discountedPrice').html('<strong>Cena s DPH po slevě:</strong> ' + number_format(discountedPrice, 2, ',', ' ') + ' Kč');
+        $('#discountedPrice, #discountPercent').fadeIn(400);
+        $('.seminarPrice').data('person-price', discountedPrice);
+        orderForm.initSeminarCount();
+    }
+
+    var hideDiscountPrice = function() {
+        $('#discountedPrice, #discountPercent').fadeOut(400, function() {
+            $('#discountPercent').html('');
+            $('#discountedPrice').html('');
+        });
+    }
+
+    var mainMenuRespond = function() {
+        if ($("#main-submenu").length == 0) {
+            return; // jina stranka
+        }
+        // menu-id 14 + parent-id 3, parent-id 13 - clanky, pod data-menu-main-id 13
+		//
+        if($(window).width() < 768) {
+			var parentId = $("#main-submenu").data('parent-id');
+			var parentMenu = $("li[data-menu-id='" + parentId +"']");
+			if (parentId && parentMenu) {
+				$("#main-submenu").insertAfter(parentMenu);
+			}
+        }
+        else {
+            $("#main-submenu").insertAfter('#top-menu');
+        }
+    }
+    mainMenuRespond();
+
+    var scrollBtn = function() {
+
+		var offset = 250;
+		var duration = 300;
+		$(window).scroll(function() {
+			if ($(window).width() < 1024) {
+				if ($(this).scrollTop() > offset) {
+					$('.back-to-top').fadeIn(duration);
+				} else {
+					$('.back-to-top').fadeOut(duration);
+				}
+            }
+		});
+
+		$('.back-to-top').click(function(event) {
+			event.preventDefault();
+			$('html, body').animate({scrollTop: 0}, duration);
+			return false;
+
+		})
+    }
+	scrollBtn();
+
+    var setLoginbox = function() {
+		if ($("#login-box").length == 0) {
+			return; // jina stranka
+		}
+        var attachParent = $('.row.header-second');
+        $('#login-box')
+            .css('top', attachParent.offset().top + attachParent.height() - 10)
+            .css('left', attachParent.width() - $('#login-box').width());
+    }
+    setLoginbox();
+
+    var closeLoginbox = function() {
+        var loginBox = $('#login-box');
+        var loginLink = $('#toggle-login, #close-login-box');
+
+        loginBox.slideUp(100, function() {
+            loginLink.parent().removeClass('active opened');
+            loginLink.blur();
+        });
+    }
+
+    $('#toggle-login').on('click', function(evt) {
+
+        evt.preventDefault();
+        var loginBox = $('#login-box');
+        var loginLink = $(this);
+
+        if (loginBox.is(':hidden')) {
+            loginBox.slideDown(100, function() {
+                loginLink.parent().addClass('active opened');
+                loginBox.find('#username').focus();
+            });
+            evt.stopPropagation();
+        } else {
+            closeLoginbox();
+        }
+    });
+
+    $('#close-login-box').on('click', function(evt) {
+        evt.preventDefault();
+        closeLoginbox();
+    });
+
+    $(window).on('click', function(evt) {
+        var loginBox = $('#login-box');
+        if (!loginBox.is(':hidden')) {
+
+            if ($(evt.target).parents('#login-box').length > 0) {
+                return;
+            }
+            closeLoginbox();
+        }
+    });
+
+    if ($('#login-box #loginMessage').length > 0) {
+		$('#toggle-login').click();
+    }
+
+    if ($('#login-box-modal #loginMessage .err').length > 0) {
+        $('.header-login-link').click();
+    }
+
+
+
+    var setEshopFilterBtns = function() {
+        $('.eshop-filter-zobrazeni').on('click', function(evt) {
+            var zobrazeniVal = $(this).data('zobrazeni');
+            if (zobrazeniVal) {
+				$("input[name='zobrazeni']").val(zobrazeniVal);
+				$('#eshop-filter-form').submit();
+				evt.preventDefault();
+            }
+        })
+    }
+	setEshopFilterBtns();
+
+    $('.promocode-use').click(function(event) {
+        var resultText;
+        var codeValue = $('#promo_code').val();
+
+        if (codeValue.length == 0) {
+            resultText = 'Zadejte prosím kód.'
+            showPromocodeDialog(resultText);
+        } else {
+            $.get('/jquery_php/promo_code_use.php',
+                {promo_code: codeValue, product_id: $('#promo_code').data('product-id')},
+                function(data) {
+
+                    switch(data) {
+                        case 'NOT_FOUND':
+                            resultText = 'Vámi zadaný kód nebyl nalezen.';
+                            hideDiscountPrice();
+                            break;
+                        case 'EXPIRED':
+                            resultText = 'Platnost tohoto kódu vypršela.';
+                            hideDiscountPrice();
+                            break;
+                        case 'BAD_PRODUCT':
+                            resultText = 'Tento kód je určený k jinému produktu.';
+                            hideDiscountPrice();
+                            break;
+                        case 'ERROR_OTHER':
+                            resultText = 'Chyba při zpracování slevového kódu.';
+                            hideDiscountPrice();
+                            break;
+                        case 'CODE_LIMIT':
+                            resultText = 'Tento kód byl již vyčerpán.';
+                            hideDiscountPrice();
+                            break;
+                        case '-1':
+                            resultText = 'Kód byl přijat.';
+                            hideDiscountPrice();
+                            $('.typPlatby-cov').hide();
+
+                          //  $('#TPval').html('Produkt je součástí firemní multilicence');
+                            break;
+                        case 'SUBMIT_FORM':
+                            $('#redirBackURL').val('/eshop/objednat');
+                            $('#form_registration_table').submit();
+
+                            break;
+                        default:
+                            resultText = 'Sleva ' + data + ' % byla úspěšně započítána.';
+                            var defaultPrice = $('#promo_code').data('price');
+                            showDiscountPrice(defaultPrice, data);
+                    }
+                    showPromocodeDialog(resultText);
+                }
+            );
+        }
+    });
+
+    $('.promocode-use2').click(function(event) {
+        var resultText;
+        var resultFinalText = '';
+        var codeValue = $('#promo_code2').val();
+        var sleva_sum = 0;
+        //SC2018EsH
+
+        var showDialog = true;
+
+        if (codeValue.length == 0) {
+            resultText = 'Zadejte prosím kód.'
+            showPromocodeDialog(resultText);
+        } else {
+
+            $('.products_ids_cis').each(function() {
+                productID = parseInt($(this).val());
+
+                prodName = $('#pname_tmp_'+productID).val();
+                resultFinalText = resultFinalText + "<br /><strong>" + prodName + ":</strong><br />";
+                jQuery.ajaxSetup({async:false});
+                $.get('/jquery_php/promo_code_use.php',
+                    {promo_code: codeValue, product_id: productID, random: Math.random() },
+                    function (data) {
+                        switch (data) {
+
+                            case 'NOT_FOUND':
+                                resultText = 'Vámi zadaný kód nebyl nalezen.';
+                                hideDiscountPriceV2(productID);
+                                break;
+                            case 'EXPIRED':
+                                resultText = 'Platnost tohoto kódu vypršela.';
+                                hideDiscountPriceV2(productID);
+                                break;
+                            case 'BAD_PRODUCT':
+                                resultText = 'Tento kód je určený k jinému produktu.';
+                                hideDiscountPriceV2(productID);
+                                break;
+                            case 'ERROR_OTHER':
+                                resultText = 'Chyba při zpracování slevového kódu2.';
+                                hideDiscountPriceV2(productID);
+                                break;
+                            case 'CODE_LIMIT':
+                                resultText = 'Tento kód byl již vyčerpán.';
+                                hideDiscountPriceV2(productID);
+                                break;
+                            case '-1':
+                                resultText = 'Kód byl přijat.';
+                             //   hideDiscountPriceV2(productID);
+                                $('#sleva_' + productID).val(100);
+                                $('#promo_code_id_' + productID).val(codeValue);
+                                resultText = 'Sleva 100 %  byla úspěšně započítána.';
+                                var defaultPrice = $('#price_'+productID).val();
+                                prod_sleva = showDiscountPriceV2(defaultPrice, 100, productID);
+                                sleva_sum = sleva_sum + parseInt(prod_sleva);
+
+                                $('.typPlatby-cov').hide();
+                               // $('#TPval').html('Produkt je součástí firemní multilicence');
+                                break;
+                            case 'SUBMIT_FORM':
+                                showDialog = false;
+                                $('#redirBackURL').val('/eshop/objednat#eshop-cart');
+                                $('.createOrder ').click();
+                                return true;
+                                break;
+                            default:
+                                $('#sleva_' + productID).val(data);
+                                $('#promo_code_id_' + productID).val(codeValue);
+                                resultText = 'Sleva ' + data + ' %  byla úspěšně započítána.';
+                                var defaultPrice = $('#price_'+productID).val();
+                                prod_sleva = showDiscountPriceV2(defaultPrice, data, productID);
+                                sleva_sum = sleva_sum + parseInt(prod_sleva);
+
+                        }
+
+                        resultFinalText = resultFinalText + resultText + "<br />";
+                    }
+                );
+            }); //each
+
+            if(sleva_sum > 0) {
+
+                $('#cart-sleva-sum').html(number_format(sleva_sum, 0, ',', ' '));
+                $('#discountedPrice').show(400);
+                var sum_price_orig = $('#sum_price').val();
+                var dph_coef = $('#dph_coef').val();
+                sum_price_sleva = sum_price_orig - sleva_sum;
+                sum_price_sleva_no_dph = sum_price_sleva * dph_coef;
+                $('#cart-price-sum').html(number_format(sum_price_sleva, 0, ',', ' '));
+                $('#cart-price-sum-no-dph').html(number_format(sum_price_sleva_no_dph, 0, ',', ' '));
+            }
+
+            if(showDialog) {
+                showPromocodeDialog(resultFinalText);
+            }
+
+        }
+    });
+
+    $('#promo_code').keypress(function(e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            $('.promocode-use').click();
+            return false;
+        } else {
+            return true;
+        }
+    });
+
+    $('#promo_code2').keypress(function(e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            $('.promocode-use2').click();
+            return false;
+        } else {
+            return true;
+        }
+    });
+
+    $('#social img').not(".appstore").hover(
+        function(){
+            var src = $(this).attr("src");
+            var grey_pos = src.indexOf("-grey");
+            if(grey_pos > 0) {
+                var new_src = src.substring(0,grey_pos)+ '.png';
+                $(this).attr('src',new_src);
+            }
+        },
+        function(){
+            var src = $(this).attr("src");
+            var grey_pos = src.indexOf("-grey");
+            if(grey_pos == -1) {
+                var png_pos = src.indexOf(".png");
+                var new_src = src.substring(0,png_pos)+ '-grey.png';
+                $(this).attr('src',new_src);
+            }
+        }
+    );
+
+    $('#social img.appstore').hover(
+        function(){
+            var src = $(this).attr("src");
+            var grey_pos = src.indexOf("-grey");
+            if(grey_pos > 0) {
+                var new_src = src.substring(0,grey_pos)+ '.svg';
+                $(this).attr('src',new_src);
+            }
+        },
+        function(){
+            var src = $(this).attr("src");
+            var grey_pos = src.indexOf("-grey");
+            if(grey_pos == -1) {
+                var png_pos = src.indexOf(".svg");
+                var new_src = src.substring(0,png_pos)+ '-grey.svg';
+                $(this).attr('src',new_src);
+            }
+        }
+    );
+
+
+    $(".video-link").click(function() {
+        if(!$(this).hasClass('no-link')){
+
+            var onclick = $("#video_slider video").attr("onclick");
+            var ga_push_label_start = onclick.indexOf("'Play', '");
+            //  var ga_push_label_end = onclick.indexOf("']);\"");
+            var replace_from = onclick.substring(ga_push_label_start+9);
+            var new_onclick = onclick.replace(replace_from, $(this).attr('data-trackevent') + "']);");
+            $("#video_slider video").attr("onclick",new_onclick);
+
+
+            $("#video_slider video").attr('poster',$(this).attr('data-poster'));
+            //$("#video_slider video source").attr('src',$(this).attr('data-video'));
+            $("#video_slider video source").attr('src',$(this).attr('data-video'));
+            //   $(".video-datum").html($(this).attr('data-datum'));
+
+
+
+
+
+            $("#video_slider video").load();
+            $(this).siblings(".video-link").removeClass("active");
+            $(this).addClass("active");
+        }
+    });
+
+    $('.eshop-prod .video-preview').click(function(e) {
+        e.preventDefault();
+
+        var vimeoId = $(this).data('vimeo-id');
+        var dialogSrc = '<div id="video-preview-dialog"><iframe style="" src="//player.vimeo.com/video/'
+            + vimeoId + '?autoplay=1" width="100%" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
+        $('body').append(dialogSrc);
+
+        var videoDialog = $('#video-preview-dialog');
+
+        $(videoDialog).dialog({
+            title: 'Náhled videa',
+            draggable: false,
+            resizable: false,
+            modal: true,
+            width: "95%",
+            fluid: true, //new option
+            maxWidth: 768,
+            show: { duration: 200 },
+            hide: { duration: 100 },
+            dialogClass: 'dialog-clean-notitle',
+            closeText: "zavřít",
+            open: function(event, ui) {
+                $('.ui-widget-overlay').bind('click', function(){
+                    $(videoDialog).dialog('close');
+                });
+            },
+            beforeClose: function( event, ui ) {
+                videoDialog.remove();
+            },
+        });
+    });
+
+    $('#eshop-cart-form .count').change(function(e) {
+        var id = $(this).attr('id');
+        var id_num = id.substring(6,id.length);
+        var price = $('#price_'+id_num).val();
+        var priceNoDPH = $('#priceNoDPH_'+id_num).val();
+
+        var new_price = price * $(this).val();
+        var new_priceNoDPH = priceNoDPH * $(this).val();
+        $('#price_for_count_'+id_num).val(new_price);
+        $('#priceNoDPH_for_count_'+id_num).val(new_priceNoDPH);
+
+        $('#cart-row-'+id_num+' .price-sc').html(number_format(new_price,0,'',' '));
+
+        $.get('/jquery_php/cart_count_update.php',
+            {cart_id: id_num, count: $(this).val()},
+            function(data) {
+
+            }
+        );
+
+
+        eshopCartRecalcAll();
+    });
+
+
+    // Select all links with hashes
+    $('a[class*="smoothscroll"]')
+    // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 600, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
+
+
+    $(document).on("dialogopen", ".ui-dialog", function (event, ui) {
+        fluidDialog();
+    });
+
+    $(window).resize(function () {
+        fluidDialog();
+        setLoginbox();
+        mainMenuRespond();
+    });
+
+
+    /* responsive videos */
+    var allVideos = $(".video-responsive"),
+        fluidEl = $("#left");
+
+    allVideos.each(function() {
+        $(this)
+        // jQuery .data does not work on object/embed elements
+            .attr('data-aspectRatio', this.height / this.width)
+            .removeAttr('height')
+            .removeAttr('width');
+    });
+
+    $(window).resize(function() {
+        var newWidth = fluidEl.width();
+        allVideos.each(function() {
+            var $el = $(this);
+            $el
+                .width(newWidth)
+                .height(newWidth * $el.attr('data-aspectRatio'));
+        });
+    }).resize();
+
+	var HasTooltip = $('[data-toggle="tooltip"]');
+	HasTooltip.on('click', function(e) {
+		e.preventDefault();
+		var isShowing = $(this).data('isShowing');
+		HasTooltip.removeData('isShowing');
+		if (isShowing !== 'true')
+		{
+			HasTooltip.not(this).tooltip('hide');
+			$(this).data('isShowing', "true");
+			$(this).tooltip('show');
+		}
+		else
+		{
+			$(this).tooltip('hide');
+		}
+
+	}).tooltip({
+		animation: true,
+		trigger: 'manual'
+	});
+
+
+	$('.toggle-btn').on('click', function() {
+		var text = $(this).text();
+		var labelCollapsed = $(this).data('label-collapsed');
+		var labelOpened = $(this).data('label-opened');
+		console.log(text);
+		if (text === labelCollapsed) {
+			$(this).text(labelOpened);
+		} else {
+			$(this).text(labelCollapsed);
+		}
+	});
+
+    setTimeout(newsPopup, 7000);
+
+
+    var iframe = document.getElementById('vpiframe');
+    if(iframe) {
+        var player = new Vimeo.Player(iframe);
+
+        player.on('play', function () {
+            setTimeout(function () {
+                $('#video-banner').fadeIn(3000);
+            }, 5000);
+            setTimeout(function () {
+                $('#video-banner').fadeOut(3000);
+            }, 65000);
+        });
+    }
+
+});
+
+
+
+
+function eshopCartRecalcAll() {
+    var priceTotal = 0;
+    var priceNoDPHTotal = 0;
+    $('.price_for_count').each(function() {
+        priceTotal += parseInt($(this).val());
+    });
+    $('.priceNoDPH_for_count').each(function() {
+        priceNoDPHTotal += parseInt($(this).val());
+    });
+    $('#cart-price-sum').html(number_format(priceTotal,0,'',' '));
+    $('#cart-price-sum-no-dph').html(number_format(priceNoDPHTotal,0,'',' '));
+}
+
+
+function newsPopup() {
+    if (!getCookie('popNewsReg')) {
+        $('#ModalNewsReg').modal('show');
+        setCookie('popNewsReg', 'true',90);
+    }
+}
+
+
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {
+    document.cookie = name+'=; Max-Age=-99999999;';
+}
+
+
+function number_format(number, decimals, dec_point, thousands_point) {
+
+    if (number == null || !isFinite(number)) {
+        throw new TypeError("number is not valid");
+    }
+
+    if (!decimals) {
+        var len = number.toString().split('.').length;
+        decimals = len > 1 ? len : 0;
+    }
+
+    if (!dec_point) {
+        dec_point = '.';
+    }
+
+    if (!thousands_point) {
+        thousands_point = ',';
+    }
+
+    number = parseFloat(number).toFixed(decimals);
+
+    number = number.replace(".", dec_point);
+
+    var splitNum = number.split(dec_point);
+    splitNum[0] = splitNum[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_point);
+    number = splitNum.join(dec_point);
+
+    return number;
+}

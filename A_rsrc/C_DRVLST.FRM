@@ -1,0 +1,13 @@
+TYPE(drgForm) DTYPE(2) TITLE(Èíselník druhù vlastnictví ...) SIZE(65,15) FILE(C_DRVLST) GUILOOK(Action:n) 
+
+TYPE(TabPage) CAPTION(Seznam) OFFSET(0,84) PRE( tabSelect)
+  TYPE(DBrowse) SIZE(75,14) FILE(C_DRVLST) FIELDS(NKODDRVLAS,CPOPISVLAS,CSTATKODZA);
+                            CURSORMODE(3) PP(7) SCROLL(ny) POPUPMENU(y) 
+TYPE(End)
+
+TYPE(TabPage) CAPTION(Detail) OFFSET(14,70) PRE( tabSelect)
+  TYPE(GET) NAME(NKODDRVLAS) FPOS(15,1) FLEN( 2) FCAPTION(Kód vlastnictví)    CPOS(1,1) POST( drgPostUniqueKey)
+  TYPE(GET) NAME(CPOPISVLAS) FPOS(15,2) FLEN(30) FCAPTION(Popis druhuVl)      CPOS(1,2)
+  TYPE(GET) NAME(CSTATKODZA) FPOS(15,3) FLEN( 6) FCAPTION(Statistický kodZaz) CPOS(1,3)
+TYPE(End)
+

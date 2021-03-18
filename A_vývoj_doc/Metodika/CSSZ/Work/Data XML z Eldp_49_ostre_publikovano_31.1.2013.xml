@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pvpoj xmlns="http://schemas.cssz.cz/POJ/PVPOJ2013">
+		<prehled typPrehledu="N" verze="2013.0" corrIDStorna="">
+			<okres>
+				<kodOSSZ>781</kodOSSZ>
+<nazevOSSZ>Uherské Hradiště</nazevOSSZ>
+</okres>
+<obdobi>
+				<mesic>01</mesic>
+<rok>2013</rok>
+</obdobi>
+<zamestnavatel>
+				<vs>1212121212</vs>
+<IC>111111111</IC>
+<nazev>MISS Software, s.r.o.</nazev>
+<adresa>
+					<ulice>Mlýnská </ulice>
+<cisloDomu>1228</cisloDomu>
+<obec>Uherské Hradiště</obec>
+<PSC>68601</PSC>
+<stat>CZ</stat>
+</adresa>
+<sazba>1</sazba>
+</zamestnavatel>
+<pojistne>
+				<uhrnVymerovacichZakladuPbezDS>100000</uhrnVymerovacichZakladuPbezDS>
+<uhrnPojistnehoPbezDS>5000</uhrnPojistnehoPbezDS>
+<uhrnVymerovacichZakladuPsDS>1000</uhrnVymerovacichZakladuPsDS>
+<uhrnPojistnehoPsDS>200</uhrnPojistnehoPsDS>
+<uhrnVymerovacichZakladu>101000</uhrnVymerovacichZakladu>
+<uhrnPojistneho>5200</uhrnPojistneho>
+<pojistneCelkem>10400</pojistneCelkem>
+</pojistne>
+<nahradyMzdy>
+				<uhrnZuctovanychNahrad>0</uhrnZuctovanychNahrad>
+<polovinaZuctovanychNahrad>0</polovinaZuctovanychNahrad>
+</nahradyMzdy>
+<rozdilPojistneNahrady>10400</rozdilPojistneNahrady>
+<platebniUdaje>
+				<bankaCisloUctu>18424554/0100</bankaCisloUctu>
+</platebniUdaje>
+<pracovnik>
+				<jmeno>Josef</jmeno>
+<prijmeni>Trněný</prijmeni>
+<telefon>572551256</telefon>
+<datumVyplneni>2013-04-12</datumVyplneni>
+</pracovnik>
+<poznamka></poznamka>
+</prehled>
+</pvpoj>

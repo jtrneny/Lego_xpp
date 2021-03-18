@@ -1,0 +1,74 @@
+/* 
+* @Author: ebola
+* @Date:   2015-04-23 18:37:51
+* @Last Modified by:   ebola
+* @Last Modified time: 2015-12-11 18:22:34
+*/
+
+'use strict';
+
+var AspiForm = function(formNode, tinyMceData){
+  this.formNode = formNode;
+  this.result = {};
+  this.tinyMceData = tinyMceData || "undefined";
+  this.helpers = new AspiHelpers();
+};
+
+
+
+AspiForm.prototype.getFormData = function(){
+  var unindexed_array = this.formNode.serializeArray();
+  var indexed_array = {};
+  
+  $.map(unindexed_array, (function(n, i){
+    if( n['name'].indexOf('-czdate') >= 0 ){
+      var value = this.helpers.getIsoDateFormat(n['value'],'.');
+      if(value == "undefined")
+        console.log("Value"+n['name']+"hase no valid czech date format");
+      indexed_array[n['name'].replace("-czdate","")] = value;
+    }else{
+      if(n['name'] in indexed_array){
+        if(indexed_array[n['name']] instanceof Array){
+          indexed_array[n['name']].push(n['value']);
+        }else
+           indexed_array[n['name']] = [ indexed_array[n['name']],n['value']];
+      }else{
+        indexed_array[n['name']] = n['value'];
+      }
+    }
+  }).bind(this));
+
+  if(this.tinyMceData != "undefined"){
+    indexed_array[this.tinyMceData.name] = this.tinyMceData.value;
+  }
+  this.data = indexed_array;
+  return indexed_array;
+};
+
+AspiForm.prototype.setValueByKey = function(key,value){
+  this["data"][key] = value;
+};
+
+AspiForm.prototype.send = function(callback){
+  var data = JSON.stringify(this.data);
+  $.ajax({
+    url: this.formNode.attr('action'),
+    contentType: "application/json",
+    data: data, 
+    method: "POST",
+    dataType: "json",
+    success: callback
+  });
+};
+
+AspiForm.prototype.isNumber = function(number){
+  if (!isNaN(parseInt(number), 10)) {
+    return true;
+  }else{
+    return false;
+  }
+};
+
+AspiForm.prototype.getResult = function(){
+  return this.result;
+}

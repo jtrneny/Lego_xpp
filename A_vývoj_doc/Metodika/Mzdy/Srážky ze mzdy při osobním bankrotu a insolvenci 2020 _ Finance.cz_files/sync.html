@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.seznam.cz/sync?0.680028544358785 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sync</title>
+</head>
+<body>
+    <script>
+
+        var logEnabled = false;
+        function log() {
+            if (!logEnabled) {return }
+            // prvni param - box
+            var args = Array.prototype.slice.call(arguments, 0);
+            var params = ['%c'+args[0], 'display: inline-block; color: #fff; background: #ec0000; padding: 1px 4px; border-radius: 3px;'];
+            for (var i = 1; i < args.length; i++) {
+                params.push(args[i]);
+            }
+            console.log.apply(console, params);
+        }
+
+        function isMobileSafari () {
+            var ua = navigator.userAgent.toLowerCase();
+            var isSafari = ~ua.indexOf('safari/') && !~ua.indexOf('chrome/') && !~ua.indexOf('chromium/');
+            var mobileVersion = ~ua.indexOf('iphone') || ~ua.indexOf('ipod') || ~ua.indexOf('ipad');
+
+            return isSafari && mobileVersion;
+        }
+
+        // sends fake DOT hit with sync cookies information
+        // mobile safari only!
+        function logSyncCookie (hitaction, hitdata) {
+            if (!isMobileSafari()) {
+                return;
+            }
+
+            var hit = new Image(1,1);
+
+            // compose data
+            var data = '"action":"' + hitaction + '"';
+            if (hitdata) {
+                for (var p in hitdata) {
+                    if (hitdata.hasOwnProperty(p)) {
+                        data += ',"' + p + '":"' + hitdata[p] + '"';
+                    }
+                }
+            }
+
+            var hitUrl = 'https://h.imedia.cz/hit/?d=' +
+            encodeURIComponent('{' + data + '}') +
+            '&a=event' +
+            '&s=idt' +
+            '&u=' + encodeURIComponent(document.location.href);
+            hit.src = hitUrl;
+        }
+
+        log("Seznam-sync", "loading ...");
+        // zkontrolovat format sid pokud je jiz ulozena
+        // pokdu bude jen cislo a ne cela, tak naklonujeme a udelame hit na dot
+        // jinak  klonujeme ale nic naposilame
+
+        var getItem = function (sKey) {
+            if (!sKey) { return null; }
+            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+        }
+
+        var userAgentRules = [
+            {
+                browser: "chrome",
+                test: / (?:Chrome|CriOS|CrMo)\/(\d+)/
+            },
+            {
+                browser: "safari",
+                test: / Safari\/\d/
+            }
+        ];
+
+        function parseUserAgent(rawUserAgent) {
+            var userAgent = {};
+
+            for (var index = 0; index < userAgentRules.length; index++) {
+                var rule = userAgentRules[index];
+                var matches = rule.test.exec(rawUserAgent);
+
+                if (!matches) {
+                    continue;
+                }
+
+                userAgent.browser = rule.browser;
+
+                if (matches.length > 1) {
+                    userAgent.majorVersion = Number(matches[1]);
+                }
+
+                break;
+            }
+
+            return userAgent;
+        }
+
+        function supportsSameSiteNone(rawUserAgent) {
+            var userAgent = parseUserAgent(rawUserAgent);
+            var browser = userAgent.browser;
+
+            if (browser === "safari") {
+                return false;
+            }
+
+            if (browser === "chrome") {
+                var majorVersion = userAgent.majorVersion;
+
+                if (majorVersion >= 51 && majorVersion <= 66) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        var sync = function(e) {
+            try {
+                var data = JSON.parse(e.data);
+            } catch (e) {
+                return;
+            }
+
+            if (data.name && data.name == "sidSeznamSync") {
+                log("Seznam-sync", "Message sidSeznamSync accepted");
+                var sid = getItem('sid');
+                logSyncCookie('syncSznHtml', {sid: sid});
+                if (sid) { // sid existuje
+                    if (sid.indexOf("|te=") == -1) { // sid je ve spatnem formatu, jen cislo => nebyl zkopirovan udelame hit na analytiku
+                        log("Seznam-sync", "Sid exist, but wrong format");
+                    }
+                } else { // sid neni
+                    log("Seznam-sync", "sid doesnt exist");
+                }
+
+                log("Seznam-sync", "Sid synchronised with service and seznam.cz");
+                document.cookie = "sid=" + data.sid + "; Path=/; Domain=.seznam.cz; Expires=" + new Date(Date.now() + 86400000).toUTCString() + (supportsSameSiteNone(navigator.userAgent) ? "; SameSite=None; Secure" : "");
+                var sid = getItem('sid');
+                log("Seznam-sync", "Show sid: ", sid);
+
+                if (getItem('sid')) {
+                    var message = {name: "sidSidSynchronised", sid: data.sid};
+                    log("Seznam-sync", "Sending postmessage sidSidSynchronised");
+                    window.parent.postMessage(JSON.stringify(message), "*");
+                    logSyncCookie('syncSznHtmlPostmessage', message);
+                }
+            }
+        }
+
+        window.addEventListener("message", sync);
+    </script>
+
+
+</body></html>

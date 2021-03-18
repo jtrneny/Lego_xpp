@@ -1,0 +1,1 @@
+update c_odpmis set c_odpmis.ncisosoby=msprc_mo.ncisosoby from msprc_mo where c_odpmis.noscisprac=msprc_mo.noscisprac

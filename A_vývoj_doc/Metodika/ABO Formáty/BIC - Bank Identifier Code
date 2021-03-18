@@ -1,0 +1,88 @@
+BIC – Bank Identifier Code
+Co je to BIC?
+BIC je mezinárodní kód banky, kterým je pøíslušná finanèní instituce identifikována na celém svìtì.
+
+
+Jaký je úèel BIC?
+BIC je používán v mezinárodním platebním styku k jednoznaèné identifikaci zprostøedkujících bank, které se podílejí na zpracování bezhotovostního penìžního pøevodu.
+
+
+Z èeho se skládá BIC?
+BIC (swiftová adresa banky) se skládá z 8 znakù (pokud se jedná o centrálu banky) nebo z 11 znakù (pokud se jedná o poboèku banky):
+
+
+    * první ètyøi znaky = kód názvu banky,
+    * další dva znaky = ISO kód zemì,
+    * další dva znaky = kód sídla banky,
+    * další tøi znaky = kód poboèky banky.
+
+Napø.:
+CEKOCZPP - ÈSOB, Praha
+CEKOSKBX – ÈSOB, Bratislava
+KREDBEBB – KBC, Bruxelles
+DEUTDEFF – Deutsche Bank AG, Frankfurt/Main
+DEUTDEFF506 = Deutsche Bank AG, Hanau
+
+
+Aktuální informace o BIC lze získat na www.swift.com .
+
+
+//
+IBAN – mezinárodní èíslo úètu
+IBAN (International Bank Account Number) je formát èísla úètu definovaný mezinárodní normou ISO 13616. Tato norma byla v 
+roce 2007 aktualizována a uvedena do souladu se standardem EBS204 (pdf, 211 kB) , který v roce 1996 vydala ECBS (European 
+Committee for Banking Standards). Podrobnosti o IBANu lze nalézt na webových stránkách SWIFTu, který je registraèní autoritou 
+pro formát IBAN - http://www.swift.com/solutions/messaging/information_products/directory_products/iban_format_registry/index.page?lang=en.
+
+Konkrétní podobu èísla úètu ve formátu IBAN vytváøí banka, která úèet vede.
+Standard stanovuje mezinárodní formát èísla úètu takto:  
+
+    * IBAN mùže obsahovat èíslice a velká písmena
+    * IBAN má následující strukturu:
+          o 2 znaky - kód zemì (CZ pro Èeskou republiku)
+          o 2 znaky - kontrolní èíslice - umožòuje programovou kontrolu èísla - ochrana proti chybnì zadanému èíslu úètu (napø. z dùvodu pøeklepu)
+          o Max. 30 znakù - kód banky a èíslo úètu v rámci banky
+    * Èíslo úètu ve formátu IBAN má dvì podoby - elektronickou (bez mezer) a písemnou (s mezerou za každou ètveøicí znakù pro lepší orientaci)
+
+Každá zemì si urèuje vlastní strukturu s tím, že
+
+    * pevnì stanoví pozice, na kterých je kód banky, popø. poboèky banky
+    * pevnì stanoví pozice, na kterých je uvedeno èíslo úètu
+
+Pøíklad èísla úètu v rùzných formátech pro Èeskou republiku
+
+tuzemské bankovní spojení	IBAN - elektronická forma	IBAN - písemná forma
+19-2000145399/0800		CZ6508000000192000145399	CZ65 0800 0000 1920 0014 5399
+178124-4159/0710		CZ6907101781240000004159	CZ69 0710 1781 2400 0000 4159
+
+Dùvodem zavádìní IBANu je podpora automatizovaného zpracování pøeshranièních pøíkazù, zrychlení, zjednodušení a zlevnìní 
+pøeshranièního platebního styku a snížení poètu chyb z dùvodu nesprávnì zadaného èísla úètu.
+
+Dnem vstupu ÈR do Evropské unie (1. kvìtna 2004) se souèástí èeského právního øádu stalo " Naøízení Evropského parlamentu 
+a Rady ES è. 2560/2001 ze dne 19. prosince 2001 o pøeshranièních platbách v eurech". Podle tohoto naøízení mají všechny 
+banky povinnost uvádìt èíslo úètu ve formátu IBAN (a BIC kód banky, který je souèástí mezinárodního bankovního spojení) na 
+výpisu z úètu. Dále je banka povinna na požádání tyto údaje svému klientovi sdìlit.
+
+IBAN - Historický vývoj
+
+Standard IBAN byl vytvoøen v druhé polovinì 90. let organizací ECBS (European Committee for Bankiny Standards). Jeho 
+základem byla norma ISO 13616, standard IBAN však urèoval pøesnìjší pravidla. Napø. pevnou délku èísla pro konkrétní zemi 
+nebo nepoužívání pouze malých písmen. Podrobnìjší popis je uveden v dokumentu EBS204 (pdf, 211 kB) .
+
+Registr IBAN (dokument TR201 (pdf, 1,3, MB) ) spravovala ECBS, pozdìji v roce 2005 pøevzala správu registru EPC (European 
+Payments Council). Registr obsahoval definice IBAN jednotlivých státù, konkrétnì pro ty státy, jejichž banky formát IBAN pro svoji 
+zemi stanovily a v registru zaregistrovaly.
+
+V roce 2002 se této iniciativy ujala Èeská národní banka a po dohodì s Èeskou bankovní asociací zaregistrovala formát IBAN 
+pro Èeskou republiku.
+
+Organizace ECBS a EPC dlouhodobì usilovaly o to, aby byla norma ISO 13616 doplnìna tak, aby odpovídala standardu IBAN. 
+Práce na aktualizaci normy probíhaly nìkolik let a v roce 2007 byla nová norma ISO 13616 vydána.
+
+Vedle doplnìných pravidel pro formát IBAN definuje norma též správce registru národních formátù IBAN. Tímto správcem byla 
+urèena spoleènost SWIFT.
+
+Spoleènost SWIFT pøevzala v roce 2007 tuto roli a EPC tudíž ukonèila vedení registru IBAN.
+
+Poslední verze registru IBAN (dokument TR201 (pdf, 1,3, MB)) je z února 2007. Stejnì tak dokument EBS204 (pdf, 211 kB) 
+ popisující standard IBAN, byl plnì nahrazen novou normou ISO 13616.

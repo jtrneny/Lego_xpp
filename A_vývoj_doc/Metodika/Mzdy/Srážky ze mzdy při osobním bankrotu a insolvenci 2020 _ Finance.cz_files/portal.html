@@ -1,0 +1,75 @@
+
+<!-- saved from url=(0038)https://cdn.cpex.cz/cmp/v2/portal.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script>
+    if (typeof URLSearchParams !== "undefined") {
+      var urlParams = new URLSearchParams(window.location.search);
+      var debug = urlParams.get('debug');
+    }
+    function cpexLog (output) {
+      if (debug) { console.log(output) }
+    }
+
+    function getCpexCookie(name) {
+      return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+    }
+
+    function setCpexCookie(name, content) {
+      cpexLog('PORTAL: setting 3rd party cookie for ' + name);
+      var date = new Date();
+      date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+      document.cookie = name + '=' + content + '; path=/; expires=' + date.toUTCString() + '; SameSite=None; Secure;';
+    }
+
+    function saveCpexCookies (event) {
+      if (event.data.Consent) {
+        setCpexCookie("eupubconsent-v2", event.data.Consent)
+      }
+      if (event.data.OptanonConsent) {
+        setCpexCookie("OptanonConsent", event.data.OptanonConsent)
+      }
+      if (event.data.OptanonAlertBoxClosed) {
+        setCpexCookie("OptanonAlertBoxClosed", event.data.OptanonAlertBoxClosed)
+      }
+    }
+
+    function readCpexCookies () {
+      var consent = getCpexCookie('eupubconsent-v2');
+      var otConsent = getCpexCookie('OptanonConsent');
+      if (consent && otConsent) {
+        cpexLog('PORTAL: 3rd party consent found', consent);
+        parent.postMessage({
+          name: "cpexCookieRead",
+          TCFConsent: consent,
+          OptanonConsent: otConsent
+        }, "*");
+        cpexLog('PORTAL: sending message to sync, for saving to 1st party cookies')
+      } else {
+        cpexLog('PORTAL: 3rd party consent not found');
+        parent.postMessage({
+          name: "cpexCookieRead",
+          noConsent: true
+        }, "*");
+        cpexLog('PORTAL: sending message to sync to load cmp')
+      }
+    }
+
+    function receiveMessage(event) {
+      if (event && event.data) {
+        if (event.data.name === "cpexCookieRead") {
+          readCpexCookies()
+        }
+        if (event.data.name === "cpexCookieSave") {
+          console.log('PORTAL: message received, saving 3rd party cookies: ', event.data)
+          saveCpexCookies(event)
+        }
+      }
+    }
+    cpexLog('PORTAL: iframe loaded');
+    window.addEventListener("message", receiveMessage, false);
+</script>
+</head>
+
+<body style="margin:0">
+
+</body></html>

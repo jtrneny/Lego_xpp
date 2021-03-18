@@ -1,0 +1,129 @@
+
+<!-- saved from url=(0074)https://www.finance.cz/530891-srazky-ze-mzdy-nezabavitelna-castka-vypocty/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body{margin:0;padding:0;}</style><script async="" src="./gpt.js(1).stažený soubor"></script><script async="" src="./prebid.js.stažený soubor"></script><script src="./pubads_impl_2020110901.js.stažený soubor" async=""></script></head><body marginwidth="0" marginheight="0"><div id="pmpbg-1-1x1" style="display: none;"></div><script>var adUnits = [
+   {
+       code:"pmpbg-1-1x1",
+       sizes:[[1,1]],
+       mediaTypes: {
+           native: {
+               title: {
+                   required: true,
+                   len: 27
+               },
+               sponsoredBy: {
+                   required: true
+               },
+               body: {
+                   required: true, 
+                   len: 150,
+              },
+               image: {
+                   required: true,
+                   sizes: [[200,100], {min_width: 200,min_height: 100}]
+               }
+           }
+      },
+       bids: [{
+           bidder: "appnexus",
+           params: {
+               placementId: 17852955,
+               allowSmallerSizes: true
+           }
+       },
+       {
+          bidder: "adformOpenRTB",
+          params: {
+              mid: 729730,
+              rcur: "USD"
+          }
+        }]
+  },
+];
+var PREBID_TIMEOUT = 1000;
+var FAILSAFE_TIMEOUT = 3000;
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function() {
+    googletag.pubads().disableInitialLoad();
+});
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+pbjs.que.push(function() {
+   pbjs.setConfig({
+       consentManagement: {
+           gdpr: {
+               cmpApi: "iab",
+               timeout: 8000,
+               allowAuctionWithoutConsent: true
+               }
+        }
+    });
+    pbjs.addAdUnits(adUnits);
+    pbjs.aliasBidder("appnexus", "prgmt");
+    pbjs.requestBids({
+        bidsBackHandler: initAdserver,
+        timeout:PREBID_TIMEOUT
+    });
+});
+function initAdserver() {
+    if (pbjs.initAdserverSet) return;
+    pbjs.initAdserverSet = true;
+    googletag.cmd.push(function() {
+        pbjs.que.push(function() {
+            pbjs.setTargetingForGPTAsync();
+            var cmp = window.top.__cmp;
+            if(cmp){
+                cmp("getVendorConsents", null,
+                    function(result) {
+                        if (result && result.purposeConsents[2]) {
+                            googletag.pubads().setRequestNonPersonalizedAds(1);
+                            googletag.pubads().refresh();
+                        } else {
+                            googletag.pubads().setRequestNonPersonalizedAds(0);
+                            googletag.pubads().refresh();
+                        }
+                    });
+              } else {
+                googletag.pubads().setRequestNonPersonalizedAds(0);
+                googletag.pubads().refresh();
+              }
+        });
+    });
+}
+setTimeout(function() {
+    initAdserver();
+}, FAILSAFE_TIMEOUT);
+googletag.cmd.push(function() {
+    googletag.defineSlot("/85483919/mladafrontanative/mladafrontanative-finance.cz//inarticle-1x1", [[1, 1],'fluid'], "pmpbg-1-1x1").addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs(true);
+    googletag.pubads().setCentering(true);
+     googletag.pubads().set("page_url", "finance.cz");
+     googletag.pubads().setTargeting("MFCODE", "/90723337/10/10.4.1");
+    googletag.enableServices(); 
+});
+function frameSChange() {
+    for (i = 1; i <= 30; ++i) e = i, setTimeout(function() {
+    if(parent.document.querySelector("#pmif-1-1x1")){
+    var gam = parent.document.querySelector("#pmif-1-1x1");
+    var gamW = gam.contentWindow;
+        if(gamW.document.getElementsByTagName("iframe")[0]){
+        var fframe = gamW.document.getElementsByTagName("iframe")[0];
+        var fh = fframe.scrollHeight;
+        var fw = fframe.scrollWidth;
+        console.log(i+" "+e+" "+fw+"x"+fh);
+        gam.style.width=fw+"px";
+        gam.style.height=fh+"px";
+        gam.width = fw;
+        gam.height = fh;
+        }
+    }
+    }, 200 * e * e * e );
+    var e
+};
+document.addEventListener("DOMContentLoaded", function(event) {
+    googletag.cmd.push(function() { 
+        googletag.display("pmpbg-1-1x1");
+    });
+frameSChange();
+})</script></body></html>

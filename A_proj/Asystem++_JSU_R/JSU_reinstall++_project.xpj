@@ -1,0 +1,236 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.0
+    OPENFILES     = ..\Reinstall\sp_ModifyFieldProperty.prg;..\Reinstall\Asystem++_setup_sys.PRG;..\Reinstall\Asystem++_setup_main.prg;..\Reinstall\Asystem++_setup_login.prg
+    JSU_reinstall++_project.xpj
+
+[JSU_reinstall++_project.xpj]
+    JSU_reinstall++.exe
+    ..\..\..\ALASKA\Xppw32\LIB\asystem_1.dll
+
+[JSU_reinstall++.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q /rXPPUI2.LIB /d__XPP__ /dWORK_VERSION /d_DBG
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      = /v
+    OBJ_DIR       = C:\LEGO_XPP_work\A_OBJ_R
+    LINK_FLAGS    =
+    WATCH         = Expression:nverzeDBFi=nverzeDBFi
+    BREAKPOINT    = ..\Reinstall\Asystem++_setup_login.prg:1122=1@.T.@1@-1@1@.T.@0@@
+// $START-AUTODEPEND
+    asystem++.res
+    drg.ch
+    drgRes.ch
+    Asystem++_setup_login.obj
+    Asystem++_setup_main.obj
+    Asystem++_setup_sys.obj
+    sp_ModifyFieldProperty.obj
+    TFileVersionInfo.obj
+    Xbcompress.obj
+// $STOP-AUTODEPEND
+    ASYSTEM_1.LIB
+    asystem++.arc
+    XBZLIB.LIB
+    ..\A_main\TFileVersionInfo.prg
+    ..\A_main\Xbcompress.prg
+    ..\Reinstall\Asystem++_setup_login.prg
+    ..\Reinstall\Asystem++_setup_main.prg
+    ..\Reinstall\Asystem++_setup_sys.PRG
+    ..\Reinstall\sp_ModifyFieldProperty.prg
+
+[..\..\..\ALASKA\Xppw32\LIB\asystem_1.dll]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /DLL:DYNAMIC /q /rXPPRT1.LIB /rXPPSYS.LIB /rXPPUI2.LIB /d__XPP__
+    DEBUG_SAVE    = no
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = /dll
+    RC_COMPILE    = ARC
+    RC_FLAGS      = /v
+    OBJ_DIR       = C:\LEGO_XPP_work\A_OBJ_DLL
+// $START-AUTODEPEND
+    drg.ch
+    drgres.ch
+    A_lib.obj
+    ADS_.obj
+    AdsStatement.obj
+    dbbulk_.obj
+    drgActions.obj
+    drgArray.obj
+    drgBrowse.obj
+    drgBrowse_.obj
+    drgClickDate.obj
+    drgComboBox.obj
+    drgDataManager.obj
+    drgDBMS.obj
+    drgDBrowse.obj
+    drgDC1.obj
+    drgDC10.obj
+    drgDC2.obj
+    drgDC3.obj
+    drgDC4.obj
+    drgDC5.obj
+    drgDC6.obj
+    drgDialog.obj
+    drgDialogController.obj
+    drgDynamicForm.obj
+    drgEBrowse.obj
+    drgEditBrowse.obj
+    drgErrorSys.obj
+    drgFile.obj
+    drgFileLib.obj
+    drgFindForm.obj
+    drgForm.obj
+    drgFormManager.obj
+    drgGet.obj
+    drgCheckBox.obj
+    drgINI.obj
+    drgLib1.obj
+    drgLib2.obj
+    drgListBrowse.obj
+    drgLog.obj
+    drgLogin.obj
+    drgMenu.obj
+    drgMessageBar.obj
+    drgMLE.obj
+    drgNLS.obj
+    drgObject.obj
+    drgPP.obj
+    drgPrint.obj
+    drgPrintDefaults.obj
+    drgPrintForm.obj
+    drgPrintWindows.obj
+    drgProgram.obj
+    drgProgresMB.obj
+    drgQBrowse.obj
+    drgRadioButton.obj
+    drgRef.obj
+    drgRTF.obj
+    drgScrPos.obj
+    drgSearch.obj
+    drgServiceThread.obj
+    drgSpinButton.obj
+    drgStatic.obj
+    drgTabPage.obj
+    drgTaskManager.obj
+    drgText.obj
+    drgTreeView.obj
+    flt_setcond.obj
+    mh_.obj
+    RD_CONFI.obj
+    RecordSet.obj
+    six_.obj
+    SYS_komunikace_DLL.obj
+    SYS_komunikace_FIR.obj
+    SYS_komunikace_PRO.obj
+    SYS_komunikace_SKL.obj
+    SYS_komunikace_SYS.obj
+    uctObdobi.obj
+    WinApi_.obj
+    XbFTP.obj
+    XBP_BCVS.obj
+    XBP_BRW.obj
+    XBP_COL.obj
+    XBP_QBRW.obj
+    XBP_UTIL.obj
+    xbpGet.obj
+    XbpImageButton.obj
+    XbpImageMenu.obj
+    XbpImageTabPage.obj
+// $STOP-AUTODEPEND
+    adac20b.lib
+    asystem++.arc
+    asystem++_ver.arc
+    XBTBASE1.LIB
+    XBTBASE2.LIB
+    ..\A_main\A_lib.prg
+    ..\A_main\ADS_.prg
+    ..\A_main\dbbulk_.prg
+    ..\A_main\mh_.prg
+    ..\A_main\RD_CONFI.PRG
+    ..\A_Main\RecordSet.prg
+    ..\A_main\six_.prg
+    ..\A_main\uctObdobi.prg
+    ..\A_main\WinApi_.prg
+    ..\DRG_MISS_DLL\AdsStatement.prg
+    ..\DRG_MISS_DLL\drgActions.PRG
+    ..\DRG_MISS_DLL\drgArray.PRG
+    ..\DRG_MISS_DLL\drgBrowse.PRG
+    ..\DRG_MISS_DLL\drgBrowse_.prg
+    ..\DRG_MISS_DLL\drgClickDate.prg
+    ..\DRG_MISS_DLL\drgComboBox.PRG
+    ..\DRG_MISS_DLL\drgDataManager.PRG
+    ..\DRG_MISS_DLL\drgDBMS.PRG
+    ..\DRG_MISS_DLL\drgDBrowse.prg
+    ..\DRG_MISS_DLL\drgDC1.PRG
+    ..\DRG_MISS_DLL\drgDC10.prg
+    ..\DRG_MISS_DLL\drgDC2.PRG
+    ..\DRG_MISS_DLL\drgDC3.PRG
+    ..\DRG_MISS_DLL\drgDC4.PRG
+    ..\DRG_MISS_DLL\drgDC5.PRG
+    ..\DRG_MISS_DLL\drgDC6.PRG
+    ..\DRG_MISS_DLL\drgDialog.prg
+    ..\DRG_MISS_DLL\drgDialogController.PRG
+    ..\DRG_MISS_DLL\drgDynamicForm.PRG
+    ..\DRG_MISS_DLL\drgEBrowse.prg
+    ..\DRG_MISS_DLL\drgEditBrowse.PRG
+    ..\DRG_MISS_DLL\drgErrorSys.PRG
+    ..\DRG_MISS_DLL\drgFile.prg
+    ..\DRG_MISS_DLL\drgFileLib.prg
+    ..\DRG_MISS_DLL\drgFindForm.PRG
+    ..\DRG_MISS_DLL\drgForm.PRG
+    ..\DRG_MISS_DLL\drgFormManager.PRG
+    ..\DRG_MISS_DLL\drgGet.PRG
+    ..\DRG_MISS_DLL\drgCheckBox.PRG
+    ..\DRG_MISS_DLL\drgINI.prg
+    ..\DRG_MISS_DLL\drgLib1.PRG
+    ..\DRG_MISS_DLL\drgLib2.PRG
+    ..\DRG_MISS_DLL\drgListBrowse.PRG
+    ..\DRG_MISS_DLL\drgLog.PRG
+    ..\DRG_MISS_DLL\drgLogin.PRG
+    ..\DRG_MISS_DLL\drgMessageBar.PRG
+    ..\DRG_MISS_DLL\drgMLE.PRG
+    ..\DRG_MISS_DLL\drgNLS.PRG
+    ..\DRG_miss_DLL\drgObject.prg
+    ..\DRG_MISS_DLL\drgPP.PRG
+    ..\DRG_MISS_DLL\drgPrint.prg
+    ..\DRG_MISS_DLL\drgPrintDefaults.prg
+    ..\DRG_MISS_DLL\drgPrintForm.prg
+    ..\DRG_MISS_DLL\drgPrintWindows.prg
+    ..\DRG_MISS_DLL\drgProgram.PRG
+    ..\DRG_MISS_DLL\drgProgresMB.PRG
+    ..\DRG_MISS_DLL\drgQBrowse.PRG
+    ..\DRG_MISS_DLL\drgRadioButton.PRG
+    ..\DRG_MISS_DLL\drgRef.PRG
+    ..\DRG_miss_DLL\drgRTF.prg
+    ..\DRG_MISS_DLL\drgScrPos.PRG
+    ..\DRG_MISS_DLL\drgSearch.PRG
+    ..\DRG_MISS_DLL\drgServiceThread.PRG
+    ..\DRG_MISS_DLL\drgSpinButton.PRG
+    ..\DRG_MISS_DLL\drgStatic.PRG
+    ..\DRG_MISS_DLL\drgTabPage.PRG
+    ..\DRG_miss_DLL\drgTaskManager.prg
+    ..\DRG_MISS_DLL\drgText.PRG
+    ..\DRG_MISS_DLL\drgTreeView.PRG
+    ..\DRG_MISS_DLL\flt_setcond.prg
+    ..\DRG_miss_DLL\XbFTP.prg
+    ..\DRG_MISS_DLL\xbpGet.PRG
+    ..\DRG_miss_DLL\XbpImageButton.prg
+    ..\DRG_MISS_DLL\XbpImageMenu.prg
+    ..\DRG_miss_DLL\XbpImageTabPage.prg
+    ..\DRG_miss_DLL_BRO\XBP_BCVS.PRG
+    ..\DRG_miss_DLL_BRO\XBP_BRW.PRG
+    ..\DRG_miss_DLL_BRO\XBP_COL.PRG
+    ..\DRG_miss_DLL_BRO\XBP_QBRW.PRG
+    ..\DRG_miss_DLL_BRO\XBP_UTIL.PRG
+    ..\DRG_MISS_JS\drgMenu.PRG
+    ..\System\Komunikace\SYS_komunikace_DLL.prg
+    ..\System\Komunikace\SYS_komunikace_FIR.prg
+    ..\System\Komunikace\SYS_komunikace_PRO.prg
+    ..\System\Komunikace\SYS_komunikace_SKL.prg
+    ..\System\Komunikace\SYS_komunikace_SYS.prg
+

@@ -1,0 +1,214 @@
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457592.024804
+"
+"njd_Current  --->   2457592.024804
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457593.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457582.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457582.000012
+"
+"njd_Current  --->   2457592.024815
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457594.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457583.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:44
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457583.000012
+"
+"njd_Current  --->   2457592.024815
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457595.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457584.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:44
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457584.000012
+"
+"njd_Current  --->   2457592.024827
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457596.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457585.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457585.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:45
+"
+"njd_Current  --->   2457592.024827
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457597.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457586.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:46
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457586.000012
+"
+"njd_Current  --->   2457592.024850
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457598.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457587.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457587.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:49
+"
+"njd_Current  --->   2457592.024862
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457599.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457588.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:51
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457588.000012
+"
+"njd_Current  --->   2457592.024896
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457600.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457589.000012
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457589.000012
+"
+"njd_Current  --->   2457592.024931
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:54
+"
+"Konec úlohy DIST000066 ----> 11:35:54
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457601.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457590.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:56
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"Konec úlohy DIST000066 ----> 11:35:57
+"
+"paTask.njd_tskBegin  --->   2457590.000012
+"
+"njd_Current  --->   2457592.024966
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457602.024804
+"
+"2.pøiøazení
+"
+"Konec úlohy DIST000066 ----> 11:35:58
+"
+"paTask.njd_tskBegin  --->   2457591.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:35:59
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457591.000012
+"
+"njd_Current  --->   2457592.024989
+"
+"Konec úlohy DIST000066 ----> 11:36:00
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457603.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457592.000012
+"
+"Zaèátek úlohy DIST000066 ----> 11:36:01
+"
+"úloha musí být za den spuštìna jen jednou
+"
+"paTask.njd_tskBegin  --->   2457592.000012
+"
+"njd_Current  --->   2457592.025023
+"
+"Konec úlohy DIST000066 ----> 11:36:03
+"
+"1.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457604.024804
+"
+"2.pøiøazení
+"
+"paTask.njd_tskBegin  --->   2457593.000012
+"
+"Konec úlohy DIST000066 ----> 11:36:04
+"
+"Zaèátek úlohy DIST000066 ----> 11:36:04
+"
+"Konec úlohy DIST000066 ----> 11:36:04
+"
+"Konec úlohy DIST000066 ----> 11:36:05
+"
+"Konec úlohy DIST000066 ----> 11:36:07
+"
+"Konec úlohy DIST000066 ----> 11:36:09
+"
+"Konec úlohy DIST000066 ----> 11:36:11
+"
+"Konec úlohy DIST000066 ----> 11:36:12
+"

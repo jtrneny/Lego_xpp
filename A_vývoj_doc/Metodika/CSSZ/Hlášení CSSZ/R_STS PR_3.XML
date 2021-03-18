@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ONZ version="2009.1" xmlns="http://schemas.cssz.cz/ONZ2009">
+   <employee sqnr="1" dep="552" act="3" fro="2014-01-29" dat="2014-09-05" ver="2">
+       <client bno="520329142">
+           <name sur="Archman" ona="" fir="Jaroslav"/>
+           <birth dat="1952-03-29" nam="Archman" cit="Podbořany"/>
+           <stat mal="M" cnt="CZ"/>
+           <adr str="Sídliště" num="415" pnu="36401" cit="Toužim" cnt="CZ" pos="CZ"/>
+           <fdr cit="" str="" num="" pnu=""/>
+           <cdr str="Sídliště" num="415" pnu="36401" cit="Toužim" cnt="CZ" pos="CZ"/>
+       </client>
+       <comp vs="5520102178" nvs="" id="48288551" nam="STS Prunéřov, a.s."/>
+       <job fro="2013-11-01" to="" rel="Q" per="CZ" sme="A"/>
+       <forin nam="" str="" num="" pnu="" cit="" cnt="" id="" cur=""/>
+       <pens typ="" tak=""/>
+       <insh cnr="111"/>
+       <inso nam=""/>
+       <insp nam=""/>
+   </employee>
+</ONZ>

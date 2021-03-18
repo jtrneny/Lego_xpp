@@ -1,0 +1,1321 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_DUCHOD) DESC(Èíselník typù dùchodù)  TASK(PER) DISTRIB(C_DUCHOD01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypDuchod)  DESC(Klíè typù dùchodù)              CAPTION(KlíèTypDuc) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazDuchod)  DESC(Název typù dùchodù)             CAPTION(NázTypùDuc) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cTypDucReg)  DESC(Typ dùchodù pro registr ÈSSZ)   CAPTION(TypDucÈSSZ) FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib) FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_DUCHOD01) FNAME(C_DUCHOD) CAPTION(KlíèTypDuc)    KEY(nTypDuchod)
+  TYPE(INDEX) NAME(C_DUCHOD02) FNAME(C_DUCHOD) CAPTION(NázTypùDuc)    KEY(UPPER(cNazDuchod))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_DUCHOD) CAPTION(DistribRec)    KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_DUCHOD) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nTypDuchod:Typ dùchodu,cNazDuchod:Název dùchodu) ORDER(1) RETURN(nTypDuchod)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_FUNCPR) DESC(Èís. prac.funkcí pracov.)  TASK(PER)  DISTRIB(C_FUNCPR01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cFunPra)     DESC(Zkratka funkce pracovníka)      CAPTION(ZkrFuncPra)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazFuncPr)  DESC(Název funkce pracovníka)        CAPTION(NázFuncPra)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_FUNCPR01) FNAME(C_FUNCPR) CAPTION(ZkrFuncPra)    KEY(UPPER(cFunPra))
+  TYPE(INDEX) NAME(C_FUNCPR02) FNAME(C_FUNCPR) CAPTION(NázFuncPra)    KEY(UPPER(cNazFuncPr))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_FUNCPR) CAPTION(DistribRec)    KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_FUNCPR) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cFunPra:Zkratka typu funkce,cNazFuncPr:Název funkce pracovníka) ORDER(1) RETURN(cFunPra)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_MIVYKP) DESC(Èís.místo výkonu povolání)  TASK(PER) 
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkrMiVyPo)  DESC(Zkratka místa výk.povolání)     CAPTION(ZkrMíVyPov)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cNazMista)   DESC(Název funkce pracovníka)        CAPTION(NázFuncPra)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_MIVYKP01) FNAME(C_MIVYKP) CAPTION(ZkrFuncPra)    KEY(UPPER(cZkrMiVyPo))
+  TYPE(INDEX) NAME(C_MIVYKP02) FNAME(C_MIVYKP) CAPTION(NázFuncPra)    KEY(UPPER(cNazMista))
+  TYPE(INDEX) NAME(ID)         FNAME(C_MIVYKP) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrMiVyPo:Zkratka místa výk.povolení,cNazMista:Název místa) ORDER(1) RETURN(cZkrMiVyPo)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_KLAZAM) DESC(Èís.klasifikace zamìstnán)  TASK(PER) DISTRIB(C_KLAZAM01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nKlasZam)    DESC(Klíè klasifikace zamìstnání)    CAPTION(KlíèKlasZa)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cNazKlasZa)  DESC(Název klasifikace zamìstnání)   CAPTION(NázKlasZam)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cPopisKlZa)  DESC(Popis klasifikace zamìstnání)   CAPTION(PopKlasZam)  FTYPE(c) FLEN(90) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_KLAZAM01)   FNAME(C_KLAZAM) CAPTION(KlíèKlasZa)    KEY(nKlasZam)
+  TYPE(INDEX) NAME(C_KLAZAM02)   FNAME(C_KLAZAM) CAPTION(NázKlasZam)    KEY(UPPER(cNazKlasZa))
+  TYPE(INDEX) NAME(DistribRec)   FNAME(C_KLAZAM) CAPTION(DistribRec)    KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)           FNAME(C_KLAZAM) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nKlasZam:KZAM,cNazKlasZa:Název KZAM) ORDER(1) RETURN(nKlasZam)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_LEKARI) DESC(Èíselník lékaøù)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkratLeka)  DESC(Zkratka lékaøe)                 CAPTION(ZkrLékaøe)   FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazevLeka)  DESC(Název lékaøe)                   CAPTION(NázLékaøe)   FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cOdbornLek)  DESC(Odbornost lékaøe)               CAPTION(OdbornLéka)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)      DESC(Školitel - Ulice)               CAPTION(LékaøUlice)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)   DESC(ÈísPopis firmy)                 CAPTION(ÈísPopi)     FTYPE(c) FLEN( 10)  DEC(0)
+  TYPE(FIELD) NAME(ccisorien)   DESC(ÈísOrientaèní firmy)            CAPTION(ÈísOrie)     FTYPE(c) FLEN( 10)  DEC( 0)
+  TYPE(FIELD) NAME(culiccisla)  DESC(Ulice+èísla firmy)              CAPTION(UlÈisl)      FTYPE(c) FLEN( 65)  DEC( 0)
+  TYPE(FIELD) NAME(cobec)       DESC(Obec firmy)                     CAPTION(Obec)        FTYPE(c) FLEN( 50)  DEC( 0)
+  TYPE(FIELD) NAME(cMisto)      DESC(Školitel - Místo)               CAPTION(LékaøMísto)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)        DESC(Školitel - Psè)                 CAPTION(LékaøPsè)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat)  DESC(Školitel - Stát)                CAPTION(LékaøStát)   FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)   FTYPE(n) FLEN( 5) DEC( 0) RELATETO(Firmy) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                    CAPTION(ÈíslOsoby)   FTYPE(n) FLEN( 6) DEC( 0) RELATETO(Osoby) RELATETYPE(2)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_LEKARI01)   FNAME(C_LEKARI) CAPTION(ZkrLékaøe )          KEY(UPPER(cZkratLeka))
+  TYPE(INDEX) NAME(C_LEKARI02)   FNAME(C_LEKARI) CAPTION(NázLékaøe )          KEY(UPPER(cNazevLeka))
+  TYPE(INDEX) NAME(ID)           FNAME(C_LEKARI) CAPTION(ID)                  KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkratLeka:Zkratka lékaøe,cNazevLeka:Název lékaøe) ORDER(1) RETURN(cZkratLeka)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_LEKPRO) DESC(Èíselník lékaø.prohlídek)  TASK(PER)  DISTRIB(C_LEKPRO01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkratka)    DESC(Zkratka lékaøských prohlídek)   CAPTION(ZkrLékProh)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)      DESC(Název lékaøské prohlídky)       CAPTION(NázLékProh)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nPerioOpak)  DESC(Perioda opakování lék.prohlíd.) CAPTION(PerOpakLPr)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN)  DESC(Zkratka MJ)                     CAPTION(ZkratkaMJ)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDelkaProh)  DESC(Délka prohlídky)                CAPTION(DélkaProhl)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJED2)  DESC(Zkratka MJ - 2)                 CAPTION(ZkratkaMJ2)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_LEKPRO01) FNAME(C_LEKPRO) CAPTION(ZkrLékProh)    KEY(UPPER(cZkratka))
+  TYPE(INDEX) NAME(C_LEKPRO02) FNAME(C_LEKPRO) CAPTION(NázLékProh)    KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_LEKPRO) CAPTION(DistribRec)    KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_LEKPRO) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkratka:Zkratka lékaø.prohlídky,cNazev:Název lékaøské prohlídky) ORDER(1) RETURN(cZkratka)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_MIMPRV) DESC(Èís.mimopracovního vztahu)  TASK(PER)  DISTRIB(C_MIPRVZ01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nMimoPrVzt)  DESC(Typ mimopracovního vztahu)      CAPTION(KlíèMimVzt)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazMimPrV)  DESC(Název mimopracovního vztahu)    CAPTION(NázMimVzt)   FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_MIPRVZ01) FNAME(C_MIMPRV) CAPTION(KlíèMimVzt)   KEY(nMimoPrVzt)
+  TYPE(INDEX) NAME(C_MIPRVZ02) FNAME(C_MIMPRV) CAPTION(NázMimVzt )   KEY(UPPER(cNazMimPrV))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_MIMPRV) CAPTION(DistribRec)   KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_MIMPRV) CAPTION(ID)           KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nMimoPrVzt:Typ mimopracovního vztahu,cNazMimPrV:Název mimopracovního vztahu) ORDER(1) RETURN(nMimoPrVzt)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_NAROD) DESC(Èíselník národností)  TASK(PER)  DISTRIB(C_NAROD01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkratNar)   DESC(Zkratka národnosti)             CAPTION(ZkrNárod)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazNarod)   DESC(Název národnosti)               CAPTION(NázNárod)    FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_NAROD01)  FNAME(C_NAROD) CAPTION(ZkrNárod  )   KEY(UPPER(cZkratNar))
+  TYPE(INDEX) NAME(C_NAROD02)  FNAME(C_NAROD) CAPTION(NázNárod  )   KEY(UPPER(cNazNarod))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_NAROD) CAPTION(DistribRec)   KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_NAROD) CAPTION(ID)           KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkratNar:Zkratka národnosti,cNazNarod:Název národnosti) ORDER(1) RETURN(cZkratNar)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRACVZ) DESC(Èís. pracovních vztahù)  TASK(PER) DISTRIB(C_PRACVZ01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypPraVzt)  DESC(Typ pracovního vztahu)          CAPTION(TypPracVzt)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazPraVzt)  DESC(Název pracovního vztahu)        CAPTION(NázPracVzt)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(lMimoPrVzt)  DESC(Mimopracovní vztah)             CAPTION(MimPrVztah)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lSocPojis)   DESC(Sociální pojištìní)             CAPTION(SocPoj)      FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lZdrPojis)   DESC(Zdravotní pojištìní)            CAPTION(ZdrPoj)      FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cTypPPVReg)  DESC(Druh výdìl.èinn. registr ÈSSZ)  CAPTION(DruhPPVReg)  FTYPE(c) FLEN( 1) DEC( 0) RELATETO(C_PRVZDC) RELATETYPE(2)
+  TYPE(FIELD) NAME(nZpusSledUP) DESC(Zpùsob sledování pro ÚP)        CAPTION(ZpùsSledÚP)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lOdstupne)   DESC(Nárok na odstupné)              CAPTION(NárOdstupn)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lDovolena)   DESC(Nárok na dovolenou)             CAPTION(NárDovolen)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRACVZ01) FNAME(C_PRACVZ) CAPTION(TypPracVzt)     KEY(nTypPraVzt)
+  TYPE(INDEX) NAME(C_PRACVZ02) FNAME(C_PRACVZ) CAPTION(NázPracVzt)     KEY(UPPER(cNazPraVzt))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRACVZ) CAPTION(DistribRec)     KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRACVZ) CAPTION(ID)             KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nTypPraVzt:Typ pracovního vztahu,cNazPraVzt:Název pracovního vztahu) ORDER(1) RETURN(nTypPraVzt)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRACZA) DESC(Èís. pracovního zaøazení)  TASK(PER) DISTRIB(C_PRACZA01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cPracZar)    DESC(Zkratka prac.zaøazení)          CAPTION(ZkrPracZar)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazPracZa)  DESC(Název prac.zaøazení)            CAPTION(NázPracZar)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nKlasZam)    DESC(Klíè klasifikace zamìstnání)    CAPTION(KlíèKlasZa)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRACZA01) FNAME(C_PRACZA) CAPTION(ZkrPracZar)      KEY(UPPER(cPracZar))
+  TYPE(INDEX) NAME(C_PRACZA02) FNAME(C_PRACZA) CAPTION(NázPracZar)      KEY(UPPER(cNazPracZa))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRACZA) CAPTION(DistribRec)      KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRACZA) CAPTION(ID)              KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cPracZar:Zkratka pracovního zaøazení,cNazPracZa:Název pracovního zaøazení:30) ORDER(1) RETURN(cPracZar)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_ZMSMDO) DESC(Èís.typù zmìn prac.sml.a dohod)  TASK(PER) DISTRIB(C_ZMSMDO01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypZmSmDo)  DESC(Zkratka typu zmìny)             CAPTION(ZkrTypZm)    FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPopisZmen)  DESC(Popis typu zmìny)               CAPTION(NázPracZar)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_ZMSMDO01) FNAME(C_ZMSMDO) CAPTION(ZkrTypZm)        KEY(UPPER(cTypZmSmDo))
+  TYPE(INDEX) NAME(C_ZMSMDO02) FNAME(C_ZMSMDO) CAPTION(PopisZmen)       KEY(UPPER(cPopisZmen))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_ZMSMDO) CAPTION(DistribRec)      KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_ZMSMDO) CAPTION(ID)              KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypZmSmDo:Zkratka typu zmìny,cPopisZmen:Popis zmìny:30) ORDER(1) RETURN(cTypZmSmDo)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_RODSTA) DESC(Èíselník rodinných stavù)  TASK(PER) DISTRIB(C_RODSTA01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkrRodStv)  DESC(Zkratka rodinného stavu)        CAPTION(ZkrRodStav)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazRodStv)  DESC(Název rodinného stavu)          CAPTION(NázRodStav)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nRodStaReg)  DESC(Rodinný stav pro registr ÈSSZ)  CAPTION(RodStavReg)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_RODSTA01) FNAME(C_RODSTA) CAPTION(ZkrRodStav)     KEY(UPPER(cZkrRodStv))
+  TYPE(INDEX) NAME(C_RODSTA02) FNAME(C_RODSTA) CAPTION(NázRodStav)     KEY(UPPER(cNazRodStv))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_RODSTA) CAPTION(DistribRec)     KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_RODSTA) CAPTION(ID)             KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrRodStv:Zkratka rodinného stavu,cNazRodStv:Název rodinného stavu) ORDER(1) RETURN(cZkrRodStv)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_SKOLEN) DESC(Èíselník školení a kursù)  TASK(PER) DISTRIB(C_SKOLEN01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkratka)    DESC(Zkratka školení)                CAPTION(ZkrŠkolení)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)      DESC(Název školení)                  CAPTION(NázŠkolení)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDelkaSkol)  DESC(Délka školení)                  CAPTION(DélkaŠkole)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJED2)  DESC(Zkratka MJ - 2)                 CAPTION(ZkratkaMJ2)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPerioOpak)  DESC(Perioda opakování školení)      CAPTION(PerOpakŠko)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN)  DESC(Zkratka MJ)                     CAPTION(ZkratkaMJ)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_SKOLEN01) FNAME(C_SKOLEN) CAPTION(ZkrŠkolení)  KEY(UPPER(cZkratka))
+  TYPE(INDEX) NAME(C_SKOLEN02) FNAME(C_SKOLEN) CAPTION(NázŠkolení)  KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_SKOLEN) CAPTION(DistribRec)  KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_SKOLEN) CAPTION(ID)          KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkratka:Zkratka školení,cNazev:Název školení) ORDER(1) RETURN(cZkratka)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_SKOLIT) DESC(Èíselník školitelù)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkratSkol)  DESC(Zkratka školitele)              CAPTION(ZkrŠkolite)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazevSkol)  DESC(Název školitele)                CAPTION(NázŠkolite)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)      DESC(Školitel - Ulice)               CAPTION(ŠkoliUlice)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)   DESC(Školitel - ÈísPopis firmy)      CAPTION(ŠkoliÈísPopi) FTYPE(c) FLEN( 10)  DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)   DESC(Školitel - ÈísOrientaèní firmy) CAPTION(ŠkoliÈísOrie) FTYPE(c) FLEN( 10)  DEC( 0)
+  TYPE(FIELD) NAME(culiccisla)  DESC(Školitel - Ulice+èísla firmy)   CAPTION(ŠkoliUlÈisl)  FTYPE(c) FLEN( 65)  DEC( 0)
+  TYPE(FIELD) NAME(cobec)       DESC(Školitel - Obec firmy)          CAPTION(ŠkoliObec)    FTYPE(c) FLEN( 50)  DEC( 0)
+  TYPE(FIELD) NAME(cMisto)      DESC(Školitel - Místo)               CAPTION(ŠkoliMísto)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)        DESC(Školitel - Psè)                 CAPTION(ŠkoliPsè)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat)  DESC(Školitel - Stát)                CAPTION(ŠkoliStát)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)   FTYPE(n) FLEN( 5) DEC( 0) RELATETO(Firmy) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                    CAPTION(ÈíslOsoby)   FTYPE(n) FLEN( 6) DEC( 0) RELATETO(Osoby) RELATETYPE(2)
+  TYPE(FIELD) NAME(cLektor)     DESC(Lektor - školitel)              CAPTION(Lektor)      FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_SKOLIT01) FNAME(C_SKOLIT) CAPTION(ZkrŠkolite)     KEY(UPPER(cZkratSkol))
+  TYPE(INDEX) NAME(C_SKOLIT02) FNAME(C_SKOLIT) CAPTION(NázŠkolite)     KEY(UPPER(cNazevSkol))
+  TYPE(INDEX) NAME(ID)         FNAME(C_SKOLIT) CAPTION(ID)             KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkratSkol:Zkratka školitele,cNazevSkol:Název školitele) ORDER(1) RETURN(cZkratSkol)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_SKOLUK) DESC(Èíselník ukonèení školení)  TASK(PER) DISTRIB(C_SKOLUK01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkratkaUk)  DESC(Zkratka ukonèení školení)       CAPTION(ZkrUkoŠkol)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)      DESC(Název ukonèení školení)         CAPTION(NázUkoŠkol)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_SKOLUK01) FNAME(C_SKOLUK) CAPTION(ZkrUkoŠkol)     KEY(UPPER(cZkratkaUk))
+  TYPE(INDEX) NAME(C_SKOLUK02) FNAME(C_SKOLUK) CAPTION(NázUkoŠkol)     KEY(UPPER(cNazev))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_SKOLUK) CAPTION(DistribRec)     KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_SKOLUK) CAPTION(ID)             KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkratkaUk:Zkratka ukonèení školení,cNazev:Název ukonèení školení) ORDER(1) RETURN(cZkratkaUk)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_STATPR) DESC(Èíselník státní pøíslušn.)  TASK(PER) DISTRIB(C_STATPR01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkrStaPri)  DESC(Zkratka státní pøíslušnosti)    CAPTION(ZkrStaPøi)   FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cNazStaPri)  DESC(Název státní pøíslušnosti)      CAPTION(NázStaPøi)   FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cZkratStat)  DESC(Zkratka státu)                  CAPTION(ZkrtkaStá)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_STATPR01) FNAME(C_STATPR) CAPTION(ZkrStaPøi )    KEY(UPPER(cZkrStaPri))
+  TYPE(INDEX) NAME(C_STATPR02) FNAME(C_STATPR) CAPTION(NázStaPøi )    KEY(UPPER(cNazStaPri))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_STATPR) CAPTION(DistribRec)    KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_STATPR) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrStaPri:Zkratka státní pøíslušnosti,cNazStaPri:Název státní pøíslušnosti) ORDER(1) RETURN(cZkrStaPri)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_UKONPV) DESC(Èís.ukonèení prac.vztahu)  TASK(PER) DISTRIB(C_UKONPV01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypUkoPrV)  DESC(Typ ukonèení prac.vztahu)       CAPTION(TypUkPrcVz)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazUkoPrV)  DESC(Název ukonèení prac.vztahu)     CAPTION(NázUkPrcVz)  FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(lOdstupne)   DESC(Vyplácet odstupné)              CAPTION(VyplOdstup)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_UKONPV01) FNAME(C_UKONPV) CAPTION(TypUkPrcVz) KEY(nTypUkoPrV)
+  TYPE(INDEX) NAME(C_UKONPV02) FNAME(C_UKONPV) CAPTION(NázUkPrcVz) KEY(UPPER(cNazUkoPrV))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_UKONPV) CAPTION(DistribRec) KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_UKONPV) CAPTION(ID)         KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nTypUkoPrV:Typ ukonèení prac.vztahu,cNazUkoPrV:Název ukonèení prac.vztahu) ORDER(1) RETURN(nTypUkoPrV)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_VZDEL) DESC(Èíselník vzdìlání)  TASK(PER) DISTRIB(C_VZDEL01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkrVzdel)   DESC(Zkratka vzdìlání)               CAPTION(ZkrVzdìlán)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazVzdela)  DESC(Název vzdìlání)                 CAPTION(NázVzdìlán)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cTypVzdSCP)  DESC(Zkratka vzdìlání pro ISPV)      CAPTION(ZkrVzdISPV)  FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_VZDEL01)  FNAME(C_VZDEL) CAPTION(ZkrVzdìlán)       KEY(UPPER(cZkrVzdel))
+  TYPE(INDEX) NAME(C_VZDEL02)  FNAME(C_VZDEL) CAPTION(NázVzdìlán)       KEY(UPPER(cNazVzdela))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_VZDEL) CAPTION(DistribRec)       KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_VZDEL) CAPTION(ID)               KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrVzdel:Zkratka vzdìlání,cNazVzdela:Název vzdìlání) ORDER(1) RETURN(cZkrVzdel)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_VZDEUK) DESC(Èíselník ukonèení vzdìlán)  TASK(PER) DISTRIB(C_VZDEUK01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cZkrUkoVzd)  DESC(Zkratka ukonèení vzdìlání)      CAPTION(ZkrUkoVzdì)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazUkoVzd)  DESC(Název ukonèení vzdìlání)        CAPTION(NázUkoVzdì)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_VZDEUK01)  FNAME(C_VZDEUK) CAPTION(ZkrUkoVzdì)     KEY(UPPER(cZkrUkoVzd))
+  TYPE(INDEX) NAME(C_VZDEUK02)  FNAME(C_VZDEUK) CAPTION(NázUkoVzdì)     KEY(UPPER(cNazUkoVzd))
+  TYPE(INDEX) NAME(DistribRec)  FNAME(C_VZDEUK) CAPTION(DistribRec)     KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)          FNAME(C_VZDEUK) CAPTION(ID)             KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cZkrUkoVzd:Zkratka ukonèení vzdìlání,cNazUkoVzd:Název ukonèení vzdìlání) ORDER(1) RETURN(cZkrUkoVzd)
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_ZAMEVZ) DESC(Èísel.zamìstnaneck.vztahu)  TASK(PER) DISTRIB(C_ZAMEVZ01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nTypZamVzt)  DESC(Typ zamìst. vztahu)             CAPTION(TypZamVzt)   FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazZamVzt)  DESC(Název zamìstnaneckého vztahu)   CAPTION(NázPrcVzt)   FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_ZAMEVZ01) FNAME(C_ZAMEVZ) CAPTION(TypZamVzt )     KEY(nTypZamVzt)
+  TYPE(INDEX) NAME(C_ZAMEVZ02) FNAME(C_ZAMEVZ) CAPTION(NázPrcVzt )     KEY(UPPER(cNazZamVzt))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_ZAMEVZ) CAPTION(DistribRec)     KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_ZAMEVZ) CAPTION(ID)             KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(nTypZamVzt:Klíè zam.vzt.,cNAZZamVzt:Název zamìst.vztahu) ORDER(1) RETURN(nTypZamVzt)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(DUCHODY) DESC(Dùchody pracovníkù)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Celé jméno pracovníka)          CAPTION(CelJménoPr) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(nPorDuchod) DESC(Poøadí dùchodu)                 CAPTION(PoøDùchodu) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nTypDuchod) DESC(Typ dùchodu)                    CAPTION(TypDùchodu) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_DUCHOD) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazDuchod) DESC(Název typù dùchodù)             CAPTION(NázTypùDuc) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPopisDuch) DESC(Popis typu dùchodu)             CAPTION(ZkrManStav) FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(dPriznDuOd) DESC(Pøiznán dùchodu OD)             CAPTION(PøiznDùcOd) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dPriznDuDo) DESC(Pøiznán dùchodu DO)             CAPTION(PøiznDùcDo) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dNarDuchOd) DESC(Nárok dùchodu OD)               CAPTION(NárokDùcOd) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dNarDuchDo) DESC(Nárok dùchodu DO)               CAPTION(NárokDùcDo) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nHodnDucho) DESC(Hodnota dùchodu)                CAPTION(HodnDùchod) FTYPE(n) FLEN(11) DEC( 2)
+  TYPE(FIELD) NAME(lAktiv)     DESC(Aktivní dùchod)                 CAPTION(AktivDùcho) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)  FTYPE(n) FLEN( 5) DEC( 0) RELATETO(Firmy) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název firmy)                    CAPTION(NázFirmy)   FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Ulice)                          CAPTION(Ulice)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)  DESC(ÈísPopis firmy)                 CAPTION(ÈísPopi)    FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)  DESC(ÈísOrientaèní firmy)            CAPTION(ÈísOrie)    FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla) DESC(Ulice+èísla firmy)              CAPTION(UlÈisl)     FTYPE(c) FLEN( 65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)      DESC(Obec firmy)                     CAPTION(Obec)       FTYPE(c) FLEN( 50) DEC( 0)
+  TYPE(FIELD) NAME(cSidlo)     DESC(Sídlo)                          CAPTION(SídloFirmy) FTYPE(c) FLEN( 20) DEC( 0)
+  TYPE(FIELD) NAME(cPSC)       DESC(PSÈ)                            CAPTION(PSÈ)        FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Zkratka státu)                  CAPTION(ZkratStát)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(DUCHODY01)  FNAME(DUCHODY) CAPTION(RodCisPrac)              KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(DUCHODY02)  FNAME(DUCHODY) CAPTION(RodCisPrac +AktivDùcho ) KEY(UPPER(cRodCisPra) +if (lAktiv, '1', '0') )
+  TYPE(INDEX) NAME(DUCHODY03)  FNAME(DUCHODY) CAPTION(RodCisPrac +TypDùchodu ) KEY(UPPER(cRodCisPra) +STRZERO(nTypDuchod,2) )
+  TYPE(INDEX) NAME(DUCHODY04)  FNAME(DUCHODY) CAPTION(ÈísloOsoby)              KEY(nCisOsoby)
+  TYPE(INDEX) NAME(ID)         FNAME(DUCHODY) CAPTION(ID)                      KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(LEKPROHL) DESC(Lékaøské prohlídky)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Celé jméno)                     CAPTION(CelJméno)   FTYPE(c) FLEN(43) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(nPoradi)    DESC(Poøadí lékaøské prohlídky)      CAPTION(PoøLekProh) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)   DESC(Typ lékaøské prohlídky)         CAPTION(TypLekProh) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_LEKPRO) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPerioOpak) DESC(Perioda opakování lék.prohlíd.) CAPTION(PerOpakLPr) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(Zkratka MJ)                     CAPTION(ZkratkaMJ)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(dPoslLekPr) DESC(Datum poslední lék.prohlídky)   CAPTION(DatPoslLPr) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDalsLekPr) DESC(Datum další lékaøské prohlídky) CAPTION(DatDalšLPr) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkratLeka) DESC(Zkratka lékaøe)                 CAPTION(ZkrLékaøe)  FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_LEKARI) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazevLeka) DESC(Název lékaøe)                   CAPTION(NázLékaøe)  FTYPE(c) FLEN(30) DEC( 0) 
+  TYPE(FIELD) NAME(cOdbornLek) DESC(Odbornost lékaøe)               CAPTION(OdbornLéka) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Ulice - lékaø)                  CAPTION(LékaøUlice) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)  DESC(ÈísPopis - lékaø)               CAPTION(LékaøÈísPopi) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)  DESC(ÈísOrientaèní - lékaø)          CAPTION(LékaøÈísOrie) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla) DESC(Ulice+èísla - lékaø)            CAPTION(LékaøUlÈisl)  FTYPE(c) FLEN( 65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)      DESC(Obec - lékaø)                   CAPTION(LékaøObec)    FTYPE(c) FLEN( 50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Místo)                          CAPTION(LékaøMísto)   FTYPE(c) FLEN( 25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Školitel - Psè)                 CAPTION(LékaøPsè)   FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Školitel - Stát)                CAPTION(LékaøStát)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)  FTYPE(n) FLEN( 5) DEC( 0) RELATETO(Firmy) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+*
+* 0 - lze zaplánovat, 1 - zaplánovaná, 2 - uskuteènìná. lze opìt zaplánovat
+  TYPE(FIELD) NAME(nStav_Pol)   DESC(Kód stavu položky)              CAPTION(KódStavuPol) FTYPE(N) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(LEKPROHL01) FNAME(LEKPROHL) CAPTION(RodCisPrac)              KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(LEKPROHL02) FNAME(LEKPROHL) CAPTION(RodCisPrac +PoøLekProh ) KEY(UPPER(cRodCisPra) +STRZERO(nPoradi,3) )
+  TYPE(INDEX) NAME(LEKPROHL03) FNAME(LEKPROHL) CAPTION(RodCisPrac +TypLekProh ) KEY(UPPER(cRodCisPra) +UPPER(cZkratka) )
+  TYPE(INDEX) NAME(LEKPROHL04) FNAME(LEKPROHL) CAPTION(CelJméno  )              KEY(UPPER(cPracovnik))
+  TYPE(INDEX) NAME(LEKPROHL05) FNAME(LEKPROHL) CAPTION(RodCisPrac +DatDalšLPr ) KEY(UPPER(cRodCisPra) +if(empty(dDalsLekPr) ,'        ' , DTOS(dDalsLekPr)) )
+  TYPE(INDEX) NAME(LEKPROHL06) FNAME(LEKPROHL) CAPTION(zkrLekProhl)             KEY(UPPER(cZkratka))
+  TYPE(INDEX) NAME(ID)         FNAME(LEKPROHL) CAPTION(ID)                      KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(MIMPRVZ) DESC(Mimopracovní vztahy prac.)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nPorPraVzt) DESC(Poøadí prac.pomìru)             CAPTION(PorPracVzt) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Celé jméno pracovníka)          CAPTION(CelJménoPr) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(nPorMiPVzt) DESC(Poøadí mimopracovního vztahu)   CAPTION(PoøMimPrVz) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMimoPrVzt) DESC(Typ mimopracovního vztahu)      CAPTION(KlíèMimVzt) FTYPE(n) FLEN( 2) DEC( 0)  RELATETO(C_MIMPRV) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazMimPrV) DESC(Název mimopracovního vztahu)    CAPTION(NázMimVzt)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPopisMiPV) DESC(Popis typu mimoprac.vztahu)     CAPTION(PopisMimVz) FTYPE(c) FLEN(40) DEC( 0)
+  TYPE(FIELD) NAME(dMimPrVzOd) DESC(Vznik mimoprac.vztahu OD)       CAPTION(MimPrVztOD) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dMimPrVzDo) DESC(Vznik mimoprac.vztahu DO)       CAPTION(MimPrVztDO) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lAktiv)     DESC(Aktivní mimoprac.vztah)         CAPTION(AktivMimVz) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lGenMzdDok) DESC(Generovat mzdové doklady)       CAPTION(GenMzdDokl) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(MIMPRVZ01)  FNAME(MIMPRVZ) CAPTION(RodCisPrac)                          KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(MIMPRVZ02)  FNAME(MIMPRVZ) CAPTION(RodCisPrac +AktivMimVz )             KEY(UPPER(cRodCisPra) +if (lAktiv, '1', '0') )
+  TYPE(INDEX) NAME(MIMPRVZ03)  FNAME(MIMPRVZ) CAPTION(RodCisPrac +KlíèMimVzt )             KEY(UPPER(cRodCisPra) +STRZERO(nMimoPrVzt,2) )
+  TYPE(INDEX) NAME(MIMPRVZ04)  FNAME(MIMPRVZ) CAPTION(RodCisPrac +KlíèMimVzt +MimPrVztOD ) KEY(UPPER(cRodCisPra) +STRZERO(nMimoPrVzt,2) +if(empty(dMimPrVzOd) ,'        ' , DTOS(dMimPrVzOd)) )
+  TYPE(INDEX) NAME(MIMPRVZ05)  FNAME(MIMPRVZ) CAPTION(ÈísloOsoby)                          KEY(nCisOsoby)
+  TYPE(INDEX) NAME(MIMPRVZ06)  FNAME(MIMPRVZ) CAPTION(OsobÈísPra)                          KEY(nOsCisPrac)
+  TYPE(INDEX) NAME(ID)         FNAME(MIMPRVZ) CAPTION(ID)                                  KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PERSHEAD) DESC(Hlavièky personalistiky)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD) DESC(Typ dokladu)                    CAPTION(TypDokl)    FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU) DESC(Typ pohybu)                     CAPTION(TypPoh)     FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)    DESC(Doklad)                         CAPTION(ÈísDokladu) FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dDatPoriz)  DESC(Datum poøízení dokladu)         CAPTION(DatumPoøíz) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPredKo) DESC(Datum pøedpokládaného konání)   CAPTION(DatPødpKon) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cOblastTyp) DESC(Oblast typu)                    CAPTION(OblastTypu) FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nPoradi)    DESC(Poøadí typu)                    CAPTION(PoøadíTypu) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)   DESC(Zkratka typu)                   CAPTION(ZkratkaTyp) FTYPE(c) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(ddatNAV_od) DESC(Datum NÁVRHU_od)                CAPTION(datNAV_od)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ddatNAV_do) DESC(Datum NÁVRHU_do)                CAPTION(datNAV_do)  FTYPE(d) FLEN( 8) DEC( 0)
+*
+  TYPE(FIELD) NAME(cnazevt_LS) DESC(Název typu lekProhl/školení)    CAPTION(názevTypu)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(ddatPL_OD)  DESC(Datum PLÁNU_od)                 CAPTION(datPL_od)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ddatPL_do)  DESC(Datum PLÁNU_do)                 CAPTION(datPL_do)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(czkratk_LS) DESC(Zkratka lékaøe/školitele)       CAPTION(zkratkLS)   FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cnazev_LS)  DESC(Název lékaøe/školitele)         CAPTION(nazevLS)    FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(codborn_LS) DESC(Odbornost lékaøe/školitele)     CAPTION(odbornLS)   FTYPE(c) FLEN(30) DEC( 0)
+*
+  TYPE(FIELD) NAME(dDatUskuKo) DESC(Datum konání)                   CAPTION(DatKonání)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatUkonce) DESC(Datum ukonèení)                 CAPTION(DatUkonèen) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkratkaUk) DESC(Zpùsob ukonèení)                CAPTION(ZpùsobUkon) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKOLUK) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDelka)     DESC(Délka trvání)                   CAPTION(DélkaTrván) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJED2) DESC(Zkratka MJ - 2)                 CAPTION(ZkratkaMJ2) FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)  FTYPE(n) FLEN( 5) DEC( 0) RELATETO(Firmy) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název)                          CAPTION(Název)      FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cZkrat)     DESC(Zkratka)                        CAPTION(Zkratka)    FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Ulice)                          CAPTION(Ulice)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)  DESC(ÈísPopis)                       CAPTION(ÈísPopisné) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)  DESC(ÈísOrientaèní)                  CAPTION(ÈísOrienta) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla) DESC(Ulice+èísla)                    CAPTION(UliceÈisla) FTYPE(c) FLEN( 65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)      DESC(Obec)                           CAPTION(Obec)       FTYPE(c) FLEN( 50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Místo)                          CAPTION(Místo)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Psè)                            CAPTION(Psè)        FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Stát)                           CAPTION(Stát)       FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cProvedlOs) DESC(Provádìjící osoba)              CAPTION(ProváïOso)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cKontaktOs) DESC(Kontakní osoba)                 CAPTION(KontaktOso) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nCisFak)    DESC(Èís. faktury dodavatele)        CAPTION(ÈísloFakt)  FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cVarSym)    DESC(Èíslo variabilního symbolu)     CAPTION(ÈísVarSymb) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(lUskutecn)  DESC(Uskuteènìno)                    CAPTION(Uskuteènìn) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PERSHEAD01) FNAME(PERSHEAD) CAPTION(Doklad)                                          KEY(nDoklad)
+  TYPE(INDEX) NAME(ID)         FNAME(PERSHEAD) CAPTION(ID)                                              KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PERSITEM) DESC(Položky personalistiky)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(CTYPDOKLAD) DESC(Typ dokladu)                    CAPTION(TypDokl)    FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(CTYPPOHYBU) DESC(Typ pohybu)                     CAPTION(TypPoh)     FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDoklad)    DESC(Doklad)                         CAPTION(ÈísDokladu) FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dDatPoriz)  DESC(Datum poøízení dokladu)         CAPTION(DatumPoøíz) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0)
+*  
+* vazba na OSOBY
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                   CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)      DESC(Osoby - celé jméno)            CAPTION(CelJmOsoby) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl)  DESC(Jméno osoby s rozlišením)      CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+*
+  TYPE(FIELD) NAME(cPracovnik) DESC(Rodinný pøíslušník -celé jméno) CAPTION(CelJménoPr) FTYPE(c) FLEN(43) DEC( 0)
+  TYPE(FIELD) NAME(nOrdItem)   DESC(Poøadí položky personal)        CAPTION(PoøadíPolo) FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(dDatPredKo) DESC(Datum pøedpokládaného konání)   CAPTION(DatPødpKon) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cOblastTyp) DESC(Oblast typu)                    CAPTION(OblastTypu) FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nPoradi)    DESC(Poøadí typu)                    CAPTION(PoøadíTypu) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)   DESC(Zkratka typu)                   CAPTION(ZkratkaTyp) FTYPE(c) FLEN( 8) DEC( 0)
+*
+*
+  TYPE(FIELD) NAME(nPerioOpak) DESC(Perioda opakování)              CAPTION(perOpak)    FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(Zkratka jednotky)               CAPTION(zkrJedn)    FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(ctypAkce)   DESC(Typ personální akce)            CAPTION(typAkce)    FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cnazevt_LS) DESC(Název typu lekProhl/školení)    CAPTION(názevTypu)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(ddatPL_od)  DESC(Datum PLÁNU_od)                 CAPTION(datPL_od)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(ddatPL_do)  DESC(Datum PLÁNU_do)                 CAPTION(datPL_do)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(czkratk_LS) DESC(Zkratka lékaøe/školitele)       CAPTION(zkratkLS)   FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cnazev_LS)  DESC(Název lékaøe/školitele)         CAPTION(nazevLS)    FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(codborn_LS) DESC(Odbornost lékaøe/školitele)     CAPTION(odbornLS)   FTYPE(c) FLEN(30) DEC( 0)
+*
+  TYPE(FIELD) NAME(dDatUskuKo) DESC(Datum konání)                   CAPTION(DatKonání)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatUkonce) DESC(Datum ukonèení)                 CAPTION(DatUkonèen) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkratkaUk) DESC(Zpùsob ukonèení)                CAPTION(ZpùsobUkon) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKOLUK) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDelka)     DESC(Délka trvání)                   CAPTION(DélkaTrván) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJED2) DESC(Zkratka MJ - 2)                 CAPTION(ZkratkaMJ2) FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)  FTYPE(n) FLEN( 5) DEC( 0) RELATETO(Firmy) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazev)     DESC(Název)                          CAPTION(Název)      FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cZkrat)     DESC(Zkratka)                        CAPTION(Zkratka)    FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Ulice)                          CAPTION(Ulice)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)  DESC(ÈísPopis)                       CAPTION(ÈísPopisné) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)  DESC(ÈísOrientaèní)                  CAPTION(ÈísOrienta) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla) DESC(Ulice+èísla)                    CAPTION(UliceÈisla) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)      DESC(Obec)                           CAPTION(Obec)       FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Místo)                          CAPTION(Místo)      FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Psè)                            CAPTION(Psè)        FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Stát)                           CAPTION(Stát)       FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cProvedlOs) DESC(Provádìjící osoba)              CAPTION(ProváïOso)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cKontaktOs) DESC(Kontakní osoba)                 CAPTION(KontaktOso) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nCisFak)    DESC(Èís. faktury dodavatele)        CAPTION(ÈísloFakt)  FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cVarSym)    DESC(Èíslo variabilního symbolu)     CAPTION(ÈísVarSymb) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisOsvedc) DESC(Èíslo osvìdèení)                CAPTION(ÈísloOsvìd) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nOrdItemTm) DESC(Poøadí položky TMP - pro tøídì) CAPTION(PoøadíPolo) FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lUskutecn)  DESC(Uskuteènìno)                    CAPTION(Uskuteènìn) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPERSHEAD)  DESC()                               CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+*
+* 1 - zaplánovaná, 2 - uskuteènìná. lze opìt zaplánovat
+  TYPE(FIELD) NAME(nStav_Pol)   DESC(Kód stavu položky)             CAPTION(KódStavuPol) FTYPE(N) FLEN( 1) DEC(0)
+*
+* LEKPROHL - SKOLENI
+  TYPE(FIELD) NAME(cfile_iv)   DESC(Vstupní soubor - name)          CAPTION(inFile)     FTYPE(C) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nfile_iv)   DESC(Vstupní soubor - SID)           CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PERSITEM01) FNAME(PERSITEM) CAPTION(RodCisPrac)                                      KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(PERSITEM02) FNAME(PERSITEM) CAPTION(RodCisPrac +PoøadíPolo )                         KEY(UPPER(cRodCisPra) +STRZERO(nOrdItem,6) )
+  TYPE(INDEX) NAME(PERSITEM03) FNAME(PERSITEM) CAPTION(RodCisPrac +PoøadíPolo )                         KEY(UPPER(cRodCisPra) +STRZERO(nOrdItemTm,6) )
+  TYPE(INDEX) NAME(PERSITEM04) FNAME(PERSITEM) CAPTION(CelJménoPr)                                      KEY(UPPER(cPracovnik))
+  TYPE(INDEX) NAME(PERSITEM05) FNAME(PERSITEM) CAPTION(RodCisPrac +OblastTypu +PoøadíTypu +DatPødpKon ) KEY(UPPER(cRodCisPra) +UPPER(cOblastTyp) +STRZERO(nPoradi,3) +if(empty(dDatPredKo) ,'        ' , DTOS(dDatPredKo)) )
+  TYPE(INDEX) NAME(PERSITEM06) FNAME(PERSITEM) CAPTION(PoøadíPolo)                                      KEY(nOrdItem)
+  TYPE(INDEX) NAME(PERSITEM07) FNAME(PERSITEM) CAPTION(PoøadíPolo)                                      KEY(nOrdItemTm)
+  TYPE(INDEX) NAME(PERSITEM08) FNAME(PERSITEM) CAPTION(RodCisPrac +PoøadíPolo )                         KEY(UPPER(cRodCisPra) +STRZERO(nOrdItemTm,6) )
+  TYPE(INDEX) NAME(PERSITEM09) FNAME(PERSITEM) CAPTION(DatPødpKon)                                      KEY(if(empty(dDatPredKo) ,'        ' , DTOS(dDatPredKo)) )
+  TYPE(INDEX) NAME(PERSITEM10) FNAME(PERSITEM) CAPTION(Uskuteènìn +RodCisPrac +PoøadíPolo )             KEY(if (lUskutecn, '1', '0') +UPPER(cRodCisPra) +STRZERO(nOrdItemTm,6) )
+  TYPE(INDEX) NAME(PERSITEM11) FNAME(PERSITEM) CAPTION(Uskuteènìn +DatPødpKon )                         KEY(if (lUskutecn, '1', '0') +if(empty(dDatPredKo) ,'        ' , DTOS(dDatPredKo)) )
+  TYPE(INDEX) NAME(ID)         FNAME(PERSITEM) CAPTION(ID)                                              KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PERSONAL) DESC(Osobní matr.soubor prac.)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cPrijOsob)   DESC(Pøíjmení osoby)                 CAPTION(PøíjmOsoby) FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoOsob)  DESC(Jméno osoby)                    CAPTION(JmenOsoby)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)      DESC(Osoby - celé jméno)             CAPTION(CelJmOsoby) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cPrijPrac)  DESC(Pøíjmení pracovníka)            CAPTION(PøíjmPrac)  FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoPrac) DESC(Jméno pracovníka)               CAPTION(JmenPracov) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Pracovník - celé jméno)         CAPTION(CelJmPrac)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cTitulPrac) DESC(Tituly pracovníka)              CAPTION(TitulPrac)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTitulPred) DESC(Titul osoby pøed jménem)        CAPTION(TitulOsPr)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_TITPR) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTitulZa)   DESC(Titul osoby za jménem)          CAPTION(TitulOsZa)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_TITZA) RELATETYPE(2)
+  TYPE(FIELD) NAME(cRozlJmena) DESC(Rozlišení jména)                CAPTION(RozlJména)  FTYPE(c) FLEN(15) DEC( 0) 
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRod)  DESC(Rodné jméno pracovníka)         CAPTION(RodJmPrac)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Bydlištì - Ulice)               CAPTION(BydlUlice)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)  DESC(Bydlištì - ÈísPopis)            CAPTION(ÈísPopi) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)  DESC(Bydlištì - ÈísOrientaèní)       CAPTION(ÈísOrie) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla) DESC(Bydlištì - Ulice+èísla)         CAPTION(UlÈisl)  FTYPE(c) FLEN( 65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)      DESC(Bydlištì - Obec)                   CAPTION(Obec)    FTYPE(c) FLEN( 50) DEC( 0)
+  TYPE(FIELD) NAME(cUlicCiPop) DESC(Bydlištì - Ulice+èísl.popisné)  CAPTION(BydlUlÈiPo) FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Bydlištì - Místo)               CAPTION(BydlMisto)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Bydlištì - Psè)                 CAPTION(BydlPsc)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Bydlištì - Stát)                CAPTION(BydlStat)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cPreUlice)  DESC(Pøechodné bydlištì - Ulice)     CAPTION(PøBydlUlic) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPreCisPop) DESC(Pøechodné bydlištì - ÈísPopis)  CAPTION(PøBydÈPopi) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPreUliCPo) DESC(Pøechodné bydlištì - Ul+Èí.po)  CAPTION(PøBydlUlÈP) FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cPreMisto)  DESC(Pøechodné bydlištì - Místo)     CAPTION(PøBydMisto) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPrePsc)    DESC(Pøechodné bydlištì - Psè)       CAPTION(PøBydPsc)   FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC,c_pscPre)     RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrStatPr) DESC(Pøechodné bydlištì - Stát)      CAPTION(PøBydStat)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY,c_statyPre) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratNar)  DESC(Zkratka národnosti)             CAPTION(ZkrNarodno) FTYPE(c) FLEN(15) DEC( 0) RELATETO(C_NAROD) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrStaPri) DESC(Zkratka státní pøíslušnosti)    CAPTION(ZkrStátPøi) FTYPE(c) FLEN(25) DEC( 0) RELATETO(C_STATPR) RELATETYPE(2)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0) PICTURE(@N 99-99-99/9999) 
+  TYPE(FIELD) NAME(cRodCisPrN) DESC(Rodné èíslo pracovníka -numtxt) CAPTION(RodnéÈísNT) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dDatNaroz)  DESC(Datum narození)                 CAPTION(DatNarozen) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cMistoNar)  DESC(Místo narození)                 CAPTION(MisNarozen) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cZkrStatNa) DESC(Zkratka státu narození)         CAPTION(ZkrStNaroz) FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY,c_statyNar) RELATETYPE(2)
+  TYPE(FIELD) NAME(cCisloOP)   DESC(Èíslo obèanského prùkazu)       CAPTION(ÈísObèPrùk) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisloPasu) DESC(Èíslo pasu)                     CAPTION(ÈísPasu)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cPohlavi)   DESC(Pohlaví)                        CAPTION(Pohlaví)    FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nMuz)       DESC(Muži)                           CAPTION(Muži)       FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nZena)      DESC(Ženy)                           CAPTION(Ženy)       FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cZkrRodStv) DESC(Zkratka rodinného stavu)        CAPTION(ZkrRodStav) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_RODSTA) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrManStv) DESC(Zkratka manželského vztahu)     CAPTION(ZkrManStav) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkrVzdel)  DESC(Zkratka vzdìlání)               CAPTION(ZkrVzdìlán) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_VZDEL) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTelPriv)   DESC(Telefon - privát)               CAPTION(TelPrivát)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelZames)  DESC(Telefon - zamìstnání)           CAPTION(TelZamìst)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTelMobil)  DESC(Telefon - mobil)                CAPTION(TelMobil)   FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cEmail)     DESC(e-mailová adresa)               CAPTION(e-mail)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cIdOsKarty) DESC(Ident.èíslo osobní karty)       CAPTION(IdOsKarty)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nPocLPraxe) DESC(Poèet let praxe)                CAPTION(PoèLetPrax) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nKlasZam)   DESC(Klíè klasifikace zamìstnání)    CAPTION(KlíèKlasZa) FTYPE(n) FLEN( 5) DEC( 0) RELATETO(C_KLAZAM) RELATETYPE(2)
+  TYPE(FIELD) NAME(lEvidDIM)   DESC(Evidovat DIM u pracovníka)      CAPTION(EvidDIM)    FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lVedPrac)   DESC(Vedoucí pracovník)              CAPTION(VedoucíPra) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nTypDuchod) DESC(Klíè typù dùchodù)              CAPTION(KlíèTypDuc) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazPol1)   DESC(Kmenové støedisko)              CAPTION(KmenStred)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cDruPraVzt) DESC(Druh prac.pomìru)               CAPTION(DruhPraVzt) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cVznPraVzt) DESC(Typ vzniku prac.pomìru)         CAPTION(TypVznPVzt) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPorPraVzt) DESC(Poøadí prac.pomìru)             CAPTION(PorPracVzt) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nTypPraVzt) DESC(Typ pracovního pomìru)          CAPTION(TypPracVzt) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nTypZamVzt) DESC(Typ pracovního vztahu)          CAPTION(TypPracVzt) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dDatVznPrV) DESC(Datum vzniku prac.vztahu)       CAPTION(DatVznikPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatNast)   DESC(Datum nástupu do prac.vztahu)   CAPTION(DatNástuPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatVyst)   DESC(Datum ukonèení prac.vztahu)     CAPTION(DatUkoncPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPredVy) DESC(Datum pøedpokladaného ukon. PV) CAPTION(DatPreUkPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nTypUkoPrV) DESC(Typ zpùsobu ukon.prac.vztahu)   CAPTION(TypZpUkoPV) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_UKONPV) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPorVedCin) DESC(Poøadí vedlejší èinnosti)       CAPTION(PoøVedlÈin) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nTypVedCin) DESC(Typ vedlejší èinnosti)          CAPTION(TypVedlÈin) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dDatVznVeC) DESC(Datum vzniku vedlejší èinnosti) CAPTION(DatVznikVC) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatNastVC) DESC(Datum nástupu do vedl.èinnosti) CAPTION(DatNástuVC) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatVystVC) DESC(Datum ukonèení vedl.èinnosti)   CAPTION(DatUkoncVC) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPredVC) DESC(Datum pøedpokladaného ukon. VC) CAPTION(DatPreUkVC) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nTypUkoVeC) DESC(Typ zpùsobu ukon.vedl.èinnosti) CAPTION(TypZpUkoVC) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cMzdKatPra) DESC(Mzdová kategorie pracovníka)    CAPTION(MzdKatPrac) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Pracovní zaøazení pracovníka)   CAPTION(PracZarPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cFunPra)    DESC(Funkce pracovníka)              CAPTION(FunkcPrac)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazPol4)   DESC(Výrobní místo)                  CAPTION(VyrobStred) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cVyplMist)  DESC(Výplatní místo)                 CAPTION(VyplatMist) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(lStavem)    DESC(Pracovník je ve stavu)          CAPTION(PracVeStav) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lOdborar)   DESC(Èlen odborù)                    CAPTION(ÈlenOdborù) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lPrukazZPS) DESC(Pracovník držitelem prùk. ZTP)  CAPTION(DržitPrZTP) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cPrukazZPS) DESC(Typ prùk. ZTP)                  CAPTION(TypPrùkZTP) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nVEvidenci) DESC(Pracovník v evidenci)           CAPTION(VEvidenci)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lExistSkol) DESC(Pracovník má pøiøaz. školení)   CAPTION(PøiøazŠkol) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lExistVzde) DESC(Pracovník má pøiøaz. vzdìlání)  CAPTION(PøiøazVzdì) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lExistLePr) DESC(Pracovník má pøiøaz. lékaø.pro) CAPTION(PøiøazLePr) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka1) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cPoznamka2) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PERSONAL01) FNAME(PERSONAL) CAPTION(OsobÈísPra)             KEY(nOsCisPrac)
+  TYPE(INDEX) NAME(PERSONAL02) FNAME(PERSONAL) CAPTION(CelJmPrac )             KEY(UPPER(cPracovnik))
+  TYPE(INDEX) NAME(PERSONAL03) FNAME(PERSONAL) CAPTION(RodCisPrac)             KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(PERSONAL04) FNAME(PERSONAL) CAPTION(IdOsKarty )             KEY(UPPER(cIdOsKarty))
+  TYPE(INDEX) NAME(PERSONAL05) FNAME(PERSONAL) CAPTION(KmenStøPra +CelJmPrac ) KEY(UPPER(cKmenStrPr) +UPPER(cPracovnik) )
+  TYPE(INDEX) NAME(PERSONAL06) FNAME(PERSONAL) CAPTION(ÈísloOsoby)             KEY(nCisOsoby)
+  TYPE(INDEX) NAME(ID)         FNAME(PERSONAL) CAPTION(ID)                     KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PRSMLDOH) DESC(Pracovní smlouvy a dohody)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisloSmDo) DESC(Èíslo smlouvy-dohody)           CAPTION(ÈíslSmlDoh) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nRok)       DESC(Úèetní rok)                     CAPTION(Úè_ROKn)    FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Os.èíslo)                       CAPTION(OsÈísPrac)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Pracovník - celé jméno)         CAPTION(CelJmPrac)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)     DESC(Osoby - celé jméno)             CAPTION(CelJmOsoby) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka -znak.)  CAPTION(RodnéÈísZn) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cDruPraVzt) DESC(Druh prac.pomìru)               CAPTION(DruhPraVzt) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nPorPraVzt) DESC(Poøadí prac.pomìru)             CAPTION(PorPracVzt) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nTypPraVzt) DESC(Typ pracovního pomìru)          CAPTION(TypPracVzt) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_PRACVZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(cVznPraVzt) DESC(Typ vzniku prac.pomìru)         CAPTION(TypVznPVzt) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nTypZamVzt) DESC(Typ pracovního vztahu)          CAPTION(TypPracVzt) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_ZAMEVZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(dDatVznPrV) DESC(Datum vzniku prac.vztahu)       CAPTION(DatVznikPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatNast)   DESC(Datum nástupu do prac.vztahu)   CAPTION(DatNástuPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatVyst)   DESC(Datum ukonèení prac.vztahu)     CAPTION(DatUkoncPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPredVy) DESC(Datum pøedpokladaného ukon. PV) CAPTION(DatPreUkPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nTypUkoPrV) DESC(Typ zpùsobu ukon.prac.vztahu)   CAPTION(TypZpUkoPV) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_UKONPV)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Pracovní zaøazení pracovníka)   CAPTION(PracZarPra) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_PRACZA)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cFunPra)    DESC(Funkce pracovníka)              CAPTION(FunkcPrac)  FTYPE(c) FLEN(20) DEC( 0) RELATETO(C_FUNCPR)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmStøPra)   FTYPE(c) FLEN( 8) DEC( 0) RELATETO(CNAZPOL1)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cOrgUsek)   DESC(Organizaèní úsek)               CAPTION(Org.úsek)   FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_ORGUSEK) RELATETYPE(2)
+  TYPE(FIELD) NAME(nZapRok_Za) DESC(Zapoèteno rokù na zaèátku)      CAPTION(ZapRokZaè)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nZapDnu_Za) DESC(Zapoèteno dnù na zaèátku)       CAPTION(ZapDnùZaè)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVylDob_Za) DESC(Vylouèená doba na zaèátku)      CAPTION(VylDobZaè)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVymZak_Za) DESC(Vymìøovací základ na zaèátku)   CAPTION(VymZakZaè)  FTYPE(n) FLEN(11) DEC( 0)
+  TYPE(FIELD) NAME(nOdeDob_Za) DESC(Odeètená doba na zaèátku)       CAPTION(OdeDobZaè)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nZapRok_Ko) DESC(Zapoèteno rokù na konci)        CAPTION(ZapRokKon)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nZapDnu_Ko) DESC(Zapoèteno dnù na konci)         CAPTION(ZapDnùKon)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVylDob_Ko) DESC(Vylouèená doba na konci)        CAPTION(VylDobKon)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVymZak_Ko) DESC(Vymìøovací základ na konci)     CAPTION(VymZakKon)  FTYPE(n) FLEN(11) DEC( 0)
+  TYPE(FIELD) NAME(nOdeDob_Ko) DESC(Odeètená doba na konci)         CAPTION(OdeDobKon)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(mPracSml)   DESC(Pracovní slouva)                CAPTION(PracSmlouv) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mPracDoh)   DESC(Pracovní dohoda)                CAPTION(PracDohoda) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(lStavem)    DESC(Pracovník je ve stavu)          CAPTION(PracVeStav) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nOSOBY)      DESC()                               CAPTION()            FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRSMLDOH01) FNAME(PRSMLDOH) CAPTION(OsÈísPrac )                       KEY(nOsCisPrac)
+  TYPE(INDEX) NAME(PRSMLDOH02) FNAME(PRSMLDOH) CAPTION(RodnéÈísZn +PorPracVzt )          KEY(UPPER(cRodCisPra) +STRZERO(nPorPraVzt,3) )
+  TYPE(INDEX) NAME(PRSMLDOH03) FNAME(PRSMLDOH) CAPTION(RodnéÈísZn +DatVznikPV )          KEY(UPPER(cRodCisPra) +if(empty(dDatVznPrV) ,'        ' , DTOS(dDatVznPrV)) )
+  TYPE(INDEX) NAME(PRSMLDOH04) FNAME(PRSMLDOH) CAPTION(OsÈísPrac +Úè_ROKn +PorPracVzt )  KEY(STRZERO(nOsCisPrac,5) +STRZERO(nRok,4) +STRZERO(nPorPraVzt,3) )
+  TYPE(INDEX) NAME(PRSMLDOH05) FNAME(PRSMLDOH) CAPTION(Úè_ROKn +OsÈísPrac +PorPracVzt )  KEY(STRZERO(nRok,4) +STRZERO(nOsCisPrac,5) +STRZERO(nPorPraVzt,3) )
+  TYPE(INDEX) NAME(PRSMLDOH06) FNAME(PRSMLDOH) CAPTION(Úè_ROKn +RodnéÈísZn +DatVznikPV ) KEY(STRZERO(nRok,4) +UPPER(cRodCisPra) +if(empty(dDatVznPrV) ,'        ' , DTOS(dDatVznPrV)) )
+  TYPE(INDEX) NAME(PRSMLDOH07) FNAME(PRSMLDOH) CAPTION(ÈísOsoby )                        KEY(nCisOsoby)
+  TYPE(INDEX) NAME(PRSMLDOH08) FNAME(PRSMLDOH) CAPTION(ÈísOsPoøPV )                      KEY(STRZERO(nCisOsoby,6) +STRZERO(nPorPraVzt,3)) DESCEND(Y)
+  TYPE(INDEX) NAME(PRSMLDOH09) FNAME(PRSMLDOH) CAPTION(osÈísPrac +PoøPV )                KEY(STRZERO(noscisPrac,5) +STRZERO(nPorPraVzt,3))
+  TYPE(INDEX) NAME(PRSMLDOH10) FNAME(PRSMLDOH) CAPTION(PoøPracVzt )                      KEY(nPorPraVzt)
+  TYPE(INDEX) NAME(PRSMLDOH11) FNAME(PRSMLDOH) CAPTION(DatVzniku )                       KEY(if(empty(dDatVznPrV) ,'        ' , DTOS(dDatVznPrV)))
+  TYPE(INDEX) NAME(PRSMLDOH12) FNAME(PRSMLDOH) CAPTION(DatNástupu )                       KEY(if(empty(dDatNast) ,'        ' , DTOS(dDatNast)))
+  TYPE(INDEX) NAME(PRSMLDOH13) FNAME(PRSMLDOH) CAPTION(DatUkonèen )                      KEY(if(empty(dDatVyst) ,'        ' , DTOS(dDatVyst)))
+  TYPE(INDEX) NAME(nOSOBY)     FNAME(PRSMLDOH) CAPTION(IdOsoby )                         KEY(nOSOBY)
+  TYPE(INDEX) NAME(ID)         FNAME(PRSMLDOH) CAPTION(ID)                               KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PRSMDOZM) DESC(Pracovní smlouvy a dohody - zmìny)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cCisloSmDo) DESC(Èíslo smlouvy-dohody)           CAPTION(ÈíslSmlDoh) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cCisZmSmDo) DESC(Èíslo zmìny smlouvy-dohody)     CAPTION(ÈíZmSmlDoh) FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(nPorZmeny)  DESC(Poøadí zmìny)                   CAPTION(PorZmìny)   FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dDatZmeny)  DESC(Datum zmìny)                    CAPTION(DatZmìny)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatZmenyP) DESC(Datum zmìny - pøedchozí)        CAPTION(DatZmìnyPø) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPodpis) DESC(Datum zmìny - podpis)           CAPTION(DatZmìnyPø) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTypZmSmDo) DESC(Typ zmìny smlouvy-dohody)       CAPTION(TypZmìny)   FTYPE(c) FLEN(10) DEC( 0) RELATETO(C_ZMSMDO) RELATETYPE(1)  
+  TYPE(FIELD) NAME(cPopisZmen) DESC(Popis zmìny smlouvy-dohody)     CAPTION(PopisZmìny) FTYPE(c) FLEN(150) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nRok)       DESC(Úèetní rok)                     CAPTION(Úè_ROKn)    FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Os.èíslo)                       CAPTION(OsÈísPrac)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Pracovník - celé jméno)         CAPTION(CelJmPrac)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cOsoba)     DESC(Osoby - celé jméno)             CAPTION(CelJmOsoby) FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka -znak.)  CAPTION(RodnéÈísZn) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cDruPraVzt) DESC(Druh prac.pomìru)               CAPTION(DruhPraVzt) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nPorPraVzt) DESC(Poøadí prac.pomìru)             CAPTION(PorPracVzt) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nTypPraVzt) DESC(Typ pracovního pomìru)          CAPTION(TypPracVzt) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_PRACVZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(nTypPrVzPu) DESC(Typ pracovního pomìru-pùvodní)  CAPTION(TypPrVzPùv) FTYPE(n) FLEN( 2) DEC( 0) 
+  TYPE(FIELD) NAME(cVznPraVzt) DESC(Typ vzniku prac.pomìru)         CAPTION(TypVznPVzt) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nTypZamVzt) DESC(Typ pracovního vztahu)          CAPTION(TypPracVzt) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_ZAMEVZ) RELATETYPE(2)
+  TYPE(FIELD) NAME(dDatVznPrV) DESC(Datum vzniku prac.vztahu)       CAPTION(DatVznikPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatNast)   DESC(Datum nástupu do prac.vztahu)   CAPTION(DatNástuPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatVyst)   DESC(Datum ukonèení prac.vztahu)     CAPTION(DatUkoncPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatPredVy) DESC(Datum pøedpokladaného ukon. PV) CAPTION(DatPreUkPV) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nTypUkoPrV) DESC(Typ zpùsobu ukon.prac.vztahu)   CAPTION(TypZpUkoPV) FTYPE(n) FLEN( 2) DEC( 0) RELATETO(C_UKONPV)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Pracovní zaøazení pracovníka)   CAPTION(PracZarPra) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_PRACZA)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cFunPra)    DESC(Funkce pracovníka)              CAPTION(FunkcPrac)  FTYPE(c) FLEN(20) DEC( 0) RELATETO(C_FUNCPR)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmStøPra)   FTYPE(c) FLEN( 8) DEC( 0) RELATETO(CNAZPOL1)  RELATETYPE(2)
+  TYPE(FIELD) NAME(cOrgUsek)   DESC(Organizaèní úsek)               CAPTION(Org.úsek)   FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_ORGUSEK) RELATETYPE(2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nMSPRC_MO)  DESC()                               CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nPRSMLDOH)  DESC()                               CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nOSOBY)     DESC()                               CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRSMDOZM01) FNAME(PRSMDOZM) CAPTION(OsÈísPrac )                       KEY(nOsCisPrac)
+  TYPE(INDEX) NAME(PRSMDOZM02) FNAME(PRSMDOZM) CAPTION(ÈísOsPoøPV )                      KEY(STRZERO(nCisOsoby,6) +STRZERO(nPorPraVzt,3)) DESCEND(Y)
+  TYPE(INDEX) NAME(nMSPRC_MO)  FNAME(PRSMDOZM) CAPTION(IdMsPrc_MO )                      KEY(nMSPRC_MO)
+  TYPE(INDEX) NAME(nPRSMLDOH)  FNAME(PRSMDOZM) CAPTION(IdPrSmlDoh )                      KEY(nPRSMLDOH)
+  TYPE(INDEX) NAME(nOSOBY)     FNAME(PRSMDOZM) CAPTION(IdOsoby )                         KEY(nOSOBY)
+  TYPE(INDEX) NAME(ID)         FNAME(PRSMDOZM) CAPTION(ID)                               KEY(sID) UNIQUE
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(RODPRISL) DESC(Rodinné vztahy)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nRodPrisl)   DESC(Poøadí rodinného pøíslušníka)      CAPTION(PoøRodPøís)   FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac)  DESC(Osobní èíslo pracovníka)           CAPTION(OsobÈísPra)   FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                       CAPTION(ÈísOsoby)     FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra)  DESC(Rodné èíslo pracovníka)            CAPTION(RodCisPrac)   FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cTypRodPri)  DESC(Typ vztahu)                        CAPTION(TypVztahu)    FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrRP)  DESC(Osobní èíslo pracovníka RP)        CAPTION(OsobÈísPrRP)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsobRP)  DESC(Èíslo osoby RP)                    CAPTION(ÈísOsobyRP)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisRP)   DESC(Rodné èíslo rod.pøíslušníka)       CAPTION(RodCisRP)     FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(lSleOdpDan)  DESC(Sleva nebo odpoèet na dani)        CAPTION(SlevOdpDaò)   FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka1)  DESC(Poznámka)                          CAPTION()             FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                      CAPTION(DatVzniku)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                       CAPTION(DatVzniku)    FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                          CAPTION(Poznámka)     FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                                  CAPTION()             FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                                  CAPTION()             FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(RODPRISL01) FNAME(RODPRISL) CAPTION(RodCisPrac +PoøRodPøís ) KEY(UPPER(cRodCisPra) +STRZERO(nRodPrisl,3) )
+  TYPE(INDEX) NAME(RODPRISL02) FNAME(RODPRISL) CAPTION(OsobÈísPra)              KEY(nOsCisPrac)
+  TYPE(INDEX) NAME(RODPRISL03) FNAME(RODPRISL) CAPTION(OsobÈísPra +TypRodPøís ) KEY(STRZERO(nOsCisPrac,5) +UPPER(cTypRodPri) )
+  TYPE(INDEX) NAME(RODPRISL04) FNAME(RODPRISL) CAPTION(RodCisPrac +TypRodPøís ) KEY(UPPER(cRodCisPra) +UPPER(cTypRodPri) )
+  TYPE(INDEX) NAME(RODPRISL05) FNAME(RODPRISL) CAPTION(RodCisRP  )              KEY(UPPER(cRodCisRP))
+  TYPE(INDEX) NAME(RODPRISL06) FNAME(RODPRISL) CAPTION(ÈisOsoby )               KEY(nCisOsoby)
+  TYPE(INDEX) NAME(RODPRISL07) FNAME(RODPRISL) CAPTION(ÈisOsobRP )              KEY(nCisOsobRP)
+  TYPE(INDEX) NAME(ID)         FNAME(RODPRISL) CAPTION(ID)                      KEY(sID) UNIQUE
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(SKOLENI) DESC(Školení a kursy)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Rodinný pøíslušník -celé jméno) CAPTION(CelJménoPr) FTYPE(c) FLEN(43) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(nPoradi)    DESC(Poøadí školení)                 CAPTION(PoøŠkolení) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)   DESC(Zkratka školení)                CAPTION(ZkrŠkolení) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKOLEN) RELATETYPE(2)
+  TYPE(FIELD) NAME(cCisPrukaz) DESC(Èíslo prùkazu)                  CAPTION(ÈíslPrùkaz) FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(lPerioOpak) DESC(Periodicky opakovat)            CAPTION(PeriodOpak) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDelkaSkol) DESC(Délka školení)                  CAPTION(DélkaŠkole) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJED2) DESC(Zkratka MJ - 2)                 CAPTION(ZkratkaMJ2) FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_JEDNOT) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPerioOpak) DESC(Perioda opakování školení)      CAPTION(PerOpakŠko) FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC(Zkratka MJ)                     CAPTION(ZkratkaMJ)  FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(dPoslSkole) DESC(Datum posledního školení)       CAPTION(DatPoslŠko) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDalsSkole) DESC(Datum dalšího školení)          CAPTION(DatDalšŠko) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cZkratkaUk) DESC(Zpùsob ukonèení školení)        CAPTION(ZpùsobUkŠk) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKOLUK) RELATETYPE(2)
+  TYPE(FIELD) NAME(nCisFirmy)  DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)  FTYPE(n) FLEN( 5) DEC( 0) RELATETO(FIRMY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratSkol) DESC(Zkratka školitele)              CAPTION(ZkratŠkoli) FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKOLIT) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazevSkol) DESC(Název školitele)                CAPTION(NázevŠkoli) FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)     DESC(Školitel - Ulice)               CAPTION(ŠkoliUlice) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)  DESC(Školitel - ÈísPopis)            CAPTION(ŠkoliÈísPopi) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)  DESC(Školitel - ÈísOrientaèní)       CAPTION(ŠkoliÈísOrie) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla) DESC(Školitel - Ulice+èísla)         CAPTION(ŠkoliUlÈisl)  FTYPE(c) FLEN( 65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)      DESC(Školitel - Obec)                CAPTION(ŠkoliObec)    FTYPE(c) FLEN( 50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)     DESC(Školitel - Místo)               CAPTION(ŠkoliMísto) FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)       DESC(Školitel - Psè)                 CAPTION(ŠkoliPsè)   FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_Psc) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat) DESC(Školitel - Stát)                CAPTION(ŠkoliStát)  FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_Staty) RELATETYPE(2)
+  TYPE(FIELD) NAME(cLektor)    DESC(Lektor - školitel)              CAPTION(Lektor)     FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(cNorma1)    DESC(Norma_1)                        CAPTION(Norma_1)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNorma2)    DESC(Norma_2)                        CAPTION(Norma_2)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNorma3)    DESC(Norma_3)                        CAPTION(Norma_3)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+*
+* 0 - lze zaplánovat, 1 - zaplánovaná, 2 - uskuteènìná. lze opìt zaplánovat
+  TYPE(FIELD) NAME(nStav_Pol)   DESC(Kód stavu položky)              CAPTION(KódStavuPol) FTYPE(N) FLEN( 1) DEC(0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(SKOLENI01) FNAME(SKOLENI) CAPTION(RodCisPrac)              KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(SKOLENI02) FNAME(SKOLENI) CAPTION(RodCisPrac +PoøŠkolení ) KEY(UPPER(cRodCisPra) +STRZERO(nPoradi,3) )
+  TYPE(INDEX) NAME(SKOLENI03) FNAME(SKOLENI) CAPTION(RodCisPrac +ZkrŠkolení ) KEY(UPPER(cRodCisPra) +UPPER(cZkratka) )
+  TYPE(INDEX) NAME(SKOLENI04) FNAME(SKOLENI) CAPTION(CelJménoPr)              KEY(UPPER(cPracovnik))
+  TYPE(INDEX) NAME(SKOLENI05) FNAME(SKOLENI) CAPTION(RodCisPrac +DatDalšŠko ) KEY(UPPER(cRodCisPra) +if(empty(dDalsSkole) ,'        ' , DTOS(dDalsSkole)) )
+  TYPE(INDEX) NAME(SKOLENI06) FNAME(SKOLENI) CAPTION(ÈísloOsoby)              KEY(nCisOsoby)
+  TYPE(INDEX) NAME(SKOLENI07) FNAME(SKOLENI) CAPTION(zkrSkoleni)              KEY(UPPER(cZkratka))
+  TYPE(INDEX) NAME(ID)        FNAME(SKOLENI) CAPTION(ID)                      KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VZDELANI) DESC(Vzdìlání)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nCisOsoby)   DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)    FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr)  DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra)  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac)  DESC(Osobní èíslo pracovníka)        CAPTION(OsobÈísPra)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra)  DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac)  FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik)  DESC(Rodinný pøíslušník -celé jméno) CAPTION(CelJménoRP)  FTYPE(c) FLEN(43) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl)  DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(nPoradi)     DESC(Poøadí vzdìlání)                CAPTION(PoøVzdìlán)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkrUkoVzd)  DESC(Zkratka ukonèení vzdìlání)      CAPTION(ZkrUkoVzdì)  FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_VZDEUK) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkrVzdel)   DESC(Typ studia)                     CAPTION(TypVzdìlán)  FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_VZDEL)  RELATETYPE(1)
+  TYPE(FIELD) NAME(cOborVzdel)  DESC(Obor - zamìøení)                CAPTION(OborZamìø)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(nPocLetStu)  DESC(Poèet let studia)               CAPTION(PoèLetStud)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(dZacStudia)  DESC(Zaèátek studia)                 CAPTION(ZaèVzdìlán)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dKonStudia)  DESC(Ukonèení studia)                CAPTION(ZpùsobUkSt)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nCisFirmy)   DESC(Èíslo firmy)                    CAPTION(ÈíslFirmy)   FTYPE(n) FLEN( 5) DEC( 0) RELATETO(FIRMY) RELATETYPE(2)
+  TYPE(FIELD) NAME(cNazevSkol)  DESC(Název školy)                    CAPTION(NázevŠkoly)  FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cZkratSkol)  DESC(Zkratka školy)                  CAPTION(ZkratŠkoly)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cUlice)      DESC(Škola - Ulice)                  CAPTION(ŠkolaUlice)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(ccispopis)   DESC(Škola - ÈísPopis)               CAPTION(ŠkolaÈísPopi) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(ccisorien)   DESC(Škola - ÈísOrientaèní)          CAPTION(ŠkolaÈísOrie) FTYPE(c) FLEN( 10) DEC( 0)
+  TYPE(FIELD) NAME(culiccisla)  DESC(Škola - Ulice+èísla)            CAPTION(ŠkolaUlÈisl)  FTYPE(c) FLEN( 65) DEC( 0)
+  TYPE(FIELD) NAME(cobec)       DESC(Škola - Obec)                   CAPTION(ŠkolaObec)    FTYPE(c) FLEN( 50) DEC( 0)
+  TYPE(FIELD) NAME(cMisto)      DESC(Škola - Místo)                  CAPTION(ŠkolaMísto)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cPsc)        DESC(Škola - Psè)                    CAPTION(ŠkolaPsè)    FTYPE(c) FLEN( 6) DEC( 0) RELATETO(C_PSC) RELATETYPE(2)
+  TYPE(FIELD) NAME(cZkratStat)  DESC(Škola - Stát)                   CAPTION(ŠkolaStát)   FTYPE(c) FLEN( 3) DEC( 0) RELATETO(C_STATY) RELATETYPE(2)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nOSOBY)      DESC()                               CAPTION()            FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nFIRMY)      DESC()                               CAPTION()            FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VZDELANI01) FNAME(VZDELANI) CAPTION(RodCisPrac)              KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(VZDELANI02) FNAME(VZDELANI) CAPTION(RodCisPrac +PoøVzdìlán ) KEY(UPPER(cRodCisPra) +STRZERO(nPoradi,3) )
+  TYPE(INDEX) NAME(VZDELANI03) FNAME(VZDELANI) CAPTION(RodCisPrac +TypVzdìlán ) KEY(UPPER(cRodCisPra) +UPPER(cZkrVzdel) )
+  TYPE(INDEX) NAME(VZDELANI04) FNAME(VZDELANI) CAPTION(CelJménoRP)              KEY(UPPER(cPracovnik))
+  TYPE(INDEX) NAME(VZDELANI05) FNAME(VZDELANI) CAPTION(ÈísloOsoby)              KEY(nCisOsoby)
+  TYPE(INDEX) NAME(nOSOBY)     FNAME(VZDELANI) CAPTION(IDOsoby)                 KEY(nOSOBY)
+  TYPE(INDEX) NAME(nFIRMY)     FNAME(VZDELANI) CAPTION(IDFirmy)                 KEY(nFIRMY)
+  TYPE(INDEX) NAME(ID)         FNAME(VZDELANI) CAPTION(ID)                      KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(ZAMRODPR) DESC(Vazba mezi zam.a rod.pøís)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)         CAPTION(OsobÈísPra)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cPracovnik) DESC(Pracovník - celé jméno)          CAPTION(CelJmPrac)   FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)          CAPTION(RodCisPrac)  FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cPrijmenRP) DESC(Pøíjmení rodinného pøíslušníka)  CAPTION(PøíjmRP)     FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRP)   DESC(Jméno rodinného pøíslušníka)     CAPTION(JmenoRP)     FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cRodPrisl)  DESC(Rodinný pøíslušník -celé jméno)  CAPTION(CelJménoRP)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(nRodPrisl)  DESC(Poøadí rodinného pøíslušníka)    CAPTION(PoøRodPøís)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cTypRodPri) DESC(Typ rodinného pøíslušníka)       CAPTION(TypRodPøís)  FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisRP)  DESC(Rodné èíslo rod.pøíslušníka)     CAPTION(RodCisRP)    FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(cJmenRodRP) DESC(Rodné jméno pracovníka)          CAPTION(RodJmRP)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka1) DESC(Poznámka)                        CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(ZAMRODPR01)    FNAME(ZAMRODPR) CAPTION(RodCisPrac)       KEY(UPPER(cRodCisPra))
+  TYPE(INDEX) NAME(ZAMRODPR02)    FNAME(ZAMRODPR) CAPTION(RodCisRP  )       KEY(UPPER(cRodCisRP))
+  TYPE(INDEX) NAME(ID)            FNAME(ZAMRODPR) CAPTION(ID)               KEY(sID) UNIQUE
+
+
+*
+** Vazby na školení           ****************************
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VazSkol) DESC(Vazby na školení) TASK(PER)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(nOSOBY)      DESC(Vazba na sID osoby)             CAPTION(VazZeZázn)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nItem)       DESC(Poøadí vazby)                   CAPTION(PoøadíVaz)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(SKOLENI)     DESC(Vazba na sID školení)           CAPTION(VazNaZázn)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(nOSOBY)      FNAME(VazSkol)  CAPTION(VstupZázn)   KEY(nOSOBY)
+  TYPE(INDEX) NAME(SKOLENI)     FNAME(VazSkol)  CAPTION(VýstZázn)    KEY(SKOLENI)
+  TYPE(INDEX) NAME(ID)          FNAME(VazSkol)  CAPTION(ID)          KEY(sID)
+
+
+*
+** Vazby na lékaøské prohlídky           ****************************
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(VazLekPr) DESC(Vazby na lékaøské prohlídky) TASK(PER)
+* FIELD DEFINITION ****************************************************
+  TYPE(FIELD) NAME(nOSOBY)      DESC(Vazba na sID osoby)             CAPTION(VazZeZázn)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nItem)       DESC(Poøadí vazby)                   CAPTION(PoøadíVaz)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(LEKPROHL)    DESC(Vazba na sID lekprohl)          CAPTION(VazNaZázn)   FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(nOSOBY)      FNAME(VazLekPr)  CAPTION(VstupZázn)   KEY(nOSOBY)
+  TYPE(INDEX) NAME(LEKPROHL)    FNAME(VazLekPr)  CAPTION(VýstZázn)    KEY(LEKPROHL)
+  TYPE(INDEX) NAME(ID)          FNAME(VazLekPr)  CAPTION(ID)          KEY(sID)
+
+
+
+
+******************************     TEMP SOUBORY     *********************************************************************
+******************************                      *********************************************************************
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(PRSMLDOHw) DESC(Pracovní smlouvy a dohody (w))  LIKE(PRSMLDOH)  NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC()              CAPTION()              FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRSMLDOHw1)  FNAME(PRSMLDOHw) CAPTION()    KEY(nPorPraVzt) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+
+
+TYPE(FILE) NAME(VZDELANIw) DESC(Vzdìlání (w))                    LIKE(VZDELANI) NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC()              CAPTION()              FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VZDELANIw1)  FNAME(VZDELANIw) CAPTION()    KEY(nPoradi) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+
+
+TYPE(FILE) NAME(LEKPROHLw) DESC(Lékaøské prohlídky (w))          LIKE(LEKPROHL) NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(_nrecor) DESC()                  CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+
+TYPE(FILE) NAME(SKOLENIw) DESC(Školení a kursy (w))              LIKE(SKOLENI)  NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(_nrecor) DESC()                  CAPTION() FTYPE(N) FLEN(10) DEC(0)
+
+
+TYPE(FILE) NAME(VAZLEKPRW) DESC(Vazby na lékaøské prohlídky (w)) LIKE(VAZLEKPR) NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(nPoradi)    DESC()              CAPTION() FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)   DESC()              CAPTION() FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_LEKPRO) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPerioOpak) DESC()              CAPTION() FTYPE(n) FLEN( 5) DEC( 0) 
+  TYPE(FIELD) NAME(cZkratJEDN) DESC()              CAPTION() FTYPE(c) FLEN( 3) DEC( 0) 
+  TYPE(FIELD) NAME(cNazevLeka) DESC()              CAPTION() FTYPE(c) FLEN(30) DEC( 0) 
+  TYPE(FIELD) NAME(dPoslLekPr) DESC()              CAPTION() FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDalsLekPr) DESC()              CAPTION() FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC()              CAPTION() FTYPE(n) FLEN( 6) DEC( 0)
+*
+  TYPE(FIELD) NAME(_nrecor)    DESC()              CAPTION() FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec)    DESC()              CAPTION() FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VAZLEKPRw1)  FNAME(VAZLEKPRW)   CAPTION(Poøadí vazby)  KEY(nItem) FOR((_delRec <> '9' .or. _delRec = NULL))
+
+
+TYPE(FILE) NAME(VAZSKOLW) DESC(Vazby na školení (w))              LIKE(VAZSKOL)  NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(nPoradi)    DESC()              CAPTION() FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)   DESC()              CAPTION() FTYPE(c) FLEN( 8) DEC( 0) RELATETO(C_SKOLEN) RELATETYPE(2)
+  TYPE(FIELD) NAME(nPerioOpak) DESC()              CAPTION() FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN) DESC()              CAPTION() FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cLektor)    DESC()              CAPTION() FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(dPoslSkole) DESC()              CAPTION() FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDalsSkole) DESC()              CAPTION() FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC()              CAPTION() FTYPE(n) FLEN( 6) DEC( 0)
+*
+  TYPE(FIELD) NAME(_nrecor)    DESC()              CAPTION() FTYPE(N) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(_delrec)    DESC()              CAPTION() FTYPE(C) FLEN( 1) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(VAZSKOLw1)  FNAME(VAZSKOLW)     CAPTION(Poøadí vazby)  KEY(nItem) FOR((_delRec <> '9' .or. _delRec = NULL))
+
+
+TYPE(FILE) NAME(PERSONALw) DESC(Matrièní soubor pracovníkù (w))  LIKE(PERSONAL) NOCHECK()   TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC()              CAPTION()              FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(MIMPRVZw) DESC(Matrièní soubor mimopracovních vztahù (w))         LIKE(MIMPRVZ) NOCHECK()  TASK(PER) 
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC()              CAPTION()              FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(MimPrVzW01)  FNAME(MIMPRVZw) CAPTION(PoøadíMimVz)        KEY(STRZERO(nPorMiPVzt,2))
+  TYPE(INDEX) NAME(MimPrVzW02)  FNAME(MIMPRVZw) CAPTION()                   KEY(STRZERO(nPorMiPVzt,2)) DESCEND(Y) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(DUCHODYw) DESC(Matrièní soubor dùchodù (w))           LIKE(DUCHODY) NOCHECK()  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC()              CAPTION()              FTYPE(C) FLEN( 1) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(DUCHODYW01)  FNAME(DUCHODYW) CAPTION()    KEY(STRZERO(nporDuchod,2))
+  TYPE(INDEX) NAME(DUCHODYW02)  FNAME(DUCHODYW) CAPTION()    KEY(STRZERO(nporDuchod,2)) DESCEND(Y) FOR( (_delRec <> '9' .or. _delRec = NULL) )
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(TM_VEKKAw) DESC(TMP -vìkové kateg.prac.)  TASK(PER)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodÈíslPra) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(mPorPraVzt) DESC(Poøadí prac.pomìru)             CAPTION(PorPracVzt) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mOdpocPol)  DESC(Odpoèitatelné položky)          CAPTION(OdpoèPolož) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mTypDuchod) DESC(Typy dùchodù)                   CAPTION(TypyDuchod) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mRodPrisl)  DESC(Rodinní pøíslušníci)            CAPTION(RodinníPøí) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mVyuctNemD) DESC(Vyúètování nemocenských dávek)  CAPTION(VyúètNemDá) FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTmKmStrPr) DESC(Pomocné kmenové støed. pracovn) CAPTION(TmKmStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cPracZar)   DESC(Pracovní zaøazení pracovníka)   CAPTION(PracZarPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(nKat30muzi) DESC(Kategorie do 30 let - muži)     CAPTION(KatDo30muž) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat30zeny) DESC(Kategorie do 30 let - ženy)     CAPTION(KatDo30žen) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat30vek)  DESC(Kategorie do 30 let - vìk)      CAPTION(KatDo30vìk) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKat40muzi) DESC(Kategorie do 40 let - muži)     CAPTION(KatDo30muž) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat40zeny) DESC(Kategorie do 40 let - ženy)     CAPTION(KatDo30žen) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat40vek)  DESC(Kategorie do 40 let - vìk)      CAPTION(KatDo30vìk) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKat50muzi) DESC(Kategorie do 50 let - muži)     CAPTION(KatDo30muž) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat50zeny) DESC(Kategorie do 50 let - ženy)     CAPTION(KatDo30žen) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat50vek)  DESC(Kategorie do 50 let - vìk)      CAPTION(KatDo30vìk) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKat57muzi) DESC(Kategorie do 57 let - muži)     CAPTION(KatDo30muž) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat57zeny) DESC(Kategorie do 57 let - ženy)     CAPTION(KatDo30žen) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat57vek)  DESC(Kategorie do 57 let - vìk)      CAPTION(KatDo30vìk) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKat62muzi) DESC(Kategorie do 62 let - muži)     CAPTION(KatDo30muž) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat62zeny) DESC(Kategorie do 62 let - ženy)     CAPTION(KatDo30žen) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat62vek)  DESC(Kategorie do 62 let - vìk)      CAPTION(KatDo30vìk) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKat63muzi) DESC(Kategorie do 63 let - muži)     CAPTION(KatDo30muž) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat63zeny) DESC(Kategorie do 62 let - ženy)     CAPTION(KatDo30žen) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nKat63vek)  DESC(Kategorie do 63 let - vìk)      CAPTION(KatDo30vìk) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nVekPracov) DESC(Vìk pracovníka)                 CAPTION(VìkPracovn) FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nTMPitSum)  DESC(Pomocné pole pro sumaci)        CAPTION(TMPsum)     FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TM_VEKKA01) FNAME(TM_VEKKAw) CAPTION(RodÈíslPra)          KEY(UPPER(cRodCisPra))
+
+*
+** pro Návrh na realizaci personálních akcí ...
+TYPE(FILE) NAME(PERSHEADw) DESC(Hlavièky personalistiky (w))           LIKE(PERSHEAD) NOCHECK() TASK(PER)
+
+*
+TYPE(FILE) NAME(PERSITEMw) DESC(Položky personalistiky  (w))           LIKE(PERSITEM) NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+  TYPE(FIELD) NAME(_delrec) DESC()              CAPTION()              FTYPE(C) FLEN( 1) DEC(0)
+*
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PERSITEMw1) FNAME(PERSITEMw) CAPTION(èísloOsoby)             KEY(nCisOsoby)
+  TYPE(INDEX) NAME(PERSITEMw2) FNAME(PERSITEMw) CAPTION(zkrAkce)                KEY(upper(czkratka))
+  TYPE(INDEX) NAME(PERSITEMw3) FNAME(PERSITEMw) CAPTION(datum_PøKonání)         KEY(if(empty(dDatPredKo) ,'        ' , DTOS(dDatPredKo)) )
+
+
+TYPE(FILE) NAME(c_persAkcW) DESC(Seznam akcí pro návrh  (w))           NOCHECK() TASK(PER)
+  TYPE(FIELD) NAME(ctypAkce)    DESC(Typ akce skol/lekP)   CAPTION()  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cZkratka)    DESC(Zkratka akce)         CAPTION()  FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cNazev)      DESC(Název akce)           CAPTION()  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDelka)      DESC(Délka akce)           CAPTION()  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJED2)  DESC(Zkratka MJ - 2)       CAPTION()  FTYPE(c) FLEN( 3) DEC( 0) 
+  TYPE(FIELD) NAME(nPerioOpak)  DESC(Perioda opakování)    CAPTION()  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cZkratJEDN)  DESC(Zkratka MJ)           CAPTION()  FTYPE(c) FLEN( 3) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(c_perAkcW1)   FNAME(c_persAkcW) CAPTION(zkrAkce)           KEY(UPPER(cZkratka))
+  TYPE(INDEX) NAME(c_perAkcW2)   FNAME(c_persAkcW) CAPTION(názevAkce)         KEY(UPPER(cNazev))
+
+
+
+

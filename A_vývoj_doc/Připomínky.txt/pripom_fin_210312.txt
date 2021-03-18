@@ -1,0 +1,17 @@
+K faktuøe pøijaté
+=================
+- upravoval jsem nìjaké úklepy v názvech promìnných - padalo mì to pøi ukládání
+- poøizoval jsem vyúètovací fakturu pøevzal jsem hodnotu zálohy vèetnì DD a potom jsem jšel poøizovat nákladovou položku (2)
+  pùvodnì jsem u této položky zadal hodnotu 3000Kè uložil jsem ji. Potom jsem se vrátil do opravy a do èástky jsem zadal 6000
+  u øádku za jednotku došlo ke zmìnì, ale na "druhém a tøetím" øádku zùstaly pùvodní hodnoty
+- u položky záloha by staèilo editovat hodnotu zálohy ostatní údaje by mohly být needitovatelné mimo úèetNákladový
+- po zadání hodnoty zálohy se nerozevøou daòové doklady pokud existují. Pokud jsem, ale dal po druhé Insert tak to již zabralo.
+- pokud by šlo tak na Ctrl_S zavøít rozevøenou tabulku DD
+- needitovat hodnotu uplatnìno na oknì DD
+- pokud by šlo upravit okno DD podle návrhu JCHV
+- neodeèítá se mì hodnota zálohy z pøíslušné zálohové faktury
+- upozornit nìjakým zpùsobem, že pøebírá vìtší hodnotu na DD než je hodnota zálohy
+- u položek DD je vyplnìný i nákladový úèet asi by nemìl být
+
+
+

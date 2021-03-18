@@ -1,0 +1,20 @@
+Pár postøehù z dimu
+
+-! dát QUICK na základní SCR Stavem, Náøaïovna, Vyøazené, Pøed revizí, Prošlá revize
+-  záložku pohyby rozdìlit na dvì - pohyby          (ctyppohybu <> '0')   
+                                 - zmìny v kartì   (ctyppohybu = '0')
+-  nevím jestli by nebylo dobré záložku info rozdìlit na tøi podzáložky Základní, Ostatní (vazba na náøadí),    Poznámka
+-! v základním SCR místo fajky zobrazovat asi barevné ètvereèky zelený - nkusy > 0, èervený - není prázdný 
+   datum vyøazení
+-! do SCR pøidat datum posledního pohybu
+-  pøidal jsem do dbd údaje
+-!  na pohybech zobrazit tøídìní ID_DESC
+-  pøidal jsem vazbu na náøadí nNaradi = 1  (asi by bylo dobré na to náøadí udìlat èíselník)  
+-  asi by bylo dobré doplnit do èíselníku C_TYPPOH a TYPYDOKL vazbu na DIM (nachystám to)
+-  doplnil jsem promìnnou nTYPPOHYBU plnit stejnì jak promìnnou nPOH_SIGn
+-  doplnil jsem promìnné cTASK a cULOHA
+-  pøidat ve SCR sloupeèek s typem náøadí ( zatím asi jen zelená fajka - nNaradi > 0) 
+-  asi by bylo vhodné do budoucna upravit práci s pohyby tak, aby se vybíral pøíslušný typ pohybu (CTYPPOHYBU)    a k tomu se zobrazila pøíslušná karta (CTYPDOKLAD). Jde o to aby se mohli sledovat rùzné zpùsoby zaøazení a     vyøazení. 
+
+
+

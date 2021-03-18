@@ -1,0 +1,56 @@
+select ucetpol.cdenik, 
+       ucetpol.ndoklad,
+	   ucetpol.nrok,
+	   ucetpol.nobdobi,
+	   ucetpol.nkcmd,
+	   ucetpol.nkcdal,
+	   pvpitem.ndoklad,
+	   pvpitem.ncenaCelk from pvpitem
+	   right join ucetpol on pvpitem.cdenik = ucetpol.cdenik and
+	                         pvpitem.ndoklad = ucetpol.ndoklad and
+							 pvpitem.norditem = ucetpol.norditem					 
+       where ucetpol.ctypDoklad = 'SKL_VYD255' and
+	         ucetpol.nkcMd      <> 0           and 
+	         ucetpol.nkcMd      <> pvpitem.ncenaCelk
+	   order by ucetpol.ndoklad  
+
+select ucetpol.nrok, 
+       ucetpol.cdenik,
+	   ucetpol.ndoklad from ucetpol
+       where ucetpol.nrok = 2011 and ucetpol.ctypDoklad = 'SKL_VYD255' and
+	         ucetpol.ndoklad NOT IN ( select pvphead.ndoklad from pvphead ) 
+	         
+
+select pvphead.nrok, 
+       pvphead.cdenik,
+	   pvphead.ndoklad,
+	   ucetpol.cdenik,
+	   ucetpol.ndoklad from ucetpol
+	   left join pvphead on ucetpol.cdenik  = pvphead.cdenik and
+	                               ucetpol.ndoklad = pvphead.ndoklad
+       where pvphead.nrok = 2011 and pvphead.ctypDoklad = 'SKL_VYD255'
+	   order by pvphead.ndoklad      	   					
+	   
+
+
+
+select ucetpol.nrok, 
+       ucetpol.cdenik, 
+       ucetpol.ndoklad,
+	   pvpitem.cdenik,
+	   pvpitem.ndoklad from pvpitem
+	   right outer join ucetpol on pvpitem.cdenik = ucetpol.cdenik and
+	                               pvpitem.ndoklad = ucetpol.ndoklad 					 
+       where ucetpol.nrok = 2011 and ucetpol.nobdobi = 2 and ucetpol.ctypDoklad = 'SKL_VYD255'
+	   order by ucetpol.ndoklad      
+ 
+
+
+
+ 
+
+
+
+
+ 
+

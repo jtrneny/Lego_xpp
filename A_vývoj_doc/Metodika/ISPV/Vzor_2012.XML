@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1250"?> 
+<ispv struktura="2012" verze="1" podverze="1"
+xmlns="http://www.ispv.cz/schema/ispv2012"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.ispv.cz/schema/ispv2012 http://www.ispv.cz/schema/ispv2012.xsd">
+  <odesilatel>
+    <firma>Pokus s.r.o.</firma>
+    <jmeno>Hugo Hujer</jmeno>
+    <email>meteleskum@bleskum.cz</email>
+    <telefon>123456789</telefon>
+    <zprava>2009-11-01T00:00:00</zprava>
+  </odesilatel>
+  <zamestnavatel ico="11223344">
+    <ekonomickySubjekt>
+      <nazev>ISPV2009 a.s.</nazev>
+      <ulicecp>Testovací 1</ulicecp>
+      <misto>Praha</misto>
+      <psc>12600</psc>
+      <lau1>CZ0100</lau1>
+      <hrmzdyq>987654321</hrmzdyq>
+      <poneq>654321</poneq>
+      <odpracdq>555000</odpracdq>
+      <prescasq>111000</prescasq>
+      <abscelkq>44000</abscelkq>
+      <absplacq>22000</absplacq>
+      <pocfyzq>321,00</pocfyzq>
+      <pocprepq>210,00</pocprepq>
+      <oonq>12345</oonq>
+      <odmdpcq>12366</odmdpcq>
+      <hoddpcq>325265</hoddpcq>
+    </ekonomickySubjekt>
+  </zamestnavatel>
+  <zamestnanci ico="11223344">
+    <zamestnanec>
+      <idzam>1</idzam>
+      <roknar>1954</roknar>
+      <pohlavi>M</pohlavi>
+      <stobc>CZ</stobc>
+      <vzdelani>V</vzdelani>
+      <invald>Z</invald>
+      <mistovp>CZ0100</mistovp>
+      <czicse>1121</czicse>
+      <czisco>13241</czisco>
+      <vedouci>A</vedouci>
+      <kontopd>N</kontopd>
+      <dobazam>8,76</dobazam>
+      <eviddny>90</eviddny>
+      <konecep>0</konecep>
+      <fondsta>520,00</fondsta>
+      <fondsje>520,00</fondsje>
+      <odpracd>480,00</odpracd>
+      <prescas>0,00</prescas>
+      <abscelk>40,00</abscelk>
+      <absplac>40,00</absplac>
+      <absdovol>40,00</absdovol>
+      <absnemoc>0,00</absnemoc>
+      <absnemz>0,00</absnemz>
+      <mzda>165439</mzda>
+      <poprav>0</poprav>
+      <poneprav>0</poneprav>
+      <prippcas>0</prippcas>
+      <priplat>0</priplat>
+      <nahrady>13846</nahrady>
+      <nahrnemz>0</nahrnemz>
+      <pohotov>0</pohotov>
+      <prumvyd>286,46</prumvyd>
+    </zamestnanec>
+  </zamestnanci>
+</ispv>

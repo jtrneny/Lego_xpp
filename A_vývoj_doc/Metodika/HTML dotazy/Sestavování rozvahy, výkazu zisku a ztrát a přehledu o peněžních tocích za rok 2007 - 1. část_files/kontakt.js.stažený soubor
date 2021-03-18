@@ -1,0 +1,15 @@
+(function() {
+  $(function() {
+    $('#kontakt_redakce').click(function(e) {
+      e.preventDefault();
+      $('#kontakt_zakaznicke_div').hide();
+      $('#kontakt_redakce_div').show();
+    });
+    return $('#kontakt_zakaznicke').click(function(e) {
+      e.preventDefault();
+      $('#kontakt_redakce_div').hide();
+      $('#kontakt_zakaznicke_div').show();
+    });
+  });
+
+}).call(this);

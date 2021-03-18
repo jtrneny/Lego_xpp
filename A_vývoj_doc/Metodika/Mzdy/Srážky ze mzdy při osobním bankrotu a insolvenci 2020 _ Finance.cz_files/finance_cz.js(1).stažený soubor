@@ -1,0 +1,50 @@
+
+var cpexSkin = function () {
+    try {
+        var skinWrapper = top.document.createElement("div");
+
+        skinWrapper.id = 'cpex-skin-wrapper';
+        skinWrapper.style.position = "fixed";
+        skinWrapper.style.left = "0";
+        skinWrapper.style.top = "0";
+        skinWrapper.style.width = "100%";
+        skinWrapper.style.height = "100%";
+        skinWrapper.style.zIndex = "0";
+        skinWrapper.style.cursor = "pointer";
+        top.document.body.appendChild(skinWrapper);
+
+
+        var contentElement;
+        if (
+            contentElement = top.document.getElementById("bb_pageWrap")
+        ) {
+            contentElement.style.zIndex = 1;
+            contentElement.style.position = 'relative';
+            contentElement.style.width = '1052px';
+            contentElement.style.margin = '200px auto 0 auto';
+        }
+
+        var prolinkhdr = top.document.getElementById('prolinkhdr');
+        if(prolinkhdr){
+            prolinkhdr.style.display = 'none';
+        }
+
+        var leaderboard = top.document.getElementsByClassName('leaderboard-top')[0];
+        if(leaderboard){
+            leaderboard.style.display = 'none';
+        }
+
+    } catch(e){
+        cpexSkinObject.logError('prepare page error: ' + e);
+    }
+
+    return {
+        scrollElement: top.document.body,
+        skinWrapper: skinWrapper,
+        contentElement: contentElement
+    };
+};
+
+if(typeof cpexLoader !== 'undefined' && typeof cpexLoader.emitEvent === 'function'){
+    cpexLoader.emitEvent('cpexSkin');
+}

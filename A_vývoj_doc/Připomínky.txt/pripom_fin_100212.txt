@@ -1,0 +1,23 @@
+ K pøijatým fakturám dle položek
+
+ - padá ukládání faktury na pøidané úètování položek
+ - pokud je hodnota  NPARZAHFAK+NOSVODDAN+NZAKLDAN_1+NSAZDAN_1+NZAKLDAN_2+NSAZDAN_2 > 0 jedná se o poøízení "hlavièkové" faktury
+   a záložka položek by mìla být neaktivní a opaènì
+ - pokud existuje poøízená alespoò jedna položka mìly by se z nepøístupnit údaje 
+   NPARZAHFAK+NOSVODDAN+NZAKLDAN_1+NSAZDAN_1+NZAKLDAN_2+NSAZDAN_2 na hlavièce - ze šednout
+ - pokud se pøevezme zálohová faktura a k ní existují daòové doklady tak se nìkdy neotevøe položka o cenì k výbìru
+   daòových dokladù - chybí tøi teèky
+ - po uložení nulté položky , která má vazbu na daòové doklady ta se chybnì zobrazuje spodní brow položek
+ - špatnì se plní text u nulté položky v názvu - je tam chybné èíslo zálohové faktury
+ - v textu u vygenerovaných položek s vazbou na daòový doklad zobrazovat v textu - názvu i èíslo daòového dokladu
+ - nevyužívat skladovou položku souèasnì i pro daòový doklad - radìji pøidat údaj èíslo daò dokladu a dát ho do seznamu za hranu
+   obrazovky. Èíslo daò. dokladu zobrazovat na kartì pod údajem èíslo zálohové faktury.
+ - zakázat editaci vygenerovaných položek z daòových dokladù, ale barevnì ji v seznamu potlaèit napøíklad zešednout
+ - u vygenerovaných položek k daòovým dokladùm se chybnì plní hodnota danì - jde tam základ danì
+ - pokud se zadá na stranì faktur pøijatých øádek 10 nebo 11 tak povolit editaci údaje NTYPPREDAN jinak zakázat
+ - 
+
+
+ 
+  
+

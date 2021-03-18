@@ -1,0 +1,27 @@
+#bb_outstream_container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 0;
+}
+
+#bb_outstream_skipAdButton {
+    background-color: #c03;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+#bb_outstream_skipAdButton:disabled {
+    background-color: #666;
+}
+@media (max-width: 460px) {
+    #bb_outstream_skipAdButton {
+        padding: 0 6px;
+        font-size: 12px;
+    }
+}

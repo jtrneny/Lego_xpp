@@ -1,0 +1,17 @@
+CREATE PROCEDURE AddRecordToData
+
+( LastName CHAR(20),
+
+FirstName CHAR(20),
+
+EmpID SHORT,
+
+Married LOGICAL )
+
+BEGIN
+
+INSERT INTO Data( lastname, firstname, empid, married ) SELECT * FROM __input;
+
+END;
+
+ 

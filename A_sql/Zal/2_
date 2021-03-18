@@ -1,0 +1,18 @@
+// update cenprodc set cenprodc.nzboziKat = cenzboz.nzboziKat
+// from cenzboz
+// where cenprodc.ccisSklad = cenzboz.ccisSklad and
+//      cenprodc.csklPol   = cenzboz.csklPol
+
+select cenprodc.ccisSklad, cenprodc.csklPol, cenprodc.cnazZbo, cenprodc.nzboziKat,  
+       cenzboz.ccisSklad, cenzboz.nzboziKat, cenzboz.csklPol from cenprodc
+ left outer join cenzboz on cenprodc.ccisSklad = cenzboz.ccisSklad and
+                           cenprodc.csklPol   = cenzboz.csklPol
+
+
+
+update procenho set procenho.dplatnyOD = procenhd.dplatnyOD,
+                    procenho.dplatnyDO = procenhd.dplatnyDO
+from procenhd
+where procenho.ntypProcen = procenhd.ntypProcen and
+      procenho.ncisProcen = procenhd.ncisProcen		
+ 

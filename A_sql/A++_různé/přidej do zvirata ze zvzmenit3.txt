@@ -1,0 +1,11 @@
+INSERT INTO zvirata (CTYPEVID,CNAZPOL1,CNAZPOL4,NZVIRKAT,NINVCIS,NINVCISMAT,NUCETSKUP,CUCETSKUP,
+                      NKUSY,NROK,NOBDOBI,CNAZPOL2,NPOHLAVI,CPLEMENO,
+                       CZVIREZEM,
+                        CMATKAZEM,NPORCISLIS) 
+             SELECT  'I',zvzmenit_.CNAZPOL1,zvzmenit_.CNAZPOL4,zvzmenit_.NZVIRKAT,zvzmenit_.NINVCIS,zvzmenit_.NINVCISMAT,
+                       zvzmenit_.NUCETSKUP,zvzmenit_.CUCETSKUP,
+                        ,1,zvzmenit_.NROK,zvzmenit_.NOBDOBI,zvzmenit_.CNAZPOL2,
+                         zvzmenit_.NPOHLAVI,zvzmenit_.CPLEMENO,
+                          zvzmenit_CZVIREZEM,zvzmenit_CMATKAZEM,zvzmenit_NPORCISLIS,zvzmenit_NPORCISRAD
+ FROM zvzmenit_ 
+

@@ -1,0 +1,29 @@
+declare cChanges Char( 5000 );
+declare allColumns Cursor ;
+declare FieldName Char( 25 );
+declare StrSql  Char( 255 );
+Set cChanges = '';
+Open AllColumns as Select * from system.columns where parent = 'patients';
+while fetch allColumns DO
+// Try
+   FieldName = allColumns.Name;
+
+   StrSql = 'SELECT n.FieldName newVal,'
+            + 'o.FieldName oldVal '
+            + 'INTO #MyTrigTable '
+            + 'FROM __new n, __old o';
+
+   EXECUTE IMMEDIATE strSQL;
+
+   IF ( SELECT oldVal FROM #myTrigTable ) <> '' THEN
+      IF ( SELECT newVal FROM #myTrigTable ) <> ( SELECT oldVal FROM #myTrigTable ) THEN
+         cChanges = 'Construct_SomeThing_Using_#myTrigTable_or_a_cursorBasedOn#MyTrigTable';
+         INSERT INTO AuditLog ( TableKey, Patient, [table], [user], creation, Changes ) 
+         SELECT patient, patient, 'Patietns', User(), Now(), cChages FROM __new ;
+      END;
+   END;
+   DROP TABLE #myTrigTable;
+//    Catch ALL
+//    End Try;
+End While;
+CLOSE AllColumns;

@@ -1,0 +1,7 @@
+select fakprihd.nrok, fakprihd.nobdobi,fakprihd.ncisfirmy, fakprihd.ncisFak, fakprihd.cucet, 
+       firmyuc.ncisFirmy, firmyuc.cUcet from fakprihd
+left outer join firmyuc on fakprihd.cucet = firmyuc.cucet
+where fakprihd.ncisFirmy <> firmyuc.ncisFirmy and 
+      (fakprihd.nrok = 2007 or fakprihd.nrok = 2008) and
+	  fakprihd.cucet <> ''
+order by fakprihd.nrok,fakprihd.nobdobi,fakprihd.ncisfirmy

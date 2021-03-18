@@ -1,0 +1,8 @@
+Pár postøehù z mezd
+
+- v selectu na výbìr pøíjmení - osoby se nedá pøepnout tøídìní na jméno s rozlišením a i další napøíklad jméno
+- proè se zobrazuje po každé jinak Chytrý Tomáš, Èagánek
+  
+- pokud zadám pracovníka který již existuje v personalistice
+ 
+

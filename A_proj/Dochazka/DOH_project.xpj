@@ -1,0 +1,44 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.0
+    OPENFILES     = PER_personal.prg;PER_personal.arc
+    DOH_project.XPJ
+
+[DOH_project.XPJ]
+    Dochazka.EXE
+
+[Dochazka.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = /PM:PM
+    RC_COMPILE    = arc
+    RC_FLAGS      = /v
+    OBJ_DIR       = C:\Lego_xpp\A_obj
+// $START-AUTODEPEND
+    drg.ch
+    drgres.ch
+    DOH_dochazka.ch
+    A_system.obj
+    drgComboBox.obj
+    drgFile.obj
+    drgGet.obj
+    drgObject.obj
+    drgStatic.obj
+    DOH_dochazka.obj
+    RD_CONFI.obj
+// $STOP-AUTODEPEND
+    DRG1.LIB
+    DRG2.LIB
+    DOH_dochazka.arc
+    ..\A_Main\A_system.PRG
+    ..\A_Main\RD_CONFI.PRG
+    ..\DRG_miss\drgComboBox.prg
+    ..\DRG_miss\drgFile.prg
+    ..\DRG_miss\drgGet.prg
+    ..\DRG_miss\drgObject.prg
+    ..\DRG_miss\drgStatic.prg
+    DOH_dochazka.prg
+

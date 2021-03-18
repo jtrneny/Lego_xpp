@@ -1,0 +1,62 @@
+#include "dll.ch"
+
+#define WS_EX_CLIENTEDGE    0x00000200
+#define GWL_EXSTYLE         (-20)
+#define SWP_NOSIZE          0x0001
+#define SWP_NOMOVE          0x0002
+#define SWP_FRAMECHANGED    0x0020
+
+
+PROCEDURE RemoveFrame( oXbp )
+
+local hwnd := oXbp:getHWND()
+local nValue
+
+nValue := GetWindowLongA( hWnd, GWL_EXSTYLE )     // der Rahmen gehört zu den "extended window styles"
+
+nValue := bAnd( nValue, bNot( WS_EX_CLIENTEDGE ) )  // das für den Rahmen zuständige Bit ausblenden
+
+SetWindowLongA( hWnd, GWL_EXSTYLE, nValue )       // und was übrig bleibt wieder setzen
+
+rc := SetWindowPos( hWnd,;    // damit Window mitkriegt, dass der Rahmen geändert wurde
+                    0, 0, 0, 0, 0,;
+                    SWP_NOMOVE + SWP_NOSIZE + SWP_FRAMECHANGED ;
+                  )
+
+return
+
+
+function bNot( num )
+
+local i
+
+num := int(num)
+for i := 1 to 32
+   num[i] := ! num[i]
+next
+
+return num
+
+DLLFUNCTION SetWindowLongA( hWnd, nIndex, nValue ) using stdcall from user32.dll
+
+DLLFUNCTION GetWindowLongA( hWnd, nIndex ) using stdcall from user32.dll
+
+DLLFUNCTION SetWindowPos( hWnd, hWndInsertAfter,;
+                          nX, nY, nWidth, nHeight, nFlags ) ;
+            using stdcall from user32.dll
+
+
+
+****
+#define TV_FIRST                0x1100
+#define TVM_SETITEMHEIGHT       (TV_FIRST + 27)
+#define TVM_GETITEMHEIGHT       (TV_FIRST + 28)
+
+FUNCTION TreeView_GetItemHeight( oTreeView )
+RETURN SendMessageA( oTreeView:getHWND(), TVM_GETITEMHEIGHT, 0, 0)
+
+// nHeight muss im Normalfall eine gerade Zahl sein.
+FUNCTION TreeView_SetItemHeight( oTreeView, nHeight )
+RETURN SendMessageA( oTreeView:getHWND(), TVM_SETITEMHEIGHT, nHeight, 0)
+
+DLLFUNCTION SendMessageA( hWnd, msg, wParam, lParam ) USING STDCALL FROM USER32.DLL

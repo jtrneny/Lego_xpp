@@ -1,0 +1,164 @@
+﻿
+function fnGenerujPdf() {
+
+    var button = $(this);
+    button.find('.fa-spin').show();
+
+    $.ajax({
+        cache: false,
+        type: 'GET',
+        url: './generujpdf',
+        //contentType: false, //'application/json; charset=utf-8',
+        //processData: false,
+        data: { url: $(this).data("url"), filename: $(this).data("filename") },
+        //    string url = "http://localhost:63050/";
+        //string filename = "test.pdf";
+        //data: { data: "test" },
+        //xhrFields is what did the trick to read the blob to pdf
+        xhrFields: {
+            responseType: 'blob'
+        },
+        complete: function () {
+            button.find('.fa-spin').hide();            
+        },
+        success: function (response, status, xhr) {           
+            var filename = "";
+            var disposition = xhr.getResponseHeader('Content-Disposition');
+
+            if (disposition) {
+                var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                var matches = filenameRegex.exec(disposition);
+                if (matches !== null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+            }
+            var linkelem = document.createElement('a');
+            try {
+                var blob = new Blob([response], { type: 'application/octet-stream' });
+
+                if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                    //   IE workaround for "HTML7007: One or more blob URLs were revoked by closing the blob for which they were created. These URLs will no longer resolve as the data backing the URL has been freed."
+                    window.navigator.msSaveBlob(blob, filename);
+                } else {
+                    var URL = window.URL || window.webkitURL;
+                    var downloadUrl = URL.createObjectURL(blob);
+
+                    if (filename) {
+                        // use HTML5 a[download] attribute to specify filename
+                        var a = document.createElement("a");
+
+                        // safari doesn't support this yet
+                        if (typeof a.download === 'undefined') {
+                            window.location = downloadUrl;
+                        } else {
+                            a.href = downloadUrl;
+                            a.download = filename;
+                            document.body.appendChild(a);
+                            a.target = "_blank";
+                            a.click();
+                        }
+                    } else {
+                        window.location = downloadUrl;
+                    }
+                }
+
+            } catch (ex) {
+                console.log(ex);
+            }
+        }
+    });
+};
+
+$(document).ready(function () {
+
+    //INICIALIZACE NASEPTAVACE - http://www.runningcoder.org/jquerytypeahead/demo/
+    $.typeahead({
+        input: '.js-typeahead-ppropo',
+        minLength: 1,
+        maxItem: 8,
+        accent: true,
+        order: "asc",
+        hint: true,
+        cache: true,
+        display: ["caption"], //, "filename"],
+        template: '<span>{{caption}}</span>',
+        source: {
+            teams: {
+                url: "/Naseptavac/ppropo.data.kapitoly.json"
+            }
+        },
+        callback: {
+            onClickAfter: function (node, a, item, event) {
+
+                event.preventDefault();
+                window.location.href = "./" + item.filename;
+            }
+        }
+    });
+    $('#buttonGenerujPDF,#modalButtonGenerujPDF').click(fnGenerujPdf);
+    $('#buttonGenerujPDF .fa-spin,#modalButtonGenerujPDF .fa-spin').hide();    
+    
+    //INICIALIZACE TOOLTIPU
+    //$('[data-toggle="tooltip"]').tooltip();         
+});
+
+//MODAL REJSTRIK
+var loadUrlToModalBody = function (url) {
+    $('#modal-body').load(url,
+        complete = function () {
+
+        });
+};
+
+$('#modal-rejstrik-window').on('show.bs.modal', function (event) {
+
+    //alert('#modal-rejstrik-window show.bs.modal');
+
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    //var nazev = button.data('nazev') // Extract info from data-* attributes            
+
+    //NASTAVENI MODALNICH NASTROJU
+    var modalFileName = button.data('odkaz');
+    var modalUrl = window.location.protocol + "//" + window.location.host + "/" + modalFileName;
+    var modalTitle = button.data('nazev') // Extract info from data-* attributes
+    //var modalPpropo = "";
+
+    //UPDATE MODAL CONTENT
+    var modal = $(this)
+    modal.find('#modal-subtitle').html(modalTitle);
+
+    //PDF
+    var hrefPdf = "./pdf/{filename}.pdf".replace("{filename}", modalFileName);
+    $('#modalSaveAsPdf').prop("href", hrefPdf);
+    $('#modalButtonGenerujPDF').data("url", modalUrl).data("filename", modalFileName + ".pdf");
+
+    //FACEBOOK
+    var hrefFacebook = "http://www.facebook.com/sharer.php?u={url}".replace("{url}", modalUrl);
+    $('#modalShareOnFacebook').prop("href", hrefFacebook);
+
+    //MAILTO
+    var hrefEmail = "mailto:?Subject={title}&body={url}".replace("{title}", modalTitle).replace("{url}", modalUrl);
+    $('#modalSendByEmail').prop("href", hrefEmail);
+
+    //PRINT            
+    $('#modalPrint').attr("data-ppropo-print", modalUrl);
+
+    // var odkaz = button.data('odkaz');
+    //$('#modal-body').attr("data-ppropo-modal-source", "./" + odkaz);            
+    loadUrlToModalBody(modalFileName + ' #body-content');
+});
+
+////UPOZORNENI NA ROZPRACOVANOST
+//(function () {
+//    if (!localStorage.getItem('ppropoinfo')) {
+//        document.body.innerHTML += '\
+//		<div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+//			Aktuálně pracujeme na zapracování změn vyplývajících z novely zákoníku práce účinné od 30. 7. 2020. Tato novela není dosud v&nbsp;textu příručky plně zohledněna, na což uživatele upozorňujeme. \
+//			<a href="#" style="color:#CCCCCC;">Zavřít</a>\
+//		</div>\
+//		';
+//        document.querySelector('.cookieconsent a').onclick = function (e) {
+//            e.preventDefault();
+//            document.querySelector('.cookieconsent').style.display = 'none';
+//            localStorage.setItem('ppropoinfo', true);
+//        };
+//    }
+//})();

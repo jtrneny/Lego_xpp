@@ -1,0 +1,118 @@
+Table Information
+OBJITEM.DBF
+
+Type: Fox Pro
+Records Number: 12477
+Fields Number: 95
+Header Size: 3074
+Record Length: 895
+
+#  Field Name Field Type Field Size 
+-- ---------- ---------- ---------- 
+	1  NDOKLAD    Float      10:0       
+	2  NCISFIRMY  Float      5:0        
+	3  CCINNOST   Character  15         
+	4  CCISLOBINT Character  30         
+	5  NCISLPOLOB Float      5:0        
+	6  CNAZZBO    Character  30         
+	7  NKLICNAZ   Float      5:0        
+	8  CSKLPOL    Character  15         
+	9  CPOLCEN    Character  1          
+	10 NZBOZIKAT  Number     4          
+	11 NKLICDPH   Number     2          
+	12 CCISLVPINT Character  10         
+	13 DDATVPINT  Date       8          
+	14 LVICEVPINT Logical    1          
+
+15 NMNOZVPINT Float      10:2    -----   GET      
+	16 NCENAPRINT Float      13:2       
+	17 CCISSKLAD  Character  8          
+	18 CCISLOBDOD Character  15         
+	19 DDATOBDOD  Date       8          
+
+20 NMNOZOBDOD Float      10:2       
+21 NMNOZPODOD Float      10:2       
+	22 DDATPODOD  Date       8          
+
+23 NMNOZKODOD Float      10:2    -----  CMP REZZBO
+	24 NCENNAODOD Float      13:2       
+	25 NCENPRODOD Float      13:2       
+	26 DDATPRDOD  Date       8          
+	27 NCENNAPDOD Float      13:2       
+
+28 NMNOZPRDOD Float      10:2       
+29 NMNOZOBODB Float      10:2    -----   GET
+30 NMNOZPOODB Float      10:2    -----   GET
+31 NMNOZPDODB Float      10:2    -----   GET   
+	32 CMNOZPOODB Character  1          
+
+33 NMNOZNEODB Float      10:2    -----   CMP nMnozObODB -nMnozPoODB -nMnozVpINT -nMnPotVYR
+  
+	34 DDATREODB  Date       8          
+	35 DDATDOODB  Date       8          
+
+36 NMNOZREODB Float      10:2    -----   CMP REZZBO   
+37 NMNOZPLODB Float      10:2       
+	38 NKCSBDOBJ  Float      13:2       
+	39 NKCSZDOBJ  Float      13:2       
+	40 NCENADLODB Float      13:2       
+	41 NINTINDOBJ Number     1          
+	42 CCISZAKAZ  Character  30         
+	43 CZKRATJEDN Character  3          
+	44 NTYPSLEVY  Number     1          
+	45 NPROCSLEV  Float      7:4        
+	46 NPROCSLFAO Float      7:4        
+	47 LPROCSLFAO Logical    1          
+	48 NPROCSLHOT Float      7:4        
+	49 NPROCSLMNO Float      7:4        
+	50 NHODNSLEV  Float      13:4       
+	51 NCENAZAKL  Float      13:2       
+	52 NCELKSLEV  Float      13:4       
+	53 NKLICOBL   Number     3          
+	54 CZKRPRODEJ Character  4          
+	55 NPODILPROD Float      6:2        
+
+56 NMNPOTVYR  Float      10:2    -----   GET   
+57 NMNPUSVYR  Float      10:2       
+	58 DPUSVYR    Date       8          
+
+59 NMNPRIVYR  Float      10:2       
+	60 DPRIVYR    Date       8          
+	61 CVYRPOL    Character  15         
+	62 NVARCIS    Number     3          
+	63 CSTRED     Character  8          
+	64 NRAVYSKA   Float      11:3       
+	65 NRBSIRKA   Float      11:3       
+	66 LPOZVYROBA Logical    1          
+
+67 NMNKALKUL  Float      10:2       
+	68 NDELKA     Float      5:2        
+	69 NPOCET     Float      9:2        
+	70 NPOZICE    Number     3          
+
+71 NMNNAKUS   Float      10:3       
+	72 CTEXT1     Character  30         
+
+73 CTEXT2     Character  30         
+74 NROKRV     Number     4          
+75 NPOLOBJRV  Float      10:0       
+76 DDATODVVYR Date       8          
+77 CPOPPOLOBJ Character  30         
+78 NUCETSKUP  Number     3          
+79 AULOZENI   Memo       10         
+80 DREZERV    Date       8          
+81 CREZERV    Character  8          
+82 NNAVYSPRC  Float      5:2        
+83 NKUSROZ    Float      7:3        
+84 NCISOPER   Number     4          
+85 NPOCCEZAPZ Number     2          
+86 CKODPOZ    Character  3          
+87 CCISTRASYP Character  10         
+88 CCISTRASYS Character  10         
+89 NCISDODAVK Float      10:0       
+90 CUSRZMENYR Character  8          
+91 DDATZMENYR Date       8          
+92 CCASZMENYR Character  8          
+93 CUSRVZNIKR Character  8          
+94 DDATVZNIKR Date       8          
+95 CCASVZNIKR Character  8          

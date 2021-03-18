@@ -1,0 +1,19 @@
+Pár postøehù z mezd
+
+- pøi výbìru osoby pro rodinného pøíslušníka se zobrazuje sám pracovník
+- pøi insertu se neplní podklady pro zadávání odpoèitatelných položek 
+- po zadání odpoètu se nerefrešne celková hodnota odpoètu-slev v matrièním souboru
+- pøi založení nového pracovního pomìru se nevytvoøí záznam do PRSMLDOH
+- pøednastavení tarifu ne hodnotu, že se nepoužívá
+- pøednastavení základního typu kalendáøe a na základì nìho pøednastavení 
+  délky pracovní doby 
+- sjednotit volání kódu banky - èíselníku
+- zavolat metodu, která bude pøepoèítávat nároky a zùstatky dovolené
+  ( metodu postupnì upravím)
+- nevím proè se mì v mojich datech nezobrazuje Trnìný pro výbìr do 
+  rodinných pøíslušníkù
+- 
+ 
+
+ 
+

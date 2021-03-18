@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Pisemnost nazevSW="QI" verzeSW="68.4">
+	<DPHSHV verzePis="01.01">
+		<VetaD ctvrt="0" d_poddp="19.2.2010" dokument="SHV" k_uladis="DPH" pln_poc_celk="0" poc_radku="0" poc_stran="0" rok="2010" shvies_forma="R" suma_pln="0"/>
+		<VetaP c_orient="612" c_ufo="336" dic="46974369" naz_obce="Staré Město" opr_jmeno="Vratislav" opr_postaveni="jednatel" opr_prijmeni="Slezák" psc="68603" sest_jmeno="ICM, s.r.o. Alena" sest_prijmeni="Hráčková" sest_telef="572555275" typ_ds="P" ulice="Brněnská " zkrobchjm="Agentura NP v.o.s."/>
+		<VetaR c_vat="811210307" k_pln_eu="0" k_stat="DE" pln_hodnota="451" pln_pocet="1"/>
+	</DPHSHV>
+</Pisemnost>

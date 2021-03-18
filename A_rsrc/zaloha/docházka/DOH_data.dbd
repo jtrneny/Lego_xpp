@@ -1,0 +1,559 @@
+TYPE(DBD) DBENGINE(ADSDBE)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_OPRAKT) DESC(Nastav.oprávnìní aktualiz) TASK(DOH) DISTRIB(C_OPRAKT01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nKodOprAkt)  DESC(Kód opravnìní aktualizace)      CAPTION(KódOprAkt)   FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cNazOprAkt)  DESC(Název oprávnìní aktualizace)    CAPTION(NázOprAkt)   FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrer)    DESC(Kód pøerušení-text)             CAPTION(KódPøer)     FTYPE(c) FLEN( 3) DEC( 0) RELATETO(c_prerus) RELATETYPE(1) 
+  TYPE(FIELD) NAME(mcKODprer)   DESC()                               CAPTION()            FTYPE(M) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nKodPrer)    DESC(Kód pøerušení)                  CAPTION(KódPøer)     FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(mnKODprer)   DESC()                               CAPTION()            FTYPE(M) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_OPRAKT01)   FNAME(C_OPRAKT) CAPTION(KódOprAkt )        KEY(nKodOprAkt)
+  TYPE(INDEX) NAME(C_OPRAKT02)   FNAME(C_OPRAKT) CAPTION(NázOprAkt )        KEY(UPPER(cNazOprAkt))
+  TYPE(INDEX) NAME(DistribRec)   FNAME(C_OPRAKT) CAPTION(DistribRec)        KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)           FNAME(C_OPRAKT) CAPTION(ID)                KEY(sID) UNIQUE
+
+
+  
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRACDO) DESC(Èíselník délky prac.doby) TASK(DOH) DISTRIB(C_PRACDO01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cDelkPrDob)  DESC(Klíè délky prac.doby)           CAPTION(KlíèDelPrD) FTYPE(c) FLEN(20) DEC( 0)
+  TYPE(FIELD) NAME(cNazDelPrD)  DESC(Název délky pracovní doby)      CAPTION(NázDélPrDo) FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(nDnyTyden)   DESC(Dnù za týden)                   CAPTION(PoèDnyTýd)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nHodTyden)   DESC(Hod.za týden)                   CAPTION(PoèHodTýd)  FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(nHodDen)     DESC(Hod.za den)                     CAPTION(PoèHodDen)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib) FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRACDO01) FNAME(C_PRACDO) CAPTION(KlíèDelPrD)         KEY(UPPER(cDelkPrDob))
+  TYPE(INDEX) NAME(C_PRACDO02) FNAME(C_PRACDO) CAPTION(NázDélPrDo)         KEY(UPPER(cNazDelPrD))
+  TYPE(INDEX) NAME(C_PRACDO03) FNAME(C_PRACDO) CAPTION(PoèHodTýd )         KEY(nHodTyden)
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRACDO) CAPTION(DistribRec)         KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRACDO) CAPTION(ID)                 KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cDelkPrDob:Klíè délky prac.doby,cNAZDelPrD:Název délky pracovní doby) ORDER(1) RETURN(cDelkPrDob)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRACSM) DESC(Èíselník pracovních smìn) TASK(DOH) DISTRIB(C_PRACSM01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypSmeny)   DESC(Typ smìny)                      CAPTION(TypSmìny)    FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazSmeny)   DESC(Název smìny)                    CAPTION(NázSmìny)    FTYPE(c) FLEN(35) DEC( 0)
+  TYPE(FIELD) NAME(cRanSmeZac)  DESC(Ranní smìna zaèátek)            CAPTION(RanSmìnZaè)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(1) 
+  TYPE(FIELD) NAME(cRanSmeKon)  DESC(Ranní smìna konec)              CAPTION(RanSmìnKon)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(1) 
+  TYPE(FIELD) NAME(cRanSmeDel)  DESC(Ranní smìna délka)              CAPTION(RanSmìnDél)  FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(lRanPruzna)  DESC(Ranní smìna Pružná/Pevná)       CAPTION(RPruz/Pevn)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cOdpSmeZac)  DESC(Odpolední smìna zaèátek)        CAPTION(OdpSmìnZaè)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(1) 
+  TYPE(FIELD) NAME(cOdpSmeKon)  DESC(Odpolední smìna konec)          CAPTION(OdpSmenKon)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(1) 
+  TYPE(FIELD) NAME(cOdpSmeDel)  DESC(Odpolední smìna délka)          CAPTION(OdpSmìnDél)  FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(lOdpPruzna)  DESC(Odpolední smìna Pružná/Pevná)   CAPTION(OPruz/Pevn)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cNocSmeZac)  DESC(Noèní smìna zaèátek)            CAPTION(NoèSmìnZaè)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(1) 
+  TYPE(FIELD) NAME(cNocSmeKon)  DESC(Noèní smìna konec)              CAPTION(NoèSmenKon)  FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(1) 
+  TYPE(FIELD) NAME(cNocSmeDel)  DESC(Moèní smìna délka)              CAPTION(NoèSmìnDél)  FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(lNocPruzna)  DESC(Noèní smìna Pružná/Pevná)       CAPTION(RPruz/Pevn)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nTypPruzna)  DESC(Typ pružné pracovní doby)       CAPTION(TypPružPrD)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nPresCas)    DESC(Délka pøestavky)                CAPTION(DélkPøest)   FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nPresZaCas)  DESC(Pøest.po èase)                  CAPTION(PøestPoÈas)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRACSM01) FNAME(C_PRACSM) CAPTION(TypSmìny  ) KEY(UPPER(cTypSmeny))
+  TYPE(INDEX) NAME(C_PRACSM02) FNAME(C_PRACSM) CAPTION(NázSmìny  ) KEY(UPPER(cNazSmeny))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRACSM) CAPTION(DistribRec) KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRACSM) CAPTION(ID)         KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypSmeny:Typ pracovní smìny,cNazSmeny:Název pracovní smìny) ORDER(1) RETURN(cTypSmeny)
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRACKA) DESC(Èíselník typù pracovních kalendáøù) TASK(DOH) DISTRIB(C_PRACKA01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypPraKal)  DESC(Typ pracovního kalendáøe)       CAPTION(TypPracKal)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(cNazPraKal)  DESC(Název typu pracov.kalendáøe)    CAPTION(NázTypuPrK)  FTYPE(c) FLEN(50) DEC( 0)
+  TYPE(FIELD) NAME(cObdobi)     DESC(Èíslo úèetního období)          CAPTION(ÚèetníObd)   FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cDelkPrDob)  DESC(Klíè délky prac.doby)           CAPTION(KlíèDelPrD)  FTYPE(c) FLEN(20) DEC( 0) RELATETO(C_PRACDO) RELATETYPE(2)
+  TYPE(FIELD) NAME(cTypSmeny1)  DESC(Typ smìny první týden)          CAPTION(SmìnTýden1)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(c_pracsm) RELATETYPE(2) 
+  TYPE(FIELD) NAME(cTypSmeny2)  DESC(Typ smìny druhý týden)          CAPTION(SmìnTýden2)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(c_pracsm) RELATETYPE(2) 
+  TYPE(FIELD) NAME(cTypSmeny3)  DESC(Typ smìny tøetí týden)          CAPTION(SmìnTýden3)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(c_pracsm) RELATETYPE(2) 
+  TYPE(FIELD) NAME(cTypSmeny4)  DESC(Typ smìny ètvrtý týden)         CAPTION(SmìnTýden4)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(c_pracsm) RELATETYPE(2) 
+  TYPE(FIELD) NAME(cTypSmeny5)  DESC(Typ smìny pátý týden)           CAPTION(SmìnTýden5)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(c_pracsm) RELATETYPE(2) 
+  TYPE(FIELD) NAME(cTypSmeny6)  DESC(Typ smìny šestý týden)          CAPTION(SmìnTýden6)  FTYPE(c) FLEN(15) DEC( 0) RELATETO(c_pracsm) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRACKA01) FNAME(C_PRACKA) CAPTION(TypPraKal)     KEY(UPPER(cTypPraKal))
+  TYPE(INDEX) NAME(C_PRACKA02) FNAME(C_PRACKA) CAPTION(NázPracKal)    KEY(UPPER(cNazPraKal))
+  TYPE(INDEX) NAME(C_PRACKA03) FNAME(C_PRACKA) CAPTION(TypPraKal)     KEY(UPPER(cTypPraKal) +UPPER(cObdobi))
+  TYPE(INDEX) NAME(C_PRACKA04) FNAME(C_PRACKA) CAPTION(TypPraKal)     KEY(UPPER(cObdobi) +UPPER(cTypPraKal))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRACKA) CAPTION(DistribRec)    KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRACKA) CAPTION(ID)            KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cTypPraKal:Typ prac.kalendáøe,cNazPraKal:Název prac.kalendáøe) ORDER(1) RETURN(cTypPraKal)
+
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_PRERUS) DESC(Kódy pøerušení) TASK(DOH)) DISTRIB(C_PRERUS01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cKodPrer)    DESC(Kód pøerušení-text)             CAPTION(KódPøer)     FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(nKodPrer)    DESC(Kód pøerušení)                  CAPTION(KódPøer)     FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazPrer)    DESC(Nazev pøerušení)                CAPTION(NázPøer)     FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nNapPrer)    DESC(Zpùsob nápoètu)                 CAPTION(ZpusNapoct)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMaskInp)    DESC(Nast.mask.vstupu)               CAPTION(PøednMasVs)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMaskOut)    DESC(Nast.mask.výstupu)              CAPTION(PøednMasVý)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nSayScr)     DESC(Zobr.na SCR)                    CAPTION(TypZobrScr)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nSayCrd)     DESC(Zobr.v kartì)                   CAPTION(TypZobrCrd)  FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(lInfSum)     DESC(Zobr.v sumaci)                  CAPTION(PøednabSum)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cTypPrer)    DESC(Typ pøerušení)                  CAPTION(TypPreruse)  FTYPE(c) FLEN(15) DEC( 0)
+  TYPE(FIELD) NAME(lIsEdit)     DESC(Povolená editace)               CAPTION(PovolenEdi)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lIsPovol)    DESC()                               CAPTION()            FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nCsPovol)    DESC()                               CAPTION()            FTYPE(n) FLEN( 4) DEC( 2)
+  TYPE(FIELD) NAME(nKodZaokr)   DESC(Kód zaokrouhlení)               CAPTION(KodZaokr)    FTYPE(n) FLEN( 3) DEC( 0) RELATETO(c_Zaokr) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nSUMfond)    DESC(Suma do FONDU_pd)               CAPTION()            FTYPE(N) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nSUMvyr)     DESC(Suma do VYROBY)                 CAPTION()            FTYPE(N) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(lPrestavka)  DESC(Povolená pøestávka)             CAPTION(PovolPøest)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nPritPrac)   DESC(Pøítomen na pracovišti)         CAPTION(PøítomPrac)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nDruhMzdy)   DESC(Druh mzdy)                      CAPTION(DruhMzdy)    FTYPE(n) FLEN( 4) DEC( 0) RELATETO(DRUHYMZD) RELATETYPE(2)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_PRERUS01) FNAME(C_PRERUS) CAPTION(KódPøer   )      KEY(UPPER(cKodPrer))
+  TYPE(INDEX) NAME(C_PRERUS02) FNAME(C_PRERUS) CAPTION(NázPøer   )      KEY(UPPER(cNazPrer))
+  TYPE(INDEX) NAME(C_PRERUS03) FNAME(C_PRERUS) CAPTION(KódPøer   )      KEY(nKodPrer)
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_PRERUS) CAPTION(DistribRec)      KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_PRERUS) CAPTION(ID)              KEY(sID) UNIQUE
+* SEARCH DEFINITION**************************************************
+  TYPE(SEARCH) FIELDS(cKodPrer:Kód pøerušení,cNazPrer:Název pøerušení) ORDER(1) RETURN(cKodPrer)
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_INFSUM) DESC(Nastavení sumací) TASK(DOH) DISTRIB(C_INFSUM01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cKodSumRad)  DESC(Kód sumaèního øádku)            CAPTION(KódSumØád)   FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cNazSumRad)  DESC(Název sumaèního øádku)          CAPTION(NázSumØád)   FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nPORADI)     DESC(Poøadí zobrazení)               CAPTION(PORzobrRAD)  FTYPE(N) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(lACTIVe)     DESC(Aktivní zobrazení)              CAPTION(AKTIVzobr)   FTYPE(L) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lSumHod)     DESC(Indikace nápoètu pro hodiny)    CAPTION(IndNápHod)   FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lSumDny)     DESC(Indikace nápoètu pro dny)       CAPTION(IndNápDny)   FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrer)    DESC(Kód pøerušení-text)             CAPTION(KódPøer)     FTYPE(c) FLEN( 3) DEC( 0) RELATETO(c_prerus) RELATETYPE(1) 
+  TYPE(FIELD) NAME(mcKODprer)   DESC()                               CAPTION()            FTYPE(M) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nKodPrer)    DESC(Kód pøerušení)                  CAPTION(KódPøer)     FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(mnKODprer)   DESC()                               CAPTION()            FTYPE(M) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_INFSUM01) FNAME(C_INFSUM) CAPTION(KódSumØád )          KEY(UPPER(cKodSumRad))
+  TYPE(INDEX) NAME(C_INFSUM02) FNAME(C_INFSUM) CAPTION(NázSumØád )          KEY(UPPER(cNazSumRad))
+  TYPE(INDEX) NAME(C_INFSUM03) FNAME(C_INFSUM) CAPTION(PORzobrRAD)          KEY(nPORADI)
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_INFSUM) CAPTION(DistribRec)          KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_INFSUM) CAPTION(ID)                  KEY(sID) UNIQUE
+
+
+  
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(C_TERMIN) DESC(Terminály pro snímání dat) TASK(DOH) DISTRIB(C_TERMIN01)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nPorTermin)  DESC(Poøadí terminálu)               CAPTION(PoøadTermi)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cNazTermin)  DESC(Název terminálu)                CAPTION(NázevTermi)  FTYPE(c) FLEN(30) DEC( 0)
+  TYPE(FIELD) NAME(lAktivni)    DESC(Aktivní terminál pro snímání)   CAPTION(AktivTermi)  FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cAdrTerm)    DESC(Adresa terminálu)               CAPTION(AdresaTerm)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cSNTerm)     DESC(Sériové èíslo terminálu)        CAPTION(SerÈísTerm)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mINITpopis)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nDistrib)    DESC(Zpùsob distribuce)              CAPTION(TypDistrib)  FTYPE(n) FLEN( 1) DEC( 0)     
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(C_TERMIN01) FNAME(C_TERMIN) CAPTION(PoøadTermi)          KEY(nPorTermin)
+  TYPE(INDEX) NAME(C_TERMIN02) FNAME(C_TERMIN) CAPTION(NázevTermi)          KEY(UPPER(cNazTermin))
+  TYPE(INDEX) NAME(DistribRec) FNAME(C_TERMIN) CAPTION(DistribRec)          KEY(nDistrib)
+  TYPE(INDEX) NAME(ID)         FNAME(C_TERMIN) CAPTION(ID)                  KEY(sID) UNIQUE
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(DSPOHYBY) DESC(Pohyby zamìst. v docházce) TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cIdOsKarty) DESC(Ident.èíslo osobní karty)       CAPTION(IdOsKarty)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(nCisOsoby)  DESC(Èíslo osoby)                    CAPTION(ÈísOsoby)   FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Kód pracovníka)                 CAPTION(OsÈísPrac)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nPorPraVzt) DESC(Poøadí pracovního vztahu)       CAPTION(PoøPV)      FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cIdOsKarty) DESC(Ident.èíslo osobní karty)       CAPTION(IdOsKarty)  FTYPE(c) FLEN(25) DEC( 0)
+  TYPE(FIELD) NAME(cJmenoRozl) DESC(Jméno osoby s rozlišením)       CAPTION(JmOsobRozl) FTYPE(c) FLEN(65) DEC( 0)
+  TYPE(FIELD) NAME(cRodCisPra) DESC(Rodné èíslo pracovníka)         CAPTION(RodCisPrac) FTYPE(c) FLEN(13) DEC( 0)
+  TYPE(FIELD) NAME(tPohyb)     DESC(Datum a èas pohybu)             CAPTION(DatÈasPoh)  FTYPE(t) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dDatum)     DESC(Datum øíchodu a odchodu)        CAPTION(DatPøíOdch) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cObdobi)    DESC(Èíslo úèetního období)          CAPTION(ÚèetníObd)  FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nObdobi)    DESC(Úèetní období)                  CAPTION(Úè_OBDn)    FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nRok)       DESC(Rok)                            CAPTION(Rok)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nMesic)     DESC(Mìsíc)                          CAPTION(Mìsíc)      FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nDen)       DESC(Den)                            CAPTION(Den)        FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cZkrDne)    DESC(Zkratka dne)                    CAPTION(ZkratkaDne) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dDatumPl)   DESC(Datum vazba na plán)            CAPTION(DatumPlán)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrer)   DESC(Kód pøer.pøíchod - text)        CAPTION(KodPrerPrT) FTYPE(c) FLEN( 3) DEC( 0) RELATETO(c_prerus) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nKodPrer)   DESC(Kód pøer.pøíchod)               CAPTION(KodPrerPr)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cKodPrerE)  DESC(Kód pøer.odchod - text)         CAPTION(KodPrerOdT) FTYPE(c) FLEN( 3) DEC( 0) RELATETO(c_prerus) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nKodPrerE)  DESC(Kód pøer.odchod)                CAPTION(KodPrerOd)  FTYPE(n) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cCasBeg)    DESC(Èas poèáteèní-text)             CAPTION(ÈasPoèáteT) FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nCasBeg)    DESC(Èas poèáteèní)                  CAPTION(ÈasPoèáteè) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(cCasEnd)    DESC(Èas koncový-text)               CAPTION(ÈasKoncovT) FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nCasEnd)    DESC(Èas koncový)                    CAPTION(ÈasKoncový) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(cCasCel)    DESC(Èas celkem-text)                CAPTION(ÈasCelkemT) FTYPE(c) FLEN( 5) DEC( 0) RELATETO(c_cas) RELATETYPE(2) 
+  TYPE(FIELD) NAME(nCasCel)    DESC(Èas celkem)                     CAPTION(ÈasCelkem)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasBegPD)  DESC(Èas poèáteèní - zaèátek PD)     CAPTION(ÈasPoèátPD) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasEndPD)  DESC(Èas koncový   - konec PD)       CAPTION(ÈasKoncPD)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasEndSM)  DESC(Èas koncový   - smìny)          CAPTION(ÈasKoncSM)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasCelPD)  DESC(Èas celkem-prac.doba)           CAPTION(ÈasCelkPD)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasCelCPD) DESC(Èas celkem-èistá prac.doba)     CAPTION(ÈasCelkCPD) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasPresta) DESC(Èas celkem pøestávky)           CAPTION(ÈasCelPøe)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasPresca) DESC(Èas celkem pøesèas)             CAPTION(ÈasCPøesè)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nCasNocPri) DESC(Èas celkem noèní pøíplatky)     CAPTION(ÈasNoèPøíp) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nRozdCasDe) DESC(Rozdíl èasù za den)             CAPTION(RozdÈasDen) FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(cAdrTerm)   DESC(Terminál pøíchodu)              CAPTION(TermPøích)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cAdrTermE)  DESC(Terminál odchodu)               CAPTION(TermOdchod) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cSNTerm)    DESC(Sériové èís.terminál pøchodu)   CAPTION(SerNumTerP) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cSNTermE)   DESC(Sériové èís.terminál odchodu)   CAPTION(SerNumTerO) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(lIsManual)  DESC(Manuální oprava)                CAPTION(ManuálOpra) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(lIsAutEnd)  DESC(Automaticky doplnìn èas konce)  CAPTION(AutKonPraD) FTYPE(l) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nGenRec)    DESC(Automaticky generovaný záznam)  CAPTION(AutGenRec)  FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nNapPrer)   DESC(Zpùsob nápoètu)                 CAPTION(ZpusNapoct) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nSayScr)    DESC(Typ zobrazení na SCR)           CAPTION(TypZobrScr) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nSayCrd)    DESC(Typ zobrazení v kartì)          CAPTION(TypZobrCrd) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nPritPrac)  DESC(Pøítomen na pracovišti)         CAPTION(PøítomPrac) FTYPE(n) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(nCasTMP)    DESC(Èas pomocný - tøídìní)          CAPTION(ÈasPomocný) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nOSOBY)     DESC()                               CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nMSOSB_MO)  DESC()                               CAPTION()           FTYPE(n) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(DSPOHY01) FNAME(DSPOHYBY) CAPTION(OsÈíPr+Rok+Mìs+Den+KodPrerPrT+ÈasPoè+ÈasKon)  KEY(STRZERO(nOsCisPrac,5)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nDen,2)+UPPER(cKodPrer)+STRZERO(nCasBeg,5,2)+STRZERO(nCasEnd,5,2))
+  TYPE(INDEX) NAME(DSPOHY02) FNAME(DSPOHYBY) CAPTION(OsÈíPr+Rok+Mìs+Den+KodPrerOdT+ÈasKon+ÈasPoè)  KEY(STRZERO(nOsCisPrac,5)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nDen,2)+UPPER(cKodPrerE)+STRZERO(nCasEnd,5,2)+STRZERO(nCasBeg,5,2))  
+  TYPE(INDEX) NAME(DSPOHY03) FNAME(DSPOHYBY) CAPTION(OsÈíPr+DatPøíOdch+ÈasKoncovT)                 KEY(STRZERO(nOsCisPrac,5)+if(empty(dDatum),'        ' ,DTOS(dDatum))+UPPER(cCasEnd))
+  TYPE(INDEX) NAME(DSPOHY04) FNAME(DSPOHYBY) CAPTION(OsÈíPr+DatumPlán+ÈasKoncovT+KodPrerPrT)       KEY(STRZERO(nOsCisPrac,5)+if(empty(dDatumPl),'        ',DTOS(dDatumPl))+UPPER(cCasEnd)+UPPER(cKodPrer))
+  TYPE(INDEX) NAME(DSPOHY05) FNAME(DSPOHYBY) CAPTION(Rok +Mìsíc +OsÈísPrac +Den )                  KEY(STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nOsCisPrac,5) +STRZERO(nDen,2))
+  TYPE(INDEX) NAME(DSPOHY06) FNAME(DSPOHYBY) CAPTION(IdOsKar+KodPrerPrT+ÈasKon+Rok+Mìs+Den)        KEY(UPPER(cIdOsKarty)+UPPER(cKodPrer)+STRZERO(nCasEnd,5,2)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nDen,2))
+  TYPE(INDEX) NAME(DSPOHY07) FNAME(DSPOHYBY) CAPTION(IdOsKar+KodPrerOdT+ÈasPoè+Rok+Mìs+Den)        KEY(UPPER(cIdOsKarty)+UPPER(cKodPrerE)+STRZERO(nCasBeg,5,2)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nDen,2))
+  TYPE(INDEX) NAME(DSPOHY08) FNAME(DSPOHYBY) CAPTION(IdOsKar+Rok+Mìs+Den+ÈasPomocný)               KEY(UPPER(cIdOsKarty)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nDen,2)+STRZERO(nCasTMP,5,2))
+  TYPE(INDEX) NAME(DSPOHY09) FNAME(DSPOHYBY) CAPTION(OsÈíPr+Rok+Mìs+ZobrScr+Den)                   KEY(STRZERO(nOsCisPrac,5)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nSayScr,2)+STRZERO(nDen,2))
+  TYPE(INDEX) NAME(DSPOHY10) FNAME(DSPOHYBY) CAPTION(OsÈíPr+Rok+Mìs+Den+ZobrCrd+PrerPrT+ÈPoè+ÈKon) KEY(STRZERO(nOsCisPrac,5)+STRZERO(nRok,4)+STRZERO(nMesic,2)+STRZERO(nDen,2)+STRZERO(nSayCrd,2)+UPPER(cKodPrer)+STRZERO(nCasBeg,5,2)+STRZERO(nCasEnd,5,2))
+  TYPE(INDEX) NAME(DSPOHY11) FNAME(DSPOHYBY) CAPTION(OsÈíPr+DatPøíOdch+KodPrerPrT)                 KEY(STRZERO(nOsCisPrac,5)+ if(empty(dDatum),'        ',DTOS(dDatum))+UPPER(cKodPrer))
+  TYPE(INDEX) NAME(DSPOHY12) FNAME(DSPOHYBY) CAPTION(OsÈíPr+DatPøíOdch+PøítomPrac)                 KEY(STRZERO(nOsCisPrac,5)+if(empty(dDatum),'        ',DTOS(dDatum))+STRZERO(nPritPrac,1))
+  TYPE(INDEX) NAME(DSPOHY13) FNAME(DSPOHYBY) CAPTION(OsÈíPr+KodPrerPrT+DatPøíOdch)                 KEY(STRZERO(nOsCisPrac,5)+UPPER(cKodPrer)+if(empty(dDatum),'        ',DTOS(dDatum)))
+  TYPE(INDEX) NAME(DSPOHY14) FNAME(DSPOHYBY) CAPTION(OsÈísPrac)                                    KEY(nOsCisPrac)
+  TYPE(INDEX) NAME(DSPOHY15) FNAME(DSPOHYBY) CAPTION(ÈísOsoby)                                     KEY(nCisOsoby)
+  TYPE(INDEX) NAME(DSPOHY16) FNAME(DSPOHYBY) CAPTION(ÈísKarty)                                     KEY(cIdOsKarty)
+  TYPE(INDEX) NAME(DSPOHY17) FNAME(DSPOHYBY) CAPTION(Obdobi MMRR)                                  KEY(cObdobi)
+  TYPE(INDEX) NAME(DSPOHY18) FNAME(DSPOHYBY) CAPTION(Rok)                                          KEY(nRok)
+  TYPE(INDEX) NAME(DSPOHY19) FNAME(DSPOHYBY) CAPTION(Období)                                       KEY(nObdobi)
+  TYPE(INDEX) NAME(DSPOHY20) FNAME(DSPOHYBY) CAPTION(ZobrazSCR)                                    KEY(nSayScr)
+  TYPE(INDEX) NAME(nOSOBY)   FNAME(DSPOHYBY) CAPTION(IdOsoby )                                     KEY(nOSOBY)
+  TYPE(INDEX) NAME(nMSOSB_MO) FNAME(DSPOHYBY) CAPTION(IdMsOsb_MO )                                 KEY(nMSOSB_MO)
+  TYPE(INDEX) NAME(ID)       FNAME(DSPOHYBY) CAPTION(ID)                                           KEY(sID) UNIQUE
+ 
+ 
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(DOPRENTE) DESC(Pøenosy z terminálù) TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nRok)       DESC(Rok)                            CAPTION(Rok)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nMesic)     DESC(Mìsíc)                          CAPTION(Mìsíc)      FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nDen)       DESC(Den)                            CAPTION(Den)        FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dDatum)     DESC(Datum pøenosu)                  CAPTION(Datum)      FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cCas)       DESC(Èas)                            CAPTION(Cas)        FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cTypPren)   DESC(Typ pøenosu)                    CAPTION(TypPrenosu) FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cAdrTerm)   DESC(Terminál pøchodu)               CAPTION(TermPrich)  FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(cSNTerm)    DESC(Sériové èís.terminál pøchodu)   CAPTION(SerNumTerP) FTYPE(c) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(nRecTerm)   DESC(PoèZázn)                        CAPTION(PocZazn)    FTYPE(n) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(nZpuPren)   DESC(Indikace regulernosti)          CAPTION(IndikRegul) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(sID)        DESC()                               CAPTION()           FTYPE(s) FLEN( 0) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(PRENOS1) FNAME(PRENTERM) CAPTION(Rok +Mìsíc +Den ) KEY(STRZERO(nRok,4) +STRZERO(nMesic,2) +STRZERO(nDen,2) )
+  TYPE(INDEX) NAME(ID)      FNAME(PRENTERM) CAPTION(ID)               KEY(sID) UNIQUE
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(DOTERMIN) DESC(Data z docházkových terminálù) TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypPrer)   DESC(Typ pøerušení)                  CAPTION(TypPøeruše) FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cRok)       DESC(Rok pøíchodu)                   CAPTION(RokPøíchod) FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nRok)       DESC(Rok pøíchodu)                   CAPTION(RokPøíchod) FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cMesic)     DESC(Mìsíc pøíchodu)                 CAPTION(MìsPøíchod) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMesic)     DESC(Mìsíc pøíchodu)                 CAPTION(MìsPøíchod) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cDen)       DESC(Den pøíchodu)                   CAPTION(DenPøíchod) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nDen)       DESC(Den pøíchodu)                   CAPTION(DenPøíchod) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cCas)       DESC(Èas pøíchodu)                   CAPTION(ÈasPøíchod) FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cDenVTydnu) DESC(Den v týdnu)                    CAPTION(DenVTýdnu)  FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cIdOsKarty) DESC(Ident.èíslo osobní karty)       CAPTION(IdOsKarty)  FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cAdrTerm)   DESC(Terminál èíslo)                 CAPTION(TermPrich)  FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cSNTerm)    DESC(Sériové èís.terminál)           CAPTION(SerNumTerP) FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(dDatum)     DESC(Datum pohybu)                   CAPTION(DatumPohyb) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(DOTERMIN01) FNAME(DOTERMIN) CAPTION(IdOsKarty +DatumPohyb +ÈasPøíchod ) KEY(UPPER(cIdOsKarty) + if(empty(dDatum) ,'        ' , DTOS(dDatum)) +UPPER(cCas))
+
+
+
+
+******************************     TEMP SOUBORY     *********************************************************************
+******************************                      ********************************************************************* 
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(TMInfSUMw) DESC(TMP - sumace info o docházce (w)) LIKE(C_INFSUM) NOCHECK()  TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nHOD_den)   DESC(Hodiny za den)                  CAPTION(HodinyDen)  FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(nDNY_tyden) DESC(Dny za týden)                   CAPTION(DnyTýden)   FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nHOD_tyden) DESC(Hodiny za týden)                CAPTION(HodTýden)   FTYPE(n) FLEN( 6) DEC( 2)
+  TYPE(FIELD) NAME(nDNY_mesic) DESC(Dny za mìsíc)                   CAPTION(DnyMìsíc)   FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nHOD_mesic) DESC(Hodiny za mìsíc)                CAPTION(HodMìsíc)   FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(dDatum)     DESC(Datum pohybu)                   CAPTION(DatumPohyb) FTYPE(d) FLEN( 8) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TMInfSUMw1) FNAME(TMInfSUMw)   CAPTION(Poøadí)                    KEY( nPORADI )
+
+
+
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(TMP_TERM) DESC(TMP -pro naètení z termin) LIKE(KALENDAR) NOCHECK() TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(cTypPrer)   DESC(Typ pøerušení)                  CAPTION(TypPøeruše) FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cRok)       DESC(Rok pøíchodu)                   CAPTION(RokPøíchod) FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nRok)       DESC(Rok pøíchodu)                   CAPTION(RokPøíchod) FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cMesic)     DESC(Mìsíc pøíchodu)                 CAPTION(MìsPøíchod) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nMesic)     DESC(Mìsíc pøíchodu)                 CAPTION(MìsPøíchod) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cDen)       DESC(Den pøíchodu)                   CAPTION(DenPøíchod) FTYPE(c) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nDen)       DESC(Den pøíchodu)                   CAPTION(DenPøíchod) FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(cCas)       DESC(Èas pøíchodu)                   CAPTION(ÈasPøíchod) FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cDenVTydnu) DESC(Den v týdnu)                    CAPTION(DenVTýdnu)  FTYPE(c) FLEN( 1) DEC( 0)
+  TYPE(FIELD) NAME(cIdOsKarty) DESC(Ident.èíslo osobní karty)       CAPTION(IdOsKarty)  FTYPE(c) FLEN( 3) DEC( 0)
+  TYPE(FIELD) NAME(cAdrTerm)   DESC(Terminál èíslo)                 CAPTION(TermPrich)  FTYPE(c) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(cSNTerm)    DESC(Sériové èís.terminál)           CAPTION(SerNumTerP) FTYPE(c) FLEN( 6) DEC( 0)
+  TYPE(FIELD) NAME(dDatum)     DESC(Datum pohybu)                   CAPTION(DatumPohyb) FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dVznikZazn) DESC(Datum vzniku)                   CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn) DESC(Datum zmìny)                    CAPTION(DatVzniku)  FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)  DESC(Poznámka)                       CAPTION(Poznámka)   FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR) DESC()                               CAPTION()           FTYPE(m) FLEN(10) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TMPTER01) FNAME(TMP_TERM) CAPTION(IdOsKarty +DatumPohyb +ÈasPøíchod ) KEY(UPPER(cIdOsKarty) + if(empty(dDatum) ,'        ' , DTOS(dDatum)) +UPPER(cCas) €)
+  
+*
+* FILE DEFINITION **************************************************
+*
+TYPE(FILE) NAME(TMPSUMKO) DESC(TMP sumace pro kontrolku) TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(nOsCisPrac) DESC(Osobní èíslo pracovníka)        CAPTION(OsÈísPrac)  FTYPE(n) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(cKmenStrPr) DESC(Kmenové støedisko pracovníka)   CAPTION(KmenStøPra) FTYPE(c) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(cObdobi)    DESC(Èíslo úèetního období)          CAPTION(ÚèetníObd)  FTYPE(c) FLEN( 5) DEC( 0)
+  TYPE(FIELD) NAME(nObdobi)    DESC(Úèetní období)                  CAPTION(Úè_OBDn)    FTYPE(n) FLEN( 2) DEC( 0)
+  TYPE(FIELD) NAME(nRok)       DESC(Rok)                            CAPTION(Rok)        FTYPE(n) FLEN( 4) DEC( 0)
+  TYPE(FIELD) NAME(nFondPDHo)  DESC(Fond pracovní doby v hodinách)  CAPTION(FondPrDoHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nFondPDDn)  DESC(Fond pracovní doby ve dnech)    CAPTION(FondPrDoDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nFondSVHo)  DESC(Fond svátkù v hodinách)         CAPTION(FondSvátHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nFondSVDn)  DESC(Fond svátkù ve dnech)           CAPTION(FondSvátDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nFondPSHo)  DESC(Fond prac.doby vèetnì svát.hod) CAPTION(FondPDSVHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nFondPSDn)  DESC(Fond prac.doby vèetnì svát.dny) CAPTION(FondPDSVDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nOdpracoHo) DESC(Odpracované hodiny celkem)      CAPTION(OdprCelkHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nOdpracoDn) DESC(Odpracované dny celkem)         CAPTION(OdprCelkDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nDovolenHo) DESC(Dovolená hodiny celkem)         CAPTION(DovoCelkHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nDovolenDn) DESC(Dovolená dny celkem)            CAPTION(DovoCelkDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nSvatkyHo)  DESC(Svátky hodiny celkem)           CAPTION(SvátCelkHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nSvatkyDn)  DESC(Svátky dny celkem)              CAPTION(SvátCelkDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nNemocenHo) DESC(Nemoc hodiny celkem)            CAPTION(NemoCelkHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nNemocenDn) DESC(Nemoc dny celkem)               CAPTION(NemoCelkDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nNeplVolHo) DESC(Neplac.volno hodiny celkem)     CAPTION(NepVCelkHo) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nNeplVolDn) DESC(Neplac.volno dny celkem)        CAPTION(NepVCelkDn) FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nOCRHo)     DESC(OÈR hodiny celkem)              CAPTION(OÈRCelkHo)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nOCRDn)     DESC(OÈR dny celkem)                 CAPTION(OÈRCelkDn)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nNahZMzdHo) DESC(Náhrada za mzdu hodiny celkem)  CAPTION(NáhrMzdHo)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nNahZMzdDn) DESC(Náhrada za mzdu dny celkem)     CAPTION(NáhrMzdDn)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nRefuMzdHo) DESC(Refundace mzdy hodiny celkem)   CAPTION(RefuMzdHo)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nRefuMzdDn) DESC(Refundace mzdy dny celkem)      CAPTION(RefuMzdDn)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nOstNahrHo) DESC(Ostatní náhrady hodiny celkem)  CAPTION(OstNáhrHo)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nOstNahrDn) DESC(Ostatní náhrady dny celkem)     CAPTION(OstNáhrDn)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nAbsenceHo) DESC(Absence hodiny celkem)          CAPTION(AbsenceHo)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nAbsenceDn) DESC(Absence dny celkem)             CAPTION(AbsenceDn)  FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(nPresc25Ho) DESC(Pøesèas 25% celkem)             CAPTION(Pøesè25Ho)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nPresc50Ho) DESC(Pøesèas 50% celkem)             CAPTION(Pøesè50Ho)  FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nSvatPriHo) DESC(Pøíplatek za svátky)            CAPTION(PøiplSváte) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nNocnPriHo) DESC(Pøíplatek za noèní smìny)       CAPTION(PøiplNoèní) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nOdmenyHo)  DESC(Ostatní odmìny (MPR))           CAPTION(OstatOdmìn) FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nVyrobaHo)  DESC(Suma hodin z výroby)            CAPTION(VýrobaHo)   FTYPE(n) FLEN( 7) DEC( 2)
+  TYPE(FIELD) NAME(nVyrobaDn)  DESC(Suma dny z výroby)              CAPTION(VýrobaDn)   FTYPE(n) FLEN( 5) DEC( 2)
+  TYPE(FIELD) NAME(dVznikZazn)  DESC(Datum vzniku)                   CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(dZmenaZazn)  DESC(Datum zmìny)                    CAPTION(DatVzniku)   FTYPE(d) FLEN( 8) DEC( 0)
+  TYPE(FIELD) NAME(mPoznamka)   DESC(Poznámka)                       CAPTION(Poznámka)    FTYPE(m) FLEN(10) DEC( 0)
+  TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(TSUMKO01)   FNAME(TMPSUMKO) CAPTION(OsÈísPrac )          KEY(nOsCisPrac)
+
+
+
+TYPE(FILE) NAME(KALENDARw) DESC(Kalendáø (w))  LIKE(KALENDAR) NOCHECK() TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(KALENDARw1) FNAME(KALENDARw) CAPTION(Datum)              KEY(if(empty(DDATUM) ,'        ' , DTOS(DDATUM)) )
+
+
+TYPE(FILE) NAME(DSPOHYBYw) DESC(Pohyby v docházce (w))  LIKE(DSPOHYBY) NOCHECK() TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+  TYPE(INDEX) NAME(DSPOHYBYw1) FNAME(DSPOHYBYw) CAPTION(Datum)                         KEY(if(empty(DDATUM) ,'        ' , DTOS(DDATUM)) )
+  TYPE(INDEX) NAME(DSPOHYBYw2) FNAME(DSPOHYBYw) CAPTION(Den)                           KEY(nDen)
+  TYPE(INDEX) NAME(DSPOHYBYw3) FNAME(DSPOHYBYw) CAPTION(Den+ZobrCrd+PrerPrT+ÈPoè+ÈKon) KEY(STRZERO(nDen,2)+STRZERO(nSayCrd,2)+UPPER(cKodPrer)+STRZERO(nCasBeg,5,2)+STRZERO(nCasEnd,5,2))
+
+
+TYPE(FILE) NAME(MESICw) DESC(Mesic (w))  NOCHECK()  TASK(DOH)
+* FIELD DEFINITION **************************************************
+  TYPE(FIELD) NAME(d11) DESC(Den v týdnu 1/1)  CAPTION(Den_1_1) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d12) DESC(Den v týdnu 1/2)  CAPTION(Den_1_2) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d13) DESC(Den v týdnu 1/3)  CAPTION(Den_1_3) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d14) DESC(Den v týdnu 1/4)  CAPTION(Den_1_4) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d15) DESC(Den v týdnu 1/5)  CAPTION(Den_1_5) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d16) DESC(Den v týdnu 1/6)  CAPTION(Den_1_6) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d17) DESC(Den v týdnu 1/7)  CAPTION(Den_1_7) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d21) DESC(Den v týdnu 2/1)  CAPTION(Den_2_1) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d22) DESC(Den v týdnu 2/2)  CAPTION(Den_2_2) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d23) DESC(Den v týdnu 2/3)  CAPTION(Den_2_3) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d24) DESC(Den v týdnu 2/4)  CAPTION(Den_2_4) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d25) DESC(Den v týdnu 2/5)  CAPTION(Den_2_5) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d26) DESC(Den v týdnu 2/6)  CAPTION(Den_2_6) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d27) DESC(Den v týdnu 2/7)  CAPTION(Den_2_7) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d31) DESC(Den v týdnu 3/1)  CAPTION(Den_3_1) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d32) DESC(Den v týdnu 3/2)  CAPTION(Den_3_2) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d33) DESC(Den v týdnu 3/3)  CAPTION(Den_3_3) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d34) DESC(Den v týdnu 3/4)  CAPTION(Den_3_4) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d35) DESC(Den v týdnu 3/5)  CAPTION(Den_3_5) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d36) DESC(Den v týdnu 3/6)  CAPTION(Den_3_6) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d37) DESC(Den v týdnu 3/7)  CAPTION(Den_3_7) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d41) DESC(Den v týdnu 4/1)  CAPTION(Den_4_1) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d42) DESC(Den v týdnu 4/2)  CAPTION(Den_4_2) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d43) DESC(Den v týdnu 4/3)  CAPTION(Den_4_3) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d44) DESC(Den v týdnu 4/4)  CAPTION(Den_4_4) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d45) DESC(Den v týdnu 4/5)  CAPTION(Den_4_5) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d46) DESC(Den v týdnu 4/6)  CAPTION(Den_4_6) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d47) DESC(Den v týdnu 4/7)  CAPTION(Den_4_7) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d51) DESC(Den v týdnu 5/1)  CAPTION(Den_5_1) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d52) DESC(Den v týdnu 5/2)  CAPTION(Den_5_2) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d53) DESC(Den v týdnu 5/3)  CAPTION(Den_5_3) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d54) DESC(Den v týdnu 5/4)  CAPTION(Den_5_4) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d55) DESC(Den v týdnu 5/5)  CAPTION(Den_5_5) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d56) DESC(Den v týdnu 5/6)  CAPTION(Den_5_6) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d57) DESC(Den v týdnu 5/7)  CAPTION(Den_5_7) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d61) DESC(Den v týdnu 6/1)  CAPTION(Den_6_1) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d62) DESC(Den v týdnu 6/2)  CAPTION(Den_6_2) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d63) DESC(Den v týdnu 6/3)  CAPTION(Den_6_3) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d64) DESC(Den v týdnu 6/4)  CAPTION(Den_6_4) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d65) DESC(Den v týdnu 6/5)  CAPTION(Den_6_5) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d66) DESC(Den v týdnu 6/6)  CAPTION(Den_6_6) FTYPE(N) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(d67) DESC(Den v týdnu 6/7)  CAPTION(Den_6_7) FTYPE(N) FLEN(2) DEC(0)
+
+  TYPE(FIELD) NAME(cd11) DESC(Den v týdnu 1/1c)  CAPTION(Den_1_1c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd12) DESC(Den v týdnu 1/2c)  CAPTION(Den_1_2c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd13) DESC(Den v týdnu 1/3c)  CAPTION(Den_1_3c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd14) DESC(Den v týdnu 1/4c)  CAPTION(Den_1_4c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd15) DESC(Den v týdnu 1/5c)  CAPTION(Den_1_5c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd16) DESC(Den v týdnu 1/6c)  CAPTION(Den_1_6c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd17) DESC(Den v týdnu 1/7c)  CAPTION(Den_1_7c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd21) DESC(Den v týdnu 2/1c)  CAPTION(Den_2_1c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd22) DESC(Den v týdnu 2/2c)  CAPTION(Den_2_2c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd23) DESC(Den v týdnu 2/3c)  CAPTION(Den_2_3c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd24) DESC(Den v týdnu 2/4c)  CAPTION(Den_2_4c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd25) DESC(Den v týdnu 2/5c)  CAPTION(Den_2_5c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd26) DESC(Den v týdnu 2/6c)  CAPTION(Den_2_6c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd27) DESC(Den v týdnu 2/7c)  CAPTION(Den_2_7c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd31) DESC(Den v týdnu 3/1c)  CAPTION(Den_3_1c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd32) DESC(Den v týdnu 3/2c)  CAPTION(Den_3_2c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd33) DESC(Den v týdnu 3/3c)  CAPTION(Den_3_3c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd34) DESC(Den v týdnu 3/4c)  CAPTION(Den_3_4c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd35) DESC(Den v týdnu 3/5c)  CAPTION(Den_3_5c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd36) DESC(Den v týdnu 3/6c)  CAPTION(Den_3_6c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd37) DESC(Den v týdnu 3/7c)  CAPTION(Den_3_7c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd41) DESC(Den v týdnu 4/1c)  CAPTION(Den_4_1c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd42) DESC(Den v týdnu 4/2c)  CAPTION(Den_4_2c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd43) DESC(Den v týdnu 4/3c)  CAPTION(Den_4_3c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd44) DESC(Den v týdnu 4/4c)  CAPTION(Den_4_4c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd45) DESC(Den v týdnu 4/5c)  CAPTION(Den_4_5c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd46) DESC(Den v týdnu 4/6c)  CAPTION(Den_4_6c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd47) DESC(Den v týdnu 4/7c)  CAPTION(Den_4_7c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd51) DESC(Den v týdnu 5/1c)  CAPTION(Den_5_1c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd52) DESC(Den v týdnu 5/2c)  CAPTION(Den_5_2c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd53) DESC(Den v týdnu 5/3c)  CAPTION(Den_5_3c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd54) DESC(Den v týdnu 5/4c)  CAPTION(Den_5_4c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd55) DESC(Den v týdnu 5/5c)  CAPTION(Den_5_5c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd56) DESC(Den v týdnu 5/6c)  CAPTION(Den_5_6c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd57) DESC(Den v týdnu 5/7c)  CAPTION(Den_5_7c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd61) DESC(Den v týdnu 6/1c)  CAPTION(Den_6_1c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd62) DESC(Den v týdnu 6/2c)  CAPTION(Den_6_2c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd63) DESC(Den v týdnu 6/3c)  CAPTION(Den_6_3c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd64) DESC(Den v týdnu 6/4c)  CAPTION(Den_6_4c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd65) DESC(Den v týdnu 6/5c)  CAPTION(Den_6_5c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd66) DESC(Den v týdnu 6/6c)  CAPTION(Den_6_6c) FTYPE(C) FLEN(2) DEC(0)
+  TYPE(FIELD) NAME(cd67) DESC(Den v týdnu 6/7c)  CAPTION(Den_6_7c) FTYPE(C) FLEN(2) DEC(0)
+
+  TYPE(FIELD) NAME(_nrecor) DESC(Èíslo záznamu) CAPTION(Èíslo záznamu) FTYPE(N) FLEN(10) DEC(0)
+* INDEX DEFINITION **************************************************
+*  TYPE(INDEX) NAME(MESICw1) FNAME(MESICw) CAPTION(Datum)              KEY(if(empty(DDATUM) ,'        ' , DTOS(DDATUM)) )

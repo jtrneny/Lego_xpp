@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<RELDP version="2009.1" xmlns="http://schemas.cssz.cz/ELDP09">
+   <eldp09 sqnr="1" yer="2013" typ="01" tco="" dep="894" nam="">
+       <client bno="8051185846">
+           <name sur="Budínská" fir="Jarmila" tit="Mgr."/>
+           <adr cit="Valašská Polanka" str="Valašská Polanka" num="373" pos="Valaš" pnu="75611" cnt="CZ"/>
+           <birth dat="1980-01-18" nam="Bambuchová" cit="Vsetín"/>
+       </client>
+       <items coun="2" sdex="39">
+           <t1 row="1" cod="1++" sre="N" fro="2013-01-01" to="2013-12-31" din="61" m1="x" m2="x" m3="x" m4="x" m5="x" m6="x" m7="x" m8="x" m9="x" m12="x" dex="39"/>
+           <t2 row="1" cod="M" fro="2013-10-21" to="2013-12-31"/>
+       </items>
+       <comp nam="KOVAR a.s." id="45197164" vs="8940101655" cre="2014-03-26" fro="2004-09-01"/>
+     </eldp09>
+</RELDP>

@@ -1,0 +1,63 @@
+BODY {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.ttop .ttopbanner {
+	DISPLAY: none
+}
+.square125 {
+	DISPLAY: none
+}
+.square250 {
+	DISPLAY: none
+}
+.skyscraper {
+	DISPLAY: none
+}
+.tall {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.ttop {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.ttop .ttopleft {
+	DISPLAY: none
+}
+.tmainbox {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.tmainmenu {
+	DISPLAY: none
+}
+.tmenu2 {
+	DISPLAY: none
+}
+TD.tmainlayoutpravytd {
+	DISPLAY: none
+}
+.tnadpis {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.tnadpistlacitka {
+	DISPLAY: none
+}
+.tmainleftcol {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.tmainleftcol .tpodnadpis H2 {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #1a8b00
+}
+.tmainleftcol .tpodnadpis .tpodnadpisrbg {
+	DISPLAY: none
+}
+.tgreyend {
+	DISPLAY: none
+}
+.tfooter1 {
+	DISPLAY: none
+}
+.tfooter2 {
+	COLOR: black; BORDER-TOP: black 1px solid
+}
+.tfooter2 A {
+	COLOR: black !important
+}

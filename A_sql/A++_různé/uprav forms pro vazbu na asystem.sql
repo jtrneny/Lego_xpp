@@ -1,0 +1,2 @@
+update forms SET forms.mblockfrm = 'Asys_fce('+ CHAR(39) + asystem.cidobject + CHAR(39)+')' from asystem where forms.mblockfrm = asystem.cprgobject and asystem.cTypObject = 'FCE_TMLSTv' ;
+update forms SET forms.mblockfrm = 'Asys_obj('+ CHAR(39) + asystem.cidobject + CHAR(39)+')' from asystem where forms.mblockfrm = asystem.cprgobject and asystem.cTypObject = 'OBJ_TMLSTv'
