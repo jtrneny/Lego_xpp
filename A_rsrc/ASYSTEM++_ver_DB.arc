@@ -1,2 +1,2 @@
 VERSION
-"SpecialBuild"   = " 1.1891"
+"SpecialBuild"   = " 1.1892"

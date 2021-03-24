@@ -349,7 +349,7 @@ TYPE(FILE) NAME(C_VYPLMI) DESC(Èíselník výplatních míst) TASK(MZD)
 * INDEX DEFINITION **************************************************
   TYPE(INDEX) NAME(C_VYPLMI01) FNAME(C_VYPLMI) CAPTION(ZkrVyplMis) KEY(UPPER(cVyplMist))
   TYPE(INDEX) NAME(C_VYPLMI02) FNAME(C_VYPLMI) CAPTION(NázVyplMis) KEY(UPPER(cNazVyplMi))
-  TYPE(INDEX) NAME(ID) FNAME(C_VYPLMI) CAPTION(ID)          KEY(sID) UNIQUE
+  TYPE(INDEX) NAME(ID)         FNAME(C_VYPLMI) CAPTION(ID)         KEY(sID) UNIQUE
 * SEARCH DEFINITION**************************************************
   TYPE(SEARCH) FIELDS(cVyplMist:Klíè výplat.místa,cNAZVyplMi:Název výplatního místa) ORDER(1) RETURN(cVyplMist)
 
@@ -357,7 +357,7 @@ TYPE(FILE) NAME(C_VYPLMI) DESC(Èíselník výplatních míst) TASK(MZD)
 *
 * FILE DEFINITION **************************************************
 *
-TYPE(FILE) NAME(C_KPRACI) DESC(Èíselník katalogu prací) TASK(MZD)
+TYPE(FILE) NAME(C_KPRACI) DESC(Èíselník katalogu prací ) TASK(MZD)
 * FIELD DEFINITION **************************************************
   TYPE(FIELD) NAME(nCisPrace)   DESC(Èíslo práce)                    CAPTION(ÈísPrac)     FTYPE(n) FLEN( 4) DEC( 0)
   TYPE(FIELD) NAME(cNazPrace)   DESC(Název provádìné práce)          CAPTION(NázPráce)    FTYPE(c) FLEN(50) DEC( 0)
@@ -368,9 +368,9 @@ TYPE(FILE) NAME(C_KPRACI) DESC(Èíselník katalogu prací) TASK(MZD)
   TYPE(FIELD) NAME(mUserZmenR)  DESC()                               CAPTION()            FTYPE(m) FLEN(10) DEC( 0)
   TYPE(FIELD) NAME(sID)         DESC()                               CAPTION()            FTYPE(s) FLEN( 0) DEC( 0)
 * INDEX DEFINITION **************************************************
-  TYPE(INDEX) NAME(C_KPRACI01) FNAME(C_KPRACI) CAPTION(ÈísPráce )           KEY(nCisPrace)
-  TYPE(INDEX) NAME(C_KPRACI02) FNAME(C_KPRACI) CAPTION(NázPráce )           KEY(UPPER(cNazPrace))
-  TYPE(INDEX) NAME(ID)         FNAME(C_KPRACI) CAPTION(ID)                  KEY(sID) UNIQUE
+  TYPE(INDEX) NAME(C_KPRACI01) FNAME(C_KPRACI) CAPTION(ÈísPráce)           KEY(nCisPrace)
+  TYPE(INDEX) NAME(C_KPRACI02) FNAME(C_KPRACI) CAPTION(NázPráce)           KEY(UPPER(cNazPrace))
+  TYPE(INDEX) NAME(ID)         FNAME(C_KPRACI) CAPTION(ID)                 KEY(sID) UNIQUE
 * SEARCH DEFINITION**************************************************
   TYPE(SEARCH) FIELDS(nCisPrace:Èíslo práce,cNazPrace:Název provádìné práce) ORDER(1) RETURN(nCisPrace)
 
